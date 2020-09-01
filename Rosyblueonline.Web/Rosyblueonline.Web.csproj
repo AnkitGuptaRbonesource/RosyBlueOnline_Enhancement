@@ -93,7 +93,7 @@
     </Reference>
     <Reference Include="SRVTextToImage, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\SRVTextToImage.dll</HintPath>
+      <HintPath>..\Libs\SRVTextToImage.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
