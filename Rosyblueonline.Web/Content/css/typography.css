@@ -1,0 +1,30 @@
+@import url("//hello.myfonts.net/count/26b96e");
+  
+@font-face {
+    font-family: 'Vanitas-Regular';
+    src: url('../fonts/26B96E_0_0.eot');
+    src: url('../fonts/26B96E_0_0.eot?#iefix') format('embedded-opentype'),url('../fonts/26B96E_0_0.woff') format('woff'),url('../fonts/26B96E_0_0.ttf') format('truetype'),url('../fonts/26B96E_0_0.svg#wf') format('svg');
+    }
+ 
+ @font-face {
+     font-family: 'Vanitas-It';
+     src: url('../fonts/26B96E_1_0.eot');
+     src: url('webfonts/26B96E_1_0.eot?#iefix') format('embedded-opentype'),url('../fonts/26B96E_1_0.woff') format('woff'),url('../fonts/26B96E_1_0.ttf') format('truetype'),url('../fonts/26B96E_1_0.svg#wf') format('svg');
+     }
+ 
+  @font-face {
+      font-family: 'Vanitas-Bold';
+      src: url('../fonts/26B96E_2_0.eot');
+      src: url('../fonts/26B96E_2_0.eot?#iefix') format('embedded-opentype'),url('../fonts/26B96E_2_0.woff') format('woff'),url('../fonts/26B96E_2_0.ttf') format('truetype'),url('../fonts/26B96E_2_0.svg#wf') format('svg');
+      }
+ 
+  @font-face {
+      font-family: 'Vanitas-BoldIt';
+      src: url('../fonts/26B96E_3_0.eot');
+      src: url('../fonts/26B96E_3_0.eot?#iefix') format('embedded-opentype'),url('../fonts/26B96E_3_0.woff') format('woff'),url('../fonts/26B96E_3_0.ttf') format('truetype'),url('../fonts/26B96E_3_0.svg#wf') format('svg');
+      }
+ 
+
+body {
+    font-family: 'Vanitas-Regular', 'Georgia', sans-serif;
+}

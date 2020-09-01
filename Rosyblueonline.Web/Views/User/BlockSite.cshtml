@@ -1,0 +1,47 @@
+﻿@model bool
+@{
+    ViewBag.Title = Model == true ? "Block Site" : "UnBlock Site";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+@section header{
+}
+<div class="content-wrapper">
+    <section class="content">
+        <div id="uiPanel1"></div>
+        <div class="panel-group">
+            <div class="col-md-5">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        @(Model == true ? "UnBlock Site" : "Block Site")
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <form id="frmBlockSite" class="customers-info">
+                                    <div class="form-horizontal">
+                                        <div class="form-group">
+                                            <div class="col-lg-4"><label class="control-label">Current Status:</label></div>
+                                            <div class="col-lg-8"><label class="control-label"><u><b>@(Model == true ? "Site blocked" : " Site not blocked")</b></u></label></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-lg-4"><label class="control-label">Pasword:</label></div>
+                                            <div class="col-lg-8"><input name="password" id="txtPassword" class="form-control" type="password" value="" required></div>
+                                        </div>
+                                    </div>
+                                    <div class="pull-right">
+                                        <button type="button" class="btn btn-primary" id="btnUpdate">@(Model == true ? "UnBlock Site" : "Block Site")</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</div>
+@section script{
+    <script type="text/javascript" src="~/Scripts/custom/Service/ServiceMethods.js"></script>
+    <script type="text/javascript" src="~/Scripts/custom/Controller/CtrlBlockSite.js"></script>
+}

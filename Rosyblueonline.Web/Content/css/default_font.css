@@ -1,0 +1,29 @@
+@font-face {
+    font-family: 'Georgia';
+    src: url('../fonts/Georgia.eot');
+    src: url('../fonts/Georgia.eot?#iefix') format('embedded-opentype'), 
+	     url('../fonts/Georgia.woff') format('woff'), 
+	     url('../fonts/Georgia.ttf')  format('truetype'),
+	     url('../fonts/Georgia.svg#Georgia') format('svg');
+    font-weight:normal;
+    font-style:normal;
+}
+
+@font-face{
+    font-family: 'Meridien-italic';
+    src: url('../fonts/meridien_italic.eot');
+    src: url('../fonts/meridien_italic.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/meridien_italic.woff') format('woff'),
+    url('../fonts/meridien_italic.ttf') format('truetype');
+    font-weight:normal;
+    font-style:italic;
+}
+
+@font-face { /* for non-IE */
+    font-family: 'interstate-bc';
+    src: url('../fonts/interstate-boldcondensed.eot');
+    src: url('../fonts/interstate-boldcondensed.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/interstate-boldcondensed.woff') format('woff'),
+        url('../fonts/interstate-boldcondensed.ttf') format('truetype'),
+        url('../fonts/interstate-boldcondensed.svg#interstate-boldcondensed') format('svg');
+}

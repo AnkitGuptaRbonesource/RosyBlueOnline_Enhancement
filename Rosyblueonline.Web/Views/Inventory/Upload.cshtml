@@ -1,0 +1,89 @@
+﻿@model List<mstUploadFormatViewModel>
+@{
+    ViewBag.Title = "Upload";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+@section header{
+    @Styles.Render("~/bundles/DataTable/Style")
+    <link href="~/Content/css/select2.min.css" rel="stylesheet" />
+}
+<div class="content-wrapper">
+    <section class="content">
+        <div id="uiPanel1"></div>
+        <section class="content" id="secGrid">
+            <div class="customers-list-table">
+                <div class="customers-list-table">
+                    <div class="col-md-12">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <div class="panel-heading">Upload Inventory</div>
+                            </div>
+                            @*method="post" action="/Inventory/InventoryUpload" enctype="multipart/form-data"*@
+                            <form id="frmInventorUpload" class="panel-body paneltable">
+                                <div class="form-horizontal">
+                                    <div class="form-group">
+                                        <label class="col-md-6 control-label">
+                                            Select to download sample file
+                                        </label>
+                                        <div class="col-md-6">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-6">
+                                            <select class="form-control" id="ddlDownloadType">
+                                                <option value="~/Content/INV/Temp/UploadFormat.xlsx" selected>Upload Format Common</option>
+                                                <option value="~/Content/INV/Temp/BestDeal.xlsx">Upload Format Best Deal</option>
+                                                <option value="~/Content/INV/Temp/AddRemoveLab.xlsx">Upload Add/Remove Lab Format</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <a href="~/Content/INV/Temp/UploadFormat.xlsx" id="btnDeals" class="hvr-growing">
+                                                <i class="glyphicon glyphicon-download-alt"><span>Download</span></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-6 control-label">
+                                            Select file to upload
+                                        </div>
+                                        <div class="col-md-6 control-label">
+                                            Select your choice
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-6">
+                                            <input type="file" name="fileUpload" id="fuUpload" class="form-control" value="fileUpload" />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <select id="ddlInventoryType" name="uploadFormatId" class="form-control">
+                                                <option>Select Type</option>
+                                                @for (int i = 0; i < Model.Count; i++)
+                                                {
+                                                    <option value="@Model[i].uploadFormatId">@Model[i].uploadFullName</option>
+                                                }
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-6">
+                                            <button type="submit" id="btnUpload" class="btn btn-primary">Upload</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+</div>
+<!--Modal for Memo Start-->
+@Html.Partial("~/Views/Shared/_MemoPopupPartial.cshtml")
+<!--Modal for Memo End-->
+@section script{
+    @Scripts.Render("~/bundles/DataTable/Script")
+    <script type="text/javascript" src="~/Scripts/custom/rbDataTable.js"></script>
+    <script type="text/javascript" src="~/Scripts/select2.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/custom/Controller/CtrlInventoryUpload.js"></script>
+}

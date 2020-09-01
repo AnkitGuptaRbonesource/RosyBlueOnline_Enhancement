@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C55048C0-250E-4B75-BEF7-DDBF4ABCEEA8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Rosyblueonline.Models</RootNamespace>
+    <AssemblyName>Rosyblueonline.Models</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BlockSiteHistoryModel.cs" />
+    <Compile Include="BlueNileDiscountModel.cs" />
+    <Compile Include="CartDetailModel.cs" />
+    <Compile Include="customerDemandModel.cs" />
+    <Compile Include="CustomerListView.cs" />
+    <Compile Include="CustomSelectModel.cs" />
+    <Compile Include="DownloadList.cs" />
+    <Compile Include="DownloadRight.cs" />
+    <Compile Include="DownloadRightView.cs" />
+    <Compile Include="DownloadScriptsModel.cs" />
+    <Compile Include="fileUploadLogModel.cs" />
+    <Compile Include="IAddressModel.cs" />
+    <Compile Include="inventoryModel.cs" />
+    <Compile Include="InventoryUpload.cs" />
+    <Compile Include="JamesAllenDiscountModel.cs" />
+    <Compile Include="JamesAllenDiscountModelHK.cs" />
+    <Compile Include="LoginDeviceModel.cs" />
+    <Compile Include="MemoDetailModel.cs" />
+    <Compile Include="MemoFileIDDetailModel.cs" />
+    <Compile Include="MenuMasterModel.cs" />
+    <Compile Include="mstChargesModel.cs" />
+    <Compile Include="mstClarityModel.cs" />
+    <Compile Include="MstCustomerPermisionModel.cs" />
+    <Compile Include="MstDocIdentityModel.cs" />
+    <Compile Include="mstEyeCleanModel.cs" />
+    <Compile Include="mstfancyColorModel.cs" />
+    <Compile Include="LoginDetailModel.cs" />
+    <Compile Include="MstBillingAddressModel.cs" />
+    <Compile Include="mstColorModel.cs" />
+    <Compile Include="MstCountryModel.cs" />
+    <Compile Include="mstFluorescenceModel.cs" />
+    <Compile Include="mstGirdleNamesModel.cs" />
+    <Compile Include="mstH_AModel.cs" />
+    <Compile Include="mstKeyToSymbolModel.cs" />
+    <Compile Include="mstLabModel.cs" />
+    <Compile Include="mstMilkyInclusionModel.cs" />
+    <Compile Include="mstRFIDModel.cs" />
+    <Compile Include="MstSalesLocationModel.cs" />
+    <Compile Include="mstShadeModel.cs" />
+    <Compile Include="MstShippingAddressModel.cs" />
+    <Compile Include="mstSideBlackInclusionModel.cs" />
+    <Compile Include="MstStateModel.cs" />
+    <Compile Include="mstTableBlackInclusionModel.cs" />
+    <Compile Include="MstTypesModel.cs" />
+    <Compile Include="mstUploadFormatModel.cs" />
+    <Compile Include="mstUploadFormatViewModel.cs" />
+    <Compile Include="orderDetailModel.cs" />
+    <Compile Include="orderItemDetails.cs" />
+    <Compile Include="OrderListView.cs" />
+    <Compile Include="ORRAStockDetailsModel.cs" />
+    <Compile Include="OtpLog.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="recentSearchModel.cs" />
+    <Compile Include="RFIDexportBox.cs" />
+    <Compile Include="RFIDhistoryModel.cs" />
+    <Compile Include="RFIDstockmaster.cs" />
+    <Compile Include="savedSearchModel.cs" />
+    <Compile Include="StockHistoryViewModel.cs" />
+    <Compile Include="TokenLogModel.cs" />
+    <Compile Include="UpcomingShowModel.cs" />
+    <Compile Include="UserActivityLogModel.cs" />
+    <Compile Include="UserDetailModel.cs" />
+    <Compile Include="UserDetailView.cs" />
+    <Compile Include="UserGeoLocationModel.cs" />
+    <Compile Include="UserKycDocDetailsModel.cs" />
+    <Compile Include="UserMenuPermissionModel.cs" />
+    <Compile Include="ViewModel\AddressViewModel.cs" />
+    <Compile Include="ViewModel\CompareInventoryViewModel.cs" />
+    <Compile Include="ViewModel\CountViewModel.cs" />
+    <Compile Include="ViewModel\customerDemandViewModel.cs" />
+    <Compile Include="ViewModel\CustomSelectViewModel.cs" />
+    <Compile Include="ViewModel\DashboardViewModel.cs" />
+    <Compile Include="ViewModel\DataTableViewModel.cs" />
+    <Compile Include="ViewModel\DownloadScriptViewModel.cs" />
+    <Compile Include="ViewModel\FileUploadLogViewModel.cs" />
+    <Compile Include="ViewModel\GIAUpload.cs" />
+    <Compile Include="ViewModel\inventoryDetailsViewModel.cs" />
+    <Compile Include="ViewModel\InventoryDownloadViewModel.cs" />
+    <Compile Include="ViewModel\invResponseViewModel.cs" />
+    <Compile Include="ViewModel\KeyValue.cs" />
+    <Compile Include="ViewModel\LoginDetailViewModel.cs" />
+    <Compile Include="ViewModel\LoginViewModel.cs" />
+    <Compile Include="ViewModel\ManageRightsViewModel.cs" />
+    <Compile Include="ViewModel\MemoTallyStockByRfidViewModel.cs" />
+    <Compile Include="ViewModel\MstCaratsSizeViewModel.cs" />
+    <Compile Include="ViewModel\mstClarityViewModel.cs" />
+    <Compile Include="ViewModel\mstColorViewModel.cs" />
+    <Compile Include="ViewModel\mstEyeCleanViewModel.cs" />
+    <Compile Include="ViewModel\mstfancyColorViewModel.cs" />
+    <Compile Include="ViewModel\mstFluorescenceViewModel.cs" />
+    <Compile Include="ViewModel\mstGirdleNamesViewModel.cs" />
+    <Compile Include="ViewModel\mstH_AViewModel.cs" />
+    <Compile Include="ViewModel\mstKeyToSymbolViewModel.cs" />
+    <Compile Include="ViewModel\mstLabViewModel.cs" />
+    <Compile Include="ViewModel\mstMilkyInclusionViewModel.cs" />
+    <Compile Include="ViewModel\mstShadeViewModel.cs" />
+    <Compile Include="ViewModel\mstSideBlackInclusionViewModel.cs" />
+    <Compile Include="ViewModel\MstStoneOriginViewModel.cs" />
+    <Compile Include="ViewModel\mstTableBlackInclusionViewModel.cs" />
+    <Compile Include="ViewModel\OrderChargesViewModel.cs" />
+    <Compile Include="ViewModel\OrderInfo.cs" />
+    <Compile Include="ViewModel\OrderViewModel.cs" />
+    <Compile Include="ViewModel\recentSearchViewModel.cs" />
+    <Compile Include="ViewModel\RegistrationViewModel.cs" />
+    <Compile Include="ViewModel\RFIDTempTableMiewModel.cs" />
+    <Compile Include="ViewModel\SalesLocationViewModel.cs" />
+    <Compile Include="ViewModel\savedSearchViewModel.cs" />
+    <Compile Include="ViewModel\Select2Response.cs" />
+    <Compile Include="ViewModel\SelectOptionsViewModel.cs" />
+    <Compile Include="ViewModel\StockStatusViewModel.cs" />
+    <Compile Include="ViewModel\StockSummaryViewModel.cs" />
+    <Compile Include="ViewModel\SummaryCalsViewModel.cs" />
+    <Compile Include="ViewModel\TallyStockByRFIDViewModel.cs" />
+    <Compile Include="ViewModel\UserCountViewModel.cs" />
+    <Compile Include="ViewModel\SendInventoryRequestModel.cs" />
+    <Compile Include="ViewModel\WS_SchedulerModel.cs" />
+    <Compile Include="ViewModel\_SearchFilterViewModel.cs" />
+    <Compile Include="ViewModel\_UpcomingEvents.cs" />
+    <Compile Include="WatchListModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

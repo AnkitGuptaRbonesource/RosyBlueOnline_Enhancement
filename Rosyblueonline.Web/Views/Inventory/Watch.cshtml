@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Watch";
+    
+}
+@section header{
+    @Styles.Render("~/bundles/DataTable/Style")
+}
+<div class="content-wrapper">
+    @*<div id="uiPanel1"></div>*@
+    <section class="content">
+        <div id="uiPanel1"></div>
+        @Html.Partial("~/Views/Shared/_PartialSpecificSearchResult.cshtml", "WatchList")
+    </section>
+</div>
+@section script{
+    @Scripts.Render("~/bundles/DataTable/Script")
+    <script type="text/javascript" src="~/Scripts/custom/rbDataTable.js"></script>
+    <script type="text/javascript" src="~/Scripts/custom/Controller/CtrlWatchList.js"></script>
+}
+
+
+

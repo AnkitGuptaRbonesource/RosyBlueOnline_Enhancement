@@ -1,0 +1,69 @@
+﻿@model Rosyblueonline.Models.ViewModel._SearchFilterViewModel
+@{
+    ViewBag.Title = "SpecificSearch";
+    Model.FromID = "divSpecificSearch";
+}
+@section header{
+    @Styles.Render("~/bundles/DataTable/Style")
+    <link href="~/Content/css/select2.min.css" rel="stylesheet" />
+}  
+
+<div class="content-wrapper" id="divSearchPanel">
+    <div id="uiPanel1"></div>
+    <section class="content">
+        @Html.Partial("~/Views/Shared/_PartialSpecificSearch.cshtml", model: Model)
+    </section>
+</div>
+<div class="content-wrapper" id="divSearchResult" style="display:none">
+    <div id="uiPanel2"></div>
+    @Html.Partial("~/Views/Shared/_PartialSpecificSearchResult.cshtml", "SS")
+
+    @*@{
+
+        IEnumerable<inventoryDetailsViewModel> teachers = ViewBag.SearchResultList as IEnumerable<inventoryDetailsViewModel>;
+    }
+
+    <table>
+        <tr> 
+            <th>dsdsd</th>
+            <th>Code</th>
+            <th>Name</th>
+        </tr>
+    </table>
+    @if (teachers != null)
+    {
+
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Code</th>
+                <th>Name</th>
+            </tr>
+            @foreach (inventoryDetailsViewModel teacher in teachers)
+            {
+                <tr>
+                    <td>@teacher.Certificate</td>
+                    <td>@teacher.Color</td>
+                    <td>@teacher.Origin</td>
+                </tr>
+            }
+        </table>
+    }*@
+
+    @*@if (ViewData["SearchResultList"] != null)
+        {
+            @Html.Partial("~/Views/Shared/_PartialSpecificSearchResult.cshtml", ViewData["SearchResultList"])
+        }*@
+
+</div>
+@section script{
+    @Scripts.Render("~/bundles/DataTable/Script")
+    <script type="text/javascript" src="~/Scripts/select2.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/custom/rbDataTable.js"></script>
+    <script type="text/javascript" src="~/Scripts/custom/Controller/ModuleSearchFilter.js"></script>
+    <script type="text/javascript" src="~/Scripts/custom/Controller/CtrlSpecificSearch.js"></script>
+
+    @*<script type="text/javascript" src="~/Scripts/custom/Controller/CtrlMemoDetails.js"></script>*@
+}
+
+

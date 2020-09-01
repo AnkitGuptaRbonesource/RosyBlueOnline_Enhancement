@@ -1,0 +1,265 @@
+﻿@{
+    ViewBag.Title = "Stock Tally";
+    //Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+@section header{
+    @Styles.Render("~/bundles/DataTable/Style")
+    <style>
+        #secInvTbl {
+            display: none;
+        }
+    </style>
+}
+<div class="content-wrapper">
+    <div id="uiPanel1"></div>
+    <section class="content">
+        <div class="row">
+            <div class="col-lg-5 col-md-5">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        RFID StockTally
+                    </div>
+                    <div class="panel-body">
+                        <div class="">
+                            <div class="customers-info form-horizontal">
+                                <div class="rfid-mch">
+                                    <div class="form-group">
+                                        <label class="col-sm-4">Machine</label>
+                                        <div class="col-sm-8">
+                                            <select id="ddlipaddress" class="form-control">
+                                                <option value="192.168.20.121">RFID_1</option>
+                                                <option value="192.168.20.122">RFID_2</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="rfid-number">
+                                    <div class="form-group">
+                                        <label class="col-sm-4">RFId Number</label>
+                                        <div class="col-sm-8">
+                                            <textarea id="list" name="Command" class="form-control"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="rfid-number">
+                                    <div class="form-group">
+                                        <label class="col-sm-4">Box name</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" id="txtboxname" name="command" value="" class="form-control" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="total-rfid">
+                                    <div class="form-group">
+                                        <label class="col-sm-4">Total RFID Count</label>
+                                        <div class="col-sm-8">
+                                            <div id="count"></div>
+                                            <div id="rfidtotalCount"></div>
+                                            <div id="summary"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="total-rfid">
+                                    <div class="form-group">
+                                        <label class="col-sm-4">Recent RFID Count</label>
+                                        <div class="col-sm-8">
+                                            <div id="notify"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-sm-6">
+                                        <button id="btnScanRF" class="btn btn-primary pull-right">Scan</button>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <button id="btnReset" name="command" value="reset" class="btn btn-warning">Reset</button>
+                                        <input id="hdnrfID" value="0" name="command" style="width: 24px" type="hidden" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-2">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        Stock
+                    </div>
+                    <div class="panel-body">
+                        <div class="">
+                            <div class="form-group">
+                                <table>
+                                    <tr>
+                                        <td style="width: 100px;">Physical Stock</td>
+                                        <td>
+                                            <button id="btnPhysicalStock" class="btn-link btn-count-click" data-type="PhysicalStock" data-rfid="">0</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Active Stock</td>
+                                        <td>
+                                            <button id="btnActiveStock" class="btn-link btn-count-click" data-type="ActiveStock" data-rfid="">0</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>OnMemo</td>
+                                        <td>
+                                            <button id="btnOnMemoStock" class="btn-link btn-count-click" data-type="OnMemoStock" data-rfid="">0</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sold</td>
+                                        <td>
+                                            <button id="btnSoldStock" class="btn-link btn-count-click" data-type="SoldStock" data-rfid="">0</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Order Pending</td>
+                                        <td>
+                                            <button id="btnOrderPendingStock" class="btn-link btn-count-click" data-type="OrderPendingStock" data-rfid="">0</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>InActive</td>
+                                        <td>
+                                            <button id="btnInvalidStock" class="btn-link btn-count-click" data-type="InvalidStock" data-rfid="">0</button>
+                                        <td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="customers-list-table">
+                            <div class="col-sm-6 pull-right" id="Divbtnexport">
+                                <button id="btnexport" class="btn btn-primary pull-right">ExportToExcel</button>
+                            </div>
+                            <div id="ResultArea">
+                                <table id="tableStockCountDetail" class="table table-fixed dataTable no-footer">
+                                    <thead>
+                                        <tr role="row" class="table-head">
+                                            <th>Box Name</th>
+                                            <th>Physical Stock</th>
+                                            <th>Active</th>
+                                            <th>On Memo</th>
+                                            <th>Sold</th>
+                                            <th>Order Pending</th>
+                                            <th>InActive</th>
+                                            <th>UnReferenced</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tblStockCountDetail"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="secInvTbl">
+        <section class="content">
+            <div class="row">
+                <div class="customers-list-table">
+                    <div class="">
+                        <div class="customers-list-table">
+                            <div class="col-md-12">
+                                <div class="panel panel-primary">
+                                    <div class="panel-body paneltable">
+                                        <table id="SearchTablePost" class="table table-fixed dataTable no-footer" role="grid" aria-describedby="SearchTablePost_info">
+                                            <thead class="bordertp">
+                                                <tr role="row" class="table-head">
+                                                    <th class="tbnew">
+                                                        <label for="BoxNo">Box No</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label for="Rfid">Rfid</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label for="Stock">Stock</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label for="Certificate">Certificate #</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label for="Carat">Carat</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label for="Shape">Shape</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label for="Color">Color</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label for="Clarity">Clarity</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label for="Cut">Cut</label>
+                                                    </th>
+                                                    <th class="tbnew ss">
+                                                        <label for="stockStatusID">Status</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label for="Memo">Memo</label>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </section>
+    @*<a href="~/Views/Shared/_PartialSpecificSearchResult.cshtml">~/Views/Shared/_PartialSpecificSearchResult.cshtml</a>*@
+</div>
+@section script{
+    @Scripts.Render("~/bundles/DataTable/Script")
+    <script type="text/javascript" src="//cdn.rawgit.com/rainabba/jquery-table2excel/1.1.0/dist/jquery.table2excel.min.js"></script>
+    @*<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.15.1/xlsx.full.min.js"></script>*@
+    <script type="text/javascript" src="~/Scripts/custom/rbDataTable.js"></script>
+    <script type="text/javascript" src="~/Scripts/spacecode.js"></script>
+    <script type="text/javascript" src="~/Scripts/custom/Controller/CtrlRFIDStockTally.js"></script>
+    <script type="text/x-jquery-tmpl" id="tmplStockCountDetail">
+        <tr>
+            <td>${BoxName}</td>
+            <td>
+                <button class="btn-link btn-count-click" data-type="TotalStock" data-rfid="${Total}">${TotalCount}</button>
+            </td>
+            <td>
+                <button class="btn-link btn-count-click" data-type="ActiveStock" data-rfid="${ActiveCount}">${ActiveStockCount}</button>
+            </td>
+            <td>
+                <button class="btn-link btn-count-click" data-type="OnMemo" data-rfid="${OnMemo}">${OnMemoCount}</button>
+            </td>
+            <td>
+                <button class="btn-link btn-count-click" data-type="Sold" data-rfid="${Sold}">${SoldCount}</button>
+            </td>
+            <td>
+                <button class="btn-link btn-count-click" data-type="OrderPending" data-rfid="${OrderPending}">${OrderPendingCount}</button>
+            </td>
+            <td>
+                <button class="btn-link btn-count-click" data-type="Invalid" data-rfid="${Invalid}">${InvalidCount}</button>
+            </td>
+            <td>
+                <button class="btn-link btn-count-click" data-type="UnReferenced">${UnReferencedCount}</button>
+            </td>
+        </tr>
+    </script>
+}
+

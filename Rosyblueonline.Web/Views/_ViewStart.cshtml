@@ -1,0 +1,16 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    TokenLogModel objToken = Session["Token"] as TokenLogModel;
+    if (objToken != null && objToken.RoleID == 3)
+    {
+        Layout = "~/Views/Shared/_LayoutCustomer.cshtml";
+    }
+    else if (objToken != null && objToken.RoleID == 2)
+    {
+        Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    }
+    else if (objToken != null && (objToken.RoleID == 9 || objToken.RoleID == 8))
+    {
+        Layout = "~/Views/Shared/_LayoutAdminSupport.cshtml";
+    }
+}

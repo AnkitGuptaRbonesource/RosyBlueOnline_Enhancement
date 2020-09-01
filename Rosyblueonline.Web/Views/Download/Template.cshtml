@@ -1,0 +1,62 @@
+﻿@model List<CustomSelectViewModel>
+@{
+    ViewBag.Title = "Template";
+}
+<div class="content-wrapper">
+    <section class="content">
+
+        <div class="panel-group">
+            <div class="panel panel-primary">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <ul class="list-group" id="ulCheckList">
+                                @for (int i = 0; i < Model.Count; i++)
+                                {
+                                    <li class="list-group-item" data-id="@Model[i].customSelectID">
+                                        <label><input type="checkbox" value="@Model[i].customSelectID" data-name="@Model[i].displayName">@Model[i].displayName</label>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                        <div class="col-md-9">
+                            <ul class="list-group" id="ulSortList"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</div>
+
+@section script{
+    <script>
+        $(document).ready(function () {
+            var temp = '<li class="list-group-item" data-id="${ID}">${Name}</li>';
+            $("#ulSortList").sortable();
+            $('ul#ulCheckList > li > label > input[type=checkbox]').change(function (e) {
+                e.preventDefault();
+                if ($(this).prop('checked') == true) {
+                    AddToList(this);
+                } else {
+                    RemoveFromList(this);
+                }
+            });
+
+            function AddToList(ele) {
+                var obj = {
+                    ID: $(ele).val(),
+                    Name: $(ele).data('name')
+                };
+                $.tmpl(temp, obj).appendTo("#ulSortList");
+            }
+
+            function RemoveFromList(ele) {
+                var id = $(ele).val();
+                $("#ulSortList > li[data-id=" + id + "]").remove();
+            }
+        });
+    </script>
+}
+

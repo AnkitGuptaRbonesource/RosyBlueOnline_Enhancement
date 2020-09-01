@@ -1,0 +1,452 @@
+﻿<!DOCTYPE html>
+@{
+    string curRoleId = null;
+    string curUserId = null;
+    if (Session != null && Session["UserData"] != null)
+    {
+        curRoleId = Session["UserData"].ToString().Split('-')[2];
+        curUserId = Session["UserData"].ToString().Split('-')[0];
+    }
+}
+<script type="text/javascript">
+    setTimeout(function () {
+        //if(@curRoleId == 3){
+        shoppingCountdisplay(@curRoleId,@curUserId);
+        //}
+    }, 1000);
+
+    function shoppingCountdisplay(curRoleId,curUserId) {
+        //console.log(curRoleId,curUserId);
+        $.ajax({
+            url: "../Dashboard/UserShoppingCountdisplay",
+            dataType: 'json',
+            method: 'POST',
+            data: JSON.stringify({ 'curRoleId': curRoleId,'curUserId': curUserId }),
+            headers: {"Content-Type": "application/json"}
+        }).success(function (response) {
+            //console.log(response);
+            document.getElementById("CartIdCount").textContent = response[0].vcCartCount;
+            document.getElementById("WatchlistIdCount").textContent = response[0].vcWatchCount;
+            //document.getElementById("WatchlistIdCountCust").textContent = response[0].vcWatchCount;
+             document.getElementById("OrderIdCount").textContent = response[0].vcPendOrdCount;
+       
+            if (response != "") {
+                
+            }
+            else {
+                
+            }
+        }).error(function (error) {
+            //console.log(error);
+        });
+    }
+</script>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Rosy Blue - Polished Diamonds | Rough Diamonds | Diamond Certificates | Mumbai | India</title>
+
+    <!-- Bootstrap -->
+
+    @*<script src="~/Scripts/awem.js"></script>
+    <script src="~/Scripts/AwesomeMvc.js"></script>
+    <script src="~/Scripts/utils.js"></script>*@
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/css/dashboard.css" rel="stylesheet">
+    @*<link href="~/Content/css/default_font.css" rel="stylesheet">
+    <link href="~/Content/css/typography.css" rel="stylesheet">*@
+
+
+    @*<link href='http://fonts.googleapis.com/css?family=Karla' rel='stylesheet' type='text/css'>*@
+    <link rel="stylesheet" href="~/content/font-awesome/css/font-awesome.min.css">
+    @*<script src="http://code.jquery.com/jquery-1.9.1.js"></script>*@<script src="~/Content/js/jquery-1.11.0.js"></script>
+    @*<script src="@Url.Content("~/Scripts/jquery-1.9.1.js")"></script>*@
+    <script src="@Url.Content("~/Scripts/tableExport.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.base64.js")"></script>
+
+    @*dynamic table start*@
+    <link href="~/Content/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <script src="~/Content/js/jquery.dataTables.min.js"></script>
+    @*dynamic table End*@
+
+    @*page scripting start*@
+    
+    <script src="@Url.Content("~/Content/js/CustomerUpdate/preregistereduser.min.js")"></script>
+    @*    <script src="@Url.Content("~/Content/js/CustomerUpdate/rejectregistereduser.min.js")"></script>*@
+    <script src="@Url.Content("~/Content/js/MyUtility/changediscount.min.js")"></script>
+    <script src="@Url.Content("~/Content/js/Support/salesupport.min.js")"></script>
+    @*<script src="@Url.Content("~/Content/js/locationcountrystateciti.js")"></script>*@
+    @*page scripting End*@
+
+    <script type="text/javascript">
+       @* window.onload = checkSessionValidity;
+        function checkSessionValidity() {
+            if(Session["UserData"] != null){
+                var data = "" + ' @Session["UserData"].ToString().Split('-')[3].ToString().Replace(" ", "").ToString()' + "";
+                //console.log(data);
+                if (data != null) {
+                    document.getElementById("usernameValidating").innerHTML = '@Session["UserData"].ToString().Split('-')[3].ToString()';
+                }}
+            
+        };*@
+
+        window.history.forward();
+        function noBack() { window.history.forward(); }
+
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        });
+
+    </script>
+</head>
+<body onload="noBack();" onpageshow="if (event.persisted) noBack();" onunload="">
+    <header>
+        <div class="logo-div">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="logo">
+                            <a href="@Url.Action("Index", "Dashboard")">
+                                <img src="~/Content/img/logo.png" />
+                            </a>
+                        </div>
+                     
+                    </div>
+                       
+                    <div class="col-lg- col-md-6 col-sm-6">
+                        @*<div class="login-name pull-right">Welcome, guest!</div>*@
+                        <div class="">
+                            <div class="top-nav ">
+                                <ul class="nav pull-right top-menu">
+                                    <!-- user login dropdown start-->
+                                    <li class="dropdown">
+                                        <a data-toggle="dropdown" class="dropdown-toggle">
+                                            <img alt="" src="~/content/img/avatar1_small.jpg">
+                                            <span id="usernameValidating" class="username">
+                                                @if (Session["UserData"] != null)
+                                                {
+                                                    @Session["UserData"].ToString().Split('-')[3]
+                                                }
+                                            </span> 
+                                            <b class="caret"></b>
+                                        </a>
+                                        <ul class="dropdown-menu extended logout">
+                                            <div class="log-arrow-up"></div>
+
+                                            <li><a href="@Url.Action("UserActivity", "CustomerUpdate", new { id = Convert.ToInt32(@Session["UserData"].ToString().Split('-')[0]) })"><i class="fa fa-shopping-cart" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Cart"></i>
+                                                <label id="CartIdCount"></label>
+                                            </a></li>
+                                            <li>
+                                                <a href="@Url.Action("UserActivityWatchList", "CustomerUpdate", new { id = Convert.ToInt32(@Session["UserData"].ToString().Split('-')[0]) })"><i class="fa fa-clock-o" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Watchlist"></i>
+                                                    <label id="WatchlistIdCount"></label>
+                                                </a>
+
+                                            </li>
+                                            <li>@if (curRoleId == "2")
+                                                {
+                                                <a href="@Url.Action("Index", "OrderDetails")"><i class="fa fa-list-alt" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Order"></i>
+                                                <label id="OrderIdCount"></label>
+                                            </a>
+                                            }
+                                            @if (curRoleId == "3" || curRoleId == "4")
+                                            {
+                                               <a href="@Url.Action("UserActivityOrders", "CustomerUpdate")"><i class="fa fa-list-alt" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Order"></i>
+                                               
+                                            </a>     
+                                            }                                                
+                                            </li>
+
+                                            <li><a href="@Url.Action("EditProfile", "Profile")"><i class=" fa fa-suitcase"></i>Profile</a></li>
+                                            @*                                            <li><a href="#"><i class="fa fa-cog"></i>Settings</a></li>*@
+                                            <li><a href="@Url.Action("LogOut", "Home")" class=""><i class="fa fa-sign-out" aria-hidden="true"></i>Sign-out</a></li>
+                                            <li></li>
+                                            @*<li><a href="@Url.Action("", "")"><i class="fa fa-bell-o"></i>Notification</a></li>*@
+
+                                            @*<li>@Html.ActionLink("Log Out", "LogOut", "Home", null, new { @class = "fa fa-key" })</li>*@
+
+                                        </ul>
+                                    </li>
+                                    <!-- user login dropdown end -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="menu-tab">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-2 col-md-2 col-sm-12">
+                        <div class="menu-click" onclick="tabOpen()"><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>MENU</div>
+                    </div>
+                    <div class="col-lg-8 col-md-8 col-sm-12"><div class="spblink" style="text-align:center;color:red">GST will be applied for Indian customers</div></div>
+                    <div class="col-lg-2 col-md-2 col-sm-12">
+                        <div class="menu-click pull-right"><a href="@Url.Action("Index", "Dashboard")" class="panel-submenu"><i class="fa fa-tachometer"></i>DASHBOARD</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="sidemenu" runat="server" class="slide-menu">
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+                <div class="panel panel-default no-shadow" style="margin-top: 10px;">
+                    <div class="panel-submenu" role="tab" id="headingHome">
+                        <h4 class="panel-title">
+                            <img src="~/Content/img/dashboard-icon.png" width="" />
+                            @Html.ActionLink("Dashboard", "Index", "Dashboard")
+                        </h4>
+                    </div>
+                </div>
+
+                <div class="panel panel-default no-shadow">
+                    <div class="panel-submenu" role="tab" id="headingOne">
+                        <h4 class="panel-title">
+                            <a role="button" class="" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <img src="~/Content/img/profile-icon.png" width="" />
+                                Profile</a>
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                        <div class="sub-menu">
+                            <ul class="sub-link">
+                                <li class="pro-cha-pass">@Html.ActionLink("Change Password", "ChangePassword", "Profile")</li>
+                                <li class="pro-edit">@Html.ActionLink("Edit Profile", "EditProfile", "Profile")</li>
+                                 @if (curRoleId != "3" && curRoleId != "4")
+                                 {
+                                <li class="pro-edit">@Html.ActionLink("Add Customer", "AddCustomer", "Profile")</li>
+                                 }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                @if (curRoleId == "3" || curRoleId == "4")
+                {
+                    <div class="panel panel-default no-shadow">
+                        <div class="panel-submenu" role="tab" id="headingAccount">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseAccount" aria-expanded="false" aria-controls="collapseInventory">
+                                    <img src="~/Content/img/inventory-icon.png" width="" />
+                                    My Account</a>
+                            </h4>
+                        </div>
+                        <div id="collapseAccount" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingAccount">
+                            <div class="sub-menu">
+                                <ul class="sub-link">
+                                    <li class="inv-up"><a href="#">My Orders</a></li>
+                                    <li class="inv-down"><a href="#">Shopping Cart</a></li>
+                                    <li class="inv-search"><a href="#">View Request</a></li>
+                                    <li class="uplo-hist"><a href="#">Users</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                }
+                @if (curRoleId != "9" && curRoleId != "3" && curRoleId != "4")
+                {
+                    <div class="panel panel-default no-shadow">
+                        <div class="panel-submenu" role="tab" id="headingTwo">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    <img src="~/Content/img/registration-icon.png" width="" />
+                                    Registration</a>
+                            </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                            <div class="sub-menu">
+                                <ul class="sub-link">
+                                    <li class="regi-new">@Html.ActionLink("New Customer", "NewCustomer", "CustomerUpdate")</li>
+                                    <li class="regi-list">@Html.ActionLink("List Of Customers", "Customers", "CustomerUpdate")</li>
+                                    <li class="regi-per">@Html.ActionLink("Pre-Registered Users", "PreRegisteredUser", "CustomerUpdate")</li>
+                                    <li class="regi-rej">@Html.ActionLink("Rejected Customers", "RejectRegisteredUser", "CustomerUpdate")</li>
+                                    <li class="regi-block">@Html.ActionLink("Blocked Customers", "BlockedUser", "CustomerUpdate")</li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default no-shadow">
+                        <div class="panel-submenu" role="tab" id="headingThree">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    <img src="~/Content/img/support-icon.png" width="" />
+                                    Support</a>
+                            </h4>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                            <div class="sub-menu">
+                                <ul class="sub-link">
+                                    <li class="support2">@Html.ActionLink("Sales Support", "Index", "Support")</li>
+                                    <li class="support3">@Html.ActionLink("Manage Rights", "ManageRights", "CustomerUpdate")</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+                <div class="panel panel-default no-shadow">
+                    <div class="panel-submenu" role="tab" id="headingSearch">
+                        <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSearch" aria-expanded="false" aria-controls="collapseSearch">
+                                <img src="~/Content/img/search-icon.png" width="" />
+                                Search</a>
+                        </h4>
+                    </div>
+                    <div id="collapseSearch" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSearch">
+                        <div class="sub-menu">
+                            <ul class="sub-link">
+                                <li class="Quick-up">@Html.ActionLink("Quick Search", "QuickSearch", "DiamondSearch")</li>
+                                <li class="Specific-up">@Html.ActionLink("Specific Search", "SpecificSearch", "DiamondSearch")</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                @if (curRoleId != "3" && curRoleId != "4")
+                {
+                    <div class="panel panel-default no-shadow">
+                        <div class="panel-submenu" role="tab" id="headingInventory">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseInventory" aria-expanded="false" aria-controls="collapseInventory">
+                                    <img src="~/Content/img/inventory-icon.png" width="" />
+                                    Inventory</a>
+                            </h4>
+                        </div>
+                        <div id="collapseInventory" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingInventory">
+                            <div class="sub-menu">
+                                <ul class="sub-link">
+                                    <li class="inv-up">@Html.ActionLink("Inventory Upload", "InventoryUpload", "InventoryUpload")</li>
+                                    <li class="inv-down">@Html.ActionLink("Inventory Download", "Index", "DownloadInventory")</li>
+                                    @* <li class="inv-search">@Html.ActionLink("Inventory Search", "Index", "InvUploadSearch")</li>*@
+                                    <li class="uplo-hist">@Html.ActionLink("Upload History", "Index", "UploadHistory")</li>
+                                    <li class="memo-hist">@Html.ActionLink("Memo History", "AllMemo", "MemoHistory")</li>
+                                    @*<li class="chan-rap">@Html.ActionLink("Change Rap", "InventoryUpload", "InventoryUpload")</li>
+                                <li class="chan-dis">@Html.ActionLink("Change Discount", "Customers", "CustomerUpdate")</li>*@
+                                    @* @if (curRoleId != "9")
+                                    {*@
+                                    <li class="cert-up">@Html.ActionLink("Certificate upload", "Customers", "CustomerUpdate")</li>
+                                    <li class="status">@Html.ActionLink("Stone Status", "StoneStatus", "MyUtility")</li>
+
+                                    @if (curRoleId == "9")
+                                    {
+                                        <li class="stone-history">@Html.ActionLink("Stone History", "StoneHistory", "DownloadReports")</li>
+                                    }
+                                             
+@*}*@
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                }
+                @if (curRoleId != "9" && curRoleId != "3" && curRoleId != "4")
+                {
+                    <div class="panel panel-default no-shadow">
+                        <div class="panel-submenu" role="tab" id="headingReports">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseReports" aria-expanded="false" aria-controls="collapseReports">
+                                    <img src="~/Content/img/inventory-icon.png" width="" />
+                                    Reports</a>
+                            </h4>
+                        </div>
+                        <div id="collapseReports" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingReports">
+                            <div class="sub-menu">
+                                <ul class="sub-link">
+                                    <li class="pivot-table">@Html.ActionLink("Pivot table", "PivotTable", "DownloadReports")</li>
+                                    <li class="stock-report">@Html.ActionLink("Stock Turn Report", "StockTurnReport", "DownloadReports")</li>
+                                    <li class="monthly-report">@Html.ActionLink("Monthly Report", "MonthlyReport", "DownloadReports")</li>
+                                    <li class="goods-icon">@Html.ActionLink("Slow Moving Goods", "SlowMovingGoods", "DownloadReports")</li>
+                                    <li class="goods-icon">@Html.ActionLink("Fast Moving Goods", "FastMovingGoods", "DownloadReports")</li>
+                                    <li class="stone-history">@Html.ActionLink("Stone History", "StoneHistory", "DownloadReports")</li>
+                                    <li class="inventory-rep">@Html.ActionLink("Inventory Summary Report", "InventorySummary", "DownloadReports")</li>
+                                    <li class="watch-list">@Html.ActionLink("Watch List", "Watchlist", "DownloadReports")</li>
+                                    <li class="cust-repoet">@Html.ActionLink("Customer Order Report", "CustomerOrderReport", "DownloadReports")</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default no-shadow">
+                        <div class="panel-submenu" role="tab" id="headingUtility">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseUtility" aria-expanded="false" aria-controls="collapseUtility">
+                                    <img src="~/Content/img/utility-icon.png" width="" />
+                                    Utility</a>
+                            </h4>
+                        </div>
+                        <div id="collapseUtility" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingUtility">
+                            <div class="sub-menu">
+                                <ul class="sub-link">
+                                    <li class="uplo-hist">@Html.ActionLink("All Orders", "AllCustomerOrders", "MyUtility")</li>
+                                    <li class="bestdeals">@Html.ActionLink("Best Deals", "BestDeals", "MyUtility")</li>
+                                    <li class="criteria">@Html.ActionLink("Criteria Matching Pair", "CriteriaMatchingPair", "MatchPair")</li>
+                                    <li class="describe">@Html.ActionLink("Describe your Demands", "DescribeYourDemands", "MyUtility")</li>
+                                    <li class="price-mark">@Html.ActionLink("Price Mark Percent", "PriceMarkupPercentage", "MyUtility")</li>
+                                    <li class="regi-block">@Html.ActionLink("Block Site", "Customers", "CustomerUpdate")</li>
+                                    <li class="certificate">@Html.ActionLink("Certificate Search", "CertificateSearch", "MyUtility")</li>
+                                    <li class="change-icon">@Html.ActionLink("Change summary Discounts", "ChangeDiscount", "MyUtility")</li>
+                                    <li class="change-icon">@Html.ActionLink("Inventory Package", "InventoryPackage", "MyUtility")</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="bodyClick" id="bodyClick" onclick="tabOpen()"></div>
+
+
+    </header>
+
+    <div>
+        @RenderBody()
+    </div>
+
+
+    <footer class="footer-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6"><a href="#" class="policy-link">Quick Contact</a></div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="policy-div">@Html.ActionLink("Shipp1ing", "PricingDiscountPolicy", "Home", null, new { target = "_blank", @class = "policy-link" })    |   @Html.ActionLink("Pricing Policy", "PricingDiscountPolicy", "Home", null, new { target = "_blank", @class = "policy-link" })  |   @Html.ActionLink("Terms of Use", "TermsOfUse", "Home", null, new { target = "_blank", @class = "policy-link" })   |   @Html.ActionLink("Privacy Policy", "PrivacyPolicy", "Home", null, new { target = "_blank", @class = "policy-link" })</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    @*<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="~/Content/js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="~/Content/js/bootstrap.min.js"></script>*@
+
+    @* <script src="@Url.Content("~/Scripts/jquery.min.js")"></script>*@
+    <script src="@Url.Content("~/Scripts/bootstrap.min.js")"></script>
+
+    
+
+
+</body>
+</html>
+<script type="text/javascript">
+    function tabOpen() {
+
+        //class="slide-menu open"
+        //var tabOpenClass;
+        //tabOpenClass = document.getElementById("sidemenu").classList;
+        //alert(pp12);
+        if (document.getElementById("sidemenu").classList == "slide-menu open") {
+            document.getElementById("sidemenu").className = "slide-menu";
+            document.getElementById("bodyClick").className = "bodyClick";
+        }
+        else {
+            document.getElementById("sidemenu").className = "slide-menu open";
+            document.getElementById("bodyClick").className = "clickopen";
+        }
+
+
+    }
+</script>

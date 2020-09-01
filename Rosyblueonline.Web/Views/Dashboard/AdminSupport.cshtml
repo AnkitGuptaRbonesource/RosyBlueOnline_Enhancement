@@ -1,0 +1,141 @@
+﻿@{
+    ViewBag.Title = "Admin Support";
+    Rosyblueonline.Models.TokenLogModel objToken = Session["Token"] as Rosyblueonline.Models.TokenLogModel;
+}
+@section header{
+    @Styles.Render("~/bundles/DataTable/Style")
+}
+<form style="display:none" id="frmPostSearch" method="post" action="/Inventory/SpecificSearchPost">
+    <input type="hidden" name="Query" id="hfQuery" value="" />
+</form>
+<div class="content-wrapper">
+    <section class="content">
+        <div class="row">
+            <div class="col-md-2 col-sm-6 col-xs-12">
+                <div class="info-box-one alert-warning">
+                    <a href="#" class="info-boxtxt" id="ancMemoCount">
+                        <div class="info-box-content">
+                            <span class="info-box-text">Memo</span>
+                            <div class="line"></div>
+                            <br>
+                            <span class="info-box-number pull-right">0 </span>
+                            <img src="~/Content/img/Memo.png" />
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-6 col-xs-12">
+                <div class="info-box-one">
+                    <a href="#" class="info-boxtxt" id="ancRoundCount">
+                        <div class="info-box-content">
+                            <span class="info-box-text">Round Shape</span>
+                            <div class="line"></div>
+                            <br>
+                            <span class="info-box-number pull-right">0</span>
+                            <img class="" src="../Content/img/Round1.png">
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-6 col-xs-12">
+                <div class="info-box-two">
+                    <a href="#" class="info-boxtxt" id="ancFancyShapeCount">
+                        <div class="info-box-content">
+                            <div class="info-box-text">Fancy Shape</div>
+                            <div class="line"></div>
+                            <br>
+                            <span class="info-box-number pull-right">0</span>
+                            <img class="" src="../Content/img/fancysh.png">
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-6 col-xs-12">
+                <div class="info-box-three">
+                    <a href="#" class="info-boxtxt" id="ancFancyColorCount">
+                        <div class="info-box-content">
+                            <span class="info-box-text">Fancy Color</span><div class="line"></div>
+                            <br>
+                            <span class="info-box-number pull-right">
+                                0
+                            </span>
+                            <img class="" src="../Content/img/fancycoloursh.png">
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="container col-lg-12">
+                <table class="table-panel tabledash" id="tblStockDetails">
+                    <thead>
+                        <tr class="rserachrow">
+                            <th class="rsearch">Date</th>
+                            <th class="rsearch">Opening</th>
+                            <th class="rsearch">New Upload</th>
+                            <th class="rsearch">Memo</th>
+                            <th class="rsearch">Order Pending</th>
+                            <th class="rsearch">Sold</th>
+                            <th class="rsearch">Closing</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+        @if (objToken.loginID == 11749 || objToken.loginID == 3379)
+        {
+            <div class="row">
+                <div class="customers-list-table">
+                    <div class="customers-list-table">
+                        <div class="col-md-12">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <div class="panel-heading">New customer</div>
+                                </div>
+                                <div class="panel-body paneltable">
+                                    <table id="tblNewCustomers" class="table table-fixed dataTable no-footer">
+                                        <thead class="bordertp">
+                                            <tr role="row" class="table-head">
+                                                <th class="tbnew">
+                                                    <label>Date</label>
+                                                </th>
+                                                <th class="tbnew">
+                                                    <label>Name</label>
+                                                </th>
+                                                <th class="tbnew">
+                                                    <label>Company</label>
+                                                </th>
+                                                <th class="tbnew">
+                                                    <label>Email</label>
+                                                </th>
+                                                <th class="tbnew">
+                                                    <label>View</label>
+                                                </th>
+                                                <th class="tbnew">
+                                                    <label>Approve</label>
+                                                </th>
+                                                <th class="tbnew">
+                                                    <label>Remove</label>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        @*@Html.Partial("~/Views/Shared/_PartialStockSummary.cshtml", model: 1)*@
+    </section>
+</div>
+@section script{
+    @Scripts.Render("~/bundles/DataTable/Script")
+    <script type="text/javascript" src="~/Scripts/custom/rbDataTable.js"></script>
+    <script type="text/javascript" src="~/Scripts/custom/Service/ServiceMethods.js"></script>
+    <script type="text/javascript" src="~/Scripts/custom/Controller/ModuleStockSummary.js"></script>
+    <script type="text/javascript" src="~/Scripts/custom/Controller/CtrlAdminSupportDashboard.js"></script>
+}
+

@@ -1,0 +1,231 @@
+﻿@{
+    ViewBag.Title = "Memo";
+}
+@section header{
+    @Styles.Render("~/bundles/DataTable/Style")
+    <link href="~/Content/css/select2.min.css" rel="stylesheet" />
+}
+@*<input type="hidden" name="MemoQuery" id="hfMemoQuery" value="" />*@
+
+<div class="content-wrapper">
+    <section class="content">
+        <div id="uiPanel1"></div>
+        <div style="display:none;">
+            <a id="ancInventoryDownload" href="/Inventory/ExportToExcelInventoryDownload"></a>
+        </div>
+        <section class="content" id="secGrid">
+            <div class="row">
+                <div class="customers-list-table">
+                    <div class="customers-list-table">
+                        <div class="col-md-12">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <div class="panel-heading" id="panelHeading">Memo Pending</div>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <form method="post" action="/Order/OrderListingDownloadExcel" class="col-md-3">
+                                            <button class="btn btn-info" id="btnMergeMemo" style="display:none;">Merge Memo</button>
+                                            <button type="submit" class="btn btn-primary">Download</button>
+                                            <input type="hidden" name="OType" id="hfOType" value="Memo" />
+                                            <input type="hidden" name="OStatus" id="hfOStatus" value="Pending" />
+                                        </form>
+                                        <div class="col-md-2" id="divReturnSale" style="display:none;">
+                                            <button class="btn btn-info" id="btnMemoReturn">Return Sale</button>
+                                        </div>
+                                        <div class="col-md-2 pull-right">
+                                            <button class="btn btn-info pull-right" id="btnViewSoldHistory" data-toggle="HideSoldHistory">View Sold History</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                @**@
+                                <div class="panel-body paneltable">
+                                    <table id="tblOrders" class="table table-fixed dataTable no-footer">
+                                        <thead class="bordertp">
+                                            <tr role="row" class="table-head">
+                                                <th class="tbnew">
+                                                    <label>#</label>
+                                                </th>
+                                                <th class="tbnew">
+                                                    <label>Memo <br /> No</label>
+                                                </th>
+                                                <th class="tbnew">
+                                                    <label>Created <br /> Date</label>
+                                                </th>
+                                                <th class="tbnew">
+                                                    <label>Customer</label>
+                                                </th>
+                                                <th class="tbnew">
+                                                    <label>Remark</label>
+                                                </th>
+                                                <th class="tbnew" style="word-wrap: break-word;">
+                                                    <label>Item <br /> Count</label>
+                                                </th>
+                                                <th class="tbnew">
+                                                    <label>Total <br /> CT</label>
+                                                </th>
+                                                <th class="tbnew" style="word-wrap: break-word;">
+                                                    <label>Avg.  <br /> Rap <br /> Price($)</label>
+                                                </th>
+                                                <th class="tbnew">
+                                                    <label>Total  <br /> Rap <br />Price($)</label>
+                                                </th>
+                                                <th class="tbnew avgDisc">
+                                                    <label>Avg. <br /> Discount(%)</label>
+                                                </th>
+                                                <th class="tbnew">
+                                                    <label>Avg. <br /> Price($)/ct</label>
+                                                </th>
+                                                <th class="tbnew">
+                                                    <label>Total Amt</label>
+                                                </th>
+                                                <th class="tbnew">
+                                                    <label>Created <br /> By</label>
+                                                </th>
+                                                <th class="tbnew">
+                                                    <label>Actions</label>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="content" id="secMemoItems" style="display:none">
+            @Html.Partial("~/Views/Shared/_PartialSpecificSearchResult.cshtml", "Memo")
+            <div>
+                <input type="hidden" name="OrderID" id="hfOrderID" value="" />
+                <input type="hidden" name="IsSellPartial" id="hfIsSellPartial" value="false" />
+
+                <input type="hidden" name="IntIID" id="hfIntIID" value="" />
+                <input type="hidden" name="OrdID" id="hfOrdID" value="" />
+            </div>
+        </section>
+    </section>
+</div>
+<!--Modal for Memo-->
+@Html.Partial("~/Views/Shared/_MemoPopupPartial.cshtml")
+<!--Modal for SellFull-->
+
+
+<div id="Modal-SellFullMemo" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-md">
+        <!-- Modal content-->
+        <form class="modal-content" id="frmSellFullMemo">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Sell Full Memo</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form">
+                            <div class="form-group" id="Modal-SellFullMemo-Message">
+
+                            </div>
+                            <div class="form-group">
+                                <label class="radio-inline">
+                                    <input type="radio" name="MemoMode" value="1" id="chkWebMode" checked>Web Mode
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="MemoMode" value="2" id="chkSalesMode">Sales Mode
+                                </label>
+                            </div>
+                            <div class="form-group" id="pnlMemoSales" style="display:none">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label for="MemoAgvDiscount">
+                                            Web Avg. Discount
+                                        </label>
+                                        <input class="form-control" name="MemoAgvDiscount" id="txtMemoAvgDiscount" placeholder="Web Discount" disabled />
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="hidden" name="MemoOrderID" id="hfOrderID" value="" />
+                                        <label for="MemoAgvDiscount">
+                                            Sale Discount
+                                        </label>
+                                        <input class="form-control" name="MemoAgvDiscount" id="txtMemoSaleDiscount" value="0" placeholder="Sale Discount" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="btnSaleMemo">Sale</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+<div id="Modal-EditMemo" class="modal fade col-md-8" role="dialog">
+    <div class="modal-dialog modal-md">
+        <!-- Modal content-->
+        <form class="modal-content" id="frmEditMemo">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Edit Memo</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form">
+                            <div class="form-group" id="Modal-EditMemo-Message">
+
+                            </div>
+                            <div class="form-group" id="pnlMemoSales">
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <label for="EditMemoCustomer">
+                                            Customer
+                                        </label>
+                                        <select id="ddlCustomer2" name="EditMemoCustomer"></select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <a class="btn btn-primary" target="_blank" href="/User?OnlyAddCustomer=true"><i class="fa fa-plus" aria-hidden="true"></i>Add Customer</a>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="EditMemoRemark">
+                                            Remark
+                                        </label>
+                                        <textarea class="form-control" name="EditMemoRemark" id="txtEditMemoRemark" value="" placeholder="Remark"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="btnUpdateMemo">Update</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+@*@if (Model.NeedsToRunJs)
+    {
+        <script type="text/javascript">
+            MemoDetailsShow('81187','');
+        </script>
+    }*@
+@section script{
+    @Scripts.Render("~/bundles/DataTable/Script")
+    <script type="text/javascript" src="~/Scripts/custom/rbDataTable.js"></script>
+    <script type="text/javascript" src="~/Scripts/select2.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/custom/Controller/CtrlMemo.js"></script>
+    @*<script type="text/javascript" src="~/Scripts/custom/Controller/CtrlMemoDetails.js"></script>*@
+}
+
+
+
+

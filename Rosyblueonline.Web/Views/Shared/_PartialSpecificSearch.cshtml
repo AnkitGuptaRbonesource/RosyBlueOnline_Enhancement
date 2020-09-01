@@ -1,0 +1,907 @@
+﻿@model Rosyblueonline.Models.ViewModel._SearchFilterViewModel
+<input type="hidden" name="Query" id="hfQuery" value="@Model.Query" />
+<input type="hidden" name="Caratsizepermission" id="hfCaratsizepermission" value="" />
+<div class="container-fluid" id="@Model.FromID">
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <a id="ancSSCollapse" class="" aria-expanded="false"><div class="panel-heading">SPECIFIC SEARCH<span class="glyphicon glyphicon-plus pull-right"> </span></div></a>
+                </div>
+                <div id="collapse5" class="panel-collapse in" aria-expanded="true">
+                    <div class="dl-container clearfix">
+                        <div class="diamond-box">
+                            <input class="all_shape" id="all_shapebt" name="shap" value="1,2,3,4,5,6,7,8,9,10,18" type="button" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="">
+                            <div class="tooltip fade bottom in" role="tooltip" name="shap" id="all_shapebt_div">
+                                <div class="tooltip-arrow"></div>
+                                <div class="tooltip-inner">All Shape</div>
+                            </div>
+                            <div>
+                                <input type="hidden" id="hfSelectedShape" value="">
+                            </div>
+                        </div>
+                        <div class="diamond-box">
+                            <input class="round_shape" id="round_shapebt" name="shap" value="13" type="button" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="">
+                            <div>
+                                <div class="tooltip fade bottom in" role="tooltip" name="shap" id="round_shapebt_div">
+                                    <div class="tooltip-arrow"></div>
+                                    <div class="tooltip-inner">Round</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="diamond-box">
+                            <input class="princess_shape" id="princess_shapebt" name="shap" value="8" type="button" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="">
+                            <div>
+                                <div class="tooltip fade bottom in" role="tooltip" name="shap" id="princess_shapebt_div">
+                                    <div class="tooltip-arrow"></div>
+                                    <div class="tooltip-inner">Princess</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="diamond-box">
+                            <input class="emerald_shape" id="emerald_shapebt" name="shap" value="3" type="button" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="">
+                            <div>
+                                <div class="tooltip fade bottom in" role="tooltip" name="shap" id="emerald_shapebt_div">
+                                    <div class="tooltip-arrow"></div>
+                                    <div class="tooltip-inner">Emerald</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="diamond-box">
+                            <input class="asscher_shape" id="asscher_shapebt" name="shap" value="1" type="button" data-toggle="tooltip" data-placement="bottom" title="">
+                            <div>
+                                <div class="tooltip fade bottom in" role="tooltip" name="shap" id="asscher_shapebt_div">
+                                    <div class="tooltip-arrow"></div>
+                                    <div class="tooltip-inner">Asscher</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="diamond-box">
+                            <input class="cushion_shape" id="cushion_shapebt" name="shap" value="2" type="button" data-toggle="tooltip" data-placement="bottom" title="">
+                            <div>
+                                <div class="tooltip fade bottom in" role="tooltip" name="shap" id="cushion_shapebt_div">
+                                    <div class="tooltip-arrow"></div>
+                                    <div class="tooltip-inner">Cushion</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="diamond-box">
+                            <input class="pear_shape" id="pear_shapebt" name="shap" value="7" type="button" data-toggle="tooltip" data-placement="bottom" title="">
+                            <div>
+                                <div class="tooltip fade bottom in" role="tooltip" name="shap" id="pear_shapebt_div">
+                                    <div class="tooltip-arrow"></div>
+                                    <div class="tooltip-inner">Pear</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="diamond-box">
+                            <input class="radiant_shape" id="radiant_shapebt" name="shap" value="9" type="button" data-toggle="tooltip" data-placement="bottom" title="">
+                            <div>
+                                <div class="tooltip fade bottom in" role="tooltip" name="shap" id="radiant_shapebt_div">
+                                    <div class="tooltip-arrow"></div>
+                                    <div class="tooltip-inner">Radiant</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="diamond-box">
+                            <input class="heart_shape" id="heart_shapebt" name="shap" value="4" type="button" data-toggle="tooltip" data-placement="bottom" title="">
+                            <div>
+                                <div class="tooltip fade bottom in" role="tooltip" name="shap" id="heart_shapebt_div">
+                                    <div class="tooltip-arrow"></div>
+                                    <div class="tooltip-inner">Heart</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="diamond-box">
+                            <input class="marquise_shape" id="marquise_shapebt" name="shap" value="5" type="button" data-toggle="tooltip" data-placement="bottom" title="">
+                            <div>
+                                <div class="tooltip fade bottom in" role="tooltip" name="shap" id="marquise_shapebt_div">
+                                    <div class="tooltip-arrow"></div>
+                                    <div class="tooltip-inner">Marquise</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="diamond-box">
+                            <input class="oval_shape" id="oval_shapebt" name="shap" value="6" type="button" data-toggle="tooltip" data-placement="bottom" title="">
+                            <div>
+                                <div class="tooltip fade bottom in" role="tooltip" name="shap" id="oval_shapebt_div">
+                                    <div class="tooltip-arrow"></div>
+                                    <div class="tooltip-inner">Oval</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="diamond-box">
+                            <input class="other_shape" id="other_shapebt" name="shap" value="18" type="button" data-toggle="tooltip" data-placement="bottom" title="">
+                            <div>
+                                <div class="tooltip fade bottom in" role="tooltip" name="shap" id="other_shapebt_div">
+                                    <div class="tooltip-arrow"></div>
+                                    <div class="tooltip-inner">Other Shape</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="clearfix">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="describe-line clearfix">
+                                    <h5 class="describe-title">SIZE (CARATS)</h5>
+                                    <div class="dyd-shape">
+
+                                        <div class="diamondsize form-inline">
+                                            <div class="radio">
+                                                <label class="radio-inline"><input type="radio" id="quickSize" name="Size" value="QuickSize" checked>Quick Size</label>
+
+                                                @*<label class="radio-inline"><input type="radio" id="singleSize" name="Size" value="SingleSize">Single Size</label>*@
+                                                <label class="radio-inline"><input type="radio" id="multiSize" name="Size" value="MultipleSize">Multiple size</label>
+                                            </div>
+                                        </div>
+
+                                        <form class="form-inline" id="frmSize">
+                                            <div class="form-group">
+                                                <input type="text" name="Sizefrom" maxlength="5" class="form-control" placeholder="From" value="" id="txtSizefrom">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" name="Sizeto" maxlength="5" class="form-control" placeholder="To" value="" id="txtSizeto" compareTo="#txtSizefrom">
+                                            </div>
+                                            <div class="form-group">
+                                                <button id="btnAddSizes" class="btn btn-primary" style="display:none">Add</button>
+                                            </div>
+                                            <label id="SizeMsg" value="" style="color:red;"></label>
+                                            <label class="reset-btn" style="display:none">Reset</label>
+                                        </form>
+
+                                        <div id="divMultipleSizes" class="form-inline" style="display:none">
+
+                                        </div>
+
+
+                                    </div>
+                                    @*Added BY Ankit 30jun2020*@
+                                    <div id="FquickSize" style="margin-top: 17px;">
+                                        <form class="dyd-shape F_CaratsSize">
+
+
+                                            @{ int CS = 1; }
+                                            @foreach (var CaratSize in Model.VMCaratsSize)
+                                            {
+                                                var CSval = "CaratSize" + CS.ToString();
+                                                <input type="checkbox" name="CaratSize" class="design-checkbox" value="@CaratSize.CaratFrm-@CaratSize.CaratTo" id="@CSval" />
+                                                <label for="@CSval">@CaratSize.CaratFrm-@CaratSize.CaratTo  </label>
+                                                CS = CS + 1;
+                                            }
+
+                                        </form>
+
+                                    </div>
+                                    <input type='button' value='Less' class="reset-btn" id='FCaratSize' style="margin-left: 70%;">
+                                    <label class="reset-btn" id='btnF_CaratSize'>Reset</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="describe-line clearfix">
+                                    <h5 class="describe-title">COLOR</h5>
+                                    <form class="dyd-shape F_Color">
+                                        @foreach (var Color in Model.VMcolor)
+                                        {
+                                            <input type="checkbox" name="color" class="design-checkbox" value="@Color.colorID" id="@Color.color_ID" />
+                                            <label for="@Color.color_ID">@Color.colorName</label>
+                                        }
+
+
+                                        <input type="checkbox" class="design-checkbox" id="chkfancy_colorshow">
+                                        <label onclick="$(this).toggleClass('selected');$('#fancy-colorshow').toggleClass('show-div');">Fancy Color</label>
+                                        <input type='button' value='Less' class="reset-btn" id='FColorMore'>
+                                        <label class="reset-btn" id='btnF_Color'>Reset</label>
+
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row" id="fancy-colorshow" style="display:none">
+                            <div class="col-lg-12">
+                                <div class="describe-line clearfix">
+                                    <h5 class="describe-title">FANCY COLOR</h5>
+                                    <form class="dyd-shape F_FancyColor">
+                                        @{ int fc = 1; }
+                                        @foreach (var ColorFancy in Model.VMfancyColor)
+                                        {
+                                            var fcval = "fancy" + fc.ToString();
+                                            <input type="checkbox" name="fancy" class="design-checkbox" value="@ColorFancy.fancyColorID" id="@fcval" />
+                                            <label for="@fcval">@ColorFancy.fancyColor</label>
+                                            fc = fc + 1;
+                                        }
+                                        <label class="reset-btn" id='btnF_FancyColor'>Reset</label>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="describe-line clearfix">
+                                    <h5 class="describe-title">CLARITY</h5>
+                                    <form class="dyd-shape F_Clarity">
+                                        @{ int cty = 1; }
+                                        @foreach (var Clarity in Model.VMclarity)
+                                        {
+                                            var ctyval = "clarity" + cty.ToString();
+                                            <input type="checkbox" name="clarity" class="design-checkbox" value="@Clarity.clarityID" id="@ctyval" />
+                                            <label for="@ctyval">@Clarity.clarityName</label>
+                                            cty = cty + 1;
+                                        }
+                                        <input type='button' value='Less' class="reset-btn" id='FClarityMore'>
+
+                                        <label class="reset-btn" id='btnF_Clarity'>Reset</label>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="describe-line clearfix">
+                                    <h5 class="describe-title">CERTIFICATE</h5>
+                                    <form class="dyd-shape F_Certificate">
+                                        @*<div>*@
+                                        @{ int j = 1; }
+                                        @foreach (var Lab in Model.VMlab)
+                                        {
+                                            var idlab = "lab" + j.ToString();
+                                            <input type="checkbox" name="lab" class="design-checkbox" value="@Lab.labID" id="@idlab" />
+                                            <label for="@idlab">@Lab.labName</label>
+                                            j = j + 1;
+                                        }
+                                        <input type='button' value='Less' class="reset-btn" id='FCertificateMore'>
+
+                                        <label class="reset-btn" id='btnF_Certificate'>Reset</label>
+                                        @*</div>*@
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="describe-line clearfix">
+                                    <h5 class="describe-title">FLUORESCENCE</h5>
+                                    <form class="dyd-shape F_Fluorescence">
+                                        @{ int fl = 1; }
+                                        @foreach (var Fluorescence in Model.VMfluorescence)
+                                        {
+                                            var fluorval = "fluor" + fl.ToString();
+                                            <input type="checkbox" name="fluor" class="design-checkbox" value="@Fluorescence.fluorescenceID" id="@fluorval" />
+                                            <label for="@fluorval">@Fluorescence.fluorescenceName</label>
+                                            fl = fl + 1;
+                                        }
+                                        <label class="reset-btn" id='btnF_Fluorescence'>Reset</label>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="describe-line clearfix" style="border-bottom: 1px solid #4d80b1;">
+                                    <h5 class="describe-title">CUT - POLISH - SYMMETRY</h5>
+                                    <form class="dyd-shape">
+                                        <div class="row">
+                                            <div class="col-md-2">
+                                                <a href="#" class="sele-all" id="ancEx" data-select="true">3EX</a> |
+                                                <a href="#" class="sele-all" id="ancVEx" data-select="true">3VG+</a>
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-2">
+                                                <div>
+                                                    <label for="cut1" style="font-size: 15px;">Cut</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-9">
+                                                <div class="F_Cut">
+                                                    <input type="checkbox" name="cut" class="design-checkbox exe" value="18" id="cut1">
+                                                    <label for="cut1">Excellent</label>
+
+                                                    <input type="checkbox" name="cut" class="design-checkbox vGood" value="17" id="cut2">
+                                                    <label for="cut2">Very Good</label>
+
+                                                    <input type="checkbox" name="cut" class="design-checkbox" value="19" id="cut3">
+                                                    <label for="cut3">Good</label>
+
+                                                    <input type="checkbox" name="cut" class="design-checkbox" value="22" id="cut4">
+                                                    <label for="cut4">Fair</label>
+
+                                                    <input type="checkbox" name="cut" class="design-checkbox" value="25" id="cut5">
+                                                    <label for="cut5">Poor</label>
+                                                    <label class="reset-btn" id='btnF_Cut'>Reset</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-2">
+                                                <div>
+                                                    <label for="cut1" style="font-size: 15px;">Polished</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-9">
+                                                <div class="F_Polished">
+                                                    <input type="checkbox" name="Polished" class="design-checkbox exe" value="9" id="Polished1">
+                                                    <label for="Polished1">Excellent</label>
+
+                                                    <input type="checkbox" name="Polished" class="design-checkbox vGood" value="8" id="Polished2">
+                                                    <label for="Polished2">Very Good</label>
+
+                                                    <input type="checkbox" name="Polished" class="design-checkbox" value="7" id="Polished3">
+                                                    <label for="Polished3">Good</label>
+
+                                                    <input type="checkbox" name="Polished" class="design-checkbox" value="15" id="Polished4">
+                                                    <label for="Polished4">Fair</label>
+
+                                                    <input type="checkbox" name="Polished" class="design-checkbox" value="19" id="Polished5">
+                                                    <label for="Polished5">Poor</label>
+                                                    <label class="reset-btn" id='btnF_Polished'>Reset</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-2">
+                                                <div>
+                                                    <label for="cut1" style="font-size: 15px;">Symmetry</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-9">
+                                                <div class="F_Symmerty">
+                                                    <input type="checkbox" name="Symmerty" class="design-checkbox exe" value="8" id="Symmerty1">
+                                                    <label for="Symmerty1">Excellent</label>
+
+                                                    <input type="checkbox" name="Symmerty" class="design-checkbox vGood" value="9" id="Symmerty2">
+                                                    <label for="Symmerty2">Very Good</label>
+
+                                                    <input type="checkbox" name="Symmerty" class="design-checkbox" value="10" id="Symmerty3">
+                                                    <label for="Symmerty3">Good</label>
+
+                                                    <input type="checkbox" name="Symmerty" class="design-checkbox" value="16" id="Symmerty4">
+                                                    <label for="Symmerty4">Fair</label>
+
+                                                    <input type="checkbox" name="Symmerty" class="design-checkbox" value="18" id="Symmerty5">
+                                                    <label for="Symmerty5">Poor</label>
+                                                    <label class="reset-btn" id='btnF_Symmerty'>Reset</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="describe-line clearfix">
+                                    <h5 class="describe-title">Hearts &amp; Arrows</h5>
+                                    <form class="dyd-shape F_Hearts">
+                                        @{
+                                            int msHA = 1;
+                                            foreach (var HA in Model.VMha)
+                                            {
+                                                var idmsHA = "HA" + msHA.ToString();
+                                                <input type="checkbox" name="HA" class="design-checkbox" value="@HA.HAid" id="@idmsHA" />
+                                                <label for="@idmsHA">@HA.HA</label>
+                                                msHA = msHA + 1;
+                                            }
+                                        }
+                                        <label class="reset-btn" id='btnF_Hearts'>Reset</label>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="describe-line clearfix">
+                                    <h5 class="describe-title"></h5>
+                                    <form class="dyd-shape">
+                                        <input type="checkbox" id="NOBGM" name="NOBGM" value="1" class="space_chk">
+                                        <b>NO BGM</b>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SalesLocation begins-->
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="describe-line clearfix">
+                                    <h5 class="describe-title">SALES LOCATION</h5>
+                                    <form class="dyd-shape F_SalesL">
+                                        @foreach (var sl in Model.VMSalesLocation)
+                                        {
+                                            <input type="checkbox" name="SLocation" class="design-checkbox" value="@sl.salesLocationID" id="SalesLocation@(sl.salesLocationID)" />
+                                            <label for="SalesLocation@(sl.salesLocationID)">@sl.locationName</label>
+                                        }
+                                        <label class="reset-btn" id='btnF_SalesL'>Reset</label>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- SalesLocation end-->
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="describe-line clearfix">
+                                    <h5 class="describe-title">Stone Origin</h5>
+                                    <form class="dyd-shape F_Origin">
+                                        @foreach (var StoneOrigin in Model.VMStoneOrigin)
+                                        {
+                                            <input type="checkbox" name="Origin" class="design-checkbox" value="@StoneOrigin.originID" id="Origin@(StoneOrigin.originID)" />
+                                            <label for="Origin@(StoneOrigin.originID)">@StoneOrigin.originName</label>
+                                        }
+                                        <label class="reset-btn" id='btnF_Origin'>Reset</label>
+
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- KeyTosymbol begins-->
+                        <div class="padding-10">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <a data-toggle="collapse" href="#collapsekeytoSymbols" class="" aria-expanded="true"><div class="panel-heading">Key To Symbols <span class="glyphicon glyphicon-plus pull-right"> </span></div></a>
+                                </div>
+
+                                <div id="collapsekeytoSymbols" class="panel-collapse collapse" aria-expanded="true" style="">
+                                    <div class="panel-body">
+                                        <div class="describe-line clearfix" style="border: 0 none;background: none;">
+                                            <div class="radio text-center">
+                                                <label class="radio-inline"><input type="radio" id="KTScontains" name="r1" value="" checked><b>Contains</b></label>
+                                                <label class="radio-inline"><input type="radio" id="KTSNotcontains" name="r1" value=""><b>Does not contains</b></label>
+                                            </div>
+                                            <form class="dyd-shape" style="margin: 15px 0 0;">
+                                                <div class="key-symbcheckbox F_Keytosymbol">
+                                                    @{
+                                                        int KTS = 1;
+                                                        foreach (var mstKeytosymbol in Model.VMkeyToSymbol)
+                                                        {
+                                                            var KTSval = "KTS" + KTS.ToString();
+                                                            <span class="key-rep">
+                                                                <input type="checkbox" name="KTS" class="design-checkbox" value="@mstKeytosymbol.keyToSymbolID" id="@KTSval" />
+                                                                <label for="@KTSval">@mstKeytosymbol.KeyToSymbol</label>
+                                                            </span>
+                                                            KTS = KTS + 1;
+                                                        }
+                                                    }
+                                                </div>
+                                                <label class="reset-btn" id='btnF_Keytosymbol'>Reset</label>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- keytosymbol Ends-->
+                    </div>
+
+                            <div class="clearfix">
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12">
+                                        <div class="form-inline padding-top-10 padding-bottom-10 padding-left-10">
+                                            <a id="advance" class="btn btn-primary" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">ADVANCE SEARCH <span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+            <form class="collapse padding-top-10" id="collapseExample">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <div>
+                                    <div class="row form-group">
+                                        <div class="col-lg-2">Girdle</div>
+                                        <div class="col-lg-10">
+                                            <div>
+                                                @{ int grd = 1;
+                                                    foreach (var Girdle in Model.VMgirdleNames)
+                                                    {
+                                                        var idgir = "girdle" + grd.ToString();
+                                                        <input type="checkbox" name="girdle" class="design-checkbox" value="@Girdle.girdleNameID" id="@idgir" />
+                                                        <label for="@idgir">@Girdle.girdleName</label>
+                                                        grd = grd + 1;
+                                                    }
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col-lg-2">Girdle %</div>
+                                        <div class="col-lg-5">
+                                            <input type="text" maxlength="3" class="form-control" name="GRDLPERFROM" id="txtgirlefrom" placeholder="from" />
+                                        </div>
+                                        <div class="col-lg-5">
+                                            <input type="text" maxlength="3" class="form-control" name="GRDLPERTO" id="txtgirleto" placeholder="to" compareTo="#txtgirlefrom" />
+                                        </div>
+                                    </div>
+
+                                    <div class="row form-group">
+                                        <div class="col-lg-2">Table(%)</div>
+                                        <div class="col-lg-5">
+                                            <input type="text" maxlength="6" class="form-control" name="TBLPERFROM" id="txttablefrom" placeholder="from" />
+                                        </div>
+                                        <div class="col-lg-5">
+                                            <input type="text" maxlength="6" class="form-control" name="TBLPERTO" id="txttableto" placeholder="to" compareTo="#txttablefrom" />
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col-lg-2">Depth(%)</div>
+                                        <div class="col-lg-5">
+                                            <input type="text" maxlength="6" class="form-control" name="DEPTHPERFROM" id="txtdepthfrom" placeholder="from" />
+                                        </div>
+                                        <div class="col-lg-5">
+                                            <input type="text" maxlength="6" class="form-control" name="DEPTHPERTO" id="txtdepthto" placeholder="to" compareTo="#txtdepthfrom" />
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col-lg-2">Discount(%)</div>
+                                        <div class="col-lg-5">
+                                            <input type="text" maxlength="6" class="form-control" name="DISCPERFROM" id="txtdiscountfrom" placeholder="from" />
+                                        </div>
+                                        <div class="col-lg-5">
+                                            <input type="text" maxlength="6" class="form-control" name="DISCPERTO" id="txtdiscountto" placeholder="to" compareTo="#txtdiscountfrom" />
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col-lg-2">Price$/carat</div>
+                                        <div class="col-lg-5">
+                                            <input type="text" maxlength="6" class="form-control" name="PRICEPERCTFROM" id="txtpriceusfrom" placeholder="from" />
+                                        </div>
+                                        <div class="col-lg-5">
+                                            <input type="text" maxlength="6" class="form-control" name="PRICEPERCTTO" id="txtpriceusto" placeholder="to" compareTo="#txtpriceusfrom" />
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col-lg-2">Total Amount</div>
+                                        <div class="col-lg-5">
+                                            <input type="text" maxlength="6" class="form-control" name="TOTAMOUNTFROM" id="txtTotalamountfrom" placeholder="from" />
+                                        </div>
+                                        <div class="col-lg-5">
+                                            <input type="text" maxlength="6" class="form-control" name="TOTAMOUNTTO" id="txtTotalamountto" placeholder="to" compareTo="#txtTotalamountfrom" />
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col-lg-2">Shade</div>
+                                        <div class="col-lg-10">
+                                            <div>
+                                                @{ int shade = 1;
+                                                    foreach (var Shades in Model.VMshade)
+                                                    {
+                                                        var shadeval = "SHADE" + shade.ToString();
+                                                        <input type="checkbox" name="SHADE" class="design-checkbox" value="@Shades.shadeId" id="@shadeval" />
+                                                        <label for="@shadeval">@Shades.shadeName</label>
+                                                        shade = shade + 1;
+                                                    }
+                                                }
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col-lg-2">Milky</div>
+                                        <div class="col-lg-10">
+                                            <div>
+                                                @{ int mlky = 1;
+                                                    foreach (var Milky in Model.VMmilkyInclusion)
+                                                    {
+                                                        var idmlky = "mlky" + mlky.ToString();
+                                                        <input type="checkbox" name="mlky" class="design-checkbox" value="@Milky.milkyId" id="@idmlky" />
+                                                        <label for="@idmlky">@Milky.milkyName</label>
+                                                        mlky = mlky + 1;
+                                                    }
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col-lg-2">SideBlack</div>
+                                        <div class="col-lg-10">
+                                            <div>
+                                                @{ int cb = 1;
+                                                    foreach (var CB in Model.VMsideBlackInclusion)
+                                                    {
+                                                        var idcb = "cb" + cb.ToString();
+                                                        <input type="checkbox" name="cb" class="design-checkbox" value="@CB.sideBlackInclusionsId" id="@idcb" />
+                                                        <label for="@idcb">@CB.sideBlackInclusionsName</label>
+                                                        cb = cb + 1;
+                                                    }
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col-lg-2">TableBlack</div>
+                                        <div class="col-lg-10">
+                                            <div>
+                                                @{ int tb = 1;
+                                                    foreach (var TB in Model.VMtableBlackInclusion)
+                                                    {
+                                                        var idtb = "tb" + tb.ToString();
+                                                        <input type="checkbox" name="tb" class="design-checkbox" value="@TB.TableBlackInclusionId" id="@idtb" />
+                                                        <label for="@idtb">@TB.TableBlackInclusionName</label>
+                                                        tb = tb + 1;
+                                                    }
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col-lg-2">Eye Clean</div>
+                                        <div class="col-lg-10">
+                                            <div>
+                                                @{ int ec = 1;
+                                                    foreach (var EC in Model.VMeyeClean)
+                                                    {
+                                                        var idec = "ec" + ec.ToString();
+                                                        <input type="checkbox" name="ec" class="design-checkbox" value="@EC.eyeCleanID" id="@idec" />
+                                                        <label for="@idec">@EC.eyeclean</label>
+                                                        ec = ec + 1;
+                                                    }
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6">
+                        <div class="panel panel-default" style="box-shadow: 2px 3px 3px #4d80b1; border: 1px solid #4d80b1">
+                            <div class="panel-body">
+                                <div>
+                                    <div class="row form-group">
+                                        <div class="col-lg-2">Length</div>
+                                        <div class="col-lg-5">
+                                            <input type="text" maxlength="6" class="form-control" name="LENFROM" id="txtlengthfrom" placeholder="from" />
+                                        </div>
+                                        <div class="col-lg-5">
+                                            <input type="text" maxlength="6" class="form-control" name="LENTO" id="txtlengthto" placeholder="to" compareTo="#txtlengthfrom" />
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col-lg-2">Width</div>
+                                        <div class="col-lg-5">
+                                            <input type="text" maxlength="6" class="form-control" name="WIDTHFROM" id="txtwidthfrom" placeholder="from" />
+                                        </div>
+                                        <div class="col-lg-5">
+                                            <input type="text" maxlength="6" class="form-control" name="WIDTHTO" id="txtwidthto" placeholder="to" compareTo="#txtwidthfrom" />
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col-lg-2">Depth</div>
+                                        <div class="col-lg-5">
+                                            <input type="text" maxlength="6" class="form-control" name="DPTHFROM" id="txtdepfrom" placeholder="from" />
+                                        </div>
+                                        <div class="col-lg-5">
+                                            <input type="text" maxlength="6" class="form-control" name="DPTHTO" id="txtdepto" placeholder="to" compareTo="#txtdepfrom" />
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col-lg-2">Crown Angle</div>
+                                        <div class="col-lg-5">
+                                            <input type="text" maxlength="6" class="form-control" name="CRWNAGLFROM" id="txtcrownanglefrom" placeholder="from" />
+                                        </div>
+                                        <div class="col-lg-5">
+                                            <input type="text" maxlength="6" class="form-control" name="CRWNAGLTO" id="txtcrownangleto" placeholder="to" compareTo="#txtcrownanglefrom" />
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col-lg-2">Crown Height</div>
+                                        <div class="col-lg-5">
+                                            <input type="text" maxlength="6" class="form-control" name="CRWNHGHTFROM" id="txtcrownheightfrom" placeholder="from" />
+                                        </div>
+                                        <div class="col-lg-5">
+                                            <input type="text" maxlength="6" class="form-control" name="CRWNHGHTTO" id="txtcrownheightto" placeholder="to" compareTo="#txtcrownheightfrom" />
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col-lg-2">Pavilion Angle</div>
+                                        <div class="col-lg-5">
+                                            <input type="text" maxlength="6" class="form-control" name="PVNLAGLFROM" id="txtpallivonanglefrom" placeholder="from" />
+                                        </div>
+                                        <div class="col-lg-5">
+                                            <input type="text" maxlength="6" class="form-control" name="PVNLAGLTO" id="txtpallivonangleto" placeholder="to" compareTo="#txtpallivonanglefrom" />
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col-lg-2">Pavilion Depth</div>
+                                        <div class="col-lg-5">
+                                            <input type="text" maxlength="6" class="form-control" name="PVNLDPTHFROM" id="txtpallivondepthfrom" placeholder="from" />
+                                        </div>
+                                        <div class="col-lg-5">
+                                            <input type="text" maxlength="6" class="form-control" name="PVNLDPTHTO" id="txtpallivondepthto" placeholder="to" compareTo="#txtpallivondepthfrom" />
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col-lg-2">Star Length</div>
+                                        <div class="col-lg-5">
+                                            <input type="text" maxlength="6" class="form-control" name="STRLENFROM" id="txtstarlengthfrom" placeholder="from" />
+                                        </div>
+                                        <div class="col-lg-5">
+                                            <input type="text" maxlength="6" class="form-control" name="STRLENTO" id="txtstarlengthto" placeholder="to" compareTo="#txtstarlengthfrom" />
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col-lg-2" id="lowerhalfId">Lower Half</div>
+                                        <div class="col-lg-5">
+                                            <input type="text" maxlength="6" class="form-control" name="LWRHLFFROM" id="txtlowerhalffrom" placeholder="from" />
+                                        </div>
+                                        <div class="col-lg-5">
+                                            <input type="text" maxlength="6" class="form-control" name="LWRHLFTO" id="txtlowerhalfto" placeholder="to" compareTo="#txtlowerhalffrom" />
+                                        </div>
+                                    </div>
+
+                                    <div class="row form-group">
+                                        <div class="col-lg-2">Report Date</div>
+                                        <div class="col-lg-5">
+                                            <div class="input-group input-append date" id="datePicker">
+                                                <input type="text" class="form-control datePicker" name="RPTDTFROM" id="txtreportdatefrom" placeholder="dd-mm-yyyy" />
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-5">
+                                            <div class="input-group input-append date" id="datePicker1">
+                                                <input type="text" class="form-control datePicker" name="RPTDTTO" id="txtreportdateto" placeholder="dd-mm-yyyy" compareTo="#txtreportdatefrom" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12 col-md-12 padding-top-10">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <a id="ancLNCollapse"><div class="panel-heading">UPLOAD LOT/CERT NUMBER TO SEARCH<span class="glyphicon glyphicon-plus pull-right"> </span></div></a>
+                </div>
+                <div id="collapse3" class="panel-collapse collapse" aria-expanded="false">
+                    <div class="panel-body">
+                        <div class="col-lg-6">
+                            <div class="row">
+                                <div class="col-lg-5"><span class="upload-filter">Lot Number to Search</span></div>
+                                <div class="col-lg-7">
+                                    <input type="text" id="lotnumber" name="lotnumber" class="form-control" placeholder="Enter Lot Number">
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-lg-5"><span class="upload-filter">Select csv file to upload</span></div>
+                                <div class="col-lg-7">
+                                    <input type="file" accept=".csv" id="fileUpload" class="form-control" name="fileUpload">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="row">
+                                <div class="col-lg-5"><span class="upload-filter">Cert Number to Search</span></div>
+                                <div class="col-lg-7">
+                                    <input type="text" id="certNo" name="certNo" class="form-control" placeholder="Enter cert Number" onkeyup="javascript:Comma(this.value,this.id);">
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-lg-5"><span class="upload-filter">Select csv file to upload</span></div>
+                                <div class="col-lg-7">
+                                    <input type="file" accept=".csv" id="fileUploadCert" class="form-control" name="fileUploadCert">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="">
+                <button id="dydReset" type="reset" value="reset" class="btn btn-default">RESET <i class="fa fa-refresh" aria-hidden="true"></i></button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6  padding-top-10">
+            <div class="panel-group">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <a data-toggle="collapse" href="#collapse1"><div class="panel-heading">Save Search<span class="glyphicon glyphicon-plus pull-right"> </span></div></a>
+                    </div>
+
+                    <div id="collapse1" class="panel-collapse collapse">
+                        <form class="panel-body" id="frmSavedSearch">
+                            <div class="row">
+                                <div class="col-lg-9">
+                                    <input type="text" id="txtSavedSearch" name="SavedSearch" value="" class="form-control">
+                                </div>
+                                <div class="col-lg-3">
+                                    <button type="submit" id="btnSavedSearch" class="btn btn-primary">Save</button>
+                                    <button type="submit" style="display:none;" id="btnUpdatesaveSearch" name="command" value="UpdatesaveSearch" class="btn btn-primary" onclick="compilingPageSavedb(event)">Update</button>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-lg-9">
+                                    <select class="form-control" id="ddlSavedSearch" name="SavedSearchID"></select>
+                                </div>
+                                <div class="col-lg-3">
+                                    <button type="button" class="btn btn-primary" id="btnLoadSavedSearch">Load</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6  padding-top-10">
+            <div class="panel-group">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <a data-toggle="collapse" href="#collapse2"><div class="panel-heading">DEMANDS<span class="glyphicon glyphicon-plus pull-right"> </span></div></a>
+                    </div>
+                    <div id="collapse2" class="panel-collapse collapse">
+                        <form class="panel-body" id="frmSaveDemand">
+                            <div class="row">
+                                <div class="col-lg-9">
+                                    <input type="text" id="txtSaveDemand" name="SaveDemand" value="" class="form-control">
+                                </div>
+                                <div class="col-lg-3">
+                                    <button type="submit" id="btnSaveDemand" class="btn btn-primary">Save</button>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-lg-9">
+                                    <select class="form-control" id="ddlSaveDemand" name="Demand" title="IDdemand">
+                                        <option value="">--Select Name--</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-3">
+                                    <button type="button" class="btn btn-primary" name="command" id="btnLoadSavedDemand" value="">Load </button>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-lg-9">
+                                    <input type="file" id="fileUploadDemand" class="form-control" name="fileUploadDemand">
+                                </div>
+                                <div class="col-lg-3"><span class="upload-filter">Multiple Demand</span></div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button id="dydEdit" name="command" type="button" value="search" class="btn btn-success fixsearch" role="button"><span style="display:none;" class="badge">0</span> SEARCH <span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+</div>
+<!-- Sample -->

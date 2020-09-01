@@ -1,0 +1,1077 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="3EX3VG" xml:space="preserve">
+    <value>3EX | 3VG+</value>
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="Action" xml:space="preserve">
+    <value>Action</value>
+  </data>
+  <data name="Actions" xml:space="preserve">
+    <value>Actions</value>
+  </data>
+  <data name="Active" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="Active_Stock" xml:space="preserve">
+    <value>Active Stock</value>
+  </data>
+  <data name="Additional_Discount" xml:space="preserve">
+    <value>less : Additional Discount</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="Address_Line_1" xml:space="preserve">
+    <value>Address Line 1</value>
+  </data>
+  <data name="Address_Line_2" xml:space="preserve">
+    <value>Address Line 2</value>
+  </data>
+  <data name="Add_Bestdeal" xml:space="preserve">
+    <value>Add Bestdeal</value>
+  </data>
+  <data name="Add_Customer" xml:space="preserve">
+    <value>Add Customer</value>
+  </data>
+  <data name="Add_Lab" xml:space="preserve">
+    <value>Add Lab</value>
+  </data>
+  <data name="Add_New" xml:space="preserve">
+    <value>Add New</value>
+  </data>
+  <data name="Add_Roles__Rights" xml:space="preserve">
+    <value>Add Roles &amp; Rights</value>
+  </data>
+  <data name="Add_User" xml:space="preserve">
+    <value>Add User</value>
+  </data>
+  <data name="ADVANCE_SEARCH" xml:space="preserve">
+    <value>ADVANCE SEARCH</value>
+  </data>
+  <data name="All_Memo" xml:space="preserve">
+    <value>All Memo</value>
+  </data>
+  <data name="All_Orders" xml:space="preserve">
+    <value>All Orders</value>
+  </data>
+  <data name="All_Orders_are_in_USD" xml:space="preserve">
+    <value>Note: All Orders are in USD.</value>
+  </data>
+  <data name="Already_Assigned" xml:space="preserve">
+    <value>Already Assigned</value>
+  </data>
+  <data name="Amount" xml:space="preserve">
+    <value>Amount </value>
+  </data>
+  <data name="AmountN" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+  <data name="Amount_US" xml:space="preserve">
+    <value>Amount (US$)</value>
+  </data>
+  <data name="Approve" xml:space="preserve">
+    <value>Approve</value>
+  </data>
+  <data name="Available" xml:space="preserve">
+    <value>Available</value>
+  </data>
+  <data name="Avgct" xml:space="preserve">
+    <value>Avg.($)/ct</value>
+  </data>
+  <data name="AvgRap_Price" xml:space="preserve">
+    <value>Avg.Rap Price ($)</value>
+  </data>
+  <data name="Avg_Discount" xml:space="preserve">
+    <value>Avg. Discount (%)</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="Bank_Name" xml:space="preserve">
+    <value>Bank Name</value>
+  </data>
+  <data name="Before_Change" xml:space="preserve">
+    <value>Before Change</value>
+  </data>
+  <data name="BEST_DEAL" xml:space="preserve">
+    <value>BEST DEAL</value>
+  </data>
+  <data name="Block_Site" xml:space="preserve">
+    <value>Block Site</value>
+  </data>
+  <data name="BlueNile_Disc" xml:space="preserve">
+    <value>BlueNile Disc%</value>
+  </data>
+  <data name="Blue_Nile" xml:space="preserve">
+    <value>Blue Nile</value>
+  </data>
+  <data name="Blue_Nile_Disc" xml:space="preserve">
+    <value>Blue Nile Disc %</value>
+  </data>
+  <data name="Box_Name" xml:space="preserve">
+    <value>Box Name</value>
+  </data>
+  <data name="Branch" xml:space="preserve">
+    <value>Branch</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Cancel_Full_Memo" xml:space="preserve">
+    <value>Cancel Full Memo</value>
+  </data>
+  <data name="Cancel_Memo" xml:space="preserve">
+    <value>Cancel Memo</value>
+  </data>
+  <data name="CentreBlack" xml:space="preserve">
+    <value>CentreBlack</value>
+  </data>
+  <data name="CERTIFICATE" xml:space="preserve">
+    <value>CERTIFICATE</value>
+  </data>
+  <data name="CertificateId" xml:space="preserve">
+    <value>Certificate#</value>
+  </data>
+  <data name="Certificate_No" xml:space="preserve">
+    <value>Certificate No</value>
+  </data>
+  <data name="Cert_No" xml:space="preserve">
+    <value>Cert. No.</value>
+  </data>
+  <data name="Cert_Number_to_Search" xml:space="preserve">
+    <value>Cert Number to Search</value>
+  </data>
+  <data name="Change_discount" xml:space="preserve">
+    <value>Change discount</value>
+  </data>
+  <data name="Change_Password" xml:space="preserve">
+    <value>Change Password</value>
+  </data>
+  <data name="Change_rap" xml:space="preserve">
+    <value>Change rap</value>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="Clarity" xml:space="preserve">
+    <value>Clarity</value>
+  </data>
+  <data name="Closing" xml:space="preserve">
+    <value>Closing</value>
+  </data>
+  <data name="CNR_Disc" xml:space="preserve">
+    <value>CNR Disc</value>
+  </data>
+  <data name="CNR_Disc_HA" xml:space="preserve">
+    <value>CNR Disc HA</value>
+  </data>
+  <data name="Color" xml:space="preserve">
+    <value>Color</value>
+  </data>
+  <data name="Company" xml:space="preserve">
+    <value>Company</value>
+  </data>
+  <data name="CompanyName" xml:space="preserve">
+    <value>CompanyName</value>
+  </data>
+  <data name="Company_Name" xml:space="preserve">
+    <value>Company Name</value>
+  </data>
+  <data name="Confirm_Password" xml:space="preserve">
+    <value>Confirm Password</value>
+  </data>
+  <data name="Contact_Us" xml:space="preserve">
+    <value>Contact Us</value>
+  </data>
+  <data name="Contains" xml:space="preserve">
+    <value>Contains</value>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>Country</value>
+  </data>
+  <data name="Created_By" xml:space="preserve">
+    <value>Created By</value>
+  </data>
+  <data name="Created_Dae" xml:space="preserve">
+    <value>Created Dae</value>
+  </data>
+  <data name="Created_On" xml:space="preserve">
+    <value>Created On</value>
+  </data>
+  <data name="Create_Date" xml:space="preserve">
+    <value>Create Date</value>
+  </data>
+  <data name="Criteria" xml:space="preserve">
+    <value>Criteria</value>
+  </data>
+  <data name="CrownAngle" xml:space="preserve">
+    <value>CrownAngle</value>
+  </data>
+  <data name="CrownHeight" xml:space="preserve">
+    <value>CrownHeight</value>
+  </data>
+  <data name="Current_Status" xml:space="preserve">
+    <value>Current Status</value>
+  </data>
+  <data name="Customer" xml:space="preserve">
+    <value>Customer</value>
+  </data>
+  <data name="Customer_Demands" xml:space="preserve">
+    <value>Customer Demands</value>
+  </data>
+  <data name="Customer_Recent_Search" xml:space="preserve">
+    <value>Customer Recent Search</value>
+  </data>
+  <data name="Customer_Update" xml:space="preserve">
+    <value>Customer Update</value>
+  </data>
+  <data name="Cut" xml:space="preserve">
+    <value>Cut</value>
+  </data>
+  <data name="CUT_POLISH_SYMMETRY" xml:space="preserve">
+    <value>CUT - POLISH - SYMMETRY</value>
+  </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>Dashboard</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Demands" xml:space="preserve">
+    <value>Demands</value>
+  </data>
+  <data name="Demand_Name" xml:space="preserve">
+    <value>Demand Name</value>
+  </data>
+  <data name="Depth" xml:space="preserve">
+    <value>Depth%</value>
+  </data>
+  <data name="Detail" xml:space="preserve">
+    <value>Detail</value>
+  </data>
+  <data name="Diamentions" xml:space="preserve">
+    <value>Diamentions</value>
+  </data>
+  <data name="Disable_Inventory" xml:space="preserve">
+    <value>Disable Inventory</value>
+  </data>
+  <data name="Discount_for_BlueNile_upload_data" xml:space="preserve">
+    <value>Set differential discount for Blue-Nile upload data</value>
+  </data>
+  <data name="Discount_for_James_Allen_Hong_Kong_upload" xml:space="preserve">
+    <value>Set differential discount for James Allen Hong Kong's upload</value>
+  </data>
+  <data name="Discount_for_James_Allen_upload_data" xml:space="preserve">
+    <value>Set differential discount for James Allen upload data</value>
+  </data>
+  <data name="Does_not_Contains" xml:space="preserve">
+    <value>Does not Contains</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>Download</value>
+  </data>
+  <data name="Download_sample_file_for_upload" xml:space="preserve">
+    <value>Download sample file for upload.</value>
+  </data>
+  <data name="DR" xml:space="preserve">
+    <value>D/R</value>
+  </data>
+  <data name="EC" xml:space="preserve">
+    <value>EC</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="Enable_Inventory" xml:space="preserve">
+    <value>Enable Inventory</value>
+  </data>
+  <data name="Enter_Cert_Number" xml:space="preserve">
+    <value>Enter Cert Number</value>
+  </data>
+  <data name="Enter_Lot_Numaber" xml:space="preserve">
+    <value>Enter Lot Numaber</value>
+  </data>
+  <data name="Excel" xml:space="preserve">
+    <value>Excel</value>
+  </data>
+  <data name="Excel_Download" xml:space="preserve">
+    <value>Excel Download</value>
+  </data>
+  <data name="Execute" xml:space="preserve">
+    <value>Execute</value>
+  </data>
+  <data name="Export_to_Excel" xml:space="preserve">
+    <value>Export to Excel</value>
+  </data>
+  <data name="Extra_Charges" xml:space="preserve">
+    <value>add : Extra Charges (100$ will be charged because the order is below $ 10,000 )</value>
+  </data>
+  <data name="FANCY_COLOR" xml:space="preserve">
+    <value>FANCY COLOR</value>
+  </data>
+  <data name="FANCY_SHAPE" xml:space="preserve">
+    <value>FANCY SHAPE</value>
+  </data>
+  <data name="Fax" xml:space="preserve">
+    <value>Fax</value>
+  </data>
+  <data name="Features" xml:space="preserve">
+    <value>Features</value>
+  </data>
+  <data name="File_ID" xml:space="preserve">
+    <value>File ID</value>
+  </data>
+  <data name="File_Name" xml:space="preserve">
+    <value>File Name</value>
+  </data>
+  <data name="File_Type" xml:space="preserve">
+    <value>File Type</value>
+  </data>
+  <data name="Filter_By_Role" xml:space="preserve">
+    <value>Filter By Role</value>
+  </data>
+  <data name="First_Name" xml:space="preserve">
+    <value>First Name</value>
+  </data>
+  <data name="Flora" xml:space="preserve">
+    <value>Flora</value>
+  </data>
+  <data name="FLUORESCENCE" xml:space="preserve">
+    <value>FLUORESCENCE</value>
+  </data>
+  <data name="Forget_Password" xml:space="preserve">
+    <value>Forget Password?</value>
+  </data>
+  <data name="Found_Total" xml:space="preserve">
+    <value>Found Total</value>
+  </data>
+  <data name="GIAcomments" xml:space="preserve">
+    <value>GIAcomments</value>
+  </data>
+  <data name="GIA_Reports" xml:space="preserve">
+    <value>GIA Reports</value>
+  </data>
+  <data name="Girdle" xml:space="preserve">
+    <value>Girdle</value>
+  </data>
+  <data name="Girdle_Per" xml:space="preserve">
+    <value>Girdle%</value>
+  </data>
+  <data name="HA" xml:space="preserve">
+    <value>H&amp;A</value>
+  </data>
+  <data name="HA-Ex_Disc" xml:space="preserve">
+    <value>HA-Ex Disc</value>
+  </data>
+  <data name="HA-VG_Disc" xml:space="preserve">
+    <value>HA-VG Disc</value>
+  </data>
+  <data name="Hearts__Arrows" xml:space="preserve">
+    <value>Hearts &amp; Arrows</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="HomePage_Para1" xml:space="preserve">
+    <value>Rosy Blue is one of the most renowned diamond and jewelry companies in the world. From rough to polished diamonds to fine jewelry, Rosy Blue's passion for excellence sparkles in everything we do. We operate in strict compliance with the Kimberley Process Certification Scheme and the World Diamond Council System of Warranties.</value>
+  </data>
+  <data name="InActive" xml:space="preserve">
+    <value>InActive</value>
+  </data>
+  <data name="Invalid" xml:space="preserve">
+    <value>Invalid</value>
+  </data>
+  <data name="Inventory" xml:space="preserve">
+    <value>Inventory</value>
+  </data>
+  <data name="Inventory_Download" xml:space="preserve">
+    <value>Inventory Download</value>
+  </data>
+  <data name="Inventory_on_Memo" xml:space="preserve">
+    <value>Inventory on Memo</value>
+  </data>
+  <data name="Inventory_Upload" xml:space="preserve">
+    <value>Inventory Upload</value>
+  </data>
+  <data name="Item_Count" xml:space="preserve">
+    <value>Item Count</value>
+  </data>
+  <data name="JamesAllen_Disc" xml:space="preserve">
+    <value>JamesAllen Disc%</value>
+  </data>
+  <data name="JamesAllen_HK_Disc" xml:space="preserve">
+    <value>JamesAllen HK Disc%</value>
+  </data>
+  <data name="James_Allen" xml:space="preserve">
+    <value>James Allen</value>
+  </data>
+  <data name="James_Allen_Disc" xml:space="preserve">
+    <value>James Allen Disc %</value>
+  </data>
+  <data name="James_Allen_HK" xml:space="preserve">
+    <value>James Allen HK</value>
+  </data>
+  <data name="James_Allen_HK_Disc" xml:space="preserve">
+    <value>James Allen HK Disc %</value>
+  </data>
+  <data name="JA_BN_Partition" xml:space="preserve">
+    <value>JA BN Partition</value>
+  </data>
+  <data name="Keytosymbol" xml:space="preserve">
+    <value>Keytosymbol</value>
+  </data>
+  <data name="Key_To_Symbols" xml:space="preserve">
+    <value>Key To Symbols</value>
+  </data>
+  <data name="Lab" xml:space="preserve">
+    <value>Lab</value>
+  </data>
+  <data name="Laser" xml:space="preserve">
+    <value>Laser</value>
+  </data>
+  <data name="List_Name" xml:space="preserve">
+    <value>List Name</value>
+  </data>
+  <data name="List_of_Customers" xml:space="preserve">
+    <value>List of Customers</value>
+  </data>
+  <data name="Load" xml:space="preserve">
+    <value>Load</value>
+  </data>
+  <data name="Load_Result" xml:space="preserve">
+    <value>Load Result</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="LotCret_No" xml:space="preserve">
+    <value>Lot/Cret. No</value>
+  </data>
+  <data name="Lot_No" xml:space="preserve">
+    <value>Lot No</value>
+  </data>
+  <data name="Lot_Number_to_Search" xml:space="preserve">
+    <value>Lot Number to Search</value>
+  </data>
+  <data name="LowerHalf" xml:space="preserve">
+    <value>LowerHalf</value>
+  </data>
+  <data name="Machine" xml:space="preserve">
+    <value>Machine</value>
+  </data>
+  <data name="Manage_Rights" xml:space="preserve">
+    <value>Manage Rights</value>
+  </data>
+  <data name="Marketing" xml:space="preserve">
+    <value>Marketing</value>
+  </data>
+  <data name="MEMO" xml:space="preserve">
+    <value>MEMO</value>
+  </data>
+  <data name="Memo_No" xml:space="preserve">
+    <value>Memo No</value>
+  </data>
+  <data name="Memo_Pending" xml:space="preserve">
+    <value>Memo Pending</value>
+  </data>
+  <data name="Memo_Sold" xml:space="preserve">
+    <value>Memo Sold</value>
+  </data>
+  <data name="Milky" xml:space="preserve">
+    <value>Milky</value>
+  </data>
+  <data name="Mobile" xml:space="preserve">
+    <value>Mobile</value>
+  </data>
+  <data name="Modify_Inventory" xml:space="preserve">
+    <value>Modify Inventory</value>
+  </data>
+  <data name="Multiple_Demands" xml:space="preserve">
+    <value>Multiple Demands</value>
+  </data>
+  <data name="My_Account" xml:space="preserve">
+    <value>My Account</value>
+  </data>
+  <data name="My_Order" xml:space="preserve">
+    <value>My Order</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="New_Customer" xml:space="preserve">
+    <value>New Customer</value>
+  </data>
+  <data name="New_Password" xml:space="preserve">
+    <value>New Password</value>
+  </data>
+  <data name="New_Upload" xml:space="preserve">
+    <value>New Upload</value>
+  </data>
+  <data name="New_UserPlease_Register_Here" xml:space="preserve">
+    <value>New User?Please Register Here</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="NO_BGM" xml:space="preserve">
+    <value>NO BGM</value>
+  </data>
+  <data name="No_of_file_Chosen" xml:space="preserve">
+    <value>No of file Chosen</value>
+  </data>
+  <data name="Old_Password" xml:space="preserve">
+    <value>Old Password</value>
+  </data>
+  <data name="Online_Discount" xml:space="preserve">
+    <value>less : Online Discount</value>
+  </data>
+  <data name="OnMemo" xml:space="preserve">
+    <value>OnMemo</value>
+  </data>
+  <data name="On_Memo" xml:space="preserve">
+    <value>On Memo</value>
+  </data>
+  <data name="Opening" xml:space="preserve">
+    <value>Opening</value>
+  </data>
+  <data name="Opens" xml:space="preserve">
+    <value>Opens</value>
+  </data>
+  <data name="Order" xml:space="preserve">
+    <value>Order #</value>
+  </data>
+  <data name="Order_Date" xml:space="preserve">
+    <value>Order Date</value>
+  </data>
+  <data name="Order_Details" xml:space="preserve">
+    <value>Order Details</value>
+  </data>
+  <data name="Order_ID" xml:space="preserve">
+    <value>Order ID</value>
+  </data>
+  <data name="Order_No" xml:space="preserve">
+    <value>Order No</value>
+  </data>
+  <data name="Order_Pending" xml:space="preserve">
+    <value>Order Pending</value>
+  </data>
+  <data name="Order_Status" xml:space="preserve">
+    <value>Order Status</value>
+  </data>
+  <data name="Partial_memo_cancel" xml:space="preserve">
+    <value>Partial memo cancel</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="PavilionAngle" xml:space="preserve">
+    <value>PavilionAngle</value>
+  </data>
+  <data name="PavilionDepth" xml:space="preserve">
+    <value>PavilionDepth</value>
+  </data>
+  <data name="Pending_Orders" xml:space="preserve">
+    <value>Pending Orders</value>
+  </data>
+  <data name="Pending_Order_Details" xml:space="preserve">
+    <value>Pending Order Details</value>
+  </data>
+  <data name="Pending_Order_Report" xml:space="preserve">
+    <value>Pending Order Report</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="Physical_Stock" xml:space="preserve">
+    <value>Physical Stock</value>
+  </data>
+  <data name="Polish" xml:space="preserve">
+    <value>Polish</value>
+  </data>
+  <data name="Prev" xml:space="preserve">
+    <value>Prev</value>
+  </data>
+  <data name="Pricect" xml:space="preserve">
+    <value>Price($)/ct</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>Print</value>
+  </data>
+  <data name="Profile" xml:space="preserve">
+    <value>Profile</value>
+  </data>
+  <data name="Put_on_memosell_directly" xml:space="preserve">
+    <value>Put on memo/sell directly</value>
+  </data>
+  <data name="RapDisc" xml:space="preserve">
+    <value>RapDisc(%)</value>
+  </data>
+  <data name="RapPrice" xml:space="preserve">
+    <value>RapPrice</value>
+  </data>
+  <data name="RB_Discount" xml:space="preserve">
+    <value>less : RB Discount</value>
+  </data>
+  <data name="Recent_RFID_Count" xml:space="preserve">
+    <value>Recent RFID Count</value>
+  </data>
+  <data name="Recent_Search" xml:space="preserve">
+    <value>Recent Search</value>
+  </data>
+  <data name="records" xml:space="preserve">
+    <value>records</value>
+  </data>
+  <data name="Recycle_RFID" xml:space="preserve">
+    <value>Recycle RFID</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="Remark" xml:space="preserve">
+    <value>Remark</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="Remove_Bestdeal" xml:space="preserve">
+    <value>Remove Bestdeal</value>
+  </data>
+  <data name="Remove_Lab" xml:space="preserve">
+    <value>Remove Lab</value>
+  </data>
+  <data name="Remove_Order_Item" xml:space="preserve">
+    <value>Remove Order Item</value>
+  </data>
+  <data name="ReportDate" xml:space="preserve">
+    <value>ReportDate</value>
+  </data>
+  <data name="RESET" xml:space="preserve">
+    <value>RESET</value>
+  </data>
+  <data name="Reset_Password" xml:space="preserve">
+    <value>Reset Password</value>
+  </data>
+  <data name="RETURN_SALE" xml:space="preserve">
+    <value>RETURN SALE</value>
+  </data>
+  <data name="RFID" xml:space="preserve">
+    <value>RFID</value>
+  </data>
+  <data name="RFID_History" xml:space="preserve">
+    <value>RFID History</value>
+  </data>
+  <data name="RFID_Master" xml:space="preserve">
+    <value>RFID Master</value>
+  </data>
+  <data name="RFID_Modify" xml:space="preserve">
+    <value>RFID Modify</value>
+  </data>
+  <data name="RFID_No" xml:space="preserve">
+    <value>RFID No</value>
+  </data>
+  <data name="Rfid_Number" xml:space="preserve">
+    <value>Rfid Number</value>
+  </data>
+  <data name="RFID_Search" xml:space="preserve">
+    <value>RFID Search</value>
+  </data>
+  <data name="RFID_Stock_Tally" xml:space="preserve">
+    <value>RFID Stock Tally</value>
+  </data>
+  <data name="Role" xml:space="preserve">
+    <value>Role</value>
+  </data>
+  <data name="RosyBlue_2020" xml:space="preserve">
+    <value>©RosyBlue, 2020</value>
+  </data>
+  <data name="ROUND_SHAPE" xml:space="preserve">
+    <value>ROUND SHAPE</value>
+  </data>
+  <data name="SalesLocation" xml:space="preserve">
+    <value>SalesLocation</value>
+  </data>
+  <data name="SALES_LOCATION" xml:space="preserve">
+    <value>SALES LOCATION</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Save_Search" xml:space="preserve">
+    <value>Save Search</value>
+  </data>
+  <data name="Scan" xml:space="preserve">
+    <value>Scan</value>
+  </data>
+  <data name="Seand_a_Email" xml:space="preserve">
+    <value>Seand a Email</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="Select_(xlxs)_file_to_Update_RFID" xml:space="preserve">
+    <value>Select (.xlxs) file to Update RFID</value>
+  </data>
+  <data name="Select_All" xml:space="preserve">
+    <value>Select All</value>
+  </data>
+  <data name="Select_csv_file_to_upload" xml:space="preserve">
+    <value>Select csv file to upload</value>
+  </data>
+  <data name="Select_file" xml:space="preserve">
+    <value>Select file</value>
+  </data>
+  <data name="Select_file_for_upload_GIA" xml:space="preserve">
+    <value>Select (.xlsx) file for upload GIA</value>
+  </data>
+  <data name="Select_file_to_upload" xml:space="preserve">
+    <value>Select file to upload</value>
+  </data>
+  <data name="Select_Sales_Location" xml:space="preserve">
+    <value>Select Sales Location</value>
+  </data>
+  <data name="Select_to_download_sample_file" xml:space="preserve">
+    <value>Select to download sample file</value>
+  </data>
+  <data name="Select_Type" xml:space="preserve">
+    <value>Select Type</value>
+  </data>
+  <data name="Select_your_choice" xml:space="preserve">
+    <value>Select your choice</value>
+  </data>
+  <data name="Select__file_for_RFID_master" xml:space="preserve">
+    <value>Select (.xlsx) file for RFID master</value>
+  </data>
+  <data name="Sell_Full_Memo" xml:space="preserve">
+    <value>Sell Full Memo</value>
+  </data>
+  <data name="Sell_Partial" xml:space="preserve">
+    <value>Sell Partial</value>
+  </data>
+  <data name="Shade" xml:space="preserve">
+    <value>Shade</value>
+  </data>
+  <data name="Shape" xml:space="preserve">
+    <value>Shape</value>
+  </data>
+  <data name="Shipping_Charges_Non_India" xml:space="preserve">
+    <value>add : Shipping Charges Non India</value>
+  </data>
+  <data name="Shipping_Company" xml:space="preserve">
+    <value>Shipping Company</value>
+  </data>
+  <data name="Shipping_Mode_1" xml:space="preserve">
+    <value>Shipping Mode 1</value>
+  </data>
+  <data name="Show" xml:space="preserve">
+    <value>Show</value>
+  </data>
+  <data name="Site_not_blocked" xml:space="preserve">
+    <value>Site not blocked</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>Size</value>
+  </data>
+  <data name="SIZE_CARATS" xml:space="preserve">
+    <value>SIZE (CARATS)</value>
+  </data>
+  <data name="Sold" xml:space="preserve">
+    <value>Sold</value>
+  </data>
+  <data name="Specfic_search" xml:space="preserve">
+    <value>Specfic search</value>
+  </data>
+  <data name="SPECIFIC_SEARCH" xml:space="preserve">
+    <value>SPECIFIC SEARCH</value>
+  </data>
+  <data name="Split_Memo" xml:space="preserve">
+    <value>Split Memo</value>
+  </data>
+  <data name="Starlength" xml:space="preserve">
+    <value>Starlength</value>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value>State</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="Stock" xml:space="preserve">
+    <value>Stock</value>
+  </data>
+  <data name="Stock_Details" xml:space="preserve">
+    <value>Stock Details</value>
+  </data>
+  <data name="Stock_Summary" xml:space="preserve">
+    <value>Stock Summary</value>
+  </data>
+  <data name="Stock_tally" xml:space="preserve">
+    <value>Stock tally</value>
+  </data>
+  <data name="Stock__Summary" xml:space="preserve">
+    <value>Stock &amp; Summary</value>
+  </data>
+  <data name="Stone_History" xml:space="preserve">
+    <value>Stone History</value>
+  </data>
+  <data name="Stone_IDs" xml:space="preserve">
+    <value>Stone IDs</value>
+  </data>
+  <data name="Stone_Status" xml:space="preserve">
+    <value>Stone Status</value>
+  </data>
+  <data name="Submit" xml:space="preserve">
+    <value>Submit</value>
+  </data>
+  <data name="Symmetry" xml:space="preserve">
+    <value>Symmetry</value>
+  </data>
+  <data name="System_discount_K" xml:space="preserve">
+    <value>less : System discount 0K-15K</value>
+  </data>
+  <data name="Table" xml:space="preserve">
+    <value>Table%</value>
+  </data>
+  <data name="TableBlack" xml:space="preserve">
+    <value>TableBlack</value>
+  </data>
+  <data name="TotalFound" xml:space="preserve">
+    <value>TotalFound</value>
+  </data>
+  <data name="Total_Amt" xml:space="preserve">
+    <value>Total Amt</value>
+  </data>
+  <data name="Total_CT" xml:space="preserve">
+    <value>Total CT</value>
+  </data>
+  <data name="Total_Inventory" xml:space="preserve">
+    <value>Total Inventory</value>
+  </data>
+  <data name="Total_Payable_Amount" xml:space="preserve">
+    <value>Total Payable Amount :</value>
+  </data>
+  <data name="Total_Rap_Price" xml:space="preserve">
+    <value>Total Rap Price ($)</value>
+  </data>
+  <data name="Total_RFID_Count" xml:space="preserve">
+    <value>Total RFID Count</value>
+  </data>
+  <data name="Tracking_Number" xml:space="preserve">
+    <value>Tracking Number</value>
+  </data>
+  <data name="UnReferenced" xml:space="preserve">
+    <value>UnReferenced</value>
+  </data>
+  <data name="Upcoming_Events" xml:space="preserve">
+    <value>Upcoming Events</value>
+  </data>
+  <data name="Uplaod_Format_Common" xml:space="preserve">
+    <value>Uplaod Format Common</value>
+  </data>
+  <data name="Uplaod_Inventory" xml:space="preserve">
+    <value>Uplaod Inventory</value>
+  </data>
+  <data name="Upload" xml:space="preserve">
+    <value>Upload</value>
+  </data>
+  <data name="Uploaded_Date" xml:space="preserve">
+    <value>Uploaded Date</value>
+  </data>
+  <data name="Upload_Add_Remove_Lab_Format" xml:space="preserve">
+    <value>Upload Add/Remove Lab Format</value>
+  </data>
+  <data name="Upload_Format_Best_Deal" xml:space="preserve">
+    <value>Upload Format Best Deal</value>
+  </data>
+  <data name="Upload_History" xml:space="preserve">
+    <value>Upload History</value>
+  </data>
+  <data name="Upload_Inventory" xml:space="preserve">
+    <value>Upload Inventory</value>
+  </data>
+  <data name="UPLOAD_LOTCERT_NUMBER_TO_SEARCH" xml:space="preserve">
+    <value>UPLOAD LOT/CERT NUMBER TO SEARCH</value>
+  </data>
+  <data name="Upload_New_Inventory" xml:space="preserve">
+    <value>Upload New Inventory</value>
+  </data>
+  <data name="Upload_Stone_IDs" xml:space="preserve">
+    <value>Upload Stone IDs</value>
+  </data>
+  <data name="User_Detail" xml:space="preserve">
+    <value>User Detail</value>
+  </data>
+  <data name="User_Name" xml:space="preserve">
+    <value>User Name</value>
+  </data>
+  <data name="User_Vs_Rights" xml:space="preserve">
+    <value>User Vs Rights</value>
+  </data>
+  <data name="Utility" xml:space="preserve">
+    <value>Utility</value>
+  </data>
+  <data name="V360" xml:space="preserve">
+    <value>V360</value>
+  </data>
+  <data name="V360_Via_CERT_No" xml:space="preserve">
+    <value>V360 Via CERT No</value>
+  </data>
+  <data name="Valid" xml:space="preserve">
+    <value>Valid</value>
+  </data>
+  <data name="View" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="View_Memo_Details" xml:space="preserve">
+    <value>View Memo Details</value>
+  </data>
+  <data name="View_Order_Details" xml:space="preserve">
+    <value>View Order Details</value>
+  </data>
+  <data name="View_Pending_Orders" xml:space="preserve">
+    <value>View Pending Orders</value>
+  </data>
+  <data name="View_Sold_History" xml:space="preserve">
+    <value>View Sold History</value>
+  </data>
+  <data name="Website_Order_Pending" xml:space="preserve">
+    <value>Website Order Pending</value>
+  </data>
+  <data name="Weight" xml:space="preserve">
+    <value>Weight</value>
+  </data>
+  <data name="Welcome_Guest" xml:space="preserve">
+    <value>Welcome Guest,</value>
+  </data>
+  <data name="Welcome_To_Rosy_Blue" xml:space="preserve">
+    <value>Welcome To Rosy Blue</value>
+  </data>
+  <data name="Zip_Code" xml:space="preserve">
+    <value>Zip Code</value>
+  </data>
+</root>

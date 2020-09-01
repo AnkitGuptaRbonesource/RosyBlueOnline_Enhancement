@@ -1,0 +1,86 @@
+﻿@model List<mstRFIDModel>
+@{
+    ViewBag.Title = "RFIDMaster";
+    //Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+@section header{
+}
+<div class="content-wrapper">
+    <section class="content">
+        <div id="uiPanel1"></div>
+        <section class="content">
+            <div class="">
+                <div class="row">
+                    <div class="col-lg-5">
+                        <section class="panel panel-primary">
+                            <div class="panel-heading">RFID Master</div>
+                            <form>
+                                <div class="panel-body">
+                                    <div class="">
+                                        <div class="upload-info">
+                                            Select (.xlsx) file for RFID master -
+                                            <span class="sample-format">
+                                                <a href="~/Content/INV/Temp/RFIDMaster.xlsx">Download sample file for upload.</a>
+                                            </span>
+                                        </div>
+                                        <div>
+                                            <span class="upload-filter">Select file</span>
+                                            <input type="file" id="fileUpload" class="form-control" name="fileUpload">
+                                        </div>
+                                        <br />
+                                        <div class="textright">
+                                            <button type="button" id="mstRFIDUpload" class="btn btn-primary">Upload <i class="fa fa-upload"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </section>
+                    </div>
+                    <div class="col-lg-7">
+                        <section class="panel panel-primary">
+                            <div class="panel-heading">RFID Master</div>
+                            <div class="panel-body">
+                                <table class="table table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th class="cust-table">RFID</th>
+                                            <th class="cust-table">STATUS</th>
+                                            <th class="cust-table">ACTIVE</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var rfidmst in Model)
+                                        {
+                                            var curStatus = rfidmst.CurrentStatus == 0 ? "Not Available" : (rfidmst.CurrentStatus == 1 ? "Already Assigned" : (rfidmst.CurrentStatus == 2 ? "Free" : (rfidmst.CurrentStatus == 3 ? "Expired" : "Not Defined")));
+                                            <tr>
+                                                <td class="cust-table">@rfidmst.RfidNo</td>
+                                                <td class="cust-table">@curStatus</td>
+                                                <td class="cust-table" style="text-align:left;width">
+                                                    <div class="form-group">
+                                                        <label>
+                                                            <input type="radio" name="group1_@rfidmst.RfidNo" value="1" data-rfid="@rfidmst.RfidNo" @(rfidmst.Isactive == true ? "checked" : "")>Active
+                                                        </label>
+                                                        <label>
+                                                            <input type="radio" name="group1_@rfidmst.RfidNo" value="0" data-rfid="@rfidmst.RfidNo" @(rfidmst.Isactive == false ? "checked" : "")>In-Active
+                                                        </label>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </section>
+                        <br />
+                        <br />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </section>
+</div>
+@section script{
+    <script src="~/Scripts/custom/Service/ServiceMethods.js"></script>
+    <script src="~/Scripts/custom/Controller/CtrlRFIDMaster.js"></script>
+}

@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Stock Summary";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section header{
+    @Styles.Render("~/bundles/DataTable/Style")
+}
+<div class="content-wrapper">
+    <section class="content">
+        @Html.Partial("~/Views/Shared/_PartialStockSummary.cshtml", model: 1)
+    </section>
+</div>
+@section script{
+    @Scripts.Render("~/bundles/DataTable/Script")
+    <script type="text/javascript" src="~/Scripts/custom/rbDataTable.js"></script>
+    <script type="text/javascript" src="~/Scripts/custom/Service/ServiceMethods.js"></script>
+    <script type="text/javascript" src="~/Scripts/custom/Controller/ModuleStockSummary.js"></script>
+    <script>
+        $(document).ready(function () {
+            var objModuleStockSummary = new ModuleStockSummary({
+                instanceID: 1
+            });
+            objModuleStockSummary.init();
+        });
+    </script>
+}
+
+<form style="display:none" id="frmPostSearch" method="post" action="/Inventory/SpecificSearchPost">
+    <input type="hidden" name="Query" id="hfQuery" value="" />
+</form>

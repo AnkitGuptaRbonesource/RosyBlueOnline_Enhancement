@@ -1,0 +1,110 @@
+﻿@{
+    ViewBag.Title = "Stone History";
+}
+@section header{
+    @Styles.Render("~/bundles/DataTable/Style")
+}
+<div class="content-wrapper">
+    <section class="content">
+        <div id="uiPanel1"></div>
+        <div class="row">
+            <div class="col-lg-12">
+                <section class="panel panel-primary">
+                    <div class="panel-heading">
+                        Stone History
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <form id="frmStoneHistory" class="customers-info">
+                                    <div class="form-horizontal">
+                                        <div class="form-group">
+                                            <div class="col-lg-2"><label class="control-label">Upload Stone IDs</label></div>
+                                            <div class="col-lg-3">
+                                                <input type="file" name="name" accept=".csv" id="fuStoneIDs" class="form-control" value="" />
+                                            </div>
+                                            <div class="col-lg-1"><label class="control-label">Stone IDs</label></div>
+                                            <div class="col-lg-3">
+                                                <input name="StoneIDs" class="form-control" id="txtStoneIDs" type="text" value="" required>
+                                            </div>
+                                            <div class="col-lg-2">
+                                                <button type="button" class="btn btn-primary" id="btnShow">Show</button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table id="tblSearchTable" class="table table-fixed dataTable no-footer" role="grid" aria-describedby="SearchTablePost_info">
+                                    <thead class="bordertp">
+                                        <tr role="row" class="table-head">
+                                            <th class="tbnew">
+                                                <label for="LotNo">LotNo</label>
+                                            </th>
+                                            <th class="tbnew">
+                                                <label for="shape">Shape</label>
+                                            </th>
+                                            <th class="tbnew">
+                                                <label for="diaWeight">Carat</label>
+                                            </th>
+                                            <th class="tbnew">
+                                                <label for="colorName">Color</label>
+                                            </th>
+                                            <th class="tbnew">
+                                                <label for="clarityName">Clarity</label>
+                                            </th>
+                                            <th class="tbnew">
+                                                <label for="cutGradeName">Cut</label>
+                                            </th>
+                                            <th class="tbnew">
+                                                <label for="pricePerCT">Price/ct</label>
+                                            </th>
+                                            <th class="tbnew">
+                                                <label for="discount">Discount</label>
+                                            </th>
+                                            <th class="tbnew">
+                                                <label for="FlagDescription">Activity</label>
+                                            </th>
+                                            <th class="tbnew">
+                                                <label for="CompanyName">Company Name</label>
+                                            </th>
+                                            <th class="tbnew CustomerName">
+                                                <label for="CustomerName">Customer Name</label>
+                                            </th> 
+                                            <th class="tbnew dt-date">
+                                                <label for="CreatedOn">LastUpdatedDate</label>
+                                            </th>
+                                            <th class="tbnew">
+                                                <label for="discount">Previous Discount</label>
+                                            </th>
+                                            <th class="tbnew">
+                                                <label for="newDiscount">Uploaded Discount</label>
+                                            </th>
+                                            <th class="tbnew">
+                                                <label for="rapPrice">Previous Rap Price</label>
+                                            </th>
+                                            <th class="tbnew">
+                                                <label for="newRapPrice">Uploaded Rap Price</label>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+</div>
+@section script{
+    @Scripts.Render("~/bundles/DataTable/Script")
+    <script type="text/javascript" src="~/Scripts/custom/rbDataTable.js"></script>
+    <script src="~/Scripts/custom/Controller/CrtlStoneHistory.js"></script>
+}
+
+
+

@@ -1,0 +1,432 @@
+﻿@{
+    ViewBag.Title = "Blue Nile Discount %";
+    TokenLogModel objToken = Session["Token"] as TokenLogModel;
+}
+@section header{
+    @Styles.Render("~/bundles/DataTable/Style")
+}
+
+<div class="content-wrapper">
+    <section class="content">
+        <div id="uiPanel1"></div>
+        <div class="row">
+            <div class="col-lg-12">
+                <section class="panel panel-primary">
+                    <div class="panel-heading">
+                        Set differential discount for Blue-Nile upload data
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <form id="frmBlueNile" class="customers-info">
+                                    <div class="row">
+                                        <div class="col-lg-2">
+                                            <div id="caratRange1DiscDiv" class="form-group">
+                                                <div>
+                                                    <label class="control-label">Size [0.23 - 0.29]</label>
+                                                    <div>
+                                                        <input type="text" class="form-control" id="txtCaratRange1Disc" name="caratRange1Disc" placeholder="Enter Size" maxlength="3">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <div id="caratRange2DiscDiv" class="form-group">
+                                                <div>
+                                                    <label class="control-label">Size [0.30 - 0.36]</label>
+                                                    <div>
+                                                        <input type="text" class="form-control" id="txtCaratRange2Disc" name="caratRange2Disc" placeholder="Enter Size" maxlength="3">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <div id="caratRange3Discdiv" class="form-group">
+                                                <div>
+                                                    <label class="control-label">Size [0.37 - 0.39]</label>
+                                                    <div>
+                                                        <input type="text" class="form-control" id="txtCaratRange3Disc" name="caratRange3Disc" placeholder="Enter Size" maxlength="3">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <div id="caratRange4Discdiv" class="form-group">
+                                                <div>
+                                                    <label class="control-label">Size [0.40 - 0.44]</label>
+                                                    <div>
+                                                        <input type="text" class="form-control" id="txtCaratRange4Disc" name="caratRange4Disc" placeholder="Enter Size" maxlength="3">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <div id="scaratRange5Discdiv" class="form-group">
+                                                <div>
+                                                    <label class="control-label">Size [0.45 - 0.49]</label>
+                                                    <div>
+                                                        <input type="text" class="form-control" id="txtCaratRange5Disc" name="caratRange5Disc" placeholder="Enter Size" maxlength="3">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <div id="caratRange6Discdiv" class="form-group">
+                                                <div>
+                                                    <label class="control-label">Size [0.50 - 0.59]</label>
+                                                    <div>
+                                                        <input type="text" class="form-control" id="txtCaratRange6Disc" name="caratRange6Disc" placeholder="Enter Size" maxlength="3">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-lg-2">
+                                            <div id="caratRange7Discdiv" class="form-group">
+                                                <div>
+                                                    <label class="control-label">Size [0.60 - 0.69]</label>
+                                                    <div>
+                                                        <input type="text" class="form-control" id="txtCaratRange7Disc" name="caratRange7Disc" placeholder="Enter Size" maxlength="3">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <div id="caratRange8Discdiv" class="form-group">
+                                                <div>
+                                                    <label class="control-label">Size [0.70 - 0.79]</label>
+                                                    <div>
+                                                        <input type="text" class="form-control" id="txtCaratRange8Disc" name="caratRange8Disc" placeholder="Enter Size" maxlength="3">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <div id="caratRange9Discdiv" class="form-group">
+                                                <div>
+                                                    <label class="control-label">Size [0.80 - 0.89]</label>
+                                                    <div>
+                                                        <input type="text" class="form-control" id="txtCaratRange9Disc" name="caratRange9Disc" placeholder="Enter Size" maxlength="3">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <div id="caratRange10Discdiv" class="form-group">
+                                                <div>
+                                                    <label class="control-label">Size [0.90 - 0.94]</label>
+                                                    <div>
+                                                        <input type="text" class="form-control" id="txtCaratRange10Disc" name="caratRange10Disc" placeholder="Enter Size" maxlength="3">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <div id="caratRange11Discdiv" class="form-group">
+                                                <div>
+                                                    <label class="control-label">Size [0.95 - 0.99]</label>
+                                                    <div>
+                                                        <input type="text" class="form-control" id="txtCaratRange11Disc" name="caratRange11Disc" placeholder="Enter Size" maxlength="3">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <div id="caratRange12Discdiv" class="form-group">
+                                                <div>
+                                                    <label class="control-label">Size [1.00 - 1.17]</label>
+                                                    <div>
+                                                        <input type="text" class="form-control" id="txtCaratRange12Disc" name="caratRange12Disc" placeholder="Enter Size" maxlength="3">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-lg-2">
+                                            <div id="caratRange13Discdiv" class="form-group">
+                                                <div>
+                                                    <label class="control-label">Size [1.18 - 1.39]</label>
+                                                    <div>
+                                                        <input type="text" class="form-control" id="txtCaratRange13Disc" name="caratRange13Disc" placeholder="Enter Size" maxlength="3">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <div id="caratRange14Discdiv" class="form-group">
+                                                <div>
+                                                    <label class="control-label">Size [1.40 - 1.49]</label>
+                                                    <div>
+                                                        <input type="text" class="form-control" id="txtCaratRange14Disc" name="caratRange14Disc" placeholder="Enter Size" maxlength="3">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <div id="caratRange15Discdiv" class="form-group">
+                                                <div>
+                                                    <label class="control-label">Size [1.50 - 1.59]</label>
+                                                    <div>
+                                                        <input type="text" class="form-control" id="txtCaratRange15Disc" name="caratRange15Disc" placeholder="Enter Size" maxlength="3">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <div id="caratRange16Discdiv" class="form-group">
+                                                <div>
+                                                    <label class="control-label">Size [1.60 - 1.69]</label>
+                                                    <div>
+                                                        <input type="text" class="form-control" id="txtCaratRange16Disc" name="caratRange16Disc" placeholder="Enter Size" maxlength="3">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <div id="caratRange17Discdiv" class="form-group">
+                                                <div>
+                                                    <label class="control-label">Size [1.70 - 1.99]</label>
+                                                    <div>
+                                                        <input type="text" class="form-control" id="txtCaratRange17Disc" name="caratRange17Disc" placeholder="Enter Size" maxlength="3">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <div id="caratRange18Discdiv" class="form-group">
+                                                <div>
+                                                    <label class="control-label">Size [2.00 - 2.99]</label>
+                                                    <div>
+                                                        <input type="text" class="form-control" id="txtCaratRange18Disc" name="caratRange18Disc" placeholder="Enter Size" maxlength="3">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-lg-2">
+                                            <div id="caratRange19Discdiv" class="form-group">
+                                                <div>
+                                                    <label class="control-label">Size [3.00 - 3.99]</label>
+                                                    <div>
+                                                        <input type="text" class="form-control" id="txtCaratRange19Disc" name="caratRange19Disc" placeholder="Enter Size" maxlength="3">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <div id="caratRange20Discdiv" class="form-group">
+                                                <div>
+                                                    <label class="control-label">Size [4.00 - 4.99]</label>
+                                                    <div>
+                                                        <input type="text" class="form-control" id="txtCaratRange20Disc" name="caratRange20Disc" placeholder="Enter Size" maxlength="3">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <div id="caratRange21Discdiv" class="form-group">
+                                                <div>
+                                                    <label class="control-label">Size [5.00 - 5.99]</label>
+                                                    <div>
+                                                        <input type="text" class="form-control" id="txtCaratRange21Disc" name="caratRange21Disc" placeholder="Enter Size" maxlength="3">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <div id="caratRange22Discdiv" class="form-group">
+                                                <div>
+                                                    <label class="control-label">Size [6.00 - 6.99]</label>
+                                                    <div>
+                                                        <input type="text" class="form-control" id="txtCaratRange22Disc" name="caratRange22Disc" placeholder="Enter Size" maxlength="3">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <div id="caratRange23Discdiv" class="form-group">
+                                                <div>
+                                                    <label class="control-label">Size [7.00 - 7.99]</label>
+                                                    <div>
+                                                        <input type="text" class="form-control" id="txtCaratRange23Disc" name="caratRange23Disc" placeholder="Enter Size" maxlength="3">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <div id="caratRange24Discdiv" class="form-group">
+                                                <div>
+                                                    <label class="control-label">Size [8.0 - 8.99]</label>
+                                                    <div>
+                                                        <input type="text" class="form-control" id="txtCaratRange24Disc" name="caratRange24Disc" placeholder="Enter Size" maxlength="3">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-lg-2">
+                                            <div id="caratRange25Discdiv" class="form-group">
+                                                <div>
+                                                    <label class="control-label">Size [9.0 - 10.0]</label>
+                                                    <div>
+                                                        <input type="text" class="form-control" id="txtCaratRange25Disc" name="caratRange25Disc" placeholder="Enter Size" maxlength="3">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-2">
+                                            <div id="haExDiscdiv" class="form-group">
+                                                <div>
+                                                    <label class="control-label">HA-Ex Disc</label>
+                                                    <div>
+                                                        <input type="text" class="form-control" id="txtHaExDisc" name="haExDisc" placeholder="Enter Size" maxlength="3">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <div id="haVgDiscdiv" class="form-group">
+                                                <div>
+                                                    <label class="control-label">HA-VG Disc</label>
+                                                    <div>
+                                                        <input type="text" class="form-control" id="txtHaVgDisc" name="haVgDisc" placeholder="Enter Size" maxlength="3">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pull-right">
+                                        <button type="button" class="btn btn-primary" id="btnSave">Add New</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                &nbsp;
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table id="tblMarketing" class="table table-condensed">
+                                    <thead>
+                                        <tr role="row" class="table-head">
+                                            <th class="cust-table">
+                                                #
+                                            </th>
+                                            <th class="cust-table">
+                                                0.23 - 0.29
+                                            </th>
+                                            <th class="cust-table">
+                                                0.30 - 0.36
+                                            </th>
+                                            <th class="cust-table">
+                                                0.37 - 0.39
+                                            </th>
+                                            <th class="cust-table">
+                                                0.40 - 0.44
+                                            </th>
+                                            <th class="cust-table">
+                                                0.45 - 0.49
+                                            </th>
+                                            <th class="cust-table">
+                                                0.50 - 0.59
+                                            </th>
+                                            <th class="cust-table">
+                                                0.60 - 0.69
+                                            </th>
+                                            <th class="cust-table">
+                                                0.70 - 0.79
+                                            </th>
+                                            <th class="cust-table">
+                                                0.80 - 0.89
+                                            </th>
+                                            <th class="cust-table">
+                                                0.90 - 0.94
+                                            </th>
+                                            <th class="cust-table">
+                                                0.95 - 0.99
+                                            </th>
+                                            <th class="cust-table">
+                                                1.0 - 1.17
+                                            </th>
+                                            <th class="cust-table">
+                                                1.18 - 1.39
+                                            </th>
+                                            <th class="cust-table">
+                                                1.40 - 1.49
+                                            </th>
+                                            <th class="cust-table">
+                                                1.50 - 1.59
+                                            </th>
+                                            <th class="cust-table">
+                                                1.60 - 1.69
+                                            </th>
+                                            <th class="cust-table">
+                                                1.70 - 1.99
+                                            </th>
+                                            <th class="cust-table">
+                                                2.00 - 2.99
+                                            </th>
+                                            <th class="cust-table">
+                                                3.00 - 3.99
+                                            </th>
+                                            <th class="cust-table">
+                                                4.00 - 4.99
+                                            </th>
+                                            <th class="cust-table">
+                                                5.00 - 5.99
+                                            </th>
+                                            <th class="cust-table">
+                                                6.00 - 6.99
+                                            </th>
+                                            <th class="cust-table">
+                                                7.99 - 7.99
+                                            </th>
+                                            <th class="cust-table">
+                                                8.00 - 8.99
+                                            </th>
+                                            <th class="cust-table">
+                                                9.00 - 9.99
+                                            </th>
+                                            <th class="cust-table">
+                                                HA-EX Disc
+                                            </th>
+                                            <th class="cust-table">
+                                                HA-VG Disc
+                                            </th>
+                                            <th class="cust-table">
+                                                Applied On
+                                            </th>
+                                        </tr>
+                                    </thead>
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+        </div>
+
+    </section>
+</div>
+
+@section script{
+    @Scripts.Render("~/bundles/DataTable/Script")
+    <script type="text/javascript" src="~/Scripts/custom/rbDataTable.js"></script>
+    <script type="text/javascript" src="~/Scripts/custom/Controller/CtrlMarketingBlueNile.js"></script>
+}
+
+
+

@@ -1,0 +1,231 @@
+﻿.font-color-red {
+    color: red;
+}
+
+.badge {
+    color: #000 !important;
+}
+
+.error {
+    color: red;
+}
+
+body.sidebar-collapse > div.wrapper > header.main-header > a.logo > img {
+    width: 23px;
+}
+
+.diamond-box > input.round_shape.active {
+    background-image: url(/Content/img/round_shape.png);
+}
+
+.diamond-box > input.princess_shape.active {
+    background-image: url(/Content/img/princess_shape.png);
+}
+
+.diamond-box > input.emerald_shape.active {
+    background-image: url(/Content/img/emerald_shape.png);
+}
+
+.diamond-box > input.asscher_shape.active {
+    background-image: url(/Content/img/asscher_shape.png);
+}
+
+.diamond-box > input.cushion_shape.active {
+    background-image: url(/Content/img/cushion_shape.png);
+}
+
+.diamond-box > input.pear_shape.active {
+    background-image: url(/Content/img/pear_shape.png);
+}
+
+.diamond-box > input.radiant_shape.active {
+    background-image: url(/Content/img/radiant_shape.png);
+}
+
+.diamond-box > input.heart_shape.active {
+    background-image: url(/Content/img/heart_shape.png);
+}
+
+.diamond-box > input.marquise_shape.active {
+    background-image: url(/Content/img/marquise_shape.png);
+}
+
+.diamond-box > input.oval_shape.active {
+    background-image: url(/Content/img/oval_shape.png);
+}
+
+.diamond-box > input.other_shape.active {
+    background-image: url(/Content/img/other_shape.png);
+}
+
+.dyd-shape {
+    margin-top: 6px;
+    margin-bottom: -6px;
+    margin-left: 150px;
+}
+
+    .dyd-shape > .form-inline {
+        margin: 6px;
+    }
+
+span.multiplecarat {
+    border: 1px solid #ddd;
+    padding: 5px;
+    border-radius: 12px;
+    margin-right: 5px;
+}
+
+.dl-container {
+    padding: 10px 0px;
+}
+
+.padding-10 {
+    padding: 18px !important;
+}
+
+.padding-top-10 {
+    padding-top: 18px !important;
+}
+
+.padding-bottom-10 {
+    padding-bottom: 18px !important;
+}
+
+.padding-left-10 {
+    padding-left: 18px !important;
+}
+
+.padding-right-10 {
+    padding-left: 18px !important;
+}
+
+.panel {
+    border: 1px solid #4d80b1;
+}
+
+.panel-heading {
+    font-size: 13px;
+    background-color: #337ab7 !important;
+    color: #FFF !important;
+    padding: 4px 10px;
+    font-weight: bold;
+}
+
+    .panel-heading > a {
+        color: #fff !important;
+        width: 100%;
+    }
+
+#uiPanel {
+    margin-left: 16%;
+    margin-right: 0.5%;
+    margin-top: 1.2%;
+}
+
+    #uiPanel > div.custom-alerts {
+        padding-bottom: 12px !important;
+        margin-bottom: 12px !important;
+    }
+
+        #uiPanel > div.custom-alerts > button.close {
+            padding-bottom: 12px !important;
+            margin-bottom: 12px !important;
+            width: 24px;
+            line-height: 20px !important;
+            position: relative;
+        }
+
+.table-condensed {
+    border: 1px solid #000;
+}
+
+    .table-condensed > tbody > tr > td {
+        border: 1px solid #000;
+        text-align: left !important;
+    }
+
+.whspace {
+    white-space: nowrap;
+}
+
+.table-condensed > tbody > tr > td:nth-child(0) {
+    width: 150px;
+}
+
+.no-top-bottom-padding {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+}
+
+.no-top-bottom-margin {
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+}
+
+.table-compare {
+    width: auto !important;
+}
+
+.select2-container {
+    width: 100% !important;
+}
+/*.select2-container--default .select2-selection--single {
+   
+    padding: 15px !important;
+
+}*/
+.marginleft {
+    margin-left: 18px;
+}
+
+input[type=checkbox], input[type=radio] {
+    margin: 6px 5px 0 !important;
+}
+
+input[type=radio] {
+    left: 0;
+    top: -4px;
+    margin: 6px 5px 0 0 !important;
+}
+
+.radioleft {
+    float: left;
+}
+
+.dropdown-menu-add {
+    top: auto;
+    right: 50px;
+}
+
+.removeSearch {
+    color: red;
+}
+
+.introduce-bg {
+    padding: 10px 15px;
+    background-color: rgba(237, 237, 237, 0.7);
+    border-radius: 10px;
+}
+
+.company-info {
+    padding: 10px 15px;
+}
+
+.pho-code {
+    width: 50px;
+    float: left;
+}
+
+.pho-num {
+    float: left;
+    width: auto;
+    margin-left: 4px;
+}
+
+.modal-body {
+    overflow: hidden;
+}
+
+.milky {
+    background-color: #00BFFF;
+}

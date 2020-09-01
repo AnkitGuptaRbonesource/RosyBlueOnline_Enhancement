@@ -1,0 +1,127 @@
+﻿@model int
+<div class="row" id="StockSummaryModule_@Model">
+    <div class="customers-list-table">
+        <div class="customers-list-table">
+            <div class="col-md-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <div class="panel-heading">Stock Summary</div>
+                        <input type="hidden" name="StockSStatus" id="hfStockS" value="ByValue" />
+                    </div>
+                    <div class="panel-body paneltable">
+                        <div class="form-horizontal col-md-12">
+                            <div class="form-group">
+
+                                <label class="col-md-2 control-label">
+                                    Select Type
+                                </label>
+                                <div class="col-md-2">
+                                    <select class="form-control" id="ddlSType_@Model"> 
+                                        <option value="ByValue">By Value</option>
+                                        <option value="ByStone">By no of stone</option>
+                                    </select>
+                                </div>
+
+
+                                <label class="col-md-2 control-label">
+                                    Select Sales Location
+                                </label>
+                                <div class="col-md-2">
+                                    <select class="form-control" id="ddlSalesLocation_@Model"></select>
+                                </div>
+                                <label class="col-md-2 control-label">
+                                    Select Shape
+                                </label>
+                                <div class="col-md-2">
+                                    <select class="form-control" id="ddlShape_@Model">
+                                        <option value="ALL">All</option>
+                                        <option value="FancyShape">Fancy Shape</option>
+                                        <option value="RoundShape">Round Shape</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table id="tblStockStatus_@Model" class="table table-fixed dataTable no-footer">
+                                    <thead class="bordertp">
+                                        <tr role="row" class="table-head">
+
+                                            <th class="tbnew">
+                                                
+                                            </th>
+                                            <th class="tbnew">
+                                                <label>Sizes</label>
+                                            </th>
+                                            <th class="tbnew">
+                                                <label>Total Inventory</label>
+                                            </th>
+                                            <th class="tbnew">
+                                                <label>On Memo</label>
+                                            </th>
+                                            <th class="tbnew">
+                                                <label>Website Order Pending</label>
+                                            </th>
+                                            <th class="tbnew">
+                                                <label>Available</label>
+                                            </th>
+
+                                            @*<th class="tbnew">
+            <label>TotInvValue</label>
+        </th>
+
+        <th class="tbnew">
+            <label>TotOnMemoValue</label>
+        </th>
+
+        <th class="tbnew">
+            <label>TotOrdPendingValue</label>
+        </th>
+
+        <th class="tbnew">
+            <label>TotAvailbaleValue</label>
+        </th>*@
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th class="tbnew">
+                                            </th>
+                                            <th class="tbnew">
+                                                <label>Total</label>
+                                            </th>
+                                            <th class="tbnew">
+
+                                            </th>
+                                            <th class="tbnew">
+
+                                            </th>
+                                            <th class="tbnew">
+
+                                            </th>
+                                            <th class="tbnew">
+
+                                            </th>
+                                            @*<th class="tbnew">
+
+        </th>
+        <th class="tbnew">
+
+        </th>
+        <th class="tbnew">
+
+        </th>
+        <th class="tbnew">
+
+        </th>*@
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

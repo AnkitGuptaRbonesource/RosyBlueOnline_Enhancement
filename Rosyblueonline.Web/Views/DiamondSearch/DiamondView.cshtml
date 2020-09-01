@@ -1,0 +1,561 @@
+﻿@model inventoryDetailsViewModel
+@{
+    Layout = null;
+}
+ 
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewBag.Title Rosyblue Online</title>
+    <link href="~/Content/dist/img/favicon.png" rel="shortcut icon" type="image/x-icon" />
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet">
+    @*<link href="~/Content/css/style.css" rel="stylesheet"> *@
+    <link href="~/Content/css/Diamondstyle.css" rel="stylesheet"> 
+</head>
+<body>
+    <header>
+
+        <div class="mainhead">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <img src="~/Content/img/logo.png" style="height: 50px;" />
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav" style="padding: 6px; font-size: 15px;">
+                        <li><a href="/Home">Home</a></li>
+                        <li><a href="http://www.rosyblue.com/" target="_blank">About</a></li>
+                        <li>@Html.ActionLink("Features", "Features", "Home")</li>
+                        <li>@Html.ActionLink("Register", "Registration", "Home")</li>
+                        <li>@Html.ActionLink("Contact us", "ContactUs", "Home")</li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right spblink" style="text-align:center;padding:5px;color:red">
+                        <li>GST will be applied for Indian customers</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+    @if (Model != null)
+    {
+        <section class="content" style="padding-top: 90px;">
+            <div id="openModal" class="">
+                <div>
+                    <h4 style="font-weight: 700">
+                        <span id="CaratFullName">@Model.Weight</span>
+                        -Size
+                        <span id="ShapeName">@Model.Shape</span>
+                        Diamond
+                    </h4>
+                    <div class="">
+                        <div class="row">
+                            <br />
+                            <div class="col-lg-12">
+                                <div class="view-diam" style="margin-top: -12px">
+
+                                    <p>
+                                        This
+                                        <span id="CutFullName">@Model.Cut</span>
+                                        -Cut ,
+                                        <span id="ColorName">@Model.Color</span>
+                                        -Color , and
+                                        <span id="ClarityName">@Model.Clarity</span>
+                                        -Clarity comes accompanied by a diamond grading report from the
+                                        <span id="CertificateName">@Model.Certificate</span>.
+                                        | <b>
+                                            Diamond Status: @Model.Stockstatus
+                                        </b>
+                                    </p>
+
+                                    @* <div class="">*@
+                                    <ul class="view-diam-pric">
+                                        <li>
+                                            <span>Rap ($):</span><div>@Model.RapnetPrice</div>
+                                        </li>
+                                        <li>
+                                            <span>Price ($)/Ct.:</span>
+                                            <div>@Model.Price</div>
+                                        </li>
+                                        <li>
+                                            <span>Amount (US$):</span>
+                                            <div>@Model.Amount</div>
+                                        </li>
+                                        <li>
+                                            <span>Discount (%):</span>
+                                            <div>@Model.Discount</div>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="col-lg-3">
+
+                                <div class="diamond-img-view">
+                                    <div class="diamond-view-border">
+                                        <div id="diamondView1" class="diamond-view-div">
+                                            <span class="dia-table"><span>@Model.TablePerc</span></span>
+                                            <span class="dia-depth"><span>@Model.Depth</span></span>
+                                            <span class="dia-depth2"><span>@Model.DepthPerc</span></span>
+                                            <span class="dia-girdle"><span>@Model.GirdlePerc</span></span>
+                                        </div>
+                                        <div id="diamondView2" class="diamond-view-div" style="display: none;">
+                                            <span class="dia-table" style="padding-top:79px;margin-right:34px;"><span id="mWidth">@Model.Width</span></span>
+                                            <span class="dia-depth" style="padding-top:35px"><span id="mLength" style="margin-left:56px;">@Model.Depth</span></span>
+                                        </div>
+                                        <div id="diamondView3" class="diamond-view-div" style="display: none;">
+                                            <span class="dia-table"><span></span></span>
+                                            <span class="dia-depth"><span></span></span>
+                                            <span class="dia-depth2"><span></span></span>
+                                            <span class="dia-girdle"><span></span></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="diamond-thub-div" style="margin-left: 125px">
+                                        <ul class="thub-view">
+                                            <li>
+                                                <img src="~/Content/img/dimoand01.gif" data-show="#diamondView1" id="frontviewimage" />
+                                            </li>
+                                            <li>
+                                                <img src="~/Content/img/dimoand02.gif" data-show="#diamondView2" id="TopViewImage" />
+                                            </li>
+                                            <li>
+                                                <img src="~/Content/img/dimoand03.gif" data-show="#diamondView3" id="ImageFromDB" />
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+
+                            <div class="col-lg-6">
+                                    <iframe id="iframev360" src="@Model.v360url" width="480" height="480" style="margin-left:65px;" scrolling="no" frameborder="no" allowfullscreen></iframe>
+                                </div>
+                            <div class="col-lg-3"  >
+
+                                <table class="table" style="width:100%">
+                                    <tbody>
+                                        <tr class="tbnew" style="text-align:center;background-color:#337ab7;color:#fff">
+                                            <td colspan="2">Diamond Detail</td>
+                                        </tr>
+                                        <tr>
+                                            <td width="50%" class="tbnew">Lot Number</td>
+                                            <td width="50%" id="LotNumber" class="tbnew">@Model.Stock</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tbnew">Lab</td>
+                                            <td id="Certificate" class="tbnew">@Model.Certificate</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tbnew">Report.No.</td>
+                                            <td id="CertificateNo" class="tbnew">
+                                                @{
+                                                    string Url = "";
+                                                    string CertificateNo = Model.CertificateNo;
+                                                    if (Model.Certificate == "GIA")
+                                                    {
+                                                        Url = "https://www.gia.edu/report-check?reportno=";
+                                                    }
+                                                    else if (Model.Certificate == "IGI")
+                                                    {
+                                                        Url = "www.igiworldwide.com/verify.php?r=";
+                                                    }
+
+                                                    if (!string.IsNullOrEmpty(Url) && !string.IsNullOrEmpty(CertificateNo))
+                                                    {
+
+                                                        <a href="@(Url+CertificateNo)" target="_blank">@Model.CertificateNo</a>
+
+                                                        @*<iframe id="giareport" src="@(Url+CertificateNo)" width="940" height="675" style="margin-top:-1016px;margin-bottom:20px;margin-left:22px" scrolling="yes" frameborder="1px solid black" allowfullscreen></iframe>*@
+                                                    }
+                                                }
+
+                                                @*<td id="CertificateNo" class="tbnew">@Model.CertificateNo</td>*@
+
+                                            </td>
+                                        </tr>
+                                        @*<tr>
+                                            <td class="tbnew">V360</td>
+                                            <td id="Shape" class="tbnew"> <a href="@Model.v360url" target="_blank"><i class="fa fa-video-camera" aria-hidden="true"></i>360 View</a></td>
+                                        </tr>*@
+                                        <tr>
+                                            <td class="tbnew">Shape</td>
+                                            <td id="Shape" class="tbnew">@Model.Shape</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tbnew">Size</td>
+                                            <td id="Carat" class="tbnew">@Model.Weight</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tbnew">Color</td>
+                                            <td id="Color" class="tbnew">@Model.Color</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tbnew ">Clarity</td>
+                                            <td id="Clarity" class="tbnew">@Model.Clarity</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tbnew">Cut</td>
+                                            <td id="Cut" class="tbnew">@Model.Cut</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tbnew">Polish</td>
+                                            <td id="PolishFull" class="tbnew">@Model.Polish</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tbnew">Symmetry</td>
+                                            <td id="SymmetryFull" class="tbnew">@Model.Symmetry</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tbnew">Fluor </td>
+                                            <td id="Florescense" class="tbnew">@Model.Fluorescence</td>
+                                        </tr>
+                                        <tr>
+
+                                            <td class="tbnew">Shade</td>
+                                            <td id="Shade" class="tbnew">@Model.Shade</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="tbnew">Measurements</td>
+                                            <td id="Measurement" class="tbnew">@Model.Measurement</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tbnew">EC</td>
+                                            <td id="EC" class="tbnew">@Model.EyeClean</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tbnew">TableBlack</td>
+                                            <td id="TableInc" class="tbnew">@Model.TableBlack</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tbnew">CrownBlack</td>
+                                            <td id="BlackIncln" class="tbnew">@Model.SideBlack</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tbnew">Milky</td>
+                                            <td id="Milky" class="tbnew">@Model.Milky</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tbnew">Depth (%)</td>
+                                            <td id="Depth" class="tbnew">@Model.DepthPerc</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tbnew">Table (%)</td>
+                                            <td id="TableP" class="tbnew">@Model.TablePerc</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tbnew">Crown Angle</td>
+                                            <td id="CrownAngle" class="tbnew">@Model.CrownAngle</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tbnew">Crown Height</td>
+                                            <td id="CrownHeight" class="tbnew">@Model.CrownHeight</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tbnew">Pavilion Angle</td>
+                                            <td id="PavilionAngle" class="tbnew">@Model.PavilionAngle</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tbnew">Pavilion Depth</td>
+                                            <td id="PD" class="tbnew">@Model.PavilionDepth</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tbnew">Star Length</td>
+                                            <td id="StarLength" class="tbnew">@Model.StarLength</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tbnew">HA</td>
+                                            <td id="HA" class="tbnew">@Model.HeartAndArrow</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="tbnew">Girdle</td>
+                                            <td id="Girdle" class="tbnew">@Model.Girdle</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tbnew">Keytosymbol</td>
+                                            <td id="Keytosymbol" class="tbnew">@Model.Keytosymbol</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tbnew">Gemex</td>
+                                            <td id="Gemx" class="tbnew">@Model.Gemex</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tbnew">Laser</td>
+                                            <td id="Laser" class="tbnew">@Model.Laserinscribe</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tbnew">Lower Half</td>
+                                            <td id="LowerHalf" class="tbnew">@Model.LowerHalf</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="tbnew">Forever</td>
+                                            <td id="ForeverMark" class="tbnew">@Model.ForeverMark</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tbnew">Girdle (%)</td>
+                                            <td id="GirdlePerc" class="tbnew">@Model.GirdlePerc</td>
+                                        </tr>
+
+                                </table>
+
+                            </div>
+
+                            @*<div class="">
+                                    @{
+                                        string Url = "";
+                                        string CertificateNo = Model.CertificateNo;
+                                        if (Model.Certificate == "GIA")
+                                        {
+                                            Url = "https://www.gia.edu/report-check?reportno=";
+                                        }
+                                        else if (Model.Certificate == "IGI")
+                                        {
+                                            Url = "www.igiworldwide.com/verify.php?r=";
+                                        }
+
+                                        if (!string.IsNullOrEmpty(Url) && !string.IsNullOrEmpty(CertificateNo))
+                                        {
+                                            <iframe id="giareport" src="@(Url+CertificateNo)" width="940" height="675" style="margin-top:-1016px;margin-bottom:20px;margin-left:22px" scrolling="yes" frameborder="1px solid black" allowfullscreen></iframe>
+                                        }
+                                    }
+
+                                </div>*@
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+    }
+
+    @Scripts.Render("~/bundles/modernizr", "~/bundles/jquery", "~/bundles/jqueryval", "~/bundles/bootstrap", "~/bundles/Admin/Script")
+    <script>
+        $(document).ready(function () {
+            $('img[data-show]').mouseenter(function (e) {
+                var showItem = $(this).attr('data-show');
+                $('.diamond-view-div').each(function (idx, ele) {
+                    $(ele).hide();
+                });
+                $(showItem).show();
+            })
+        });
+    </script>
+
+
+    @*<script type="text/javascript">
+            window.onload = function () {
+                //http://localhost:29140/DiamondSearch/DiamondView?id=253394
+                console.log(window.location.href.toString());
+                var url = window.location.href.toString();
+                var id = getParameterByName("id", url);
+                //var id=getUrlVars();
+                console.log(id);
+                getViewDiamond(id);
+            };
+
+            //function getUrlVars() {
+            //    var vars = [], hash;
+            //    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+            //    for (var i = 0; i < hashes.length; i++) {
+            //        hash = hashes[i].split('=');
+            //        vars.push(hash[0]);
+            //        vars[hash[0]] = hash[1];
+            //    }
+            //    return vars;
+            //}
+            function getParameterByName(name, url) {
+                if (!url) url = window.location.href;
+                console.log('url : ' + url);
+                name = name.replace(/[\[\]]/g, "\\$&");
+                var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                    results = regex.exec(url);
+                if (!results) return null;
+                if (!results[2]) return '';
+                console.log(results[2].replace(/\+/g, " "));
+                return decodeURIComponent(results[2].replace(/\+/g, " "));
+            }
+            function getViewDiamond(intId) {
+                console.log(intId);
+                //$('#myModalAllMemoPopupViewDiamond').modal('show');
+                //MemoHistory/viewDiamondByid
+                //DiamondSearch/DiamondView
+                $.ajax({
+                    url: "../DiamondSearch/DiamondView",
+                    dataType: 'json',
+                    method: 'POST',
+                    data: JSON.stringify({ 'fileId': intId }),
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                }).success(function (response) {
+                    //console.log(response);
+                    makingTablePreReg(response);
+                }).error(function (error) {
+                    console.log(error);
+                });
+            }
+            function makingTablePreReg(response) {
+                console.log(response);
+                for (var i = 0; i < response.length; i++) {
+                    document.getElementById("LotNumber").innerHTML = response[0].LotNumber == undefined ? 'NA' : response[0].LotNumber;
+                    document.getElementById("Shape").innerHTML = response[0].Shape == undefined ? 'NA' : response[0].Shape;
+                    document.getElementById("ShapeName").innerHTML = response[0].Shape == undefined ? 'NA' : response[0].Shape;
+                    document.getElementById("Carat").innerHTML = response[0].Carat == undefined ? 'NA' : response[0].Carat;
+                    document.getElementById("Cut").innerHTML = response[0].Cut == undefined ? 'NA' : response[0].Cut == undefined ? 'NA' : response[0].Cut;
+                    document.getElementById("CutFullName").innerHTML = response[0].CutFull == undefined ? 'NA' : response[0].CutFull == undefined ? 'NA' : response[0].CutFull;
+                    document.getElementById("CaratFullName").innerHTML = response[0].Carat == undefined ? 'NA' : response[0].Carat == undefined ? 'NA' : response[0].Carat;
+                    document.getElementById("Clarity").innerHTML = response[0].Clarity == undefined ? 'NA' : response[0].Clarity;
+                    document.getElementById("ClarityName").innerHTML = response[0].Clarity == undefined ? 'NA' : response[0].Clarity;
+                    document.getElementById("Color").innerHTML = response[0].Color == undefined ? 'NA' : response[0].Color;
+                    document.getElementById("ColorName").innerHTML = response[0].Color == undefined ? 'NA' : response[0].Color;
+                    document.getElementById("Certificate").innerHTML = response[0].Certificate == undefined ? 'NA' : response[0].Certificate;
+                    document.getElementById("CertificateName").innerHTML = response[0].Certificate == undefined ? 'NA' : response[0].Certificate;
+                    document.getElementById("SymmetryFull").innerHTML = response[0].SymmetryFull == undefined ? 'NA' : response[0].SymmetryFull;
+                    document.getElementById("TableP").innerHTML = response[0].TableP == undefined ? 'NA' : response[0].TableP;
+                    document.getElementById("Depth").innerHTML = response[0].Depth == undefined ? 'NA' : response[0].Depth;
+                    document.getElementById("PolishFull").innerHTML = response[0].PolishFull == undefined ? 'NA' : response[0].PolishFull;
+                    document.getElementById("Girdle").innerHTML = response[0].Girdle == undefined ? 'NA' : response[0].Girdle;
+                    document.getElementById("Florescense").innerHTML = response[0].Florescense == undefined ? 'NA' : response[0].Florescense;
+                    document.getElementById("Measurement").innerHTML = response[0].Measurement == undefined ? 'NA' : response[0].Measurement;
+                    document.getElementById("Rap").innerHTML = response[0].Rap == undefined ? 'NA' : response[0].Rap;
+                    //document.getElementById("Amount").innerHTML = response[0].Price == undefined ? 'NA' : response[0].Price;
+                    document.getElementById("Amount").innerHTML = response[0].PriceperCarat == undefined ? 'NA' : response[0].PriceperCarat;
+                    //document.getElementById("PriceperCarat").innerHTML = response[0].PriceperCarat == undefined ? 'NA' : response[0].PriceperCarat;
+                    document.getElementById("PriceperCarat").innerHTML = response[0].Price == undefined ? 'NA' : response[0].Price;
+                    document.getElementById("Discount").innerHTML = response[0].Discount == undefined ? 'NA' : response[0].Discount;
+                    document.getElementById("CertificateNo").innerHTML = response[0].CertificateNo == undefined ? 'NA' : response[0].CertificateNo;
+                    document.getElementById("CrownHeight").innerHTML = response[0].CrownHeight == undefined ? 'NA' : response[0].CrownHeight;
+                    document.getElementById("CrownAngle").innerHTML = response[0].CrownAngle == undefined ? 'NA' : response[0].CrownAngle;
+                    document.getElementById("PavilionAngle").innerHTML = response[0].PavilionAngle == undefined ? 'NA' : response[0].PavilionAngle;
+                    document.getElementById("PD").innerHTML = response[0].PavilionDepth == undefined ? 'NA' : response[0].PavilionDepth;
+                    document.getElementById("StarLength").innerHTML = response[0].StarLength == undefined ? 'NA' : response[0].StarLength;
+                    document.getElementById("LowerHalf").innerHTML = response[0].LowerHalf == undefined ? 'NA' : response[0].LowerHalf;
+                    document.getElementById("ForeverMark").innerHTML = response[0].ForeverMark == undefined ? 'NA' : response[0].ForeverMark;
+                    document.getElementById("Keytosymbol").innerHTML = response[0].Keytosymbol == undefined ? 'NA' : response[0].Keytosymbol;
+                    document.getElementById("GirdlePerc").innerHTML = response[0].GirdlePerc == undefined ? 'NA' : response[0].GirdlePerc;
+                    document.getElementById("Laser").innerHTML = response[0].Laser == undefined ? 'NA' : response[0].Laser;
+                    document.getElementById("Shade").innerHTML = response[0].Shade == undefined ? 'NA' : response[0].Shade;
+                    document.getElementById("EC").innerHTML = response[0].EC == undefined ? 'NA' : response[0].EC;
+                    document.getElementById("Milky").innerHTML = response[0].Milky == undefined ? 'NA' : response[0].Milky;
+                    document.getElementById("TableInc").innerHTML = response[0].TableInc == undefined ? 'NA' : response[0].TableInc;
+                    document.getElementById("BlackIncln").innerHTML = response[0].BlackInc == undefined ? 'NA' : response[0].BlackInc;
+                    document.getElementById("HA").innerHTML = response[0].HA == 0 ? 'No' : 'Yes';
+                    //image text calculation
+                    document.getElementById("depthPerc1").innerHTML = response[0].Depth == undefined ? 'NA' : response[0].Depth1;
+                    document.getElementById("depth2Perc1").innerHTML = response[0].Depth == undefined ? 'NA' : response[0].Depth;
+                    document.getElementById("tablePerc1").innerHTML = response[0].TableP == undefined ? 'NA' : response[0].TableP;
+                    document.getElementById("girdlePerc1").innerHTML = response[0].Girdle == undefined ? 'NA' : response[0].Girdle;
+
+                    document.getElementById("mWidth").innerHTML = response[0].Depth == undefined ? 'NA' : response[0].Width;
+                    document.getElementById("mLength").innerHTML = response[0].Depth == undefined ? 'NA' : response[0].Length;
+                    //                console.log(response[0].v360url);
+                    document.getElementById("iframev360").style.display = 'block';
+                    if (response[0].v360url == undefined || response[0].v360url == '') {
+                        document.getElementById("iframev360").style.display = 'none';
+                    }
+                    else {
+                        document.getElementById("iframev360").src = response[0].v360url == undefined ? '' : response[0].v360url;
+                        document.getElementById("iframev360").style.display = 'block';
+                    }
+                    var gia = "https://www.gia.edu/report-check?reportno=";
+                    if (response[0].Certificate == undefined || response[0].Certificate == '') {
+                    }
+                    else {
+                        if (response[0].Certificate == 'GIA') {
+                            gia = "https://www.gia.edu/report-check?reportno=";
+                        }
+                        if (response[0].Certificate == 'IGI') {
+                            gia = "www.igiworldwide.com/verify.php?r=";
+                        }
+                    }
+
+                    if (response[0].CertificateNo == undefined || response[0].CertificateNo == '') {
+                        document.getElementById("giareport").style.display = 'none';
+                    }
+                    else {
+
+                        var cert = response[0].CertificateNo == undefined ? '' : response[0].CertificateNo;
+                        document.getElementById("giareport").src = gia + cert;
+                        //document.getElementById("giareport").style.display = 'block';
+                        console.log(gia + cert);
+                    }
+                    //src="https://server.v360.in/vision360.html?d=igi-257716219&surl=https://bluenile.v360.in/12/imaged/igi-257716219/1"
+                    //document.getElementById("depthPerc3").innerHTML = response[0].Depth == undefined ? 'NA' : response[0].Depth;
+                    //document.getElementById("depth2Perc3").innerHTML = response[0].Depth == undefined ? 'NA' : response[0].Depth;
+                    //document.getElementById("tablePerc3").innerHTML = response[0].TableP == undefined ? 'NA' : response[0].TableP;
+                    //document.getElementById("girdlePerc3").innerHTML = response[0].Girdle == undefined ? 'NA' : response[0].Girdle;
+
+                    if (response[0].Status != undefined || response[0].Status != '') {
+                        var sttus = response[0].Status.trim().toString();
+                        console.log();
+                        if (sttus == '0') {
+                            document.getElementById("lotStatus").innerHTML = "InActive";
+                        }
+                        if (sttus == '1') {
+                            document.getElementById("lotStatus").innerHTML = "Available";
+                        }
+                        if (sttus == '2') {
+                            document.getElementById("lotStatus").innerHTML = "Order Pending";
+                        }
+                        if (sttus == '3') {
+                            document.getElementById("lotStatus").innerHTML = "Sold";
+                        }
+                        if (sttus == '4') {
+                            document.getElementById("lotStatus").innerHTML = "On Memo";
+                        }
+                        if (sttus == '5') {
+                            document.getElementById("lotStatus").innerHTML = "Cart";
+                        }
+                    }
+                }
+
+            }
+
+            ////////////
+            function FireClickEvent(id) {
+                var DiaClick1 = document.getElementById("diamondView1");
+                var DiaClick2 = document.getElementById("diamondView2");
+                var DiaClick3 = document.getElementById("diamondView3");
+                if (id == "frontviewimage") {
+                    DiaClick1.style.display = 'block';
+                    DiaClick2.style.display = 'none';
+                    DiaClick3.style.display = 'none';
+                    DiaClick1.className = 'diamond-view-div';
+                }
+                else if (id == "TopViewImage") {
+                    DiaClick2.style.display = 'block';
+                    DiaClick1.style.display = 'none';
+                    DiaClick3.style.display = 'none';
+                    DiaClick2.className = 'diamond-Topview-div';
+                }
+                else if (id = "ImageFromDB") {
+                    DiaClick3.style.display = 'block';
+                    DiaClick1.style.display = 'none';
+                    DiaClick2.style.display = 'none';
+                    DiaClick3.className = 'diamond-DBview-div';
+                }
+            }
+
+
+        </script>*@
+</body>
+</html>

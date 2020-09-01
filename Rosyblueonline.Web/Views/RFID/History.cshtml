@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "RFID History";
+}
+@section header{
+    @Styles.Render("~/bundles/DataTable/Style")
+}
+<div class="content-wrapper">
+    <section class="content">
+        <div id="uiPanel1"></div>
+        <div class="row">
+            <div class="col-lg-12">
+                <section class="panel panel-primary">
+                    <div class="panel-heading">
+                        RFID History
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table id="tblRFID" class="table table-condensed">
+                                    <thead>
+                                        <tr role="row" class="table-head">
+                                            <th class="cust-table">
+                                                RFID No
+                                            </th>
+                                            <th class="cust-table">
+                                                Certificate No
+                                            </th>
+                                            <th class="cust-table">
+                                                Created On
+                                            </th>
+                                            <th class="cust-table">
+                                                Created By
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+        </div>
+
+    </section>
+</div>
+@section script{
+    @Scripts.Render("~/bundles/DataTable/Script")
+    <script type="text/javascript" src="~/Scripts/custom/rbDataTable.js"></script>
+    <script src="~/Scripts/custom/Controller/CtrlRFIDHistory.js"></script>
+}
+
+
+

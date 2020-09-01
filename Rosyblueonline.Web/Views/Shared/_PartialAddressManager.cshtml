@@ -1,0 +1,104 @@
+﻿@model int
+<div id="pnlCustomerAddressManagerModule_@Model" class="row">
+    <div class="col-md-12">
+        <button type="button" id="btnAddAddress_@Model" class="btn btn-primary">Add Address</button>
+        <div id="lstAddress_@Model">
+        </div>
+    </div>
+    <!-- Modal -->
+    <div id="CustomerAddressFormModal_@Model" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Customer Address</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <form class="modal-body" id="frmCustomerAddressForm_@Model">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <input type="text" name="firstName" class="form-control" id="txtfirstName_@Model" placeholder="First Name">
+                                <input type="hidden" name="billingId" id="hfbillingId_@Model" value="" />
+                                <input type="hidden" name="shippingId" id="hfshippingId_@Model" value="" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" name="lastName" class="form-control" id="txtlastName_@Model" placeholder="Last Name">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="companyName">Company Name</label>
+                                <input type="text" name="companyName" class="form-control" id="txtcompanyName_@Model" placeholder="Company Name">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="address01">Address Line 1</label>
+                                <textarea class="form-control" name="address01" id="txtaddress01_@Model" placeholder="Address Line 1"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="address02">Address Line 2</label>
+                                <textarea class="form-control" name="address02" id="txtaddress02_@Model" placeholder="Address Line 2"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="countryID">Country</label>
+                                <select name="countryID" id="ddlCountryID_@Model" class="form-control">
+                                    <option value="">Select Country</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="stateID">State</label>
+                                <select name="stateID" id="ddlstateID_@Model" class="form-control">
+                                    <option value="">Select State</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="cityName">City</label>
+                                <input type="text" name="cityName" class="form-control" id="txtcityName_@Model" placeholder="City">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="zipCode">Zip Code</label>
+                                <input type="text" name="zipCode" class="form-control" id="txtzipCode_@Model" placeholder="Zip Code">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="checkbox-inline"><input type="checkbox" id="chkDefault_@Model" value="">Set as default address</label>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary" id="btnSubmitAddress_@Model">Submit</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

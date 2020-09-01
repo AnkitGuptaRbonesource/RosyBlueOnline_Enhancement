@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Rosyblueonline.Models.UpcomingShowModel>
+<div class="col-lg-4 col-md-4 col-sm-6 ">
+    <div class="event-box clearfix">
+        <h3 class="login-title">@Resource.Upcoming_Events</h3>
+        <div class="white-bg clearfix">
+            <marquee direction="up" scrolldelay="300">
+                @if (@Model.Count() > 0)
+                {
+                    foreach (var item in @Model)
+                    {
+                        <p> <b> -  @item.showDetails</b></p>
+                    }
+                }
+                else
+                {
+                    <p>
+                        <b>-  No upcoming events found</b>
+                    </p>
+                }
+            </marquee>
+        </div>
+    </div>
+</div>

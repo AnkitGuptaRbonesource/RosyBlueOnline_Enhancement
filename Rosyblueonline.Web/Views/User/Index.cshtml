@@ -1,0 +1,378 @@
+﻿@model UserRegistrationViewModel
+@{
+    ViewBag.Title = "User Detail";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    Rosyblueonline.Models.TokenLogModel objToken = Session["Token"] as Rosyblueonline.Models.TokenLogModel;
+}
+@section header{
+    @Styles.Render("~/bundles/DataTable/Style")
+}
+
+
+    <style type="text/css">
+        .dt_col_hide {
+            display: none;
+        }
+
+        .dt_col_show {
+            display: block;
+        }
+    </style>
+<input type="hidden" name="OnlyAddCustomer" id="hfOnlyAddCustomer" value="@(Model.OnlyAddCustomer.ToString().ToLower())" />
+<div class="content-wrapper">
+    <section class="content">
+        <div id="uiPanel"></div>
+        <div class="row">
+            <div class="col-lg-12">
+                <section class="panel panel-primary">
+                    <div class="panel-heading">
+                        User Detail
+                    </div>
+                    <div class="panel-body">
+                        <form class="row" id="frmUserDetail" style="display:none">
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                <div class="introduce-bg">
+                                    <div class="company-info">
+                                        <div class="form-horizontal">
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <label class="radio-inline">
+                                                            <input type="radio" name="optradio" id="rbtnCustomer" value="CUSTOMER" checked><label for="rbtnCustomer" class="controll-label">Customer</label>
+                                                        </label>
+                                                        <label class="radio-inline">
+                                                            @*@(objToken.RoleID != 2 ? "" : "checked")*@
+                                                            <input type="radio" name="optradio" id="rbtnSupportAdmin" value="SALES_PERSON" @(objToken.RoleID == 2 ? "" : "disabled")><label for="rbtnSupportAdmin" class="controll-label">Support Admin</label>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                        <label class="control-label">
+                                                            <label>First Name</label>
+                                                        </label>
+                                                        <input type="text" name="FirstName" value="" class="form-control" id="txtFirstName" />
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <label class="control-label">
+                                                            <label>Last Name</label>
+                                                        </label>
+                                                        <input type="text" name="LastName" value="" class="form-control" id="txtLastName" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <label class="control-label">
+                                                            <label>Email ID</label>
+                                                        </label>
+                                                        <input type="text" name="emailId" value="" class="form-control" id="txtEmailID" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                        <label class="control-label">
+                                                            <label>User Name</label>
+                                                        </label>
+                                                        <input type="hidden" name="LoginID" id="hfLoginID" value="0" />
+                                                        <input type="text" name="UserName" value="" class="form-control" id="txtUserName" />
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <label class="control-label">
+                                                            <label>Password</label>
+                                                        </label>
+                                                        <input type="password" name="Password" value="" class="form-control" id="txtPassword" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                        <label class="control-label">
+                                                            <label>Company Name</label>
+                                                        </label>
+                                                        <input type="text" name="CompanyName" value="" class="form-control" id="txtCompanyName" />
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <label class="control-label">
+                                                            <label>Address of Registered Office</label>
+                                                        </label>
+                                                        <textarea id="txtAddress" rows="5" name="OfficeAddress" class="form-control"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                        <label class="control-label">
+                                                            <label for="Country">Country</label>
+                                                        </label>
+                                                        <select class="form-control" id="ddlCountry" name="countryID">
+                                                            <option data-phoneCode="" value=""><-- Select Country --></option>
+                                                            @{
+                                                                for (int i = 0; i < @Model.Country.Count; i++)
+                                                                {
+                                                                    <option data-phoneCode="@Model.Country[i].Text2" value="@Model.Country[i].Value">@Model.Country[i].Text</option>
+                                                                }
+                                                            }
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <label class="control-label">
+                                                            <label for="State">State</label>
+                                                        </label>
+                                                        <select class="form-control" id="ddlState" name="stateID">
+                                                            <option value=""><-- Select State --></option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                        <label class="control-label">
+                                                            <label for="City">City</label>
+                                                        </label>
+                                                        <input type="text" class="form-control" name="cityName" value="" id="txtCity" />
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <label class="control-label">
+                                                            <label for="ZIP">ZIP/PIN</label>
+                                                        </label>
+                                                        <input type="text" class="form-control" id="txtZip" name="ZIP" placeholder="" maxlength="10">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                        <label class="control-label">
+                                                            <label>Phone</label>
+                                                        </label>
+                                                        <div>
+                                                            <input type="text" name="phoneCode01" value="" class="form-control pho-code" id="txtPhoneCode" />
+                                                            <input type="text" name="phone01" value="" class="form-control pho-num" id="txtPhone" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <label class="control-label">
+                                                            <label>Mobile</label>
+                                                        </label>
+                                                        <input type="text" class="form-control" id="txtMobile" name="Mobile" placeholder="" maxlength="12">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                <div class="introduce-bg">
+                                    <div class="company-info">
+                                        <div class="form-horizontal">
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <label class="control-label">
+                                                            <label>Account Number</label>
+                                                        </label>
+                                                        <input type="text" name="AccountNumber" value="" class="form-control" id="txtAccountNumber" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                        <label class="control-label">
+                                                            <label>Bank Name</label>
+                                                        </label>
+                                                        <input type="text" name="BankName" value="" class="form-control" id="txtBankName" />
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <label class="control-label">
+                                                            <label>Branch Name</label>
+                                                        </label>
+                                                        <input type="text" name="BranchName" value="" class="form-control" id="txtBranchName" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <label class="control-label">
+                                                            <label>Branch Address</label>
+                                                        </label>
+                                                        <textarea id="txtBranchAddress" rows="5" name="BranchAddress" class="form-control"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <label class="control-label">
+                                                            <label>User Status</label>
+                                                        </label>
+                                                        <div class="row">
+                                                            <div class="col-sm-12">
+                                                                <label class="radio-inline">
+                                                                    <input type="radio" name="userStatus" id="rbtnActive" value="1" checked><label for="rbtnActive" class="controll-label">Active</label>
+                                                                </label>
+                                                                <label class="radio-inline">
+                                                                    <input type="radio" name="userStatus" id="rbtnInActive" value="0"><label for="rbtnInActive" class="controll-label">In-Active</label>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <button id="btnSave" type="button" value="Save" class="btn btn-success pull-right">Save</button>
+                                                <button id="btnUpdate" type="button" value="Update" class="btn btn-success pull-right" style="display:none">Update</button>
+                                                <button id="btnCancel" type="button" value="Save" class="btn btn-success pull-right">Cancel</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <div id="frmUserDetailGrid" class="row">
+                            <div class="col-lg-12">
+                                <div class="company-info">
+                                    <div class="form-horizontal">
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-sm-9">
+                                                    <button class="btn btn-primary" id="btnAddUser">Add User</button>
+                                                </div>
+                                                <div class="col-sm-3 @(objToken.RoleID==2?"":"hide")">
+                                                    <label class="control-label">
+                                                        <label>Filter By Role</label>
+                                                    </label>
+                                                    <select class="form-control" id="ddlRoleFilter">
+                                                        <option value="">ALL ROLES</option>
+                                                        <option value="1">SUPER ADMIN</option>
+                                                        <option value="3" @(objToken.RoleID == 2 ? "" : "selected")>CUSTOMER</option>
+                                                        <option value="8">SALES PERSON</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+
+                                        </div>
+                                        <div class="col-lg-6">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <table id="tblUserDetail" class="table table-fixed dataTable no-footer" role="grid">
+                                    <thead class="bordertp">
+                                        <tr role="row" class="table-head">
+                                            <th class="tbnew">
+                                                <label>Name</label>
+                                            </th>
+                                            <th class="tbnew">
+                                                <label>Company Name</label>
+                                            </th>
+                                            <th class="tbnew">
+                                                <label>Role</label>
+                                            </th>
+                                            <th class="tbnew">
+                                                <label>Mobile</label>
+                                            </th>
+                                            <th class="tbnew">
+                                                <label>User Name</label>
+                                            </th>
+                                            <th class="tbnew">
+                                                <label>Country</label>
+                                            </th>
+                                            <th class="tbnew">
+                                                <label>SizePermitted</label>
+                                            </th>
+                                            <th class="tbnew">
+                                                <label>DownloadPermitted</label>
+                                            </th>
+                                            <th class="tbnew tbl-actions">
+                                                <label>Edit</label>
+                                            </th>
+                                            <th class="tbnew tbl-resetpassword-actions">
+                                                <label>Reset <br /> Password</label>
+                                            </th>
+                                            <th class="tbnew tbl-permission-actions">
+                                                <label>Permission</label>
+                                            </th>
+                                        </tr>
+                                    </thead>
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+
+<div id="Modal-SearchPermission" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-md">
+        <!-- Modal content-->
+        <form class="modal-content" id="frmSearchPermission">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Permission</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form">
+                           
+                            <div class="form-group" id="pnlSearchPermission"  >
+                                <div class="row">
+                                    <div class="col-md-8" style="font-size: larger;padding: 10px;">
+                                        <label > User Name :  </label>  <label id="lblUserNameD">   </label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="startSizePermitted">
+                                            Start Size Permitted
+                                        </label>
+                                        <input class="form-control" name="startSizePermitted" id="txtstartSizePermitted" value="0" />
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="hidden" name="SPLoginId" id="hfSPLoginId" value="" />
+                                        <label for="rowDownloadPermitted">
+                                            Row Download Permitted
+                                        </label>
+                                        <input class="form-control" name="rowDownloadPermitted" id="txtrowDownloadPermitted" value="0" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="btnPerupdate">Save</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+
+@section script{
+    @Scripts.Render("~/bundles/DataTable/Script")
+    <script type="text/javascript" src="~/Scripts/custom/rbDataTable.js"></script>
+    <script type="text/javascript" src="~/Scripts/custom/Controller/CtrlUserDetail.js"></script>
+}

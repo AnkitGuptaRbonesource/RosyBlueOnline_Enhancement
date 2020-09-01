@@ -1,0 +1,61 @@
+﻿@{
+    ViewBag.Title = "UploadHistory";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+@section header{
+    @Styles.Render("~/bundles/DataTable/Style")
+}
+<div class="content-wrapper">
+    @*<div id="uiPanel1"></div>*@
+    <section class="content">
+        <div id="uiPanel1"></div>
+        <div class="row">
+            <div class="customers-list-table">
+                <div class="">
+                    <div class="customers-list-table">
+                        <div class="col-md-12">
+                            <div class="panel panel-primary">
+                                <div class="panel-body paneltable">
+                                    <table id="tblUploadHistory" class="table table-fixed dataTable no-footer" role="grid" aria-describedby="SearchTablePost_info">
+                                        <thead class="bordertp">
+                                            <tr role="row" class="table-head">
+                                                <th class="tbnew">
+                                                    <label>File ID</label>
+                                                </th>
+                                                <th class="tbnew">
+                                                    <label>File Type</label>
+                                                </th>
+                                                <th class="tbnew">
+                                                    <label>Before Change</label>
+                                                </th>
+                                                <th class="tbnew">
+                                                    <label>File Name</label>
+                                                </th>
+                                                <th class="tbnew">
+                                                    <label>Uploaded Date</label>
+                                                </th>
+                                                <th class="tbnew">
+                                                    <label>Valid</label>
+                                                </th>
+                                                <th class="tbnew">
+                                                    <label>Invalid</label>
+                                                </th>
+                                            </tr>
+                                        </thead>
+
+                                    </table>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+@section script{
+    @Scripts.Render("~/bundles/DataTable/Script")
+    <script type="text/javascript" src="~/Scripts/custom/rbDataTable.js"></script>
+    <script type="text/javascript" src="~/Scripts/custom/Controller/CtrlInventoryUploadHistory.js"></script>
+}

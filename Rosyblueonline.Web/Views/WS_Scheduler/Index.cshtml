@@ -1,0 +1,150 @@
+﻿@*@{
+        ViewBag.Title = "Index";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }*@
+@{
+    ViewBag.Title = "Scheduler List";
+    Rosyblueonline.Models.TokenLogModel objToken = Session["Token"] as Rosyblueonline.Models.TokenLogModel;
+}
+@section header{
+    @Styles.Render("~/bundles/DataTable/Style")
+    <link href="~/Content/css/select2.min.css" rel="stylesheet" />
+}
+
+<div class="content-wrapper">
+    <section class="content">
+
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="scheduler-list-table">
+                        <div class="scheduler-list-table">
+                            <div class="col-md-12">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <div class="panel-heading">Scheduler Details</div>
+                                    </div>
+                                    <div class="panel-body">
+                                        <form class="row" id="frmSchedulerDetail"  style="display:none">
+                                            <input type="hidden" name="WSID" id="hfWSID" value="" />
+                                            <div class="col-lg-12 col-md-6 col-sm-12">
+                                                <div class="introduce-bg">
+                                                    <div class="company-info">
+                                                        <div class="form-horizontal">
+
+                                                            <div class="form-group">
+                                                                <div class="row">
+
+                                                                    <div class="col-sm-3">
+                                                                        <label class="control-label">
+                                                                            <label>Name</label>
+                                                                        </label>
+                                                                        <input type="text" name="Scheduler_Name" value="" class="form-control" id="txtScheduler_Name" />
+                                                                    </div>
+
+
+                                                                    <div class="col-sm-3">
+                                                                        <label class="control-label">
+                                                                            <label>
+                                                                                Frequency
+                                                                            </label>
+                                                                        </label>
+                                                                        <input type="text" name="Scheduler_Frequency" value="" class="form-control" id="txtScheduler_Frequency" />
+
+                                                                    </div>
+                                                                    <div class="col-sm-3">
+                                                                        <label class="control-label">
+                                                                            <label>
+                                                                                Frequency Interval
+                                                                            </label>
+                                                                        </label>
+                                                                        <input type="text" name="Scheduler_FrequencyInt" value="" class="form-control" id="txtScheduler_FrequencyInt" />
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <div class="row">
+                                                                    <div class="col-sm-4">
+                                                                        <label class="control-label">
+                                                                            <label>
+                                                                                Status
+                                                                            </label>
+                                                                        </label>
+                                                                        <div class="col-sm-12">
+                                                                            <label class="radio-inline">
+                                                                                <input type="radio" name="Scheduler_Status" id="rbtnActiveS" value="true"><label for="rbtnActiveS" class="controll-label" style="width:90px;padding:2px;">Active</label>
+                                                                            </label>
+                                                                            <label class="radio-inline">
+                                                                                <input type="radio" name="Scheduler_Status" id="rbtnInActiveS" value="false"><label for="rbtnInActiveS" class="controll-label" style="width:100px;padding:2px;">In-Active</label>
+                                                                            </label>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-sm-3">
+                                                                        <button class="btn btn-primary" id="btnUpdateDetails">Update</button>
+                                                                        <button class="btn btn-primary" id="btnCancel">Cancel</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </form>
+                                        </div>
+
+                                            <div class="panel-body paneltable">
+                                                <table id="tblDetails" class="table table-fixed dataTable no-footer">
+                                                    <thead class="bordertp">
+                                                        <tr role="row" class="table-head">
+
+                                                            <th class="tbnew">
+                                                                <label>WSID</label>
+                                                            </th>
+                                                            <th class="tbnew">
+                                                                <label>Name</label>
+                                                            </th>
+                                                            <th class="tbnew">
+                                                                <label>Frequency</label>
+                                                            </th>
+                                                            <th class="tbnew">
+                                                                <label>FrequencyInterval</label>
+                                                            </th>
+                                                            <th class="tbnew">
+                                                                <label>Status</label>
+                                                            </th>
+                                                            <th class="tbnew">
+                                                                <label>LastRun</label>
+                                                            </th>
+                                                            <th class="tbnew">
+                                                                <label>NextRun</label>
+                                                            </th>
+                                                            <th class="tbnew">
+                                                                <label>modifiedBy</label>
+                                                            </th>
+                                                            <th class="tbnew">
+                                                                <label>modifiedOn</label>
+                                                            </th>
+                                                            <th class="tbnew">
+                                                                <label>Actions</label>
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                </table>
+                                            </div>
+                                    </div>
+                                </div>
+                                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+</div>
+@section script{
+    @Scripts.Render("~/bundles/DataTable/Script")
+    <script type="text/javascript" src="~/Scripts/custom/rbDataTable.js"></script>
+    <script type="text/javascript" src="~/Scripts/select2.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/custom/Controller/CtrlSchedulerList.js"></script>
+}

@@ -1,0 +1,472 @@
+﻿@model List<OrderListView>
+@{
+    ViewBag.Title = "Home";
+    string curRoleId = "";
+    Rosyblueonline.Models.TokenLogModel objToken = Session["Token"] as Rosyblueonline.Models.TokenLogModel;
+    if (objToken != null)
+    {
+        curRoleId = objToken.RoleID.ToString();
+    }
+
+}
+@section header{
+}
+<div class="content-wrapper">
+    <section class="content">
+        <div id="uiPanel1"></div>
+        <section class="content">
+            <div class="">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4">
+                        @if (curRoleId == "2" || curRoleId == "9")
+                        {
+                            <div class="">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="view_orderR"><i class="fa fa-eye view_icon"></i><span style="font-size:8pt">Pending Order Report</span></div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="view_orderR">
+                                            <i class="fa fa-eye view_icon"></i>
+                                            <span style="font-size:8pt">
+                                                <a href="/Order/List">View Order Details</a>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    Pending Orders
+                                </div>
+                                <div class="panel-body pending-table">
+                                    <table id="pendingOrder" class="table table-striped">
+                                        <tr role="row">
+                                            <th class="sorting_asc">
+                                                @Html.Label("Order No")
+                                            </th>
+                                            <th class="sorting">
+                                                @Html.Label("Order Date")
+                                            </th>
+                                            <th class="sorting">
+                                                @Html.Label("Amount (US$)")
+                                            </th>
+                                        </tr>
+
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>
+                                                    @item.orderDetailsId
+                                                </td>
+                                                <td>
+                                                    @item.orderCreatedOn.ToString("dd-MM-yyyy")
+                                                </td>
+                                                <td>
+                                                    @item.orderPayableAmount
+                                                </td>
+                                            </tr>
+                                        }
+
+                                    </table>
+                                </div>
+                            </div>
+
+                        }
+
+                        <div id="ShoppingCartTab" class="panel panel-default hide">
+                            <div class="panel-heading">Shopping Cart</div>
+                            <div class="panel-body pending-table">
+                                <table id="ShoppingCartSummaryDataTable" class="table customers-table hide">
+                                    <thead style="font-weight: bold; border-top:1px solid #969595;">
+                                        <tr role="row" class="table-head">
+                                            <th class="cust-table">
+                                                @Html.Label("Lot Number")
+                                            </th>
+                                            <th class="cust-table">
+                                                @Html.Label("Shape")
+                                            </th>
+                                            <th class="cust-table">
+                                                @Html.Label("Size")
+                                            </th>
+                                            <th class="cust-table">
+                                                @Html.Label("Clarity")
+                                            </th>
+
+                                            <th class="cust-table">
+                                                @Html.Label("Color")
+                                            </th>
+
+                                            <th class="cust-table">
+                                                @Html.Label("Cut")
+                                            </th>
+                                            <th class="cust-table">
+                                                @Html.Label("Pol")
+                                            </th>
+                                            <th class="cust-table">
+                                                @Html.Label("Sym")
+                                            </th>
+
+                                            <th class="cust-table">
+                                                @Html.Label("Rap($)")
+                                            </th>
+
+                                            <th class="cust-table">
+                                                @Html.Label("Disc(%)")
+                                            </th>
+
+                                            <th class="cust-table">
+                                                @Html.Label("Price($)/ct")
+                                            </th>
+                                            <th class="cust-table">
+                                                @Html.Label("Amount($)")
+                                            </th>
+
+                                            <th class="cust-table">
+                                                @Html.Label("Name")
+                                            </th>
+                                            <th class="cust-table">
+                                                @Html.Label("Location")
+                                            </th>
+                                            <th class="cust-table">
+                                                @Html.Label("Status")
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-8 col-md-8">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                Dashboard
+                            </div>
+                            <div class="panel-body">
+                                @if (curRoleId == "2" || curRoleId == "8" || (curRoleId == "9" && (objToken.loginID == 11749 || objToken.loginID == 3379)))
+                                {
+                                    <div class="row icon-row">
+                                        <div class="col-md-2">
+                                            <h2 class="dash-sub-title">Customer Update</h2>
+                                        </div>
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 hvr-grow">
+                                            <div class="dashboard-icon">
+                                                <a href="/User" class="icon-label">
+                                                    <img src="~/content/img/icon_7.jpg">
+                                                    <span class="icon-label">List of Customers</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                                <div class="row icon-row">
+                                    <div class="col-md-2">
+                                        <h2 class="dash-sub-title">Inventory</h2>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 hvr-grow">
+                                        <div class="dashboard-icon">
+                                            <a href="/Memo" class="icon-label">
+                                                <img src="~/content/img/icon_2.jpg">
+                                                <span class="icon-label">Inventory on Memo</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    @*<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 hvr-grow">
+                                            <a href="#" class="dash-link"></a>
+                                            <div class="dashboard-icon">
+                                                <a href="@Url.Action("Index", "DownloadInventory")" class="icon-label">
+                                                    <img src="~/content/img/icon_11.jpg">
+                                                    <span class="icon-label">Inventory Download</span>
+                                                </a>
+                                            </div>
+                                        </div>*@
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 hvr-grow">
+                                        <a href="#" class="dash-link"></a>
+                                        <div class="dashboard-icon">
+                                            <a href="/Inventory/downloads" class="icon-label">
+                                                <img src="~/content/img/icon_11.jpg">
+                                                <span class="icon-label">Inventory Download</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 hvr-grow">
+                                        <a href="#" class="dash-link"></a>
+                                        <div class="dashboard-icon">
+                                            <a href="/Inventory/upload" class="icon-label">
+                                                <img src="~/content/img/icon_15.jpg">
+                                                <span class="icon-label">Inventory Upload</span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 hvr-grow">
+                                        <a href="#" class="dash-link"></a>
+                                        <div class="dashboard-icon">
+                                            <a href="/Inventory/UploadHistory" class="icon-label">
+                                                <img src="~/content/img/icon_15.jpg">
+                                                <span class="icon-label">Upload History</span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+
+                                <div class="row icon-row">
+                                    <div class="col-md-2">
+                                        <h2 class="dash-sub-title">Search</h2>
+                                    </div>
+                                    @*<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 hvr-grow">
+                                            <div class="dashboard-icon">
+                                                <a href="@Url.Action("QuickSearch", "DiamondSearch")" class="dash-link">
+                                                    <img src="~/content/img/icon_4.jpg">
+                                                    <span class="icon-label">Quick Search</span>
+                                                </a>
+                                            </div>
+                                        </div>*@
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 hvr-grow">
+                                        <a href="#" class="dash-link"></a>
+                                        <div class="dashboard-icon">
+                                            @*<a href="#" class="dash-link">*@
+                                            <a href="/Inventory/SpecificSearch" class="dash-link">
+                                                <img src="~/content/img/icon_5.jpg">
+                                                <span class="icon-label">Specific Search</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    @*@if (curRoleId != "9")
+                                        {
+                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 hvr-grow">
+                                                <div class="dashboard-icon">
+                                                    <a href="@Url.Action("ViewMatchingPair", "MatchPair")" class="icon-label">
+                                                        <img src="~/content/img/icon_8.jpg">
+                                                        <span class="icon-label">Matching-Pair</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 hvr-grow">
+                                                <div class="dashboard-icon">
+                                                    <a href="@Url.Action("DescribeYourDemands", "MyUtility")" class="icon-label">
+                                                        <img src="~/content/img/icon_14.jpg">
+                                                        <span class="icon-label">Describe your demands</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        }*@
+                                </div>
+
+                                @*@if (curRoleId == "3" || curRoleId == "4")
+                                    {
+                                        <div class="row icon-row">
+                                            <div class="col-md-2">
+                                                <h2 class="dash-sub-title">My Account</h2>
+                                            </div>
+                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 hvr-grow">
+                                                <div class="dashboard-icon">
+                                                    <a href="@Url.Action("BestDeals", "MyUtility")" class="dash-link">
+                                                        <img src="~/content/img/icon_4.jpg">
+                                                        <span class="icon-label">Best Deals</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 hvr-grow">
+                                                <a href="#" class="dash-link"></a>
+                                                <div class="dashboard-icon">
+                                                    <a href="@Url.Action("UserActivityOrders", "CustomerUpdate")" class="dash-link">
+                                                        <img src="~/content/img/icon_5.jpg">
+                                                        <span class="icon-label">My Orders</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }*@
+
+                                @if (curRoleId != "3" && curRoleId != "4")
+                                {
+                                    <div class="row icon-row">
+                                        <div class="col-md-2">
+                                            <h2 class="dash-sub-title">RFID</h2>
+                                        </div>
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 hvr-grow">
+                                            <a href="#" class="dash-link"></a>
+                                            <div class="dashboard-icon">
+                                                <a href="/RFID/Index" class="dash-link">
+                                                    <img src="~/content/img/icon_4.jpg">
+                                                    <span class="icon-label">RFID search</span>
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 hvr-grow">
+                                            <a href="#" class="dash-link"></a>
+                                            <div class="dashboard-icon">
+                                                <a href="/RFID/Update" class="dash-link">
+                                                    <img src="~/content/img/icon_15.jpg">
+                                                    <span class="icon-label">RFID Modify</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 hvr-grow">
+                                            <a href="#" class="dash-link"></a>
+                                            <div class="dashboard-icon">
+                                                <a href="/RFID/Uploadhistory" class="dash-link">
+                                                    <img src="~/content/img/icon_15.jpg">
+                                                    <span class="icon-label">Upload History</span>
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 hvr-grow">
+                                            <a href="#" class="dash-link"></a>
+                                            <div class="dashboard-icon">
+                                                <a href="/RFID/StockTally" class="dash-link">
+                                                    <img src="~/content/img/icon_6.jpg">
+                                                    <span class="icon-label">Stock Tally</span>
+                                                </a>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 hvr-grow">
+                                            <a href="#" class="dash-link"></a>
+                                            <div class="dashboard-icon">
+                                                <a href="/RFID/RFIDMaster" class="dash-link">
+                                                    <img src="~/content/img/icon_15.jpg">
+                                                    <span class="icon-label">RFID Master</span>
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-2">&nbsp;</div>
+
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 hvr-grow">
+                                            <a href="#" class="dash-link"></a>
+                                            <div class="dashboard-icon">
+                                                <a href="/RFID/History" class="dash-link">
+                                                    <img src="~/content/img/icon_15.jpg">
+                                                    <span class="icon-label">RFID History</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                                @if (curRoleId != "3" && curRoleId != "9" && curRoleId != "4")
+                                {
+                                    <div class="row icon-row">
+                                        <div class="col-md-2">
+                                            <h2 class="dash-sub-title">Reports</h2>
+                                        </div>
+                                        @*<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 hvr-grow">
+                                                <div class="dashboard-icon">
+                                                    <a href="@Url.Action("Watchlist", "DownloadReports")" class="icon-label">
+                                                        <img src="~/content/img/icon_6.jpg">
+                                                        <span class="icon-label">View Request Reports</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 hvr-grow">
+                                                <div class="dashboard-icon">
+                                                    <a href="@Url.Action("ViewDownloadReports", "DownloadReports")" class="dash-link">
+                                                        <img src="~/content/img/icon_13.jpg">
+                                                        <span class="icon-label">Download Reports</span>
+                                                    </a>
+                                                </div>
+                                            </div>*@
+
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 hvr-grow">
+                                            <div class="dashboard-icon">
+                                                <a href="/Inventory/StoneStatus" class="dash-link">
+                                                    <img src="~/content/img/icon_16.jpg">
+                                                    <span class="icon-label">Stone Status</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                                @if (curRoleId == "2")
+                                {
+                                    <div class="row icon-row">
+                                        <div class="col-md-2">
+                                            <h2 class="dash-sub-title">Marketing</h2>
+                                        </div>
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 hvr-grow">
+                                            <a href="#" class="dash-link"></a>
+                                            <div class="dashboard-icon">
+                                                <a href="/Marketing/BlueNile" class="dash-link">
+                                                    <img src="~/content/img/icon_9.jpg">
+                                                    <span class="icon-label">BlueNile Disc%</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 hvr-grow">
+                                            <a href="#" class="dash-link"></a>
+                                            <div class="dashboard-icon">
+                                                <a href="/Marketing/JamesAllen" class="dash-link">
+                                                    <img src="~/content/img/icon_9.jpg">
+                                                    <span class="icon-label">JamesAllen Disc%</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 hvr-grow">
+                                            <a href="#" class="dash-link"></a>
+                                            <div class="dashboard-icon">
+                                                <a href="/Marketing/JamesAllenHK" class="dash-link">
+                                                    <img src="~/content/img/icon_9.jpg">
+                                                    <span class="icon-label">JamesAllen HK Disc%</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                                @*@if (curRoleId == "2")
+                                    {
+                                        <div class="row icon-row">
+                                            <div class="col-md-2">
+                                                <h2 class="dash-sub-title">Miscellaneous</h2>
+                                            </div>
+                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 hvr-grow">
+                                                <div class="dashboard-icon">
+                                                    @if (ViewBag.resultMessage != null)
+                                                    {
+                                                        if (ViewBag.resultMessage == "0")
+                                                        {
+                                                            <a href="javascript:void(0);" onclick="OpenOnBlockPopup();" class="dash-link">
+                                                                <img src="~/content/img/icon_10.jpg">
+                                                                <span class="icon-label">Block Site</span>
+                                                            </a>
+                                                        }
+                                                        else if (ViewBag.resultMessage == "1")
+                                                        {
+                                                            <a href="javascript:void(0);" onclick="OpenOnUnBlockPopup();" class="dash-link">
+                                                                <img src="~/content/img/icon_10.jpg">
+                                                                <span class="icon-label">UnBlock Site</span>
+                                                            </a>
+                                                        }
+                                                    }
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }*@
+
+                            </div>
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </section>
+</div>
+
+@section script{
+}

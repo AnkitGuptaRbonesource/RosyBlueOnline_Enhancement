@@ -1,0 +1,1116 @@
+﻿@model string
+@{
+    Rosyblueonline.Models.TokenLogModel objToken = Session["Token"] as Rosyblueonline.Models.TokenLogModel;
+}
+ 
+
+
+
+
+
+<input type="hidden" name="RoleID" id="hfRoleID" value="@objToken.RoleID" />
+
+<style type="text/css">
+    .dt_col_hide {
+        display: none;
+    }
+
+
+     
+</style>
+@*<form style="display:none" id="frmMomoPage" method="post" action="/Memo">
+        <input type="hidden" name="MemoQuery" id="hfMemoQuery" value="" />
+    </form>*@
+
+@*<form style="display:none" id="frmListViewPostSearch" method="post" action="/Inventory/SpecificSearchPost">
+        <input type="hidden" name="Query" id="hflQuery" value="" />
+    </form>*@
+
+<section class="content" id="pnlSSResult">
+    @if (Model == "SS")
+    {
+        <div class="row">
+            <div class="col-md-2">
+                <div class="smboxone">
+                    <div class="info-box-content">
+                        <span class="info-box-text">Total Stones<span class="pull-right" id="spanTotalCount"> 0 </span></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="smboxtwo">
+                    <div class="info-box-content">
+                        <span class="info-box-text">Available<span class="pull-right" id="spanAvailableCount"> 0 </span></span>
+                    </div>
+                </div>
+            </div>
+            @if (objToken.RoleID == 2 || objToken.RoleID == 8 || objToken.RoleID == 9)
+            {
+                <div class="col-md-2">
+                    <div class="smboxtwo" style="background-color: #5553a3 !important; color: white;">
+                        <div class="info-box-content">
+                            <span class="info-box-text">On Memo<span class="pull-right" id="spanOnMemoCount"> 0 </span></span>
+                        </div>
+                    </div>
+                </div>
+            }
+
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="clorbox">
+                    <div class="info-box-content">
+                        <span class="info-box-text">
+                            Grid Legends <span class="spngrid">
+                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Best Deals">
+                                    <img id="imgbtnBestDeals" src="/content/img/B.jpg">
+                                </a>
+                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="New Diamonds">
+                                    <img id="imgbtnNew" src="/content/img/N.jpg">
+                                </a>
+                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="In-business">
+                                    <img id="imgbtnOnMemo" src="/content/img/M.jpg">
+                                </a>
+                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Add To Cart">
+                                    <img id="Image2" src="/content/img/C.jpg">
+                                </a>
+
+                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="In Lab">
+                                    <img id="Image1" src="/content/img/In_lab.jpg">
+                                </a>
+                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Heart&amp;Arrow">
+                                    <img id="imgha" src="/content/img/H&amp;A.jpg">
+                                </a>
+                            </span><a href="#" data-tooltip="#foo" class="fcolor">Inclusion ?</a>
+                        </span>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    }
+
+    @if (Model == "SS")
+    {
+        <div class="row">
+            <div class="col-md-2">
+                <button class="smbox" id="btnCompare">
+                    <div class="info-box-content">
+                        <span class="info-box-text"><i class="fa fa-balance-scale fontsz"></i><span class="pull-right"> Compare </span></span>
+                    </div>
+                </button>
+            </div>
+            <div class="col-md-2">
+                <button class="smbox" id="btnBack">
+                    <div class="info-box-content">
+                        <span class="info-box-text"><i class="fa fa-pencil-square-o fontsz"></i><span class="pull-right">Modify</span></span>
+                    </div>
+                </button>
+            </div>
+            @if (objToken.RoleID == 2)
+            {
+                <div class="col-md-2">
+                    <button class="smbox" id="btnAddBestDeal">
+                        <div class="info-box-content">
+                            <span class="info-box-text"><i class="fa fa-thumbs-o-up fontsz"></i><span class="pull-right">Add Best Deal</span></span>
+                        </div>
+                    </button>
+                </div>
+                <div class="col-md-2">
+                    <button class="smbox" id="btnRemoveBestDeal">
+                        <div class="info-box-content">
+                            <span class="info-box-text"><i class="fa fa-thumbs-o-down fontsz"></i><span class="pull-right">Remove Best Deal</span></span>
+                        </div>
+                    </button>
+                </div>
+            }
+            @if (objToken.RoleID == 2 || objToken.RoleID == 9)
+            {
+                <div class="col-md-2">
+                    <button class="smbox" id="btnAddToMemo">
+                        <div class="info-box-content">
+                            <span class="info-box-text"><i class="fa fa-pencil-square fontsz"></i><span class="pull-right">Memo</span></span>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="col-md-2">
+                    <button class="smbox" id="btnEmail">
+                        <div class="info-box-content">
+                            <span class="info-box-text"><i class="fa fa-envelope fontsz"></i><span class="pull-right">Email</span></span>
+                        </div>
+                    </button>
+                </div>
+            }
+            @if (objToken.RoleID == 3)
+            {
+                <div class="col-md-2">
+                    <button class="smbox" id="btnInspectionReport">
+                        <div class="info-box-content">
+                            <span class="info-box-text"><i class="fa fa-envelope-o fontsz"></i><span class="pull-right">Inspection Request</span></span>
+                        </div>
+                    </button>
+                </div>
+            }
+            <div class="col-md-2">
+                @*<button class="smbox">
+                        <div class="info-box-content">
+                            <span class="info-box-text"><i class="fa fa-balance-scale fontsz"></i><span class="pull-right">Export Excel</span></span>
+                        </div>
+                    </button>*@
+                <div class="dropdown">
+                    <button class="smbox dropdown-toggle" type="button" data-toggle="dropdown">
+                        @*<i class="fa fa-balance-scale fontsz"></i>*@
+                        <i class="fa fa-file-excel-o fontsz" aria-hidden="true"></i>
+                        <span class="pull-right fontsm">
+                            Export Excel
+                            <span class="caret"></span>
+                        </span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" id="btnExcel">Selected</a></li>
+                        <li><a href="#" id="btnAllExcel">All</a></li>
+                        <li><a href="#" id="btnMemoExcel">Only Memo</a></li>
+                    </ul>
+
+                </div>
+            </div>
+            <div class="col-md-2">
+                <button class="smbox" id="btnPrint">
+                    <div class="info-box-content">
+                        <span class="info-box-text"><i class="fa fa-print fontsz"></i><span class="pull-right">Print</span></span>
+                    </div>
+                </button>
+            </div>
+            @if (objToken.RoleID == 3)
+            {
+                <div class="col-md-2">
+                    <button class="smbox" id="btnCart">
+                        <div class="info-box-content">
+                            <span class="info-box-text"><i class="fa fa-shopping-cart fontsz" aria-hidden="true"></i><span class="pull-right">Cart</span></span>
+                        </div>
+                    </button>
+                </div>
+            }
+            @if (objToken.RoleID == 3)
+            {
+                <div class="col-md-2">
+                    <button class="smbox" id="btnWatchList">
+                        <div class="info-box-content">
+                            <span class="info-box-text"><i class="fa fa-list-alt fontsz" aria-hidden="true"></i><span class="pull-right">Watchlist</span></span>
+                        </div>
+                    </button>
+                </div>
+            }
+            @*<div class="col-md-2">
+
+                    <button class="smbox" >
+                        <div class="info-box-content">
+                            <span class="info-box-text"><i class="fa fa-arrow-circle-left fontsz"></i><span class="pull-right">Back</span></span>
+                        </div>
+                    </button>
+                </div>*@
+
+        </div>
+    }
+
+    @if (Model == "Cart")
+    {
+        <div class="row">
+            <div class="col-md-2">
+                <button class="smbox" id="btnCompare">
+                    <div class="info-box-content">
+                        <span class="info-box-text"><i class="fa fa-balance-scale fontsz"></i><span class="pull-right"> Compare </span></span>
+                    </div>
+                </button>
+            </div>
+            <div class="col-md-2">
+                <div class="dropdown">
+                    <button class="smbox dropdown-toggle" type="button" data-toggle="dropdown">
+                        <i class="fa fa-balance-scale fontsz"></i>
+                        <span class="pull-right fontsm">
+                            Export Excel
+                            <span class="caret"></span>
+                        </span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" id="btnExcel">Selected</a></li>
+                        <li><a href="#" id="btnAllExcel">All</a></li>
+                        <li><a href="#" id="btnMemoExcel">Only Memo</a></li>
+                    </ul>
+
+                </div>
+            </div>
+            <div class="col-md-2">
+                <button class="smbox" id="btnOrder">
+                    <div class="info-box-content">
+                        <span class="info-box-text"><i class="fa fa-cart-plus fontsz"></i><span class="pull-right">Order</span></span>
+                    </div>
+                </button>
+            </div>
+
+            <div class="col-md-2">
+                <button class="smbox" id="btnRemove">
+                    <div class="info-box-content">
+                        <span class="info-box-text"><i class="fa fa-trash fontsz"></i><span class="pull-right">Remove Cart</span></span>
+                    </div>
+                </button>
+            </div>
+
+        </div>
+    }
+
+    @if (Model == "WatchList")
+    {
+        <div class="row">
+            <div class="col-md-2">
+                <button class="smbox" id="btnCompare">
+                    <div class="info-box-content">
+                        <span class="info-box-text"><i class="fa fa-balance-scale fontsz"></i><span class="pull-right"> Compare </span></span>
+                    </div>
+                </button>
+            </div>
+
+            <div class="col-md-2">
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                        <i class="fa fa-balance-scale fontsz"></i> Export Excel
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" id="btnExcel">Selected</a></li>
+                        <li><a href="#" id="btnAllExcel">All</a></li>
+                        <li><a href="#" id="btnMemoExcel">Only Memo</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <button class="smbox" id="btnAddToCart">
+                    <div class="info-box-content">
+                        <span class="info-box-text"><i class="fa fa-cart-plus fontsz"></i><span class="pull-right">Cart</span></span>
+                    </div>
+                </button>
+            </div>
+
+            <div class="col-md-2">
+                <button class="smbox" id="btnRemove">
+                    <div class="info-box-content">
+                        <span class="info-box-text"><i class="fa fa-trash fontsz"></i><span class="pull-right">Remove</span></span>
+                    </div>
+                </button>
+            </div>
+        </div>
+    }
+
+
+    <div class="search-header clearfix">
+        <div class="switch-btn pull-right">
+            <button type="button" class="btn list-viewbtn btn-primary" onclick="$(this).addClass('btn-primary');$(this).removeClass('btn-default');$('.thumb-viewbtn').removeClass('btn-primary');$('.thumb-viewbtn').addClass('btn-default'); $('.list-view').show(); $('.thumb-result').hide();"><i class="fa fa-th-list" aria-hidden="true"></i></button>
+            <button id="btnShowListView" type="button" class="btn thumb-viewbtn btn-default" onclick="$(this).addClass('btn-primary');$(this).removeClass('btn-default');$('.list-viewbtn').addClass('btn-default');$('.list-viewbtn').removeClass('btn-primary'); $('.list-view').hide(); $('.thumb-result').show();"><i class="fa fa-th-large" aria-hidden="true"></i></button>
+        </div>
+        <h4 class="search-txt">Search Result</h4>
+    </div>
+
+
+    <div id="ListViewData" class="thumb-result row pagination12" style="display:none"> </div>
+    
+    <div class="col-md-12 text-center thumb-result"  style="display:none">
+        <ul class="pagination  hide" id="pnlPagination"></ul>
+    </div>
+
+    @*@if (ViewBag.SearchResultList != null)
+        {
+            foreach (var ResList in (IEnumerable<inventoryDetailsViewModel>)ViewBag.SearchResultList)
+            {
+                <div class="align-centerd diamond">
+                    <div class="img-container pointer"><img alt="diamond" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANwAAADcCAYAAAAbWs+BAAANmUlEQVR4Xu2dO2gVTRTHJyAGSRGIghDBQgIWtnZqbW9j4aNRsBAFwU4EH42dID5AsPIBFpYWFlZql8ZSuKQywUIDFkFSRWZ1bzY39959zeOcmV+qxLtz5pz/+f88u7N++WaWl5e3FhYWzOzsrOELBVDAjwKbm5tmfX3dzKysrGzZb5aWlsz8/Lyf3YiKAhkr8Pv3bzMYDIwdbDOrq6tbc3NzxR8AXcauoHQvCpSwWbY2Njb+Abe4uGiqHzDpvGhP0MwUGGVqbW1tGzirBdBl5gjK9abAOJZ2AQd03vQncEYKTBpcY4EDuoycQanOFZh2lzgROKBz3gcCZqBA3SPZVOCALgOHUKIzBepgsxvVAgd0zvpBoIQVaAJbY+CALmGnUFpvBZrC1go4oOvdFwIkqEAb2FoDB3QJOoaSOivQFrZOwAFd5/6wMCEFusDWGTigS8g5lNJaga6w9QIO6Fr3iQUJKNAHtt7AAV0CDqKExgr0hc0JcEDXuF9cqFgBF7A5Aw7oFDuJ1GsVcAWbU+CArrZvXKBQAZewOQcO6BQ6ipQnKuAaNi/AAR0OTkEBH7B5Aw7oUrBcvjX4gs0rcECXr2E1V+4TNu/AAZ1m6+WXu2/YggAHdPkZV2PFIWALBhzQabRgPjmHgi0ocECXj4E1VRoStuDAAZ0mK6afa2jYogAHdOkbWUOFMWCLBhzQabBkujnGgi0qcECXrqElVxYTtujAAZ1ka6aXW2zYRAAHdOkZW2JFEmATAxzQSbRoOjlJgU0UcECXjsElVSIJNnHAAZ0kq+rPRRpsIoEDOv1Gl1CBRNjEAgd0EiyrNwepsIkGDuj0Gj5m5pJhEw8c0MW0rr69pcOmAjig02f8GBlrgE0NcEAXw8J69tQCmyrggE4PACEz1QSbOuCALqSV5e+lDTaVwAGdfBBCZKgRNrXAAV0IS8vdQytsqoEDOrlA+MxMM2zqgQM6n9aWF1s7bEkAB3TywPCRUQqwJQMc0PmwuJyYqcCWFHBAJwcQl5mkBFtywAGdS6vHj5UabEkCB3TxQXGRQYqwJQsc0LmwfLwYqcKWNHBAFw+YPjunDFvywAFdH+uHX5s6bFkAB3ThwemyYw6wZQMc0HVBINyaXGDLCjigCwdQm51ygi074ICuDQr+r80NtiyBAzr/IDXZIUfYsgUO6Jog4e+aXGHLGjig8wfUtMg5w5Y9cEAXFrrcYQO4/37DCP7BQ+N/Gq+trZmZ1dXVrcXFRf+qC94BQ/hrDtpuawtwFZ9hDPfQoelOTQFuxGMYxB10aLlbS4Ab4y+M0h86NByvIcBN8BaG6Q4d2k3WDuCm+ArjtIcOzaZrBnA1nsJAzaFDq3qtAK5eI4OR6kVCo3qNeA/XTKPiKgw1WSy0aW4kJlxzrYCOE90WbuGUsrdYTLqdEjLZ2luKCddeMyYdt9gdXPNvCcB1lC7nv91zrr2jXYbLAK6HgjkaL8eae1hk11KA66lmTgbMqdaetpi4HOAcKJuDEXOo0YEVakMAXK1EzS5I2ZAp19asu+6uAjh3WiZ5eglsDg3CKaVbMVN7Twds7v3BhHOvaRKTDtg8GIMJ50dU7ZMO2Pz5ggnnT1uVkw7YPBqCCedXXG2TDtj8+4EJ519jFZMO2AIYgQkXRmTpkw7YwvmACRdOa5GTDtgCGoAJF1ZsaZMO2ML3nwkXXnMRkw7YIjSeCRdH9NiTDtji9Z0JF0/7KJMO2CI2nAkXV/zQkw7Y4vebCRe/B0EmHbAJaDQTTkYTfE86YJPTZyacnF54mXTAJqjBTDhZzXA96YBNXn+ZcPJ64mTSAZvAxjLhZDal76QDNrl9ZcLJ7U2nSQdsghvKhJPdnLaTDtjk95MJJ79HjSYdsCloJBNOR5PqJh2w6ekjE05Pr8ZOOmBT1EAmnK5mjU46+/NgMDBLS0tmfn5eXzEZZsyEU9j0cqrZ1IFNVwMBTle/imwBTmHT/qcMcMp6V31m45ZSWfN4htPVsHEHJBya6OohE05Jv6aBBXRKmsiE09GoJkA1uUZHtWlnyYQT3t82ILW5VnjZyaYHcIJb2wWgLmsES5BcagAntKV9wOmzVqgcyaQFcAJb6QIYFzEESqM+JYAT1kKXoLiMJUwmtekAnKDW+QDER0xBkqlLBeCEtMwnGD5jC5FPTRoAJ6BVIYAIsYcAKcWnAHCRWxQShJB7RZZV7PYAF7E1MQCIsWdEicVtDXCRWhLT+DH3jiS3mG0BLkIrJBheQg4RpI++JcAFboEko0vKJXAbom0HcAGll2hwiTkFbEnwrQAukOSSjS05t0DtCbYNwAWQWoOhNeQYoFXetwA4zxJrMrKmXD23zVt4gPMm7fZv19L0q+yAzqMh+BUL/sTVbFzNufvrqJvITDg3Ou6IkoJhU6jBQ2t7hwS43hLuDJCSUVOqxXGbO4cDuM7S7V6YokFTrMlhy1uHArjWko1fkLIxU67NUfsbhwG4xlJNvjAHQ+ZQowMr1IYAuFqJpl+QkxFzqrWnLSYuB7geyuZowBxr7mGRXUsBrqOaORsv59o72mW4DOA6KIjhdP4rmg6tdr4E4FpKCmzbgqFFS/PwT7vaCYbB8nj32M4V7a5mwjXUC9jyfi3S0Ca1lwFcrUQ8rzSQaPj/Hdf0X0Y0qcv1NQBXoyiTrbnl0KpeK4CbohEGqjfQ6BVoNl0zgJugD8ZpD1u5Au0mawdwY7TBMN1hAzomXCv3AFsruaZejJa75WHCVTTBIO5gY9KN1xLg/usCbO5hAzom3FhXAZs/2IBup7bZTzhg8w8b0G1rnDVwwBYONqD7p0C2wAFbeNiALlPggC0ebLlDl92EA7b4sOUMXVbAAZsc2HKFLhvggE0ebDlClwVwwCYXttygSx44YJMPW07QJQ0csOmBLRfokgUO2PTBlgN0SQIHbHphSx265IADNv2wpQxdUsABWzqwpQpdMsABW3qwpQhdEsABW7qwpQadeuCALX3YUoJONXDAlg9sqUCnFjhgyw+2FKBTCRyw5QubdujUAQdswKYZOlXAARuwjSqgzRNqgNMmLGiEU0CTN1QAp0nQcDZjp6oCWjwiHjgtQmL/+Apo8Ipo4DQIGN9mZKBp0okFDtgAqasCkr0jEjjJgnU1AevCKiDVQ+KAkypUWLuwmwsFJHpJFHASBXLReGLEU0Cap8QAJ02YeBZhZ9cKSPKWCOAkCeK62cSToYAUj0UHTooQMmxBFj4VkOC1qMBJEMBng4ktT4HYnosGXOzC5VmBjEIpENN7UYCLWXCoprKPbAVieTA4cLEKld1+souhQAwvBgUuRoExGsmeehQI7clgwIUuTE/LyTS2AiG9GQS4kAXFbh7761QglEe9AxeqEJ1tJmtJCoTwqlfgQhQgqWHkol8B3571BpzvxPW3lgqkKuDTu16A85mw1CaRV1oK+PKwc+B8JZpWO6lGgwI+vOwUOB8JamgMOaargGtPOwPOdWLptpDKtCng0ttOgHOZkLZmkG8eCrjyeG/gXCWSR9uoUrMCLrzeCzgXCWhuALnnp0Bfz3cGru/G+bWKilNRoI/3OwHXZ8NURKeOvBXoykBr4LpulHd7qD5FBbqw0Aq4LhukKDQ1hVfg9evX5vz588ONP3/+bE6cOFH8/O3bN3P27Fnz9evX4ud79+6Z27dvD6+trn316pU5d+5cbQHTYv769auI8eHDhyLOmTNnzNOnT83Bgwd35XPlyhXz8OFDs2/fvuKzxsABW22PuMCTAl++fDH37983Fpz9+/cb+/PVq1fN27dvzYEDBwrzW8AsgCUMFy5cKP7cgnP9+nXz6NGjIrvy+6NHj07MtowxLqaF68aNG+bUqVNF/D9//hS5zM7OmgcPHpi9e/cOPx+9tjFwwObJSYTtpMAoEKNBLJz2ywJjIf306dNwytjPjhw50mjKVeNWY47uZ/f4+PGjuXz5cgHcrVu3CsAt1PYvh5cvXw73r51wwNbJEyzyqEAb4EZBKX++efNmMYnsV3nLZ8GxcJSTtA1wFuq7d++a9+/fmzdv3hTTt5zG1ek8FThg8+gaQndWYBoY5bPXkydPilvM0Ylm166srBTTz94OlreHx48fn3i7ORqzmvjoLax9rnv+/Pnwmc6uvXPnjnn8+HEB4ETggK2zH1joUQF7i3by5ElTPTQptyvNb0ErD02mAWfXVQ9Hxh2ojItZ7lcCW52SNr8XL14Ut5fHjh0zP378qAcO2Dw6htCdFWgLm91o0i1l9RTTXrO6urrjNNGubQubXVMe8Dx79sysr6+bnz9/FnHL29RdEw7YOvuBhR4VqJ5Mjp4wjt7WVdOo3kKWAFYPTcq49kj/4sWLw8OUaTHLyXbo0KEdrx/KiVneQu7Zs8e8e/eumMb2Fte+GtgBHLB5dAyhOysw7RlqmvlLACa9FqgevtjXC+V1hw8fLp7txgFVQjtuItrPqs+F9rWAfWVgAb927ZqZn5/fBm5ubs4MBgOztLRUfMAXCkhRYPSld5mXfeayhx3Vl97lZ9UXzuNefI+7XSwPY+xpo11fvkivxrS3opcuXRq+9C4/O3369PC2sfpcaOPYeN+/fy/Y2tjYMDMrKytb9n4T2KRYjDxSU6C8e1xYWDAzy8vLW/Yb+7acLxRAAT8KbG5uFgcpfwHHhY6k5wH9ngAAAABJRU5ErkJggg=="></div>
+                    <div class="flex column space-around actions">
+                        <div class="flex space-between align-centered">
+                            <div class="lab">@ResList.inventoryID</div>
+                            <div class="lab add-link"><a href="#">Add</a></div>
+                        </div>
+                        <div class="flex align-centered space-between details"><div>rb</div><div>0.41</div><div>d</div><div>I1</div></div>
+                        <div class="flex space-between align-centered reserve"><div class="flex align-centered price"><div class="">$680</div><div class="ppc">/ppc</div></div></div>
+                    </div>
+                </div>
+            }
+        }*@
+
+
+    @if (Model != "OrderInfo" && Model != "Memo" && !string.IsNullOrEmpty(Model))
+    {
+        <div class="list-view">
+            <table class="table">
+                <thead class="bordertp">
+                    <tr>
+                        <th class="tbnew">
+                            Total pcs
+                        </th>
+                        <th class="tbnew">
+                            Tot.Carat
+                        </th>
+                        <th class="tbnew" style="display: none;">
+                            Tot.Amount($)
+                        </th>
+                        <th class="tbnew">
+                            Avg.Rap/ct($)
+                        </th>
+                        <th class="tbnew">
+                            Tot.Rap($)
+                        </th>
+                        <th class="tbnew" style="display: none;">
+                            Avg.Price/ct($)
+                        </th>
+                        <th class="tbnew">
+                            Avg.Rap.Off(%)
+                        </th>
+                        <th colspan="2" class="tbnew" style="display: none;">
+                            System
+                        </th>
+                        <th colspan="2" class="tbnew" style="display: none;">
+                            Online
+                        </th>
+                        <th colspan="2" class="tbnew" style="display: none;">
+                            Cash
+                        </th>
+                        <th colspan="2" class="tbnew" style="display: none;">
+                            RB Discount
+                        </th>
+                        <th class="tbnew">
+                            Price/ct($)
+                        </th>
+                        <th class="tbnew" style="display: none;">
+                            Rap Off(%)
+                        </th>
+                        <th class="tbnew">
+                            Payable Amount($)
+                        </th>
+                    </tr>
+                    <tr></tr>
+                </thead>
+                <tbody id="tblBodySummary">
+                    <tr class="rsearchnew" style="height: 25px;">
+                        <td class="rsearchnew">
+                            <b><span id="lblcountsel"></span></b>
+                        </td>
+                        <td class="rsearchnew">
+                            <b><span id="lblTCt1"></span></b>
+                        </td>
+                        <td class="rsearchnew" style="display: none;">
+                            <b><span id="lblTAmt"></span></b>
+                        </td>
+                        <td class="rsearchnew">
+                            <b><span id="lblNetORapValue"></span></b>
+                        </td>
+                        <td class="rsearchnew">
+                            <b><span id="lbltotRap"></span></b>
+                        </td>
+                        <td class="rsearchnew" style="display: none;">
+                            <b><span id="lblTAvgPrice"></span></b>
+                        </td>
+                        <td class="rsearchnew">
+                            <b><span id="lblNetRapPer"></span></b>
+                        </td>
+
+                        <td class="rsearchnew"><b><span id="lblavgpriceafterdis"></span></b></td>
+
+                        <td class="rsearchnew"><b><span id="lblfinalamoutpayment"></span></b></td>
+
+                    </tr>
+                </tbody>
+                @if (objToken != null && objToken.RoleID == 2)
+                {
+                    @*Role ID 2 for Admin User*@
+                    <tbody id="tblSoldInDays"></tbody>
+                }
+            </table>
+        </div>
+    }
+
+    @if (Model == "Memo")
+    {
+        <div class="row">
+            <div class="col-md-2">
+                <button class="smbox btn btn-primary" id="btnSplitMemo">
+                    Split Memo
+                </button>
+            </div>
+            <div class="col-md-2">
+                <button class="smbox btn btn-primary" id="btnCancelMemo">
+                    Cancel Memo
+                </button>
+            </div>
+            <div class="col-md-2">
+                <button class="smbox btn btn-primary" id="btnSellPartialMemo">
+                    Sell Partial
+                </button>
+            </div>
+            <div class="col-md-2">
+                <button class="smbox btn btn-primary" id="btnReturnPartialSellMemo">
+                    Return Partial Sell
+                </button>
+            </div>
+            <div class="col-md-2">
+                <button class="smbox btn btn-primary" id="btnBackMemo">
+                    Back
+                </button>
+            </div>
+        </div>
+    }
+    <a href="/Inventory/ExportToExcelInventoryDownload" id="ancDownloadExcel" target="_blank" style="display:none;">Download Excel</a>
+    <form action="/Inventory/ExportToExcelInventory" id="frmExportExcel" method="post">
+        <input type="hidden" name="filterText" id="hfFilterText" value="" />
+        <input type="hidden" name="AddToRecentSearch" id="hfAddToRecentSearch" value="" />
+        <input type="hidden" name="NewArrival" id="hfNewArrival" value="false" />
+    </form>
+    <div class="row list-view">
+        <div class="customers-list-table">
+            <div class="">
+                <div class="customers-list-table">
+                    <div class="col-md-12">
+                        <div class="panel panel-primary">
+                            @*style="overflow-x: scroll; max-height: 390px;"*@
+                            <div class="panel-body paneltable">
+
+                                <table id="SearchTablePost" class="table table-fixed dataTable no-footer" role="grid" aria-describedby="SearchTablePost_info">
+                                    <thead class="bordertp">
+                                        <tr role="row" class="table-head">
+                                            <th class="tbnew dt-checkbox">
+                                                <div class="btn-group">
+                                                    <input type="checkbox" id="checkAll" name="checkAll" class="group-checkable" value="checkAll">
+                                                    @*<button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                            Right-aligned menu
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-left">
+                                                            <button class="dropdown-item" type="button">Select All Pages</button>
+                                                            <button class="dropdown-item" type="button">Select This Pages</button>
+                                                            <button class="dropdown-item" type="button">Select None</button>
+                                                        </div>*@
+                                                </div>
+                                            </th>
+                                            <th class="tbnew stock">
+                                                <label for="Stock">Stock</label>
+                                            </th>
+
+                                            <th class="tbnew">
+                                                <label for="Certificate_">Certificate#</label>
+                                            </th>
+                                            <th class="tbnew dt-V360">
+                                                <label for="V360">V360</label>
+                                            </th>
+                                            <th class="tbnew">
+                                                <label for="Shape">Shape</label>
+                                            </th>
+                                            <th class="tbnew dt-weight">
+                                                <label for="Weight">Weight</label>
+                                            </th>
+                                            <th class="tbnew">
+                                                <label for="Color">Color</label>
+                                            </th>
+                                            <th class="tbnew">
+                                                <label for="Clarity">Clarity</label>
+                                            </th>
+                                            <th class="tbnew">
+                                                <label for="Diamentions">Diamentions</label>
+                                            </th>
+                                            <th class="tbnew">
+                                                <label for="Table_">Table%</label>
+                                            </th>
+                                            <th class="tbnew">
+                                                <label for="Depth_">Depth%</label>
+                                            </th>
+                                            <th class="tbnew">
+                                                <label for="Girdle">Girdle</label>
+                                            </th>
+                                            <th class="tbnew">
+                                                <label for="Cut">Cut</label>
+                                            </th>
+                                            <th class="tbnew">
+                                                <label for="Polish">Polish</label>
+                                            </th>
+                                            <th class="tbnew">
+                                                <label for="Symmetry">Symmetry</label>
+                                            </th>
+                                            <th class="tbnew">
+                                                <label for="Flora">Flora</label>
+                                            </th>
+                                            <th class="tbnew lab">
+                                                <label for="Lab">Lab</label>
+                                            </th>
+                                            <th class="tbnew">
+                                                <label for="RapPrice">RapPrice</label>
+                                            </th>
+                                            <th class="tbnew">
+                                                <label for="RapDisc___">RapDisc(%)</label>
+                                            </th>
+                                            <th class="tbnew" id="sl">
+                                                <label for="Price____ct">Price($)/ct</label>
+                                            </th>
+                                            <th class="tbnew">
+                                                <label for="Amount">Amount</label>
+                                            </th>
+                                            <th class="tbnew">
+                                                <label for="D_R">D/R</label>
+                                            </th>
+                                            <th class="tbnew">
+                                                <label for="CrownHeight">CrownHeight</label>
+                                            </th>
+                                            <th class="tbnew">
+                                                <label for="CrownAngle">CrownAngle</label>
+                                            </th>
+                                            <th class="tbnew">
+                                                <label for="PavilionDepth">PavilionDepth</label>
+                                            </th>
+                                            <th class="tbnew">
+                                                <label for="PavilionAngle">PavilionAngle</label>
+                                            </th>
+                                            <th class="tbnew">
+                                                <label for="Starlength">Starlength</label>
+                                            </th>
+                                            <th class="tbnew">
+                                                <label for="LowerHalf">LowerHalf</label>
+                                            </th>
+                                            <th class="tbnew">
+                                                <label for="Girdle_">Girdle%</label>
+                                            </th>
+                                            <th class="tbnew laser">
+                                                <label for="Laser">Laser</label>
+                                            </th>
+                                            <th class="tbnew">
+                                                <label for="EC">EC</label>
+                                            </th>
+                                            <th class="tbnew">
+                                                <label for="Shade">Shade</label>
+                                            </th>
+                                            <th class="tbnew">
+                                                <label for="Milky">Milky</label>
+                                            </th>
+                                            <th class="tbnew">
+                                                <label for="TableBlack">TableBlack</label>
+                                            </th>
+                                            <th class="tbnew">
+                                                <label for="CentreBlack">CentreBlack</label>
+                                            </th>
+                                            <th class="tbnew ha">
+                                                <label for="H_A">H&amp;A</label>
+                                            </th>
+                                            <th class="tbnew">
+                                                <label for="Opens">Opens</label>
+                                            </th>
+                                            <th class="tbnew">
+                                                <label for="Keytosymbol">Keytosymbol</label>
+                                            </th>
+                                            <th class="tbnew">
+                                                <label for="GIAcomments">GIAcomments</label>
+                                            </th>
+                                            <th class="tbnew">
+                                                <label for="ReportDate">ReportDate</label>
+                                            </th>
+                                            <th class="tbnew">
+                                                <label for="SalesLocation">SalesLocation</label>
+                                            </th>
+                                            <th class="tbnew Status">
+                                                <label for="Status">Status</label>
+                                            </th>
+                                            <th class="tbnew CompanyName">
+                                                <label for="CompanyName">Company Name</label>
+                                            </th>
+                                            <th class="tbnew StoneOrigin">
+                                                <label for="StoneOrigin">Origin</label>
+                                            </th>
+                                        </tr>
+                                    </thead>
+
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="display:none;overflow:scroll;width:500px;height:300px;">
+        <table id="tblPrint"></table>
+    </div>
+
+
+
+    <!-- myModal -->
+    <div class="modal fade" id="divCompareModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Comparing</h4>
+                </div>
+                <div class="modal-body">
+
+                    <div class="table-responsive">
+                        <table class="table">
+                            <tbody id="tblCompare">
+                                <tr><td>Stock</td></tr>
+                                <tr><td>V360</td></tr>
+                                <tr><td>Shape</td></tr>
+                                <tr><td>Weight</td></tr>
+                                <tr><td>Color</td></tr>
+                                <tr><td>Clarity</td></tr>
+                                <tr><td>Diamentions</td></tr>
+                                <tr><td>Table%</td></tr>
+                                <tr><td>Depth%</td></tr>
+                                <tr><td>Girdle</td></tr>
+                                <tr><td>Cut</td></tr>
+                                <tr><td>Polish</td></tr>
+                                <tr><td>Symmetry</td></tr>
+                                <tr><td>Flora</td></tr>
+                                <tr><td>Lab</td></tr>
+                                <tr><td>RapPrice</td></tr>
+                                <tr><td>RapDisc(%)</td></tr>
+                                <tr><td>Price($)/ct</td></tr>
+                                <tr><td>Amount</td></tr>
+                                <tr><td>D/R</td></tr>
+                                <tr><td>CrownHeight</td></tr>
+                                <tr><td>CrownAngle</td></tr>
+                                <tr><td>PavilionDepth</td></tr>
+                                <tr><td>PavilionAngle</td></tr>
+                                <tr><td>Starlength</td></tr>
+                                <tr><td>LowerHalf</td></tr>
+                                <tr><td>Girdle%</td></tr>
+                                <tr><td>Laser</td></tr>
+                                <tr><td>EC</td></tr>
+                                <tr><td>Shade</td></tr>
+                                <tr><td>Milky</td></tr>
+                                <tr><td>TableBlack</td></tr>
+                                <tr><td>CentreBlack</td></tr>
+                                <tr><td>H&A</td></tr>
+                                <tr><td>Keytosymbol</td></tr>
+                                <tr><td>GIAcomments</td></tr>
+                                <tr><td>ReportDate</td></tr>
+                                <tr><td>Rough</td></tr>
+                                <tr><td>SalesLocation</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" style="margin-bottom: 10px;">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Form Best Deals-->
+    <div class="modal fade" id="Modal-FormBD" tabindex="-1" role="dialog" aria-labelledby="Modal-FormLabelBD">
+        <div class="modal-dialog modal-lg-6" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title" id="Modal-FormLabelBD">Add Best Deals</h4>
+                </div>
+                <div class="modal-body">
+
+                    <!-- We display the details entered by the user here -->
+                    Best Deals Text
+
+                    <input type="text" id="BDText" name="BDText">
+
+
+                    Best Deals Discount
+
+                    <input type="text" id="BDDiscount" name="BDDiscount">
+
+
+
+                </div>
+                <div class="modal-footer">
+
+                    <button type="submit" class="btn btn-primary" name="command" value="btnBestDeals" onclick="AddBestDealsToDiamonds()" style="margin-bottom: 10px;">Save</button>
+                    <button type="button" class="btn btn-inverse" data-dismiss="modal" style="margin-bottom: 10px;">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Form Remove Best Deals-->
+    <div class="modal fade" id="Modal-FormBDRemove" tabindex="-1" role="dialog" aria-labelledby="Modal-FormLabelBD">
+        <div class="modal-dialog modal-lg-6" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title" id="Modal-FormLabelBDRemove">Remove Best Deals</h4>
+                </div>
+                <div class="modal-body">
+
+                    <!-- We display the details entered by the user here -->
+
+
+                    <input type="radio" id="RemoveBDchangeDisc" name="BD1" value="" class="">
+                    Apply Last Changed Discount
+
+
+                    <br>
+
+                    <input type="radio" id="RemoveBDprev" name="BD1" value="" class="" checked="checked">
+                    Apply Previous Discount
+
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary" name="command" value="btnBestDealsRemove" onclick="RemoveBestDealsToDiamonds()" style="margin-bottom: 10px;">Remove Best Deal</button>
+                    <button type="button" class="btn btn-inverse" data-dismiss="modal" style="margin-bottom: 10px;">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Form Email-->
+    <div class="modal fade" id="Modal-FormEmail" tabindex="-1" role="dialog" aria-labelledby="Modal-FormLabelEmail">
+        <div class="modal-dialog modal-lg-8" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title" id="Modal-FormLabelEmail">Inspection Report</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <label for="MailFrom">
+                                                Mail From
+                                            </label>
+                                            <input type="text" class="form-control" name="MailFrom" id="txtMailFrom" @(string.IsNullOrEmpty(objToken.EmailID) ? "" : "disabled") value="@(objToken.EmailID)">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <label for="MailTo">
+                                                Mail To
+                                            </label>
+                                            <input type="text" class="form-control" name="MailTo" id="txtMailTo" disabled value="@System.Configuration.ConfigurationManager.AppSettings["InspectEmail_ID"]" placeholder="Mail To" />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <label for="MailTo">
+                                                Subject
+                                            </label>
+                                            <input type="text" class="form-control" name="Subject" id="txtSubject" disabled value="Request For Inspection" placeholder="Subject" />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <label for="Message">
+                                                Message
+                                            </label>
+                                            <textarea class="form-control" name="Message" id="txtMessage"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="btnSendInspectionReportMail">Confirm</button>
+                    <button type="button" class="btn btn-inverse" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    @*Disabled For Memo As Already added in Memo Page*@
+
+    <!-- Modal Send mail-->
+    <div class="modal fade" id="Modal-FormSendMail" tabindex="-1" role="dialog" aria-labelledby="Modal-FormLabelSendMail">
+        <div class="modal-dialog modal-lg-8" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title" id="Modal-FormLabelSendMail">Send Mail</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <form class="form" id="frmModalFormSendMail">
+                                <div class="form-group">
+                                    @*<div class="row">
+                                            <div class="col-md-12">
+                                                <label for="EMailFrom">
+                                                    Mail From
+                                                </label>
+                                                <input type="text" class="form-control" name="EMailFrom" id="txtEMailFrom" value="@objToken.EmailID" placeholder="Mail From" />
+                                            </div>
+                                        </div>*@
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <label for="EmailName">
+                                                Name
+                                            </label>
+                                            <input type="text" class="form-control" name="EmailName" placeholder="Name" id="txtEmailName" value="">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <label for="EMailTo">
+                                                Mail To
+                                            </label>
+                                            <input type="text" class="form-control" name="EMailTo" id="txtEMailTo" placeholder="To" />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <label for="EMailCC">
+                                                Mail CC
+                                            </label>
+                                            <input type="text" class="form-control" name="EMailCC" id="txtEMailCC" placeholder="CC" />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <label for="EMailBCC">
+                                                Mail BCC
+                                            </label>
+                                            <input type="text" class="form-control" name="EMailBCC" id="txtEMailBCC" placeholder="BCC" />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <label for="EMailSubject">
+                                                Subject
+                                            </label>
+                                            <input type="text" class="form-control" name="EMailSubject" id="txtEMailSubject" placeholder="Subject" />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <label for="Message">
+                                                Message
+                                            </label>
+                                            <textarea class="form-control" name="Message" id="txtEMailMessage" placeholder="Message"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="btnSendEmail">Send</button>
+                    <button type="button" class="btn btn-inverse" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @if (Model != "Memo")
+    {
+        <!--Modal for Memo-->
+        @Html.Partial("~/Views/Shared/_MemoPopupPartial.cshtml")
+    }
+
+    <div class="modal fade" id="Modal-AddToBestDeal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg-6" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title">Add Best Deals</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form">
+                        <div class="form-group">
+                            <form class="row" id="frmBestDeal">
+                                <div class="col-sm-6">
+                                    <label class="control-label">
+                                        <label>Best Deals Discount </label><span class="error">*</span>
+                                    </label>
+                                    <input type="text" name="BestDealDiscount" value="" class="form-control" id="txtBestDealDiscount" />
+                                </div>
+                                <div class="col-sm-6">
+                                    <label class="control-label">
+                                        <label>Best Deals Remark</label><span class="error">*</span>
+                                    </label>
+                                    <textarea name="BestDealRemark" value="" class="form-control" id="txtBestDealRemark"></textarea>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="btnSaveBestDeal">Confirm</button>
+                    <button type="button" class="btn btn-inverse" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="foo" style="padding: 5px;">
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+        <div class="colorcode-div2" style="margin-left: -15px;">
+            <table cellspacing="0" width="100%">
+                <tbody>
+                    <tr>
+                        <td class="low-div">Milky: Low</td>
+                        <td class="M0">M0</td>
+                        <td class="M1">M1</td>
+                        <td class="M2">M2</td>
+                        <td class="M3">M3</td>
+                        <td class="M4"></td>
+                        <td class="high">High</td>
+                    </tr>
+                    <tr>
+                        <td class="low-div">TB: Low</td>
+                        <td class="M0">TB0</td>
+                        <td class="M0">NV</td>
+                        <td class="M1">TB1</td>
+                        <td class="M2">TB2</td>
+                        <td class="M3">TB3</td>
+                        <td class="M4">TB4</td>
+                        <td class="high">High</td>
+                    </tr>
+                    <tr>
+                        <td class="low-div">CB: Low</td>
+                        <td class="M0">CB0</td>
+                        <td class="M0">NV</td>
+                        <td class="M1">CB1</td>
+                        <td class="M2">CB2</td>
+                        <td class="M3">CB3</td>
+                        <td class="M4">CB4</td>
+                        <td class="high">High</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+<script id="tmpSoldInDays" type="text/x-jquery-tmpl">
+    <tr class="rsearchnew">
+        <td clospan="">
+            SOLD IN
+        </td>
+        {{each count}}
+        {{if $index >= 5}}
+        <td>
+            ${countName}-${ResultCount}
+        </td>
+        {{/if}}
+        {{/each}}
+        <td></td>
+    </tr>
+</script>
+<script id="tmpCompare" type="text/x-jquery-tmpl">
+    {{each(prop, val) Items}}
+    <tr>
+        <td class="rsearch comappop-head">${FHeader}</td>
+        <td class="rsearch">${Field1}</td>
+        <td class="rsearch">${Field2}</td>
+        {{if Count >= 3}}
+        <td class="rsearch">${Field3}</td>
+        {{/if}}
+        {{if Count >= 4}}
+        <td class="rsearch">${Field4}</td>
+        {{/if}}
+        {{if Count >= 5}}
+        <td class="rsearch">${Field5}</td>
+        {{/if}}
+    </tr>
+    {{/each}}
+</script>
+@*{{each(prop, val) Items}}*@
+<script id="tmpPrintHeaderRow" type="text/x-jquery-tmpl">
+    <tr>
+        <th>
+            Sr.No.
+        </th>
+        <th>
+            Lot Number
+        </th>
+        <th>
+            Shape
+        </th>
+        <th>
+            Weight
+        </th>
+        <th>
+            Color
+        </th>
+        <th>
+            Clarity
+        </th>
+        <th>
+            Length
+        </th>
+        <th>
+            Width
+        </th>
+        <th>
+            Depth
+        </th>
+        <th>
+            Cut
+        </th>
+        <th>
+            Polish
+        </th>
+        <th>
+            Symmetry
+        </th>
+        <th>
+            Fluorescence
+        </th>
+        <th>
+            Lab
+        </th>
+        <th>
+            RapnetPrice
+        </th>
+        <th>
+            RapNet Disc (%)
+        </th>
+        <th>
+            Price ($)/ct
+        </th>
+        <th>
+            Amount (US$)
+        </th>
+        <th>
+            CertificateNo
+        </th>
+    </tr>
+
+</script>
+<script id="tmpPrintRows" type="text/x-jquery-tmpl">
+    <tr>
+        <td class="rsearch">${RowNum}</td>
+        <td class="rsearch">${Stock}</td>
+        <td class="rsearch">${Shape}</td>
+        <td class="rsearch">${Weight}</td>
+        <td class="rsearch">${Color}</td>
+        <td class="rsearch">${Clarity}</td>
+        <td class="rsearch">${Length}</td>
+        <td class="rsearch">${Width}</td>
+        <td class="rsearch">${Depth}</td>
+        <td class="rsearch">${Cut}</td>
+        <td class="rsearch">${Polish}</td>
+        <td class="rsearch">${Symmetry}</td>
+        <td class="rsearch">${Fluorescence}</td>
+        <td class="rsearch">${Certificate}</td>
+        <td class="rsearch">${RapnetPrice}</td>
+        @*<td class="rsearch">${RapAmount}</td>*@
+        <td class="rsearch">${Discount}</td>
+        <td class="rsearch">${Price}</td>
+        <td class="rsearch">${Amount}</td>
+        <td class="rsearch">${CertificateNo}</td>
+    </tr>
+</script>
+@*{{/each}}*@
+
+

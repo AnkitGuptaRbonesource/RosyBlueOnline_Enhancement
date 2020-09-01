@@ -1,0 +1,84 @@
+﻿@{
+    ViewBag.Title = "RFID Search";
+    Rosyblueonline.Models.TokenLogModel objToken = Session["Token"] as Rosyblueonline.Models.TokenLogModel;
+}
+@section header{
+
+}
+<div class="content-wrapper">
+    <section class="content">
+        <div id="uiPanel1"></div>
+        <section class="content">
+
+            <div class="row">
+                <div class="col-lg-12 col-md-8" style="">
+                    <div class="panel panel-primary proshad">
+                        <div class="panel-heading">
+                            RFID search
+                        </div>
+                        <div class="panel-body form-horizontal">
+                            <div class="form-group">
+                                <label class="col-sm-3">Machine</label>
+                                <div class="col-sm-9">
+                                    <select id="ddlipaddress" class="form-control">
+                                        <option value="192.168.20.121">RFID_1</option>
+                                        <option value="192.168.20.122">RFID_2</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3">RFId Number</label>
+                                <div class="col-sm-9">
+                                    <textarea id="list" name="Command" class="form-control"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3">Total RFID Count</label>
+                                <div class="col-sm-9">
+                                    <div id="count"></div>
+                                    <div id="rfidtotalCount"></div>
+                                    <div id="summary"></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3">Recent RFID Count</label>
+                                <div class="col-sm-9">
+                                    <div id="notify"></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3"></label>
+                                <div class="col-sm-1">
+                                    <button id="btnScanRF" class="btn btn-primary">Scan</button>
+                                </div>
+                                <div class="col-sm-2">
+                                    <form action="/Inventory/SpecificSearchPost" method="post">
+                                        <button id="btnFormSubmit" type="submit" style="display:none;"></button>
+                                        <button id="btnSearch" type="button" class="btn btn-success">Search</button>
+                                        <button id="btnReset" type="reset" class="btn btn-warning">Reset</button>
+                                        <input id="hdnrfID" value="" name="Query" style="" type="hidden" />
+                                    </form>
+                                </div>
+                                <div class="col-sm-1">
+                                    <button id="btnRecycle" value="recycle" class="btn btn-warning">Recycle RFID</button>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+</div>
+
+@section script{
+    <script src="~/Scripts/spacecode.js"></script>
+    <script src="~/Scripts/custom/Controller/CtrlRFIDSearch.js"></script>
+    @*<script src="~/Scripts/custom/Controller/CtrlRFIDUpdate.js"></script>*@
+}
+
+
+

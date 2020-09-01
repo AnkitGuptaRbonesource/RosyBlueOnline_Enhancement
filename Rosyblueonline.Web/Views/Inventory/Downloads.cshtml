@@ -1,0 +1,41 @@
+﻿@model List<DownloadList>
+@{
+    ViewBag.Title = "Download Inventory";
+}
+@section header{
+
+}
+<div class="content-wrapper">
+    <section class="content">
+        <div id="uiPanel1"></div>
+        <section class="content" id="secGrid">
+            <div class="customers-list-table">
+                <div class="customers-list-table">
+                    <div class="col-md-12">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <div class="panel-heading">Download Inventory</div>
+                            </div>
+                            <div id="frmInventorUpload" class="panel-body paneltable">
+                                <div class="row">
+                                    @for (int i = 0; i < Model.Count; i++)
+                                    {
+                                        <div class="col-lg-3">
+                                            <div class="inv-dowwn-link"><a href="/Inventory/DownloadDynamicDownload?IDs=@(Model[i].BindedDownloadID)&FileName=@(Model[i].Name)?&SheetName=@(Model[i].SheetNames)" data-href="@(Model[i].BindedDownloadID)">@(Model[i].Name)</a></div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+</div>
+@section script{
+
+}
+
+
+

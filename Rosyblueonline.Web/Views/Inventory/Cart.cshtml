@@ -1,0 +1,261 @@
+﻿@{
+    ViewBag.Title = "Cart";
+}
+@section header{
+    @Styles.Render("~/bundles/DataTable/Style")
+}
+<div class="content-wrapper">
+    @*<div id="uiPanel1"></div>*@
+    <section class="content">
+        <div id="uiPanel1"></div>
+        @*<a href="/Inventory/ExportToExcelInventoryDownload" id="ancDownloadExcel" target="_blank" style="display:none;">Download Excel</a>*@
+        @Html.Partial("~/Views/Shared/_PartialSpecificSearchResult.cshtml", "Cart")
+        <div id="uiPanel2"></div>
+        <section class="content" id="pnlOrderConfirmation" style="display:none">
+            @*style="display:none"*@
+            <div class="row">
+                <div class="col-md-12">
+                    <p><b>Note:</b>Below prices/amounts are exclusive of government levies & taxes (VAT, OCTROI etc). These will be added on the final invoice wherever applicable.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-primary">
+                        @*style="overflow-x: scroll; max-height: 390px;"*@
+                        <div class="panel-body paneltable">
+                            <table id="SearchTablePostForOrder" class="table table-fixed dataTable no-footer" role="grid" aria-describedby="SearchTablePost_info">
+                                <thead class="bordertp">
+                                    <tr role="row" class="table-head">
+                                        <th class="tbnew stock">
+                                            <label for="Stock">Stock</label>
+                                        </th>
+                                        <th class="tbnew">
+                                            <label for="Certificate_">Certificate#</label>
+                                        </th>
+                                        <th class="tbnew dt-V360">
+                                            <label for="V360">V360</label>
+                                        </th>
+                                        <th class="tbnew">
+                                            <label for="Shape">Shape</label>
+                                        </th>
+                                        <th class="tbnew dt-weight">
+                                            <label for="Weight">Weight</label>
+                                        </th>
+                                        <th class="tbnew">
+                                            <label for="Color">Color</label>
+                                        </th>
+                                        <th class="tbnew">
+                                            <label for="Clarity">Clarity</label>
+                                        </th>
+                                        <th class="tbnew">
+                                            <label for="Diamentions">Diamentions</label>
+                                        </th>
+                                        <th class="tbnew">
+                                            <label for="Table_">Table%</label>
+                                        </th>
+                                        <th class="tbnew">
+                                            <label for="Depth_">Depth%</label>
+                                        </th>
+                                        <th class="tbnew">
+                                            <label for="Girdle">Girdle</label>
+                                        </th>
+                                        <th class="tbnew">
+                                            <label for="Cut">Cut</label>
+                                        </th>
+                                        <th class="tbnew">
+                                            <label for="Polish">Polish</label>
+                                        </th>
+                                        <th class="tbnew">
+                                            <label for="Symmetry">Symmetry</label>
+                                        </th>
+                                        <th class="tbnew">
+                                            <label for="Flora">Flora</label>
+                                        </th>
+                                        <th class="tbnew lab">
+                                            <label for="Lab">Lab</label>
+                                        </th>
+                                        <th class="tbnew">
+                                            <label for="RapPrice">RapPrice</label>
+                                        </th>
+                                        <th class="tbnew">
+                                            <label for="RapDisc___">RapDisc(%)</label>
+                                        </th>
+                                        <th class="tbnew" id="sl">
+                                            <label for="Price____ct">Price($)/ct</label>
+                                        </th>
+                                        <th class="tbnew">
+                                            <label for="Amount">Amount</label>
+                                        </th>
+                                        <th class="tbnew">
+                                            <label for="D_R">D/R</label>
+                                        </th>
+                                        <th class="tbnew">
+                                            <label for="CrownHeight">CrownHeight</label>
+                                        </th>
+                                        <th class="tbnew">
+                                            <label for="CrownAngle">CrownAngle</label>
+                                        </th>
+                                        <th class="tbnew">
+                                            <label for="PavilionDepth">PavilionDepth</label>
+                                        </th>
+                                        <th class="tbnew">
+                                            <label for="PavilionAngle">PavilionAngle</label>
+                                        </th>
+                                        <th class="tbnew">
+                                            <label for="Starlength">Starlength</label>
+                                        </th>
+                                        <th class="tbnew">
+                                            <label for="LowerHalf">LowerHalf</label>
+                                        </th>
+                                        <th class="tbnew">
+                                            <label for="Girdle_">Girdle%</label>
+                                        </th>
+                                        <th class="tbnew">
+                                            <label for="Laser">Laser</label>
+                                        </th>
+                                        <th class="tbnew">
+                                            <label for="EC">EC</label>
+                                        </th>
+                                        <th class="tbnew">
+                                            <label for="Shade">Shade</label>
+                                        </th>
+                                        <th class="tbnew">
+                                            <label for="Milky">Milky</label>
+                                        </th>
+                                        <th class="tbnew">
+                                            <label for="TableBlack">TableBlack</label>
+                                        </th>
+                                        <th class="tbnew">
+                                            <label for="CentreBlack">CentreBlack</label>
+                                        </th>
+                                        <th class="tbnew ha">
+                                            <label for="H_A">H&amp;A</label>
+                                        </th>
+                                        <th class="tbnew">
+                                            <label for="Opens">Opens</label>
+                                        </th>
+                                        <th class="tbnew">
+                                            <label for="Keytosymbol">Keytosymbol</label>
+                                        </th>
+                                        <th class="tbnew">
+                                            <label for="GIAcomments">GIAcomments</label>
+                                        </th>
+                                        <th class="tbnew">
+                                            <label for="ReportDate">ReportDate</label>
+                                        </th>
+                                        <th class="tbnew">
+                                            <label for="SalesLocation">SalesLocation</label>
+                                        </th>
+                                    </tr>
+                                </thead>
+
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            Select Billing Address
+                        </div>
+                        <div class="panel-body" id="divBillingAddress">
+                            @{
+                                Html.RenderPartial("~/Views/Shared/_PartialAddressManager.cshtml", 1);
+                            }
+                        </div>
+                    </div>
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            Select Shipping Address
+                        </div>
+                        <div class="panel-body" id="divShippingAddress">
+                            @{
+                                Html.RenderPartial("~/Views/Shared/_PartialAddressManager.cshtml", 2);
+                            }
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-offset-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-body paneltable">
+                            <table class="table">
+                                <thead class="bordertp">
+                                    <tr>
+                                        <th class="tbnew">
+                                            Total pcs
+                                        </th>
+                                        <th class="tbnew">
+                                            Tot.Carat
+                                        </th>
+                                        <th class="tbnew">
+                                            Tot.Amount($)
+                                        </th>
+                                        <th class="tbnew">
+                                            Disc(%)
+                                        </th>
+                                        <th class="tbnew">
+                                            Price/ct($)
+                                        </th>
+                                        <th class="tbnew">
+                                            Payable Amount($)
+                                        </th>
+                                    </tr>
+                                    <tr></tr>
+                                </thead>
+                                <tbody id="tblBodySummaryForOrder">
+                                </tbody>
+                            </table>
+                            <table border="1" class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Shipping Mode</th>
+                                        <th colspan="2">
+                                            <select class="form-control" id="ddlShippingMode" name="ddlShippingMode">
+                                                <option value="1" selected>Direct Ship</option>
+                                                <option value="0">Self Pickup</option>
+                                            </select>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tblOrder"></tbody>
+                            </table>
+                            <br />
+                            <button class="btn btn-primary pull-right" id="btnConfirmOrder">Confirm Order</button>
+                            <button class="btn btn-default pull-right" id="btnCancelOrder">Cancel Order</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <b>Disclaimer:</b> Please note that the Rap ($) price list published every Friday evening (IST) is updated in our system over the weekend. In case of a situation where in you have placed an order and the Rap price is revised during the course of order processing, the revised Rap ($) rate will be applied to the order.
+            </div>
+        </section>
+    </section>
+</div>
+@section script{
+    @Scripts.Render("~/bundles/DataTable/Script")
+    <script type="text/x-jquery-tmpl" id="tmplOrderDetail">
+        <tr>
+            <td>${actionMode} : ${chargesName}</td>
+            <td>
+                {{if chargesType == 1}}
+                ${chargesValue} %
+                {{/if}}
+                {{if chargesType == 2}}
+                ${chargesValue}
+                {{/if}}
+            </td>
+            <td>
+                ${chargesAmount}
+            </td>
+        </tr>
+    </script>
+    <script type="text/javascript" src="~/Scripts/custom/rbDataTable.js"></script>
+    <script type="text/javascript" src="~/Scripts/custom/Controller/ModuleAddressManager.js"></script>
+    <script type="text/javascript" src="~/Scripts/custom/Controller/CtrlCart.js"></script>
+}
+

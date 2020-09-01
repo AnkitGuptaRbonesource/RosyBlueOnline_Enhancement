@@ -3,3 +3,27 @@
 ################################################################################
 
 /.vs/Rosyblueonline/v16
+/.vs
+/packages
+/Rosyblueonline.Adapters/bin
+/Rosyblueonline.Adapters/obj
+/Rosyblueonline.Factory/bin
+/Rosyblueonline.Factory/obj
+/Rosyblueonline.Framework/bin
+/Rosyblueonline.Framework/obj
+/Rosyblueonline.Models/bin
+/Rosyblueonline.Models/obj
+/Rosyblueonline.Repository/bin
+/Rosyblueonline.Repository/obj
+/Rosyblueonline.ServiceProviders/bin
+/Rosyblueonline.ServiceProviders/obj
+/Rosyblueonline.Web/bin
+/Rosyblueonline.Web/obj
+/Rosyblueonline.Web.Tests/bin
+/Rosyblueonline.Web.Tests/obj
+/RosyblueonlineORRA_API/bin
+/RosyblueonlineORRA_API/obj
+/DataMigration/obj
+/Rosyblueonline.Web/ErrorLogs
+/RosyblueORRA_API/bin
+/RosyblueORRA_API/obj
