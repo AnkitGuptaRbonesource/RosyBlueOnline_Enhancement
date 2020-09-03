@@ -88,7 +88,7 @@
                                 <span style="color:#E9978C !important">Order <img src="/Content/img/orderarrow.png" /></span>
                                 @*<span class="label label-warning" id="spanOrderCount">0</span>*@
                             </a>
-                            <ul class="dropdown-menu">
+                            <ul class="dropdown-menu orderdropmenu">
                                 <li class="order-box">
                                     <ul class="nav nav-pills">
                                         <li class="nav-item active">
@@ -193,7 +193,7 @@
                                 
                             </a>
                             <ul class="dropdown-menu">
-                                <li class="user-footer" style="padding: 23px 20px;">
+                                <li class="user-footer username" style="padding: 23px 20px;">
                                     <span class="hidden-xs">
                                         @objToken.FullName
                                     </span>
@@ -246,7 +246,7 @@
                                         </a>
                                     </div>
                                 </li>
-                                <li class="user-footer">
+                                <li class="user-footer userlogout">
                                     <div class="right-cont">
                                         <a href="/Home/LogOut" style="color: #FF7165 !important"><span><img src="/Content/img/signout.png" /></span>Sign out</a>
                                     </div>
@@ -355,7 +355,7 @@
                 </span>*@
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="/User/EditProfile"><div class="img-icon"><img src="/Content/img/user.png" /></div> Edit Profile</a></li>
+                            <li><a href="/User/EditProfile"><div class="img-icon"><img src="/Content/img/user-sub.png" /></div> Edit Profile</a></li>
                             <li><a href="/User/ChangePassword"><div class="img-icon"><i class="fa fa-lock"></i></div> Change Password</a></li>
                         </ul>
                     </li>
@@ -417,7 +417,7 @@
         );
 
         $(document).ready(function () {
-            $(".header-search").click(function () {
+            $(".csv").click(function () {
                 $(".searchbar").toggleClass("searchbar2");
             });
            

@@ -117,6 +117,16 @@ body{font-family: 'Karla', sans-serif !important;font-weight:400;overflow-x:hidd
 .sidebar-mini .sidebar-menu > li > a.logo {
     margin-bottom: 35px;
 }
+.navbar-custom-menu > .navbar-nav > li .dropdown-menu.orderdropmenu {
+    min-width: 400px;
+}
+.navbar-custom-menu>.navbar-nav>li .dropdown-menu.orderdropmenu li ul li {
+    width: 49%;
+    text-align: center;
+}
+.sidebar-collapse .treeview-menu {
+    display: none !important;
+}
 
 .img-icon {
     width: 50px;
@@ -132,8 +142,12 @@ body{font-family: 'Karla', sans-serif !important;font-weight:400;overflow-x:hidd
 }
 
 .skin-black-light .sidebar-menu > li > a:hover .img-icon {
-    transition: 0.5s all ease;
+    background: #FFFFFF;
+    border: 1px solid #F2F2F7;
+    box-sizing: border-box;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.08), 0px 4px 8px rgba(50, 50, 71, 0.006);
+    border-radius: 15px;
+    transition: 0.5s all ease;
 }
 .skin-black-light .sidebar-menu > li > .treeview-menu:after {
     position: absolute;
@@ -224,6 +238,7 @@ body{font-family: 'Karla', sans-serif !important;font-weight:400;overflow-x:hidd
     width: fit-content;
     top: 8px;
     right: 20px;
+    cursor: pointer;
 }
 .navbar-custom-menu > .navbar-nav > li a {
     position: relative;
@@ -250,14 +265,13 @@ body{font-family: 'Karla', sans-serif !important;font-weight:400;overflow-x:hidd
     margin-top: -4px;
 }
 .navbar-nav > .user-menu > .dropdown-menu > .user-footer {
-    background-color: #f9f9f9;
+    background-color: #ffffff;
     padding: 10px 20px;
     font-weight: 600;
     font-size: 16px;
     line-height: 26px;
     letter-spacing: 0.5px;
     color: #4F4F4F;
-    border-bottom: 1px solid #eee;
 }
 .navbar-nav > .user-menu > .dropdown-menu > .user-footer a {
     font-weight: 500;
@@ -298,7 +312,7 @@ body{font-family: 'Karla', sans-serif !important;font-weight:400;overflow-x:hidd
     background: #F0F0F5;
     border-radius: 10px;
     padding: 5px;
-    width: 99%;
+    width: 90%;
     margin: 10px auto;
 }
 .navbar-nav .dropdown-menu .order-box .nav-pills li a.nav-link {
@@ -306,6 +320,7 @@ body{font-family: 'Karla', sans-serif !important;font-weight:400;overflow-x:hidd
     font-weight: 500;
     font-size: 14px;
     line-height: 16px;
+    padding: 15px 0;
     letter-spacing: 0.5px;
     color: #828282 !important;
 }
@@ -321,7 +336,7 @@ body{font-family: 'Karla', sans-serif !important;font-weight:400;overflow-x:hidd
     width: 100%;
     align-items: center;
     justify-content: space-between;
-    padding: 15px;
+    padding: 15px 30px;
     border-bottom: 1px solid #eee;
 }
 .order-cnt h5 {
@@ -365,7 +380,10 @@ body{font-family: 'Karla', sans-serif !important;font-weight:400;overflow-x:hidd
     transition: 0.5s all ease;
 }
 .navbar-custom-menu > .navbar-nav > li > .dropdown-menu {
-    box-shadow: 0 10px 15px rgb(0 0 0 / 14%);
+    background: #FFFFFF;
+    box-shadow: 0px 20px 100px rgba(58, 66, 118, 0.05);
+    border-radius: 10px;
+    border: 1px solid #ECE9F1;
 }
 .navbar-nav > .user-menu > .dropdown-menu > .user-footer a span {
     min-width: 50px;
@@ -475,6 +493,28 @@ body{font-family: 'Karla', sans-serif !important;font-weight:400;overflow-x:hidd
 .navbar-custom-menu > .navbar-nav > li a.nav-link:after{
     border: none;
 }
+.navbar-nav > .user-menu > .dropdown-menu > .user-footer.username {
+    padding: 23px 20px;
+    background: rgb(228 228 228 / 28%);
+    box-shadow: 0px 20px 100px rgba(58, 66, 118, 0.05);
+    border-radius: 10px 10px 0px 0px;
+    border-bottom: 1px solid #E4E4E4;
+    margin-bottom: 10px;
+}
+.navbar-nav > .user-menu > .dropdown-menu > .user-footer.userlogout {
+    border-top: 1px solid #eee;
+    margin-top: 10px;
+    padding: 15px 20px;
+    border-radius: 0 0 10px 10px;
+}
+
+
+
+
+
+
+
+
 
 
 
