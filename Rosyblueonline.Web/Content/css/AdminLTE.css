@@ -413,8 +413,9 @@ a:focus {
   left: 0;
   padding-top: 50px;
   min-height: 100%;
-  width: 230px;
+  width: 260px;
   z-index: 810;
+  box-shadow: 0 0 21px 10px rgba(0,0,0,.14);
   -webkit-transition: -webkit-transform 0.3s ease-in-out, width 0.3s ease-in-out;
   -moz-transition: -moz-transform 0.3s ease-in-out, width 0.3s ease-in-out;
   -o-transition: -o-transform 0.3s ease-in-out, width 0.3s ease-in-out;
@@ -597,8 +598,8 @@ a:focus {
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
-    width: 50px !important;
     z-index: 850;
+    box-shadow: 0 0 15px 0 rgba(0,0,0,.05);
   }
   .sidebar-mini.sidebar-collapse .sidebar-menu > li {
     position: relative;
@@ -651,11 +652,11 @@ a:focus {
   .sidebar-mini.sidebar-collapse .sidebar-menu > li > .treeview-menu,
   .sidebar-mini.sidebar-collapse .sidebar-menu > li > a > .pull-right,
   .sidebar-mini.sidebar-collapse .sidebar-menu li.header {
-    display: none !important;
+   /* display: none !important;*/
     -webkit-transform: translateZ(0);
   }
   .sidebar-mini.sidebar-collapse .main-header .logo {
-    width: 50px;
+    
     background-image:url('../Content/dist/img/favicon.png')
   }
   .sidebar-mini.sidebar-collapse .main-header .logo > .logo-mini {
@@ -668,7 +669,7 @@ a:focus {
     display: none;
   }
   .sidebar-mini.sidebar-collapse .main-header .navbar {
-    margin-left: 50px;
+   /* margin-left: 50px;*/
   }
 }
 .sidebar-menu,

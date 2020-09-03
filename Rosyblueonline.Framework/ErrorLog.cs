@@ -61,7 +61,7 @@ namespace Rosyblueonline.Framework
             }
             catch (Exception e)
             {
-                throw e;
+
             }
         }
     }
