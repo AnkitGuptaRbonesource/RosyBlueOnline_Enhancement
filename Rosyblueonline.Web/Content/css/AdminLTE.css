@@ -12,10 +12,10 @@
   height: 100%;
 }
 body {
-   font-family: 'Karla', sans-serif !important;
-  font-weight: 400;
-  overflow-x: hidden;
-  overflow-y: auto;
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 400;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 /* Layout */
 .wrapper {
@@ -142,21 +142,6 @@ body.hold-transition .main-header .logo {
   margin-left: auto;
   padding-left: 15px;
   padding-right: 15px;
-}
-/* H1 - H6 font */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6 {
-  font-family: 'Source Sans Pro', sans-serif;
 }
 /* General Links */
 a {
@@ -2032,11 +2017,11 @@ a:focus {
     display: block;
     min-height: 100px;
     width: 100%;
-    border-radius: 10px;
     margin-bottom: 15px;
-    background-color: #491956;
-    color: white;
-    box-shadow: 3px 3px 3px #737272;
+    background-color: #ffffff;
+    border: 1px solid rgba(208, 209, 210, 0.3);
+    box-sizing: border-box;
+    border-radius: 6px;
 }
 .info-box-two {
     display: block;
