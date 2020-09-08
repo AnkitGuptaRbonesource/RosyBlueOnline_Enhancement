@@ -32,12 +32,12 @@
                     <ul class="nav navbar-nav" style="padding: 6px; font-size: 15px;">
                         <li><a href="/Home">Home</a></li>
                         <li><a href="http://www.rosyblue.com/" target="_blank">About</a></li>
-                        <li>@Html.ActionLink("Features", "Features", "Home")</li>
-                        <li>@Html.ActionLink("Register", "Registration", "Home")</li>
-                        <li>@Html.ActionLink("Contact us", "ContactUs", "Home")</li>
+                        <li>@Html.ActionLink(Resource.Features, "Features", "Home")</li>
+                        <li>@Html.ActionLink(Resource.Register, "Registration", "Home")</li>
+                        <li>@Html.ActionLink(Resource.Contact_Us, "ContactUs", "Home")</li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right spblink" style="text-align:center;padding:5px;color:red">
-                        <li>GST will be applied for Indian customers</li>
+                        <li>@Resource.GST</li>
                     </ul>
                 </div>
             </div>
@@ -52,9 +52,9 @@
                 <div>
                     <h4 style="font-weight: 700">
                         <span id="CaratFullName">@Model.Weight</span>
-                        -Size
+                        - @Resource.Size
                         <span id="ShapeName">@Model.Shape</span>
-                        Diamond
+                        @Resource.Diamond
                     </h4>
                     <div class="">
                         <div class="row">
@@ -63,34 +63,34 @@
                                 <div class="view-diam" style="margin-top: -12px">
 
                                     <p>
-                                        This
+                                        @Resource.This
                                         <span id="CutFullName">@Model.Cut</span>
-                                        -Cut ,
+                                        -@Resource.Cut ,
                                         <span id="ColorName">@Model.Color</span>
-                                        -Color , and
+                                        -@Resource.Color , @Resource.and
                                         <span id="ClarityName">@Model.Clarity</span>
-                                        -Clarity comes accompanied by a diamond grading report from the
+                                        -@Resource.Clarity_comes
                                         <span id="CertificateName">@Model.Certificate</span>.
                                         | <b>
-                                            Diamond Status: @Model.Stockstatus
+                                            @Resource.Diamond_Status @Model.Stockstatus
                                         </b>
                                     </p>
 
                                     @* <div class="">*@
                                     <ul class="view-diam-pric">
                                         <li>
-                                            <span>Rap ($):</span><div>@Model.RapnetPrice</div>
+                                            <span>@Resource.Rap</span><div>@Model.RapnetPrice</div>
                                         </li>
                                         <li>
-                                            <span>Price ($)/Ct.:</span>
+                                            <span>@Resource.Price__Ct</span>
                                             <div>@Model.Price</div>
                                         </li>
                                         <li>
-                                            <span>Amount (US$):</span>
+                                            <span>@Resource.Amount__US</span>
                                             <div>@Model.Amount</div>
                                         </li>
                                         <li>
-                                            <span>Discount (%):</span>
+                                            <span>@Resource.Discount_Per</span>
                                             <div>@Model.Discount</div>
                                         </li>
 
@@ -149,18 +149,18 @@
                                 <table class="table" style="width:100%">
                                     <tbody>
                                         <tr class="tbnew" style="text-align:center;background-color:#337ab7;color:#fff">
-                                            <td colspan="2">Diamond Detail</td>
+                                            <td colspan="2">@Resource.Diamond_Detail</td>
                                         </tr>
                                         <tr>
-                                            <td width="50%" class="tbnew">Lot Number</td>
+                                            <td width="50%" class="tbnew">@Resource.Lot_Number</td>
                                             <td width="50%" id="LotNumber" class="tbnew">@Model.Stock</td>
                                         </tr>
                                         <tr>
-                                            <td class="tbnew">Lab</td>
+                                            <td class="tbnew">@Resource.Lab</td>
                                             <td id="Certificate" class="tbnew">@Model.Certificate</td>
                                         </tr>
                                         <tr>
-                                            <td class="tbnew">Report.No.</td>
+                                            <td class="tbnew">@Resource.Report_No</td>
                                             <td id="CertificateNo" class="tbnew">
                                                 @{
                                                     string Url = "";
@@ -192,123 +192,123 @@
                                             <td id="Shape" class="tbnew"> <a href="@Model.v360url" target="_blank"><i class="fa fa-video-camera" aria-hidden="true"></i>360 View</a></td>
                                         </tr>*@
                                         <tr>
-                                            <td class="tbnew">Shape</td>
+                                            <td class="tbnew">@Resource.Shape</td>
                                             <td id="Shape" class="tbnew">@Model.Shape</td>
                                         </tr>
                                         <tr>
-                                            <td class="tbnew">Size</td>
+                                            <td class="tbnew">@Resource.Size</td>
                                             <td id="Carat" class="tbnew">@Model.Weight</td>
                                         </tr>
                                         <tr>
-                                            <td class="tbnew">Color</td>
+                                            <td class="tbnew">@Resource.Color</td>
                                             <td id="Color" class="tbnew">@Model.Color</td>
                                         </tr>
                                         <tr>
-                                            <td class="tbnew ">Clarity</td>
+                                            <td class="tbnew ">@Resource.Clarity</td>
                                             <td id="Clarity" class="tbnew">@Model.Clarity</td>
                                         </tr>
                                         <tr>
-                                            <td class="tbnew">Cut</td>
+                                            <td class="tbnew">@Resource.Cut</td>
                                             <td id="Cut" class="tbnew">@Model.Cut</td>
                                         </tr>
                                         <tr>
-                                            <td class="tbnew">Polish</td>
+                                            <td class="tbnew">@Resource.Polish</td>
                                             <td id="PolishFull" class="tbnew">@Model.Polish</td>
                                         </tr>
                                         <tr>
-                                            <td class="tbnew">Symmetry</td>
+                                            <td class="tbnew">@Resource.Symmetry</td>
                                             <td id="SymmetryFull" class="tbnew">@Model.Symmetry</td>
                                         </tr>
                                         <tr>
-                                            <td class="tbnew">Fluor </td>
+                                            <td class="tbnew">@Resource.Fluor </td>
                                             <td id="Florescense" class="tbnew">@Model.Fluorescence</td>
                                         </tr>
                                         <tr>
 
-                                            <td class="tbnew">Shade</td>
+                                            <td class="tbnew">@Resource.Shade</td>
                                             <td id="Shade" class="tbnew">@Model.Shade</td>
                                         </tr>
 
                                         <tr>
-                                            <td class="tbnew">Measurements</td>
+                                            <td class="tbnew">@Resource.Measurements</td>
                                             <td id="Measurement" class="tbnew">@Model.Measurement</td>
                                         </tr>
                                         <tr>
-                                            <td class="tbnew">EC</td>
+                                            <td class="tbnew">@Resource.EC</td>
                                             <td id="EC" class="tbnew">@Model.EyeClean</td>
                                         </tr>
                                         <tr>
-                                            <td class="tbnew">TableBlack</td>
+                                            <td class="tbnew">@Resource.TableBlack</td>
                                             <td id="TableInc" class="tbnew">@Model.TableBlack</td>
                                         </tr>
                                         <tr>
-                                            <td class="tbnew">CrownBlack</td>
+                                            <td class="tbnew">@Resource.CrownBlack</td>
                                             <td id="BlackIncln" class="tbnew">@Model.SideBlack</td>
                                         </tr>
                                         <tr>
-                                            <td class="tbnew">Milky</td>
+                                            <td class="tbnew">@Resource.Milky</td>
                                             <td id="Milky" class="tbnew">@Model.Milky</td>
                                         </tr>
                                         <tr>
-                                            <td class="tbnew">Depth (%)</td>
+                                            <td class="tbnew">@Resource.Depth</td>
                                             <td id="Depth" class="tbnew">@Model.DepthPerc</td>
                                         </tr>
                                         <tr>
-                                            <td class="tbnew">Table (%)</td>
+                                            <td class="tbnew">@Resource.Table</td>
                                             <td id="TableP" class="tbnew">@Model.TablePerc</td>
                                         </tr>
                                         <tr>
-                                            <td class="tbnew">Crown Angle</td>
+                                            <td class="tbnew">@Resource.Crown_Angle</td>
                                             <td id="CrownAngle" class="tbnew">@Model.CrownAngle</td>
                                         </tr>
                                         <tr>
-                                            <td class="tbnew">Crown Height</td>
+                                            <td class="tbnew">@Resource.Crown_Height</td>
                                             <td id="CrownHeight" class="tbnew">@Model.CrownHeight</td>
                                         </tr>
                                         <tr>
-                                            <td class="tbnew">Pavilion Angle</td>
+                                            <td class="tbnew">@Resource.Pavilion_Angle</td>
                                             <td id="PavilionAngle" class="tbnew">@Model.PavilionAngle</td>
                                         </tr>
                                         <tr>
-                                            <td class="tbnew">Pavilion Depth</td>
+                                            <td class="tbnew">@Resource.Pavilion_Depth</td>
                                             <td id="PD" class="tbnew">@Model.PavilionDepth</td>
                                         </tr>
                                         <tr>
-                                            <td class="tbnew">Star Length</td>
+                                            <td class="tbnew">@Resource.Star_Length</td>
                                             <td id="StarLength" class="tbnew">@Model.StarLength</td>
                                         </tr>
                                         <tr>
-                                            <td class="tbnew">HA</td>
+                                            <td class="tbnew">@Resource.HA</td>
                                             <td id="HA" class="tbnew">@Model.HeartAndArrow</td>
                                         </tr>
 
                                         <tr>
-                                            <td class="tbnew">Girdle</td>
+                                            <td class="tbnew">@Resource.Girdle</td>
                                             <td id="Girdle" class="tbnew">@Model.Girdle</td>
                                         </tr>
                                         <tr>
-                                            <td class="tbnew">Keytosymbol</td>
+                                            <td class="tbnew">@Resource.Keytosymbol</td>
                                             <td id="Keytosymbol" class="tbnew">@Model.Keytosymbol</td>
                                         </tr>
                                         <tr>
-                                            <td class="tbnew">Gemex</td>
+                                            <td class="tbnew">@Resource.Gemex</td>
                                             <td id="Gemx" class="tbnew">@Model.Gemex</td>
                                         </tr>
                                         <tr>
-                                            <td class="tbnew">Laser</td>
+                                            <td class="tbnew">@Resource.Laser</td>
                                             <td id="Laser" class="tbnew">@Model.Laserinscribe</td>
                                         </tr>
                                         <tr>
-                                            <td class="tbnew">Lower Half</td>
+                                            <td class="tbnew">@Resource.Lower_Half</td>
                                             <td id="LowerHalf" class="tbnew">@Model.LowerHalf</td>
                                         </tr>
 
                                         <tr>
-                                            <td class="tbnew">Forever</td>
+                                            <td class="tbnew">@Resource.Forever</td>
                                             <td id="ForeverMark" class="tbnew">@Model.ForeverMark</td>
                                         </tr>
                                         <tr>
-                                            <td class="tbnew">Girdle (%)</td>
+                                            <td class="tbnew">@Resource.Girdle (%)</td>
                                             <td id="GirdlePerc" class="tbnew">@Model.GirdlePerc</td>
                                         </tr>
 

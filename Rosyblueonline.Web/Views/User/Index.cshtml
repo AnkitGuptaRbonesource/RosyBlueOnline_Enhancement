@@ -26,7 +26,7 @@
             <div class="col-lg-12">
                 <section class="panel panel-primary">
                     <div class="panel-heading">
-                        User Detail
+                        @Resource.User_Detail
                     </div>
                     <div class="panel-body">
                         <form class="row" id="frmUserDetail" style="display:none">
@@ -38,11 +38,11 @@
                                                 <div class="row">
                                                     <div class="col-sm-12">
                                                         <label class="radio-inline">
-                                                            <input type="radio" name="optradio" id="rbtnCustomer" value="CUSTOMER" checked><label for="rbtnCustomer" class="controll-label">Customer</label>
+                                                            <input type="radio" name="optradio" id="rbtnCustomer" value="CUSTOMER" checked><label for="rbtnCustomer" class="controll-label">@Resource.Customer</label>
                                                         </label>
                                                         <label class="radio-inline">
                                                             @*@(objToken.RoleID != 2 ? "" : "checked")*@
-                                                            <input type="radio" name="optradio" id="rbtnSupportAdmin" value="SALES_PERSON" @(objToken.RoleID == 2 ? "" : "disabled")><label for="rbtnSupportAdmin" class="controll-label">Support Admin</label>
+                                                            <input type="radio" name="optradio" id="rbtnSupportAdmin" value="SALES_PERSON" @(objToken.RoleID == 2 ? "" : "disabled")><label for="rbtnSupportAdmin" class="controll-label">@Resource.Support_Admin</label>
                                                         </label>
                                                     </div>
                                                 </div>
@@ -51,13 +51,13 @@
                                                 <div class="row">
                                                     <div class="col-sm-6">
                                                         <label class="control-label">
-                                                            <label>First Name</label>
+                                                            <label>@Resource.First_Name</label>
                                                         </label>
                                                         <input type="text" name="FirstName" value="" class="form-control" id="txtFirstName" />
                                                     </div>
                                                     <div class="col-sm-6">
                                                         <label class="control-label">
-                                                            <label>Last Name</label>
+                                                            <label>@Resource.Last_Name</label>
                                                         </label>
                                                         <input type="text" name="LastName" value="" class="form-control" id="txtLastName" />
                                                     </div>
@@ -67,7 +67,7 @@
                                                 <div class="row">
                                                     <div class="col-sm-12">
                                                         <label class="control-label">
-                                                            <label>Email ID</label>
+                                                            <label>@Resource.Email_ID</label>
                                                         </label>
                                                         <input type="text" name="emailId" value="" class="form-control" id="txtEmailID" />
                                                     </div>
@@ -77,14 +77,14 @@
                                                 <div class="row">
                                                     <div class="col-sm-6">
                                                         <label class="control-label">
-                                                            <label>User Name</label>
+                                                            <label>@Resource.User_Name</label>
                                                         </label>
                                                         <input type="hidden" name="LoginID" id="hfLoginID" value="0" />
                                                         <input type="text" name="UserName" value="" class="form-control" id="txtUserName" />
                                                     </div>
                                                     <div class="col-sm-6">
                                                         <label class="control-label">
-                                                            <label>Password</label>
+                                                            <label>@Resource.Password</label>
                                                         </label>
                                                         <input type="password" name="Password" value="" class="form-control" id="txtPassword" />
                                                     </div>
@@ -94,13 +94,13 @@
                                                 <div class="row">
                                                     <div class="col-sm-6">
                                                         <label class="control-label">
-                                                            <label>Company Name</label>
+                                                            <label>@Resource.Company_Name</label>
                                                         </label>
                                                         <input type="text" name="CompanyName" value="" class="form-control" id="txtCompanyName" />
                                                     </div>
                                                     <div class="col-sm-6">
                                                         <label class="control-label">
-                                                            <label>Address of Registered Office</label>
+                                                            <label>@Resource.Address_of_Registered_Office</label>
                                                         </label>
                                                         <textarea id="txtAddress" rows="5" name="OfficeAddress" class="form-control"></textarea>
                                                     </div>
@@ -110,7 +110,7 @@
                                                 <div class="row">
                                                     <div class="col-sm-6">
                                                         <label class="control-label">
-                                                            <label for="Country">Country</label>
+                                                            <label for="Country">@Resource.Country</label>
                                                         </label>
                                                         <select class="form-control" id="ddlCountry" name="countryID">
                                                             <option data-phoneCode="" value=""><-- Select Country --></option>
@@ -124,7 +124,7 @@
                                                     </div>
                                                     <div class="col-sm-6">
                                                         <label class="control-label">
-                                                            <label for="State">State</label>
+                                                            <label for="State">@Resource.State</label>
                                                         </label>
                                                         <select class="form-control" id="ddlState" name="stateID">
                                                             <option value=""><-- Select State --></option>
@@ -136,13 +136,13 @@
                                                 <div class="row">
                                                     <div class="col-sm-6">
                                                         <label class="control-label">
-                                                            <label for="City">City</label>
+                                                            <label for="City">@Resource.City</label>
                                                         </label>
                                                         <input type="text" class="form-control" name="cityName" value="" id="txtCity" />
                                                     </div>
                                                     <div class="col-sm-6">
                                                         <label class="control-label">
-                                                            <label for="ZIP">ZIP/PIN</label>
+                                                            <label for="ZIP">@Resource.ZIP_PIN</label>
                                                         </label>
                                                         <input type="text" class="form-control" id="txtZip" name="ZIP" placeholder="" maxlength="10">
                                                     </div>
@@ -152,7 +152,7 @@
                                                 <div class="row">
                                                     <div class="col-sm-6">
                                                         <label class="control-label">
-                                                            <label>Phone</label>
+                                                            <label>@Resource.Phone</label>
                                                         </label>
                                                         <div>
                                                             <input type="text" name="phoneCode01" value="" class="form-control pho-code" id="txtPhoneCode" />
@@ -161,7 +161,7 @@
                                                     </div>
                                                     <div class="col-sm-6">
                                                         <label class="control-label">
-                                                            <label>Mobile</label>
+                                                            <label>@Resource.Mobile</label>
                                                         </label>
                                                         <input type="text" class="form-control" id="txtMobile" name="Mobile" placeholder="" maxlength="12">
                                                     </div>
@@ -179,7 +179,7 @@
                                                 <div class="row">
                                                     <div class="col-sm-12">
                                                         <label class="control-label">
-                                                            <label>Account Number</label>
+                                                            <label>@Resource.Account_Number</label>
                                                         </label>
                                                         <input type="text" name="AccountNumber" value="" class="form-control" id="txtAccountNumber" />
                                                     </div>
@@ -189,13 +189,13 @@
                                                 <div class="row">
                                                     <div class="col-sm-6">
                                                         <label class="control-label">
-                                                            <label>Bank Name</label>
+                                                            <label>@Resource.Bank_Name</label>
                                                         </label>
                                                         <input type="text" name="BankName" value="" class="form-control" id="txtBankName" />
                                                     </div>
                                                     <div class="col-sm-6">
                                                         <label class="control-label">
-                                                            <label>Branch Name</label>
+                                                            <label>@Resource.Branch_Name</label>
                                                         </label>
                                                         <input type="text" name="BranchName" value="" class="form-control" id="txtBranchName" />
                                                     </div>
@@ -205,7 +205,7 @@
                                                 <div class="row">
                                                     <div class="col-sm-12">
                                                         <label class="control-label">
-                                                            <label>Branch Address</label>
+                                                            <label>@Resource.Branch_Address</label>
                                                         </label>
                                                         <textarea id="txtBranchAddress" rows="5" name="BranchAddress" class="form-control"></textarea>
                                                     </div>
@@ -215,15 +215,15 @@
                                                 <div class="row">
                                                     <div class="col-sm-12">
                                                         <label class="control-label">
-                                                            <label>User Status</label>
+                                                            <label>@Resource.User_Status</label>
                                                         </label>
                                                         <div class="row">
                                                             <div class="col-sm-12">
                                                                 <label class="radio-inline">
-                                                                    <input type="radio" name="userStatus" id="rbtnActive" value="1" checked><label for="rbtnActive" class="controll-label">Active</label>
+                                                                    <input type="radio" name="userStatus" id="rbtnActive" value="1" checked><label for="rbtnActive" class="controll-label">@Resource.Active</label>
                                                                 </label>
                                                                 <label class="radio-inline">
-                                                                    <input type="radio" name="userStatus" id="rbtnInActive" value="0"><label for="rbtnInActive" class="controll-label">In-Active</label>
+                                                                    <input type="radio" name="userStatus" id="rbtnInActive" value="0"><label for="rbtnInActive" class="controll-label">@Resource.In_Active</label>
                                                                 </label>
                                                             </div>
                                                         </div>
@@ -232,9 +232,9 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <button id="btnSave" type="button" value="Save" class="btn btn-success pull-right">Save</button>
-                                                <button id="btnUpdate" type="button" value="Update" class="btn btn-success pull-right" style="display:none">Update</button>
-                                                <button id="btnCancel" type="button" value="Save" class="btn btn-success pull-right">Cancel</button>
+                                                <button id="btnSave" type="button" value="Save" class="btn btn-success pull-right">@Resource.Save</button>
+                                                <button id="btnUpdate" type="button" value="Update" class="btn btn-success pull-right" style="display:none">@Resource.Update</button>
+                                                <button id="btnCancel" type="button" value="Save" class="btn btn-success pull-right">@Resource.Cancel</button>
                                             </div>
                                         </div>
                                     </div>
@@ -248,17 +248,17 @@
                                         <div class="form-group">
                                             <div class="row">
                                                 <div class="col-sm-9">
-                                                    <button class="btn btn-primary" id="btnAddUser">Add User</button>
+                                                    <button class="btn btn-primary" id="btnAddUser">@Resource.Add_User</button>
                                                 </div>
                                                 <div class="col-sm-3 @(objToken.RoleID==2?"":"hide")">
                                                     <label class="control-label">
-                                                        <label>Filter By Role</label>
+                                                        <label>@Resource.Filter_By_Role</label>
                                                     </label>
                                                     <select class="form-control" id="ddlRoleFilter">
-                                                        <option value="">ALL ROLES</option>
-                                                        <option value="1">SUPER ADMIN</option>
+                                                        <option value="">ALL_ROLES</option>
+                                                        <option value="1">SUPER_ADMIN</option>
                                                         <option value="3" @(objToken.RoleID == 2 ? "" : "selected")>CUSTOMER</option>
-                                                        <option value="8">SALES PERSON</option>
+                                                        <option value="8">SALES_PERSON</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -277,37 +277,40 @@
                                     <thead class="bordertp">
                                         <tr role="row" class="table-head">
                                             <th class="tbnew">
-                                                <label>Name</label>
+                                                <label>@Resource.Name</label>
                                             </th>
                                             <th class="tbnew">
-                                                <label>Company Name</label>
+                                                <label>@Resource.Company_Name</label>
                                             </th>
                                             <th class="tbnew">
-                                                <label>Role</label>
+                                                <label>@Resource.Role</label>
                                             </th>
                                             <th class="tbnew">
-                                                <label>Mobile</label>
+                                                <label>@Resource.Mobile</label>
                                             </th>
                                             <th class="tbnew">
-                                                <label>User Name</label>
+                                                <label>@Resource.User_Name</label>
                                             </th>
                                             <th class="tbnew">
-                                                <label>Country</label>
+                                                <label>@Resource.Email_ID</label>
                                             </th>
                                             <th class="tbnew">
-                                                <label>SizePermitted</label>
+                                                <label>@Resource.Country</label>
                                             </th>
                                             <th class="tbnew">
-                                                <label>DownloadPermitted</label>
+                                                <label>@Resource.SizePermitted</label>
+                                            </th>
+                                            <th class="tbnew">
+                                                <label>@Resource.DownloadPermitted</label>
                                             </th>
                                             <th class="tbnew tbl-actions">
-                                                <label>Edit</label>
+                                                <label>@Resource.Edit</label>
                                             </th>
                                             <th class="tbnew tbl-resetpassword-actions">
-                                                <label>Reset <br /> Password</label>
+                                                <label>@Resource.Reset1 <br /> @Resource.Password</label>
                                             </th>
                                             <th class="tbnew tbl-permission-actions">
-                                                <label>Permission</label>
+                                                <label>@Resource.Permission</label>
                                             </th>
                                         </tr>
                                     </thead>
@@ -330,7 +333,7 @@
         <form class="modal-content" id="frmSearchPermission">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Permission</h4>
+                <h4 class="modal-title">@Resource.Permission</h4>
             </div>
             <div class="modal-body">
                 <div class="row">
@@ -340,18 +343,18 @@
                             <div class="form-group" id="pnlSearchPermission"  >
                                 <div class="row">
                                     <div class="col-md-8" style="font-size: larger;padding: 10px;">
-                                        <label > User Name :  </label>  <label id="lblUserNameD">   </label>
+                                        <label> @Resource.User_Name :  </label>  <label id="lblUserNameD">   </label>
                                     </div>
                                     <div class="col-md-6">
                                         <label for="startSizePermitted">
-                                            Start Size Permitted
+                                            @Resource.Start_Size_Permitted
                                         </label>
                                         <input class="form-control" name="startSizePermitted" id="txtstartSizePermitted" value="0" />
                                     </div>
                                     <div class="col-md-6">
                                         <input type="hidden" name="SPLoginId" id="hfSPLoginId" value="" />
                                         <label for="rowDownloadPermitted">
-                                            Row Download Permitted
+                                            @Resource.Row_Download_Permitted
                                         </label>
                                         <input class="form-control" name="rowDownloadPermitted" id="txtrowDownloadPermitted" value="0" />
                                     </div>
@@ -362,8 +365,8 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-primary" id="btnPerupdate">Save</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button class="btn btn-primary" id="btnPerupdate">@Resource.Save</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">@Resource.Close</button>
             </div>
         </form>
 

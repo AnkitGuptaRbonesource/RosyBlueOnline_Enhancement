@@ -16,14 +16,14 @@
                         <div class="col-md-12">
                             <div class="panel panel-primary">
                                 <div class="panel-heading">
-                                    <div class="panel-heading">My Order</div>
+                                    <div class="panel-heading">@Resource.My_Order</div>
                                 </div>
                                 <div class="panel-body paneltable">
                                     <div class="col-md-12">
                                         <div class="col-md-2">
                                             @if (objToken != null && (objToken.RoleID == 8 || objToken.RoleID == 9 || objToken.RoleID == 2))
                                             {
-                                                <button class="btn btn-info" id="btnMergerOrder" style="display:none;">Merge Order</button>
+                                            <button class="btn btn-info" id="btnMergerOrder" style="display:none;">@Resource.Merge_Order</button>
                                             }
                                         </div>
                                         @{
@@ -32,7 +32,7 @@
                                                 <div class="col-md-5">
                                                     <div class="form-horizontal">
                                                         <label class="col-md-3 control-label">
-                                                            Customer
+                                                            @Resource.Customer
                                                         </label>
                                                         <div class="col-md-7">
                                                             <select id="ddlCustomer" name="CustomerID" class="form-control"></select>
@@ -48,12 +48,12 @@
                                             <div class="form-horizontal">
                                                 <div class="form-group">
                                                     <label class="col-md-4 control-label">
-                                                        Order Status
+                                                        @Resource.Order_Status
                                                     </label>
                                                     <div class="col-md-8">
                                                         <select id="ddlStatus" class="form-control">
-                                                            <option value="Pending" selected>Pending</option>
-                                                            <option value="Completed">Completed</option>
+                                                            <option value="Pending" selected>@Resource.Pending</option>
+                                                            <option value="Completed">@Resource.Completed</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -69,25 +69,25 @@
                                                             <label>#</label>
                                                         </th>
                                                         <th class="tbnew">
-                                                            <label>Order ID</label>
+                                                            <label>@Resource.Order_ID</label>
                                                         </th>
                                                         <th class="tbnew">
-                                                            <label>Created Date</label>
+                                                            <label>@Resource.Created_Date</label>
                                                         </th>
                                                         <th class="tbnew">
-                                                            <label>Status</label>
+                                                            <label>@Resource.Status</label>
                                                         </th>
                                                         <th class="tbnew">
-                                                            <label>Amount</label>
+                                                            <label>@Resource.Amount</label>
                                                         </th>
                                                         <th class="tbnew">
-                                                            <label>Customer</label>
+                                                            <label>@Resource.Customer</label>
                                                         </th>
                                                         <th class="tbnew">
-                                                            <label>Company</label>
+                                                            <label>@Resource.Company</label>
                                                         </th>
                                                         <th class="tbnew">
-                                                            <label>Actions</label>
+                                                            <label>@Resource.Actions</label>
                                                         </th>
                                                     </tr>
                                                 </thead>

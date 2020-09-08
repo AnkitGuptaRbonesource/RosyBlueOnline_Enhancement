@@ -1074,4 +1074,967 @@
   <data name="Zip_Code" xml:space="preserve">
     <value>Zip Code</value>
   </data>
+  <data name="EX" xml:space="preserve">
+    <value>3EX</value>
+  </data>
+  <data name="VG" xml:space="preserve">
+    <value>3VG+</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="Add_Address" xml:space="preserve">
+    <value>Add Address</value>
+  </data>
+  <data name="Add_to_Memo" xml:space="preserve">
+    <value>Add to Memo</value>
+  </data>
+  <data name="All_Shape" xml:space="preserve">
+    <value>All Shape</value>
+  </data>
+  <data name="Asscher" xml:space="preserve">
+    <value>Asscher</value>
+  </data>
+  <data name="Blocked_Customers" xml:space="preserve">
+    <value>Blocked Customers</value>
+  </data>
+  <data name="Certificate_upload" xml:space="preserve">
+    <value>Certificate upload</value>
+  </data>
+  <data name="Change_summary_Discounts" xml:space="preserve">
+    <value>Change_summary_Discounts</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="Confirm_Memo" xml:space="preserve">
+    <value>Confirm Memo</value>
+  </data>
+  <data name="Criteria_Matching_Pair" xml:space="preserve">
+    <value>Criteria Matching Pair</value>
+  </data>
+  <data name="Cushion" xml:space="preserve">
+    <value>Cushion</value>
+  </data>
+  <data name="Customer_Address" xml:space="preserve">
+    <value>Customer Address</value>
+  </data>
+  <data name="Customer_Order_Report" xml:space="preserve">
+    <value>Customer Order Report</value>
+  </data>
+  <data name="Describe_your_Demands" xml:space="preserve">
+    <value>Describe your Demands</value>
+  </data>
+  <data name="Edit_Profile" xml:space="preserve">
+    <value>Edit Profile</value>
+  </data>
+  <data name="Emerald" xml:space="preserve">
+    <value>Emerald</value>
+  </data>
+  <data name="Excellent" xml:space="preserve">
+    <value>Excellent</value>
+  </data>
+  <data name="Fair" xml:space="preserve">
+    <value>Fair</value>
+  </data>
+  <data name="Fast_Moving_Goods" xml:space="preserve">
+    <value>Fast Moving Goods</value>
+  </data>
+  <data name="Good" xml:space="preserve">
+    <value>Good</value>
+  </data>
+  <data name="GST" xml:space="preserve">
+    <value>GST will be applied for Indian customers</value>
+  </data>
+  <data name="Heart" xml:space="preserve">
+    <value>Heart</value>
+  </data>
+  <data name="Inventory_Package" xml:space="preserve">
+    <value>Inventory_Package</value>
+  </data>
+  <data name="Inventory_Summary_Report" xml:space="preserve">
+    <value>Inventory Summary Report</value>
+  </data>
+  <data name="Last_Name" xml:space="preserve">
+    <value>Last Name</value>
+  </data>
+  <data name="Marquise" xml:space="preserve">
+    <value>Marquise</value>
+  </data>
+  <data name="Memo_History" xml:space="preserve">
+    <value>Memo History</value>
+  </data>
+  <data name="MENU" xml:space="preserve">
+    <value>MENU</value>
+  </data>
+  <data name="Monthly_Report" xml:space="preserve">
+    <value>Monthly Report</value>
+  </data>
+  <data name="Multiple_size" xml:space="preserve">
+    <value>Multiple size</value>
+  </data>
+  <data name="Other_Shape" xml:space="preserve">
+    <value>Other Shape</value>
+  </data>
+  <data name="Oval" xml:space="preserve">
+    <value>Oval</value>
+  </data>
+  <data name="Pear" xml:space="preserve">
+    <value>Pear</value>
+  </data>
+  <data name="Pivot_table" xml:space="preserve">
+    <value>Pivot table</value>
+  </data>
+  <data name="Pre_Registered_Users" xml:space="preserve">
+    <value>Pre-Registered Users</value>
+  </data>
+  <data name="Price_Mark_Percent" xml:space="preserve">
+    <value>Price_Mark_Percent</value>
+  </data>
+  <data name="Pricing_Policy" xml:space="preserve">
+    <value>Pricing Policy</value>
+  </data>
+  <data name="Princess" xml:space="preserve">
+    <value>Princess</value>
+  </data>
+  <data name="Privacy_Policy" xml:space="preserve">
+    <value>Privacy Policy</value>
+  </data>
+  <data name="Proceed" xml:space="preserve">
+    <value>Proceed</value>
+  </data>
+  <data name="Quick_Contact" xml:space="preserve">
+    <value>Quick Contact</value>
+  </data>
+  <data name="Quick_Search" xml:space="preserve">
+    <value>Quick Search</value>
+  </data>
+  <data name="Quick_Size" xml:space="preserve">
+    <value>Quick Size</value>
+  </data>
+  <data name="Radiant" xml:space="preserve">
+    <value>Radiant</value>
+  </data>
+  <data name="Registration" xml:space="preserve">
+    <value>Registration</value>
+  </data>
+  <data name="Rejected Customers" xml:space="preserve">
+    <value>Rejected_Customers</value>
+  </data>
+  <data name="Report" xml:space="preserve">
+    <value>Report</value>
+  </data>
+  <data name="Reset1" xml:space="preserve">
+    <value>Reset </value>
+  </data>
+  <data name="Round" xml:space="preserve">
+    <value>Round</value>
+  </data>
+  <data name="Sales_Support" xml:space="preserve">
+    <value>Sales Support</value>
+  </data>
+  <data name="Select_Country" xml:space="preserve">
+    <value>Select Country</value>
+  </data>
+  <data name="Select_State" xml:space="preserve">
+    <value>Select State</value>
+  </data>
+  <data name="Sell_Directly" xml:space="preserve">
+    <value>Sell Directly</value>
+  </data>
+  <data name="Set_as_default_address" xml:space="preserve">
+    <value>Set as default address</value>
+  </data>
+  <data name="Shipping" xml:space="preserve">
+    <value>Shipping</value>
+  </data>
+  <data name="Shopping_Cart" xml:space="preserve">
+    <value>Shopping Cart</value>
+  </data>
+  <data name="Sign_out" xml:space="preserve">
+    <value>Sign out</value>
+  </data>
+  <data name="Slow_Moving_Goods" xml:space="preserve">
+    <value>Slow Moving Goods</value>
+  </data>
+  <data name="Stock_Turn_Report" xml:space="preserve">
+    <value>Stock Turn Report</value>
+  </data>
+  <data name="Summary_Discount" xml:space="preserve">
+    <value>Summary Discount</value>
+  </data>
+  <data name="Support" xml:space="preserve">
+    <value>Support</value>
+  </data>
+  <data name="Terms_of_Use" xml:space="preserve">
+    <value>Terms of Use</value>
+  </data>
+  <data name="Toggle_navigation" xml:space="preserve">
+    <value>Toggle navigation</value>
+  </data>
+  <data name="Users" xml:space="preserve">
+    <value>Users</value>
+  </data>
+  <data name="Very_Good" xml:space="preserve">
+    <value>Very Good</value>
+  </data>
+  <data name="View_Request" xml:space="preserve">
+    <value>View_Request</value>
+  </data>
+  <data name="Watch_List" xml:space="preserve">
+    <value>Watch-List</value>
+  </data>
+  <data name="Crown_Angle" xml:space="preserve">
+    <value>Crown_Angle</value>
+  </data>
+  <data name="Crown_Height" xml:space="preserve">
+    <value>Crown_Height</value>
+  </data>
+  <data name="Discount" xml:space="preserve">
+    <value>Discount(%)</value>
+  </data>
+  <data name="Eye_Clean" xml:space="preserve">
+    <value>Eye_Clean</value>
+  </data>
+  <data name="Lower_Half" xml:space="preserve">
+    <value>Lower_Half</value>
+  </data>
+  <data name="Multiple_Demand" xml:space="preserve">
+    <value>Multiple_Demand</value>
+  </data>
+  <data name="Pavilion_Angle" xml:space="preserve">
+    <value>Pavilion_Angle</value>
+  </data>
+  <data name="Pavilion_Depth" xml:space="preserve">
+    <value>Pavilion_Depth</value>
+  </data>
+  <data name="Polished" xml:space="preserve">
+    <value>Polished</value>
+  </data>
+  <data name="Poor" xml:space="preserve">
+    <value>Poor</value>
+  </data>
+  <data name="Price_carat" xml:space="preserve">
+    <value>Price$/carat</value>
+  </data>
+  <data name="Report_Date" xml:space="preserve">
+    <value>Report_Date</value>
+  </data>
+  <data name="SideBlack" xml:space="preserve">
+    <value>SideBlack</value>
+  </data>
+  <data name="Star_Length" xml:space="preserve">
+    <value>Star_Length</value>
+  </data>
+  <data name="Add_Best_Deal" xml:space="preserve">
+    <value>Add_Best_Deal</value>
+  </data>
+  <data name="Add_Best_Deals" xml:space="preserve">
+    <value>Add_Best_Deals</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="Apply_Last_Changed_Discount" xml:space="preserve">
+    <value>Apply_Last_Changed_Discount</value>
+  </data>
+  <data name="Apply_Previous_Discount" xml:space="preserve">
+    <value>Apply_Previous_Discount</value>
+  </data>
+  <data name="Avg_Price_ct" xml:space="preserve">
+    <value>Avg.Price/ct($)</value>
+  </data>
+  <data name="Avg_Rap_ct" xml:space="preserve">
+    <value>Avg.Rap/ct($)</value>
+  </data>
+  <data name="Avg_Rap_Off" xml:space="preserve">
+    <value>Avg.Rap.Off(%)</value>
+  </data>
+  <data name="Best_Deals_Discount" xml:space="preserve">
+    <value>Best_Deals_Discount</value>
+  </data>
+  <data name="Best_Deals_Text" xml:space="preserve">
+    <value>Best_Deals_Text</value>
+  </data>
+  <data name="By_no_of_stone" xml:space="preserve">
+    <value>By no of stone</value>
+  </data>
+  <data name="By_Value" xml:space="preserve">
+    <value>By Value</value>
+  </data>
+  <data name="Cart" xml:space="preserve">
+    <value>Cart</value>
+  </data>
+  <data name="Cash" xml:space="preserve">
+    <value>Cash</value>
+  </data>
+  <data name="CB0" xml:space="preserve">
+    <value>CB0</value>
+  </data>
+  <data name="CB1" xml:space="preserve">
+    <value>CB1</value>
+  </data>
+  <data name="CB2" xml:space="preserve">
+    <value>CB2</value>
+  </data>
+  <data name="CB3" xml:space="preserve">
+    <value>CB3</value>
+  </data>
+  <data name="CB4" xml:space="preserve">
+    <value>CB4</value>
+  </data>
+  <data name="CB_Low" xml:space="preserve">
+    <value>CB: Low</value>
+  </data>
+  <data name="CertificateNo" xml:space="preserve">
+    <value>CertificateNo</value>
+  </data>
+  <data name="Compare" xml:space="preserve">
+    <value>Compare</value>
+  </data>
+  <data name="Comparing" xml:space="preserve">
+    <value>Comparing</value>
+  </data>
+  <data name="Confirm" xml:space="preserve">
+    <value>Confirm</value>
+  </data>
+  <data name="Dept" xml:space="preserve">
+    <value>Dept</value>
+  </data>
+  <data name="Download_Excel" xml:space="preserve">
+    <value>Download_Excel</value>
+  </data>
+  <data name="Export_Excel" xml:space="preserve">
+    <value>Export_Excel</value>
+  </data>
+  <data name="Fancy_Shapesm" xml:space="preserve">
+    <value>Fancy Shape </value>
+  </data>
+  <data name="Fluorescencesm" xml:space="preserve">
+    <value>Fluorescence </value>
+  </data>
+  <data name="Grid_Legends" xml:space="preserve">
+    <value>Grid_Legends</value>
+  </data>
+  <data name="High" xml:space="preserve">
+    <value>High</value>
+  </data>
+  <data name="Inclusion" xml:space="preserve">
+    <value>Inclusion ?</value>
+  </data>
+  <data name="Inspection_Report" xml:space="preserve">
+    <value>Inspection_Report</value>
+  </data>
+  <data name="Inspection_Request" xml:space="preserve">
+    <value>Inspection_Request</value>
+  </data>
+  <data name="Length" xml:space="preserve">
+    <value>Length</value>
+  </data>
+  <data name="Lot_Number" xml:space="preserve">
+    <value>Lot_Number</value>
+  </data>
+  <data name="M0" xml:space="preserve">
+    <value>M0</value>
+  </data>
+  <data name="M1" xml:space="preserve">
+    <value>M1</value>
+  </data>
+  <data name="M2" xml:space="preserve">
+    <value>M2</value>
+  </data>
+  <data name="M3" xml:space="preserve">
+    <value>M3</value>
+  </data>
+  <data name="Mail_BCC" xml:space="preserve">
+    <value>Mail_BCC</value>
+  </data>
+  <data name="Mail_CC" xml:space="preserve">
+    <value>Mail_CC</value>
+  </data>
+  <data name="Mail_From" xml:space="preserve">
+    <value>Mail_From</value>
+  </data>
+  <data name="Mail_To" xml:space="preserve">
+    <value>Mail_To</value>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="Milky_Low" xml:space="preserve">
+    <value>Milky: Low</value>
+  </data>
+  <data name="Modify" xml:space="preserve">
+    <value>Modify</value>
+  </data>
+  <data name="NV" xml:space="preserve">
+    <value>NV</value>
+  </data>
+  <data name="Online" xml:space="preserve">
+    <value>Online</value>
+  </data>
+  <data name="Only_Memo" xml:space="preserve">
+    <value>Only_Memo</value>
+  </data>
+  <data name="Payable_Amount" xml:space="preserve">
+    <value>Payable Amount($)</value>
+  </data>
+  <data name="Price_ct" xml:space="preserve">
+    <value>Price/ct($)</value>
+  </data>
+  <data name="Price_ct1" xml:space="preserve">
+    <value>Price ($)/ct</value>
+  </data>
+  <data name="RapnetPrice" xml:space="preserve">
+    <value>RapnetPrice</value>
+  </data>
+  <data name="RapNet_Disc" xml:space="preserve">
+    <value>RapNet Disc (%)</value>
+  </data>
+  <data name="Rap_Off" xml:space="preserve">
+    <value>Rap Off(%)</value>
+  </data>
+  <data name="RB_Discount1" xml:space="preserve">
+    <value>RB Discount</value>
+  </data>
+  <data name="Remove_Best_Deal" xml:space="preserve">
+    <value>Remove_Best_Deal</value>
+  </data>
+  <data name="Remove_Best_Deals" xml:space="preserve">
+    <value>Remove_Best_Deals</value>
+  </data>
+  <data name="Remove_Cart" xml:space="preserve">
+    <value>Remove_Cart</value>
+  </data>
+  <data name="Return_Partial_Sell" xml:space="preserve">
+    <value>Return_Partial_Sell</value>
+  </data>
+  <data name="Rough" xml:space="preserve">
+    <value>Rough</value>
+  </data>
+  <data name="Round_Shapesm" xml:space="preserve">
+    <value>Round Shape </value>
+  </data>
+  <data name="Search_Result" xml:space="preserve">
+    <value>Search_Result</value>
+  </data>
+  <data name="Selected" xml:space="preserve">
+    <value>Selected</value>
+  </data>
+  <data name="Select_Shape" xml:space="preserve">
+    <value>Select Shape</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>Send</value>
+  </data>
+  <data name="Send_Mail" xml:space="preserve">
+    <value>Send_Mail</value>
+  </data>
+  <data name="Sizes" xml:space="preserve">
+    <value>Sizes</value>
+  </data>
+  <data name="SOLD_IN" xml:space="preserve">
+    <value>SOLD_IN</value>
+  </data>
+  <data name="Sr_No" xml:space="preserve">
+    <value>Sr.No.</value>
+  </data>
+  <data name="Subject" xml:space="preserve">
+    <value>Subject</value>
+  </data>
+  <data name="System" xml:space="preserve">
+    <value>System</value>
+  </data>
+  <data name="TB0" xml:space="preserve">
+    <value>TB0</value>
+  </data>
+  <data name="TB1" xml:space="preserve">
+    <value>TB1</value>
+  </data>
+  <data name="TB2" xml:space="preserve">
+    <value>TB2</value>
+  </data>
+  <data name="TB3" xml:space="preserve">
+    <value>TB3</value>
+  </data>
+  <data name="TB4" xml:space="preserve">
+    <value>TB4</value>
+  </data>
+  <data name="TB_Low" xml:space="preserve">
+    <value>TB: Low</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="Total_pcs" xml:space="preserve">
+    <value>Total pcs</value>
+  </data>
+  <data name="Total_Stones" xml:space="preserve">
+    <value>Total_Stones</value>
+  </data>
+  <data name="Tot_Amount" xml:space="preserve">
+    <value>Tot.Amount($)</value>
+  </data>
+  <data name="Tot_Carat" xml:space="preserve">
+    <value>Tot.Carat</value>
+  </data>
+  <data name="Tot_Rap" xml:space="preserve">
+    <value>Tot.Rap($)</value>
+  </data>
+  <data name="Width" xml:space="preserve">
+    <value>Width</value>
+  </data>
+  <data name="Account_Number" xml:space="preserve">
+    <value>Account_Number</value>
+  </data>
+  <data name="ActionDetails" xml:space="preserve">
+    <value>ActionDetails</value>
+  </data>
+  <data name="ActionName" xml:space="preserve">
+    <value>ActionName</value>
+  </data>
+  <data name="Branch_Address" xml:space="preserve">
+    <value>Branch_Address</value>
+  </data>
+  <data name="Branch_Name" xml:space="preserve">
+    <value>Branch_Name</value>
+  </data>
+  <data name="CreatedOn" xml:space="preserve">
+    <value>CreatedOn</value>
+  </data>
+  <data name="Created_Date" xml:space="preserve">
+    <value>Created_Date</value>
+  </data>
+  <data name="Customer_Activity_Details" xml:space="preserve">
+    <value>Customer_Activity_Details</value>
+  </data>
+  <data name="Customer_Demand" xml:space="preserve">
+    <value>Customer_Demand</value>
+  </data>
+  <data name="Customer_Name" xml:space="preserve">
+    <value>Customer_Name</value>
+  </data>
+  <data name="Demand_Search" xml:space="preserve">
+    <value>Demand_Search</value>
+  </data>
+  <data name="Email_Address" xml:space="preserve">
+    <value>Email_Address</value>
+  </data>
+  <data name="Fancy_Colorsm" xml:space="preserve">
+    <value>Fancy_Color</value>
+  </data>
+  <data name="Last_Login" xml:space="preserve">
+    <value>Last_Login</value>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>Location</value>
+  </data>
+  <data name="NA" xml:space="preserve">
+    <value>NA</value>
+  </data>
+  <data name="New_Arrivals" xml:space="preserve">
+    <value>New_Arrivals</value>
+  </data>
+  <data name="Phone_1" xml:space="preserve">
+    <value>Phone_1</value>
+  </data>
+  <data name="Phone_2" xml:space="preserve">
+    <value>Phone_2</value>
+  </data>
+  <data name="Reference_Name" xml:space="preserve">
+    <value>Reference_Name</value>
+  </data>
+  <data name="Reject" xml:space="preserve">
+    <value>Reject</value>
+  </data>
+  <data name="Revised_Stones" xml:space="preserve">
+    <value>Revised_Stones</value>
+  </data>
+  <data name="Saved_Search" xml:space="preserve">
+    <value>Saved_Search</value>
+  </data>
+  <data name="Total_Found" xml:space="preserve">
+    <value>Total_Found</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="View_Customer_Activity_Log" xml:space="preserve">
+    <value>View_Customer_Activity_Log</value>
+  </data>
+  <data name="View_Customer_Details" xml:space="preserve">
+    <value>View_Customer_Details</value>
+  </data>
+  <data name="View_Customer_Recent_Searches" xml:space="preserve">
+    <value>View_Customer_Recent_Searches</value>
+  </data>
+  <data name="Website" xml:space="preserve">
+    <value>Website</value>
+  </data>
+  <data name="Best_Deals_Remark" xml:space="preserve">
+    <value>Best_Deals_Remark</value>
+  </data>
+  <data name="Origin1" xml:space="preserve">
+    <value>Origin</value>
+  </data>
+  <data name="Stone_Origin" xml:space="preserve">
+    <value>Stone_Origin</value>
+  </data>
+  <data name="Total_Amount" xml:space="preserve">
+    <value>Total_Amount</value>
+  </data>
+  <data name="Activity" xml:space="preserve">
+    <value>Activity</value>
+  </data>
+  <data name="Below_prices_amounts" xml:space="preserve">
+    <value>Below prices/amounts are exclusive of government levies &amp; taxes (VAT, OCTROI etc). These will be added on the final invoice wherever applicable.</value>
+  </data>
+  <data name="Cancel_Order" xml:space="preserve">
+    <value>Cancel_Order</value>
+  </data>
+  <data name="Confirm_Order" xml:space="preserve">
+    <value>Confirm_Order</value>
+  </data>
+  <data name="Direct_Ship" xml:space="preserve">
+    <value>Direct_Ship</value>
+  </data>
+  <data name="Disc" xml:space="preserve">
+    <value>Disc</value>
+  </data>
+  <data name="Disclaimer" xml:space="preserve">
+    <value>Disclaimer:</value>
+  </data>
+  <data name="DisclaimerText" xml:space="preserve">
+    <value>Please note that the Rap ($) price list published every Friday evening (IST) is updated in our system over the weekend. In case of a situation where in you have placed an order and the Rap price is revised during the course of order processing, the revised Rap ($) rate will be applied to the order.</value>
+  </data>
+  <data name="Download_sample_file_for_upload1" xml:space="preserve">
+    <value>Download sample (.xlsx) file for upload</value>
+  </data>
+  <data name="Fluorescence_Intensity" xml:space="preserve">
+    <value>Fluorescence_Intensity</value>
+  </data>
+  <data name="Inscription" xml:space="preserve">
+    <value>Inscription</value>
+  </data>
+  <data name="LastUpdatedDate" xml:space="preserve">
+    <value>LastUpdatedDate</value>
+  </data>
+  <data name="Lot_Cret_No" xml:space="preserve">
+    <value>Lot_Cret_No</value>
+  </data>
+  <data name="Note" xml:space="preserve">
+    <value>Note:</value>
+  </data>
+  <data name="Previous_Discount" xml:space="preserve">
+    <value>Previous_Discount</value>
+  </data>
+  <data name="Previous_Rap_Price" xml:space="preserve">
+    <value>Previous_Rap_Price</value>
+  </data>
+  <data name="Select_Billing_Address" xml:space="preserve">
+    <value>Select_Billing_Address</value>
+  </data>
+  <data name="Select_Shipping_Address" xml:space="preserve">
+    <value>Select_Shipping_Address</value>
+  </data>
+  <data name="Self_Pickup" xml:space="preserve">
+    <value>Self_Pickup</value>
+  </data>
+  <data name="Shipping_Mode" xml:space="preserve">
+    <value>Shipping_Mode</value>
+  </data>
+  <data name="Uploaded_Discount" xml:space="preserve">
+    <value>Uploaded_Discount</value>
+  </data>
+  <data name="Uploaded_Rap_Price" xml:space="preserve">
+    <value>Uploaded_Rap_Price</value>
+  </data>
+  <data name="Upload_Format_Common" xml:space="preserve">
+    <value>Upload_Format_Common</value>
+  </data>
+  <data name="Amount__US" xml:space="preserve">
+    <value>Amount (US$):</value>
+  </data>
+  <data name="and" xml:space="preserve">
+    <value>and</value>
+  </data>
+  <data name="Clarity_comes" xml:space="preserve">
+    <value>Clarity comes accompanied by a diamond grading report from the</value>
+  </data>
+  <data name="CrownBlack" xml:space="preserve">
+    <value>CrownBlack</value>
+  </data>
+  <data name="Diamond" xml:space="preserve">
+    <value>Diamond</value>
+  </data>
+  <data name="Diamond_Detail" xml:space="preserve">
+    <value>Diamond Detail</value>
+  </data>
+  <data name="Diamond_Status" xml:space="preserve">
+    <value>Diamond Status:</value>
+  </data>
+  <data name="Discount_Per" xml:space="preserve">
+    <value>Discount (%):</value>
+  </data>
+  <data name="Fluor" xml:space="preserve">
+    <value>Fluor</value>
+  </data>
+  <data name="Forever" xml:space="preserve">
+    <value>Forever</value>
+  </data>
+  <data name="Gemex" xml:space="preserve">
+    <value>Gemex</value>
+  </data>
+  <data name="Measurements" xml:space="preserve">
+    <value>Measurements</value>
+  </data>
+  <data name="Price__Ct" xml:space="preserve">
+    <value>Price ($)/Ct.:</value>
+  </data>
+  <data name="Rap" xml:space="preserve">
+    <value>Rap ($):</value>
+  </data>
+  <data name="Report_No" xml:space="preserve">
+    <value>Report.No.</value>
+  </data>
+  <data name="This" xml:space="preserve">
+    <value>This</value>
+  </data>
+  <data name="Avg" xml:space="preserve">
+    <value>Avg</value>
+  </data>
+  <data name="By" xml:space="preserve">
+    <value>By</value>
+  </data>
+  <data name="Count" xml:space="preserve">
+    <value>Count</value>
+  </data>
+  <data name="Created" xml:space="preserve">
+    <value>Created</value>
+  </data>
+  <data name="CT" xml:space="preserve">
+    <value>CT</value>
+  </data>
+  <data name="Down_for_maintenance" xml:space="preserve">
+    <value>Down for maintenance</value>
+  </data>
+  <data name="Edit_Memo" xml:space="preserve">
+    <value>Edit Memo</value>
+  </data>
+  <data name="Item" xml:space="preserve">
+    <value>Item</value>
+  </data>
+  <data name="Merge_Memo" xml:space="preserve">
+    <value>Merge Memo</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="No_upcoming_events_found" xml:space="preserve">
+    <value>No upcoming events found</value>
+  </data>
+  <data name="Price" xml:space="preserve">
+    <value>Price($)</value>
+  </data>
+  <data name="Sale" xml:space="preserve">
+    <value>Sale</value>
+  </data>
+  <data name="Sales_Mode" xml:space="preserve">
+    <value>Sales_Mode</value>
+  </data>
+  <data name="Sale_Discount" xml:space="preserve">
+    <value>Sale_Discount</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="Web_Avg_Discount" xml:space="preserve">
+    <value>Web Avg. Discount</value>
+  </data>
+  <data name="Web_Mode" xml:space="preserve">
+    <value>Web Mode</value>
+  </data>
+  <data name="Address_of_Registered_Office" xml:space="preserve">
+    <value>Address of Registered Office</value>
+  </data>
+  <data name="ALL_ROLES" xml:space="preserve">
+    <value>ALL ROLES</value>
+  </data>
+  <data name="Billing_Address" xml:space="preserve">
+    <value>Billing_Address</value>
+  </data>
+  <data name="Completed" xml:space="preserve">
+    <value>Completed</value>
+  </data>
+  <data name="Date_Of_Establishment" xml:space="preserve">
+    <value>Date_Of_Establishment</value>
+  </data>
+  <data name="DownloadPermitted" xml:space="preserve">
+    <value>DownloadPermitted</value>
+  </data>
+  <data name="Email_ID" xml:space="preserve">
+    <value>Email_ID</value>
+  </data>
+  <data name="GST_No" xml:space="preserve">
+    <value>GST_No</value>
+  </data>
+  <data name="In_Active" xml:space="preserve">
+    <value>In-Active</value>
+  </data>
+  <data name="Menu_Rights" xml:space="preserve">
+    <value>Menu Rights</value>
+  </data>
+  <data name="Merge_Order" xml:space="preserve">
+    <value>Merge_Order</value>
+  </data>
+  <data name="Modify_Menu_Rights" xml:space="preserve">
+    <value>Modify Menu Rights</value>
+  </data>
+  <data name="Other_Details" xml:space="preserve">
+    <value>Other_Details</value>
+  </data>
+  <data name="Other_Type" xml:space="preserve">
+    <value>Other_Type</value>
+  </data>
+  <data name="PAN_No" xml:space="preserve">
+    <value>PAN_No</value>
+  </data>
+  <data name="Pending" xml:space="preserve">
+    <value>Pending</value>
+  </data>
+  <data name="Permission" xml:space="preserve">
+    <value>Permission</value>
+  </data>
+  <data name="Row_Download_Permitted" xml:space="preserve">
+    <value>Row Download Permitted</value>
+  </data>
+  <data name="SALES_PERSON" xml:space="preserve">
+    <value>SALES PERSON</value>
+  </data>
+  <data name="Shipping_Address" xml:space="preserve">
+    <value>Shipping_Address</value>
+  </data>
+  <data name="SizePermitted" xml:space="preserve">
+    <value>SizePermitted</value>
+  </data>
+  <data name="Start_Size_Permitted" xml:space="preserve">
+    <value>Start Size Permitted</value>
+  </data>
+  <data name="SUPER_ADMIN" xml:space="preserve">
+    <value>SUPER ADMIN</value>
+  </data>
+  <data name="Support_Admin" xml:space="preserve">
+    <value>Support Admin</value>
+  </data>
+  <data name="TIN" xml:space="preserve">
+    <value>TIN (Trade Identification Number)</value>
+  </data>
+  <data name="User_Menu_Permission" xml:space="preserve">
+    <value>User Menu Permission</value>
+  </data>
+  <data name="User_Status" xml:space="preserve">
+    <value>User_Status</value>
+  </data>
+  <data name="ZIP_PIN" xml:space="preserve">
+    <value>ZIP/PIN</value>
+  </data>
+  <data name="Box_No" xml:space="preserve">
+    <value>Box_No</value>
+  </data>
+  <data name="Carat" xml:space="preserve">
+    <value>Carat</value>
+  </data>
+  <data name="Continue_mode" xml:space="preserve">
+    <value>Continue_mode</value>
+  </data>
+  <data name="ExportToExcel" xml:space="preserve">
+    <value>ExportToExcel</value>
+  </data>
+  <data name="Memo_Order" xml:space="preserve">
+    <value>Memo/Order</value>
+  </data>
+  <data name="Memo_Status" xml:space="preserve">
+    <value>Memo_Status</value>
+  </data>
+  <data name="RFID_Memo_Stock_Tally" xml:space="preserve">
+    <value>RFID Memo Stock Tally</value>
+  </data>
+  <data name="RFID_StockTally" xml:space="preserve">
+    <value>RFID_StockTally</value>
+  </data>
+  <data name="Stock_Status" xml:space="preserve">
+    <value>Stock_Status</value>
+  </data>
+  <data name="Doc_Expiry_Date" xml:space="preserve">
+    <value>Doc Expiry Date</value>
+  </data>
+  <data name="Enter_the_code" xml:space="preserve">
+    <value>Enter the code</value>
+  </data>
+  <data name="Identity" xml:space="preserve">
+    <value>Identity</value>
+  </data>
+  <data name="If_you_have" xml:space="preserve">
+    <value>If you haven't recieved verfication Code, please Click</value>
+  </data>
+  <data name="Image_Name" xml:space="preserve">
+    <value>Image_Name</value>
+  </data>
+  <data name="is_our_latest" xml:space="preserve">
+    <value>is our latest endeavor to enrich, enhance and widen partnership with our global clients.</value>
+  </data>
+  <data name="Kyc_Doc_No" xml:space="preserve">
+    <value>Kyc Doc No</value>
+  </data>
+  <data name="Mandatory_fields" xml:space="preserve">
+    <value>Mandatory fields are marked with an asterisk (*)</value>
+  </data>
+  <data name="Maximum_3_Attempt" xml:space="preserve">
+    <value>Maximum 3 Attempt for Verification Code</value>
+  </data>
+  <data name="OTP" xml:space="preserve">
+    <value>OTP</value>
+  </data>
+  <data name="Our_innovative" xml:space="preserve">
+    <value>Our innovative "Quick Search" feature of the site enables users view the entire stock, and select based on the 4C's in a single click. The site also enables the users to drill-down into an individual stone, and even view the image and certificate, where available. The entire user experience is backed up by the quality and service assurance of Rosy Blue, which has enabled us to become a global leader. Needless to say, all stocks are at competitive prices.</value>
+  </data>
+  <data name="Personal_Details" xml:space="preserve">
+    <value>Personal_Details</value>
+  </data>
+  <data name="Please_enter_OTP" xml:space="preserve">
+    <value>(Please enter OTP as you have recived in yours mail) </value>
+  </data>
+  <data name="Previous" xml:space="preserve">
+    <value>Previous</value>
+  </data>
+  <data name="Resend" xml:space="preserve">
+    <value>Resend</value>
+  </data>
+  <data name="Rosy_Blue_Online" xml:space="preserve">
+    <value>Rosy Blue Online</value>
+  </data>
+  <data name="Rosy_Blue_Online_Features" xml:space="preserve">
+    <value>Rosy Blue Online Features</value>
+  </data>
+  <data name="Select_Identity" xml:space="preserve">
+    <value>Select_Identity</value>
+  </data>
+  <data name="Site_best_viewed" xml:space="preserve">
+    <value>Site best viewed in IE8+, Firefox 3.5+, Chrome 3+, Safari 5.0+ at 1024 x 768 pixels resolution.</value>
+  </data>
+  <data name="The_site_allows_clients_to_browse" xml:space="preserve">
+    <value>The site allows clients to browse, select and order stones from our global inventory of certified stones for their needs and convenience. We want our partners to buy "just-in-time" and manage their inventory smartly by "Multiplying their inventory".</value>
+  </data>
+  <data name="The_site_offers_stones_certified" xml:space="preserve">
+    <value>The site offers stones certified (from 25 points upwards) by reputed third party grading laboratories like GIA, HRD, AGS, IGI etc., to ensure that our clients can access stocks which are fully trusted by their customers. Thereby enables our clients to obtain all their requirements from a single source, reducing their time and effort.</value>
+  </data>
+  <data name="Upload_Id_Proof" xml:space="preserve">
+    <value>Upload Id-Proof</value>
+  </data>
+  <data name="Verify_OTP" xml:space="preserve">
+    <value>Verify_OTP</value>
+  </data>
+  <data name="OrgFileName" xml:space="preserve">
+    <value>OrgFileName</value>
+  </data>
 </root>

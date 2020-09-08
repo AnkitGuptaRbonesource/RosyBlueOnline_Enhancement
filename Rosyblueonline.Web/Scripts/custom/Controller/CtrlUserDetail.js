@@ -395,6 +395,7 @@
                             { data: "roleID" },
                             { data: "mobile" },
                             { data: "username" },
+                            { data: "emailId" },
                             { data: "countryName" },
                             { data: "startSizePermitted" },
                             { data: "rowDownloadPermitted" },
