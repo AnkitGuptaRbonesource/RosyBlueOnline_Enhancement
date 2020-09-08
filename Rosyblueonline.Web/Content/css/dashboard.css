@@ -10,7 +10,7 @@ body {
   /*font-family: 'Karla', sans-serif !important;*/
   font-family: 'Poppins', sans-serif !important;
   /*font-family: 'Vanitas-Regular', 'Georgia', sans-serif !important;*/
-  background-color: #E5E5E5;
+  background-color: #f2f2f7;
   font-weight: normal !important;
 }
 /* Large screens ----------- */
@@ -84,14 +84,7 @@ a.view_btn {
 }
 
 .content {
-  margin-top: 90px;
-  min-height: 240px;
-  padding-bottom: 0px;
-  padding: 15px;
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding: 20px;
 }
 
 a:focus, a:hover {
@@ -1059,7 +1052,7 @@ tbody {
 }
 
 .no-footer {
-  margin-bottom: 10px !important;
+  margin-bottom: 10px;
 }
 
 /*Popup CSS*/
@@ -1344,10 +1337,28 @@ ul.view-diam-pric {
 .spec-label {
   font-weight: bold;
 }
-
 .table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
-  padding: 2px;
-  border: 1px solid #ccc !important;
+	padding: 6px 2px 6px 16px;
+	text-align: left;
+	
+}
+.table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td {
+	font-weight: 500;
+font-size: 14px;
+line-height: 22px;
+letter-spacing: 0.5px;
+color: #4F4F4F;
+   border-top: 1px solid #ECE9F1 !important;
+   vertical-align: middle;
+}
+.table > thead > tr > th {
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 24px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	color: #828282;
+	background: #FAFAFA;
 }
 
 .diamond-view-border {
@@ -1863,11 +1874,11 @@ a.sele-all {
 }
 
 .table > caption + thead > tr:first-child > td, .table > caption + thead > tr:first-child > th, .table > colgroup + thead > tr:first-child > td, .table > colgroup + thead > tr:first-child > th, .table > thead:first-child > tr:first-child > td, .table > thead:first-child > tr:first-child > th {
-  text-align: center !important;
+  text-align: left !important;
 }
 
 .table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
-  text-align: center;
+  text-align: left;
 }
 
 #ShippingPriceTotal {

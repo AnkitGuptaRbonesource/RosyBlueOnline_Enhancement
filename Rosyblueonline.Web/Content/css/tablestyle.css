@@ -7,15 +7,7 @@
     width: 100%;
 	margin-top:-20px;
 	overflow:scroll;
-}*/
-.tabledash {
- border-collapse: collapse;
-    width: 100%;
-	margin-top:-20px;
-	overflow:scroll;
-
-}
-  /*p, h1 {
+}*/  /*p, h1 {
     margin: 2em 0; 
   }*/
 .rsearch {
@@ -371,7 +363,9 @@ border:1px solid #337ab7;
 }
 
 .info-boxtxt {
-    color:white;
+   display: block;
+   position: relative;
+   padding-right: 55px;
 }
 .fixsearch {
     position: fixed;
