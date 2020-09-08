@@ -98,11 +98,11 @@ body{font-family: 'Karla', sans-serif !important;font-weight:400;overflow-x:hidd
 .info-box {display:block;min-height:100px;background:#fff;width:100%;box-shadow:3px 3px 3px #737272;border-radius:2px;margin-bottom:15px}
 .info-box small{font-size:14px}
 .info-box .progress{background:rgba(0,0,0.1,0.2);margin:5px -10px 5px -10px;height:2px}.info-box .progress,.info-box .progress .progress-bar{border-radius:0}.info-box .progress .progress-bar{background:#fff}.info-box-icon{border-top-left-radius:2px;border-top-right-radius:0;border-bottom-right-radius:0;border-bottom-left-radius:2px;display:block;float:left;height:90px;width:90px;text-align:center;font-size:45px;line-height:90px;background:rgba(0,0,0,0.2)}.info-box-icon>img{max-width:100%}
-.info-box-content {position: relative;display: flex;width: 100%;align-items: center;justify-content: space-between;}
-.info-box-number {display: block;font-weight: 600;font-size: 26px;line-height: 24px;letter-spacing: 1px;color: #3A4276;}
-.progress-description, .info-box-text {display: block;font-size: 16px !important;font-weight: 500;line-height: 18px;letter-spacing: 0.2px;color: #BDBDBD;}
+.info-box-content {padding: 5px 3px;margin-left: 0px;}
+/*.info-box-number {display: block;font-weight: 600;font-size: 26px;line-height: 24px;letter-spacing: 1px;color: #3A4276;}*/
+.progress-description, .info-box-text {display: block;font-size: 12px !important;/* white-space: nowrap; */overflow: hidden;text-overflow: ellipsis;}
 
-.info-box-text {text-transform: capitalize;margin-top: 12px;letter-spacing: 0.3px;}
+.info-box-text {text-transform: uppercase;margin-top: 4px;}
 .info-box-more{display:block}
 .progress-description{margin:0}
 .timeline{position:relative;margin:0 0 30px 0;padding:0;list-style:none}
@@ -517,7 +517,7 @@ body{font-family: 'Karla', sans-serif !important;font-weight:400;overflow-x:hidd
 
 /*dashboard*/
 
-.info-boxtxt {
+/*.info-boxtxt {
     position: relative;
     display: block;
     width: 100%;
@@ -596,7 +596,7 @@ body{font-family: 'Karla', sans-serif !important;font-weight:400;overflow-x:hidd
     align-items: center;
     justify-content: space-between;
 }
-
+*/
 
 
 
