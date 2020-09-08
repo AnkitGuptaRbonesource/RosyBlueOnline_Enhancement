@@ -37,7 +37,7 @@ body{font-family: 'Karla', sans-serif !important;font-weight:400;overflow-x:hidd
 .sidebar-mini.sidebar-collapse .main-header .logo{font-family: 'Karla', sans-serif !important;}
 .sidebar-mini.sidebar-collapse .main-header .logo>.logo-mini{display:block;margin-left:-15px;margin-right:-15px;font-size:18px}.sidebar-mini.sidebar-collapse .main-header .logo>.logo-lg{display:none}}
 .sidebar-menu,.main-sidebar .user-panel,.sidebar-menu>li.header{white-space:nowrap;overflow:hidden;}
-.sidebar-menu:hover{overflow:visible}.sidebar-form,.sidebar-menu>li.header{overflow:hidden;text-overflow:clip}
+/*.sidebar-menu:hover{overflow:visible}*/.sidebar-form,.sidebar-menu>li.header{overflow:hidden;text-overflow:clip}
     .sidebar-menu li > a {position: relative;font-weight: 500;font-size: 15px;line-height: 24px;letter-spacing: 1px;color: #3A4276 !important;}.sidebar-menu li>a>.pull-right-container{position:absolute;right:10px;top:50%;margin-top:-7px}
 .control-sidebar-bg{position:fixed;z-index:1000;bottom:0}
 .control-sidebar-bg,.control-sidebar{top:0;right:-230px;width:230px;-webkit-transition:right .3s ease-in-out;-o-transition:right .3s ease-in-out;transition:right .3s ease-in-out}.control-sidebar{position:absolute;padding-top:50px;z-index:1010}@media (max-width:768px){.control-sidebar{padding-top:100px}}.control-sidebar>.tab-content{padding:10px 15px}.control-sidebar.control-sidebar-open,.control-sidebar.control-sidebar-open+.control-sidebar-bg{right:0}.control-sidebar-open .control-sidebar-bg,.control-sidebar-open .control-sidebar{right:0}
@@ -513,91 +513,24 @@ body{font-family: 'Karla', sans-serif !important;font-weight:400;overflow-x:hidd
     padding: 15px 20px;
     border-radius: 0 0 10px 10px;
 }
-
-
-/*dashboard*/
-
-/*.info-boxtxt {
+.nav-logo {
     position: relative;
     display: block;
     width: 100%;
-    padding: 23px 20px;
+    overflow: hidden;
 }
-
-.info-boxtxt:after {
-    position: absolute;
-    display: block;
-    content: '';
-    width: 0%;
-    border-bottom: 3px solid transparent;
-    left: 0;
-    bottom: 0;
-    border-radius: 0px 0px 6px 6px;
-    transition: 0.5s all ease;
+.nav-logo ul {
+    margin: 14px 0;
+    padding-left: 20px;
 }
-.info-boxtxt:hover::after{
-    width: 100%;
-    transition: 0.5s all ease;
-}
-#ancRoundCount:hover::after {
-    border-color: #FF5668;
-}
-#ancFancyShapeCount:hover::after {
-    border-color: #41D5E2;
-}
-#ancFancyColorCount:hover::after {
-    border-color: #4D53E0;
-}
-#ancNewArrivalsCount:hover::after {
-    border-color: #FF8E36;
-}
-#ancRevisedStonesCount:hover::after {
-    border-color: #BE71D5;
-}
-#ancBestDealCount:hover::after {
-    border-color: #62CA76;
-}
-
-.dashboard-title h2 {
-    font-weight: 600;
-    font-size: 26px;
-    line-height: 24px;
-    color: #3A4276;
-    margin-bottom: 20px;
-}
-.dash-padding {
-    padding: 0 9px;
-}
-.row.dash-row {
-    margin-left: -9px;
-}
-.search-title h2 {
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 24px;
-    letter-spacing: 0.5px;
-    color: #4F4F4F;
-    margin: 0;
-}
-.seachview {
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 24px;
-    letter-spacing: 0.5px;
-    color: #3A4276;
-    border: 1px solid #3A4276;
-    padding: 4px 15px;
-    border-radius: 4px;
-}
-.search-title {
+.sidebar-nav {
     position: relative;
-    display: flex;
+    display: block;
     width: 100%;
-    align-items: center;
-    justify-content: space-between;
+    max-height: 800px;
+    overflow: hidden;
+    overflow-y: auto;
 }
-*/
-
 
 
 

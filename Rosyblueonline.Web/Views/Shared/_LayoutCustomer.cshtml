@@ -282,15 +282,17 @@
                   </span>
               </div>
           </form>*@
-        <ul class="sidebar-menu">
-
-          <li>
-            <a href="#" class="logo">
-              <img src="/Content/img/small-logo.png" class="small-header">
-              <img src="/Content/img/newlogo.png" class="large-header">
-            </a>
-          </li>
-
+          <div class="nav-logo">
+              <ul>
+                  <li>
+                      <a href="/" class="logo">
+                          <img src="/Content/img/small-logo.png" class="small-header">
+                          <img src="/Content/img/newlogo.png" class="large-header">
+                      </a>
+                  </li>
+              </ul>
+          </div>
+        <ul class="sidebar-menu sidebar-nav">
           <li>
             <a href="/Dashboard/Customer">
               <div class="img-icon"><img src="/Content/img/dashboard.png" /></div>
@@ -377,13 +379,17 @@
               <span>Utility</span>
             </a>
           </li>
-          <li class="signout">
-            <a href="/Home/LogOut">
-              <div class="img-icon"><img src="/Content/img/signout.png" /></div>
-              <span>Sign out</span>
-            </a>
-          </li>
         </ul>
+          <div class="sign-bottom">
+              <ul class="sidebar-menu">
+                  <li class="signout">
+                      <a href="/Home/LogOut">
+                          <div class="img-icon"><img src="/Content/img/signout.png" /></div>
+                          <span>Sign out</span>
+                      </a>
+                  </li>
+              </ul>
+          </div>
       </section>
     </aside>
 
@@ -428,6 +434,16 @@
       })
 
     });
+
+      $(document).mouseup(function (e) {
+          var container = $(".searchbar2 .dropbox");
+
+          // if the target of the click isn't the container nor a descendant of the container
+          if (!container.is(e.target) && container.has(e.target).length === 0) {
+              $(".searchbar").removeClass("searchbar2");
+            
+          }
+      });
   </script>
   @RenderSection("script", false)
 
