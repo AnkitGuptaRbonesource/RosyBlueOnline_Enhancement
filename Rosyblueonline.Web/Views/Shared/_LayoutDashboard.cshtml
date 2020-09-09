@@ -159,9 +159,9 @@
                                             }                                                
                                             </li>
 
-                                            <li><a href="@Url.Action("EditProfile", "Profile")"><i class=" fa fa-suitcase"></i>Profile</a></li>
+                                            <li><a href="@Url.Action("EditProfile", "Profile")"><i class=" fa fa-suitcase"></i>@Resource.Profile</a></li>
                                             @*                                            <li><a href="#"><i class="fa fa-cog"></i>Settings</a></li>*@
-                                            <li><a href="@Url.Action("LogOut", "Home")" class=""><i class="fa fa-sign-out" aria-hidden="true"></i>Sign-out</a></li>
+                                            <li><a href="@Url.Action("LogOut", "Home")" class=""><i class="fa fa-sign-out" aria-hidden="true"></i>@Resource.Sign_out</a></li>
                                             <li></li>
                                             @*<li><a href="@Url.Action("", "")"><i class="fa fa-bell-o"></i>Notification</a></li>*@
 
@@ -182,11 +182,11 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-12">
-                        <div class="menu-click" onclick="tabOpen()"><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>MENU</div>
+                        <div class="menu-click" onclick="tabOpen()"><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>@Resource.MENU</div>
                     </div>
-                    <div class="col-lg-8 col-md-8 col-sm-12"><div class="spblink" style="text-align:center;color:red">GST will be applied for Indian customers</div></div>
+                    <div class="col-lg-8 col-md-8 col-sm-12"><div class="spblink" style="text-align:center;color:red">@Resource.GST</div></div>
                     <div class="col-lg-2 col-md-2 col-sm-12">
-                        <div class="menu-click pull-right"><a href="@Url.Action("Index", "Dashboard")" class="panel-submenu"><i class="fa fa-tachometer"></i>DASHBOARD</a></div>
+                        <div class="menu-click pull-right"><a href="@Url.Action("Index", "Dashboard")" class="panel-submenu"><i class="fa fa-tachometer"></i>@Resource.Dashboard</a></div>
                     </div>
                 </div>
             </div>
@@ -209,7 +209,7 @@
                         <h4 class="panel-title">
                             <a role="button" class="" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                 <img src="~/Content/img/profile-icon.png" width="" />
-                                Profile</a>
+                                @Resource.Profile</a>
                         </h4>
                     </div>
                     <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
@@ -232,16 +232,16 @@
                             <h4 class="panel-title">
                                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseAccount" aria-expanded="false" aria-controls="collapseInventory">
                                     <img src="~/Content/img/inventory-icon.png" width="" />
-                                    My Account</a>
+                                    @Resource.My_Account</a>
                             </h4>
                         </div>
                         <div id="collapseAccount" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingAccount">
                             <div class="sub-menu">
                                 <ul class="sub-link">
-                                    <li class="inv-up"><a href="#">My Orders</a></li>
-                                    <li class="inv-down"><a href="#">Shopping Cart</a></li>
-                                    <li class="inv-search"><a href="#">View Request</a></li>
-                                    <li class="uplo-hist"><a href="#">Users</a></li>
+                                    <li class="inv-up"><a href="#">@Resource.My_Order</a></li>
+                                    <li class="inv-down"><a href="#">@Resource.Shopping_Cart</a></li>
+                                    <li class="inv-search"><a href="#">@Resource.View_Request</a></li>
+                                    <li class="uplo-hist"><a href="#">@Resource.Users</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -254,17 +254,18 @@
                             <h4 class="panel-title">
                                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                     <img src="~/Content/img/registration-icon.png" width="" />
-                                    Registration</a>
+                                    @Resource.Registration
+                                </a>
                             </h4>
                         </div>
                         <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                             <div class="sub-menu">
                                 <ul class="sub-link">
-                                    <li class="regi-new">@Html.ActionLink("New Customer", "NewCustomer", "CustomerUpdate")</li>
-                                    <li class="regi-list">@Html.ActionLink("List Of Customers", "Customers", "CustomerUpdate")</li>
-                                    <li class="regi-per">@Html.ActionLink("Pre-Registered Users", "PreRegisteredUser", "CustomerUpdate")</li>
-                                    <li class="regi-rej">@Html.ActionLink("Rejected Customers", "RejectRegisteredUser", "CustomerUpdate")</li>
-                                    <li class="regi-block">@Html.ActionLink("Blocked Customers", "BlockedUser", "CustomerUpdate")</li>
+                                    <li class="regi-new">@Html.ActionLink(Resource.New_Customer, "NewCustomer", "CustomerUpdate")</li>
+                                    <li class="regi-list">@Html.ActionLink(Resource.List_of_Customers, "Customers", "CustomerUpdate")</li>
+                                    <li class="regi-per">@Html.ActionLink(Resource.Pre_Registered_Users, "PreRegisteredUser", "CustomerUpdate")</li>
+                                    <li class="regi-rej">@Html.ActionLink(Resource.Rejected_Customers, "RejectRegisteredUser", "CustomerUpdate")</li>
+                                    <li class="regi-block">@Html.ActionLink(Resource.Blocked_Customers, "BlockedUser", "CustomerUpdate")</li>
 
                                 </ul>
                             </div>
@@ -275,14 +276,15 @@
                             <h4 class="panel-title">
                                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                     <img src="~/Content/img/support-icon.png" width="" />
-                                    Support</a>
+                                    @Resource.Support
+                                </a>
                             </h4>
                         </div>
                         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                             <div class="sub-menu">
                                 <ul class="sub-link">
-                                    <li class="support2">@Html.ActionLink("Sales Support", "Index", "Support")</li>
-                                    <li class="support3">@Html.ActionLink("Manage Rights", "ManageRights", "CustomerUpdate")</li>
+                                    <li class="support2">@Html.ActionLink(Resource.Sales_Support , "Index", "Support")</li>
+                                    <li class="support3">@Html.ActionLink(Resource.Manage_Rights  , "ManageRights", "CustomerUpdate")</li>
                                 </ul>
                             </div>
                         </div>
@@ -294,14 +296,14 @@
                         <h4 class="panel-title">
                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSearch" aria-expanded="false" aria-controls="collapseSearch">
                                 <img src="~/Content/img/search-icon.png" width="" />
-                                Search</a>
+                                @Resource.Search</a>
                         </h4>
                     </div>
                     <div id="collapseSearch" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSearch">
                         <div class="sub-menu">
                             <ul class="sub-link">
-                                <li class="Quick-up">@Html.ActionLink("Quick Search", "QuickSearch", "DiamondSearch")</li>
-                                <li class="Specific-up">@Html.ActionLink("Specific Search", "SpecificSearch", "DiamondSearch")</li>
+                                <li class="Quick-up">@Html.ActionLink(Resource.Quick_Search , "QuickSearch", "DiamondSearch")</li>
+                                <li class="Specific-up">@Html.ActionLink(Resource.Specfic_search, "SpecificSearch", "DiamondSearch")</li>
                             </ul>
                         </div>
                     </div>
@@ -314,27 +316,28 @@
                             <h4 class="panel-title">
                                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseInventory" aria-expanded="false" aria-controls="collapseInventory">
                                     <img src="~/Content/img/inventory-icon.png" width="" />
-                                    Inventory</a>
+                                    @Resource.Inventory
+                                </a>
                             </h4>
                         </div>
                         <div id="collapseInventory" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingInventory">
                             <div class="sub-menu">
                                 <ul class="sub-link">
-                                    <li class="inv-up">@Html.ActionLink("Inventory Upload", "InventoryUpload", "InventoryUpload")</li>
-                                    <li class="inv-down">@Html.ActionLink("Inventory Download", "Index", "DownloadInventory")</li>
+                                    <li class="inv-up">@Html.ActionLink(Resource.Inventory_Upload, "InventoryUpload", "InventoryUpload")</li>
+                                    <li class="inv-down">@Html.ActionLink(Resource.Inventory_Download, "Index", "DownloadInventory")</li>
                                     @* <li class="inv-search">@Html.ActionLink("Inventory Search", "Index", "InvUploadSearch")</li>*@
-                                    <li class="uplo-hist">@Html.ActionLink("Upload History", "Index", "UploadHistory")</li>
-                                    <li class="memo-hist">@Html.ActionLink("Memo History", "AllMemo", "MemoHistory")</li>
+                                    <li class="uplo-hist">@Html.ActionLink(Resource.Upload_History, "Index", "UploadHistory")</li>
+                                    <li class="memo-hist">@Html.ActionLink(Resource.Memo_History, "AllMemo", "MemoHistory")</li>
                                     @*<li class="chan-rap">@Html.ActionLink("Change Rap", "InventoryUpload", "InventoryUpload")</li>
                                 <li class="chan-dis">@Html.ActionLink("Change Discount", "Customers", "CustomerUpdate")</li>*@
                                     @* @if (curRoleId != "9")
                                     {*@
-                                    <li class="cert-up">@Html.ActionLink("Certificate upload", "Customers", "CustomerUpdate")</li>
-                                    <li class="status">@Html.ActionLink("Stone Status", "StoneStatus", "MyUtility")</li>
+                                    <li class="cert-up">@Html.ActionLink( Resource.Certificate_upload, "Customers", "CustomerUpdate")</li>
+                                    <li class="status">@Html.ActionLink(Resource.Stone_Status, "StoneStatus", "MyUtility")</li>
 
                                     @if (curRoleId == "9")
                                     {
-                                        <li class="stone-history">@Html.ActionLink("Stone History", "StoneHistory", "DownloadReports")</li>
+                                        <li class="stone-history">@Html.ActionLink(Resource.Stone_History, "StoneHistory", "DownloadReports")</li>
                                     }
                                              
 @*}*@
@@ -350,21 +353,22 @@
                             <h4 class="panel-title">
                                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseReports" aria-expanded="false" aria-controls="collapseReports">
                                     <img src="~/Content/img/inventory-icon.png" width="" />
-                                    Reports</a>
+                                    @Resource.Report
+                                </a>
                             </h4>
                         </div>
                         <div id="collapseReports" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingReports">
                             <div class="sub-menu">
                                 <ul class="sub-link">
-                                    <li class="pivot-table">@Html.ActionLink("Pivot table", "PivotTable", "DownloadReports")</li>
-                                    <li class="stock-report">@Html.ActionLink("Stock Turn Report", "StockTurnReport", "DownloadReports")</li>
-                                    <li class="monthly-report">@Html.ActionLink("Monthly Report", "MonthlyReport", "DownloadReports")</li>
-                                    <li class="goods-icon">@Html.ActionLink("Slow Moving Goods", "SlowMovingGoods", "DownloadReports")</li>
-                                    <li class="goods-icon">@Html.ActionLink("Fast Moving Goods", "FastMovingGoods", "DownloadReports")</li>
-                                    <li class="stone-history">@Html.ActionLink("Stone History", "StoneHistory", "DownloadReports")</li>
-                                    <li class="inventory-rep">@Html.ActionLink("Inventory Summary Report", "InventorySummary", "DownloadReports")</li>
-                                    <li class="watch-list">@Html.ActionLink("Watch List", "Watchlist", "DownloadReports")</li>
-                                    <li class="cust-repoet">@Html.ActionLink("Customer Order Report", "CustomerOrderReport", "DownloadReports")</li>
+                                    <li class="pivot-table">@Html.ActionLink(Resource.Pivot_Table "PivotTable", "DownloadReports")</li>
+                                    <li class="stock-report">@Html.ActionLink(Resource.Stock_Turn_Report, "StockTurnReport", "DownloadReports")</li>
+                                    <li class="monthly-report">@Html.ActionLink(Resource.Monthly_Report, "MonthlyReport", "DownloadReports")</li>
+                                    <li class="goods-icon">@Html.ActionLink(Resource.Slow_Moving_Goods, "SlowMovingGoods", "DownloadReports")</li>
+                                    <li class="goods-icon">@Html.ActionLink(Resource.Fast_Moving_Goods, "FastMovingGoods", "DownloadReports")</li>
+                                    <li class="stone-history">@Html.ActionLink(Resource.Stone_History, "StoneHistory", "DownloadReports")</li>
+                                    <li class="inventory-rep">@Html.ActionLink(Resource.Inventory_Summary_Report, "InventorySummary", "DownloadReports")</li>
+                                    <li class="watch-list">@Html.ActionLink(Resource.Watch_List, "Watchlist", "DownloadReports")</li>
+                                    <li class="cust-repoet">@Html.ActionLink(Resource.Customer_Order_Report, "CustomerOrderReport", "DownloadReports")</li>
                                 </ul>
                             </div>
                         </div>
@@ -381,15 +385,15 @@
                         <div id="collapseUtility" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingUtility">
                             <div class="sub-menu">
                                 <ul class="sub-link">
-                                    <li class="uplo-hist">@Html.ActionLink("All Orders", "AllCustomerOrders", "MyUtility")</li>
-                                    <li class="bestdeals">@Html.ActionLink("Best Deals", "BestDeals", "MyUtility")</li>
-                                    <li class="criteria">@Html.ActionLink("Criteria Matching Pair", "CriteriaMatchingPair", "MatchPair")</li>
-                                    <li class="describe">@Html.ActionLink("Describe your Demands", "DescribeYourDemands", "MyUtility")</li>
-                                    <li class="price-mark">@Html.ActionLink("Price Mark Percent", "PriceMarkupPercentage", "MyUtility")</li>
-                                    <li class="regi-block">@Html.ActionLink("Block Site", "Customers", "CustomerUpdate")</li>
-                                    <li class="certificate">@Html.ActionLink("Certificate Search", "CertificateSearch", "MyUtility")</li>
-                                    <li class="change-icon">@Html.ActionLink("Change summary Discounts", "ChangeDiscount", "MyUtility")</li>
-                                    <li class="change-icon">@Html.ActionLink("Inventory Package", "InventoryPackage", "MyUtility")</li>
+                                    <li class="uplo-hist">@Html.ActionLink(Resource.All_Orders, "AllCustomerOrders", "MyUtility")</li>
+                                    <li class="bestdeals">@Html.ActionLink(Resource.BEST_DEAL, "BestDeals", "MyUtility")</li>
+                                    <li class="criteria">@Html.ActionLink(Resource.Criteria_Matching_Pair, "CriteriaMatchingPair", "MatchPair")</li>
+                                    <li class="describe">@Html.ActionLink(Resource.Describe_your_Demands, "DescribeYourDemands", "MyUtility")</li>
+                                    <li class="price-mark">@Html.ActionLink(Resource.Price_Mark_Percent, "PriceMarkupPercentage", "MyUtility")</li>
+                                    <li class="regi-block">@Html.ActionLink(Resource.Block_Site , "Customers", "CustomerUpdate")</li>
+                                    <li class="certificate">@Html.ActionLink(Resource.CERTIFICATE, "CertificateSearch", "MyUtility")</li>
+                                    <li class="change-icon">@Html.ActionLink(Resource.Change_summary_Discounts, "ChangeDiscount", "MyUtility")</li>
+                                    <li class="change-icon">@Html.ActionLink(Resource.Inventory_Package, "InventoryPackage", "MyUtility")</li>
                                 </ul>
                             </div>
                         </div>
@@ -410,7 +414,7 @@
     <footer class="footer-wrapper">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-6"><a href="#" class="policy-link">Quick Contact</a></div>
+                <div class="col-lg-6 col-md-6 col-sm-6"><a href="#" class="policy-link">@Resource.Quick_Contact</a></div>
                 <div class="col-lg-6 col-md-6 col-sm-6">
                     <div class="policy-div">@Html.ActionLink("Shipp1ing", "PricingDiscountPolicy", "Home", null, new { target = "_blank", @class = "policy-link" })    |   @Html.ActionLink("Pricing Policy", "PricingDiscountPolicy", "Home", null, new { target = "_blank", @class = "policy-link" })  |   @Html.ActionLink("Terms of Use", "TermsOfUse", "Home", null, new { target = "_blank", @class = "policy-link" })   |   @Html.ActionLink("Privacy Policy", "PrivacyPolicy", "Home", null, new { target = "_blank", @class = "policy-link" })</div>
                 </div>

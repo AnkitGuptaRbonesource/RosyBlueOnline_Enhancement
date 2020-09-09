@@ -17,14 +17,14 @@
             <div class="col-lg-5 col-md-5">
                 <div class="panel panel-primary">
                     <div class="panel-heading">
-                        RFID StockTally
+                        @Resource.RFID_StockTally
                     </div>
                     <div class="panel-body">
                         <div class="">
                             <div class="customers-info form-horizontal">
                                 <div class="rfid-mch">
                                     <div class="form-group">
-                                        <label class="col-sm-4">Machine</label>
+                                        <label class="col-sm-4">@Resource.Machine</label>
                                         <div class="col-sm-8">
                                             <select id="ddlipaddress" class="form-control">
                                                 <option value="192.168.20.121">RFID_1</option>
@@ -35,7 +35,7 @@
                                 </div>
                                 <div class="rfid-number">
                                     <div class="form-group">
-                                        <label class="col-sm-4">RFId Number</label>
+                                        <label class="col-sm-4">@Resource.Rfid_Number</label>
                                         <div class="col-sm-8">
                                             <textarea id="list" name="Command" class="form-control"></textarea>
                                         </div>
@@ -43,7 +43,7 @@
                                 </div>
                                 <div class="rfid-number">
                                     <div class="form-group">
-                                        <label class="col-sm-4">Box name</label>
+                                        <label class="col-sm-4">@Resource.Box_Name</label>
                                         <div class="col-sm-8">
                                             <input type="text" id="txtboxname" name="command" value="" class="form-control" />
                                         </div>
@@ -51,7 +51,7 @@
                                 </div>
                                 <div class="total-rfid">
                                     <div class="form-group">
-                                        <label class="col-sm-4">Total RFID Count</label>
+                                        <label class="col-sm-4">@Resource.Total_RFID_Count</label>
                                         <div class="col-sm-8">
                                             <div id="count"></div>
                                             <div id="rfidtotalCount"></div>
@@ -61,7 +61,7 @@
                                 </div>
                                 <div class="total-rfid">
                                     <div class="form-group">
-                                        <label class="col-sm-4">Recent RFID Count</label>
+                                        <label class="col-sm-4">@Resource.Recent_RFID_Count</label>
                                         <div class="col-sm-8">
                                             <div id="notify"></div>
                                         </div>
@@ -70,10 +70,10 @@
 
                                 <div class="form-group">
                                     <div class="col-sm-6">
-                                        <button id="btnScanRF" class="btn btn-primary pull-right">Scan</button>
+                                        <button id="btnScanRF" class="btn btn-primary pull-right">@Resource.Scan</button>
                                     </div>
                                     <div class="col-sm-6">
-                                        <button id="btnReset" name="command" value="reset" class="btn btn-warning">Reset</button>
+                                        <button id="btnReset" name="command" value="reset" class="btn btn-warning">@Resource.Reset1</button>
                                         <input id="hdnrfID" value="0" name="command" style="width: 24px" type="hidden" />
                                     </div>
                                 </div>
@@ -85,44 +85,44 @@
             <div class="col-lg-2 col-md-2">
                 <div class="panel panel-primary">
                     <div class="panel-heading">
-                        Stock
+                        @Resource.Stock
                     </div>
                     <div class="panel-body">
                         <div class="">
                             <div class="form-group">
                                 <table>
                                     <tr>
-                                        <td style="width: 100px;">Physical Stock</td>
+                                        <td style="width: 100px;">@Resource.Physical_Stock</td>
                                         <td>
                                             <button id="btnPhysicalStock" class="btn-link btn-count-click" data-type="PhysicalStock" data-rfid="">0</button>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>Active Stock</td>
+                                        <td>@Resource.Active_Stock</td>
                                         <td>
                                             <button id="btnActiveStock" class="btn-link btn-count-click" data-type="ActiveStock" data-rfid="">0</button>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>OnMemo</td>
+                                        <td>@Resource.OnMemo</td>
                                         <td>
                                             <button id="btnOnMemoStock" class="btn-link btn-count-click" data-type="OnMemoStock" data-rfid="">0</button>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>Sold</td>
+                                        <td>@Resource.Sold</td>
                                         <td>
                                             <button id="btnSoldStock" class="btn-link btn-count-click" data-type="SoldStock" data-rfid="">0</button>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>Order Pending</td>
+                                        <td>@Resource.Order_Pending</td>
                                         <td>
                                             <button id="btnOrderPendingStock" class="btn-link btn-count-click" data-type="OrderPendingStock" data-rfid="">0</button>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>InActive</td>
+                                        <td>@Resource.InActive</td>
                                         <td>
                                             <button id="btnInvalidStock" class="btn-link btn-count-click" data-type="InvalidStock" data-rfid="">0</button>
                                         <td>
@@ -141,20 +141,20 @@
                     <div class="panel-body">
                         <div class="customers-list-table">
                             <div class="col-sm-6 pull-right" id="Divbtnexport">
-                                <button id="btnexport" class="btn btn-primary pull-right">ExportToExcel</button>
+                                <button id="btnexport" class="btn btn-primary pull-right">@Resource.ExportToExcel</button>
                             </div>
                             <div id="ResultArea">
                                 <table id="tableStockCountDetail" class="table table-fixed dataTable no-footer">
                                     <thead>
                                         <tr role="row" class="table-head">
-                                            <th>Box Name</th>
-                                            <th>Physical Stock</th>
-                                            <th>Active</th>
-                                            <th>On Memo</th>
-                                            <th>Sold</th>
-                                            <th>Order Pending</th>
-                                            <th>InActive</th>
-                                            <th>UnReferenced</th>
+                                            <th>@Resource.Box_Name</th>
+                                            <th>@Resource.Physical_Stock</th>
+                                            <th>@Resource.Active</th>
+                                            <th>@Resource.On_Memo</th>
+                                            <th>@Resource.Sold</th>
+                                            <th>@Resource.Order_Pending</th>
+                                            <th>@Resource.InActive</th>
+                                            <th>@Resource.UnReferenced</th>
                                         </tr>
                                     </thead>
                                     <tbody id="tblStockCountDetail"></tbody>
@@ -179,37 +179,37 @@
                                             <thead class="bordertp">
                                                 <tr role="row" class="table-head">
                                                     <th class="tbnew">
-                                                        <label for="BoxNo">Box No</label>
+                                                        <label for="BoxNo">@Resource.Box_No</label>
                                                     </th>
                                                     <th class="tbnew">
-                                                        <label for="Rfid">Rfid</label>
+                                                        <label for="Rfid">@Resource.RFID</label>
                                                     </th>
                                                     <th class="tbnew">
-                                                        <label for="Stock">Stock</label>
+                                                        <label for="Stock">@Resource.Stock</label>
                                                     </th>
                                                     <th class="tbnew">
-                                                        <label for="Certificate">Certificate #</label>
+                                                        <label for="Certificate">@Resource.CertificateId</label>
                                                     </th>
                                                     <th class="tbnew">
-                                                        <label for="Carat">Carat</label>
+                                                        <label for="Carat">@Resource.Carat</label>
                                                     </th>
                                                     <th class="tbnew">
-                                                        <label for="Shape">Shape</label>
+                                                        <label for="Shape">@Resource.Shape</label>
                                                     </th>
                                                     <th class="tbnew">
-                                                        <label for="Color">Color</label>
+                                                        <label for="Color">@Resource.Color</label>
                                                     </th>
                                                     <th class="tbnew">
-                                                        <label for="Clarity">Clarity</label>
+                                                        <label for="Clarity">@Resource.Clarity</label>
                                                     </th>
                                                     <th class="tbnew">
-                                                        <label for="Cut">Cut</label>
+                                                        <label for="Cut">@Resource.Cut</label>
                                                     </th>
                                                     <th class="tbnew ss">
-                                                        <label for="stockStatusID">Status</label>
+                                                        <label for="stockStatusID">@Resource.Status</label>
                                                     </th>
                                                     <th class="tbnew">
-                                                        <label for="Memo">Memo</label>
+                                                        <label for="Memo">@Resource.MEMO</label>
                                                     </th>
                                                 </tr>
                                             </thead>

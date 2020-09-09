@@ -39,7 +39,15 @@ namespace Rosyblueonline.Web.Controllers
           
             return View(objmenu);
         }
-
+        protected override void Initialize(System.Web.Routing.RequestContext requestContext)
+        {
+            base.Initialize(requestContext);
+            if (Request.Cookies["CurrentCulture"] != null)
+            {
+                Thread.CurrentThread.CurrentCulture = new CultureInfo(Request.Cookies["CurrentCulture"].Value);
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo(Request.Cookies["CurrentCulture"].Value);
+            }
+        }
 
         public ActionResult SaveMenuAccess(int UserId, string MenuIds)
         {

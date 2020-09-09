@@ -20,21 +20,21 @@
                         <div class="col-md-12">
                             <div class="panel panel-primary">
                                 <div class="panel-heading">
-                                    <div class="panel-heading" id="panelHeading">Memo Pending</div>
+                                    <div class="panel-heading" id="panelHeading">@Resource.Memo_Pending</div>
                                 </div>
                                 <div class="panel-body">
                                     <div class="row">
                                         <form method="post" action="/Order/OrderListingDownloadExcel" class="col-md-3">
-                                            <button class="btn btn-info" id="btnMergeMemo" style="display:none;">Merge Memo</button>
-                                            <button type="submit" class="btn btn-primary">Download</button>
+                                            <button class="btn btn-info" id="btnMergeMemo" style="display:none;">@Resource.Merge_Memo</button>
+                                            <button type="submit" class="btn btn-primary">@Resource.Download</button>
                                             <input type="hidden" name="OType" id="hfOType" value="Memo" />
                                             <input type="hidden" name="OStatus" id="hfOStatus" value="Pending" />
                                         </form>
                                         <div class="col-md-2" id="divReturnSale" style="display:none;">
-                                            <button class="btn btn-info" id="btnMemoReturn">Return Sale</button>
+                                            <button class="btn btn-info" id="btnMemoReturn">@Resource.RETURN_SALE</button>
                                         </div>
                                         <div class="col-md-2 pull-right">
-                                            <button class="btn btn-info pull-right" id="btnViewSoldHistory" data-toggle="HideSoldHistory">View Sold History</button>
+                                            <button class="btn btn-info pull-right" id="btnViewSoldHistory" data-toggle="HideSoldHistory">@Resource.View_Sold_History</button>
                                         </div>
                                     </div>
                                 </div>
@@ -47,43 +47,43 @@
                                                     <label>#</label>
                                                 </th>
                                                 <th class="tbnew">
-                                                    <label>Memo <br /> No</label>
+                                                    <label>@Resource.MEMO <br /> @Resource.No</label>
                                                 </th>
                                                 <th class="tbnew">
-                                                    <label>Created <br /> Date</label>
+                                                    <label>@Resource.Created <br /> @Resource.Date</label>
                                                 </th>
                                                 <th class="tbnew">
-                                                    <label>Customer</label>
+                                                    <label>@Resource.Customer</label>
                                                 </th>
                                                 <th class="tbnew">
-                                                    <label>Remark</label>
+                                                    <label>@Resource.Remark</label>
                                                 </th>
                                                 <th class="tbnew" style="word-wrap: break-word;">
-                                                    <label>Item <br /> Count</label>
+                                                    <label>@Resource.Item <br /> @Resource.Count</label>
                                                 </th>
                                                 <th class="tbnew">
-                                                    <label>Total <br /> CT</label>
+                                                    <label>@Resource.Total <br /> @Resource.CT</label>
                                                 </th>
                                                 <th class="tbnew" style="word-wrap: break-word;">
-                                                    <label>Avg.  <br /> Rap <br /> Price($)</label>
+                                                    <label>@Resource.Avg .  <br /> @Resource.Rap <br /> @Resource.Price</label>
                                                 </th>
                                                 <th class="tbnew">
-                                                    <label>Total  <br /> Rap <br />Price($)</label>
+                                                    <label>@Resource.Total  <br /> @Resource.Rap <br />@Resource.Price</label>
                                                 </th>
                                                 <th class="tbnew avgDisc">
-                                                    <label>Avg. <br /> Discount(%)</label>
+                                                    <label>@Resource.Avg . <br /> @Resource.Discount</label>
                                                 </th>
                                                 <th class="tbnew">
-                                                    <label>Avg. <br /> Price($)/ct</label>
+                                                    <label>@Resource.Avg . <br /> @Resource.Price_ct</label>
                                                 </th>
                                                 <th class="tbnew">
-                                                    <label>Total Amt</label>
+                                                    <label>@Resource.Total_Amt</label>
                                                 </th>
                                                 <th class="tbnew">
-                                                    <label>Created <br /> By</label>
+                                                    <label>@Resource.Created <br /> @Resource.By</label>
                                                 </th>
                                                 <th class="tbnew">
-                                                    <label>Actions</label>
+                                                    <label>@Resource.Actions</label>
                                                 </th>
                                             </tr>
                                         </thead>
@@ -118,7 +118,7 @@
         <form class="modal-content" id="frmSellFullMemo">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Sell Full Memo</h4>
+                <h4 class="modal-title">@Resource.Sell_Full_Memo</h4>
             </div>
             <div class="modal-body">
                 <div class="row">
@@ -129,24 +129,24 @@
                             </div>
                             <div class="form-group">
                                 <label class="radio-inline">
-                                    <input type="radio" name="MemoMode" value="1" id="chkWebMode" checked>Web Mode
+                                    <input type="radio" name="MemoMode" value="1" id="chkWebMode" checked>@Resource.Web_Mode
                                 </label>
                                 <label class="radio-inline">
-                                    <input type="radio" name="MemoMode" value="2" id="chkSalesMode">Sales Mode
+                                    <input type="radio" name="MemoMode" value="2" id="chkSalesMode">@Resource.Sales_Mode
                                 </label>
                             </div>
                             <div class="form-group" id="pnlMemoSales" style="display:none">
                                 <div class="row">
                                     <div class="col-md-6">
                                         <label for="MemoAgvDiscount">
-                                            Web Avg. Discount
+                                            @Resource.Web_Avg_Discount
                                         </label>
                                         <input class="form-control" name="MemoAgvDiscount" id="txtMemoAvgDiscount" placeholder="Web Discount" disabled />
                                     </div>
                                     <div class="col-md-6">
                                         <input type="hidden" name="MemoOrderID" id="hfOrderID" value="" />
                                         <label for="MemoAgvDiscount">
-                                            Sale Discount
+                                            @Resource.Sale_Discount
                                         </label>
                                         <input class="form-control" name="MemoAgvDiscount" id="txtMemoSaleDiscount" value="0" placeholder="Sale Discount" />
                                     </div>
@@ -157,8 +157,8 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-primary" id="btnSaleMemo">Sale</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button class="btn btn-primary" id="btnSaleMemo">@Resource.Sale</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">@Resource.Close</button>
             </div>
         </form>
 
@@ -171,7 +171,7 @@
         <form class="modal-content" id="frmEditMemo">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Edit Memo</h4>
+                <h4 class="modal-title">@Resource.Edit_Memo</h4>
             </div>
             <div class="modal-body">
                 <div class="row">
@@ -184,7 +184,7 @@
                                 <div class="row">
                                     <div class="col-md-8">
                                         <label for="EditMemoCustomer">
-                                            Customer
+                                            @Resource.Customer
                                         </label>
                                         <select id="ddlCustomer2" name="EditMemoCustomer"></select>
                                     </div>
@@ -193,7 +193,7 @@
                                     </div>
                                     <div class="col-md-12">
                                         <label for="EditMemoRemark">
-                                            Remark
+                                            @Resource.Remark
                                         </label>
                                         <textarea class="form-control" name="EditMemoRemark" id="txtEditMemoRemark" value="" placeholder="Remark"></textarea>
                                     </div>
@@ -204,8 +204,8 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-primary" id="btnUpdateMemo">Update</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button class="btn btn-primary" id="btnUpdateMemo">@Resource.Update</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">@Resource.Close</button>
             </div>
         </form>
 

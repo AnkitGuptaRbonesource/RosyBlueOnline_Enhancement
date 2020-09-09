@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Diagnostics;
+using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
@@ -39,6 +41,15 @@ namespace Rosyblueonline.Web.Controllers
             this.objMemoService = objMemoService as MemoService;
             this.objDownloadService = objDownloadService as DownloadScriptService;
             this.objUDSvc = objUDSvc as UserDetailService;
+        }
+        protected override void Initialize(System.Web.Routing.RequestContext requestContext)
+        {
+            base.Initialize(requestContext);
+            if (Request.Cookies["CurrentCulture"] != null)
+            {
+                Thread.CurrentThread.CurrentCulture = new CultureInfo(Request.Cookies["CurrentCulture"].Value);
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo(Request.Cookies["CurrentCulture"].Value);
+            }
         }
         // GET: Inventory
         #region StockSearch

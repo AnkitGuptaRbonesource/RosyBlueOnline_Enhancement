@@ -16,14 +16,14 @@
                     <div class="col-md-12">
                         <div class="panel panel-primary">
                             <div class="panel-heading">
-                                <div class="panel-heading">Upload Inventory</div>
+                                <div class="panel-heading">@Resource.Upload_Inventory</div>
                             </div>
                             @*method="post" action="/Inventory/InventoryUpload" enctype="multipart/form-data"*@
                             <form id="frmInventorUpload" class="panel-body paneltable">
                                 <div class="form-horizontal">
                                     <div class="form-group">
                                         <label class="col-md-6 control-label">
-                                            Select to download sample file
+                                            @Resource.Select_to_download_sample_file
                                         </label>
                                         <div class="col-md-6">
                                         </div>
@@ -31,23 +31,23 @@
                                     <div class="form-group">
                                         <div class="col-md-6">
                                             <select class="form-control" id="ddlDownloadType">
-                                                <option value="~/Content/INV/Temp/UploadFormat.xlsx" selected>Upload Format Common</option>
-                                                <option value="~/Content/INV/Temp/BestDeal.xlsx">Upload Format Best Deal</option>
-                                                <option value="~/Content/INV/Temp/AddRemoveLab.xlsx">Upload Add/Remove Lab Format</option>
+                                                <option value="~/Content/INV/Temp/UploadFormat.xlsx" selected>@Resource.Upload_Format_Common</option>
+                                                <option value="~/Content/INV/Temp/BestDeal.xlsx">@Resource.Upload_Format_Best_Deal</option>
+                                                <option value="~/Content/INV/Temp/AddRemoveLab.xlsx">@Resource.Upload_Add_Remove_Lab_Format</option>
                                             </select>
                                         </div>
                                         <div class="col-md-6">
                                             <a href="~/Content/INV/Temp/UploadFormat.xlsx" id="btnDeals" class="hvr-growing">
-                                                <i class="glyphicon glyphicon-download-alt"><span>Download</span></i>
+                                                <i class="glyphicon glyphicon-download-alt"><span>@Resource.Download</span></i>
                                             </a>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <div class="col-md-6 control-label">
-                                            Select file to upload
+                                            @Resource.Select_file_to_upload
                                         </div>
                                         <div class="col-md-6 control-label">
-                                            Select your choice
+                                            @Resource.Select_your_choice
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -56,7 +56,7 @@
                                         </div>
                                         <div class="col-md-6">
                                             <select id="ddlInventoryType" name="uploadFormatId" class="form-control">
-                                                <option>Select Type</option>
+                                                <option>@Resource.Select_Type</option>
                                                 @for (int i = 0; i < Model.Count; i++)
                                                 {
                                                     <option value="@Model[i].uploadFormatId">@Model[i].uploadFullName</option>
@@ -66,7 +66,7 @@
                                     </div>
                                     <div class="form-group">
                                         <div class="col-md-6">
-                                            <button type="submit" id="btnUpload" class="btn btn-primary">Upload</button>
+                                            <button type="submit" id="btnUpload" class="btn btn-primary">@Resource.Upload</button>
                                         </div>
                                     </div>
                                 </div>

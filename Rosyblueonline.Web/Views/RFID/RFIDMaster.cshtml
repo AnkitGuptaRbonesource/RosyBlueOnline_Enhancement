@@ -13,23 +13,23 @@
                 <div class="row">
                     <div class="col-lg-5">
                         <section class="panel panel-primary">
-                            <div class="panel-heading">RFID Master</div>
+                            <div class="panel-heading"> @Resource.RFID Master</div>
                             <form>
                                 <div class="panel-body">
                                     <div class="">
                                         <div class="upload-info">
-                                            Select (.xlsx) file for RFID master -
+                                            @Resource.Select__file_for_RFID_master  -
                                             <span class="sample-format">
-                                                <a href="~/Content/INV/Temp/RFIDMaster.xlsx">Download sample file for upload.</a>
+                                                <a href="~/Content/INV/Temp/RFIDMaster.xlsx"> @Resource.Download_sample_file_for_upload</a>
                                             </span>
                                         </div>
                                         <div>
-                                            <span class="upload-filter">Select file</span>
+                                            <span class="upload-filter"> @Resource.Select_file</span>
                                             <input type="file" id="fileUpload" class="form-control" name="fileUpload">
                                         </div>
                                         <br />
                                         <div class="textright">
-                                            <button type="button" id="mstRFIDUpload" class="btn btn-primary">Upload <i class="fa fa-upload"></i></button>
+                                            <button type="button" id="mstRFIDUpload" class="btn btn-primary">@Resource.Upload <i class="fa fa-upload"></i></button>
                                         </div>
                                     </div>
                                 </div>
@@ -38,14 +38,14 @@
                     </div>
                     <div class="col-lg-7">
                         <section class="panel panel-primary">
-                            <div class="panel-heading">RFID Master</div>
+                            <div class="panel-heading"> @Resource.RFID Master</div>
                             <div class="panel-body">
                                 <table class="table table-bordered table-hover">
                                     <thead>
                                         <tr>
-                                            <th class="cust-table">RFID</th>
-                                            <th class="cust-table">STATUS</th>
-                                            <th class="cust-table">ACTIVE</th>
+                                            <th class="cust-table"> @Resource.RFID</th>
+                                            <th class="cust-table"> @Resource.Status</th>
+                                            <th class="cust-table"> @Resource.Active</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -58,10 +58,10 @@
                                                 <td class="cust-table" style="text-align:left;width">
                                                     <div class="form-group">
                                                         <label>
-                                                            <input type="radio" name="group1_@rfidmst.RfidNo" value="1" data-rfid="@rfidmst.RfidNo" @(rfidmst.Isactive == true ? "checked" : "")>Active
+                                                            <input type="radio" name="group1_@rfidmst.RfidNo" value="1" data-rfid="@rfidmst.RfidNo" @(rfidmst.Isactive == true ? "checked" : "")> @Resource.Active
                                                         </label>
                                                         <label>
-                                                            <input type="radio" name="group1_@rfidmst.RfidNo" value="0" data-rfid="@rfidmst.RfidNo" @(rfidmst.Isactive == false ? "checked" : "")>In-Active
+                                                            <input type="radio" name="group1_@rfidmst.RfidNo" value="0" data-rfid="@rfidmst.RfidNo" @(rfidmst.Isactive == false ? "checked" : "")> @Resource.In_Active
                                                         </label>
                                                     </div>
                                                 </td>

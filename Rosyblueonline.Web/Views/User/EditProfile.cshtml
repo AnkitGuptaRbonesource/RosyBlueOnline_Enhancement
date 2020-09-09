@@ -15,7 +15,7 @@
                 <div class="col-md-5">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            Billing Address
+                            @Resource.Billing_Address
                         </div>
                         <div class="panel-body" id="divBillingAddress">
                             @{
@@ -25,7 +25,7 @@
                     </div>
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            Shipping Address
+                            @Resource.Shipping_Address
                         </div>
                         <div class="panel-body" id="divShippingAddress">
                             @{
@@ -37,13 +37,13 @@
                 <div class="col-md-7">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            Other Details
+                            @Resource.Other_Details
                         </div>
                         <div class="panel-body" id="divOtherDetails">
                             <div class="row">
                                 <div class="col-md-8">
                                     <div class="form-group">
-                                        <label for="firstName">Type</label>
+                                        <label for="firstName">@Resource.Type</label>
                                         <div>
                                             <label>
                                                 <input type="checkbox" name="isManufacturer" value="" id="chkManufacturer" />Is Manufacturer
@@ -62,7 +62,7 @@
                                 </div>
                                 <div class="col-md-4" id="DivOtherType" style="display: none;">
                                     <div class="form-group">
-                                        <label for="txtOtherType">Other Type</label>
+                                        <label for="txtOtherType">@Resource.Other_Type</label>
                                         <input type="text" name="otherType" class="form-control" id="txtOtherType" placeholder="Write Other Type" value="" />
                                     </div>
                                 </div>
@@ -70,7 +70,7 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="txtPhoneCode">Phone</label>
+                                        <label for="txtPhoneCode">@Resource.Phone</label>
                                         <div>
                                             <input type="text" name="phoneCode01" value="" class="form-control pho-code" id="txtPhoneCode" />
                                             <input type="text" name="phone01" value="" class="form-control pho-num" id="txtPhone" />
@@ -79,7 +79,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="txtFax">Fax</label>
+                                        <label for="txtFax">@Resource.Fax</label>
                                         <input type="text" class="form-control" id="txtFax" name="Fax" placeholder="" maxlength="12">
                                     </div>
                                 </div>
@@ -87,13 +87,13 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="txtMobile">Mobile</label>
+                                        <label for="txtMobile">@Resource.Mobile</label>
                                         <input type="text" class="form-control" id="txtMobile" name="Mobile" placeholder="" maxlength="12">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="txtDateOfEstablishment">Date Of Establishment</label>
+                                        <label for="txtDateOfEstablishment">@Resource.Date_Of_Establishment</label>
                                         <input type="text" name="dateOfEstablishment" value="" class="form-control datePicker" id="txtDateOfEstablishment" placeholder="" />
                                     </div>
                                 </div>
@@ -101,13 +101,13 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="txtEmail">Email</label>
+                                        <label for="txtEmail">@Resource.Email</label>
                                         <input type="text" name="emailId" value="" class="form-control" id="txtEmail" placeholder="" />
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="txtWebsite">Website</label>
+                                        <label for="txtWebsite">@Resource.Website</label>
                                         <input type="text" name="website" value="" class="form-control" id="txtWebsite" placeholder="" />
                                     </div>
                                 </div>
@@ -115,7 +115,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="txtAccNumber">Account Number</label>
+                                        <label for="txtAccNumber">@Resource.Account_Number</label>
                                         <input type="text" class="form-control" name="accNumber" value="" id="txtAccNumber" />
                                     </div>
                                 </div>
@@ -123,13 +123,13 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="txtBankName">Bank Name</label>
+                                        <label for="txtBankName">@Resource.Bank_Name</label>
                                         <input type="text" class="form-control" name="bankName" value="" id="txtBankName" />
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="txtBranch">Branch Name</label>
+                                        <label for="txtBranch">@Resource.Branch_Name</label>
                                         <input type="text" name="branchName" value="" class="form-control" id="txtBranch" placeholder="" />
                                     </div>
                                 </div>
@@ -137,13 +137,13 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="txtBranchAddress">Branch Address</label>
+                                        <label for="txtBranchAddress">@Resource.Branch_Address</label>
                                         <textarea class="form-control" name="branchAddress" value="" id="txtBranchAddress"></textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="txtTinNo">TIN (Trade Identification Number)</label>
+                                        <label for="txtTinNo">@Resource.TIN</label>
                                         <input type="text" class="form-control" name="tinNo" value="" id="txtTinNo" />
                                     </div>
                                 </div>
@@ -151,13 +151,13 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="txtBranchAddress">PAN No</label>
+                                        <label for="txtBranchAddress">@Resource.PAN_No</label>
                                         <input type="text" class="form-control" name="pan" value="" id="txtPan" />
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="txtTinNo">GST No</label>
+                                        <label for="txtTinNo">@Resource.GST_No</label>
                                         <input type="text" class="form-control" name="gstNo" value="" id="txtGstNo" />
                                     </div>
                                 </div>
@@ -165,7 +165,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <button class="btn btn-primary">Update</button>
+                                        <button class="btn btn-primary">@Resource.Update</button>
                                     </div>
                                 </div>
                             </div>

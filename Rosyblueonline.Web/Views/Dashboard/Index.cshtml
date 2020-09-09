@@ -23,13 +23,13 @@
                             <div class="">
                                 <div class="row">
                                     <div class="col-lg-6">
-                                        <div class="view_orderR"><i class="fa fa-eye view_icon"></i><span style="font-size:8pt">Pending Order Report</span></div>
+                                        <div class="view_orderR"><i class="fa fa-eye view_icon"></i><span style="font-size:8pt">@Resource.Pending_Order_Report</span></div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="view_orderR">
                                             <i class="fa fa-eye view_icon"></i>
                                             <span style="font-size:8pt">
-                                                <a href="/Order/List">View Order Details</a>
+                                                <a href="/Order/List">@Resource.View_Order_Details</a>
                                             </span>
                                         </div>
                                     </div>
@@ -39,7 +39,7 @@
 
                             <div class="panel panel-primary">
                                 <div class="panel-heading">
-                                    Pending Orders
+                                    @Resource.Pending_Orders
                                 </div>
                                 <div class="panel-body pending-table">
                                     <table id="pendingOrder" class="table table-striped">
@@ -77,7 +77,7 @@
                         }
 
                         <div id="ShoppingCartTab" class="panel panel-default hide">
-                            <div class="panel-heading">Shopping Cart</div>
+                            <div class="panel-heading">@Resource.Shopping_Cart</div>
                             <div class="panel-body pending-table">
                                 <table id="ShoppingCartSummaryDataTable" class="table customers-table hide">
                                     <thead style="font-weight: bold; border-top:1px solid #969595;">
@@ -143,20 +143,20 @@
                     <div class="col-lg-8 col-md-8">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                Dashboard
+                                @Resource.Dashboard
                             </div>
                             <div class="panel-body">
                                 @if (curRoleId == "2" || curRoleId == "8" || (curRoleId == "9" && (objToken.loginID == 11749 || objToken.loginID == 3379)))
                                 {
                                     <div class="row icon-row">
                                         <div class="col-md-2">
-                                            <h2 class="dash-sub-title">Customer Update</h2>
+                                            <h2 class="dash-sub-title">@Resource.Customer_Update</h2>
                                         </div>
                                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 hvr-grow">
                                             <div class="dashboard-icon">
                                                 <a href="/User" class="icon-label">
                                                     <img src="~/content/img/icon_7.jpg">
-                                                    <span class="icon-label">List of Customers</span>
+                                                    <span class="icon-label">@Resource.List_of_Customers</span>
                                                 </a>
                                             </div>
                                         </div>
@@ -164,13 +164,13 @@
                                 }
                                 <div class="row icon-row">
                                     <div class="col-md-2">
-                                        <h2 class="dash-sub-title">Inventory</h2>
+                                        <h2 class="dash-sub-title">@Resource.Inventory</h2>
                                     </div>
                                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 hvr-grow">
                                         <div class="dashboard-icon">
                                             <a href="/Memo" class="icon-label">
                                                 <img src="~/content/img/icon_2.jpg">
-                                                <span class="icon-label">Inventory on Memo</span>
+                                                <span class="icon-label">@Resource.Inventory_on_Memo</span>
                                             </a>
                                         </div>
                                     </div>
@@ -188,7 +188,7 @@
                                         <div class="dashboard-icon">
                                             <a href="/Inventory/downloads" class="icon-label">
                                                 <img src="~/content/img/icon_11.jpg">
-                                                <span class="icon-label">Inventory Download</span>
+                                                <span class="icon-label">@Resource.Inventory_Download</span>
                                             </a>
                                         </div>
                                     </div>
@@ -197,7 +197,7 @@
                                         <div class="dashboard-icon">
                                             <a href="/Inventory/upload" class="icon-label">
                                                 <img src="~/content/img/icon_15.jpg">
-                                                <span class="icon-label">Inventory Upload</span>
+                                                <span class="icon-label">@Resource.Inventory_Upload</span>
                                             </a>
                                         </div>
                                     </div>
@@ -207,7 +207,7 @@
                                         <div class="dashboard-icon">
                                             <a href="/Inventory/UploadHistory" class="icon-label">
                                                 <img src="~/content/img/icon_15.jpg">
-                                                <span class="icon-label">Upload History</span>
+                                                <span class="icon-label">@Resource.Upload_History</span>
                                             </a>
                                         </div>
                                     </div>
@@ -218,7 +218,7 @@
 
                                 <div class="row icon-row">
                                     <div class="col-md-2">
-                                        <h2 class="dash-sub-title">Search</h2>
+                                        <h2 class="dash-sub-title">@Resource.Search</h2>
                                     </div>
                                     @*<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 hvr-grow">
                                             <div class="dashboard-icon">
@@ -234,7 +234,7 @@
                                             @*<a href="#" class="dash-link">*@
                                             <a href="/Inventory/SpecificSearch" class="dash-link">
                                                 <img src="~/content/img/icon_5.jpg">
-                                                <span class="icon-label">Specific Search</span>
+                                                <span class="icon-label">@Resource.Specfic_search</span>
                                             </a>
                                         </div>
                                     </div>
@@ -289,14 +289,14 @@
                                 {
                                     <div class="row icon-row">
                                         <div class="col-md-2">
-                                            <h2 class="dash-sub-title">RFID</h2>
+                                            <h2 class="dash-sub-title">@Resource.RFID</h2>
                                         </div>
                                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 hvr-grow">
                                             <a href="#" class="dash-link"></a>
                                             <div class="dashboard-icon">
                                                 <a href="/RFID/Index" class="dash-link">
                                                     <img src="~/content/img/icon_4.jpg">
-                                                    <span class="icon-label">RFID search</span>
+                                                    <span class="icon-label">@Resource.RFID_Search</span>
                                                 </a>
                                             </div>
                                         </div>
@@ -306,7 +306,7 @@
                                             <div class="dashboard-icon">
                                                 <a href="/RFID/Update" class="dash-link">
                                                     <img src="~/content/img/icon_15.jpg">
-                                                    <span class="icon-label">RFID Modify</span>
+                                                    <span class="icon-label">@Resource.RFID_Modify</span>
                                                 </a>
                                             </div>
                                         </div>
@@ -315,7 +315,7 @@
                                             <div class="dashboard-icon">
                                                 <a href="/RFID/Uploadhistory" class="dash-link">
                                                     <img src="~/content/img/icon_15.jpg">
-                                                    <span class="icon-label">Upload History</span>
+                                                    <span class="icon-label">@Resource.Upload_History</span>
                                                 </a>
                                             </div>
                                         </div>
@@ -325,7 +325,7 @@
                                             <div class="dashboard-icon">
                                                 <a href="/RFID/StockTally" class="dash-link">
                                                     <img src="~/content/img/icon_6.jpg">
-                                                    <span class="icon-label">Stock Tally</span>
+                                                    <span class="icon-label">@Resource.RFID_Stock_Tally</span>
                                                 </a>
                                             </div>
                                         </div>
@@ -336,7 +336,7 @@
                                             <div class="dashboard-icon">
                                                 <a href="/RFID/RFIDMaster" class="dash-link">
                                                     <img src="~/content/img/icon_15.jpg">
-                                                    <span class="icon-label">RFID Master</span>
+                                                    <span class="icon-label">@Resource.RFID_Master</span>
                                                 </a>
                                             </div>
                                         </div>
@@ -348,7 +348,7 @@
                                             <div class="dashboard-icon">
                                                 <a href="/RFID/History" class="dash-link">
                                                     <img src="~/content/img/icon_15.jpg">
-                                                    <span class="icon-label">RFID History</span>
+                                                    <span class="icon-label">@Resource.RFID_History</span>
                                                 </a>
                                             </div>
                                         </div>
@@ -358,7 +358,7 @@
                                 {
                                     <div class="row icon-row">
                                         <div class="col-md-2">
-                                            <h2 class="dash-sub-title">Reports</h2>
+                                            <h2 class="dash-sub-title">@Resource.Report</h2>
                                         </div>
                                         @*<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 hvr-grow">
                                                 <div class="dashboard-icon">
@@ -381,7 +381,7 @@
                                             <div class="dashboard-icon">
                                                 <a href="/Inventory/StoneStatus" class="dash-link">
                                                     <img src="~/content/img/icon_16.jpg">
-                                                    <span class="icon-label">Stone Status</span>
+                                                    <span class="icon-label">@Resource.Stone_Status</span>
                                                 </a>
                                             </div>
                                         </div>
@@ -391,14 +391,14 @@
                                 {
                                     <div class="row icon-row">
                                         <div class="col-md-2">
-                                            <h2 class="dash-sub-title">Marketing</h2>
+                                            <h2 class="dash-sub-title">@Resource.Marketing</h2>
                                         </div>
                                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 hvr-grow">
                                             <a href="#" class="dash-link"></a>
                                             <div class="dashboard-icon">
                                                 <a href="/Marketing/BlueNile" class="dash-link">
                                                     <img src="~/content/img/icon_9.jpg">
-                                                    <span class="icon-label">BlueNile Disc%</span>
+                                                    <span class="icon-label">@Resource.BlueNile_Disc</span>
                                                 </a>
                                             </div>
                                         </div>
@@ -407,7 +407,7 @@
                                             <div class="dashboard-icon">
                                                 <a href="/Marketing/JamesAllen" class="dash-link">
                                                     <img src="~/content/img/icon_9.jpg">
-                                                    <span class="icon-label">JamesAllen Disc%</span>
+                                                    <span class="icon-label">@Resource.JamesAllen_Disc</span>
                                                 </a>
                                             </div>
                                         </div>
@@ -416,7 +416,7 @@
                                             <div class="dashboard-icon">
                                                 <a href="/Marketing/JamesAllenHK" class="dash-link">
                                                     <img src="~/content/img/icon_9.jpg">
-                                                    <span class="icon-label">JamesAllen HK Disc%</span>
+                                                    <span class="icon-label">@Resource.JamesAllen_HK_Disc</span>
                                                 </a>
                                             </div>
                                         </div>

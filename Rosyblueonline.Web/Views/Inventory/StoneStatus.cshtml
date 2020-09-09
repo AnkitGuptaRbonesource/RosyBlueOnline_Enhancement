@@ -14,7 +14,7 @@
 
                     <div class="panel panel-primary proshad">
                         <div class="panel-heading">
-                            Stone Status
+                            @Resource.Stone_Status
                         </div>
                         <div class="panel-body">
                             <div class="customers-info">
@@ -22,32 +22,32 @@
                                     <div class="row">
                                         <div class="col-sm-3">
                                             <label class="radio-inline">
-                                                <input type="radio" name="optradio" id="rbtnLotNo" value="LOTNO" checked><label for="rbtnLotNo" class="controll-label">Lot No</label>
+                                                <input type="radio" name="optradio" id="rbtnLotNo" value="LOTNO" checked><label for="rbtnLotNo" class="controll-label">@Resource.Lot_No</label>
                                             </label>
                                             <label class="radio-inline">
-                                                <input type="radio" name="optradio" id="rbtnCertNo" value="CERTNO"><label for="rbtnCertNo" class="controll-label">Cert. No</label>
+                                                <input type="radio" name="optradio" id="rbtnCertNo" value="CERTNO"><label for="rbtnCertNo" class="controll-label">@Resource.Cert_No</label>
                                             </label>
                                         </div>
-                                        <div class="col-sm-1"><label for="fuName" class="control-label">Select File</label></div>
+                                        <div class="col-sm-1"><label for="fuName" class="control-label">@Resource.Select_file</label></div>
                                         <div class="col-sm-2">
                                             <input class="form-control" id="fuName" name="Name" type="file">
                                         </div>
-                                        <div class="col-sm-1"><label for="fuName" class="control-label">Lot/Cret. No</label></div>
+                                        <div class="col-sm-1"><label for="fuName" class="control-label">@Resource.Lot_Cret_No</label></div>
                                         <div class="col-sm-3">
                                             <input class="form-control" id="txtLotNo" name="LotNoName" type="text">
                                         </div>
                                         <div class="col-sm-1">
-                                            <button class="btn btn-primary pull-right" id="btnSubmit">Submit</button>
+                                            <button class="btn btn-primary pull-right" id="btnSubmit">@Resource.Submit</button>
                                         </div>
                                         <div class="col-sm-1">
-                                            <button class="btn btn-primary pull-right" id="btnExcel">Excel</button>
+                                            <button class="btn btn-primary pull-right" id="btnExcel">@Resource.Excel</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <a href="/Inventory/ExportToExcelInventoryDownload?filename=StoneStatusExport" id="ancDownloadExcel" target="_blank" style="display:none;">Download Excel</a>
+                    <a href="/Inventory/ExportToExcelInventoryDownload?filename=StoneStatusExport" id="ancDownloadExcel" target="_blank" style="display:none;">@Resource.Download_Excel</a>
                 </form>
             </div>
             <div class="col-md-12">
@@ -58,130 +58,130 @@
                             <thead class="bordertp">
                                 <tr role="row" class="table-head">
                                     <th class="tbnew">
-                                        <label for="Stock">Stock</label>
+                                        <label for="Stock">@Resource.Stock</label>
                                     </th>
                                     <th class="tbnew Stock">
-                                        <label for="Stock">Status</label>
+                                        <label for="Stock">@Resource.Status</label>
                                     </th>
                                     <th class="tbnew">
-                                        <label for="Certificate_">Certificate#</label>
+                                        <label for="Certificate_">@Resource.CertificateId</label>
                                     </th>
                                     <th class="tbnew dt-V360">
-                                        <label for="V360">V360</label>
+                                        <label for="V360">@Resource.V360</label>
                                     </th>
                                     <th class="tbnew">
-                                        <label for="Shape">Shape</label>
+                                        <label for="Shape">@Resource.Shape</label>
                                     </th>
                                     <th class="tbnew">
-                                        <label for="Weight">Weight</label>
+                                        <label for="Weight">@Resource.Weight</label>
                                     </th>
                                     <th class="tbnew">
-                                        <label for="Color">Color</label>
+                                        <label for="Color">@Resource.Color</label>
                                     </th>
                                     <th class="tbnew">
-                                        <label for="Clarity">Clarity</label>
+                                        <label for="Clarity">@Resource.Clarity</label>
                                     </th>
                                     <th class="tbnew">
-                                        <label for="Diamentions">Diamentions</label>
+                                        <label for="Diamentions">@Resource.Diamentions</label>
                                     </th>
                                     <th class="tbnew">
-                                        <label for="Table_">Table%</label>
+                                        <label for="Table_">@Resource.Table</label>
                                     </th>
                                     <th class="tbnew">
-                                        <label for="Depth_">Depth%</label>
+                                        <label for="Depth_">@Resource.Depth</label>
                                     </th>
                                     <th class="tbnew">
-                                        <label for="Girdle">Girdle</label>
+                                        <label for="Girdle">@Resource.Girdle</label>
                                     </th>
                                     <th class="tbnew">
-                                        <label for="Cut">Cut</label>
+                                        <label for="Cut">@Resource.Cut</label>
                                     </th>
                                     <th class="tbnew">
-                                        <label for="Polish">Polish</label>
+                                        <label for="Polish">@Resource.Polish</label>
                                     </th>
                                     <th class="tbnew">
-                                        <label for="Symmetry">Symmetry</label>
+                                        <label for="Symmetry">@Resource.Symmetry</label>
                                     </th>
                                     <th class="tbnew">
-                                        <label for="Flora">Flora</label>
+                                        <label for="Flora">@Resource.Flora</label>
                                     </th>
                                     <th class="tbnew lab">
-                                        <label for="Lab">Lab</label>
+                                        <label for="Lab">@Resource.Lab</label>
                                     </th>
                                     <th class="tbnew">
-                                        <label for="RapPrice">RapPrice</label>
+                                        <label for="RapPrice">@Resource.RapPrice</label>
                                     </th>
                                     <th class="tbnew">
-                                        <label for="RapDisc___">RapDisc(%)</label>
+                                        <label for="RapDisc___">@Resource.RapDisc</label>
                                     </th>
                                     <th class="tbnew" id="sl">
-                                        <label for="Price____ct">Price($)/ct</label>
+                                        <label for="Price____ct">@Resource.Price_ct</label>
                                     </th>
                                     <th class="tbnew">
-                                        <label for="Amount">Amount</label>
+                                        <label for="Amount">@Resource.Amount</label>
                                     </th>
                                     <th class="tbnew">
-                                        <label for="D_R">D/R</label>
+                                        <label for="D_R">@Resource.DR</label>
                                     </th>
                                     <th class="tbnew">
-                                        <label for="CrownHeight">CrownHeight</label>
+                                        <label for="CrownHeight">@Resource.CrownHeight</label>
                                     </th>
                                     <th class="tbnew">
-                                        <label for="CrownAngle">CrownAngle</label>
+                                        <label for="CrownAngle">@Resource.CrownAngle</label>
                                     </th>
                                     <th class="tbnew">
-                                        <label for="PavilionDepth">PavilionDepth</label>
+                                        <label for="PavilionDepth">@Resource.PavilionDepth</label>
                                     </th>
                                     <th class="tbnew">
-                                        <label for="PavilionAngle">PavilionAngle</label>
+                                        <label for="PavilionAngle">@Resource.PavilionAngle</label>
                                     </th>
                                     <th class="tbnew">
-                                        <label for="Starlength">Starlength</label>
+                                        <label for="Starlength">@Resource.Starlength</label>
                                     </th>
                                     <th class="tbnew">
-                                        <label for="LowerHalf">LowerHalf</label>
+                                        <label for="LowerHalf">@Resource.LowerHalf</label>
                                     </th>
                                     <th class="tbnew">
-                                        <label for="Girdle_">Girdle%</label>
+                                        <label for="Girdle_">@Resource.Girdle_Per</label>
                                     </th>
                                     <th class="tbnew">
-                                        <label for="Laser">Laser</label>
+                                        <label for="Laser">@Resource.Laser</label>
                                     </th>
                                     <th class="tbnew">
-                                        <label for="EC">EC</label>
+                                        <label for="EC">@Resource.EC</label>
                                     </th>
                                     <th class="tbnew">
-                                        <label for="Shade">Shade</label>
+                                        <label for="Shade">@Resource.Shade</label>
                                     </th>
                                     <th class="tbnew">
-                                        <label for="Milky">Milky</label>
+                                        <label for="Milky">@Resource.Milky</label>
                                     </th>
                                     <th class="tbnew">
-                                        <label for="TableBlack">TableBlack</label>
+                                        <label for="TableBlack">@Resource.TableBlack</label>
                                     </th>
                                     <th class="tbnew">
-                                        <label for="CentreBlack">CentreBlack</label>
+                                        <label for="CentreBlack">@Resource.CentreBlack</label>
                                     </th>
                                     <th class="tbnew">
-                                        <label for="H_A">H&amp;A</label>
+                                        <label for="H_A">@Resource.HA</label>
                                     </th>
                                     <th class="tbnew">
-                                        <label for="Opens">Opens</label>
+                                        <label for="Opens">@Resource.Opens</label>
                                     </th>
                                     <th class="tbnew">
-                                        <label for="Keytosymbol">Keytosymbol</label>
+                                        <label for="Keytosymbol">@Resource.Keytosymbol</label>
                                     </th>
                                     <th class="tbnew">
-                                        <label for="GIAcomments">GIAcomments</label>
+                                        <label for="GIAcomments">@Resource.GIAcomments</label>
                                     </th>
                                     <th class="tbnew">
-                                        <label for="ReportDate">ReportDate</label>
+                                        <label for="ReportDate">@Resource.ReportDate</label>
                                     </th>
                                     <th class="tbnew">
-                                        <label for="SalesLocation">SalesLocation</label>
+                                        <label for="SalesLocation">@Resource.SalesLocation</label>
                                     </th>
                                     <th class="tbnew">
-                                        <label for="solddate">Sold Date</label>
+                                        <label for="solddate">@Resource.Sold_Date</label>
                                     </th>
                                     
                                 </tr>

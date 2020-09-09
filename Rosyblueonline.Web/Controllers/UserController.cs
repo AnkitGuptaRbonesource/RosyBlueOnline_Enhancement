@@ -6,7 +6,9 @@ using Rosyblueonline.ServiceProviders.Implementation;
 using Rosyblueonline.Web.Attribute;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.Mvc;
 using static Rosyblueonline.Framework.Constant;
@@ -34,7 +36,15 @@ namespace Rosyblueonline.Web.Controllers
             objVm.OnlyAddCustomer = OnlyAddCustomer;
             return View(objVm);
         }
-
+        protected override void Initialize(System.Web.Routing.RequestContext requestContext)
+        {
+            base.Initialize(requestContext);
+            if (Request.Cookies["CurrentCulture"] != null)
+            {
+                Thread.CurrentThread.CurrentCulture = new CultureInfo(Request.Cookies["CurrentCulture"].Value);
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo(Request.Cookies["CurrentCulture"].Value);
+            }
+        }
         public ActionResult Add()
         {
             return new JsonResult();
@@ -167,7 +177,9 @@ namespace Rosyblueonline.Web.Controllers
                                                  x.companyName.Contains(objReq.search.value) ||
                                                  x.mobile.Contains(objReq.search.value) ||
                                                  x.username.Contains(objReq.search.value) ||
-                                                 x.countryName.Contains(objReq.search.value));
+                                                 x.countryName.Contains(objReq.search.value) ||
+                                                  x.emailId.Contains(objReq.search.value) 
+                                                 );
                     }
                     objResp.recordsTotal = query.Count();
                     for (int i = 0; i < objReq.order.Count; i++)
@@ -205,7 +217,12 @@ namespace Rosyblueonline.Web.Controllers
                                 else
                                     query = query.OrderByDescending(x => x.username);
                                 break;
-
+                            case "emailId":
+                                if (objReq.order[i].dir == "asc")
+                                    query = query.OrderBy(x => x.emailId);
+                                else
+                                    query = query.OrderByDescending(x => x.emailId);
+                                break;
                             default:
                             case "loginID":
                                 if (objReq.order[i].dir == "asc")

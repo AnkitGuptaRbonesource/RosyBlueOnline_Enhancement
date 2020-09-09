@@ -1074,4 +1074,967 @@
   <data name="Zip_Code" xml:space="preserve">
     <value>会社案内</value>
   </data>
+  <data name="EX" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="VG" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Add_Address" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Add_to_Memo" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="All_Shape" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Asscher" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Blocked_Customers" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Certificate_upload" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Change_summary_Discounts" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Confirm_Memo" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Criteria_Matching_Pair" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Cushion" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Customer_Address" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Customer_Order_Report" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Describe_your_Demands" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Edit_Profile" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Emerald" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Excellent" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Fair" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Fast_Moving_Goods" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Good" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="GST" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Heart" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Inventory_Package" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Inventory_Summary_Report" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Last_Name" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Marquise" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Memo_History" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="MENU" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Monthly_Report" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Multiple_size" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Other_Shape" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Oval" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Pear" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Pivot_table" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Pre_Registered_Users" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Price_Mark_Percent" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Pricing_Policy" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Princess" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Privacy_Policy" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Proceed" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Quick_Contact" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Quick_Search" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Quick_Size" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Radiant" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Registration" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Rejected Customers" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Report" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Reset1" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Round" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Sales_Support" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Select_Country" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Select_State" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Sell_Directly" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Set_as_default_address" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Shipping" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Shopping_Cart" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Sign_out" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Slow_Moving_Goods" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Stock_Turn_Report" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Summary_Discount" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Support" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Terms_of_Use" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Toggle_navigation" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Users" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Very_Good" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="View_Request" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Watch_List" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Crown_Angle" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Crown_Height" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Discount" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Eye_Clean" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Lower_Half" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Multiple_Demand" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Pavilion_Angle" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Pavilion_Depth" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Polished" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Poor" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Price_carat" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Report_Date" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="SideBlack" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Star_Length" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Add_Best_Deal" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Add_Best_Deals" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Apply_Last_Changed_Discount" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Apply_Previous_Discount" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Avg_Price_ct" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Avg_Rap_ct" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Avg_Rap_Off" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Best_Deals_Discount" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Best_Deals_Text" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="By_no_of_stone" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="By_Value" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Cart" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Cash" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="CB0" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="CB1" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="CB2" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="CB3" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="CB4" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="CB_Low" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="CertificateNo" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Compare" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Comparing" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Confirm" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Dept" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Download_Excel" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Export_Excel" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Fancy_Shapesm" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Fluorescencesm" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Grid_Legends" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="High" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Inclusion" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Inspection_Report" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Inspection_Request" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Length" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Lot_Number" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="M0" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="M1" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="M2" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="M3" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Mail_BCC" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Mail_CC" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Mail_From" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Mail_To" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Milky_Low" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Modify" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="NV" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Online" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Only_Memo" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Payable_Amount" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Price_ct" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Price_ct1" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="RapnetPrice" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="RapNet_Disc" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Rap_Off" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="RB_Discount1" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Remove_Best_Deal" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Remove_Best_Deals" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Remove_Cart" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Return_Partial_Sell" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Rough" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Round_Shapesm" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Search_Result" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Selected" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Select_Shape" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Send_Mail" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Sizes" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="SOLD_IN" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Sr_No" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Subject" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="System" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="TB0" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="TB1" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="TB2" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="TB3" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="TB4" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="TB_Low" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Total_pcs" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Total_Stones" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Tot_Amount" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Tot_Carat" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Tot_Rap" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Width" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Account_Number" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="ActionDetails" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="ActionName" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Branch_Address" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Branch_Name" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="CreatedOn" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Created_Date" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Customer_Activity_Details" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Customer_Demand" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Customer_Name" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Demand_Search" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Email_Address" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Fancy_Colorsm" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Last_Login" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="NA" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="New_Arrivals" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Phone_1" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Phone_2" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Reference_Name" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Reject" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Revised_Stones" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Saved_Search" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Total_Found" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="View_Customer_Activity_Log" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="View_Customer_Details" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="View_Customer_Recent_Searches" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Website" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Best_Deals_Remark" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Origin1" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Stone_Origin" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Total_Amount" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Activity" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Below_prices_amounts" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Cancel_Order" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Confirm_Order" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Direct_Ship" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Disc" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Disclaimer" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="DisclaimerText" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Download_sample_file_for_upload1" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Fluorescence_Intensity" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Inscription" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="LastUpdatedDate" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Lot_Cret_No" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Note" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Previous_Discount" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Previous_Rap_Price" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Select_Billing_Address" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Select_Shipping_Address" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Self_Pickup" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Shipping_Mode" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Uploaded_Discount" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Uploaded_Rap_Price" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Upload_Format_Common" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Amount__US" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="and" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Clarity_comes" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="CrownBlack" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Diamond" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Diamond_Detail" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Diamond_Status" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Discount_Per" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Fluor" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Forever" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Gemex" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Measurements" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Price__Ct" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Rap" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Report_No" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="This" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Avg" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="By" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Count" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Created" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="CT" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Down_for_maintenance" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Edit_Memo" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Item" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Merge_Memo" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="No_upcoming_events_found" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Price" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Sale" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Sales_Mode" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Sale_Discount" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Web_Avg_Discount" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Web_Mode" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Address_of_Registered_Office" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="ALL_ROLES" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Billing_Address" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Completed" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Date_Of_Establishment" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="DownloadPermitted" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Email_ID" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="GST_No" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="In_Active" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Menu_Rights" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Merge_Order" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Modify_Menu_Rights" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Other_Details" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Other_Type" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="PAN_No" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Pending" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Permission" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Row_Download_Permitted" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="SALES_PERSON" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Shipping_Address" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="SizePermitted" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Start_Size_Permitted" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="SUPER_ADMIN" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Support_Admin" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="TIN" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="User_Menu_Permission" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="User_Status" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="ZIP_PIN" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Box_No" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Carat" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Continue_mode" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="ExportToExcel" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Memo_Order" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Memo_Status" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="RFID_Memo_Stock_Tally" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="RFID_StockTally" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Stock_Status" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Doc_Expiry_Date" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Enter_the_code" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Identity" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="If_you_have" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Image_Name" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="is_our_latest" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Kyc_Doc_No" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Mandatory_fields" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Maximum_3_Attempt" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="OTP" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Our_innovative" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Personal_Details" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Please_enter_OTP" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Previous" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Resend" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Rosy_Blue_Online" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Rosy_Blue_Online_Features" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Select_Identity" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Site_best_viewed" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="The_site_allows_clients_to_browse" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="The_site_offers_stones_certified" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Upload_Id_Proof" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="Verify_OTP" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
+  <data name="OrgFileName" xml:space="preserve">
+    <value>会社案内</value>
+  </data>
 </root>

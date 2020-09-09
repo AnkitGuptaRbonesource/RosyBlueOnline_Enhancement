@@ -33,7 +33,7 @@
             </a>
             <nav class="navbar navbar-static-top">
                 <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-                    <span class="sr-only">Toggle navigation</span>
+                    <span class="sr-only">@Resource.Toggle_navigation</span>
                 </a>
                 <div class="navbar-custom-menu">
                     <ul class="nav navbar-nav">
@@ -63,7 +63,7 @@
                             <ul class="dropdown-menu">
                                 <li class="user-footer">
                                     <div class="pull-right">
-                                        <a href="/Home/LogOut" class="btn btn-default btn-flat">Sign out</a>
+                                        <a href="/Home/LogOut" class="btn btn-default btn-flat">@Resource.Sign_out</a>
                                     </div>
                                 </li>
                             </ul>
@@ -96,7 +96,7 @@
                         <li class="treeview">
                             <a href="/Dashboard">
                                 <i class="fa fa-home" aria-hidden="true"></i>
-                                <span>Home</span>
+                                <span>@Resource.Home</span>
                             </a>
                         </li>
                     }
@@ -105,14 +105,14 @@
                         <li class="treeview">
                             <a href="#">
                                 <i class="fa fa-user"></i>
-                                <span>My Account</span>
+                                <span>@Resource.My_Account</span>
                                 <span class="pull-right-container">
                                     <i class="fa fa-angle-left pull-right"></i>
                                 </span>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="/Order/List"><i class="fa fa-circle-o"></i>All Orders</a></li>
-                                <li><a href="/Memo"><i class="fa fa-circle-o"></i>All Memo</a></li>
+                                <li><a href="/Order/List"><i class="fa fa-circle-o"></i>@Resource.All_Orders</a></li>
+                                <li><a href="/Memo"><i class="fa fa-circle-o"></i>@Resource.All_Memo</a></li>
 
                             </ul>
                         </li>
@@ -122,13 +122,13 @@
                         <li class="treeview">
                             <a href="#">
                                 <i class="fa fa-search"></i>
-                                <span>Search</span>
+                                <span>@Resource.Search</span>
                                 <span class="pull-right-container">
                                     <i class="fa fa-angle-left pull-right"></i>
                                 </span>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="/Inventory/SpecificSearch"><i class="fa fa-search"></i>Specific Search</a></li>
+                                <li><a href="/Inventory/SpecificSearch"><i class="fa fa-search"></i>@Resource.Specfic_search</a></li>
                             </ul>
                         </li>
                     }
@@ -137,7 +137,7 @@
                         <li class="treeview">
                             <a href="#">
                                 <i class="fa fa-list-alt"></i>
-                                <span>Inventory</span>
+                                <span>@Resource.Inventory</span>
                                 <span class="pull-right-container">
                                     <i class="fa fa-angle-left pull-right"></i>
                                 </span>
@@ -145,32 +145,32 @@
                             <ul class="treeview-menu">
                                 @if (objMenuAccess.StockSummary == 1)
                                 {
-                                    <li><a href="/Dashboard/StockSummary"><i class="fa fa-diamond"></i>Stock Summary</a></li>
+                                    <li><a href="/Dashboard/StockSummary"><i class="fa fa-diamond"></i>@Resource.Stock_Summary</a></li>
                                 }
                                 @if (objMenuAccess.InventoryUpload == 1)
                                 {
-                                    <li><a href="/Inventory/upload"><i class="fa fa-eject"></i>Inventory Upload</a></li>
+                                    <li><a href="/Inventory/upload"><i class="fa fa-eject"></i>@Resource.Inventory_Upload</a></li>
                                 }
                                 @if (objMenuAccess.InventoryDownload == 1)
                                 {
-                                    <li><a href="/Inventory/downloads"><i class="fa fa-eject"></i>Inventory Downloads</a></li>
+                                    <li><a href="/Inventory/downloads"><i class="fa fa-eject"></i>@Resource.Inventory_Download</a></li>
                                 }
                                 @if (objMenuAccess.UploadHistory == 1)
                                 {
-                                    <li><a href="/Inventory/UploadHistory"><i class="fa fa-upload"></i>Upload History</a></li>
+                                    <li><a href="/Inventory/UploadHistory"><i class="fa fa-upload"></i>@Resource.Upload_History</a></li>
                                 }
                                 @if (objMenuAccess.StoneStatus == 1)
                                 {
-                                    <li><a href="/Inventory/stonestatus"><i class="fa fa-diamond"></i>Stone Status</a></li>
+                                    <li><a href="/Inventory/stonestatus"><i class="fa fa-diamond"></i>@Resource.Stone_Status</a></li>
                                 }
                                 @if (objMenuAccess.StoneHistory == 1)
                                 {
-                                    <li><a href="/Inventory/stonehistory"><i class="fa fa-diamond"></i>Stone History</a></li>
+                                    <li><a href="/Inventory/stonehistory"><i class="fa fa-diamond"></i>@Resource.Stone_History</a></li>
                                 }
                                 }
                                 @if (objMenuAccess.GIAReports == 1)
                                 {
-                                    <li><a href="/Inventory/gia"><i class="fa fa-plus-square"></i>GIA Reports</a></li>
+                                    <li><a href="/Inventory/gia"><i class="fa fa-plus-square"></i>@Resource.GIA_Reports</a></li>
                                 }
                             </ul>
                         </li>
@@ -180,7 +180,7 @@
                         <li class="treeview">
                             <a href="#">
                                 <i class="fa fa-list-alt"></i>
-                                <span>Marketing</span>
+                                <span>@Resource.Marketing</span>
                                 <span class="pull-right-container">
                                     <i class="fa fa-angle-left pull-right"></i>
                                 </span>
@@ -188,15 +188,15 @@
                             <ul class="treeview-menu">
                                 @if (objMenuAccess.BlueNile == 1)
                                 {
-                                    <li><a href="/Marketing/BlueNile"><i class="fa fa-diamond"></i>Blue Nile</a></li>
+                                    <li><a href="/Marketing/BlueNile"><i class="fa fa-diamond"></i>@Resource.Blue_Nile</a></li>
                                 }
                                 @if (objMenuAccess.JamesAllen == 1)
                                 {
-                                    <li><a href="/Marketing/JamesAllen"><i class="fa fa-diamond"></i>James Allen</a></li>
+                                    <li><a href="/Marketing/JamesAllen"><i class="fa fa-diamond"></i>@Resource.James_Allen</a></li>
                                 }
                                 @if (objMenuAccess.JamesAllenHK == 1)
                                 {
-                                    <li><a href="/Marketing/JamesAllenHK"><i class="fa fa-diamond"></i>James Allen HK</a></li>
+                                    <li><a href="/Marketing/JamesAllenHK"><i class="fa fa-diamond"></i>@Resource.James_Allen_HK</a></li>
                                 }
                             </ul>
                         </li>
@@ -206,7 +206,7 @@
                         <li class="treeview">
                             <a href="#">
                                 <i class="fa fa-wrench"></i>
-                                <span>Utility</span>
+                                <span>@Resource.Utility</span>
                                 <span class="pull-right-container">
                                     <i class="fa fa-angle-left pull-right"></i>
                                 </span>
@@ -214,11 +214,11 @@
                             <ul class="treeview-menu">
                                 @if (objMenuAccess.SummaryDiscount == 1)
                                 {
-                                    <li><a href="/Charges"><i class="fa fa-plus-circle"></i>Summary Discount</a></li>
+                                    <li><a href="/Charges"><i class="fa fa-plus-circle"></i> @Resource.Summary_Discount</a></li>
                                 }
                                 @if (objMenuAccess.BlockSite == 1)
                                 {
-                                    <li><a href="/User/BlockSite"><i class="fa fa-ban"></i>Block Site</a></li>
+                                    <li><a href="/User/BlockSite"><i class="fa fa-ban"></i> @Resource.Block_Site</a></li>
                                 }
                             </ul>
                         </li>
@@ -226,14 +226,14 @@
                         <li class="treeview">
                             <a href="#">
                                 <i class="fa fa-users"></i>
-                                <span>Profile</span>
+                                <span> @Resource.Profile</span>
                                 <span class="pull-right-container">
                                     <i class="fa fa-angle-left pull-right"></i>
                                 </span>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="/User/ChangePassword"><i class="fa fa-lock"></i>Change Password</a></li>
-                                <li><a href="/User"><i class="fa fa-user-plus"></i>Add Customer</a></li>
+                                <li><a href="/User/ChangePassword"><i class="fa fa-lock"></i> @Resource.Change_Password</a></li>
+                                <li><a href="/User"><i class="fa fa-user-plus"></i> @Resource.Add_Customer</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -243,7 +243,7 @@
             <div class="">
                 © Rosyblue, @DateTime.Now.Year
                 <div class="pull-right hidden-xs">
-                    <div class=""><a class="policy-link" href="/Home/PricingDiscountPolicy" target="_blank">Shipping</a>    |   <a class="policy-link" href="/Home/PricingDiscountPolicy" target="_blank">Pricing Policy</a>  |   <a class="policy-link" href="/Home/TermsOfUse" target="_blank">Terms of Use</a>   |   <a class="policy-link" href="/Home/PrivacyPolicy" target="_blank">Privacy Policy</a></div>
+                    <div class=""><a class="policy-link" href="/Home/PricingDiscountPolicy" target="_blank"> @Resource.Shipping_Mode_1</a>    |   <a class="policy-link" href="/Home/PricingDiscountPolicy" target="_blank"> @Resource.Pricing_Policy</a>  |   <a class="policy-link" href="/Home/TermsOfUse" target="_blank">@Resource.Terms_of_Use   </a>   |   <a class="policy-link" href="/Home/PrivacyPolicy" target="_blank">@Resource.Privacy_Policy</a></div>
                 </div>
             </div>
         </div>
