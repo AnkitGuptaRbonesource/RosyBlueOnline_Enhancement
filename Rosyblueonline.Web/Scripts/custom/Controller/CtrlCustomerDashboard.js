@@ -156,7 +156,7 @@
                     }, {
                         targets: [3],
                         render: function (data, type, row) {
-                            return '<a class="loadData" data-Criteria="' + row.searchCriteria + '" href="#"><span class="se-bx de-bx"><i class="fa fa-search" aria-hidden="true"></i></span></a>';
+                            return '<a class="loadData" data-Criteria="' + row.searchCriteria + '" href="#"><span class="se-bx"><i class="fa fa-search" aria-hidden="true"></i></span></a>';
                         },
                         orderable: false
                     }, {

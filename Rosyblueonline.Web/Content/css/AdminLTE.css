@@ -2143,7 +2143,7 @@ a:focus {
 
 /* Panel Box */
 .dash-box {
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 }
 .dash-box .dash-head {
 	font-weight: 500;
@@ -2152,6 +2152,18 @@ a:focus {
 	letter-spacing: 0.5px;
 	color: #4F4F4F;
 	padding-bottom: 10px;
+}
+.dash-box .dash-head .btn-link {
+    float: right;
+	color: #3A4276;
+    margin-top: -8px;
+    background: none;
+    border: 1px solid #3A4276;
+}
+.dash-box .dash-head .btn-link:hover, .dash-box .dash-head .btn-link:focus {
+	color:#fff;
+	text-decoration: none;
+	background:#3A4276;
 }
 .dash-box .dataTables_info {
 	display: none
@@ -2170,7 +2182,7 @@ a:focus {
 table .show-selink {
 	color: #3A4276;
 }
-table .se-bx {
+table .se-bx, .table-ul .se-bx {
     display: inline-block;
     color: #3A4276;
     width: 30px;
@@ -2180,10 +2192,85 @@ table .se-bx {
     background: rgba(58, 66, 118, 0.05);
     border-radius: 50%;
 }
-table .se-bx.de-bx {
+table .se-bx.de-bx, .table-ul .se-bx.de-bx {
 	color: #ff7165;
 	background: rgba(255, 113, 101, 0.06);
 }
+.table-ul {
+	margin: 0;
+	padding:0
+}
+.table-ul .table-li {
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 22px;
+	letter-spacing: 0.5px;
+	color: #4F4F4F;
+    padding: 10px 5px;
+    border-bottom: 1px solid #ECE9F1;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.table-ul .table-li:last-child {
+	border-bottom: 0
+}
+.table-ul .table-li:hover {
+	box-shadow: inset 0 12px 12px -15px rgba(0,0,0,0.4)
+}
+.table-ul .seinfo-l1 {
+	color: #828282;
+    font-size: 14px;
+    font-weight: normal;
+}
+.table-ul .seinfo-l1 .sespce {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    padding-right: 32px;
+}
+.table-ul .seinfo-l1 .sespce:after {
+    position: absolute;
+    top: 9px;
+    right: 12px;
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: #E0E0E0;
+    border-radius: 50%;
+}
+.table-ul .seinfo-l1 .sefound {
+    display: inline-block;
+    color: #3A4276;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 22px;
+}
+.table-ul .seinfo-l1 .sespce:last-child, .table-ul .seinfo-l1 .sespce.sename {
+	padding-right: 0;
+}
+.table-ul .seinfo-l1 .sespce:last-child:after,.table-ul .seinfo-l1 .sespce.sename:after {
+	display: none;
+}
+.table-ul .seinfo-l2 {
+	padding-top: 6px;
+}
+.table-ul .se-info-action a{
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0 5px;
+}
+.table-ul .se-info-action .se-bx {
+	font-size: 16px;
+	height: 40px;
+	width: 40px;
+	line-height: 40px;
+}
+
 /*
  * Component: Timeline
  * -------------------
