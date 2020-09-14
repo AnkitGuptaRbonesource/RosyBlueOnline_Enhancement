@@ -412,28 +412,28 @@
   <script type="text/javascript" src="/Scripts/custom/Service/ServiceMethods.js"></script>
   <script type="text/javascript" src="/Scripts/custom/Controller/CtrlMasterLayout.js"></script>
   <script>
-    $(".main-sidebar").hover(
-      function () {
-        $("body").removeClass("sidebar-collapse");
-      },
-      function () {
-        $("body").addClass("sidebar-collapse");
-      }
+      $(".main-sidebar").hover(
+          function () {
+              $("body").removeClass("sidebar-collapse");
+          },
+          function () {
+              $("body").addClass("sidebar-collapse");
+          }
 
-    );
+      );
 
-    $(document).ready(function () {
-      $(".csv").click(function () {
-        $(".searchbar").toggleClass("searchbar2");
+      $(document).ready(function () {
+          $(".csv").click(function () {
+              $(".searchbar").toggleClass("searchbar2");
+          });
+
+          $('.dropdown-menu').click((event) => {
+              if (event.target.tagName != "A") {
+                  event.stopPropagation();
+              }
+          })
+
       });
-
-      $('.dropdown-menu').click((event) => {
-        if (event.target.tagName != "A") {
-          event.stopPropagation();
-        }
-      })
-
-    });
 
       $(document).mouseup(function (e) {
           var container = $(".searchbar2 .dropbox");
@@ -441,9 +441,14 @@
           // if the target of the click isn't the container nor a descendant of the container
           if (!container.is(e.target) && container.has(e.target).length === 0) {
               $(".searchbar").removeClass("searchbar2");
-            
+
           }
       });
+          $(document).ready(function () {
+              $(".key-title").click(function () {
+                  $(".key-input-box").toggleClass("active");
+              });
+          });
   </script>
   @RenderSection("script", false)
 
