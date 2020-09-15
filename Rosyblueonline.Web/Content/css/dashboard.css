@@ -1484,15 +1484,15 @@ ul.thub-view {
 }
 
 .tooltip.bottom {
-  width: 85px;
+  width: 78px;
 }
 
 .tooltip-inner {
-  background-color: #4d80b1;
+    background-color: #E9978C;
 }
 
 .tooltip.bottom .tooltip-arrow {
-  border-bottom-color: #4d80b1;
+    border-bottom-color: #E9978C;
 }
 
 .all_shape {
@@ -2249,12 +2249,13 @@ a.sele-all {
 .all_shape.active {
     background-color: #3A4276;
 }
+
 .dimaond-list-box {
     position: relative;
     display: block;
     width: 100%;
     height: 100%;
-    max-height: 690px;
+    max-height: 710px;
     overflow: hidden;
     overflow-y: scroll;
 }
@@ -2293,16 +2294,19 @@ a.sele-all {
     background-color: transparent;
 }
 
-
-.stone-details-box {
+.stone-details-boxes {
     position: relative;
     display: block;
     width: 100%;
     max-width: 1200px;
     background: #FFFFFF;
     border-radius: 10px 10px 0px 0px;
+    padding-top: 20px;
+}
+.stone-details-box {
     padding: 20px;
-    max-height: 800px;
+    padding-top: 0;
+    max-height: 820px;
     overflow: hidden;
     overflow-y: auto;
 }
@@ -2821,6 +2825,13 @@ a.sele-all {
 .origin-stone {
     width: 100%;
 }
+.refresh {
+    margin-right: 15px;
+}
+
+
+
+
 
 
 
@@ -2829,7 +2840,7 @@ a.sele-all {
 
 
 @media only screen and ( min-width:992px) and (max-width:1100px){
-    .stone-details-box {
+    .stone-details-boxes {
         max-width: 530px;
         margin: 0 15px;
     }
@@ -2854,7 +2865,7 @@ a.sele-all {
 }
 
 @media only screen and ( min-width:1100px) and (max-width:1300px) {
-    .stone-details-box {
+    .stone-details-boxes {
         max-width: 700px;
         margin: 0 15px;
     }
@@ -2886,7 +2897,7 @@ a.sele-all {
 
 
 @media only screen and ( min-width:1300px) and (max-width:1400px) {
-    .stone-details-box {
+    .stone-details-boxes {
         max-width: 780px;
         margin: 0 15px;
     }
@@ -2916,7 +2927,7 @@ a.sele-all {
     }
 }
 @media only screen and ( min-width:1400px) and (max-width:1500px) {
-    .stone-details-box {
+    .stone-details-boxes {
         max-width: 860px;
         margin: 0 15px;
     }
@@ -2946,7 +2957,7 @@ a.sele-all {
     }
 }
 @media only screen and ( min-width:1500px) and (max-width:1650px) {
-    .stone-details-box {
+    .stone-details-boxes {
         max-width: 970px;
         margin: 0 15px;
     }

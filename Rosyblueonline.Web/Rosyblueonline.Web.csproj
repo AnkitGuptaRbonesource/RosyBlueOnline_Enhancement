@@ -412,6 +412,7 @@
     <Content Include="Content\img\accordion-bg.png" />
     <Content Include="Content\img\add-new.png" />
     <Content Include="Content\img\add-search.png" />
+    <Content Include="Content\img\add-stone.svg" />
     <Content Include="Content\img\all_shape.png" />
     <Content Include="Content\img\app-icon.png" />
     <Content Include="Content\img\asscher_shape.png" />
