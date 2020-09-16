@@ -59,15 +59,15 @@ body.sidebar-collapse > div.wrapper > header.main-header > a.logo > img {
     background-image: url(/Content/img/other_shape.png);
 }
 
-.dyd-shape {
+/*.dyd-shape {
     margin-top: 6px;
     margin-bottom: -6px;
     margin-left: 150px;
-}
-
+}*/
+/*
     .dyd-shape > .form-inline {
         margin: 6px;
-    }
+    }*/
 
 span.multiplecarat {
     border: 1px solid #ddd;
@@ -76,9 +76,9 @@ span.multiplecarat {
     margin-right: 5px;
 }
 
-.dl-container {
+/*.dl-container {
     padding: 10px 0px;
-}
+}*/
 
 .padding-10 {
     padding: 18px !important;
@@ -100,22 +100,25 @@ span.multiplecarat {
     padding-left: 18px !important;
 }
 
-.panel {
+/*.panel {
     border: 1px solid #4d80b1;
-}
+}*/
 
-.panel-heading {
+/*.panel-heading {
     font-size: 13px;
     background-color: #337ab7 !important;
     color: #FFF !important;
     padding: 4px 10px;
     font-weight: bold;
-}
+}*/
 
-    .panel-heading > a {
-        color: #fff !important;
-        width: 100%;
-    }
+.panel-heading > a {
+    color: #fff !important;
+    width: 100%;
+}
+.panel-body {
+    padding: 0;
+}
 
 #uiPanel {
     margin-left: 16%;
@@ -180,13 +183,14 @@ span.multiplecarat {
 }
 
 input[type=checkbox], input[type=radio] {
-    margin: 6px 5px 0 !important;
+    margin: 0px 10px 0 0 !important;
 }
 
 input[type=radio] {
     left: 0;
-    top: -4px;
+    top: -1px;
     margin: 6px 5px 0 0 !important;
+    /*opacity: 0;*/
 }
 
 .radioleft {
