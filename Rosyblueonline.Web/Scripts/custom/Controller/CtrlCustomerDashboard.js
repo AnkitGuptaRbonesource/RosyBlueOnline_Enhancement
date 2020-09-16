@@ -55,6 +55,81 @@
             }
         });
 
+        $(document).ready(function () {
+            //Get Widget Counts
+            $.ajax({
+                url: "Dashboard/GetWidgetCounts",
+                type: 'GET',
+                async:true,
+                dataType: 'JSON',
+                data: {
+                    fromDate: startDate,
+                    toDate: endDate
+                },
+                beforeSend: function () {
+                    $("#widgetsLoader").fadeToggle('fast');
+                },
+                complete: function () {
+                    $("#widgetsLoader").fadeToggle('fast');
+                },
+                success: function (result) {
+                    if (result != null) {
+
+                        if (result.status === 1) {
+
+                            var data = result.data;
+                            for (i = 0; i < data.length; i++) {
+                                $(`#${data[i].key}`).html(data[i].value); //TotalRoundShapes
+                            }
+                        }
+
+                    }
+                }
+            });
+
+            //Get Saved Searches
+            $.ajax({
+                url: "Dashboard/GetDashboardRecentSearches",
+                async:true,
+                beforeSend: function () {
+                   //Show Loader
+                },
+                complete: function () {
+                    //Hide Loader
+                },
+                success: function (result) {
+                    $('#s_search').html(result);
+                }
+            });
+
+            $.ajax({
+                url: "Dashboard/GetDashboardRecentSearches",
+                async: true,
+                beforeSend: function () {
+                    //Show Loader
+                },
+                complete: function () {
+                    //Hide Loader
+                },
+                success: function (result) {
+                    $('#d_search').html(result);
+                }
+            });
+            $.ajax({
+                url: "Dashboard/GetDashboardRecentSearches",
+                async: true,
+                beforeSend: function () {
+                    //Show Loader
+                },
+                complete: function () {
+                    //Hide Loader
+                },
+                success: function (result) {
+                    $('#r_search').html(result);
+                }
+            });
+        })
+
     };
 
     var LoadData = function () {

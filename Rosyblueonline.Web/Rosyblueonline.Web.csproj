@@ -1075,6 +1075,9 @@
     <Content Include="Views\WS_Scheduler\Index.cshtml" />
     <Content Include="Views\Home\BlockedSite.cshtml" />
     <Content Include="Views\MenuPermissionMaster\Index.cshtml" />
+    <Content Include="Views\Dashboard\_SavedSearchView.cshtml" />
+    <Content Include="Views\Dashboard\_DemandSearchView.cshtml" />
+    <Content Include="Views\Dashboard\_RecentSearchView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
