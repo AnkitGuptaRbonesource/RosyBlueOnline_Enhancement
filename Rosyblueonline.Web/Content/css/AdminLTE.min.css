@@ -575,8 +575,9 @@ body{font-family: 'Karla', sans-serif !important;font-weight:400;overflow-x:hidd
         width: 82%;
     }
     .searchbar {
-        width: 55%;
+        width: 50%;
         margin: 0;
+        margin-left: 8%;
     }
 }
 @media only screen and (min-width: 1400px) and (max-width: 1500px) {

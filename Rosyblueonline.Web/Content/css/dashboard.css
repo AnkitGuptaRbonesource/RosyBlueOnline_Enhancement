@@ -2298,7 +2298,7 @@ a.sele-all {
     position: relative;
     display: block;
     width: 100%;
-    max-width: 1200px;
+    max-width: calc(100% - 570px);
     background: #FFFFFF;
     border-radius: 10px 10px 0px 0px;
     padding-top: 20px;
@@ -2552,13 +2552,13 @@ a.sele-all {
     display: block;
     width: 100%;
     max-width: 468px;
+    overflow-y: auto;
 }
 .search-stone-box {
     position: fixed;
     display: flex;
-    width: 100%;
+    width: 93%;
     justify-content: space-between;
-    max-width: 1780px;
 }
 .stone-key-btn {
     position: relative;
@@ -2578,6 +2578,8 @@ a.sele-all {
 }
 .stone-save {
     color: #E9978C;
+    position: relative;
+    margin-right: 20px;
 }
 .stone-load {
     color: #3A4276;
@@ -2832,6 +2834,18 @@ a.sele-all {
 .refresh {
     margin-right: 15px;
 }
+.stone-save:after {
+    position: absolute;
+    display: block;
+    content: '';
+    width: 2px;
+    height: 80%;
+    top: 2px;
+    right: -14px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) -25%, #E3E4EB 49.2%, rgba(255, 255, 255, 0) 119.23%);
+    opacity: 0.5;
+    border-radius: 18px;
+}
 
 
 
@@ -2908,6 +2922,7 @@ a.sele-all {
 
     .keysearch-box {
         max-width: 350px;
+        max-height: 600px;
     }
 
     .describe-line .reset-btn {
@@ -2928,6 +2943,15 @@ a.sele-all {
 
     .dyd-shape {
         margin-bottom: 10px;
+    }
+    .stone-details-box{
+        max-height: 600px;
+    }
+    .dimaond-list-box {
+        max-height: 510px;
+    }
+    .key-input-box{
+        max-height: 380px;
     }
 }
 @media only screen and ( min-width:1400px) and (max-width:1500px) {
@@ -2982,5 +3006,11 @@ a.sele-all {
     }
     .dyd-shape {
         margin-bottom: 10px;
+    }
+    .stone-details-box {
+        max-height: 730px;
+    }
+    .dimaond-list-box {
+        max-height: 650px;
     }
 }
