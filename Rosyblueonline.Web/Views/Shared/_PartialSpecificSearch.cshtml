@@ -17,7 +17,6 @@
                     <div class="stone-list">
                         <div class="dl-container clearfix">
                             <div class="diamond-box">
-
                                 <input class="all_shape" id="all_shapebt" name="shap" value="1,2,3,4,5,6,7,8,9,10,18" type="button" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="">
                                 <p>select All</p>
                                 <div class="tooltip fade bottom in" role="tooltip" name="shap" id="all_shapebt_div">
@@ -168,7 +167,9 @@
                                             <input type="number" name="Sizeto" maxlength="5" class="form-control" placeholder="To" value="" id="txtSizeto" compareTo="#txtSizefrom">
                                         </div>
                                         <div class="form-group">
-                                            <button id="btnAddSizes" class="btn btn-primary" style="display:none">@Resource.Add</button>
+                                            <button id="btnAddSizes" class="btn btn-primary" style="display:none">@*@Resource.Add*@
+                                                <span><img src="~/Content/img/add-stone.svg" /></span>
+                                            </button>
                                         </div>
                                         <label id="SizeMsg" value="" style="color:red;"></label>
                                         <label class="reset-btn" style="display:none">@Resource.Reset1</label>
@@ -220,7 +221,10 @@
                                     <input type="checkbox" class="design-checkbox" id="chkfancy_colorshow">
                                     <label onclick="$(this).toggleClass('selected');$('#fancy-colorshow').toggleClass('show-div');">Fancy Color</label>
 
-                                    <input type='button' value='Less' class="reset-btn" id='FColorMore'>
+                                    <div class="more-btnbox">
+                                        <input type='button' value='Less' class="reset-btn" id='FColorMore'>
+                                        <span><img src="~/Content/img/more-img.svg" /></span>
+                                    </div>
                                 </form>
                             
                             </div>
@@ -272,7 +276,11 @@
                                         cty = cty + 1;
                                     }
                                 </form>
-                                <input type='button' value='Less' class="reset-btn" id='FClarityMore'>
+                                
+                                <div class="more-btnbox">
+                                    <input type='button' value='Less' class="reset-btn" id='FClarityMore'>
+                                    <span><img src="~/Content/img/more-img.svg" /></span>
+                                </div>
                             </div>
                         </div>
 
@@ -301,13 +309,12 @@
 
                                     @*</div>*@
                                 </form>
-                                <input type='button' value='Less' class="reset-btn" id='FCertificateMore'>
+                                
+                                <div class="more-btnbox">
+                                    <input type='button' value='Less' class="reset-btn" id='FCertificateMore'>
+                                    <span><img src="~/Content/img/more-img.svg" /></span>
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="stoe-describe-box">
-                            <div class="stone-describe"></div>
-                            <div class="stone-reset"></div>
                         </div>
 
                         <div class="describe-line clearfix">

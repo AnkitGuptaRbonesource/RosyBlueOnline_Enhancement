@@ -2266,7 +2266,7 @@ a.sele-all {
     background-color: transparent;
 }
 
-.dimaond-list-box::-webkit-scrollbar, .key-input-box::-webkit-scrollbar {
+.dimaond-list-box::-webkit-scrollbar, .key-input-box::-webkit-scrollbar{
     width: 2px;
     background-color: #ECE9F1;
 }
@@ -2276,19 +2276,19 @@ a.sele-all {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
     background-color: transparent;
 }
-.stone-details-box::-webkit-scrollbar-track {
+.stone-details-box::-webkit-scrollbar-track, .keysearch-box::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.2);
     border-radius: 2px;
     background-color: transparent;
 }
 
-.stone-details-box::-webkit-scrollbar {
+.stone-details-box::-webkit-scrollbar, .keysearch-box::-webkit-scrollbar {
     width: 3px;
     background-color: #ECE9F1;
     opacity: 0.5;
 }
 
-.stone-details-box::-webkit-scrollbar-thumb {
+.stone-details-box::-webkit-scrollbar-thumb, .keysearch-box::-webkit-scrollbar-thumb {
     border-radius: 2px;
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
     background-color: transparent;
@@ -2367,6 +2367,7 @@ a.sele-all {
     border-width: 2px;
     font-size: 11px;
     font-weight: 600;
+    outline: none;
 }
 .stone-describe a {
     font-size: 14px;
@@ -2846,7 +2847,26 @@ a.sele-all {
     opacity: 0.5;
     border-radius: 18px;
 }
-
+.more-btnbox {
+    position: relative;
+    display: inline-block;
+    width: fit-content;
+    border-radius: 50%;
+}
+.more-btnbox .reset-btn {
+    position: absolute;
+    display: block;
+    margin: 0;
+    padding: 9px 2px;
+    opacity: 0;
+    z-index: 2;
+}
+.more-btnbox img {
+    transform: rotateZ(0deg);
+}
+.more-btnbox.active img {
+    transform: rotateZ(180deg);
+}
 
 
 
@@ -2890,6 +2910,7 @@ a.sele-all {
 
     .keysearch-box {
         max-width: 350px;
+        max-height: 600px;
     }
 
     .describe-line .reset-btn {
@@ -2910,6 +2931,12 @@ a.sele-all {
 
     .dyd-shape {
         margin-bottom: 10px;
+    }
+    .stone-details-box {
+        max-height: 630px;
+    }
+    .dimaond-list-box {
+        max-height: 560px;
     }
 }
 
@@ -2982,6 +3009,12 @@ a.sele-all {
 
     .dyd-shape {
         margin-bottom: 10px;
+    }
+    .stone-details-box{
+        max-height: 730px;
+    }
+    .dimaond-list-box {
+        max-height: 650px;
     }
 }
 @media only screen and ( min-width:1500px) and (max-width:1650px) {

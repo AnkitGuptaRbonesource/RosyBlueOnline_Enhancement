@@ -449,6 +449,11 @@
                   $(".key-input-box").toggleClass("active");
               });
           });
+          $(document).ready(function () {
+              $(".more-btnbox").click(function () {
+                  $(this).toggleClass("active");
+              });
+          });
   </script>
   @RenderSection("script", false)
 
