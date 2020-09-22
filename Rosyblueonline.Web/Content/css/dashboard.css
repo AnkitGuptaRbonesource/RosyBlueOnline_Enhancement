@@ -2257,7 +2257,7 @@ a.sele-all {
     height: 100%;
     max-height: 710px;
     overflow: hidden;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .dimaond-list-box::-webkit-scrollbar-track, .key-input-box::-webkit-scrollbar-track{
@@ -2852,6 +2852,7 @@ a.sele-all {
     display: inline-block;
     width: fit-content;
     border-radius: 50%;
+    margin-top: -10px;
 }
 .more-btnbox .reset-btn {
     position: absolute;
@@ -2876,7 +2877,14 @@ a.sele-all {
 
 /*@media queries for different display*/
 
-
+@media only screen and (min-width: 1921px){
+    .stone-details-box {
+        max-height: 1260px;
+    }
+    .dimaond-list-box {
+        max-height: 1240px;
+    }
+}
 @media only screen and ( min-width:992px) and (max-width:1100px){
     .stone-details-boxes {
         max-width: 530px;
@@ -3045,5 +3053,34 @@ a.sele-all {
     }
     .dimaond-list-box {
         max-height: 650px;
+    }
+}
+
+
+@media only screen and (min-height: 1600px) , (min-height: 1000px){
+    .stone-details-box {
+        max-height: 1020px;
+    }
+    .dimaond-list-box {
+        max-height: 850px;
+    }
+}
+
+@media only screen and (min-height: 1440px), (min-height: 1050px) {
+    .stone-details-box {
+        max-height: 850px;
+    }
+
+    .dimaond-list-box {
+        max-height: 800px;
+    }
+}
+@media only screen and (min-height: 1280px), (min-height: 1000px) {
+    .stone-details-box {
+        max-height: 850px;
+    }
+
+    .dimaond-list-box {
+        max-height: 800px;
     }
 }
