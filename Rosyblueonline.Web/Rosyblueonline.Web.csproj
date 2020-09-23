@@ -1083,6 +1083,7 @@
     <Content Include="Views\Dashboard\_SavedSearchView.cshtml" />
     <Content Include="Views\Dashboard\_DemandSearchView.cshtml" />
     <Content Include="Views\Dashboard\_RecentSearchView.cshtml" />
+    <Content Include="Views\Inventory\SpecificSearch_FIX.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
