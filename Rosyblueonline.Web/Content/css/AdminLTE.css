@@ -2220,7 +2220,7 @@ table .se-bx.de-bx, .table-ul .se-bx.de-bx {
 	border-bottom: 0
 }
 .table-ul .table-li:hover {
-	box-shadow: inset 0 12px 12px -15px rgba(0,0,0,0.4)
+	box-shadow: inset 0 -12px 12px -15px rgba(0,0,0,0.4)
 }
 .table-ul .seinfo-l1 {
 	color: #828282;
