@@ -410,18 +410,20 @@ ul, li {
   .fix-search .fix-search-text {
     display: inline-block;
     border: 4px solid #F2F2F7;
-    font-size: 16px;
+    font-size: 16px !important;
+    font-weight: 600 !important;
     letter-spacing: 0.5px;
     box-shadow: 0px 6px 20px rgba(58, 66, 118, 0.16);
     background: #E9978C;
-    color: #ffff;
+    color: #ffffff !important;
     padding: 10px 30px;
     margin-left: -30px;
     padding-left: 40px;
-    line-height: 20px;
+    line-height: 20px !important;
     border-radius: 25px;
     height: 44px;
     transition: .1s ease-in-out;
+    vertical-align:unset !important;
   }
 
   .fix-search:hover .fix-search-icon, .fix-search:hover .fix-search-text {
