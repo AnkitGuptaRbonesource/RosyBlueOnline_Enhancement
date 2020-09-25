@@ -12,13 +12,15 @@
             </div>
         </div>
         <div class="col-lg-12 col-sm-12 col-xs-12">
-            <div class="search-stone-box">
-                <div class="stone-box" id="collapse5">
+            <div class="search-stone-box search-stone-box2">
+                <div class="stone-box stone-box2" id="collapse5">
                     <div class="stone-list">
                         <div class="dl-container clearfix">
                             <div class="diamond-box">
-                                <input class="all_shape" id="all_shapebt" name="shap" value="1,2,3,4,5,6,7,8,9,10,18" type="button" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="">
-                                <p>select All</p>
+                                <div class="diamond-selectbox">
+                                    <input class="all_shape" id="all_shapebt" name="shap" value="1,2,3,4,5,6,7,8,9,10,18" type="button" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="">
+                                    <p>select All</p>
+                                </div>
                                 <div class="tooltip fade bottom in" role="tooltip" name="shap" id="all_shapebt_div">
                                     <div class="tooltip-arrow"></div>
                                     <div class="tooltip-inner">@Resource.All_Shape</div>
@@ -132,7 +134,7 @@
                     </div>
                 </div>
 
-                <div class="stone-details-boxes">
+                <div class="stone-details-boxes stone-details-boxes2">
                     <div class="stone-details-box">
                         <div class="describe-line clearfix">
                             <div class="stoe-describe-box">
@@ -167,7 +169,8 @@
                                             <input type="number" name="Sizeto" maxlength="5" class="form-control" placeholder="To" value="" id="txtSizeto" compareTo="#txtSizefrom">
                                         </div>
                                         <div class="form-group">
-                                            <button id="btnAddSizes" class="btn btn-primary" style="display:none">@*@Resource.Add*@
+                                            <button id="btnAddSizes" class="btn btn-primary" style="display:none">
+                                                @*@Resource.Add*@
                                                 <span><img src="~/Content/img/add-stone.svg" /></span>
                                             </button>
                                         </div>
@@ -226,7 +229,7 @@
                                         <span><img src="~/Content/img/more-img.svg" /></span>
                                     </div>
                                 </form>
-                            
+
                             </div>
 
                         </div>
@@ -280,7 +283,6 @@
                                         <span><img src="~/Content/img/more-img.svg" /></span>
                                     </div>
                                 </form>
-                                
                             </div>
                         </div>
 
@@ -313,7 +315,7 @@
                                         <span><img src="~/Content/img/more-img.svg" /></span>
                                     </div>
                                 </form>
-                                
+
                             </div>
                         </div>
 
@@ -379,8 +381,8 @@
 
                                     </div>
                                     @*<div class="symetric-btn">
-                                        <label class="reset-btn" id='btnF_Cut'><span class="refresh"><img src="~/Content/img/refresh.png" /></span>@Resource.Reset1</label>
-                                    </div>*@
+                                <label class="reset-btn" id='btnF_Cut'><span class="refresh"><img src="~/Content/img/refresh.png" /></span>@Resource.Reset1</label>
+                            </div>*@
                                 </div>
 
                                 <div class="cut-box">
@@ -405,8 +407,8 @@
 
                                     </div>
                                     @*<div class="symetric-btn">
-                                        <label class="reset-btn" id='btnF_Polished'><span class="refresh"><img src="~/Content/img/refresh.png" /></span>@Resource.Reset1</label>
-                                    </div>*@
+                                <label class="reset-btn" id='btnF_Polished'><span class="refresh"><img src="~/Content/img/refresh.png" /></span>@Resource.Reset1</label>
+                            </div>*@
                                 </div>
 
                                 <div class="cut-box">
@@ -431,8 +433,8 @@
 
                                     </div>
                                     @*<div class="symetric-btn">
-                                        <label class="reset-btn" id='btnF_Symmerty'><span class="refresh"><img src="~/Content/img/refresh.png" /></span>@Resource.Reset1</label>
-                                    </div>*@
+                                <label class="reset-btn" id='btnF_Symmerty'><span class="refresh"><img src="~/Content/img/refresh.png" /></span>@Resource.Reset1</label>
+                            </div>*@
                                 </div>
 
                             </form>
@@ -483,325 +485,384 @@
                             </div>
 
                         </div>
-                        <div class="advance-searchflt">
-                            <div class="stoe-describe-box">
-                                <div class="stone-describe origin-stone">
-                                    <div class="form-inline">
-                                        <a role="button" data-toggle="collapse" href="#collapse3" aria-expanded="false" aria-controls="collapse3">
-                                            @Resource.Stone_Origin
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="stone-reset">
-                                    <span><i class="fa fa-angle-down" aria-hidden="true"></i></span>
-                                    @*<label class="reset-btn" id='btnF_Origin'>
-                                        <span class="refresh"><img src="~/Content/img/refresh.png" />
-                                            <i class="fa fa-angle-down" aria-hidden="true"></i>
-                                        </span>@Resource.Reset1
-                                    </label>*@
-                                </div>
-                            </div>
-                            <form class="collapse dyd-shape F_Origin" id="collapse3">
-                                <div class="advance-panel-box">
-                                    <div class="panel panel-default">
-                                        <div class="panel-body">
-                                            @foreach (var StoneOrigin in Model.VMStoneOrigin)
-                                            {
-                                                <input type="checkbox" name="Origin" class="design-checkbox" value="@StoneOrigin.originID" id="Origin@(StoneOrigin.originID)" />
-                                                <label for="Origin@(StoneOrigin.originID)">@StoneOrigin.originName</label>
-                                            }
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
 
-
-                        <div class="advance-searchflt">
-                            <div class="stoe-describe-box">
-                                <div class="stone-describe origin-stone">
-                                    <div class="form-inline">
-                                        <a id="advance" class="" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                                            @Resource.ADVANCE_SEARCH
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="stone-reset">
-                                    <span><i class="fa fa-angle-down" aria-hidden="true"></i></span>
-                                </div>
-                            </div>
-
-                            <form class="collapse padding-top-10" id="collapseExample">
-                                <div class="advance-panel-box">
-                                    <div class="panel panel-default">
-                                        <div class="panel-body">
-                                            <div class="search-girdle-box">
-                                                <div class="form-group girdle-box">
-                                                    <div class="girdle-title">
-                                                        <h5>@Resource.Girdle</h5>
-                                                    </div>
-                                                    <div>
-                                                        @{ int grd = 1;
-                                                            foreach (var Girdle in Model.VMgirdleNames)
-                                                            {
-                                                                var idgir = "girdle" + grd.ToString();
-                                                                <input type="checkbox" name="girdle" class="design-checkbox" value="@Girdle.girdleNameID" id="@idgir" />
-                                                                <label for="@idgir">@Girdle.girdleName</label>
-                                                                grd = grd + 1;
-                                                            }
-                                                        }
-                                                    </div>
-                                                </div>
-
-                                                <div class="girdle-parameter-box">
-                                                    <div class="girle-para">
-                                                        <div class="para-title">
-                                                            <h5>@Resource.Girdle_Per</h5>
-                                                        </div>
-                                                        <div class="girdle-input">
-                                                            <input type="text" maxlength="3" class="form-control" name="GRDLPERFROM" id="txtgirlefrom" placeholder="from" />
-                                                            <input type="text" maxlength="3" class="form-control" name="GRDLPERTO" id="txtgirleto" placeholder="to" compareTo="#txtgirlefrom" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="girle-para">
-                                                        <div class="para-title">
-                                                            <h5>@Resource.Table</h5>
-                                                        </div>
-                                                        <div class="girdle-input">
-                                                            <input type="text" maxlength="6" class="form-control" name="TBLPERFROM" id="txttablefrom" placeholder="from" />
-                                                            <input type="text" maxlength="6" class="form-control" name="TBLPERTO" id="txttableto" placeholder="to" compareTo="#txttablefrom" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="girle-para">
-                                                        <div class="para-title">
-                                                            <h5>@Resource.Depth</h5>
-                                                        </div>
-                                                        <div class="girdle-input">
-                                                            <input type="text" maxlength="6" class="form-control" name="DEPTHPERFROM" id="txtdepthfrom" placeholder="from" />
-                                                            <input type="text" maxlength="6" class="form-control" name="DEPTHPERTO" id="txtdepthto" placeholder="to" compareTo="#txtdepthfrom" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="girle-para">
-                                                        <div class="para-title">
-                                                            <h5>@Resource.Discount</h5>
-                                                        </div>
-                                                        <div class="girdle-input">
-                                                            <input type="text" maxlength="6" class="form-control" name="DISCPERFROM" id="txtdiscountfrom" placeholder="from" />
-                                                            <input type="text" maxlength="6" class="form-control" name="DISCPERTO" id="txtdiscountto" placeholder="to" compareTo="#txtdiscountfrom" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="girle-para">
-                                                        <div class="para-title">
-                                                            <h5>@Resource.Price_carat</h5>
-                                                        </div>
-                                                        <div class="girdle-input">
-                                                            <input type="text" maxlength="6" class="form-control" name="PRICEPERCTFROM" id="txtpriceusfrom" placeholder="from" />
-                                                            <input type="text" maxlength="6" class="form-control" name="PRICEPERCTTO" id="txtpriceusto" placeholder="to" compareTo="#txtpriceusfrom" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="girle-para">
-                                                        <div class="para-title">
-                                                            <h5>@Resource.Total_Amount</h5>
-                                                        </div>
-                                                        <div class="girdle-input">
-                                                            <input type="text" maxlength="6" class="form-control" name="TOTAMOUNTFROM" id="txtTotalamountfrom" placeholder="from" />
-                                                            <input type="text" maxlength="6" class="form-control" name="TOTAMOUNTTO" id="txtTotalamountto" placeholder="to" compareTo="#txtTotalamountfrom" />
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-
-                                                <div class="form-group girdle-box">
-                                                    <div class="girdle-title">
-                                                        <h5>@Resource.Shade</h5>
-                                                    </div>
-                                                    <div>
-                                                        @{ int shade = 1;
-                                                            foreach (var Shades in Model.VMshade)
-                                                            {
-                                                                var shadeval = "SHADE" + shade.ToString();
-                                                                <input type="checkbox" name="SHADE" class="design-checkbox" value="@Shades.shadeId" id="@shadeval" />
-                                                                <label for="@shadeval">@Shades.shadeName</label>
-                                                                shade = shade + 1;
-                                                            }
-                                                        }
-                                                    </div>
-
-                                                </div>
-                                                <div class="form-group girdle-box">
-                                                    <div class="girdle-title">
-                                                        <h5>@Resource.Milky</h5>
-                                                    </div>
-                                                    <div>
-                                                        @{ int mlky = 1;
-                                                            foreach (var Milky in Model.VMmilkyInclusion)
-                                                            {
-                                                                var idmlky = "mlky" + mlky.ToString();
-                                                                <input type="checkbox" name="mlky" class="design-checkbox" value="@Milky.milkyId" id="@idmlky" />
-                                                                <label for="@idmlky">@Milky.milkyName</label>
-                                                                mlky = mlky + 1;
-                                                            }
-                                                        }
-                                                    </div>
-                                                </div>
-                                                <div class="form-group girdle-box">
-                                                    <div class="girdle-title">
-                                                        <h5>@Resource.SideBlack</h5>
-                                                    </div>
-                                                    <div>
-                                                        @{ int cb = 1;
-                                                            foreach (var CB in Model.VMsideBlackInclusion)
-                                                            {
-                                                                var idcb = "cb" + cb.ToString();
-                                                                <input type="checkbox" name="cb" class="design-checkbox" value="@CB.sideBlackInclusionsId" id="@idcb" />
-                                                                <label for="@idcb">@CB.sideBlackInclusionsName</label>
-                                                                cb = cb + 1;
-                                                            }
-                                                        }
-                                                    </div>
-                                                </div>
-                                                <div class="form-group girdle-box">
-                                                    <div class="girdle-title">
-                                                        <h5>@Resource.TableBlack</h5>
-                                                    </div>
-                                                    <div>
-                                                        @{ int tb = 1;
-                                                            foreach (var TB in Model.VMtableBlackInclusion)
-                                                            {
-                                                                var idtb = "tb" + tb.ToString();
-                                                                <input type="checkbox" name="tb" class="design-checkbox" value="@TB.TableBlackInclusionId" id="@idtb" />
-                                                                <label for="@idtb">@TB.TableBlackInclusionName</label>
-                                                                tb = tb + 1;
-                                                            }
-                                                        }
-                                                    </div>
-                                                </div>
-                                                <div class="form-group girdle-box">
-                                                    <div class="girdle-title">
-                                                        <h5>@Resource.Eye_Clean</h5>
-                                                    </div>
-                                                    <div>
-                                                        @{ int ec = 1;
-                                                            foreach (var EC in Model.VMeyeClean)
-                                                            {
-                                                                var idec = "ec" + ec.ToString();
-                                                                <input type="checkbox" name="ec" class="design-checkbox" value="@EC.eyeCleanID" id="@idec" />
-                                                                <label for="@idec">@EC.eyeclean</label>
-                                                                ec = ec + 1;
-                                                            }
-                                                        }
-                                                    </div>
-                                                </div>
-
-                                                <div class="girdle-parameter-box">
-                                                    <div class="girle-para">
-                                                        <div class="para-title">
-                                                            <h5>@Resource.Length</h5>
-                                                        </div>
-                                                        <div class="girdle-input">
-                                                            <input type="text" maxlength="6" class="form-control" name="LENFROM" id="txtlengthfrom" placeholder="from" />
-                                                            <input type="text" maxlength="6" class="form-control" name="LENTO" id="txtlengthto" placeholder="to" compareTo="#txtlengthfrom" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="girle-para">
-                                                        <div class="para-title">
-                                                            <h5>@Resource.Width</h5>
-                                                        </div>
-                                                        <div class="girdle-input">
-                                                            <input type="text" maxlength="6" class="form-control" name="WIDTHFROM" id="txtwidthfrom" placeholder="from" />
-                                                            <input type="text" maxlength="6" class="form-control" name="WIDTHTO" id="txtwidthto" placeholder="to" compareTo="#txtwidthfrom" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="girle-para">
-                                                        <div class="para-title">
-                                                            <h5>@Resource.Depth</h5>
-                                                        </div>
-                                                        <div class="girdle-input">
-                                                            <input type="text" maxlength="6" class="form-control" name="DPTHFROM" id="txtdepfrom" placeholder="from" />
-                                                            <input type="text" maxlength="6" class="form-control" name="DPTHTO" id="txtdepto" placeholder="to" compareTo="#txtdepfrom" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="girle-para">
-                                                        <div class="para-title">
-                                                            <h5>@Resource.Crown_Angle</h5>
-                                                        </div>
-                                                        <div class="girdle-input">
-                                                            <input type="text" maxlength="6" class="form-control" name="CRWNAGLFROM" id="txtcrownanglefrom" placeholder="from" />
-                                                            <input type="text" maxlength="6" class="form-control" name="CRWNAGLTO" id="txtcrownangleto" placeholder="to" compareTo="#txtcrownanglefrom" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="girle-para">
-                                                        <div class="para-title">
-                                                            <h5>@Resource.Crown_Height</h5>
-                                                        </div>
-                                                        <div class="girdle-input">
-                                                            <input type="text" maxlength="6" class="form-control" name="CRWNHGHTFROM" id="txtcrownheightfrom" placeholder="from" />
-                                                            <input type="text" maxlength="6" class="form-control" name="CRWNHGHTTO" id="txtcrownheightto" placeholder="to" compareTo="#txtcrownheightfrom" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="girle-para">
-                                                        <div class="para-title">
-                                                            <h5>@Resource.Pavilion_Angle</h5>
-                                                        </div>
-                                                        <div class="girdle-input">
-                                                            <input type="text" maxlength="6" class="form-control" name="PVNLAGLFROM" id="txtpallivonanglefrom" placeholder="from" />
-                                                            <input type="text" maxlength="6" class="form-control" name="PVNLAGLTO" id="txtpallivonangleto" placeholder="to" compareTo="#txtpallivonanglefrom" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="girle-para">
-                                                        <div class="para-title">
-                                                            <h5>@Resource.Pavilion_Depth</h5>
-                                                        </div>
-                                                        <div class="girdle-input">
-                                                            <input type="text" maxlength="6" class="form-control" name="PVNLDPTHFROM" id="txtpallivondepthfrom" placeholder="from" />
-                                                            <input type="text" maxlength="6" class="form-control" name="PVNLDPTHTO" id="txtpallivondepthto" placeholder="to" compareTo="#txtpallivondepthfrom" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="girle-para">
-                                                        <div class="para-title">
-                                                            <h5>@Resource.Star_Length</h5>
-                                                        </div>
-                                                        <div class="girdle-input">
-                                                            <input type="text" maxlength="6" class="form-control" name="STRLENFROM" id="txtstarlengthfrom" placeholder="from" />
-                                                            <input type="text" maxlength="6" class="form-control" name="STRLENTO" id="txtstarlengthto" placeholder="to" compareTo="#txtstarlengthfrom" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="girle-para">
-                                                        <div class="para-title">
-                                                            <h5 id="lowerhalfId">@Resource.Lower_Half</h5>
-                                                        </div>
-                                                        <div class="girdle-input">
-                                                            <input type="text" maxlength="6" class="form-control" name="LWRHLFFROM" id="txtlowerhalffrom" placeholder="from" />
-                                                            <input type="text" maxlength="6" class="form-control" name="LWRHLFTO" id="txtlowerhalfto" placeholder="to" compareTo="#txtlowerhalffrom" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="girle-para">
-                                                        <div class="para-title">
-                                                            <h5>@Resource.Report_Date</h5>
-                                                        </div>
-                                                        <div class="girdle-input">
-                                                            <div class="input-group input-append date" id="datePicker">
-                                                                <input type="text" class="form-control datePicker" name="RPTDTFROM" id="txtreportdatefrom" placeholder="dd-mm-yyyy" />
-                                                            </div>
-                                                            <div class="input-group input-append date" id="datePicker1">
-                                                                <input type="text" class="form-control datePicker" name="RPTDTTO" id="txtreportdateto" placeholder="dd-mm-yyyy" compareTo="#txtreportdatefrom" />
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
 
                     </div>
                 </div>
 
-                <div class="keysearch-box">
-                    <div class="keyselect-box">
+                <div class="advance-searchflt">
+                    <div class="stoe-describe-box">
+                        <div class="stone-describe origin-stone">
+                            <div class="form-inline">
+                                <a role="button" data-toggle="collapse" href="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                                    @Resource.Stone_Origin
+                                </a>
+                            </div>
+                        </div>
+                        <div class="stone-reset">
+                            <span><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+                            @*<label class="reset-btn" id='btnF_Origin'>
+                        <span class="refresh"><img src="~/Content/img/refresh.png" />
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                        </span>@Resource.Reset1
+                    </label>*@
+                        </div>
+                    </div>
+                    <form class="collapse dyd-shape F_Origin" id="collapse3">
+                        <div class="advance-panel-box">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    @foreach (var StoneOrigin in Model.VMStoneOrigin)
+                                    {
+                                        <input type="checkbox" name="Origin" class="design-checkbox" value="@StoneOrigin.originID" id="Origin@(StoneOrigin.originID)" />
+                                        <label for="Origin@(StoneOrigin.originID)">@StoneOrigin.originName</label>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="advance-searchflt">
+                    <div class="stoe-describe-box">
+                        <div class="stone-describe origin-stone">
+                            <div class="form-inline">
+                                <a id="advance" class="" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                    @Resource.ADVANCE_SEARCH
+                                </a>
+                            </div>
+                        </div>
+                        <div class="stone-reset">
+                            <span><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+                        </div>
+                    </div>
+
+                    <form class="collapse padding-top-10" id="collapseExample">
+                        <div class="advance-panel-box">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <div class="search-girdle-box">
+                                        <div class="form-group girdle-box">
+                                            <div class="girdle-title">
+                                                <h5>@Resource.Girdle</h5>
+                                            </div>
+                                            <div>
+                                                @{ int grd = 1;
+                                                    foreach (var Girdle in Model.VMgirdleNames)
+                                                    {
+                                                        var idgir = "girdle" + grd.ToString();
+                                                        <input type="checkbox" name="girdle" class="design-checkbox" value="@Girdle.girdleNameID" id="@idgir" />
+                                                        <label for="@idgir">@Girdle.girdleName</label>
+                                                        grd = grd + 1;
+                                                    }
+                                                }
+                                            </div>
+                                        </div>
+
+                                        <div class="girdle-parameter-box">
+                                            <div class="girle-para">
+                                                <div class="para-title">
+                                                    <h5>@Resource.Girdle_Per</h5>
+                                                </div>
+                                                <div class="girdle-input">
+                                                    <input type="text" maxlength="3" class="form-control" name="GRDLPERFROM" id="txtgirlefrom" placeholder="from" />
+                                                    <input type="text" maxlength="3" class="form-control" name="GRDLPERTO" id="txtgirleto" placeholder="to" compareTo="#txtgirlefrom" />
+                                                </div>
+                                            </div>
+                                            <div class="girle-para">
+                                                <div class="para-title">
+                                                    <h5>@Resource.Table</h5>
+                                                </div>
+                                                <div class="girdle-input">
+                                                    <input type="text" maxlength="6" class="form-control" name="TBLPERFROM" id="txttablefrom" placeholder="from" />
+                                                    <input type="text" maxlength="6" class="form-control" name="TBLPERTO" id="txttableto" placeholder="to" compareTo="#txttablefrom" />
+                                                </div>
+                                            </div>
+                                            <div class="girle-para">
+                                                <div class="para-title">
+                                                    <h5>@Resource.Depth</h5>
+                                                </div>
+                                                <div class="girdle-input">
+                                                    <input type="text" maxlength="6" class="form-control" name="DEPTHPERFROM" id="txtdepthfrom" placeholder="from" />
+                                                    <input type="text" maxlength="6" class="form-control" name="DEPTHPERTO" id="txtdepthto" placeholder="to" compareTo="#txtdepthfrom" />
+                                                </div>
+                                            </div>
+                                            <div class="girle-para">
+                                                <div class="para-title">
+                                                    <h5>@Resource.Discount</h5>
+                                                </div>
+                                                <div class="girdle-input">
+                                                    <input type="text" maxlength="6" class="form-control" name="DISCPERFROM" id="txtdiscountfrom" placeholder="from" />
+                                                    <input type="text" maxlength="6" class="form-control" name="DISCPERTO" id="txtdiscountto" placeholder="to" compareTo="#txtdiscountfrom" />
+                                                </div>
+                                            </div>
+                                            <div class="girle-para">
+                                                <div class="para-title">
+                                                    <h5>@Resource.Price_carat</h5>
+                                                </div>
+                                                <div class="girdle-input">
+                                                    <input type="text" maxlength="6" class="form-control" name="PRICEPERCTFROM" id="txtpriceusfrom" placeholder="from" />
+                                                    <input type="text" maxlength="6" class="form-control" name="PRICEPERCTTO" id="txtpriceusto" placeholder="to" compareTo="#txtpriceusfrom" />
+                                                </div>
+                                            </div>
+                                            <div class="girle-para">
+                                                <div class="para-title">
+                                                    <h5>@Resource.Total_Amount</h5>
+                                                </div>
+                                                <div class="girdle-input">
+                                                    <input type="text" maxlength="6" class="form-control" name="TOTAMOUNTFROM" id="txtTotalamountfrom" placeholder="from" />
+                                                    <input type="text" maxlength="6" class="form-control" name="TOTAMOUNTTO" id="txtTotalamountto" placeholder="to" compareTo="#txtTotalamountfrom" />
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-group girdle-box">
+                                            <div class="girdle-title">
+                                                <h5>@Resource.Shade</h5>
+                                            </div>
+                                            <div>
+                                                @{ int shade = 1;
+                                                    foreach (var Shades in Model.VMshade)
+                                                    {
+                                                        var shadeval = "SHADE" + shade.ToString();
+                                                        <input type="checkbox" name="SHADE" class="design-checkbox" value="@Shades.shadeId" id="@shadeval" />
+                                                        <label for="@shadeval">@Shades.shadeName</label>
+                                                        shade = shade + 1;
+                                                    }
+                                                }
+                                            </div>
+
+                                        </div>
+                                        <div class="form-group girdle-box">
+                                            <div class="girdle-title">
+                                                <h5>@Resource.Milky</h5>
+                                            </div>
+                                            <div>
+                                                @{ int mlky = 1;
+                                                    foreach (var Milky in Model.VMmilkyInclusion)
+                                                    {
+                                                        var idmlky = "mlky" + mlky.ToString();
+                                                        <input type="checkbox" name="mlky" class="design-checkbox" value="@Milky.milkyId" id="@idmlky" />
+                                                        <label for="@idmlky">@Milky.milkyName</label>
+                                                        mlky = mlky + 1;
+                                                    }
+                                                }
+                                            </div>
+                                        </div>
+                                        <div class="form-group girdle-box">
+                                            <div class="girdle-title">
+                                                <h5>@Resource.SideBlack</h5>
+                                            </div>
+                                            <div>
+                                                @{ int cb = 1;
+                                                    foreach (var CB in Model.VMsideBlackInclusion)
+                                                    {
+                                                        var idcb = "cb" + cb.ToString();
+                                                        <input type="checkbox" name="cb" class="design-checkbox" value="@CB.sideBlackInclusionsId" id="@idcb" />
+                                                        <label for="@idcb">@CB.sideBlackInclusionsName</label>
+                                                        cb = cb + 1;
+                                                    }
+                                                }
+                                            </div>
+                                        </div>
+                                        <div class="form-group girdle-box">
+                                            <div class="girdle-title">
+                                                <h5>@Resource.TableBlack</h5>
+                                            </div>
+                                            <div>
+                                                @{ int tb = 1;
+                                                    foreach (var TB in Model.VMtableBlackInclusion)
+                                                    {
+                                                        var idtb = "tb" + tb.ToString();
+                                                        <input type="checkbox" name="tb" class="design-checkbox" value="@TB.TableBlackInclusionId" id="@idtb" />
+                                                        <label for="@idtb">@TB.TableBlackInclusionName</label>
+                                                        tb = tb + 1;
+                                                    }
+                                                }
+                                            </div>
+                                        </div>
+                                        <div class="form-group girdle-box">
+                                            <div class="girdle-title">
+                                                <h5>@Resource.Eye_Clean</h5>
+                                            </div>
+                                            <div>
+                                                @{ int ec = 1;
+                                                    foreach (var EC in Model.VMeyeClean)
+                                                    {
+                                                        var idec = "ec" + ec.ToString();
+                                                        <input type="checkbox" name="ec" class="design-checkbox" value="@EC.eyeCleanID" id="@idec" />
+                                                        <label for="@idec">@EC.eyeclean</label>
+                                                        ec = ec + 1;
+                                                    }
+                                                }
+                                            </div>
+                                        </div>
+
+                                        <div class="girdle-parameter-box">
+                                            <div class="girle-para">
+                                                <div class="para-title">
+                                                    <h5>@Resource.Length</h5>
+                                                </div>
+                                                <div class="girdle-input">
+                                                    <input type="text" maxlength="6" class="form-control" name="LENFROM" id="txtlengthfrom" placeholder="from" />
+                                                    <input type="text" maxlength="6" class="form-control" name="LENTO" id="txtlengthto" placeholder="to" compareTo="#txtlengthfrom" />
+                                                </div>
+                                            </div>
+                                            <div class="girle-para">
+                                                <div class="para-title">
+                                                    <h5>@Resource.Width</h5>
+                                                </div>
+                                                <div class="girdle-input">
+                                                    <input type="text" maxlength="6" class="form-control" name="WIDTHFROM" id="txtwidthfrom" placeholder="from" />
+                                                    <input type="text" maxlength="6" class="form-control" name="WIDTHTO" id="txtwidthto" placeholder="to" compareTo="#txtwidthfrom" />
+                                                </div>
+                                            </div>
+                                            <div class="girle-para">
+                                                <div class="para-title">
+                                                    <h5>@Resource.Depth</h5>
+                                                </div>
+                                                <div class="girdle-input">
+                                                    <input type="text" maxlength="6" class="form-control" name="DPTHFROM" id="txtdepfrom" placeholder="from" />
+                                                    <input type="text" maxlength="6" class="form-control" name="DPTHTO" id="txtdepto" placeholder="to" compareTo="#txtdepfrom" />
+                                                </div>
+                                            </div>
+                                            <div class="girle-para">
+                                                <div class="para-title">
+                                                    <h5>@Resource.Crown_Angle</h5>
+                                                </div>
+                                                <div class="girdle-input">
+                                                    <input type="text" maxlength="6" class="form-control" name="CRWNAGLFROM" id="txtcrownanglefrom" placeholder="from" />
+                                                    <input type="text" maxlength="6" class="form-control" name="CRWNAGLTO" id="txtcrownangleto" placeholder="to" compareTo="#txtcrownanglefrom" />
+                                                </div>
+                                            </div>
+                                            <div class="girle-para">
+                                                <div class="para-title">
+                                                    <h5>@Resource.Crown_Height</h5>
+                                                </div>
+                                                <div class="girdle-input">
+                                                    <input type="text" maxlength="6" class="form-control" name="CRWNHGHTFROM" id="txtcrownheightfrom" placeholder="from" />
+                                                    <input type="text" maxlength="6" class="form-control" name="CRWNHGHTTO" id="txtcrownheightto" placeholder="to" compareTo="#txtcrownheightfrom" />
+                                                </div>
+                                            </div>
+                                            <div class="girle-para">
+                                                <div class="para-title">
+                                                    <h5>@Resource.Pavilion_Angle</h5>
+                                                </div>
+                                                <div class="girdle-input">
+                                                    <input type="text" maxlength="6" class="form-control" name="PVNLAGLFROM" id="txtpallivonanglefrom" placeholder="from" />
+                                                    <input type="text" maxlength="6" class="form-control" name="PVNLAGLTO" id="txtpallivonangleto" placeholder="to" compareTo="#txtpallivonanglefrom" />
+                                                </div>
+                                            </div>
+                                            <div class="girle-para">
+                                                <div class="para-title">
+                                                    <h5>@Resource.Pavilion_Depth</h5>
+                                                </div>
+                                                <div class="girdle-input">
+                                                    <input type="text" maxlength="6" class="form-control" name="PVNLDPTHFROM" id="txtpallivondepthfrom" placeholder="from" />
+                                                    <input type="text" maxlength="6" class="form-control" name="PVNLDPTHTO" id="txtpallivondepthto" placeholder="to" compareTo="#txtpallivondepthfrom" />
+                                                </div>
+                                            </div>
+                                            <div class="girle-para">
+                                                <div class="para-title">
+                                                    <h5>@Resource.Star_Length</h5>
+                                                </div>
+                                                <div class="girdle-input">
+                                                    <input type="text" maxlength="6" class="form-control" name="STRLENFROM" id="txtstarlengthfrom" placeholder="from" />
+                                                    <input type="text" maxlength="6" class="form-control" name="STRLENTO" id="txtstarlengthto" placeholder="to" compareTo="#txtstarlengthfrom" />
+                                                </div>
+                                            </div>
+                                            <div class="girle-para">
+                                                <div class="para-title">
+                                                    <h5 id="lowerhalfId">@Resource.Lower_Half</h5>
+                                                </div>
+                                                <div class="girdle-input">
+                                                    <input type="text" maxlength="6" class="form-control" name="LWRHLFFROM" id="txtlowerhalffrom" placeholder="from" />
+                                                    <input type="text" maxlength="6" class="form-control" name="LWRHLFTO" id="txtlowerhalfto" placeholder="to" compareTo="#txtlowerhalffrom" />
+                                                </div>
+                                            </div>
+                                            <div class="girle-para">
+                                                <div class="para-title">
+                                                    <h5>@Resource.Report_Date</h5>
+                                                </div>
+                                                <div class="girdle-input">
+                                                    <div class="input-group input-append date" id="datePicker">
+                                                        <input type="text" class="form-control datePicker" name="RPTDTFROM" id="txtreportdatefrom" placeholder="dd-mm-yyyy" />
+                                                    </div>
+                                                    <div class="input-group input-append date" id="datePicker1">
+                                                        <input type="text" class="form-control datePicker" name="RPTDTTO" id="txtreportdateto" placeholder="dd-mm-yyyy" compareTo="#txtreportdatefrom" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+
+                <div class="advance-searchflt">
+                    <div class="stoe-describe-box">
+                        <div class="stone-describe origin-stone">
+                            <div class="form-inline">
+                                <a class="" role="button" data-toggle="collapse" href="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                                    @Resource.Key_To_Symbols
+                                </a>
+                            </div>
+                        </div>
+                        <div class="stone-reset">
+                            <span><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+                        </div>
+                    </div>
+
+                    <form class="collapse padding-top-10" id="collapse2">
+                        <div class="advance-panel-box">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <div class="describe-line clearfix" style="border: 0 none;background: none;">
+                                        <div class="radio">
+                                            <label class="radio-inline">
+                                                <input type="radio" id="KTScontains" name="r1" value="" checked>
+                                                <b>@Resource.Contains</b>
+                                                <span class="checkmark"></span>
+                                            </label>
+                                            <label class="radio-inline">
+                                                <input type="radio" id="KTSNotcontains" name="r1" value="">
+                                                <b>@Resource.Does_not_Contains</b>
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </div>
+                                        <form class="dyd-shape" style="margin: 15px 0 0;">
+                                            <div class="key-symbcheckbox F_Keytosymbol">
+                                                @{
+                                                    int KTS = 1;
+                                                    foreach (var mstKeytosymbol in Model.VMkeyToSymbol)
+                                                    {
+                                                        var KTSval = "KTS" + KTS.ToString();
+                                                        <span class="key-rep">
+                                                            <input type="checkbox" name="KTS" class="design-checkbox" value="@mstKeytosymbol.keyToSymbolID" id="@KTSval" />
+                                                            <label for="@KTSval">@mstKeytosymbol.KeyToSymbol</label>
+                                                        </span>
+                                                        KTS = KTS + 1;
+                                                    }
+                                                }
+                                            </div>
+
+                                            <label class="reset-btn" id='btnF_Keytosymbol'><span class="refresh"><img src="~/Content/img/refresh.png" /></span>@Resource.Reset1</label>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+
+                <div class="keysearch-box keysearch-box2">
+                    @*<div class="keyselect-box">
                         <div class="key-title">
                             <h5>@Resource.Key_To_Symbols</h5>
                             <div class="sourec-selected">
@@ -809,10 +870,10 @@
                                 <span><i class="fa fa-angle-down" aria-hidden="true"></i></span>
                             </div>
                         </div>
-                    </div>
+                    </div>*@
                     <div class="key-input-box">
                         <div class="border-arrow"></div>
-                        <div class="describe-line clearfix" style="border: 0 none;background: none;">
+                        @*<div class="describe-line clearfix" style="border: 0 none;background: none;">
                             <div class="radio">
                                 <label class="radio-inline">
                                     <input type="radio" id="KTScontains" name="r1" value="" checked>
@@ -840,105 +901,107 @@
                                         }
                                     }
                                 </div>
-                                
+
                                 <label class="reset-btn" id='btnF_Keytosymbol'><span class="refresh"><img src="~/Content/img/refresh.png" /></span>@Resource.Reset1</label>
                             </form>
-                        </div>
+                        </div>*@
                     </div>
 
-                    <div class="demand-key-box">
-                        <div class="demand-title">
-                            <h5>@Resource.Save_Search</h5>
-                            <span><i class="fa fa-refresh" aria-hidden="true"></i></span>
-                        </div>
-                        <div class="demand-cont">
-                            <form id="frmSavedSearch">
-                                <div class="key-stone-input">
-                                    <input type="text" id="txtSavedSearch" name="SavedSearch" value="" class="form-control" placeholder="Write name here">
-                                    <select class="form-control" id="ddlSavedSearch" name="SavedSearchID"></select>
-                                </div>
-                                <div class="stone-key-btn">
-                                    <div class="stone-save">
-                                        <img src="~/Content/img/save-icon.png" />
-                                        <button type="submit" id="btnSavedSearch">@Resource.Save</button>
-                                        <button type="submit" style="display:none;" id="btnUpdatesaveSearch" name="command" value="UpdatesaveSearch" onclick="compilingPageSavedb(event)">Update</button>
+                    <div class="diamond-demand-box">
+                        <div class="demand-key-box">
+                            <div class="demand-title">
+                                <h5>@Resource.Save_Search</h5>
+                                <span><i class="fa fa-refresh" aria-hidden="true"></i></span>
+                            </div>
+                            <div class="demand-cont">
+                                <form id="frmSavedSearch">
+                                    <div class="key-stone-input">
+                                        <input type="text" id="txtSavedSearch" name="SavedSearch" value="" class="form-control" placeholder="Write name here">
+                                        <select class="form-control" id="ddlSavedSearch" name="SavedSearchID"></select>
                                     </div>
-                                    <div class="stone-load">
-                                        <img src="~/Content/img/load-icon.png" />
-                                        <button type="button" id="btnLoadSavedSearch">@Resource.Load</button>
+                                    <div class="stone-key-btn">
+                                        <div class="stone-save">
+                                            <img src="~/Content/img/save-icon.png" />
+                                            <button type="submit" id="btnSavedSearch">@Resource.Save</button>
+                                            <button type="submit" style="display:none;" id="btnUpdatesaveSearch" name="command" value="UpdatesaveSearch" onclick="compilingPageSavedb(event)">Update</button>
+                                        </div>
+                                        <div class="stone-load">
+                                            <img src="~/Content/img/load-icon.png" />
+                                            <button type="button" id="btnLoadSavedSearch">@Resource.Load</button>
+                                        </div>
                                     </div>
-                                </div>
-                            </form>
+                                </form>
+                            </div>
                         </div>
-                    </div>
 
 
-                    <div class="demand-key-box">
-                        <div class="demand-title">
-                            <h5>@Resource.Demands</h5>
-                            <span><i class="fa fa-refresh" aria-hidden="true"></i></span>
-                        </div>
-                        <div class="demand-cont">
-                            <form id="frmSaveDemand">
-                                <div class="key-stone-input">
-                                    <input type="text" id="txtSaveDemand" name="SaveDemand" value="" class="form-control" placeholder="Write name here">
-                                    <div class="demand-select">
-                                        <select class="form-control" id="ddlSaveDemand" name="Demand" title="IDdemand">
-                                            <option value="">Select Name</option>
-                                        </select>
-                                        <input type="file" id="fileUploadDemand" class="form-control" name="fileUploadDemand">
+                        <div class="demand-key-box">
+                            <div class="demand-title">
+                                <h5>@Resource.Demands</h5>
+                                <span><i class="fa fa-refresh" aria-hidden="true"></i></span>
+                            </div>
+                            <div class="demand-cont">
+                                <form id="frmSaveDemand">
+                                    <div class="key-stone-input">
+                                        <input type="text" id="txtSaveDemand" name="SaveDemand" value="" class="form-control" placeholder="Write name here">
+                                        <div class="demand-select">
+                                            <select class="form-control" id="ddlSaveDemand" name="Demand" title="IDdemand">
+                                                <option value="">Select Name</option>
+                                            </select>
+                                            <input type="file" id="fileUploadDemand" class="form-control" name="fileUploadDemand">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="stone-key-btn">
-                                    <div class="stone-save">
-                                        <img src="~/Content/img/save-icon.png" />
-                                        <button type="submit" id="btnSaveDemand">@Resource.Save</button>
+                                    <div class="stone-key-btn">
+                                        <div class="stone-save">
+                                            <img src="~/Content/img/save-icon.png" />
+                                            <button type="submit" id="btnSaveDemand">@Resource.Save</button>
+                                        </div>
+                                        <div class="stone-load">
+                                            <img src="~/Content/img/load-icon.png" />
+                                            <button type="button" name="command" id="btnLoadSavedDemand" value="">@Resource.Load </button>
+                                        </div>
+                                        @*<div class="stone-demand">
+                                    <span class="upload-filter">@Resource.Multiple_Demand</span>
+                                </div>*@
                                     </div>
-                                    <div class="stone-load">
-                                        <img src="~/Content/img/load-icon.png" />
-                                        <button type="button" name="command" id="btnLoadSavedDemand" value="">@Resource.Load </button>
-                                    </div>
-                                    @*<div class="stone-demand">
-                                        <span class="upload-filter">@Resource.Multiple_Demand</span>
-                                    </div>*@
-                                </div>
-                            </form>
+                                </form>
+                            </div>
                         </div>
                     </div>
 
                     @*<div class="key-box">
-                            <div class="panel">
-                                <div class="key-panel-heading">
-                                    <a id="ancLNCollapse" data-toggle="collapse" href="#collapse3"><div class="panel-heading">@Resource.UPLOAD_LOTCERT_NUMBER_TO_SEARCH<span class="glyphicon glyphicon-plus pull-right"> </span></div></a>
+                <div class="panel">
+                    <div class="key-panel-heading">
+                        <a id="ancLNCollapse" data-toggle="collapse" href="#collapse3"><div class="panel-heading">@Resource.UPLOAD_LOTCERT_NUMBER_TO_SEARCH<span class="glyphicon glyphicon-plus pull-right"> </span></div></a>
+                    </div>
+                    <div id="collapse3" class="panel-collapse collapse" aria-expanded="false">
+                        <div class="panel-body">
+                            <div class="load-boxes">
+                                <div class="key-stone-input">
+                                    <span class="upload-filter">@Resource.Lot_Number_to_Search</span>
+                                    <input type="text" id="lotnumber" name="lotnumber" class="form-control" placeholder="Enter Lot Number">
                                 </div>
-                                <div id="collapse3" class="panel-collapse collapse" aria-expanded="false">
-                                    <div class="panel-body">
-                                        <div class="load-boxes">
-                                            <div class="key-stone-input">
-                                                <span class="upload-filter">@Resource.Lot_Number_to_Search</span>
-                                                <input type="text" id="lotnumber" name="lotnumber" class="form-control" placeholder="Enter Lot Number">
-                                            </div>
-                                            <div class="key-stone-input">
-                                                <span class="upload-filter">@Resource.Select_csv_file_to_upload</span>
-                                                <input type="file" accept=".csv" id="fileUpload" class="form-control" name="fileUpload">
-                                            </div>
-                                            <div class="key-stone-input">
-                                                <span class="upload-filter">@Resource.Cert_Number_to_Search</span>
-                                                <input type="text" id="certNo" name="certNo" class="form-control" placeholder="Enter cert Number" onkeyup="javascript:Comma(this.value,this.id);">
-                                            </div>
-                                            <div class="key-stone-input">
-                                                <span class="upload-filter">@Resource.Select_csv_file_to_upload</span>
-                                                <input type="file" accept=".csv" id="fileUploadCert" class="form-control" name="fileUploadCert">
-                                            </div>
-                                        </div>
-
-                                        <div class="refresh-btn">
-                                            <button id="dydReset" type="reset" value="reset">@Resource.RESET <i class="fa fa-refresh" aria-hidden="true"></i></button>
-                                        </div>
-                                    </div>
+                                <div class="key-stone-input">
+                                    <span class="upload-filter">@Resource.Select_csv_file_to_upload</span>
+                                    <input type="file" accept=".csv" id="fileUpload" class="form-control" name="fileUpload">
+                                </div>
+                                <div class="key-stone-input">
+                                    <span class="upload-filter">@Resource.Cert_Number_to_Search</span>
+                                    <input type="text" id="certNo" name="certNo" class="form-control" placeholder="Enter cert Number" onkeyup="javascript:Comma(this.value,this.id);">
+                                </div>
+                                <div class="key-stone-input">
+                                    <span class="upload-filter">@Resource.Select_csv_file_to_upload</span>
+                                    <input type="file" accept=".csv" id="fileUploadCert" class="form-control" name="fileUploadCert">
                                 </div>
                             </div>
-                        </div>*@
+
+                            <div class="refresh-btn">
+                                <button id="dydReset" type="reset" value="reset">@Resource.RESET <i class="fa fa-refresh" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>*@
 
                 </div>
 
