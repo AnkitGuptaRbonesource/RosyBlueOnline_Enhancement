@@ -16,6 +16,8 @@
         LoadData();
         BindPendingOrders();
         BindCompletedOrders();
+
+        
     };
 
     var RegisterEvent = function () {
@@ -55,84 +57,85 @@
             }
         });
 
-        $(document).ready(function () {
-            //Get Widget Counts
-            $.ajax({
-                url: "Dashboard/GetWidgetCounts",
-                type: 'GET',
-                async:true,
-                dataType: 'JSON',
-                data: {
-                    fromDate: startDate,
-                    toDate: endDate
-                },
-                beforeSend: function () {
-                    $("#widgetsLoader").fadeToggle('fast');
-                },
-                complete: function () {
-                    $("#widgetsLoader").fadeToggle('fast');
-                },
-                success: function (result) {
-                    if (result != null) {
+        //$(document).ready(function () {
+        //    //Get Widget Counts
+        //    $.ajax({
+        //        url: "Dashboard/GetWidgetCounts",
+        //        type: 'GET',
+        //        async:true,
+        //        dataType: 'JSON',
+        //        data: {
+        //            fromDate: startDate,
+        //            toDate: endDate
+        //        },
+        //        beforeSend: function () {
+        //            $("#widgetsLoader").fadeToggle('fast');
+        //        },
+        //        complete: function () {
+        //            $("#widgetsLoader").fadeToggle('fast');
+        //        },
+        //        success: function (result) {
+        //            if (result != null) {
 
-                        if (result.status === 1) {
+        //                if (result.status === 1) {
 
-                            var data = result.data;
-                            for (i = 0; i < data.length; i++) {
-                                $(`#${data[i].key}`).html(data[i].value); //TotalRoundShapes
-                            }
-                        }
+        //                    var data = result.data;
+        //                    for (i = 0; i < data.length; i++) {
+        //                        $(`#${data[i].key}`).html(data[i].value); //TotalRoundShapes
+        //                    }
+        //                }
 
-                    }
-                }
-            });
+        //            }
+        //        }
+        //    });
 
             //Get Saved Searches
-            $.ajax({
-                url: "Dashboard/GetDashboardRecentSearches",
-                async:true,
-                beforeSend: function () {
-                   //Show Loader
-                },
-                complete: function () {
-                    //Hide Loader
-                },
-                success: function (result) {
-                    $('#s_search').html(result);
-                }
-            });
+            //$.ajax({
+            //    url: "Dashboard/GetDashboardRecentSearches",
+            //    async:true,
+            //    beforeSend: function () {
+            //       //Show Loader
+            //    },
+            //    complete: function () {
+            //        //Hide Loader
+            //    },
+            //    success: function (result) {
+            //        $('#s_search').html(result);
+            //    }
+            //});
 
-            $.ajax({
-                url: "Dashboard/GetDashboardRecentSearches",
-                async: true,
-                beforeSend: function () {
-                    //Show Loader
-                },
-                complete: function () {
-                    //Hide Loader
-                },
-                success: function (result) {
-                    $('#d_search').html(result);
-                }
-            });
-            $.ajax({
-                url: "Dashboard/GetDashboardRecentSearches",
-                async: true,
-                beforeSend: function () {
-                    //Show Loader
-                },
-                complete: function () {
-                    //Hide Loader
-                },
-                success: function (result) {
-                    $('#r_search').html(result);
-                }
-            });
-        })
+            //$.ajax({
+            //    url: "Dashboard/GetDashboardRecentSearches",
+            //    async: true,
+            //    beforeSend: function () {
+            //        //Show Loader
+            //    },
+            //    complete: function () {
+            //        //Hide Loader
+            //    },
+            //    success: function (result) {
+            //        $('#d_search').html(result);
+            //    }
+            //});
+            //$.ajax({
+            //    url: "Dashboard/GetDashboardRecentSearches",
+            //    async: true,
+            //    beforeSend: function () {
+            //        //Show Loader
+            //    },
+            //    complete: function () {
+            //        //Hide Loader
+            //    },
+            //    success: function (result) {
+            //        $('#r_search').html(result);
+            //    }
+            //});
+      //  })
 
     };
 
     var LoadData = function () {
+        uiApp.BlockUI();
         objDashSvc.GetDashboard().then(function (data) {
             BindRecentSearch(data);
             BindSavedSearch(data);
@@ -141,8 +144,10 @@
             BindRecentStock(data);
             //BindCustomerDemandDetail(data);
             //BindCustomerRecentDetail(data);
+            uiApp.UnBlockUI();
         }, function (error) {
         });
+
     }
 
     var BindRecentSearch = function (data) {
@@ -202,115 +207,173 @@
 
     }
 
-    var BindSavedSearch = function (data) {
-        if (dtSavedSearch.getDataTable() == null || dtSavedSearch.getDataTable() == undefined) {
-            dtSavedSearch.init({
-                src: '#tblSavedSearch',
-                dataTable: {
-                    paging: false,
-                    order: [[1, "desc"]],
-                    processing: false,
-                    serverSide: false,
-                    data: data.SavedSearch,
-                    columns: [
-                        { data: "Createdon" },
-                        { data: "TotalFound" },
-                        { data: "displayCriteria" },
-                        { data: "searchCriteria" },
-                        { data: "recentSearchID" }
-                    ],
-                    columnDefs: [{
-                        targets: [0, 1, 2, 3, 4],
-                        className: "rsearch"
-                    }, {
-                        targets: [0],
-                        render: function (data, type, row) {
-                            return moment(row.Createdon).format(myApp.dateFormat.Client);
-                        },
-                        orderable: false
-                    }, {
-                        targets: [3],
-                        render: function (data, type, row) {
-                            return '<a class="loadData" data-Criteria="' + row.searchCriteria + '" href="#"><span class="se-bx"><i class="fa fa-search" aria-hidden="true"></i></span></a>';
-                        },
-                        orderable: false
-                    }, {
-                        targets: [4],
-                        render: function (data, type, row) {
-                            return '<a class="removeSearch" data-id="' + row.recentSearchID + '" href="#"><span class="se-bx de-bx"><i class="fa fa-trash" aria-hidden="true"></i></span></a>';
-                        },
-                        orderable: false
-                    }]
-                },
-                onCheckboxChange: function (obj) {
-                    ListMemo = obj;
-                }
+    var BindSavedSearch = function (data) { 
+       // uiApp.BlockUI();
+        if (data.SavedSearch.length > 0) { 
+            $.each(data.SavedSearch, function (i, item) {
+                var  newListItem =  '<li class="table-li">' +
+                    '<div class="se-info">' +
+                    '<div class="seinfo-l1"><span class="sespce sefound">' + item.TotalFound + '</span><span class="sespce sedate">' + moment(item.Createdon).fromNow(true)+' ago </span><span class="sespce sename">' + item.searchCriteriaName + '</span></div>' +
+                    '<div class="seinfo-l2">' + item.displayCriteria + '</div>' +
+                    '</div>' +
+                    '<div class="se-info-action">' +
+                    '<a class="act-link al1 loadData" href="#" data-Criteria=' + item.searchCriteria+' ><span class="se-bx"><i class="fa fa-search" aria-hidden="true"></i></span></a>' + 
+                    '<a class="act-link al2 removeSearch" href="#"  data-id=' + item.recentSearchID + '><span class="se-bx de-bx"><i class="fa fa-trash" aria-hidden="true"></i></span></a>' +
+                    '</div>' +
+                    '</li > ';
+                $("#tblSavedSearch").append(newListItem);
             });
+              
+
+          //  uiApp.UnBlockUI();
         } else {
-            dtSavedSearch.clearSelection();
-            var table = dtSavedSearch.getDataTable();
-            table.clear().draw();
-            for (var i = 0; i < data.SavedSearch.length; i++) {
-                table.row.add(data.SavedSearch[i]);
-            }
-            table.draw(false);
+
+            var NodataFound = '<div class="table-no-results text-center">' +
+                '<div class="table-nrimg-box" > <img src="../Content/img/no_data_icon.svg" alt="" /></div >' +
+                ' <div class="table-nr-text">You’ve not saved any search yet!</div>' +
+                '<div class="table-btn-box">' +
+                ' <a href="/Inventory/SpecificSearch" class="btn btn-primary"><i class="fa fa-search" aria-hidden="true"></i> Search Now</a>' +
+                '</div> </div >';
+            $("#tblSavedSearch").append(NodataFound);
+           // uiApp.UnBlockUI();
         }
 
-    }
 
-    var BindDemandSearch = function (data) {
-        if (dtDemandSearch.getDataTable() == null || dtDemandSearch.getDataTable() == undefined) {
-            dtDemandSearch.init({
-                src: '#tblDemandSearch',
-                dataTable: {
-                    paging: false,
-                    order: [[1, "desc"]],
-                    processing: false,
-                    serverSide: false,
-                    data: data.DemandSearch,
-                    columns: [
-                        { data: "Createdon" },
-                        { data: "TotalFound" },
-                        { data: "searchCriteria" },
-                        { data: "recentSearchID" },
-                        { data: "recentSearchID" }
-                    ],
-                    columnDefs: [{
-                        targets: [0, 1, 2, 3, 4],
-                        className: "rsearch"
-                    }, {
-                        targets: [0],
-                        render: function (data, type, row) {
-                            return moment(row.Createdon).format(myApp.dateFormat.Client);
-                        },
-                        orderable: false
-                    }, {
-                        targets: [3],
-                        render: function (data, type, row) {
-                            return '<a class="loadData" data-Criteria="' + row.searchCriteria + '" href="#"><span class="se-bx"><i class="fa fa-search" aria-hidden="true"></i></span></a>';
-                        },
-                        orderable: false
-                    }, {
-                        targets: [4],
-                        render: function (data, type, row) {
-                            return '<a class="removeSearch" data-id="' + row.recentSearchID + '" href="#"><span class="se-bx de-bx"><i class="fa fa-trash" aria-hidden="true"></i></span></a>';
-                        },
-                        orderable: false
-                    }]
-                },
-                onCheckboxChange: function (obj) {
-                    ListMemo = obj;
-                }
+
+        //if (dtSavedSearch.getDataTable() == null || dtSavedSearch.getDataTable() == undefined) {
+        //    dtSavedSearch.init({
+        //        src: '#tblSavedSearch',
+        //        dataTable: {
+        //            paging: false,
+        //            order: [[1, "desc"]],
+        //            processing: false,
+        //            serverSide: false,
+        //            data: data.SavedSearch,
+        //            columns: [
+        //                { data: "Createdon" },
+        //                { data: "TotalFound" },
+        //                { data: "displayCriteria" },
+        //                { data: "searchCriteria" },
+        //                { data: "recentSearchID" }
+        //            ],
+        //            columnDefs: [{
+        //                targets: [0, 1, 2, 3, 4],
+        //                className: "rsearch"
+        //            }, {
+        //                targets: [0],
+        //                render: function (data, type, row) {
+        //                    return moment(row.Createdon).format(myApp.dateFormat.Client);
+        //                },
+        //                orderable: false
+        //            }, {
+        //                targets: [3],
+        //                render: function (data, type, row) {
+        //                    return '<a class="loadData" data-Criteria="' + row.searchCriteria + '" href="#"><span class="se-bx"><i class="fa fa-search" aria-hidden="true"></i></span></a>';
+        //                },
+        //                orderable: false
+        //            }, {
+        //                targets: [4],
+        //                render: function (data, type, row) {
+        //                    return '<a class="removeSearch" data-id="' + row.recentSearchID + '" href="#"><span class="se-bx de-bx"><i class="fa fa-trash" aria-hidden="true"></i></span></a>';
+        //                },
+        //                orderable: false
+        //            }]
+        //        },
+        //        onCheckboxChange: function (obj) {
+        //            ListMemo = obj;
+        //        }
+        //    });
+        //} else {
+        //    dtSavedSearch.clearSelection();
+        //    var table = dtSavedSearch.getDataTable();
+        //    table.clear().draw();
+        //    for (var i = 0; i < data.SavedSearch.length; i++) {
+        //        table.row.add(data.SavedSearch[i]);
+        //    }
+        //    table.draw(false);
+        //}
+    }    
+    
+    var BindDemandSearch = function (data) { 
+        if (data.DemandSearch.length > 0) {
+            $.each(data.DemandSearch, function (i, item) {
+                var newListItem = '<li class="table-li">' +
+                    '<div class="se-info">' +
+                    '<div class="seinfo-l1"><span class="sespce sefound">' + item.TotalFound + '</span><span class="sespce sedate">' + moment(item.Createdon).fromNow(true) +' ago </span><span class="sespce sename">' + item.searchCriteriaName + '</span></div>' +
+                    '<div class="seinfo-l2">' + item.displayCriteria + '</div>' +
+                    '</div>' +
+                    '<div class="se-info-action">' +
+                     '<a class="act-link al1 loadData" href="#" data-Criteria=' + item.searchCriteria + ' ><span class="se-bx"><i class="fa fa-search" aria-hidden="true"></i></span></a>' +
+                    '<a class="act-link al2 removeSearch" href="#"  data-id=' + item.recentSearchID + '><span class="se-bx de-bx"><i class="fa fa-trash" aria-hidden="true"></i></span></a>' +
+
+                    '</div>' +
+                    '</li > ';
+                $("#tblDemandSearch").append(newListItem);
             });
+
+             
         } else {
-            dtDemandSearch.clearSelection();
-            var table = dtDemandSearch.getDataTable();
-            table.clear().draw();
-            for (var i = 0; i < data.DemandSearch.length; i++) {
-                table.row.add(data.DemandSearch[i]);
-            }
-            table.draw(false);
+
+            var NodataFound = '<div class="table-no-results text-center">' +
+                '<div class="table-nrimg-box" > <img src="../Content/img/no_data_icon.svg" alt="" /></div >' +
+                ' <div class="table-nr-text">You’ve not saved any search yet!</div>' +
+                '<div class="table-btn-box">' +
+                ' <a href="/Inventory/SpecificSearch" class="btn btn-primary"><i class="fa fa-search" aria-hidden="true"></i> Search Now</a>' +
+                '</div> </div >';
+            $("#tblDemandSearch").append(NodataFound); 
         }
+        //if (dtDemandSearch.getDataTable() == null || dtDemandSearch.getDataTable() == undefined) {
+        //    dtDemandSearch.init({
+        //        src: '#tblDemandSearch',
+        //        dataTable: {
+        //            paging: false,
+        //            order: [[1, "desc"]],
+        //            processing: false,
+        //            serverSide: false,
+        //            data: data.DemandSearch,
+        //            columns: [
+        //                { data: "Createdon" },
+        //                { data: "TotalFound" },
+        //                { data: "searchCriteria" },
+        //                { data: "recentSearchID" },
+        //                { data: "recentSearchID" }
+        //            ],
+        //            columnDefs: [{
+        //                targets: [0, 1, 2, 3, 4],
+        //                className: "rsearch"
+        //            }, {
+        //                targets: [0],
+        //                render: function (data, type, row) {
+        //                    return moment(row.Createdon).format(myApp.dateFormat.Client);
+        //                },
+        //                orderable: false
+        //            }, {
+        //                targets: [3],
+        //                render: function (data, type, row) {
+        //                    return '<a class="loadData" data-Criteria="' + row.searchCriteria + '" href="#"><span class="se-bx"><i class="fa fa-search" aria-hidden="true"></i></span></a>';
+        //                },
+        //                orderable: false
+        //            }, {
+        //                targets: [4],
+        //                render: function (data, type, row) {
+        //                    return '<a class="removeSearch" data-id="' + row.recentSearchID + '" href="#"><span class="se-bx de-bx"><i class="fa fa-trash" aria-hidden="true"></i></span></a>';
+        //                },
+        //                orderable: false
+        //            }]
+        //        },
+        //        onCheckboxChange: function (obj) {
+        //            ListMemo = obj;
+        //        }
+        //    });
+        //} else {
+        //    dtDemandSearch.clearSelection();
+        //    var table = dtDemandSearch.getDataTable();
+        //    table.clear().draw();
+        //    for (var i = 0; i < data.DemandSearch.length; i++) {
+        //        table.row.add(data.DemandSearch[i]);
+        //    }
+        //    table.draw(false);
+        //}
     }
 
     var BindCounts = function (data) {

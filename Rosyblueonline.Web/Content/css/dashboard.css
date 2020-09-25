@@ -2325,8 +2325,19 @@ a.sele-all {
     color: #4F4F4F;
 }
 
-.advance-searchflt{
-  margin-top:10px;
+.advance-searchflt {
+    position: relative;
+    display: block;
+    width: 100%;
+    background-color: #fff;
+    margin: 0;
+    padding: 25px 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.advance-searchflt .stoe-describe-box {
+    margin-bottom: 0;
+    border: none;
 }
 .stoe-describe-box {
   position: relative;
@@ -2356,6 +2367,7 @@ a.sele-all {
     display: flex;
     width: 100%;
     align-items: center;
+    margin-bottom: 10px;
 }
 #btnAddSizes {
     border-radius: 50%;
@@ -2496,7 +2508,7 @@ a.sele-all {
     width: 100%;
     margin: 0;
     z-index: 5;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
 }
 .stone-reset i {
     font-size: 35px;
@@ -2774,7 +2786,7 @@ a.sele-all {
     background: #FFFFFF;
     box-shadow: 0px 15px 60px rgba(51, 51, 51, 0.03);
     border-radius: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     cursor: pointer;
 }
 .keyselect-box .key-title h5 {
@@ -2869,8 +2881,75 @@ a.sele-all {
     transform: rotateZ(180deg);
 }
 
+/*search bar horizontal view*/
 
-
+.search-stone-box2 {
+    position: relative;
+    width: 100%;
+    display: block;
+}
+.stone-details-boxes2 {
+    max-width: 100%;
+}
+.stone-details-boxes2 .stone-details-box {
+    max-height: initial;
+    margin-bottom: 20px;
+}
+.keysearch-box2 {
+    max-width: initial;
+}
+.search-stone-box2 .dimaond-list-box {
+    max-height: initial;
+}
+.search-stone-box2 .stone-list {
+    max-width: initial;
+    margin-bottom: 20px;
+}
+.search-stone-box2 .stone-list {
+    max-width: initial;
+    margin-bottom: 20px;
+    padding: 2px 20px;
+}
+.diamond-box {
+    position: relative;
+    display: inline-block;
+    width: fit-content;
+    float: left;
+}
+.search-stone-box2 .dimaond-list-box {
+    max-height: initial;
+    width: fit-content;
+    overflow: hidden;
+}
+.search-stone-box2 .dimaond-list-box .diamond-box {
+    position: relative;
+    display: inline-block;
+    width: fit-content;
+    float: left;
+}
+.diamond-demand-box .demand-key-box {
+    width: 49%;
+}
+.diamond-demand-box {
+    position: relative;
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+}
+.search-stone-box2 .stone-list .dl-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.diamond-selectbox {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+.diamond-selectbox p {
+    margin-left: 12px;
+}
 
 
 
@@ -2893,6 +2972,9 @@ a.sele-all {
     .keysearch-box {
         max-width: 260px;
     }
+    .keysearch-box2 {
+        max-width: initial;
+    }
     .describe-line .reset-btn{
         margin-left: 0;
     }
@@ -2908,6 +2990,13 @@ a.sele-all {
     .dyd-shape {
         margin-bottom: 10px;
     }
+    .stone-details-boxes.stone-details-boxes2 {
+        max-width: initial;
+        margin: 0;
+    }
+    .diamond-demand-box{
+        width: 100%;
+    }
 }
 
 @media only screen and ( min-width:1100px) and (max-width:1300px) {
@@ -2919,6 +3008,10 @@ a.sele-all {
     .keysearch-box {
         max-width: 350px;
         max-height: 600px;
+    }
+    .keysearch-box2 {
+        max-width: initial;
+        max-height: initial;
     }
 
     .describe-line .reset-btn {
@@ -2946,6 +3039,10 @@ a.sele-all {
     .dimaond-list-box {
         max-height: 560px;
     }
+    .stone-details-boxes.stone-details-boxes2 {
+        max-width: initial;
+        margin: 0;
+    }
 }
 
 
@@ -2958,6 +3055,10 @@ a.sele-all {
     .keysearch-box {
         max-width: 350px;
         max-height: 600px;
+    }
+    .keysearch-box2 {
+        max-width: initial;
+        max-height: initial;
     }
 
     .describe-line .reset-btn {
@@ -2988,6 +3089,10 @@ a.sele-all {
     .key-input-box{
         max-height: 380px;
     }
+    .stone-details-boxes.stone-details-boxes2 {
+        max-width: initial;
+        margin: 0;
+    }
 }
 @media only screen and ( min-width:1400px) and (max-width:1500px) {
     .stone-details-boxes {
@@ -2997,6 +3102,10 @@ a.sele-all {
 
     .keysearch-box {
         max-width: 350px;
+    }
+    .keysearch-box2 {
+        max-width: initial;
+        max-height: initial;
     }
 
     .describe-line .reset-btn {
@@ -3024,6 +3133,10 @@ a.sele-all {
     .dimaond-list-box {
         max-height: 650px;
     }
+    .stone-details-boxes.stone-details-boxes2 {
+        max-width: initial;
+        margin: 0;
+    }
 }
 @media only screen and ( min-width:1500px) and (max-width:1650px) {
     .stone-details-boxes {
@@ -3032,6 +3145,10 @@ a.sele-all {
     }
     .keysearch-box {
         max-width: 400px;
+    }
+    .keysearch-box2 {
+        max-width: initial;
+        max-height: initial;
     }
     .describe-line .reset-btn {
         margin-left: 0;
@@ -3053,6 +3170,10 @@ a.sele-all {
     }
     .dimaond-list-box {
         max-height: 650px;
+    }
+    .stone-details-boxes.stone-details-boxes2 {
+        max-width: initial;
+        margin: 0;
     }
 }
 
