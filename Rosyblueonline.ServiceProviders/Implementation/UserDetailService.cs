@@ -353,7 +353,8 @@ namespace Rosyblueonline.ServiceProviders.Implementation
                         uow.LoginDetails.Edit(objUD);
                         if (uow.Save() > 0)
                         {
-                            string Body = "Your Current User Name : " + objUD.username + "and Password : " + objUD.password+ " </br>  Click < a href='" + Url + "?v=" + VerificationCode + "&l=" + LoginID.ToString() + "'>here<a> to reset password." ;
+
+                            string Body = "<html><body><p>Dear User,</p><br><p>Your current user name : <b>" + objUD.username + "</b> and Password : <b>" + objUD.password + "</b></p> <p><a href='" + Url + "?v=" + VerificationCode + "&l=" + LoginID.ToString() + "'>Click here to reset your password.</a></p></body></html>";
                             objMu.SendMail(EmailID, "Reset Password", true, Body);
                             return true;
                         }

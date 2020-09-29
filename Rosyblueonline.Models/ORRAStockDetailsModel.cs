@@ -8,9 +8,9 @@ namespace Rosyblueonline.Models
 {
    public class ORRAStockDetailsModel
     {
-        public string Stock { get; set; }
+        public string LotNumber { get; set; } 
         public string Shape { get; set; }
-        public string Weight { get; set; }
+        public string Carat { get; set; }
         public string Color { get; set; }
         public string Clarity { get; set; }
         public string Length { get; set; }
@@ -49,6 +49,15 @@ namespace Rosyblueonline.Models
         public string GroupName { get; set; }
         public string MemberComments { get; set; }
         public string V360 { get; set; } 
+        
 
+    }
+
+    public class PlaceOrderOrra
+    {
+        public int validCount { get; set; }
+        public int InvalidCount { get; set; }
+        public int OrderId { get; set; }
+        public int CustomerId { get; set; }  
     }
 }

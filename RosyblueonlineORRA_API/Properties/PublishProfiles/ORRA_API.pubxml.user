@@ -6,7 +6,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>D:\Ankit\RosyBlueOnline_Enhancement\RosyBlueOnline\RosyblueonlineORRA_API\bin\Release\Publish</_PublishTargetUrl>
+    <_PublishTargetUrl>D:\Ankit\REPO\RBOnlineEnhancement\RosyBlueOnline_Enhancement\RosyblueonlineORRA_API\bin\Release\Publish</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="Areas/HelpPage/HelpPage.css">
@@ -241,46 +241,46 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/16/2020 16:39:08</publishTime>
     </File>
     <File Include="bin/Rosyblueonline.Adapters.dll">
-      <publishTime>08/04/2020 10:09:45</publishTime>
+      <publishTime>09/16/2020 13:25:09</publishTime>
     </File>
     <File Include="bin/Rosyblueonline.Adapters.pdb">
-      <publishTime>08/04/2020 10:09:45</publishTime>
+      <publishTime>09/16/2020 13:25:09</publishTime>
     </File>
     <File Include="bin/Rosyblueonline.Framework.dll">
-      <publishTime>07/21/2020 12:24:49</publishTime>
+      <publishTime>09/09/2020 12:03:40</publishTime>
     </File>
     <File Include="bin/Rosyblueonline.Framework.pdb">
-      <publishTime>07/21/2020 12:24:49</publishTime>
+      <publishTime>09/09/2020 12:03:40</publishTime>
     </File>
     <File Include="bin/Rosyblueonline.Models.dll">
-      <publishTime>08/04/2020 10:09:44</publishTime>
+      <publishTime>09/16/2020 13:25:08</publishTime>
     </File>
     <File Include="bin/Rosyblueonline.Models.pdb">
-      <publishTime>08/04/2020 10:09:44</publishTime>
+      <publishTime>09/16/2020 13:25:08</publishTime>
     </File>
     <File Include="bin/Rosyblueonline.Repository.dll">
-      <publishTime>08/04/2020 10:09:45</publishTime>
+      <publishTime>09/17/2020 17:04:56</publishTime>
     </File>
     <File Include="bin/Rosyblueonline.Repository.dll.config">
       <publishTime>07/16/2020 16:39:02</publishTime>
     </File>
     <File Include="bin/Rosyblueonline.Repository.pdb">
-      <publishTime>08/04/2020 10:09:45</publishTime>
+      <publishTime>09/17/2020 17:04:56</publishTime>
     </File>
     <File Include="bin/Rosyblueonline.ServiceProviders.dll">
-      <publishTime>08/04/2020 10:09:46</publishTime>
+      <publishTime>09/17/2020 17:04:57</publishTime>
     </File>
     <File Include="bin/Rosyblueonline.ServiceProviders.dll.config">
       <publishTime>07/16/2020 16:39:02</publishTime>
     </File>
     <File Include="bin/Rosyblueonline.ServiceProviders.pdb">
-      <publishTime>08/04/2020 10:09:46</publishTime>
+      <publishTime>09/17/2020 17:04:57</publishTime>
     </File>
     <File Include="bin/RosyblueonlineORRA_API.dll">
-      <publishTime>08/04/2020 10:09:46</publishTime>
+      <publishTime>09/17/2020 17:09:01</publishTime>
     </File>
     <File Include="bin/RosyblueonlineORRA_API.pdb">
-      <publishTime>08/04/2020 10:09:46</publishTime>
+      <publishTime>09/17/2020 17:09:01</publishTime>
     </File>
     <File Include="bin/System.Net.Http.Formatting.dll">
       <publishTime>11/28/2018 13:00:36</publishTime>
@@ -357,6 +357,45 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Content/bootstrap.min.css.map">
       <publishTime>08/02/2020 19:31:59</publishTime>
     </File>
+    <File Include="Content/EmailTemplate/CancelMemo.html">
+      <publishTime>09/11/2020 12:55:57</publishTime>
+    </File>
+    <File Include="Content/EmailTemplate/CancelOrder.html">
+      <publishTime>09/11/2020 12:55:57</publishTime>
+    </File>
+    <File Include="Content/EmailTemplate/ConfirmOrderMail.html">
+      <publishTime>09/11/2020 12:55:57</publishTime>
+    </File>
+    <File Include="Content/EmailTemplate/CustomerRegistration.html">
+      <publishTime>09/11/2020 12:55:58</publishTime>
+    </File>
+    <File Include="Content/EmailTemplate/EventInventoryChangeSendMail.html">
+      <publishTime>09/11/2020 12:55:58</publishTime>
+    </File>
+    <File Include="Content/EmailTemplate/EventSendMail.html">
+      <publishTime>09/11/2020 12:55:58</publishTime>
+    </File>
+    <File Include="Content/EmailTemplate/InventoryUploadNotification.html">
+      <publishTime>09/11/2020 12:55:58</publishTime>
+    </File>
+    <File Include="Content/EmailTemplate/PlaceOrderMail-Admin.html">
+      <publishTime>09/11/2020 12:55:58</publishTime>
+    </File>
+    <File Include="Content/EmailTemplate/PlaceOrderMail-Customer.html">
+      <publishTime>09/11/2020 12:55:58</publishTime>
+    </File>
+    <File Include="Content/EmailTemplate/PutOnMemo.html">
+      <publishTime>09/11/2020 12:55:58</publishTime>
+    </File>
+    <File Include="Content/EmailTemplate/SellMemo.html">
+      <publishTime>09/11/2020 12:55:58</publishTime>
+    </File>
+    <File Include="Content/EmailTemplate/SendMail.html">
+      <publishTime>09/11/2020 12:55:58</publishTime>
+    </File>
+    <File Include="Content/EmailTemplate/SplitMemo.html">
+      <publishTime>09/11/2020 12:55:58</publishTime>
+    </File>
     <File Include="Content/Site.css">
       <publishTime>08/02/2020 19:31:48</publishTime>
     </File>
@@ -411,11 +450,14 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Views/Home/Index.cshtml">
       <publishTime>08/02/2020 19:31:48</publishTime>
     </File>
+    <File Include="Views/Home12/Index.cshtml">
+      <publishTime>08/02/2020 19:31:48</publishTime>
+    </File>
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>08/02/2020 19:31:48</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>08/02/2020 19:31:48</publishTime>
+      <publishTime>09/11/2020 15:30:17</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>08/02/2020 19:31:48</publishTime>
@@ -424,7 +466,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/02/2020 19:31:48</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>08/04/2020 10:09:48</publishTime>
+      <publishTime>09/16/2020 13:25:14</publishTime>
     </File>
   </ItemGroup>
 </Project>

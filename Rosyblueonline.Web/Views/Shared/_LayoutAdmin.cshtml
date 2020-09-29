@@ -1,9 +1,11 @@
 ﻿@{
     TokenLogModel objToken = Session["Token"] as TokenLogModel;
     UserMenuAccessModel objMenuAccess = Session["MenuAccess"] as UserMenuAccessModel;
+    string CurrentCulture = Request.Cookies["CurrentCulture"] == null ? "en" : Request.Cookies["CurrentCulture"].Value;
+
 }
 <!DOCTYPE html>
-<html>
+<html lang="@CurrentCulture">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -36,6 +38,20 @@
                     <span class="sr-only"> Toggle navigation</span>
                 </a>
                 <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="#">Select Language</a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <select name="Language" id="ddlLanguage" class="form-control">
+                                <option value="en" @(@CurrentCulture == "en" ? "selected" : "")>English</option>
+                                <option value="ja" @(@CurrentCulture == "ja" ? "selected" : "")>Japanese</option>
+                                @* <option value="hi" @(@CurrentCulture == "hi" ? "selected" : "")>Hindi</option>*@
+                            </select>
+                        </li>
+                    </ul>
                     <ul class="nav navbar-nav">
                         @*<li class="dropdown dropdown-toggle">
                                 <a href="/CustomerUpdate/UserActivity/3024">
@@ -95,7 +111,7 @@
                             </a>
                         </li>
                     }
-               
+
                     @if (objMenuAccess.Dashboard == 1)
                     {
                         <li class="treeview">
@@ -231,7 +247,7 @@
                                 {
                                     <li><a href="/User/BlockSite"><i class="fa fa-ban"></i>@Resource.Block_Site</a></li>
                                 }
-                                <li >
+                                <li>
                                     <a href="/MenuPermissionMaster/Index">
                                         <i class="fa fa-user-plus"></i>
                                         Menu_Master
@@ -271,5 +287,44 @@
     <script type="text/javascript" src="/Scripts/custom/uiApp.js"></script>
     <script type="text/javascript" src="/Scripts/custom/Service/ServiceMethods.js"></script>
     @RenderSection("script", false)
+
+
+
+    <script>
+        $(document).ready(function () {
+            var ls = new LanguageService();
+
+            $('#ddlLanguage').change(function (e) {
+                e.preventDefault();
+                var code = $('#ddlLanguage').val();
+                ls.changeCulture(code).then(function (response) {
+                    location.reload();
+                }, function (error) {
+
+                });
+            });
+        });
+
+        var LanguageService = function () {
+            var obj = {};
+
+            obj.changeCulture = function (ddlCulture) {
+                return new Promise(function (fulfilled, reject) {
+                    $.ajax({
+                        url: ('/Home/ChangeCulture?ddlCulture=' + ddlCulture),
+                        method: 'post',
+                        success: function (response) {
+                            fulfilled(response);
+                        },
+                        error: function (error) {
+                            reject(error);
+                        }
+                    });
+                });
+            };
+
+            return obj;
+        }
+    </script>
 </body>
 </html>

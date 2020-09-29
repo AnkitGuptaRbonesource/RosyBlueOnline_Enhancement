@@ -60,9 +60,14 @@ namespace Rosyblueonline.ServiceProviders.Implementation
 
         public List<T> InventoryDownload<T>(params string[] Parameters) where T : class
         {
-            if (Parameters.Length > 7)
+            if (Parameters.Length-1 > 7)
             {
                 return this.uow.ExecuteQuery<T>("Exec proc_CustomSiteSearch '{0}','{1}',{2},{3},'{4}','{5}','{6}','{7}','{8}'", Parameters);
+
+            }
+            else if (Parameters.Length >6)
+            {
+                return this.uow.ExecuteQuery<T>("Exec proc_CustomSiteSearch '{0}','{1}',{2},{3},'{4}','{5}','{6}','{7}'", Parameters);
             }
             else
             {
@@ -288,8 +293,8 @@ namespace Rosyblueonline.ServiceProviders.Implementation
 
            
 
-           objInvVM = NewArrival == false ? InventoryDownload<InventoryDownloadViewModel>(LoginID.ToString(), filterText, "0", "500000", "LotNumber", "asc", "SpecificSearchDownload", (IsSpecialSearch ? "SpecialSearch" : "NormalSearch")) :
-                                                  InventoryDownload<InventoryDownloadViewModel>(LoginID.ToString(), filterText, "0", "500000", "LotNumber", "asc", "SpecificSearchDownload", "NewArrival");
+           objInvVM = NewArrival == false ? InventoryDownload<InventoryDownloadViewModel>(LoginID.ToString(), filterText, "0", "500000", "LotNumber", "asc", "EmailSearch", (IsSpecialSearch ? "SpecialSearch" : "NormalSearch")) :
+                                                  InventoryDownload<InventoryDownloadViewModel>(LoginID.ToString(), filterText, "0", "500000", "LotNumber", "asc", "EmailSearch", "NewArrival");
              
             DataTable dt = Rosyblueonline.Framework.ListtoDataTable.ToDataTable<InventoryDownloadViewModel>(objInvVM);
             //dt.Columns["LotNumber"].ColumnName = "Stock";
@@ -305,7 +310,7 @@ namespace Rosyblueonline.ServiceProviders.Implementation
             dt.Columns["RapAmount"].ColumnName = "Rap Amount";
             dt.Columns["Discount"].ColumnName = "Rapnet Discount %";
             dt.Columns["Price"].ColumnName = "Pricect";
-            dt.Columns["CertificateNo"].ColumnName = "Certificate_#";
+            //dt.Columns["CertificateNo"].ColumnName = "Certificate_#";
             dt.Columns["DepthPerc"].ColumnName = "Depth %";
             dt.Columns["TablePerc"].ColumnName = "Table %";
             //dt.Columns["Girdle"].ColumnName = "Girdle Thin";

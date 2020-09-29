@@ -647,15 +647,17 @@
                     order: [[1, "desc"]],
                     processing: false,
                     serverSide: false,
+                   paging: true,
+                    lengthChange: false,
+                    pageLength: 10,
                     data: data.DemandList,
                     columns: [
                         { data: null },
                         { data: "Createdon" },
-                        { data: "TotalFound" },
+                        //{ data: "TotalFound" },
                         { data: "demandName" },
                         { data: "demandCriteria" },
-                        { data: null },
-                        { data: null },
+                        { data: null }, 
                     ],
                     columnDefs: [{
                         targets: [0],
@@ -669,7 +671,7 @@
                         },
                         orderable: false
                     }, {
-                        targets: [5, 6],
+                        targets: [4],
                         render: function (data, type, row) {
                             return '<a class="loadData" data-Criteria="' + row.demandCriteria + '" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>';
                         },
@@ -701,6 +703,9 @@
                     order: [[1, "desc"]],
                     processing: false,
                     serverSide: false,
+                   paging: true,
+                    lengthChange: false,
+                    pageLength: 10,
                     data: data.RecentSearch,
                     columns: [
                         { data: null },
