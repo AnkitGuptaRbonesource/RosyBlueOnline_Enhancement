@@ -1342,13 +1342,13 @@ ul.view-diam-pric {
 	
 }
 .table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td {
-	font-weight: 500;
-font-size: 14px;
-line-height: 22px;
-letter-spacing: 0.5px;
-color: #4F4F4F;
-   border-top: 1px solid #ECE9F1 !important;
-   vertical-align: middle;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+    color: #4F4F4F;
+    border-top: none;
+    vertical-align: middle;
 }
 .table > thead > tr > th {
 	font-weight: 500;
@@ -2221,7 +2221,14 @@ a.sele-all {
 
 
 
-
+.heading-title h2 {
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 24px;
+    color: #3A4276;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+}
 .panel-heading-title {
     font-weight: 600;
     font-size: 26px;
@@ -2304,7 +2311,7 @@ a.sele-all {
     padding-top: 20px;
 }
 .stone-details-box {
-    padding: 20px;
+    padding: 20px 30px;
     padding-top: 0;
     max-height: 820px;
     overflow: hidden;
@@ -2331,7 +2338,7 @@ a.sele-all {
     width: 100%;
     background-color: #fff;
     margin: 0;
-    padding: 25px 20px;
+    padding: 25px 30px;
     border-radius: 10px;
     margin-bottom: 20px;
 }
@@ -2908,7 +2915,7 @@ a.sele-all {
 .search-stone-box2 .stone-list {
     max-width: initial;
     margin-bottom: 20px;
-    padding: 2px 20px;
+    padding: 2px 30px;
 }
 .diamond-box {
     position: relative;
@@ -2949,6 +2956,24 @@ a.sele-all {
 }
 .diamond-selectbox p {
     margin-left: 12px;
+}
+.list-view .table .bordertp2 .tbnew {
+    text-align: center !important;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+    color: #BDBDBD;
+    padding: 20px 2px 12px 16px !important;
+}
+
+.list-view .table .rsearchnew .rsearchnew {
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: 1px;
+    color: #3A4276;
 }
 
 

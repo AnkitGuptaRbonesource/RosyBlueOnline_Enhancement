@@ -122,6 +122,12 @@ span.multiplecarat {
     border-top: 1px solid #f3f3f3;
     margin-top: 20px;
 }
+.customers-list-table .panel-body {
+    padding: 0;
+    padding-top: 0;
+    border-top: none;
+    margin-top: 0;
+}
 
 #uiPanel {
     margin-left: 16%;
@@ -234,6 +240,6 @@ input[type=radio] {
     overflow: hidden;
 }
 
-.milky {
+/*.milky {
     background-color: #00BFFF;
-}
+}*/

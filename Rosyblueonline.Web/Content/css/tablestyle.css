@@ -320,7 +320,7 @@ ul, li {
   margin-bottom: 10px;
 }
 
-.clorbox {
+/*.clorbox {
   display: block;
   min-height: 25px;
   width: 340px;
@@ -329,16 +329,14 @@ ul, li {
   margin-bottom: 10px;
   background-color: #491956;
   color: white;
-}
+}*/
 
 .spngrid {
   padding: 10px;
 }
-
 .fcolor {
-  color: #fff;
+    color: #3a4276;
 }
-
 .paneltable {
 }
 

@@ -413,6 +413,7 @@
     <Content Include="Content\img\add-new.png" />
     <Content Include="Content\img\add-search.png" />
     <Content Include="Content\img\add-stone.svg" />
+    <Content Include="Content\img\addwatchlist-img.svg" />
     <Content Include="Content\img\all_shape.png" />
     <Content Include="Content\img\app-icon.png" />
     <Content Include="Content\img\asscher_shape.png" />
@@ -443,6 +444,7 @@
     <Content Include="Content\img\client-logo.png" />
     <Content Include="Content\img\client-logoMail.png" />
     <Content Include="Content\img\Coloursh.png" />
+    <Content Include="Content\img\Compare-img.svg" />
     <Content Include="Content\img\CUSHION-01-512.png" />
     <Content Include="Content\img\Cushion.png" />
     <Content Include="Content\img\Cushion1.png" />
@@ -463,6 +465,7 @@
     <Content Include="Content\img\emerald_shape.png" />
     <Content Include="Content\img\excel.png" />
     <Content Include="Content\img\excel_logo.png" />
+    <Content Include="Content\img\export-icon.svg" />
     <Content Include="Content\img\fancycoloursh.png" />
     <Content Include="Content\img\fancysh.png" />
     <Content Include="Content\img\fancytp.png" />
@@ -501,6 +504,7 @@
     <Content Include="Content\img\icon_8.jpg" />
     <Content Include="Content\img\icon_9.jpg" />
     <Content Include="Content\img\images2.jpg" />
+    <Content Include="Content\img\inspection-img.svg" />
     <Content Include="Content\img\inventory-icon.png" />
     <Content Include="Content\img\inventorydownload.png" />
     <Content Include="Content\img\inventorysearch.png" />
@@ -519,6 +523,7 @@
     <Content Include="Content\img\Memo.png" />
     <Content Include="Content\img\memohistory.png" />
     <Content Include="Content\img\menu-line.png" />
+    <Content Include="Content\img\Modify-img.svg" />
     <Content Include="Content\img\monthly-report.png" />
     <Content Include="Content\img\monthly-report2.png" />
     <Content Include="Content\img\more-img.svg" />
@@ -530,12 +535,14 @@
     <Content Include="Content\img\other_shape.png" />
     <Content Include="Content\img\oval_shape.png" />
     <Content Include="Content\img\page-underConstructionblocked.png" />
+    <Content Include="Content\img\panel-cart.svg" />
     <Content Include="Content\img\pear_shape.png" />
     <Content Include="Content\img\person_chat.png" />
     <Content Include="Content\img\pivot-table.png" />
     <Content Include="Content\img\pivot-table2.png" />
     <Content Include="Content\img\price-mark.png" />
     <Content Include="Content\img\princess_shape.png" />
+    <Content Include="Content\img\print.svg" />
     <Content Include="Content\img\profile-icon.png" />
     <Content Include="Content\img\qs_table.gif" />
     <Content Include="Content\img\Radiant.png" />
@@ -551,6 +558,7 @@
     <Content Include="Content\img\round_shape.png" />
     <Content Include="Content\img\rsz_rosybluelogo.jpg" />
     <Content Include="Content\img\search-icon.png" />
+    <Content Include="Content\img\search-icon.svg" />
     <Content Include="Content\img\search\all.png" />
     <Content Include="Content\img\search\asscher.png" />
     <Content Include="Content\img\search\blank-bg.png" />
