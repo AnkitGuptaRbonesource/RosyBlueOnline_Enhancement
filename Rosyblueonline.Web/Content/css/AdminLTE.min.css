@@ -723,7 +723,7 @@ body{font-family: 'Karla', sans-serif !important;font-weight:400;overflow-x:hidd
 .export-excelbox {
     position: relative;
     display: flex;
-    width: 100%;
+    width: 88.3%;
     align-items: center;
     margin: 15px 0;
 }
@@ -792,7 +792,7 @@ body{font-family: 'Karla', sans-serif !important;font-weight:400;overflow-x:hidd
     box-shadow: 0px 20px 100px rgba(58, 66, 118, 0.05);
     border-radius: 10px;
 }
-.export-table .table-responsive input[type='checkbox']:after {
+.export-table input[type='checkbox']:after {
     line-height: 1.5em;
     content: '';
     display: inline-block;
@@ -804,7 +804,7 @@ body{font-family: 'Karla', sans-serif !important;font-weight:400;overflow-x:hidd
     border-radius: 5px;
     background: rgb(255 255 255);
 }
-.export-table .table-responsive input[type='checkbox']:checked:after {
+.export-table input[type='checkbox']:checked:after {
     background-color: #e9978c;
     border-color: #e9978c;
     content: '';
@@ -814,6 +814,57 @@ body{font-family: 'Karla', sans-serif !important;font-weight:400;overflow-x:hidd
     text-align: center;
     color: #fff;
 }
+.pagination > li:first-child > a, .pagination > li:first-child > span {
+    color: #e9978c;
+    border-left: 1px solid #ECE9F1;
+    border-right: none;
+}
+.pagination > li:last-child > a, .pagination > li:last-child > span {
+    color: #e9978c;
+}
+.pagination > li > a {
+    background: #ffffff;
+    color: #BDBDBD;
+}
+.pagination > li > a, .pagination > li > span{
+    border: 1px solid #ECE9F1;
+    border-left: none;
+}
+.pagination > .active > a, .pagination > .active > a:focus, .pagination > .active > a:hover, .pagination > .active > span, .pagination > .active > span:focus, .pagination > .active > span:hover {
+    color: #e9978c;
+    background-color: transparent;
+    border-color: #dbdbdb;
+    border-right: none;
+}
+#SearchTablePost_wrapper .top {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: #f2f2f7;
+    padding-bottom: 5px;
+}
+.no-footer {
+    margin-bottom: 0px;
+}
+.list-view .table .table-head .tbnew {
+    background-color: #FAFAFA;
+    border: none;
+    /* box-shadow: 0px 10px 20px rgba(51, 51, 51, 0.1); */
+}
+.table-head {
+    color: #333333;
+    /* box-shadow: 0px 10px 20px rgba(51, 51, 51, 0.1); */
+    border-bottom: 1px solid #ECE9F1;
+}
+div.dataTables_wrapper div.dataTables_length label {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    color: #4F4F4F;
+    margin-right: 15px;
+}
+
 
 
 

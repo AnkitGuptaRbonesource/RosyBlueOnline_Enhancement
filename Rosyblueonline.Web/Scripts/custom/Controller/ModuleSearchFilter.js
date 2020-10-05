@@ -246,6 +246,18 @@
                 });
             }
 
+            //debugger;
+            var utils = $("#tableUtilities").html();
+            var topPanel = $(".dataTables_wrapper .top");
+
+            var topHtml = topPanel.html();
+            topPanel.empty();
+            topPanel.append(utils);
+            topPanel.append(topHtml);
+            $('#txtTableSearch').on('keyup', function () {
+                options.onSearched(this.value);
+                //table.search(this.value).draw();
+            });
         });
 
         $s('#ancSSCollapse').click(function (e) {

@@ -65,9 +65,12 @@ var Datatable = function () {
                 resetGroupActionInputOnSuccess: true,
                 loadingMessage: 'Loading...',
                 dataTable: {
-                    "dom": options.searching == true ?
-                        "<'row'<'col-md-6 col-sm-12'li><'col-md-6 col-sm-12'fp<'table-group-actions pull-right'>_TOTAL_>r><'table-responsive't><'row'<'col-md-6 col-sm-12'li><'col-md-6 col-sm-12' p>>" :
-                        "<'row'<'col-md-6 col-sm-12'li><'col-md-6 col-sm-12'p<'table-group-actions pull-right'>_TOTAL_>r><'table-responsive't><'row'<'col-md-6 col-sm-12'li><'col-md-6 col-sm-12' p>>", // datatable layout
+                    //dom: "<'top'lp><'clear'>",
+                    dom: "<'row'<'top'lp><'clear'>>" +
+                        "<'row'<'col-sm-12'tr>>",
+                    //"dom": options.searching == true ?
+                    //    "<'row'<'col-md-6 col-sm-12'li><'col-md-6 col-sm-12'fp<'table-group-actions pull-right'>_TOTAL_>r><'table-responsive't><'row'<'col-md-6 col-sm-12'li><'col-md-6 col-sm-12'>>" :
+                    //    "<'row'<'col-md-6 col-sm-12'li><'col-md-6 col-sm-12'p<'table-group-actions pull-right'>_TOTAL_>r><'table-responsive't><'row'<'col-md-6 col-sm-12'li><'col-md-6 col-sm-12' p>>", // datatable layout
                     "pageLength": 50, // default records per page
                     "language": { // language settings
                         // metronic spesific
