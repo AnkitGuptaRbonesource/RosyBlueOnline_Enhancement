@@ -929,9 +929,9 @@ div.dataTables_wrapper div.dataTables_paginate {
     padding-bottom: 0;
 }
 .sorting_1 {
-    box-shadow: 10px 0px 20px 0px rgb(51 51 51 / 4%);
+    box-shadow: 20px 0px 20px rgba(51,51,51,0.08);
 }
-#pnlSSResult tr {
+#SearchTablePost tr {
     border-bottom: 1px solid #ECE9F1;
 }
 
