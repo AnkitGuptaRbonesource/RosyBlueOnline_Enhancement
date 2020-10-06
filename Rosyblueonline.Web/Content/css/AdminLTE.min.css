@@ -1060,6 +1060,9 @@ div.dataTables_wrapper div.dataTables_paginate {
     .panel-dropdown .dropdown button {
         padding: 8px 5px;
     }
+    .dataTables_scrollBody{
+        height: 530px !important;
+    }
 }
 
 @media only screen and (min-width: 1500px) and (max-width: 1650px) {
