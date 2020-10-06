@@ -707,7 +707,9 @@ ul.top-menu > li > a {
 }
 
 .table-head {
-  color: #333333;
+    color: #333333;
+    height: 43px;
+    border-bottom: 1px solid rgba(114, 114, 114 ,0.1);
 }
 
   .table-head th {
@@ -1337,9 +1339,8 @@ ul.view-diam-pric {
   font-weight: bold;
 }
 .table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
-	padding: 6px 2px 6px 16px;
-	text-align: left;
-	
+    padding: 10px 2px 6px 16px;
+    text-align: left;
 }
 .table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td {
     font-weight: 500;
@@ -2964,9 +2965,13 @@ a.sele-all {
     line-height: 18px;
     letter-spacing: 0.2px;
     color: #BDBDBD;
-    padding: 20px 2px 12px 16px !important;
+    padding: 5px 2px 14px 16px !important;
+    border-radius: 10px;
+    border: none;
 }
-
+#tblBodySummary .rsearchnew {
+    padding: 15px 0 5px 0;
+}
 .list-view .table .rsearchnew .rsearchnew {
     font-weight: 600;
     font-size: 26px;
@@ -2974,6 +2979,7 @@ a.sele-all {
     text-align: center;
     letter-spacing: 1px;
     color: #3A4276;
+    border-radius: 10px;
 }
 
 
@@ -3068,6 +3074,9 @@ a.sele-all {
         max-width: initial;
         margin: 0;
     }
+    .heading-title h2 {
+        font-size: 21px;
+    }
 }
 
 
@@ -3117,6 +3126,9 @@ a.sele-all {
     .stone-details-boxes.stone-details-boxes2 {
         max-width: initial;
         margin: 0;
+    }
+    .heading-title h2 {
+        font-size: 21px;
     }
 }
 @media only screen and ( min-width:1400px) and (max-width:1500px) {

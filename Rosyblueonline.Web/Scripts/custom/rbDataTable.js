@@ -66,7 +66,7 @@ var Datatable = function () {
                 loadingMessage: 'Loading...',
                 dataTable: {
                     //dom: "<'top'lp><'clear'>",
-                    dom: "<'row'<'top'lp><'clear'>>" +
+                    dom: "<'row'<'top'fpl><'clear'>>" +
                         "<'row'<'col-sm-12'tr>>",
                     //"dom": options.searching == true ?
                     //    "<'row'<'col-md-6 col-sm-12'li><'col-md-6 col-sm-12'fp<'table-group-actions pull-right'>_TOTAL_>r><'table-responsive't><'row'<'col-md-6 col-sm-12'li><'col-md-6 col-sm-12'>>" :
@@ -78,7 +78,7 @@ var Datatable = function () {
                         "metronicAjaxRequestGeneralError": "Could not complete request. Please check your internet connection",
                         // data tables spesific
                         //"lengthMenu": "<span class='seperator'>|</span>View _MENU_ records",
-                        "lengthMenu": "View _MENU_ records",
+                        "lengthMenu": "Show up to Record : _MENU_",
                         //"info": "<span class='seperator'>|</span>Found total _TOTAL_ records",
                         "info": "Found total _TOTAL_ records",
                         "infoEmpty": "No records found to show",
@@ -91,7 +91,8 @@ var Datatable = function () {
                             "first": "First",
                             "page": "Page",
                             "pageOf": "of"
-                        }
+                        },
+                        "search": ""
                     },
 
                     "orderCellsTop": true,
@@ -149,6 +150,11 @@ var Datatable = function () {
             }, options);
 
             tableOptions = options;
+
+
+            
+            //var $label = document.getElementsByTagName("INPUT")[0].closest("label");
+            //$label.replaceWith(document.getElementsByTagName("INPUT")[0]);
 
             // create table's jquery object
             table = $(options.src);
