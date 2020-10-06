@@ -911,6 +911,9 @@ div.dataTables_wrapper div.dataTables_paginate {
     color: #D0D1D2 !important;
     padding-left: 40px;
 }
+#SearchTablePost_filter input::placeholder{
+    color: #d0d1d2;
+}
 #SearchTablePost_filter label:after {
     position: absolute;
     display: block;
@@ -921,6 +924,15 @@ div.dataTables_wrapper div.dataTables_paginate {
     left: 26px;
     top: 21px;
     z-index: 5;
+}
+#pnlSSResult {
+    padding-bottom: 0;
+}
+.sorting_1 {
+    box-shadow: 10px 0px 20px 0px rgb(51 51 51 / 4%);
+}
+#SearchTablePost tr {
+    border-bottom: 1px solid #ECE9F1;
 }
 
 
