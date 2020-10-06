@@ -94,7 +94,7 @@ var Datatable = function () {
                         },
                         "search": ""
                     },
-
+                  "fixedColumns": { "leftColumns": 2},
                     "orderCellsTop": true,
                     "columnDefs": [{ // define columns sorting options(by default all columns are sortable extept the first checkbox column)
                         'orderable': false,
