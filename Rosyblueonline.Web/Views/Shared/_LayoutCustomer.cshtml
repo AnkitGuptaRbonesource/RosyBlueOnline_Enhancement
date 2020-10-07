@@ -8,30 +8,34 @@
 <!DOCTYPE html>
 <html lang="@CurrentCulture">
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>@ViewBag.Title - Rosy Blue - Polished Diamonds | Rough Diamonds | Diamond Certificates | Mumbai | India</title>
-    @*<link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-        <link href="~/Content/css/bootstrap.min.css" rel="stylesheet">
-        <link href="~/Content/css/dashboard.css" rel="stylesheet">
-        <link rel="stylesheet" href="~/content/font-awesome/css/font-awesome.min.css">*@
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="Title" content="RosyblueOnline">
-    <meta name="Author" content="Anshul Mehta">
-    <meta name="Subject" content="RosyblueOnline">
-    <meta name="Language" content="English">
-    <meta name="Revisit" content="1 day">
-    <meta name="Distribution" content="Global">
-    <meta name="Robots" content="All">
-    <meta name="description" content="Rosyblue offers unique and custom design Diamonds.   ">
-    <meta name="keywords" content="Anshul mehta, Rosyblue, RosyblueOnline, Diamond, Emerald, Ruby, Sapphire, platinum, gold, jewelry, design, sketches">
-    <!---Favicon--->
-    <link href="/Content/img/favicon.png" rel="shortcut icon" type="image/x-icon" size="16x16">
-    @Styles.Render("~/Content/Admin/Css")
-    @RenderSection("header")
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>@ViewBag.Title - Rosy Blue - Polished Diamonds | Rough Diamonds | Diamond Certificates | Mumbai | India</title>
+  @*<link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/css/dashboard.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/content/font-awesome/css/font-awesome.min.css">*@
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="Title" content="RosyblueOnline">
+  <meta name="Author" content="Anshul Mehta">
+  <meta name="Subject" content="RosyblueOnline">
+  <meta name="Language" content="English">
+  <meta name="Revisit" content="1 day">
+  <meta name="Distribution" content="Global">
+  <meta name="Robots" content="All">
+  <meta name="description" content="Rosyblue offers unique and custom design Diamonds.   ">
+  <meta name="keywords" content="Anshul mehta, Rosyblue, RosyblueOnline, Diamond, Emerald, Ruby, Sapphire, platinum, gold, jewelry, design, sketches">
+  <!---Favicon--->
+  <link href="/Content/img/favicon.png" rel="shortcut icon" type="image/x-icon" size="16x16">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  @Styles.Render("~/Content/Admin/Css")
+  @RenderSection("header")
+
+    
 </head>
 <body class="sidebar-mini skin-black-light">
     <div class="wrapper">
@@ -182,22 +186,51 @@
                     </li>
 
 
-                    <li class="treeview">
-                        <a href="#">
-                            <i class="fa fa-users"></i>
-                            <span>@Resource.Profile</span>
-                            <span class="pull-right-container">
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </span>
-                        </a>
-                        <ul class="treeview-menu">
-                            <li><a href="/User/EditProfile"><i class="fa fa-user"></i>@Resource.Edit_Profile</a></li>
-                            <li><a href="/User/ChangePassword"><i class="fa fa-lock"></i>@Resource.Change_Password</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </section>
-        </aside>
+
+          <li class="treeview">
+            <a href="#">
+              <div class="img-icon"><img src="/Content/img/user.png" /></div>
+              <span>@Resource.Profile</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li><a href="/User/EditProfile"><div class="img-icon"><img src="/Content/img/user-sub.png" /></div> @Resource.Edit_Profile</a></li>
+              <li><a href="/User/ChangePassword"><div class="img-icon"><i class="fa fa-lock"></i></div> @Resource.Change_Password</a></li>
+            </ul>
+          </li>
+          <li class="treeview">
+            <a href="/Dashboard/Inventory">
+              <div class="img-icon"><img src="/Content/img/Inventory.png" /></div>
+              <span>Inventory</span>
+            </a>
+          </li>
+          <li class="treeview">
+            <a href="/Dashboard/Inventory">
+              <div class="img-icon"><img src="/Content/img/Marketing.png" /></div>
+              <span>Marketing</span>
+            </a>
+          </li>
+          <li class="treeview">
+            <a href="/Dashboard/Inventory">
+              <div class="img-icon"><img src="/Content/img/Utility.png" /></div>
+              <span>Utility</span>
+            </a>
+          </li>
+        </ul>
+          <div class="sign-bottom">
+              <ul class="sidebar-menu">
+                  <li class="signout">
+                      <a href="/Home/LogOut">
+                          <div class="img-icon"><img src="/Content/img/signout.png" /></div>
+                          <span>Sign out</span>
+                      </a>
+                  </li>
+              </ul>
+          </div>
+      </section>
+    </aside>
 
         <div class="contentPostfoter main-footer">
             <div class="">

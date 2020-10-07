@@ -225,13 +225,13 @@
                     }, {
                         targets: [3],
                         render: function (data, type, row) {
-                            return '<a class="loadData" data-Criteria="' + row.searchCriteria + '" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>';
+                            return '<a class="loadData show-selink" data-Criteria="' + row.searchCriteria + '" href="#"><span class="se-bx"><i class="fa fa-search" aria-hidden="true"></i></span> Show Results</a>';
                         },
                         orderable: false
                     }, {
                         targets: [4],
                         render: function (data, type, row) {
-                            return '<a class="removeSearch" data-id="' + row.recentSearchID + '" href="#"><i class="fa fa-times" aria-hidden="true"></i></a>';
+                            return '<a class="removeSearch" data-id="' + row.recentSearchID + '" href="#"><span class="se-bx de-bx"><i class="fa fa-trash" aria-hidden="true"></i></span></a>';
                         },
                         orderable: false,
                         visible: false
@@ -282,13 +282,13 @@
                     }, {
                         targets: [3],
                         render: function (data, type, row) {
-                            return '<a class="loadData" data-Criteria="' + row.searchCriteria + '" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>';
+                            return '<a class="loadData" data-Criteria="' + row.searchCriteria + '" href="#"><span class="se-bx"><i class="fa fa-search" aria-hidden="true"></i></span></a>';
                         },
                         orderable: false
                     }, {
                         targets: [4],
                         render: function (data, type, row) {
-                            return '<a class="removeSearch" data-id="' + row.recentSearchID + '" href="#"><i class="fa fa-times" aria-hidden="true"></i></a>';
+                            return '<a class="removeSearch" data-id="' + row.recentSearchID + '" href="#"><span class="se-bx de-bx"><i class="fa fa-times" aria-hidden="true"></i></span></a>';
                         },
                         orderable: false
                     }]
@@ -338,13 +338,13 @@
                     }, {
                         targets: [3],
                         render: function (data, type, row) {
-                            return '<a class="loadData" data-Criteria="' + row.searchCriteria + '" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>';
+                            return '<a class="loadData" data-Criteria="' + row.searchCriteria + '" href="#"><span class="se-bx"><i class="fa fa-search" aria-hidden="true"></i></span></a>';
                         },
                         orderable: false
                     }, {
                         targets: [4],
                         render: function (data, type, row) {
-                            return '<a class="removeSearch" data-id="' + row.recentSearchID + '" href="#"><i class="fa fa-times" aria-hidden="true"></i></a>';
+                            return '<a class="removeSearch" data-id="' + row.recentSearchID + '" href="#"><span class="se-bx de-bx"><i class="fa fa-times" aria-hidden="true"></i></span></a>';
                         },
                         orderable: false
                     }]
