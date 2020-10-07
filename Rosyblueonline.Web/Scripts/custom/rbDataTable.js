@@ -66,8 +66,7 @@ var Datatable = function () {
                 loadingMessage: 'Loading...',
                 dataTable: {
                     //dom: "<'top'lp><'clear'>",
-                    dom: "<'row'<'top'fpl><'clear'>>" +
-                        "<'row'<'col-sm-12'tr>>",
+                  dom: options.searching == true ? "<'row'<'top'fpl><'clear'>><'row'<'col-sm-12'tr>>" : "<'row'<'top'pl><'clear'>><'row'<'col-sm-12'tr>>",
                     //"dom": options.searching == true ?
                     //    "<'row'<'col-md-6 col-sm-12'li><'col-md-6 col-sm-12'fp<'table-group-actions pull-right'>_TOTAL_>r><'table-responsive't><'row'<'col-md-6 col-sm-12'li><'col-md-6 col-sm-12'>>" :
                     //    "<'row'<'col-md-6 col-sm-12'li><'col-md-6 col-sm-12'p<'table-group-actions pull-right'>_TOTAL_>r><'table-responsive't><'row'<'col-md-6 col-sm-12'li><'col-md-6 col-sm-12' p>>", // datatable layout
