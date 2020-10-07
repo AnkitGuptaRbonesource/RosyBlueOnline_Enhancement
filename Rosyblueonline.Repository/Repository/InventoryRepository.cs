@@ -365,8 +365,7 @@ namespace Rosyblueonline.Repository
                 objVM.stocks = ((IObjectContextAdapter)context).ObjectContext.Translate<StockStatus>(reader).ToList();
                 reader.NextResult();
                 objVM.RecentSearch = ((IObjectContextAdapter)context).ObjectContext.Translate<CustomerRecentSearch>(reader).ToList();
-                reader.NextResult();
-                reader.NextResult();
+                reader.NextResult(); 
                 objVM.DemandList = ((IObjectContextAdapter)context).ObjectContext.Translate<DemandList>(reader).ToList();
 
                 return objVM;

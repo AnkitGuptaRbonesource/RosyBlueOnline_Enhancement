@@ -133,8 +133,22 @@ namespace Rosyblueonline.ServiceProviders.Implementation
                 string LotNos = "LOTNO~" + string.Join(",", objLst);
                 DataTable dt = this.objStockDetailsService.GetDataForExcelExport(LotNos, false, CustomerId);
                 if (dt.Columns.Count > 0)
-                {
-                    dt.Columns.Remove("Weight");
+                { 
+                    dt.Columns.Remove("Sizes");
+                    dt.Columns.Remove("CertificateNo");
+                    dt.Columns.Remove("Reportdate");
+                    dt.Columns.Remove("EyeClean");
+                    dt.Columns.Remove("Shade");
+                    dt.Columns.Remove("TableBlack");
+                    dt.Columns.Remove("SideBlack");
+                    dt.Columns.Remove("Milky");
+                    dt.Columns.Remove("CuletSize");
+                    dt.Columns.Remove("OpensName");
+                    dt.Columns.Remove("GroupName");
+                    dt.Columns.Remove("MemberComments");
+                    dt.Columns.Remove("refdata");
+                    dt.Columns.Remove("V360");
+                    dt.Columns.Remove("Video");
                     if (SentToCustomer == true)
                     {
                         dt.Columns.Remove("SalesLocation");

@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace RosyblueonlineORRA_API.Controllers
 {
-    public class HomeController : Controller
+    public class Home12Controller : Controller
     {
         public ActionResult Index()
         {

@@ -1,42 +1,32 @@
 ﻿using Rosyblueonline.Framework;
-using Rosyblueonline.ServiceProviders.Abstraction;
-using Rosyblueonline.ServiceProviders.Implementation; 
+using Rosyblueonline.ServiceProviders.Implementation;
 using Rosyblueonline.Models;
-using Rosyblueonline.Models.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 using Rosyblueonline.Repository.Context;
 using Rosyblueonline.Repository.UnitOfWork;
-using System.Data.SqlClient;
-using Rosyblueonline.Models;
-using Rosyblueonline.Repository.Context;
-using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Configuration;
+using Rosyblueonline.ServiceProviders.Abstraction;
 
 namespace RosyblueonlineORRA_API.Controllers
 {
     [RoutePrefix("api/Stock")]
     public class StockController : ApiController
     {
-        //IStockDetailsService objStockDetailsService;
-        //public StockController(IStockDetailsService objStockDetailsService)
-        //{
-        //    this.objStockDetailsService = objStockDetailsService as StockDetailsService;
-        //}
+        IOrderService objOrderService;
+        public StockController(IOrderService objOrderService)
+        {
+            this.objOrderService = objOrderService as OrderService;
+        }
+
 
         // DBSQLServer db = new DBSQLServer();
         //  DataContext db1 = new DataContext();
         // readonly UnitOfWork uow = null;
         // DBSQLServer dBSQL = new DBSQLServer();
-          DataContext db = new  DataContext();
+        DataContext db = new  DataContext();
         [HttpGet]
         [Route("GetData")]
         public Response GetData()
@@ -63,6 +53,35 @@ namespace RosyblueonlineORRA_API.Controllers
                 return new Response { Code = 500, IsSuccess = false, Message = ex.Message };
             }
         }
+
+        [HttpGet]
+        [Route("PlaceOrder")]
+        public Response PlaceOrder(string LotNos)
+        {
+            try
+            {
+                //UnitOfWork uow = null;
+                //DBSQLServer db1 = null; 
+                //OrderService objOrderService  = new OrderService(uow, db1);
+                
+                PlaceOrderOrra  obj = db.Database.SqlQuery<PlaceOrderOrra>("Exec  proc_PlaceOrderFromAPI 0,"+LotNos.ToString()).FirstOrDefault();
+                if (obj.OrderId > 0)
+                {
+                    objOrderService.SendMailPreBookOrder(obj.OrderId, obj.CustomerId , ConfigurationManager.AppSettings["EmailTemplate_PlaceOrderAdmin"].ToString(), "Customer order details @ www.rosyblueonline.com");
+                    objOrderService.SendMailPreBookOrder(obj.OrderId, obj.CustomerId,  ConfigurationManager.AppSettings["EmailTemplate_PlaceOrderCustomer"].ToString(), "Your order details @ www.rosyblueonline.com", true);
+
+                }
+                return new Response { Code = 200, IsSuccess = true, Message = "Order placed", Result = obj };
+
+            }
+            catch (Exception ex)
+            {
+                ErrorLog.Log("Order", "PlaceOrder", ex);
+                return new Response { Code = 500, IsSuccess = false, Message = ex.Message };
+            }
+        }
+
+
 
     }
 }
