@@ -15,7 +15,7 @@
                 <div class="cl col-md-2 col-sm-6 col-xs-12">
                     <div class="inbx inbx-one">
                         <a href="#" class="info-boxtxt" id="ancRoundCount">
-                            <span class="info-box-number">0</span>
+                            <span class="info-box-number" id="TotalRoundShapes">0</span>
                             <span class="info-box-text">@Resource.Round_Shapesm</span>
                             <span class="info-box-img"><img class="" src="../Content/img/dashboard-img1.svg"></span>
                         </a>
@@ -91,9 +91,34 @@
             </div>
             <div class="col-lg-6">
                 <div class="dash-box">
-                    <div class="dash-head">@Resource.Saved_Search</div>
-                    <div id="s_search" class="dash-inner">
-                        <table class="table table-fixed dataTable tabledash" id="tblSavedSearch">
+                    <div class="dash-head clearfix">@Resource.Saved_Search 
+                    @*<button type="button" class="btn btn-link">View All (304) <i class="fa fa-angle-right"></i></button>*@
+                    </div>
+                    <div class="dash-inner">
+                        <ul id="tblSavedSearch"  class="table-ul">
+
+                            </ul>
+                        @*<ul class="table-ul">
+                            <li class="table-li">
+                                <div class="se-info">
+                                    <div class="seinfo-l1"><span class="sespce sefound">30,558</span><span class="sespce sedate">1 hr ago</span><span class="sespce sename">Mayur P.</span></div>
+                                    <div class="seinfo-l2">GIA-Origin | HA-yes | Good | Good</div>
+                                </div>
+                                <div class="se-info-action">
+                                    <a class="act-link al1" href="#"><span class="se-bx"><i class="fa fa-search" aria-hidden="true"></i></span></a>
+                                    <a class="act-link al2" href="#"><span class="se-bx de-bx"><i class="fa fa-trash" aria-hidden="true"></i></span></a>
+                                </div>
+                            </li> 
+                        </ul>
+                        <div class="table-no-results text-center">
+                            <div class="table-nrimg-box"><img src="../Content/img/no_data_icon.svg" alt="" /></div>
+                            <div class="table-nr-text">You’ve not saved any search yet!</div>
+                            <div class="table-btn-box">
+                                <a href="/Inventory/SpecificSearch" class="btn btn-primary"><i class="fa fa-search" aria-hidden="true"></i> Search Now</a>
+                            </div>
+                        </div>*@
+
+                        <!--<table class="table table-fixed dataTable tabledash" id="tblSavedSearch">
                             <thead>
                                 <tr class="rserachrow">
                                     <th>@Resource.Date</th>
@@ -103,25 +128,32 @@
                                     <th>@Resource.Delete</th>
                                 </tr>
                             </thead>
-                        </table>
+                        </table>-->
                     </div>
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="dash-box">
-                    <div class="dash-head">@Resource.Demand_Search</div>
+                    <div class="dash-head clearfix">@Resource.Demand_Search 
+                    @*<button type="button" class="btn btn-link">View All (201) <i class="fa fa-angle-right"></i></button>*@
+                   
+                    </div>
                     <div id="d_search" class="dash-inner">
-                        <table class="table table-fixed dataTable tabledash" id="tblDemandSearch">
+                         <ul id="tblDemandSearch"  class="table-ul">
+
+                       </ul>
+                        
+                        <!--<table class="table table-fixed dataTable tabledash" id="tblDemandSearch">
                             <thead>
                                 <tr class="rserachrow">
                                    <th>@Resource.Date</th>
-	                           <th>@Resource.Total_Found</th>
-	                           <th>@Resource.Criteria</th>
-	                           <th>@Resource.Load Result</th>
-	                           <th>@Resource.Delete</th>
+                               <th>@Resource.Total_Found</th>
+                               <th>@Resource.Criteria</th>
+                               <th>@Resource.Load Result</th>
+                               <th>@Resource.Delete</th>
                                 </tr>
                             </thead>
-                        </table>
+                        </table>-->
 
                     </div>
                 </div>
@@ -136,23 +168,23 @@
                         <label>#</label>
                     </th>
                     <th class="tbnew">
-	                    <label>@Resource.Order_ID</label>
-	                </th>
-	                <th class="tbnew">
-	                    <label>@Resource.Created_Date</label>
-	                </th>
-	                <th class="tbnew">
-	                    <label>@Resource.Amount</label>
-	                </th>
-	                <th class="tbnew">
-	                    <label>@Resource.Customer</label>
-	                </th>
-	                <th class="tbnew">
-	                    <label>@Resource.Company</label>
-	                </th>
-	                <th class="tbnew">
-	                    <label>@Resource.Actions</label>
-	                </th>
+                        <label>@Resource.Order_ID</label>
+                    </th>
+                    <th class="tbnew">
+                        <label>@Resource.Created_Date</label>
+                    </th>
+                    <th class="tbnew">
+                        <label>@Resource.Amount</label>
+                    </th>
+                    <th class="tbnew">
+                        <label>@Resource.Customer</label>
+                    </th>
+                    <th class="tbnew">
+                        <label>@Resource.Company</label>
+                    </th>
+                    <th class="tbnew">
+                        <label>@Resource.Actions</label>
+                    </th>
                 </tr>
             </thead>
         </table>
@@ -166,29 +198,29 @@
                         <label>#</label>
                     </th>
                     <th class="tbnew">
-	                    <label>@Resource.Order_ID</label>
-	                </th>
-	                <th class="tbnew">
-	                    <label>@Resource.Created_Date</label>
-	                </th>
-	                <th class="tbnew">
-	                    <label>@Resource.Amount</label>
-	                </th>
-	                <th class="tbnew">
-	                    <label>@Resource.Customer</label>
-	                </th>
-	                <th class="tbnew">
-	                    <label>@Resource.Company</label>
-	                </th>
-	                <th class="tbnew">
-	                    <label>@Resource.Actions</label>
-	                </th>
+                        <label>@Resource.Order_ID</label>
+                    </th>
+                    <th class="tbnew">
+                        <label>@Resource.Created_Date</label>
+                    </th>
+                    <th class="tbnew">
+                        <label>@Resource.Amount</label>
+                    </th>
+                    <th class="tbnew">
+                        <label>@Resource.Customer</label>
+                    </th>
+                    <th class="tbnew">
+                        <label>@Resource.Company</label>
+                    </th>
+                    <th class="tbnew">
+                        <label>@Resource.Actions</label>
+                    </th>
                 </tr>
             </thead>
         </table>
     </div>-->
 
-    </section>
+</section>
 </div>
 
 @section script{

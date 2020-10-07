@@ -65,9 +65,12 @@ var Datatable = function () {
                 resetGroupActionInputOnSuccess: true,
                 loadingMessage: 'Loading...',
                 dataTable: {
-                    "dom": options.searching == true ?
-                        "<'row'<'col-md-6 col-sm-12'li><'col-md-6 col-sm-12'fp<'table-group-actions pull-right'>_TOTAL_>r><'table-responsive't><'row'<'col-md-6 col-sm-12'li><'col-md-6 col-sm-12' p>>" :
-                        "<'row'<'col-md-6 col-sm-12'li><'col-md-6 col-sm-12'p<'table-group-actions pull-right'>_TOTAL_>r><'table-responsive't><'row'<'col-md-6 col-sm-12'li><'col-md-6 col-sm-12' p>>", // datatable layout
+                    //dom: "<'top'lp><'clear'>",
+                    dom: "<'row'<'top'fpl><'clear'>>" +
+                        "<'row'<'col-sm-12'tr>>",
+                    //"dom": options.searching == true ?
+                    //    "<'row'<'col-md-6 col-sm-12'li><'col-md-6 col-sm-12'fp<'table-group-actions pull-right'>_TOTAL_>r><'table-responsive't><'row'<'col-md-6 col-sm-12'li><'col-md-6 col-sm-12'>>" :
+                    //    "<'row'<'col-md-6 col-sm-12'li><'col-md-6 col-sm-12'p<'table-group-actions pull-right'>_TOTAL_>r><'table-responsive't><'row'<'col-md-6 col-sm-12'li><'col-md-6 col-sm-12' p>>", // datatable layout
                     "pageLength": 50, // default records per page
                     "language": { // language settings
                         // metronic spesific
@@ -75,7 +78,7 @@ var Datatable = function () {
                         "metronicAjaxRequestGeneralError": "Could not complete request. Please check your internet connection",
                         // data tables spesific
                         //"lengthMenu": "<span class='seperator'>|</span>View _MENU_ records",
-                        "lengthMenu": "View _MENU_ records",
+                        "lengthMenu": "Show up to Record : _MENU_",
                         //"info": "<span class='seperator'>|</span>Found total _TOTAL_ records",
                         "info": "Found total _TOTAL_ records",
                         "infoEmpty": "No records found to show",
@@ -88,9 +91,10 @@ var Datatable = function () {
                             "first": "First",
                             "page": "Page",
                             "pageOf": "of"
-                        }
+                        },
+                        "search": ""
                     },
-
+                  //"fixedColumns": { "leftColumns": 2},
                     "orderCellsTop": true,
                     "columnDefs": [{ // define columns sorting options(by default all columns are sortable extept the first checkbox column)
                         'orderable': false,
@@ -146,6 +150,11 @@ var Datatable = function () {
             }, options);
 
             tableOptions = options;
+
+
+            
+            //var $label = document.getElementsByTagName("INPUT")[0].closest("label");
+            //$label.replaceWith(document.getElementsByTagName("INPUT")[0]);
 
             // create table's jquery object
             table = $(options.src);

@@ -77,6 +77,66 @@ namespace Rosyblueonline.Web.Controllers
         }
 
         [HttpGet]
+        public ActionResult GetDashboardSavedSearches()
+        {
+            try
+            {
+                int LoginID = GetLogin();
+                List<RecentSearchViewModel> data = new List<RecentSearchViewModel>();
+
+                //DashboardViewModel objVM = objStockDetailsService.DashboardView(LoginID);
+                //        return Json(objVM, JsonRequestBehavior.AllowGet);
+
+                return View("~/Views/Dashboard/_SavedSearchView.cshtml", data);
+            }
+            catch (Exception ex)
+            {
+                ErrorLog.Log("Dashboard", "GetDashboard", ex);
+                throw ex;
+            }
+        }
+
+        [HttpGet]
+        public ActionResult GetDashboardRecentSearches()
+        {
+            try
+            {
+                int LoginID = GetLogin();
+                List<RecentSearchViewModel> data = new List<RecentSearchViewModel>();
+
+                //DashboardViewModel objVM = objStockDetailsService.DashboardView(LoginID);
+                //        return Json(objVM, JsonRequestBehavior.AllowGet);
+
+                return View("~/Views/Dashboard/_RecentSearchView.cshtml", data);
+            }
+            catch (Exception ex)
+            {
+                ErrorLog.Log("Dashboard", "GetDashboard", ex);
+                throw ex;
+            }
+        }
+
+        [HttpGet]
+        public ActionResult GetDashboardDemandSearches()
+        {
+            try
+            {
+                int LoginID = GetLogin();
+                List<RecentSearchViewModel> data = new List<RecentSearchViewModel>();
+
+                //DashboardViewModel objVM = objStockDetailsService.DashboardView(LoginID);
+                //        return Json(objVM, JsonRequestBehavior.AllowGet);
+
+                return View("~/Views/Dashboard/_DemandSearchView.cshtml", data);
+            }
+            catch (Exception ex)
+            {
+                ErrorLog.Log("Dashboard", "GetDashboard", ex);
+                throw ex;
+            }
+        }
+
+        [HttpGet]
         public ActionResult GetRecentSearchView(int UserID)
         {
             try
