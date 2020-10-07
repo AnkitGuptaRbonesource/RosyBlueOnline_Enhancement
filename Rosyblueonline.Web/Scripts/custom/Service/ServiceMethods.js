@@ -1173,6 +1173,16 @@ var DashboardService = function () {
         });
     }
 
+    obj.GetOrderDetails = function (OType) {
+        return myApp.http({
+            method: 'post',
+            url: '/Order/GetOrderDetails',
+              data: {
+                  OType: OType
+            }
+        });
+    }
+      
     return obj;
 }
 
