@@ -164,7 +164,7 @@
                     columns: [
                         { data: "Createdon" },
                         { data: "TotalFound" },
-                        { data: "displayCriteria" },
+                        { data: "searchCriteria" },
                         { data: "searchCriteria" },
                         { data: "recentSearchID" }
                     ],

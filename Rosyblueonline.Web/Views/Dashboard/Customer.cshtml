@@ -91,32 +91,31 @@
             </div>
             <div class="col-lg-6">
                 <div class="dash-box">
-                    <div class="dash-head clearfix">@Resource.Saved_Search 
-                    @*<button type="button" class="btn btn-link">View All (304) <i class="fa fa-angle-right"></i></button>*@
+                    <div class="dash-head clearfix">
+                        @Resource.Saved_Search
+                        @*<button type="button" class="btn btn-link">View All (304) <i class="fa fa-angle-right"></i></button>*@
                     </div>
                     <div class="dash-inner">
-                        <ul id="tblSavedSearch"  class="table-ul">
-
-                            </ul>
+                        <ul id="tblSavedSearch" class="table-ul"></ul>
                         @*<ul class="table-ul">
-                            <li class="table-li">
-                                <div class="se-info">
-                                    <div class="seinfo-l1"><span class="sespce sefound">30,558</span><span class="sespce sedate">1 hr ago</span><span class="sespce sename">Mayur P.</span></div>
-                                    <div class="seinfo-l2">GIA-Origin | HA-yes | Good | Good</div>
+                                <li class="table-li">
+                                    <div class="se-info">
+                                        <div class="seinfo-l1"><span class="sespce sefound">30,558</span><span class="sespce sedate">1 hr ago</span><span class="sespce sename">Mayur P.</span></div>
+                                        <div class="seinfo-l2">GIA-Origin | HA-yes | Good | Good</div>
+                                    </div>
+                                    <div class="se-info-action">
+                                        <a class="act-link al1" href="#"><span class="se-bx"><i class="fa fa-search" aria-hidden="true"></i></span></a>
+                                        <a class="act-link al2" href="#"><span class="se-bx de-bx"><i class="fa fa-trash" aria-hidden="true"></i></span></a>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="table-no-results text-center">
+                                <div class="table-nrimg-box"><img src="../Content/img/no_data_icon.svg" alt="" /></div>
+                                <div class="table-nr-text">You’ve not saved any search yet!</div>
+                                <div class="table-btn-box">
+                                    <a href="/Inventory/SpecificSearch" class="btn btn-primary"><i class="fa fa-search" aria-hidden="true"></i> Search Now</a>
                                 </div>
-                                <div class="se-info-action">
-                                    <a class="act-link al1" href="#"><span class="se-bx"><i class="fa fa-search" aria-hidden="true"></i></span></a>
-                                    <a class="act-link al2" href="#"><span class="se-bx de-bx"><i class="fa fa-trash" aria-hidden="true"></i></span></a>
-                                </div>
-                            </li> 
-                        </ul>
-                        <div class="table-no-results text-center">
-                            <div class="table-nrimg-box"><img src="../Content/img/no_data_icon.svg" alt="" /></div>
-                            <div class="table-nr-text">You’ve not saved any search yet!</div>
-                            <div class="table-btn-box">
-                                <a href="/Inventory/SpecificSearch" class="btn btn-primary"><i class="fa fa-search" aria-hidden="true"></i> Search Now</a>
-                            </div>
-                        </div>*@
+                            </div>*@
 
                         <!--<table class="table table-fixed dataTable tabledash" id="tblSavedSearch">
                             <thead>
@@ -134,15 +133,14 @@
             </div>
             <div class="col-lg-6">
                 <div class="dash-box">
-                    <div class="dash-head clearfix">@Resource.Demand_Search 
-                    @*<button type="button" class="btn btn-link">View All (201) <i class="fa fa-angle-right"></i></button>*@
-                   
+                    <div class="dash-head clearfix">
+                        @Resource.Demand_Search
+                        @*<button type="button" class="btn btn-link">View All (201) <i class="fa fa-angle-right"></i></button>*@
+
                     </div>
                     <div id="d_search" class="dash-inner">
-                         <ul id="tblDemandSearch"  class="table-ul">
+                        <ul id="tblDemandSearch" class="table-ul"></ul>
 
-                       </ul>
-                        
                         <!--<table class="table table-fixed dataTable tabledash" id="tblDemandSearch">
                             <thead>
                                 <tr class="rserachrow">
@@ -160,72 +158,75 @@
             </div>
         </div>
         <!--<div id="p_orderpending" class="tab-pane fade">
-        @Resource.Pending_Order_Details
-        <table id="tblPendingOrders" class="table table-striped table-fixed dataTable no-footer">
-            <thead class="bordertp">
-                <tr role="row" class="table-head">
-                    <th class="tbnew">
-                        <label>#</label>
-                    </th>
-                    <th class="tbnew">
-                        <label>@Resource.Order_ID</label>
-                    </th>
-                    <th class="tbnew">
-                        <label>@Resource.Created_Date</label>
-                    </th>
-                    <th class="tbnew">
-                        <label>@Resource.Amount</label>
-                    </th>
-                    <th class="tbnew">
-                        <label>@Resource.Customer</label>
-                    </th>
-                    <th class="tbnew">
-                        <label>@Resource.Company</label>
-                    </th>
-                    <th class="tbnew">
-                        <label>@Resource.Actions</label>
-                    </th>
-                </tr>
-            </thead>
-        </table>
-    </div>
-    <div id="o_orderdetail" class="tab-pane fade">
-        @Resource.View_Order_Details
-        <table id="tblCompletedOrders" class="table table-striped table-fixed dataTable no-footer">
-            <thead class="bordertp">
-                <tr role="row" class="table-head">
-                    <th class="tbnew">
-                        <label>#</label>
-                    </th>
-                    <th class="tbnew">
-                        <label>@Resource.Order_ID</label>
-                    </th>
-                    <th class="tbnew">
-                        <label>@Resource.Created_Date</label>
-                    </th>
-                    <th class="tbnew">
-                        <label>@Resource.Amount</label>
-                    </th>
-                    <th class="tbnew">
-                        <label>@Resource.Customer</label>
-                    </th>
-                    <th class="tbnew">
-                        <label>@Resource.Company</label>
-                    </th>
-                    <th class="tbnew">
-                        <label>@Resource.Actions</label>
-                    </th>
-                </tr>
-            </thead>
-        </table>
-    </div>-->
+            @Resource.Pending_Order_Details
+            <table id="tblPendingOrders" class="table table-striped table-fixed dataTable no-footer">
+                <thead class="bordertp">
+                    <tr role="row" class="table-head">
+                        <th class="tbnew">
+                            <label>#</label>
+                        </th>
+                        <th class="tbnew">
+                            <label>@Resource.Order_ID</label>
+                        </th>
+                        <th class="tbnew">
+                            <label>@Resource.Created_Date</label>
+                        </th>
+                        <th class="tbnew">
+                            <label>@Resource.Amount</label>
+                        </th>
+                        <th class="tbnew">
+                            <label>@Resource.Customer</label>
+                        </th>
+                        <th class="tbnew">
+                            <label>@Resource.Company</label>
+                        </th>
+                        <th class="tbnew">
+                            <label>@Resource.Actions</label>
+                        </th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div id="o_orderdetail" class="tab-pane fade">
+            @Resource.View_Order_Details
+            <table id="tblCompletedOrders" class="table table-striped table-fixed dataTable no-footer">
+                <thead class="bordertp">
+                    <tr role="row" class="table-head">
+                        <th class="tbnew">
+                            <label>#</label>
+                        </th>
+                        <th class="tbnew">
+                            <label>@Resource.Order_ID</label>
+                        </th>
+                        <th class="tbnew">
+                            <label>@Resource.Created_Date</label>
+                        </th>
+                        <th class="tbnew">
+                            <label>@Resource.Amount</label>
+                        </th>
+                        <th class="tbnew">
+                            <label>@Resource.Customer</label>
+                        </th>
+                        <th class="tbnew">
+                            <label>@Resource.Company</label>
+                        </th>
+                        <th class="tbnew">
+                            <label>@Resource.Actions</label>
+                        </th>
+                    </tr>
+                </thead>
+            </table>
+        </div>-->
 
-</section>
+    </section>
 </div>
 
 @section script{
     @Scripts.Render("~/bundles/DataTable/Script")
     <script type="text/javascript" src="~/Scripts/custom/rbDataTable.js"></script>
+
+    <script type="text/javascript" src="~/Scripts/select2.min.js"></script>
+     
     <script type="text/javascript" src="~/Scripts/custom/Service/ServiceMethods.js"></script>
     <script type="text/javascript" src="~/Scripts/custom/Controller/CtrlCustomerDashboard.js"></script>
 
