@@ -1924,7 +1924,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fancy_Color.
+        ///   Looks up a localized string similar to Fancy Color.
         /// </summary>
         public static string Fancy_Colorsm {
             get {
@@ -3049,7 +3049,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to New_Arrivals.
+        ///   Looks up a localized string similar to New Arrivals.
         /// </summary>
         public static string New_Arrivals {
             get {
@@ -4084,7 +4084,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Return_Partial_Sell.
+        ///   Looks up a localized string similar to Return Partial Sell.
         /// </summary>
         public static string Return_Partial_Sell {
             get {
@@ -4102,7 +4102,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Revised_Stones.
+        ///   Looks up a localized string similar to Revised Stones.
         /// </summary>
         public static string Revised_Stones {
             get {

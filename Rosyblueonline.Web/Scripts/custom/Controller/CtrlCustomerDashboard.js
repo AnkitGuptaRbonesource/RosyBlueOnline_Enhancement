@@ -214,6 +214,7 @@
 
     var BindSavedSearch = function (data) { 
        // uiApp.BlockUI();
+        $("#tblSavedSearch").html("");
         if (data.SavedSearch.length > 0) { 
             $.each(data.SavedSearch, function (i, item) {
                 var  newListItem =  '<li class="table-li">' +
@@ -300,6 +301,7 @@
     }    
     
     var BindDemandSearch = function (data) { 
+        $("#tblDemandSearch").html("");
         if (data.DemandSearch.length > 0) {
             $.each(data.DemandSearch, function (i, item) {
                 var newListItem = '<li class="table-li">' +
