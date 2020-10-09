@@ -12,7 +12,14 @@
         objDS.Count().then(function (data) {
             if (data.IsSuccess) {
                 $('#spanCartCount').html(data.Result.Cart);
+                if (data.Result.Cart && data.Result.Cart > 0) {
+                    $('#spanCartCount').addClass("active-watchlist");
+                }
+
                 $('#spanOrderCount').html(data.Result.Orders);
+                if (data.Result.WatchList && data.Result.WatchList > 0) {
+                    $('#spanWatchlistCount').addClass("active-watchlist");
+                }
                 $('#spanWatchlistCount').html(data.Result.WatchList);
             }
         }, function (error) {
