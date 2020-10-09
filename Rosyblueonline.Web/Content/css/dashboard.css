@@ -2243,7 +2243,7 @@ a.sele-all {
     width: 100%;
     max-width: 82px;
     background: #FFFFFF;
-    border-radius: 10px 10px 0px 0px;
+    border-radius: 10px;
     text-align: center;
     padding: 15px 0;
 }

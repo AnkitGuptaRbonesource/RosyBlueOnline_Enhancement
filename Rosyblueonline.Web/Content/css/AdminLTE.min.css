@@ -612,7 +612,7 @@ body{font-family: 'Karla', sans-serif !important;font-weight:400;overflow-x:hidd
     margin-bottom: 25px;
     background-color: #fff;
     padding: 15px 30px;
-    border-radius: 10px 10px 0px 0px;
+    border-radius: 10px;
 }
 .campare-box ul li a span img {
     margin-bottom: 6px;
@@ -1220,5 +1220,46 @@ span.gried-color {
     }
     .stone-details-box{
         padding: 20px 15px;
+    }
+    #ddlLanguage {
+        font-size: 13px;
+        margin-top: 0px;
+    }
+    .diamond-demand-box {
+        width: 100% !important;
+        display: block !important;
+    }
+    .diamond-demand-box .demand-key-box {
+        width: 100% !important;
+    }
+    .paddding-box {
+        padding: 0;
+    }
+    .girle-para {
+        position: relative;
+        display: inline-block;
+        width: 44%;
+        float: none;
+        margin: 0;
+        margin-right: 15px;
+        margin-bottom: 25px;
+    }
+    .sizeboxes {
+        display: block;
+    }
+    .sizeboxes .form-inline .form-control {
+        max-width: initial;
+    }
+    .shape-cut-box {
+        display: block;
+    }
+    .shape-cut-box {
+        display: block;
+    }
+    .heart-box {
+        display: block;
+    }
+    .heart-box .describe-line {
+        width: 100%;
     }
 }
