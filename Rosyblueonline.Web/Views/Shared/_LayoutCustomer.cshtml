@@ -39,19 +39,17 @@
 
 </head>
 <body class="sidebar-mini skin-black-light sidebar-collapse">
+    <form style="display:none" id="frmPostSearch111" method="post" action="/Inventory/SpecificSearchPost">
+        <input type="hidden" name="Query" id="hfQuery111" value="" />
+    </form>
+
     <div class="wrapper">
 
         <header class="main-header">
-            <nav class="navbar navbar-static-top">
-                @*<a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-                        <span class="sr-only">@Resource.Toggle_navigation</span>
-                    </a>*@
-                @*<a href="#" class="sidebar-toggle" role="button" data-toggle="collapse" data-target="#navSidebarMenu" aria-controls="navSidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="sr-only">Toggle navigation</span>
-                    </a>*@
+            <nav class="navbar navbar-static-top">  
                 <div class="searchbar">
-                    <input type="text" class="header-search" placeholder="Enter Lot/Cert. number to quick search ...." />
-                    <div class="inseach">
+                    <input id="LotCertSearchInput"  type="text" class="header-search" placeholder="Enter Lot/Cert. number to quick search ...." />
+                    <div class="inseach" id="SearchId">
                         <img src="/Content/img/search.png" />
                     </div>
                     <div class="csv">
@@ -245,53 +243,63 @@
                     </div>
                 </div>
                 <ul class="sidebar-menu">
+                    @if (objMenuAccess.Dashboard == 1)
+                    {
+                        <li>
+                            <a href="/Dashboard/Customer">
+                                <div class="img-icon"><img src="/Content/img/dashboard.png" /></div>
+                                <span>@Resource.Dashboard</span>
+                            </a>
+                        </li>
+                    }
+                    @if (objMenuAccess.MyAccount == 1)
+                    {
+                        <li class="treeview">
+                            <a href="#">
+                                <div class="img-icon"><img src="/Content/img/subscriptions.png" /></div>
+                                <span>@Resource.My_Account</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                @if (objMenuAccess.AllOrder == 1)
+                                {
+                                    <li><a href="/Order/List"><div class="img-icon"><img src="/Content/img/myorder.png" /></div> @Resource.My_Order</a></li>
 
-                    <li>
-                        <a href="/Dashboard/Customer">
-                            <div class="img-icon"><img src="/Content/img/dashboard.png" /></div>
-                            <span>@Resource.Dashboard</span>
-                        </a>
-                    </li>
-                    <li class="treeview">
-                        <a href="#">
-                            <div class="img-icon"><img src="/Content/img/subscriptions.png" /></div>
-                            <span>@Resource.My_Account</span>
-                            <span class="pull-right-container">
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </span>
-                        </a>
-                        <ul class="treeview-menu">
+                                }
+                                <li><a href="/Inventory/Cart"><div class="img-icon"><img src="/Content/img/shopping.png" /></div> @Resource.Shopping_Cart</a></li>
 
-                            <li><a href="/Order/List"><div class="img-icon"><img src="/Content/img/myorder.png" /></div> @Resource.My_Order</a></li>
+                                <li><a href="/Inventory/Watch"><div class="img-icon"><img src="/Content/img/list.png" /></div> @Resource.Watch_List</a></li>
+                                @*<li><a href="/CustomerUpdate/UserActivityWatchList/3024"><i class="fa fa-list-alt"></i>Watch List</a></li>
+                    <li><a href="/Profile/AddSubUser"><i class="fa fa-clock-o"></i>Add SubUser</a></li>
+                    <li><a href="/OrderDetails/SubUserOrders"><i class="fa fa-clock-o"></i>SubUser Order</a></li>*@
+                            </ul>
+                        </li>
 
-                            <li><a href="/Inventory/Cart"><div class="img-icon"><img src="/Content/img/shopping.png" /></div> @Resource.Shopping_Cart</a></li>
-
-                            <li><a href="/Inventory/Watch"><div class="img-icon"><img src="/Content/img/list.png" /></div> @Resource.Watch_List</a></li>
-                            @*<li><a href="/CustomerUpdate/UserActivityWatchList/3024"><i class="fa fa-list-alt"></i>Watch List</a></li>
-                                <li><a href="/Profile/AddSubUser"><i class="fa fa-clock-o"></i>Add SubUser</a></li>
-                                <li><a href="/OrderDetails/SubUserOrders"><i class="fa fa-clock-o"></i>SubUser Order</a></li>*@
-                        </ul>
-                    </li>
-
-                    <li class="treeview">
-                        <a href="/Inventory/SpecificSearch">
-                            <div class="img-icon"><img src="/Content/img/search.png" /></div>
-                            <span>@Resource.Search</span>
-                        </a>
-                    </li>
+                    }
+                    @if (objMenuAccess.Search == 1)
+                    {
+                        <li class="treeview">
+                            <a href="/Inventory/SpecificSearch">
+                                <div class="img-icon"><img src="/Content/img/search.png" /></div>
+                                <span>@Resource.Search</span>
+                            </a>
+                        </li>
+                    }
 
                     @*<li class="treeview">
-                          <a href="/Inventory/SpecificSearch">
-                            <i class="fa fa-search"></i>
-                            <span></span>
-                            <span class="pull-right-container">
-                              <i class="fa fa-angle-left pull-right"></i>
-                            </span>
-                          </a>
-                          <ul class="treeview-menu">
-                            <li><a><i class="fa fa-search"></i>@Resource.Specfic_search</a></li>
-                          </ul>
-                        </li>*@
+          <a href="/Inventory/SpecificSearch">
+            <i class="fa fa-search"></i>
+            <span></span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a><i class="fa fa-search"></i>@Resource.Specfic_search</a></li>
+          </ul>
+        </li>*@
                     <li class="treeview">
                         <a href="#">
                             <div class="img-icon"><img src="/Content/img/user.png" /></div>
@@ -305,25 +313,34 @@
                             <li><a href="/User/ChangePassword"><div class="img-icon"><i class="fa fa-lock"></i></div> @Resource.Change_Password</a></li>
                         </ul>
                     </li>
-                    <li class="treeview">
-                        <a href="/Dashboard/Inventory">
-                            <div class="img-icon"><img src="/Content/img/Inventory.png" /></div>
-                            <span>@Resource.Inventory</span>
-                        </a>
-                    </li>
-                    <li class="treeview">
-                        <a href="/Dashboard/Inventory">
-                            <div class="img-icon"><img src="/Content/img/Marketing.png" /></div>
-                            <span>Marketing</span>
-                        </a>
-                    </li>
-                    <li class="treeview">
-                        <a href="/Dashboard/Inventory">
-                            <div class="img-icon"><img src="/Content/img/Utility.png" /></div>
-                            <span>Utility</span>
-                        </a>
-                    </li>
-                </ul>
+                    @if (objMenuAccess.Inventory == 1)
+                    {
+                        <li class="treeview">
+                            <a href="/Dashboard/Inventory">
+                                <div class="img-icon"><img src="/Content/img/Inventory.png" /></div>
+                                <span>@Resource.Inventory</span>
+                            </a>
+                        </li>
+                    }
+                    @if (objMenuAccess.Marketing == 1)
+                    {
+                        <li class="treeview">
+                            <a href="/Dashboard/Inventory">
+                                <div class="img-icon"><img src="/Content/img/Marketing.png" /></div>
+                                <span>Marketing</span>
+                            </a>
+                        </li>
+                    }
+                    @if (objMenuAccess.Utility == 1)
+                    {
+                        <li class="treeview">
+                            <a href="/Dashboard/Inventory">
+                                <div class="img-icon"><img src="/Content/img/Utility.png" /></div>
+                                <span>Utility</span>
+                            </a>
+                        </li>
+                    }
+                    </ul>
                 <div class="sign-bottom">
                     <ul class="sidebar-menu">
                         <li class="signout">

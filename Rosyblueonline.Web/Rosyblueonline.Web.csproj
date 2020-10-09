@@ -720,7 +720,7 @@
     <Content Include="Content\INV\Temp\BestDeal.xlsx" />
     <Content Include="Content\INV\Temp\AddRemoveLab.xlsx" />
     <Content Include="Content\INV\Temp\V360ViaCert.xlsx" />
-    <None Include="Properties\PublishProfiles\Rosyblueonline_Enh.pubxml" />
+    <None Include="Properties\PublishProfiles\Rosyblueonline_Enh_Html.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\BrowserVisibility.js" />
     <Content Include="Scripts\custom\Controller\CrtlStoneHistory.js" />
