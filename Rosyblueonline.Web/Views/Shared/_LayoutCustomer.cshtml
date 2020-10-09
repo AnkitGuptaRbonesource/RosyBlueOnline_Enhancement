@@ -5,6 +5,7 @@
 
 
 }
+    
 <!DOCTYPE html>
 <html lang="@CurrentCulture">
 <head>
@@ -23,7 +24,7 @@
   <meta name="Title" content="RosyblueOnline">
   <meta name="Author" content="Anshul Mehta">
   <meta name="Subject" content="RosyblueOnline">
-  <meta name="Language" content="English">
+  <meta name="Language" content="English"> 
   <meta name="Revisit" content="1 day">
   <meta name="Distribution" content="Global">
   <meta name="Robots" content="All">
@@ -38,6 +39,9 @@
 
 </head>
 <body class="sidebar-mini skin-black-light sidebar-collapse">
+    <form style="display:none" id="frmPostSearch111" method="post" action="/Inventory/SpecificSearchPost">
+        <input type="hidden" name="Query" id="hfQuery111" value="" />
+    </form>
     <div class="wrapper">
 
         <header class="main-header">
@@ -341,13 +345,9 @@
     </div>
     @Scripts.Render("~/bundles/modernizr", "~/bundles/jquery", "~/bundles/jqueryval", "~/bundles/bootstrap", "~/bundles/Admin/Script")
     <script type="text/javascript" src="/Scripts/custom/uiApp.js"></script>
-    <script type="text/javascript" src="/Scripts/custom/myApp.js"></script> 
-    <script type="text/javascript" src="/Scripts/select2.min.js"></script>
-    <script type="text/javascript" src="/Scripts/custom/rbDataTable.js"></script>
+    <script type="text/javascript" src="/Scripts/custom/myApp.js"></script>
     <script type="text/javascript" src="/Scripts/custom/Service/ServiceMethods.js"></script>
     <script type="text/javascript" src="/Scripts/custom/Controller/CtrlMasterLayout.js"></script>
-    @*<script type="text/javascript" src="/Scripts/custom/Controller/CtrlSpecificSearch.js"></script>
-    <script type="text/javascript" src="/Scripts/custom/Controller/ModuleSearchFilter.js"></script>*@
     @RenderSection("script", false)
 
     <script>

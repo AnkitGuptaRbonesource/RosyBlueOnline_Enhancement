@@ -25,6 +25,7 @@
 
         $(document).on('click', '.removeSearch', function (e) {
             var rID = $(e.target.parentElement).attr('data-id');
+            
             uiApp.Confirm('Confirm Delete?', function (resp) {
                 if (resp) {
                     objDashSvc.RemoveRecent(rID).then(function (data) {
@@ -42,7 +43,10 @@
         });
 
         $(document).on('click', '.loadData', function (e) {
-            var criteria = $(e.target.parentElement).attr('data-criteria');
+           // var criteria = $(e.target.parentElement).attr('data-Criteria');
+            var criteria = e.target.dataset.criteria;
+            
+          //  alert(criteria);
             $('#hfQuery').val(criteria);
             $('#frmPostSearch').submit();
             //location.href = '/Inventory/SpecificSearchPost?c=' + criteria;
@@ -180,7 +184,7 @@
                     }, {
                         targets: [3],
                         render: function (data, type, row) {
-                            return '<a class="loadData show-selink" data-Criteria="' + row.searchCriteria + '" href="#"><span class="se-bx"><i class="fa fa-search" aria-hidden="true"></i></span> Show Results</a>';
+                            return '<a class="loadData show-selink" data-Criteria="' + row.searchCriteria + '" href="#"><span class="se-bx" data-Criteria="' + row.searchCriteria + '"><i class="fa fa-search" data-Criteria="' + row.searchCriteria + '"  aria-hidden="true"></i></span> Show Results</a>';
                         },
                         orderable: false
                     }, {
@@ -218,8 +222,8 @@
                     '<div class="seinfo-l2">' + item.displayCriteria + '</div>' +
                     '</div>' +
                     '<div class="se-info-action">' +
-                    '<a class="act-link al1 loadData" href="#" data-Criteria=' + item.searchCriteria+' ><span class="se-bx"><i class="fa fa-search" aria-hidden="true"></i></span></a>' + 
-                    '<a class="act-link al2 removeSearch" href="#"  data-id=' + item.recentSearchID + '><span class="se-bx de-bx"><i class="fa fa-trash" aria-hidden="true"></i></span></a>' +
+                    '<a class="act-link al1 loadData" href="#" data-Criteria=' + item.searchCriteria + ' ><span class="se-bx" data-Criteria=' + item.searchCriteria + '><i class="fa fa-search"  data-Criteria=' + item.searchCriteria +' aria-hidden="true"></i></span></a>' + 
+                    '<a class="act-link al2 removeSearch" href="#"  data-id=' + item.recentSearchID + '><span class="se-bx de-bx" data-id=' + item.recentSearchID + ' ><i class="fa fa-trash" data-id=' + item.recentSearchID + ' aria-hidden="true"></i></span></a>' +
                     '</div>' +
                     '</li > ';
                 $("#tblSavedSearch").append(newListItem);
@@ -304,8 +308,8 @@
                     '<div class="seinfo-l2">' + item.displayCriteria + '</div>' +
                     '</div>' +
                     '<div class="se-info-action">' +
-                     '<a class="act-link al1 loadData" href="#" data-Criteria=' + item.searchCriteria + ' ><span class="se-bx"><i class="fa fa-search" aria-hidden="true"></i></span></a>' +
-                    '<a class="act-link al2 removeSearch" href="#"  data-id=' + item.recentSearchID + '><span class="se-bx de-bx"><i class="fa fa-trash" aria-hidden="true"></i></span></a>' +
+                    '<a class="act-link al1 loadData" href="#" data-Criteria=' + item.searchCriteria + ' ><span class="se-bx" data-Criteria=' + item.searchCriteria + ' ><i class="fa fa-search" data-Criteria=' + item.searchCriteria + '  aria-hidden="true"></i></span></a>' +
+                    '<a class="act-link al2 removeSearch" href="#"  data-id=' + item.recentSearchID + '><span class="se-bx de-bx" data-id=' + item.recentSearchID + ' ><i class="fa fa-trash" data-id=' + item.recentSearchID + ' aria-hidden="true"></i></span></a>' +
 
                     '</div>' +
                     '</li > ';
@@ -726,6 +730,8 @@
     //    });
 
     //}
+
+
 
 
     return {

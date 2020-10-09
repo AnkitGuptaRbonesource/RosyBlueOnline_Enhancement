@@ -902,9 +902,9 @@
         //if ($s('#certNo').val() != "") {
         //    FinalQuery = FinalQuery == "" ? 'CERTNO~' + $s('#certNo').val() : FinalQuery + '|CERTNO~' + $s('#certNo').val();
         //}
-        if ($s('#LotCertSearchInput').val() != "") {
-            FinalQuery = FinalQuery == "" ? 'LOTNO~' + $s("#LotCertSearchInput").val() + '|CERTNO~' + $s("#LotCertSearchInput").val() : FinalQuery + '|LOTNO~' + $s("#LotCertSearchInput").val() + '|CERTNO~' + $s("#LotCertSearchInput").val();
-        }
+        //if ($s('#LotCertSearchInput').val() != "") {
+        //    FinalQuery = FinalQuery == "" ? 'LOTNO~' + $s("#LotCertSearchInput").val() + '|CERTNO~' + $s("#LotCertSearchInput").val() : FinalQuery + '|LOTNO~' + $s("#LotCertSearchInput").val() + '|CERTNO~' + $s("#LotCertSearchInput").val();
+        //}
          
 
         if (getCount == true) {
@@ -1046,58 +1046,58 @@
 
 
 
-    var ReadLotNos121 = function (getCount) {
-        var FinalQuery = '';
+    //var ReadLotNos121 = function (getCount) {
+    //    var FinalQuery = '';
          
-        if ($s('#LotCertSearchInput').val() != "") {
-            FinalQuery = FinalQuery == "" ? 'LOTNO~' + $("#LotCertSearchInput").val() + '|CERTNO~' + $("#LotCertSearchInput").val() : FinalQuery + '|LOTNO~' + $("#LotCertSearchInput").val() + '|CERTNO~' + $("#LotCertSearchInput").val();
-        }
+    //    if ($s('#LotCertSearchInput').val() != "") {
+    //        FinalQuery = FinalQuery == "" ? 'LOTNO~' + $("#LotCertSearchInput").val() + '|CERTNO~' + $("#LotCertSearchInput").val() : FinalQuery + '|LOTNO~' + $("#LotCertSearchInput").val() + '|CERTNO~' + $("#LotCertSearchInput").val();
+    //    }
          
-        console.log(FinalQuery);
+    //    console.log(FinalQuery);
 
-        fQuery = FinalQuery;
+    //    fQuery = FinalQuery;
 
-        return {
-            count: CurrentCount,
-            query: FinalQuery,
-            displayQuery: ''
-        };
-    }
+    //    return {
+    //        count: CurrentCount,
+    //        query: FinalQuery,
+    //        displayQuery: ''
+    //    };
+    //}
 
-    $('#SearchId').click(function (e) {
-        e.preventDefault();
-        var query = '';
-        var ss = $('#collapse5').attr('aria-expanded');
-        var ln = $('#collapse3').attr('aria-expanded');
-        if ($("#LotCertSearchInput").val() == "" || $("#LotCertSearchInput").val() == undefined) {
-            alert('Please enter valid input !');
-        } else {
+    //$('#SearchId').click(function (e) {
+    //    e.preventDefault();
+    //    var query = '';
+    //    var ss = $('#collapse5').attr('aria-expanded');
+    //    var ln = $('#collapse3').attr('aria-expanded');
+    //    if ($("#LotCertSearchInput").val() == "" || $("#LotCertSearchInput").val() == undefined) {
+    //        alert('Please enter valid input !');
+    //    } else {
 
-            //query = ReadLotNos121(false);
+    //        //query = ReadLotNos121(false);
 
-            //options.onSearched(query);
-            //$("#SearchTablePost_filter label input").attr("placeholder", "Enter Lot/cert no. to quick search");
+    //        //options.onSearched(query);
+    //        //$("#SearchTablePost_filter label input").attr("placeholder", "Enter Lot/cert no. to quick search");
               
-            if (ss == "true") { 
-                query = ReadLotNos(false); 
-            }
-            else {
-                query = ReadLotNos(false);
-            }
+    //        if (ss == "true") { 
+    //            query = ReadLotNos(false); 
+    //        }
+    //        else {
+    //            query = ReadLotNos(false);
+    //        }
 
-            if (options.getRequestString) {
-                options.onSearched(query);
-            } else {
-                objSF.StockList(query).then(function (data) {
-                    options.onSearched(data);
-                }, function (error) {
-                });
-            } 
-            $("#SearchTablePost_filter label input").attr("placeholder", "Enter Lot/cert no. to quick search");
+    //        if (options.getRequestString) {
+    //            options.onSearched(query);
+    //        } else {
+    //            objSF.StockList(query).then(function (data) {
+    //                options.onSearched(data);
+    //            }, function (error) {
+    //            });
+    //        } 
+    //        $("#SearchTablePost_filter label input").attr("placeholder", "Enter Lot/cert no. to quick search");
             
 
-        }
-    });
+    //    }
+    //});
 
 
     return {

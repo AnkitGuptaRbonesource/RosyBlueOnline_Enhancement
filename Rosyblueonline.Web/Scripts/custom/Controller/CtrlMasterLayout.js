@@ -92,6 +92,22 @@
     //});
 
 
+
+    $('#SearchId').click(function (e) {
+        e.preventDefault();
+        var criteria = '';
+        if ($("#LotCertSearchInput").val() == "" || $("#LotCertSearchInput").val() == undefined) {
+            alert('Please enter valid input !');
+        } else {
+
+            criteria = 'LOTNO~' + $("#LotCertSearchInput").val() + '|CERTNO~' + $("#LotCertSearchInput").val();
+
+            //alert(criteria);
+            $('#hfQuery111').val(criteria);
+            $('#frmPostSearch111').submit();
+        }
+    });
+
     return {
         init: function () {
             OnLoad();
