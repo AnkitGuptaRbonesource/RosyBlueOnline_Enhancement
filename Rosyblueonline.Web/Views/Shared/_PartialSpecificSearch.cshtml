@@ -156,8 +156,10 @@
                                     </div>
                                 </div>
                                 <div class="stone-reset">
-                                    <input type='button' value='Less' class="reset-btn" id='FCaratSize'>
-                                    <label class="reset-btn" id='btnF_CaratSize'><span class="refresh"><img src="~/Content/img/refresh.png" /></span>@Resource.Reset1</label>
+                                    <label class="reset-btn" id='btnF_CaratSize'>
+                                    <span class="refresh">
+                                        <img src="~/Content/img/refresh.png" />
+                                    </span>@Resource.Reset1</label>
                                 </div>
                             </div>
                             <div class="sizeboxes">
@@ -195,6 +197,10 @@
                                             <label for="@CSval">@CaratSize.CaratFrm-@CaratSize.CaratTo  </label>
                                             CS = CS + 1;
                                         }
+                                        <div class="more-btnbox">
+                                            <input type='button' value='Less' class="reset-btn" id='FCaratSize'>
+                                            <span><img src="~/Content/img/more-img.svg" /></span>
+                                        </div>
 
                                     </form>
 
@@ -539,7 +545,7 @@
                         </div>
                     </div>
 
-                    <form class="collapse padding-top-10" id="collapseExample">
+                    <form class="collapse padding-top-10 keyboxbutton" id="collapseExample">
                         <div class="advance-panel-box">
                             <div class="panel panel-default">
                                 <div class="panel-body">

@@ -24,7 +24,6 @@ var Datatable = function () {
             $('.table-group-actions', tableWrapper).text("");
         }
         tableOptions.onCheckboxChange(CheckedRows, CheckedRowsInventoryID);
-
     };
 
     var AddSelectedRecords = function (data, inventoryID) {

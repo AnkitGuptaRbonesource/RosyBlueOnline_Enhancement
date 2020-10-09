@@ -51,23 +51,29 @@
                                 <span class="info-box-text">
                                     @Resource.Grid_Legends <span class="spngrid">
                                         <a href="#" data-toggle="tooltip" data-placement="bottom" title="Best Deals">
-                                            <img id="imgbtnBestDeals" src="/content/img/B.jpg">
+                                            @*<img id="imgbtnBestDeals" src="/content/img/B.jpg">*@
+                                            <span id="imgbtnBestDeals" class="gried-color"></span>
                                         </a>
                                         <a href="#" data-toggle="tooltip" data-placement="bottom" title="New Diamonds">
-                                            <img id="imgbtnNew" src="/content/img/N.jpg">
+                                            @*<img  src="/content/img/N.jpg">*@
+                                            <span id="imgbtnNew" class="gried-color"></span>
                                         </a>
                                         <a href="#" data-toggle="tooltip" data-placement="bottom" title="In-business">
-                                            <img id="imgbtnOnMemo" src="/content/img/M.jpg">
+                                            @*<img  src="/content/img/M.jpg">*@
+                                            <span id="imgbtnOnMemo" class="gried-color"></span>
                                         </a>
                                         <a href="#" data-toggle="tooltip" data-placement="bottom" title="Add To Cart">
-                                            <img id="Image2" src="/content/img/C.jpg">
+                                            @*<img  src="/content/img/C.jpg">*@
+                                            <span id="Image2" class="gried-color"></span>
                                         </a>
 
                                         <a href="#" data-toggle="tooltip" data-placement="bottom" title="In Lab">
-                                            <img id="Image1" src="/content/img/In_lab.jpg">
+                                            @*<img  src="/content/img/In_lab.jpg">*@
+                                            <span id="Image1" class="gried-color"></span>
                                         </a>
                                         <a href="#" data-toggle="tooltip" data-placement="bottom" title="Heart&amp;Arrow">
-                                            <img id="imgha" src="/content/img/H&amp;A.jpg">
+                                            @*<img  src="/content/img/H&amp;A.jpg">*@
+                                            <span id="imgha" class="gried-color"></span>
                                         </a>
                                     </span><a href="#" data-tooltip="#foo" class="fcolor">@Resource.Inclusion</a>
                                 </span>
@@ -148,64 +154,64 @@
         <div class="row">
             <div class="col-lg-12 col-sm-12 col-xs-12">
                 <div class="search-result-box">
-                    <div class="campare-box">
-                        <ul>
-                            <li>
-                                <a href="javascript:void(0);" id="btnCompare">
-                                    <span><img src="~/Content/img/Compare-img.svg" /></span>
-                                    <span>@Resource.Compare</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0);" id="btnBack">
-                                    <span>
-                                        <img src="~/Content/img/Modify-img.svg" />
-                                    </span>
-                                    <span>@Resource.Modify</span>
-                                </a>
-                            </li>
-                            @if (objToken.RoleID == 3)
-                            {
-                                <li>
-                                    <a href="javascript:void(0);" id="btnInspectionReport">
-                                        <span>
-                                            <img src="~/Content/img/inspection-img.svg" />
-                                        </span>
-                                        <span>@Resource.Inspection_Request</span>
-                                    </a>
-                                </li>
-                            }
-                            @if (objToken.RoleID == 3)
-                            {
-                                <li>
-                                    <a href="javascript:void(0);" id="btnWatchList">
-                                        <span>
-                                            <img src="~/Content/img/addwatchlist-img.svg" />
-                                        </span>
-                                        <span>@Resource.Watch_List</span>
-                                    </a>
-                                </li>
-                            }
-                            @if (objToken.RoleID == 3)
-                            {
-                                <li>
-                                    <a href="javascript:void(0);" id="btnCart">
-                                        <span>
-                                            <img src="~/Content/img/panel-cart.svg" />
-                                        </span>
-                                        <span>@Resource.Cart</span>
-                                    </a>
-                                </li>
-                            }
-
-                        </ul>
-                    </div>
                     <div class="export-box">
                         @if (Model != "OrderInfo" && Model != "Memo" && !string.IsNullOrEmpty(Model))
                         {
+
+                            <div class="campare-box">
+                                <ul>
+                                    <li>
+                                        <a href="javascript:void(0);" id="btnCompare">
+                                            <span><img src="~/Content/img/Compare-img.svg" /></span>
+                                            <span>@Resource.Compare</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" id="btnBack">
+                                            <span>
+                                                <img src="~/Content/img/Modify-img.svg" />
+                                            </span>
+                                            <span>@Resource.Modify</span>
+                                        </a>
+                                    </li>
+                                    @if (objToken.RoleID == 3)
+                                    {
+                                        <li>
+                                            <a href="javascript:void(0);" id="btnInspectionReport">
+                                                <span>
+                                                    <img src="~/Content/img/inspection-img.svg" />
+                                                </span>
+                                                <span>@Resource.Inspection_Request</span>
+                                            </a>
+                                        </li>
+                                    }
+                                    @if (objToken.RoleID == 3)
+                                    {
+                                        <li>
+                                            <a href="javascript:void(0);" id="btnWatchList">
+                                                <span>
+                                                    <img src="~/Content/img/addwatchlist-img.svg" />
+                                                </span>
+                                                <span>@Resource.Watch_List</span>
+                                            </a>
+                                        </li>
+                                    }
+                                    @if (objToken.RoleID == 3)
+                                    {
+                                        <li>
+                                            <a href="javascript:void(0);" id="btnCart">
+                                                <span>
+                                                    <img src="~/Content/img/panel-cart.svg" />
+                                                </span>
+                                                <span>@Resource.Cart</span>
+                                            </a>
+                                        </li>
+                                    }
+                                </ul>
+                            </div>
                             <div class="list-view">
                                 <table class="table listvalue">
-                                    <tbody class="bordertp bordertp2" >
+                                    <tbody class="bordertp bordertp2">
                                         <tr>
                                             <th class="tbnew">
                                                 @Resource.Total_pcs
@@ -251,7 +257,7 @@
                                             </th>
                                         </tr>
                                         <tr></tr>
-                                        
+
                                     </tbody>
                                     <thead id="tblBodySummary">
                                         <tr class="rsearchnew">
@@ -283,7 +289,7 @@
 
                                         </tr>
                                     </thead>
-                                    
+
                                     @if (objToken != null && objToken.RoleID == 2)
                                     {
                                         @*Role ID 2 for Admin User*@
@@ -293,14 +299,14 @@
                             </div>
                         }
 
-                    @*<div class="export-excelbox">
-                        <div class="search-excel">
-                            <input id="txtTableSearch" type="text" class="search-excel-input" placeholder="Enter Lot/Cert. number to quick search ...." aria-controls="SearchTablePost" />
-                            <div class="searchbar-icon">
-                                <img src="~/Content/img/search-icon.svg" />
-                            </div>
-                        </div>
-                    </div>*@
+                        @*<div class="export-excelbox">
+            <div class="search-excel">
+                <input id="txtTableSearch" type="text" class="search-excel-input" placeholder="Enter Lot/Cert. number to quick search ...." aria-controls="SearchTablePost" />
+                <div class="searchbar-icon">
+                    <img src="~/Content/img/search-icon.svg" />
+                </div>
+            </div>
+        </div>*@
 
                         <div class="export-table">
                             <div class="row list-view">

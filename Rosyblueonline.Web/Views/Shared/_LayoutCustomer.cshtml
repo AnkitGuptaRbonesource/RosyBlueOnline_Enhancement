@@ -1,7 +1,7 @@
 ﻿@{
-  TokenLogModel objToken = Session["Token"] as TokenLogModel;
-  UserMenuAccessModel objMenuAccess = Session["MenuAccess"] as UserMenuAccessModel;
-  string CurrentCulture = Request.Cookies["CurrentCulture"] == null ? "en" : Request.Cookies["CurrentCulture"].Value;
+    TokenLogModel objToken = Session["Token"] as TokenLogModel;
+    UserMenuAccessModel objMenuAccess = Session["MenuAccess"] as UserMenuAccessModel;
+    string CurrentCulture = Request.Cookies["CurrentCulture"] == null ? "en" : Request.Cookies["CurrentCulture"].Value;
 
 
 }
@@ -10,36 +10,35 @@
 <html lang="@CurrentCulture">
 <head>
 
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>@ViewBag.Title - Rosy Blue - Polished Diamonds | Rough Diamonds | Diamond Certificates | Mumbai | India</title>
-  @*<link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet">
-    <link href="~/Content/css/dashboard.css" rel="stylesheet">
-    <link rel="stylesheet" href="~/content/font-awesome/css/font-awesome.min.css">*@
-  <!-- Tell the browser to be responsive to screen width -->
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <meta name="Title" content="RosyblueOnline">
-  <meta name="Author" content="Anshul Mehta">
-  <meta name="Subject" content="RosyblueOnline">
-  <meta name="Language" content="English"> 
-  <meta name="Revisit" content="1 day">
-  <meta name="Distribution" content="Global">
-  <meta name="Robots" content="All">
-  <meta name="description" content="Rosyblue offers unique and custom design Diamonds.   ">
-  <meta name="keywords" content="Anshul mehta, Rosyblue, RosyblueOnline, Diamond, Emerald, Ruby, Sapphire, platinum, gold, jewelry, design, sketches">
-  <!---Favicon--->
-  <link href="/Content/img/favicon.png" rel="shortcut icon" type="image/x-icon" size="16x16">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  @Styles.Render("~/Content/Admin/Css")
-  @RenderSection("header")
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewBag.Title - Rosy Blue - Polished Diamonds | Rough Diamonds | Diamond Certificates | Mumbai | India</title>
+    @*<link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <link href="~/Content/css/bootstrap.min.css" rel="stylesheet">
+        <link href="~/Content/css/dashboard.css" rel="stylesheet">
+        <link rel="stylesheet" href="~/content/font-awesome/css/font-awesome.min.css">*@
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="Title" content="RosyblueOnline">
+    <meta name="Author" content="Anshul Mehta">
+    <meta name="Subject" content="RosyblueOnline">
+    <meta name="Language" content="English">
+    <meta name="Revisit" content="1 day">
+    <meta name="Distribution" content="Global">
+    <meta name="Robots" content="All">
+    <meta name="description" content="Rosyblue offers unique and custom design Diamonds.   ">
+    <meta name="keywords" content="Anshul mehta, Rosyblue, RosyblueOnline, Diamond, Emerald, Ruby, Sapphire, platinum, gold, jewelry, design, sketches">
+    <!---Favicon--->
+    <link href="/Content/img/favicon.png" rel="shortcut icon" type="image/x-icon" size="16x16">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    @Styles.Render("~/Content/Admin/Css")
+    @RenderSection("header")
 
 
 </head>
 <body class="sidebar-mini skin-black-light sidebar-collapse">
-    
     <div class="wrapper">
 
         <header class="main-header">
@@ -51,8 +50,8 @@
                         <span class="sr-only">Toggle navigation</span>
                     </a>*@
                 <div class="searchbar">
-                    <input id="LotCertSearchInput" type="text" class="header-search" placeholder="Enter Lot/Cert. number to quick search ...." />
-                    <div class="inseach" id="SearchId">
+                    <input type="text" class="header-search" placeholder="Enter Lot/Cert. number to quick search ...." />
+                    <div class="inseach">
                         <img src="/Content/img/search.png" />
                     </div>
                     <div class="csv">
@@ -66,6 +65,11 @@
                         </div>
                     </div>
                 </div>
+                <div class="menutoggle">
+                    <a href="javascript:void(0);">
+                        <img src="/Content/img/menu.svg" class="img-responsive" />
+                    </a>
+                </div>
                 <div class="navbar-custom-menu">
                     <ul class="nav navbar-nav">
                         <li class="dropdown tasks-menu">
@@ -75,7 +79,7 @@
                                         <path fill-rule="evenodd" clip-rule="evenodd" d="M22.125 0.75H1.875C1.25 0.75 0.75 1.25 0.75 1.875V22.125C0.75 22.625 1.25 23.25 1.875 23.25H22.125C22.625 23.25 23.25 22.625 23.25 22.125V1.875C23.25 1.25 22.625 0.75 22.125 0.75ZM8.25 5.74988H5.75V8.24988H8.25V5.74988ZM18.25 5.74988H10.75V8.24988H18.25V5.74988ZM18.25 10.7501H10.75V13.2501H18.25V10.7501ZM10.75 15.75H18.25V18.25H10.75V15.75ZM5.75 10.7501H8.25V13.2501H5.75V10.7501ZM8.25 15.75H5.75V18.25H8.25V15.75ZM3.25 20.7501H20.75V3.25012H3.25V20.7501Z" />
                                     </svg>
                                 </span>
-                                <span>Watchlist</span>
+                                <span class="menuname">Watchlist</span>
                                 <span class="label label-danger" id="spanWatchlistCount">0</span>
                             </a>
                         </li>
@@ -86,24 +90,24 @@
                                         <path fill-rule="evenodd" clip-rule="evenodd" d="M22.8711 14.9625C22.4461 15.7375 21.6211 16.25 20.6836 16.25H11.3711L9.99609 18.75H24.9961V21.25H9.99609C8.09609 21.25 6.89609 19.2125 7.80859 17.5375L9.49609 14.4875L4.99609 5H2.49609V2.5H6.58359L7.75859 5H26.2586C27.2086 5 27.8086 6.025 27.3461 6.85L22.8711 14.9625ZM24.134 7.49996H8.94646L11.909 13.75H20.684L24.134 7.49996ZM9.9949 22.5C8.6199 22.5 7.5074 23.625 7.5074 25C7.5074 26.375 8.6199 27.5 9.9949 27.5C11.3699 27.5 12.4949 26.375 12.4949 25C12.4949 23.625 11.3699 22.5 9.9949 22.5ZM20.0087 25C20.0087 23.625 21.1212 22.5 22.4962 22.5C23.8712 22.5 24.9962 23.625 24.9962 25C24.9962 26.375 23.8712 27.5 22.4962 27.5C21.1212 27.5 20.0087 26.375 20.0087 25Z" />
                                     </svg>
                                 </span>
-                                <span>Cart</span>
+                                <span class="menuname">Cart</span>
                                 <span class="label label-success" id="spanCartCount">0</span>
                             </a>
                         </li>
                         <li class="dropdown notifications-menu">
                             <a href="/Order/List" class="dropdown-toggle userorder" data-toggle="dropdown">
                                 <img class="car-icon" data-toggle="tooltip" data-placement="bottom" title="Order" src="/Content/img/order.png">
-                                <span style="color:#E9978C !important">Order <img src="/Content/img/orderarrow.png" /></span>
+                                <span style="color:#E9978C !important" class="menuname">Order <img src="/Content/img/orderarrow.png" /></span>
                                 @*<span class="label label-warning" id="spanOrderCount">0</span>*@
                             </a>
                             <ul class="dropdown-menu orderdropmenu">
                                 <li class="order-box">
                                     <ul class="nav nav-pills">
                                         <li class="nav-item active">
-                                            <a class="nav-link" data-toggle="pill" href="#home">Pending orders</a>
+                                            <a class="nav-link" id="pending-order" href="#home">Pending orders</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" data-toggle="pill" href="#menu1">View orders</a>
+                                            <a class="nav-link" id="view-order" href="#menu1">View orders</a>
                                         </li>
                                     </ul>
                                     <div class="tab-content">
@@ -124,7 +128,7 @@
 
                                         </div>
                                         <div id="menu1" class="tab-pane fade">
-                                            <div><a style=" text-align: center;" target="_blank" href="/order/List"><h4>View All Details</h4></a></div>
+
                                             <div id="CompleteOrderList" style="overflow-y:auto;height:400px;"> </div>
 
                                             @*<div class="order-data">
@@ -234,48 +238,60 @@
                             </a>
                         </li>
                     </ul>
+                    <div class="close-btn">
+                        <a href="javascript:void(0);">
+                            <img src="/Content/img/close-button.svg" />
+                        </a>
+                    </div>
                 </div>
                 <ul class="sidebar-menu">
-                    
-                        <li>
-                            <a href="/Dashboard/Customer">
-                                <div class="img-icon"><img src="/Content/img/dashboard.png" /></div>
-                                <span>@Resource.Dashboard</span>
-                            </a>
-                        </li>
-                    
 
-                    
-                        <li class="treeview">
-                            <a href="#">
-                                <div class="img-icon"><img src="/Content/img/subscriptions.png" /></div>
-                                <span>@Resource.My_Account</span>
-                                <span class="pull-right-container">
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </span>
-                            </a>
-                            <ul class="treeview-menu">
-                                
-                                    <li><a href="/Order/List"><div class="img-icon"><img src="/Content/img/myorder.png" /></div> @Resource.All_Orders</a></li>
-                                
+                    <li>
+                        <a href="/Dashboard/Customer">
+                            <div class="img-icon"><img src="/Content/img/dashboard.png" /></div>
+                            <span>@Resource.Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <div class="img-icon"><img src="/Content/img/subscriptions.png" /></div>
+                            <span>@Resource.My_Account</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
 
-                                <li><a href="/Inventory/Cart"><div class="img-icon"><img src="/Content/img/shopping.png" /></div> @Resource.Shopping_Cart</a></li>
+                            <li><a href="/Order/List"><div class="img-icon"><img src="/Content/img/myorder.png" /></div> @Resource.My_Order</a></li>
 
-                                <li><a href="/Inventory/Watch"><div class="img-icon"><img src="/Content/img/list.png" /></div> @Resource.Watch_List</a></li>
+                            <li><a href="/Inventory/Cart"><div class="img-icon"><img src="/Content/img/shopping.png" /></div> @Resource.Shopping_Cart</a></li>
 
-                            </ul>
-                        </li>
-                   
+                            <li><a href="/Inventory/Watch"><div class="img-icon"><img src="/Content/img/list.png" /></div> @Resource.Watch_List</a></li>
+                            @*<li><a href="/CustomerUpdate/UserActivityWatchList/3024"><i class="fa fa-list-alt"></i>Watch List</a></li>
+                                <li><a href="/Profile/AddSubUser"><i class="fa fa-clock-o"></i>Add SubUser</a></li>
+                                <li><a href="/OrderDetails/SubUserOrders"><i class="fa fa-clock-o"></i>SubUser Order</a></li>*@
+                        </ul>
+                    </li>
 
-                        <li class="treeview">
-                            <a href="/Inventory/SpecificSearch">
-                                <div class="img-icon"><img src="/Content/img/search.png" /></div>
-                                <span>@Resource.Search</span>
-                            </a>
-                        </li>
+                    <li class="treeview">
+                        <a href="/Inventory/SpecificSearch">
+                            <div class="img-icon"><img src="/Content/img/search.png" /></div>
+                            <span>@Resource.Search</span>
+                        </a>
+                    </li>
 
-                    
-
+                    @*<li class="treeview">
+                          <a href="/Inventory/SpecificSearch">
+                            <i class="fa fa-search"></i>
+                            <span></span>
+                            <span class="pull-right-container">
+                              <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                          </a>
+                          <ul class="treeview-menu">
+                            <li><a><i class="fa fa-search"></i>@Resource.Specfic_search</a></li>
+                          </ul>
+                        </li>*@
                     <li class="treeview">
                         <a href="#">
                             <div class="img-icon"><img src="/Content/img/user.png" /></div>
@@ -289,30 +305,25 @@
                             <li><a href="/User/ChangePassword"><div class="img-icon"><i class="fa fa-lock"></i></div> @Resource.Change_Password</a></li>
                         </ul>
                     </li>
-                   
-                        <li class="treeview">
-                            <a href="/Dashboard/Inventory">
-                                <div class="img-icon"><img src="/Content/img/Inventory.png" /></div>
-                                <span>@Resource.Inventory</span>
-                            </a>
-                        </li>
-                    
-
-                        <li class="treeview">
-                            <a href="/Dashboard/Inventory">
-                                <div class="img-icon"><img src="/Content/img/Marketing.png" /></div>
-                                <span>Marketing</span>
-                            </a>
-                        </li>
-                  
-                        <li class="treeview">
-                            <a href="/Dashboard/Inventory">
-                                <div class="img-icon"><img src="/Content/img/Utility.png" /></div>
-                                <span>Utility</span>
-                            </a>
-                        </li>
-                  
-                    </ul>
+                    <li class="treeview">
+                        <a href="/Dashboard/Inventory">
+                            <div class="img-icon"><img src="/Content/img/Inventory.png" /></div>
+                            <span>@Resource.Inventory</span>
+                        </a>
+                    </li>
+                    <li class="treeview">
+                        <a href="/Dashboard/Inventory">
+                            <div class="img-icon"><img src="/Content/img/Marketing.png" /></div>
+                            <span>Marketing</span>
+                        </a>
+                    </li>
+                    <li class="treeview">
+                        <a href="/Dashboard/Inventory">
+                            <div class="img-icon"><img src="/Content/img/Utility.png" /></div>
+                            <span>Utility</span>
+                        </a>
+                    </li>
+                </ul>
                 <div class="sign-bottom">
                     <ul class="sidebar-menu">
                         <li class="signout">
@@ -368,6 +379,13 @@
                 }
             })
 
+            $(".menutoggle a").click(function () {
+                $(".main-sidebar").addClass("sideactive");
+            });
+            $(".close-btn a").click(function () {
+                $(".main-sidebar").removeClass("sideactive");
+            });
+
             var ls = new LanguageService();
 
             $('#ddlLanguage').change(function (e) {
@@ -378,6 +396,25 @@
                 }, function (error) {
 
                 });
+            });
+
+            $("#pending-order").click(function () {
+                $(".tab-content").find("#menu1").toggleClass("active in");
+                $(".tab-content").find("#home").toggleClass("active in");
+                $(".notifications-menu").addClass("open");
+                $(this).parent("li").addClass("active");
+                $("#view-order").parent("li").removeClass("active");
+                return false;
+
+            });
+
+            $("#view-order").click(function () {
+                $(".tab-content").find("#menu1").toggleClass("active in");
+                $(".tab-content").find("#home").toggleClass("active in");
+                $(".notifications-menu").addClass("open");
+                $(this).parent("li").addClass("active");
+                $("#pending-order").parent("li").removeClass("active");
+                return false;
             });
 
         });
