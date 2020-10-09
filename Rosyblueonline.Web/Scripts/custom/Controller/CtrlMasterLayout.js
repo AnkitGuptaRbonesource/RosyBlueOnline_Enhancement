@@ -1,8 +1,10 @@
 ﻿var CtrlMasterLayout = function () {
-    var objDS = null;
+    var objDS = null, objSF = null;
 
     var OnLoad = function () {
         objDS = new DashboardService();
+        objSF = new SearchFilter();
+        
         LoadCounts();
         BindPendingOrderList("Pending");
         BindPendingOrderList("Complete");
@@ -34,8 +36,8 @@
                 if (data.Result.length > 0) {
                     $.each(data.Result, function (i, item) {
                         var newListItem = '<div class="order-data">' +
-                            '<div class="order-cnt">' +
-                            '<h5>#' + item.orderDetailsId + '</h5>' +
+                            '<div class="order-cnt">' + 
+                            '<h5><a target="_blank" href="/order/info/' + item.orderDetailsId+'">#' + item.orderDetailsId + '</a></h5>'+
                             '<p> ' + item.firstName + ' ' + item.lastName + '<span>(' + item.companyName + ')</span></p>' +
                             '</div>' +
                             '<div class="order-nmbr">' +
@@ -73,7 +75,45 @@
             uiApp.Alert({ container: '#uiPanel1', message: "Some error occured.", type: "danger" });
         });
 
-    }
+    } 
+
+
+    //$('#SearchId').click(function (e) {
+    //    e.preventDefault();
+    //    var query = '';
+    //    var ss = $('#collapse5').attr('aria-expanded');
+    //    var ln = $('#collapse3').attr('aria-expanded');
+
+       
+    //    if ($("#SearchInput").val() == "" || $("#SearchInput").val() == undefined) {
+    //        alert('Please enter valid input !');
+    //    } else {
+
+    //        query = ReadLotNos(false);
+    //       // query = "LOTNO~" + $("#SearchInput").val() + "|CERTNO~" + $("#SearchInput").val();
+    //        query = "LOTNO~" + $("#SearchInput").val();
+    //        options.onSearched(query);
+            
+    //    }
+
+    //});
+
+
+
+    $('#SearchId').click(function (e) {
+        e.preventDefault();
+        var criteria = '';
+        if ($("#LotCertSearchInput").val() == "" || $("#LotCertSearchInput").val() == undefined) {
+            alert('Please enter valid input !');
+        } else {
+
+            criteria = 'LOTNO~' + $("#LotCertSearchInput").val() + '|CERTNO~' + $("#LotCertSearchInput").val();
+
+            //alert(criteria);
+            $('#hfQuery111').val(criteria);
+            $('#frmPostSearch111').submit();
+        }
+    });
 
     return {
         init: function () {

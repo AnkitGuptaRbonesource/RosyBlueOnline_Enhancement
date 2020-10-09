@@ -215,7 +215,7 @@ namespace Rosyblueonline.Web.Controllers
         {
             try
             {
-                var RCount = objRecentSearchService.Delete(recentSearchID);
+               var RCount = objRecentSearchService.Delete(recentSearchID);
                 return Json(new Response { IsSuccess = true, Message = "200", Result = RCount });
             }
             catch (Exception ex)

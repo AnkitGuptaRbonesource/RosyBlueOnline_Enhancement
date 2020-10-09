@@ -1507,7 +1507,7 @@
     <value>Remove_Cart</value>
   </data>
   <data name="Return_Partial_Sell" xml:space="preserve">
-    <value>Return_Partial_Sell</value>
+    <value>Return Partial Sell</value>
   </data>
   <data name="Rough" xml:space="preserve">
     <value>Rough</value>
@@ -1621,7 +1621,7 @@
     <value>Email_Address</value>
   </data>
   <data name="Fancy_Colorsm" xml:space="preserve">
-    <value>Fancy_Color</value>
+    <value>Fancy Color</value>
   </data>
   <data name="Last_Login" xml:space="preserve">
     <value>Last_Login</value>
@@ -1633,7 +1633,7 @@
     <value>NA</value>
   </data>
   <data name="New_Arrivals" xml:space="preserve">
-    <value>New_Arrivals</value>
+    <value>New Arrivals</value>
   </data>
   <data name="Phone_1" xml:space="preserve">
     <value>Phone_1</value>
@@ -1648,7 +1648,7 @@
     <value>Reject</value>
   </data>
   <data name="Revised_Stones" xml:space="preserve">
-    <value>Revised_Stones</value>
+    <value>Revised Stones</value>
   </data>
   <data name="Saved_Search" xml:space="preserve">
     <value>Saved_Search</value>
