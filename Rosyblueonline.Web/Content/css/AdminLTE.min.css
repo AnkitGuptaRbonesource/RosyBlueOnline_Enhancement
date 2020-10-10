@@ -346,6 +346,13 @@ body{font-family: 'Karla', sans-serif !important;font-weight:400;overflow-x:hidd
     justify-content: space-between;
     padding: 15px 30px;
     border-bottom: 1px solid #eee;
+    cursor: pointer;
+    background: transparent;
+    transition: 0.5s all ease;
+}
+.order-data:hover {
+    background: #f0f0f5;
+    transition: 0.5s all ease;
 }
 .order-cnt h5 {
     font-weight: 600;
@@ -448,6 +455,9 @@ body{font-family: 'Karla', sans-serif !important;font-weight:400;overflow-x:hidd
 }
 .navbar-nav > .user-menu > .dropdown-menu > .user-footer a:after {
     display: none;
+}
+.order-data .order-cnt h5 a:after {
+    border: none;
 }
 .dropbox {
     position: absolute;
@@ -611,11 +621,13 @@ body{font-family: 'Karla', sans-serif !important;font-weight:400;overflow-x:hidd
     width: 100%;
     margin-bottom: 25px;
     background-color: #fff;
-    padding: 15px 30px;
+    padding: 12px 30px;
     border-radius: 10px;
 }
 .campare-box ul li a span img {
     margin-bottom: 6px;
+    width: 24px;
+    height: 24px;
 }
 .export-box {
     position: relative;
@@ -989,6 +1001,9 @@ span.gried-color {
     background: rgb(58 ,66, 118) !important;
     color: #fff !important;
 }
+#divMultipleSizes {
+    margin-top: 12px;
+}
 
 
 
@@ -1099,6 +1114,10 @@ span.gried-color {
     }
     .inbx {
         padding: 15px;
+    }
+    .r10 .cl {
+        padding-left: 5px;
+        padding-right: 5px;
     }
 
 }
@@ -1244,12 +1263,7 @@ span.gried-color {
         margin-right: 15px;
         margin-bottom: 25px;
     }
-    .sizeboxes {
-        display: block;
-    }
-    .sizeboxes .form-inline .form-control {
-        max-width: initial;
-    }
+    
     .shape-cut-box {
         display: block;
     }
@@ -1260,6 +1274,50 @@ span.gried-color {
         display: block;
     }
     .heart-box .describe-line {
+        width: 100%;
+    }
+    .main-dashboxes {
+        display: block;
+    }
+    .dashboxes {
+        width: 100%;
+    }
+    .heading-panel {
+        display: block;
+    }
+    .panel-stonebox {
+        display: block;
+    }
+    .stone-panel {
+        margin-left: 0;
+    }
+    .stone-panel ul li {
+        display: block;
+        margin: 0;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    .summery-box {
+        display: block;
+    }
+    .clorbox {
+        margin-right: 0;
+    }
+    .panel-dropdown .dropdown button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .excel-btnbox {
+        display: block;
+        width: 100%;
+    }
+    .excel-btnbox .dropdown.print-btn {
+        margin: 0;
+        width: 100%;
+        display: block;
+        margin-bottom: 10px;
+    }
+    .print-btn button {
         width: 100%;
     }
 }

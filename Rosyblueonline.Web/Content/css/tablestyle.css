@@ -375,9 +375,9 @@ ul, li {
 }
 
 .info-boxtxt {
-  display: block;
-  position: relative;
-  padding-right: 55px;
+    display: block;
+    position: relative;
+    padding-right: 48px;
 }
 
 .fix-search {

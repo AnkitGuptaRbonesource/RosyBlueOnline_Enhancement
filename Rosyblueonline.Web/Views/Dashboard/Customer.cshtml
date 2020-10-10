@@ -89,70 +89,75 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6">
-                <div class="dash-box">
-                    <div class="dash-head clearfix">
-                        @Resource.Saved_Search
-                        @*<button type="button" class="btn btn-link">View All (304) <i class="fa fa-angle-right"></i></button>*@
+
+            <div class="col-lg-12 col-sm-12 col-xs-12">
+                <div class="main-dashboxes">
+                    <div class="dashboxes">
+                        <div class="dash-box">
+                            <div class="dash-head clearfix">
+                                @Resource.Saved_Search
+                                @*<button type="button" class="btn btn-link">View All (304) <i class="fa fa-angle-right"></i></button>*@
+                            </div>
+                            <div class="dash-inner">
+                                <ul id="tblSavedSearch" class="table-ul"></ul>
+                                @*<ul class="table-ul">
+                        <li class="table-li">
+                            <div class="se-info">
+                                <div class="seinfo-l1"><span class="sespce sefound">30,558</span><span class="sespce sedate">1 hr ago</span><span class="sespce sename">Mayur P.</span></div>
+                                <div class="seinfo-l2">GIA-Origin | HA-yes | Good | Good</div>
+                            </div>
+                            <div class="se-info-action">
+                                <a class="act-link al1" href="#"><span class="se-bx"><i class="fa fa-search" aria-hidden="true"></i></span></a>
+                                <a class="act-link al2" href="#"><span class="se-bx de-bx"><i class="fa fa-trash" aria-hidden="true"></i></span></a>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="table-no-results text-center">
+                        <div class="table-nrimg-box"><img src="../Content/img/no_data_icon.svg" alt="" /></div>
+                        <div class="table-nr-text">You’ve not saved any search yet!</div>
+                        <div class="table-btn-box">
+                            <a href="/Inventory/SpecificSearch" class="btn btn-primary"><i class="fa fa-search" aria-hidden="true"></i> Search Now</a>
+                        </div>
+                    </div>*@
+
+                                <!--<table class="table table-fixed dataTable tabledash" id="tblSavedSearch">
+                    <thead>
+                        <tr class="rserachrow">
+                            <th>@Resource.Date</th>
+                            <th>@Resource.Total Found</th>
+                            <th>@Resource.Criteria</th>
+                            <th>@Resource.Load Result</th>
+                            <th>@Resource.Delete</th>
+                        </tr>
+                    </thead>
+                </table>-->
+                            </div>
+                        </div>
                     </div>
-                    <div class="dash-inner">
-                        <ul id="tblSavedSearch" class="table-ul"></ul>
-                        @*<ul class="table-ul">
-                                <li class="table-li">
-                                    <div class="se-info">
-                                        <div class="seinfo-l1"><span class="sespce sefound">30,558</span><span class="sespce sedate">1 hr ago</span><span class="sespce sename">Mayur P.</span></div>
-                                        <div class="seinfo-l2">GIA-Origin | HA-yes | Good | Good</div>
-                                    </div>
-                                    <div class="se-info-action">
-                                        <a class="act-link al1" href="#"><span class="se-bx"><i class="fa fa-search" aria-hidden="true"></i></span></a>
-                                        <a class="act-link al2" href="#"><span class="se-bx de-bx"><i class="fa fa-trash" aria-hidden="true"></i></span></a>
-                                    </div>
-                                </li>
-                            </ul>
-                            <div class="table-no-results text-center">
-                                <div class="table-nrimg-box"><img src="../Content/img/no_data_icon.svg" alt="" /></div>
-                                <div class="table-nr-text">You’ve not saved any search yet!</div>
-                                <div class="table-btn-box">
-                                    <a href="/Inventory/SpecificSearch" class="btn btn-primary"><i class="fa fa-search" aria-hidden="true"></i> Search Now</a>
-                                </div>
-                            </div>*@
+                    <div class="dashboxes">
+                        <div class="dash-box" style=" height: calc(100% - 60px);">
+                            <div class="dash-head clearfix">
+                                @Resource.Demand_Search
+                                @*<button type="button" class="btn btn-link">View All (201) <i class="fa fa-angle-right"></i></button>*@
 
-                        <!--<table class="table table-fixed dataTable tabledash" id="tblSavedSearch">
-                            <thead>
-                                <tr class="rserachrow">
-                                    <th>@Resource.Date</th>
-                                    <th>@Resource.Total Found</th>
-                                    <th>@Resource.Criteria</th>
-                                    <th>@Resource.Load Result</th>
-                                    <th>@Resource.Delete</th>
-                                </tr>
-                            </thead>
-                        </table>-->
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="dash-box">
-                    <div class="dash-head clearfix">
-                        @Resource.Demand_Search
-                        @*<button type="button" class="btn btn-link">View All (201) <i class="fa fa-angle-right"></i></button>*@
+                            </div>
+                            <div id="d_search" class="dash-inner">
+                                <ul id="tblDemandSearch" class="table-ul"></ul>
 
-                    </div>
-                    <div id="d_search" class="dash-inner">
-                        <ul id="tblDemandSearch" class="table-ul"></ul>
+                                <!--<table class="table table-fixed dataTable tabledash" id="tblDemandSearch">
+                    <thead>
+                        <tr class="rserachrow">
+                           <th>@Resource.Date</th>
+                       <th>@Resource.Total_Found</th>
+                       <th>@Resource.Criteria</th>
+                       <th>@Resource.Load Result</th>
+                       <th>@Resource.Delete</th>
+                        </tr>
+                    </thead>
+                </table>-->
 
-                        <!--<table class="table table-fixed dataTable tabledash" id="tblDemandSearch">
-                            <thead>
-                                <tr class="rserachrow">
-                                   <th>@Resource.Date</th>
-                               <th>@Resource.Total_Found</th>
-                               <th>@Resource.Criteria</th>
-                               <th>@Resource.Load Result</th>
-                               <th>@Resource.Delete</th>
-                                </tr>
-                            </thead>
-                        </table>-->
-
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

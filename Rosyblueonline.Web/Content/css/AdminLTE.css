@@ -2270,6 +2270,19 @@ table .se-bx.de-bx, .table-ul .se-bx.de-bx {
 	width: 40px;
 	line-height: 40px;
 }
+.main-dashboxes {
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.dashboxes {
+    width: 49.3%;
+    /* height: 100%; */
+}
+#d_search {
+    height: 100%;
+}
 
 /*
  * Component: Timeline

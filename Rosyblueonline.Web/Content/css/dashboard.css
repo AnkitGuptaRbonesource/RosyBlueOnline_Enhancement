@@ -3242,3 +3242,42 @@ a.sele-all {
         max-height: 800px;
     }
 }
+
+@media only screen and (max-width: 767px){
+    .heart-box {
+        display: block;
+    }
+    .heart-box .describe-line {
+        width: 100%;
+    }
+    .sizeboxes {
+        display: block;
+    }
+    .sizeboxes .form-inline .form-control {
+        max-width: initial;
+    }
+    .girle-para {
+        width: 44%;
+        float: none;
+        margin-right: 15px;
+    }
+    .search-stone-box2 .stone-list .dl-container{
+        display: block;
+    }
+    .search-stone-box2 .dimaond-list-box{
+        width: 100%;
+    }
+    .search-stone-box2 .stone-list {
+        padding: 2px 7px;
+    }
+    .stone-describe {
+        display: block;
+    }
+    .radio-inline + .radio-inline {
+        margin-top: 0;
+        margin-left: 0;
+    }
+    .shape-cut-box {
+        display: block;
+    }
+}
