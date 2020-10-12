@@ -1004,7 +1004,12 @@ span.gried-color {
 #divMultipleSizes {
     margin-top: 12px;
 }
-
+.list-view {
+    overflow: hidden;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
 
 
 
@@ -1319,5 +1324,15 @@ span.gried-color {
     }
     .print-btn button {
         width: 100%;
+    }
+    .campare-box ul li {
+        margin-right: 15px;
+        margin-bottom: 20px;
+    }
+    .campare-box {
+        padding: 12px 15px;
+    }
+    .panel-dropdown .dropdown.open > .dropdown-menu {
+        left: 0px;
     }
 }
