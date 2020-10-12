@@ -243,17 +243,15 @@
                     </div>
                 </div>
                 <ul class="sidebar-menu">
-                    @if (objMenuAccess.Dashboard == 1)
-                    {
+                    
                         <li>
                             <a href="/Dashboard/Customer">
                                 <div class="img-icon"><img src="/Content/img/dashboard.png" /></div>
                                 <span>@Resource.Dashboard</span>
                             </a>
                         </li>
-                    }
-                    @if (objMenuAccess.MyAccount == 1)
-                    {
+                   
+                  
                         <li class="treeview">
                             <a href="#">
                                 <div class="img-icon"><img src="/Content/img/subscriptions.png" /></div>
@@ -263,11 +261,9 @@
                                 </span>
                             </a>
                             <ul class="treeview-menu">
-                                @if (objMenuAccess.AllOrder == 1)
-                                {
+                                
                                     <li><a href="/Order/List"><div class="img-icon"><img src="/Content/img/myorder.png" /></div> @Resource.My_Order</a></li>
-
-                                }
+                                 
                                 <li><a href="/Inventory/Cart"><div class="img-icon"><img src="/Content/img/shopping.png" /></div> @Resource.Shopping_Cart</a></li>
 
                                 <li><a href="/Inventory/Watch"><div class="img-icon"><img src="/Content/img/list.png" /></div> @Resource.Watch_List</a></li>
@@ -277,16 +273,15 @@
                             </ul>
                         </li>
 
-                    }
-                    @if (objMenuAccess.Search == 1)
-                    {
+                  
+                   
                         <li class="treeview">
                             <a href="/Inventory/SpecificSearch">
                                 <div class="img-icon"><img src="/Content/img/search.png" /></div>
                                 <span>@Resource.Search</span>
                             </a>
                         </li>
-                    }
+                   
 
                     @*<li class="treeview">
           <a href="/Inventory/SpecificSearch">
@@ -313,33 +308,7 @@
                             <li><a href="/User/ChangePassword"><div class="img-icon"><i class="fa fa-lock"></i></div> @Resource.Change_Password</a></li>
                         </ul>
                     </li>
-                    @if (objMenuAccess.Inventory == 1)
-                    {
-                        <li class="treeview">
-                            <a href="/Dashboard/Inventory">
-                                <div class="img-icon"><img src="/Content/img/Inventory.png" /></div>
-                                <span>@Resource.Inventory</span>
-                            </a>
-                        </li>
-                    }
-                    @if (objMenuAccess.Marketing == 1)
-                    {
-                        <li class="treeview">
-                            <a href="/Dashboard/Inventory">
-                                <div class="img-icon"><img src="/Content/img/Marketing.png" /></div>
-                                <span>Marketing</span>
-                            </a>
-                        </li>
-                    }
-                    @if (objMenuAccess.Utility == 1)
-                    {
-                        <li class="treeview">
-                            <a href="/Dashboard/Inventory">
-                                <div class="img-icon"><img src="/Content/img/Utility.png" /></div>
-                                <span>Utility</span>
-                            </a>
-                        </li>
-                    }
+                     
                     </ul>
                 <div class="sign-bottom">
                     <ul class="sidebar-menu">

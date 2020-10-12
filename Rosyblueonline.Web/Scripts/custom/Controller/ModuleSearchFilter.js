@@ -58,7 +58,7 @@
             checkButton();
         });
 
-        $s('.diamond-box > input.all_shape[type="button"]').click(function (e) {
+        $s('.diamond-box > input.all_shape[type="button"]').click(function (e) { 
             e.preventDefault();
             var IsActive = $s(this).hasClass('active');
             $s('.diamond-box > input[class!="all_shape"][type="button"]').each(function (idx, ele) {
@@ -67,7 +67,7 @@
                     selShapesCount = 0;
                 } else {
                     $s(ele).addClass('active');
-                    selShapesCount = $s('.diamond-box > input[class!="all_shape"][type="button"]').length;
+                    selShapesCount = $s('.diamond-box  >  input[class!="all_shape"][type="button"]').length;
                 }
             });
             if (IsActive == true) {
