@@ -522,8 +522,10 @@
                                 <div class="panel-body">
                                     @foreach (var StoneOrigin in Model.VMStoneOrigin)
                                     {
+                                    <div class="originval">
                                         <input type="checkbox" name="Origin" class="design-checkbox" value="@StoneOrigin.originID" id="Origin@(StoneOrigin.originID)" />
                                         <label for="Origin@(StoneOrigin.originID)">@StoneOrigin.originName</label>
+                                    </div>
                                     }
                                 </div>
                             </div>

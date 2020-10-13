@@ -1007,14 +1007,99 @@ span.gried-color {
 #divMultipleSizes {
     margin-top: 12px;
 }
-.list-view {
-    overflow: hidden;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    white-space: nowrap;
+.originval {
+    width: 270px;
+    display: inline-block;
+    vertical-align: top;
 }
 
+/*memo page*/
 
+.memo-title h2 {
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 24px;
+    color: #3A4276;
+    letter-spacing: 0.5px;
+}
+.memo-title h2 span {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #E9978C;
+    letter-spacing: 0.5px;
+}
+.search-input {
+    position: relative;
+    display: block;
+    width: 100%;
+    background: #FFFFFF;
+    border: 1px solid #ECE9F1;
+    border-radius: 6px;
+    padding: 10px 20px;
+    padding-left: 50px;
+    font-weight: 500;
+    outline: none;
+    font-size: 14px;
+    line-height: 24px;
+    color: #000;
+    letter-spacing: 0.5px;
+    transition: 0.5s all ease;
+}
+.search-icon {
+    position: absolute;
+    display: block;
+    width: fit-content;
+    left: 20px;
+    top: 12px;
+}
+.memo-btn {
+    position: relative;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.searchbox {
+    min-width: 460px;
+}
+.memo-btn form button {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 24px;
+    color: #FFFFFF;
+    letter-spacing: 0.5px;
+    background: #62CA76;
+    border-radius: 6px;
+    padding: 8px 20px;
+    transition: 0.5s all ease;
+}
+.memo-btn form button span {
+    margin-right: 10px;
+}
+.memo-btn form button:hover{
+    color: #fff;
+}
+.memo-btn form {
+    margin: 0 14px;
+}
+.sold-btn {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 24px;
+    color: #FFFFFF;
+    background: #E9978C !important;
+    border-radius: 6px;
+    letter-spacing: 0.5px;
+    padding: 8px 30px;
+    transition: 0.5s all ease;
+}
+.sold-btn:hover{
+    color: #fff;
+}
+.sold-btn span {
+    margin-right: 10px;
+}
 
 
 
@@ -1330,12 +1415,21 @@ span.gried-color {
     }
     .campare-box ul li {
         margin-right: 15px;
-        margin-bottom: 20px;
+        margin-bottom: 0;
     }
     .campare-box {
-        padding: 12px 15px;
+        overflow: hidden;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        white-space: nowrap;
     }
     .panel-dropdown .dropdown.open > .dropdown-menu {
         left: 0px;
+    }
+    .list-view {
+        overflow: hidden;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        white-space: nowrap;
     }
 }
