@@ -567,18 +567,21 @@
                         }, {
                             targets: [4],
                             orderable: false,
+                            className: 'text-center',
                             render: function (data, type, row, meta) {
                                 return "<a href='#' class='custSearch' data-row='" + meta.row + "' ><i data-row='" + meta.row + "' class='fa fa-search'></i></a>";
                             }
                         }, {
                             targets: [5],
                             orderable: false,
+                            className: 'text-center',
                             render: function (data, type, row, meta) {
-                                return "<a href='#' class='custApprove' data-row='" + meta.row + "'><i data-row='" + meta.row + "' class='fa fa-check'></i></a>";
+                                return "<a href='#' class='custApprove ' data-row='" + meta.row + "'><i data-row='" + meta.row + "' class='fa fa-check'></i></a>";
                             }
                         }, {
                             targets: [6],
                             orderable: false,
+                            className: 'text-center',
                             render: function (data, type, row, meta) {
                                 return "<a href='#' class='custReject' data-row='" + meta.row + "'><i data-row='" + meta.row + "' class='fa fa-times'></i></a>";
                             }
