@@ -9,58 +9,52 @@
 <div class="content-wrapper">
     <section class="content">
         <div id="uiPanel1"></div>
-        <section class="content">
+            <div class="row">
+                <div class="col-lg-12 col-sm-12 col-xs-12 header-padding">
+                    <div class="heading-panel">
+                        <div class="panel-stonebox">
+                            <div class="heading-title">
+                                <h2>@Resource.My_Order</h2>
+                            </div>
+                        </div>
+                        <div class="form-inline top-select">
+                            @if (objToken != null && (objToken.RoleID == 8 || objToken.RoleID == 9 || objToken.RoleID == 2))
+                            {
+
+                                <button class="btn btn-info" id="btnMergerOrder" style="display:none;">@Resource.Merge_Order</button>
+                            }
+                            @{
+                                if (objToken != null && (objToken.RoleID == 8 || objToken.RoleID == 9 || objToken.RoleID == 2))
+                                {
+                                    <div class="form-group">
+                                        <label>
+                                            @Resource.Customer
+                                        </label>
+                                        <select id="ddlCustomer" name="CustomerID" class="form-control"></select>
+                                        <button class="btn btn-primary btn-sm" id="btnClearCustomer"><i class="fa fa-times"></i></button>
+                                    </div>
+                                }
+                            }
+                            <div class="form-group">
+                                <label>
+                                    @Resource.Order_Status
+                                </label>
+                                <select id="ddlStatus" class="form-control">
+                                    <option value="Pending" selected>@Resource.Pending</option>
+                                    <option value="Completed">@Resource.Completed</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="row">
                 <div class="customers-list-table">
                     <div class="customers-list-table">
                         <div class="col-md-12">
-                            <div class="panel panel-primary">
-                                <div class="panel-heading">
-                                    <div class="panel-heading">@Resource.My_Order</div>
-                                </div>
-                                <div class="panel-body paneltable">
-                                    <div class="col-md-12">
-                                        <div class="col-md-2">
-                                            @if (objToken != null && (objToken.RoleID == 8 || objToken.RoleID == 9 || objToken.RoleID == 2))
-                                            {
-                                            <button class="btn btn-info" id="btnMergerOrder" style="display:none;">@Resource.Merge_Order</button>
-                                            }
-                                        </div>
-                                        @{
-                                            if (objToken != null && (objToken.RoleID == 8 || objToken.RoleID == 9 || objToken.RoleID == 2))
-                                            {
-                                                <div class="col-md-5">
-                                                    <div class="form-horizontal">
-                                                        <label class="col-md-3 control-label">
-                                                            @Resource.Customer
-                                                        </label>
-                                                        <div class="col-md-7">
-                                                            <select id="ddlCustomer" name="CustomerID" class="form-control"></select>
-                                                        </div>
-                                                        <div class="col-md-1">
-                                                            <button class="btn btn-primary btn-sm" id="btnClearCustomer"><i class="fa fa-times"></i></button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            }
-                                        }
-                                        <div class="col-md-5">
-                                            <div class="form-horizontal">
-                                                <div class="form-group">
-                                                    <label class="col-md-4 control-label">
-                                                        @Resource.Order_Status
-                                                    </label>
-                                                    <div class="col-md-8">
-                                                        <select id="ddlStatus" class="form-control">
-                                                            <option value="Pending" selected>@Resource.Pending</option>
-                                                            <option value="Completed">@Resource.Completed</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
+                            <div class="table-panel">
+                                <div class="panel-body paneltable">                                    
+                                    <div class="list-view">
                                         <div class="paneltable">
                                             <table id="tblOrders" class="table table-fixed dataTable no-footer">
                                                 <thead class="bordertp">
@@ -101,7 +95,6 @@
                     </div>
                 </div>
             </div>
-        </section>
     </section>
 
 </div>

@@ -804,7 +804,7 @@
             }
             if (innerStr != "") {
                 CheckBox += KeyID[k] + "~" + innerStr + "|";
-                displayCheckBox += "~" + labelCheckBox;
+                displayCheckBox += KeyID[k] + "~" + labelCheckBox + " | ";
             }
 
         }
@@ -890,9 +890,11 @@
 
     var ReadLotNos = function (getCount) {
         var FinalQuery = '';
+        var displayQuery = '';
         var SSForm = ReadForm(false);
         if (SSForm != null && SSForm != undefined) {
             FinalQuery = SSForm.query;
+            displayQuery = SSForm.displayQuery;
         }
 
         //if ($s('#lotnumber').val() != "") {
@@ -918,7 +920,7 @@
         return {
             count: CurrentCount,
             query: FinalQuery,
-            displayQuery: ''
+            displayQuery: displayQuery
         };
     }
 

@@ -1485,7 +1485,8 @@ ul.thub-view {
 }
 
 .tooltip.bottom {
-  width: 78px;
+    width: fit-content;
+    left: 3px;
 }
 
 .tooltip-inner {
@@ -1901,7 +1902,7 @@ a.sele-all {
 }
 
 .table > caption + thead > tr:first-child > td, .table > caption + thead > tr:first-child > th, .table > colgroup + thead > tr:first-child > td, .table > colgroup + thead > tr:first-child > th, .table > thead:first-child > tr:first-child > td, .table > thead:first-child > tr:first-child > th {
-  text-align: left !important;
+  text-align: left;
 }
 
 .table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
@@ -2265,11 +2266,8 @@ a.sele-all {
 .dimaond-list-box {
     position: relative;
     display: block;
-    width: 100%;
-    height: 100%;
-    max-height: 710px;
-    overflow: hidden;
-    overflow-y: auto;
+    width: fit-content;
+    height: auto;
 }
 
 .dimaond-list-box::-webkit-scrollbar-track, .key-input-box::-webkit-scrollbar-track{
@@ -2910,9 +2908,6 @@ a.sele-all {
 .keysearch-box2 {
     max-width: initial;
 }
-.search-stone-box2 .dimaond-list-box {
-    max-height: initial;
-}
 .search-stone-box2 .stone-list {
     max-width: initial;
     margin-bottom: 20px;
@@ -2926,18 +2921,21 @@ a.sele-all {
     position: relative;
     display: inline-block;
     width: fit-content;
-    float: left;
+    /*float: left;*/
 }
 .search-stone-box2 .dimaond-list-box {
     max-height: initial;
-    width: fit-content;
+    /*display: inline-block;
     overflow: hidden;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;*/
 }
 .search-stone-box2 .dimaond-list-box .diamond-box {
     position: relative;
     display: inline-block;
     width: fit-content;
-    float: left;
+    /*float: left;*/
 }
 .diamond-demand-box .demand-key-box {
     width: 49%;
@@ -2984,6 +2982,19 @@ a.sele-all {
     letter-spacing: 1px;
     color: #3A4276;
     border-radius: 10px;
+}
+.search-stone-box2 .dimaond-list-box::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+}
+
+.search-stone-box2 .dimaond-list-box::-webkit-scrollbar {
+    height: 2px;
+    background-color: #FdFdFd;
+}
+
+.search-stone-box2 .dimaond-list-box::-webkit-scrollbar-thumb {
+    background-color: #232323;
 }
 
 
@@ -3265,11 +3276,16 @@ a.sele-all {
         float: none;
         margin-right: 15px;
     }
-    .search-stone-box2 .stone-list .dl-container{
+   /* .search-stone-box2 .stone-list .dl-container{
         display: block;
-    }
-    .search-stone-box2 .dimaond-list-box{
+    }*/
+    .search-stone-box2 .dimaond-list-box {
         width: 100%;
+        display: inline-block;
+        overflow: hidden;
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
     }
     .search-stone-box2 .stone-list {
         padding: 2px 7px;

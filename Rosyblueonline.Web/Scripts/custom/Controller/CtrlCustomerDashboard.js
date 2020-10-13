@@ -161,14 +161,14 @@
                 src: '#tblRecentSearch',
                 dataTable: {
                     paging: false,
-                    order: [[1, "desc"]],
+                   // order: [[0, "desc"]],
                     processing: false,
                     serverSide: false,
                     data: data.SpecificSearch,
                     columns: [
                         { data: "Createdon" },
                         { data: "TotalFound" },
-                        { data: "searchCriteria" },
+                        { data: "displayCriteria" },
                         { data: "searchCriteria" },
                         { data: "recentSearchID" }
                     ],
@@ -177,8 +177,10 @@
                         className: "rsearch"
                     }, {
                         targets: [0],
-                        render: function (data, type, row) {
-                            return moment(row.Createdon).format(myApp.dateFormat.Client);
+                            render: function (data, type, row) {
+                               // return row.Createdon;
+                                return moment(row.Createdon).fromNow(true) + ' ago';
+                           // return moment(row.Createdon).format(myApp.dateFormat.Client);
                         },
                         orderable: false
                     }, {
