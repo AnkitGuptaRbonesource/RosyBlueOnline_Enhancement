@@ -80,7 +80,7 @@
     function BlockUI(options) {
         options = $.extend(true, {
             container: "", // block element
-            message: "<div class='loader'></div>" // blocking message
+            message: "<div class='loader'><img src='../Content/img/loader.gif' alt='loading...'></div>" // blocking message
         }, options);
 
         if (options.container !== "" && options.container !== undefined && options.container !== null) {
