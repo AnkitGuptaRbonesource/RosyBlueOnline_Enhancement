@@ -14,6 +14,8 @@
                 src: '#tblOrders',
                 dataTable: {
                     //deferLoading: 0,
+                    scrollY: "485px",
+                    scrollX: true,
                     paging: true,
                     order: [[1, "desc"]],
                     ajax: {

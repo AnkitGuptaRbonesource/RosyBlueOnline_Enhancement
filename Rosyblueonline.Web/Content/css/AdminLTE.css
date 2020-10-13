@@ -2165,6 +2165,9 @@ a:focus {
 	text-decoration: none;
 	background:#3A4276;
 }
+.dash-box .dataTables_wrapper .top {
+	display: none
+}
 .dash-box .dataTables_info {
 	display: none
 }
@@ -2893,6 +2896,9 @@ table.text-center th {
 .table.align td {
   text-align: right;
 }
+.text-center {
+    text-align: center !important;
+}
 /*
  * Component: Label
  * ----------------
@@ -3175,14 +3181,18 @@ table.text-center th {
 /*background: rgba(244, 244, 244, 0.73);*/
 }
 .loader {
-    padding: 20px;
-    width: 120px;
-    height: 120px;
+    padding: 12px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     background: #fff;
     -moz-box-shadow: 0 0 10px 2px #717171;
     -webkit-box-shadow: 0 0 10px 2px #717171;
     box-shadow: 0 0 10px 2px #717171;
+	overflow: hidden
+}
+.loader img {
+	max-width: 100%;
 }
 /*.loader {
     border: 8px solid #f3f3f3;
