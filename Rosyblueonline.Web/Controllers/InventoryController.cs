@@ -85,10 +85,10 @@ namespace Rosyblueonline.Web.Controllers
             objInvVM = objStockDetailsService.InventoryAction(LoginID.ToString(), Query, "0", "10000000", "Stock", "desc", "SpecificSearch");
              
 
-            // ViewBag.SearchResultList = objInvVM.Take(10); ;
+            // ViewBag.SearchResultList = objInvVM.Take(10); 
             //  return View("SpecificSearch", objVM);
             // return PartialView("~/Views/Shared/_PartialSpecificSearchResult.cshtml", "SS");
-            return Json(new Response { IsSuccess = true, Message = "200", Result = objInvVM });
+            return Json(new Response { IsSuccess = true, Message = "200", Result = objInvVM.Take(10) });
 
         }
 

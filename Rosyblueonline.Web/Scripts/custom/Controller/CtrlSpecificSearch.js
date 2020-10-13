@@ -1074,8 +1074,8 @@
             dtSearchPanel.setAjaxParam('NewArrival', NewArrival);
             $('#hfNewArrival').val('true');
         }
-        $('#tblSoldInDays').html('');
-        $('#tmpSoldInDays').tmpl(data).appendTo("#tblSoldInDays");
+        //$('#tblSoldInDays').html('');
+        //$('#tmpSoldInDays').tmpl(data).appendTo("#tblSoldInDays");
 
         var RoleID = $('#hfRoleID').val();
         var colStruct = new DataTableColumnStruct('SpecificSearch');
