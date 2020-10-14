@@ -1001,7 +1001,7 @@ span.gried-color {
     background: rgba(230, 0, 196, 0.80);
 }
 .active-watchlist {
-    background: rgb(58 ,66, 118) !important;
+    /*background: rgb(58 ,66, 118) !important;*/
     color: #fff !important;
 }
 #divMultipleSizes {

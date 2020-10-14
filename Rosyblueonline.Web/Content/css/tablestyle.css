@@ -102,18 +102,32 @@ background-color:#ddd;
     border-bottom-color: transparent;
 
 }*/
-.nav-tabs > li > a {
-  background-color: #f5f6f9;
-  border: 1px solid #337ab7;
-  color: #000;
+.nav-tabs {
+	border: 0 none;
 }
-
+.tab-content {
+	padding: 15px;
+}
+.nav-tabs > li > a {
+	font-size: 15px;
+	color: #000;
+	background: none;
+	border: 1px solid transparent;
+	border-bottom: 0 none;
+}
+.nav-tabs > li > a:focus, .nav-tabs > li > a:hover {
+  color: #3A4276;
+  border: 1px solid transparent;
+  border-bottom: 0 none;
+  background: none;
+}
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
-  color: #fff;
+  color: #3A4276;
+  font-weight: bold;
   cursor: default;
-  background-color: #337ab7;
-  border: 1px solid #ddd;
-  border-bottom-color: transparent;
+  border: 1px solid #ECE9F1;
+  border-bottom: 0 none;
+  background: #fff;
 }
 
 .proshad:hover {
