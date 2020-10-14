@@ -652,7 +652,38 @@
     {
         <div class="list-view">
             <table class="table">
-                <thead class="bordertp">
+
+                <thead id="tblBodySummary">
+                    <tr class="rsearchnew" style="height: 25px;">
+                        <td class="rsearchnew">
+                            <b><span id="lblcountsel"></span></b>
+                        </td>
+                        <td class="rsearchnew">
+                            <b><span id="lblTCt1"></span></b>
+                        </td>
+                        <td class="rsearchnew" style="display: none;">
+                            <b><span id="lblTAmt"></span></b>
+                        </td>
+                        <td class="rsearchnew">
+                            <b><span id="lblNetORapValue"></span></b>
+                        </td>
+                        <td class="rsearchnew">
+                            <b><span id="lbltotRap"></span></b>
+                        </td>
+                        <td class="rsearchnew" style="display: none;">
+                            <b><span id="lblTAvgPrice"></span></b>
+                        </td>
+                        <td class="rsearchnew">
+                            <b><span id="lblNetRapPer"></span></b>
+                        </td>
+
+                        <td class="rsearchnew"><b><span id="lblavgpriceafterdis"></span></b></td>
+
+                        <td class="rsearchnew"><b><span id="lblfinalamoutpayment"></span></b></td>
+
+                    </tr>
+                </thead>
+                <tbody class="bordertp bordertp2">
                     <tr>
                         <th class="tbnew">
                             @Resource.Total_pcs
@@ -698,36 +729,6 @@
                         </th>
                     </tr>
                     <tr></tr>
-                </thead>
-                <tbody id="tblBodySummary">
-                    <tr class="rsearchnew" style="height: 25px;">
-                        <td class="rsearchnew">
-                            <b><span id="lblcountsel"></span></b>
-                        </td>
-                        <td class="rsearchnew">
-                            <b><span id="lblTCt1"></span></b>
-                        </td>
-                        <td class="rsearchnew" style="display: none;">
-                            <b><span id="lblTAmt"></span></b>
-                        </td>
-                        <td class="rsearchnew">
-                            <b><span id="lblNetORapValue"></span></b>
-                        </td>
-                        <td class="rsearchnew">
-                            <b><span id="lbltotRap"></span></b>
-                        </td>
-                        <td class="rsearchnew" style="display: none;">
-                            <b><span id="lblTAvgPrice"></span></b>
-                        </td>
-                        <td class="rsearchnew">
-                            <b><span id="lblNetRapPer"></span></b>
-                        </td>
-
-                        <td class="rsearchnew"><b><span id="lblavgpriceafterdis"></span></b></td>
-
-                        <td class="rsearchnew"><b><span id="lblfinalamoutpayment"></span></b></td>
-
-                    </tr>
                 </tbody>
                 @if (objToken != null && objToken.RoleID == 2)
                 {
