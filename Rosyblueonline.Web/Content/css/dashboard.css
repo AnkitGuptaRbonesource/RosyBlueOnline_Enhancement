@@ -1059,10 +1059,16 @@ tbody {
 
 /*Popup CSS*/
 .modal-header {
-  font-size: 18px;
-  background-color: #337ab7 !important;
-  color: #FFF !important;
-  padding: 8px 15px;
+    font-size: 18px;
+    background-color: #333362 !important;
+    color: #FFF !important;
+    padding: 12px 15px;
+}
+.modal-footer button {
+    padding: 8px 40px;
+    letter-spacing: 0.5px;
+    font-size: 16px;
+    text-transform: uppercase;
 }
 
   .modal-header .close {
@@ -2064,13 +2070,13 @@ a.sele-all {
 }
 
 .diamond {
-  text-align: center;
-  background: #FFFFFF 0% 0% no-repeat padding-box;
-  box-shadow: 0px 0 4px #0000001A;
-  border-radius: 5px;
-  height: 331px;
-  margin-bottom: 25px;
-  cursor: pointer;
+    text-align: center;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 0 4px #0000001A;
+    border-radius: 5px;
+    height: 340px;
+    margin-bottom: 25px;
+    cursor: pointer;
 }
 
   .diamond .details {
@@ -2211,7 +2217,7 @@ a.sele-all {
 
 .img-container {
   border-radius: 5px;
-  height: 220px;
+  height: 270px;
   width: 100%;
   overflow: hidden;
   background-position: center center;
@@ -2222,7 +2228,7 @@ a.sele-all {
 
 .diamond .actions {
   padding: 10px;
-  height: 132px;
+  /*height: 132px;*/
 }
 
 

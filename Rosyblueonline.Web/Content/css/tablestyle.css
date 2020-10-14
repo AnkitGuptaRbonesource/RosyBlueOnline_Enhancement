@@ -377,9 +377,9 @@ ul, li {
     text-transform: uppercase;
     color: #828282;
 }
-.memo-table {
+.memo-table table {
     background: #FAFAFA;
-    /* box-shadow: 0px 10px 20px rgba(51, 51, 51, 0.1); */
+    box-shadow: 0px 10px 20px rgba(51, 51, 51, 0.1);
     border-radius: 6px 0px 0px 0px;
 }
 

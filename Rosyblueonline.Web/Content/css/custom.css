@@ -127,6 +127,10 @@ span.multiplecarat {
     padding-top: 0;
     border-top: none;
     margin-top: 0;
+    position: relative;
+    /* overflow: auto; */
+    width: 100%;
+    /* min-height: 485px; */
 }
 
 #uiPanel {
@@ -197,9 +201,9 @@ input[type=checkbox], input[type=radio] {
 
 input[type=radio] {
     left: 0;
-    top: -1px;
+    top: -3px;
     margin: 6px 5px 0 0 !important;
-    /*opacity: 0;*/
+    /* opacity: 0; */
 }
 
 .radioleft {
