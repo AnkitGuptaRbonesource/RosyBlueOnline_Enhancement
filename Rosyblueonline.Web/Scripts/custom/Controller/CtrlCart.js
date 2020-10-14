@@ -322,6 +322,8 @@
             dtCartForOrder.init({
                 src: '#SearchTablePostForOrder',
                 dataTable: {
+                    scrollY: "300px",
+                    scrollX: true,
                     paging: false,
                     order: [[0, "desc"]],
                     processing: false,

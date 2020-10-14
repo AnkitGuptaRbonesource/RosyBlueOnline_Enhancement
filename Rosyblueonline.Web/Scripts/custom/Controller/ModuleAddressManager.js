@@ -16,36 +16,30 @@
         $btnAddAddress = null;//data-addid="${AddressID}"
 
     var optionTemplate = '<option value="${Value}">${Text}</option>';
-    var cardTemplate = '<div class="card">\
-                         <div class="card-body">\
-                             <div class="card-text">\
-                                <div class="">\
-                                     <label class="widthmx">\
+    var cardTemplate = '<div class="caption">\
+                                     <p class="address">\
                                         {{if isDefault == true }}\
-                                            <b>\
+                                           \
                                         {{/if}}\
                                         ${firstName} ${lastName} <br /> \
                                         ${companyName} <br/>\
                                         ${address01}, ${address02}, ${cityName}, ${stateName}, ${countryName} - ${zipCode}\
                                         {{if isDefault == true }}\
-                                            </b>\
+                                            \
                                         {{/if}}\
-                                     </label>\
+                                     </p>\
                                         <input type="radio" class="radioleft" '+ (options.enableSelect == true ? '' : 'style="display:none;"') + ' name="CustomerAddress_' + options.instanceID + '" {{if Type == "shipping"}} value="${shippingId}" {{/if}} {{if Type == "billing"}} value="${billingId}" {{/if}} {{if isDefault == true}} checked {{/if}}  >\
-                                </div>\
-                             </div>\
-                             <div class="card-actions">\
-                                    {{if Type == "shipping"}}\
-                                        <button type="button" data-addid="${shippingId}" id="btn-edit-address_'+ options.instanceID + '" class="btn btn-warning btn-xs btn-edit-address">Edit</button>\
-                                        <button type="button" data-addid="${shippingId}" id="btn-delete-address_'+ options.instanceID + '" class="btn btn-danger btn-xs btn-delete-address">Delete</button>\
-                                    {{/if}}\
-                                    {{if Type == "billing"}}\
-                                        <button type="button" data-addid="${billingId}" id="btn-edit-address_'+ options.instanceID + '"  class="btn btn-warning btn-xs btn-edit-address">Edit</button>\
-                                        <button type="button" data-addid="${billingId}" id="btn-delete-address_'+ options.instanceID + '" class="btn btn-danger ' + (options.type == "billing" ? 'hide' : '') + ' btn-xs btn-delete-address">Delete</button>\
-                                    {{/if}}\
-                             </div>\
-                          </div>\
-                        </div>';
+                                 <div class="caption-button">\
+                                        {{if Type == "shipping"}}\
+                                            <button type="button" data-addid="${shippingId}" id="btn-edit-address_'+ options.instanceID + '" class="btn btn-primary btn-sm btn-edit-address">Edit</button>\
+                                            <button type="button" data-addid="${shippingId}" id="btn-delete-address_'+ options.instanceID + '" class="btn btn-danger btn-sm btn-delete-address">Delete</button>\
+                                        {{/if}}\
+                                        {{if Type == "billing"}}\
+                                            <button type="button" data-addid="${billingId}" id="btn-edit-address_'+ options.instanceID + '"  class="btn btn-primary btn-sm btn-edit-address">Edit</button>\
+                                            <button type="button" data-addid="${billingId}" id="btn-delete-address_'+ options.instanceID + '" class="btn btn-danger ' + (options.type == "billing" ? 'hide' : '') + ' btn-sm btn-delete-address">Delete</button>\
+                                        {{/if}}\
+                              </div>\
+                            </div>';
 
 
     var OnLoad = function () {

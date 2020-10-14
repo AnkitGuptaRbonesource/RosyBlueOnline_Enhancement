@@ -498,76 +498,116 @@
         }*@
 
     @if (Model == "Cart")
-    {
+    {<div class="row">
+            <div class="col-lg-12 col-sm-12 col-xs-12 header-padding">
+                <div class="heading-panel">
+                    <div class="panel-stonebox">
+                        <div class="heading-title">
+                            <h2>@Resource.Shopping_Cart</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="row">
-            <div class="col-md-2">
-                <button class="smbox" id="btnCompare">
-                    <div class="info-box-content">
-                        <span class="info-box-text"><i class="fa fa-balance-scale fontsz"></i><span class="pull-right"> @Resource.Compare </span></span>
+            <div class="col-lg-12 col-sm-12 col-xs-12">
+                <div class="search-result-box">
+                    <div class="export-box">
+                        <div class="campare-box">
+                            <ul>
+                                <li>
+                                    <a href="javascript:void(0);" id="btnCompare">
+                                        <span><img src="~/Content/img/Compare-img.svg" /></span>
+                                        <span>@Resource.Compare</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);"  id="btnOrder">
+                                        <span>
+                                            <img src="~/Content/img/panel-cart.svg" />
+                                        </span>
+                                        <span>@Resource.Order</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);" id="btnRemove">
+                                        <span>
+                                            <img src="~/Content/img/Modify-img.svg" />
+                                        </span>
+                                        <span>@Resource.Remove</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                </button>
+                </div>
             </div>
-            <div class="col-md-2">
-
-            </div>
-            <div class="col-md-2">
-                <button class="smbox" id="btnOrder">
-                    <div class="info-box-content">
-                        <span class="info-box-text"><i class="fa fa-cart-plus fontsz"></i><span class="pull-right">@Resource.Order</span></span>
-                    </div>
-                </button>
-            </div>
-
-            <div class="col-md-2">
-                <button class="smbox" id="btnRemove">
-                    <div class="info-box-content">
-                        <span class="info-box-text"><i class="fa fa-trash fontsz"></i><span class="pull-right">@Resource.Remove_Cart</span></span>
-                    </div>
-                </button>
-            </div>
-
         </div>
     }
 
     @if (Model == "WatchList")
     {
         <div class="row">
-            <div class="col-md-2">
-                <button class="smbox" id="btnCompare">
-                    <div class="info-box-content">
-                        <span class="info-box-text"><i class="fa fa-balance-scale fontsz"></i><span class="pull-right"> @Resource.Compare </span></span>
+            <div class="col-lg-12 col-sm-12 col-xs-12 header-padding">
+                <div class="heading-panel">
+                    <div class="panel-stonebox">
+                        <div class="heading-title">
+                            <h2>@Resource.Watch_List</h2>
+                        </div>
                     </div>
-                </button>
-            </div>
-
-            <div class="col-md-2">
-                <div class="dropdown">
-                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-                        <i class="fa fa-balance-scale fontsz"></i> @Resource.Export_Excel
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a href="#" id="btnExcel">@Resource.Selected</a></li>
-                        <li><a href="#" id="btnAllExcel">@Resource.All</a></li>
-                        <li><a href="#" id="btnMemoExcel">@Resource.Only_Memo</a></li>
-                    </ul>
+                    <div class="summery-box">
+                        <div class="excel-btnbox">
+                            <div class="dropdown print-btn nomar">
+                                <button class="dropdown-toggle" type="button" data-toggle="dropdown">
+                                    <img src="~/Content/img/export-icon.svg" />
+                                    <span>
+                                        @Resource.Export_Excel
+                                        <span class="caret"></span>
+                                    </span>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-right">
+                                    <li><a href="#" id="btnExcel">@Resource.Selected</a></li>
+                                    <li><a href="#" id="btnAllExcel">@Resource.All</a></li>
+                                    <li><a href="#" id="btnMemoExcel">@Resource.Only_Memo</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <div class="col-md-2">
-                <button class="smbox" id="btnAddToCart">
-                    <div class="info-box-content">
-                        <span class="info-box-text"><i class="fa fa-cart-plus fontsz"></i><span class="pull-right">@Resource.Cart</span></span>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-sm-12 col-xs-12">
+                <div class="search-result-box">
+                    <div class="export-box">
+                        <div class="campare-box">
+                            <ul>
+                                <li>
+                                    <a href="javascript:void(0);" id="btnCompare">
+                                        <span><img src="~/Content/img/Compare-img.svg" /></span>
+                                        <span>@Resource.Compare</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);" id="btnAddToCart">
+                                        <span>
+                                            <img src="~/Content/img/panel-cart.svg" />
+                                        </span>
+                                        <span>@Resource.Cart</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);" id="btnRemove">
+                                        <span>
+                                            <img src="~/Content/img/Modify-img.svg" />
+                                        </span>
+                                        <span>@Resource.Remove</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                </button>
-            </div>
-
-            <div class="col-md-2">
-                <button class="smbox" id="btnRemove">
-                    <div class="info-box-content">
-                        <span class="info-box-text"><i class="fa fa-trash fontsz"></i><span class="pull-right">@Resource.Remove</span></span>
-                    </div>
-                </button>
+                </div>
             </div>
         </div>
     }
@@ -578,7 +618,7 @@
             <button type="button" class="btn list-viewbtn btn-primary" onclick="$(this).addClass('btn-primary');$(this).removeClass('btn-default');$('.thumb-viewbtn').removeClass('btn-primary');$('.thumb-viewbtn').addClass('btn-default'); $('.list-view').show(); $('.thumb-result').hide();"><i class="fa fa-th-list" aria-hidden="true"></i></button>
             <button id="btnShowListView" type="button" class="btn thumb-viewbtn btn-default" onclick="$(this).addClass('btn-primary');$(this).removeClass('btn-default');$('.list-viewbtn').addClass('btn-default');$('.list-viewbtn').removeClass('btn-primary'); $('.list-view').hide(); $('.thumb-result').show();"><i class="fa fa-th-large" aria-hidden="true"></i></button>
         </div>
-       
+
     </div>
 
 

@@ -37,6 +37,8 @@
                 src: '#SearchTablePost',
                 dataTable: {
                     //deferLoading: 0,
+                    scrollY: "300px",
+                    scrollX: true,
                     paging: true,
                     order: [[1, "desc"]],
                     processing: false,

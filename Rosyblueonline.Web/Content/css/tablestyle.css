@@ -344,7 +344,10 @@ ul, li {
   background-color: #491956;
   color: white;
 }*/
-
+hr {
+	margin-top:10px;
+	margin-bottom:10px
+}
 .spngrid {
   padding: 10px;
 }
@@ -392,7 +395,7 @@ ul, li {
 }
 
 .btn {
-  background-color: #337ab7;
+  /*background-color: #337ab7;*/
 }
 
 .btnviewpen {

@@ -9,52 +9,61 @@
 <div class="content-wrapper">
     <section class="content">
         <div id="uiPanel2"></div>
-        <section class="content" id="pnlOrderConfirmation">
+        <section class="container-fluid" id="pnlOrderConfirmation">
+            <div class="header-title">
+                <div class="heading-title">
+                    <h2>Edit Profile</h2>
+                </div>
+            </div>
             @*style="display:none"*@
             <div class="row">
-                <div class="col-md-5">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">
+                <div class="col-md-6">
+                    <div class="dash-box">
+                        <div class="dash-head">
                             @Resource.Billing_Address
                         </div>
-                        <div class="panel-body" id="divBillingAddress">
+                        <div class="dash-inner" id="divBillingAddress" style="min-height:140px">
                             @{
                                 Html.RenderPartial("~/Views/Shared/_PartialAddressManager.cshtml", 1);
                             }
                         </div>
                     </div>
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">
+                </div>
+                <div class="col-md-6">
+                    <div class="dash-box">
+                        <div class="dash-head">
                             @Resource.Shipping_Address
                         </div>
-                        <div class="panel-body" id="divShippingAddress">
+                        <div class="dash-inner" id="divShippingAddress" style="min-height:140px">
                             @{
                                 Html.RenderPartial("~/Views/Shared/_PartialAddressManager.cshtml", 2);
                             }
                         </div>
                     </div>
                 </div>
-                <div class="col-md-7">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">
+             </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="dash-box">
+                        <div class="dash-head">
                             @Resource.Other_Details
                         </div>
-                        <div class="panel-body" id="divOtherDetails">
+                        <div class="dash-inner" id="divOtherDetails">
                             <div class="row">
                                 <div class="col-md-8">
                                     <div class="form-group">
                                         <label for="firstName">@Resource.Type</label>
-                                        <div>
-                                            <label>
+                                        <div class="checkbox">
+                                            <label class="checkbox-inline">
                                                 <input type="checkbox" name="isManufacturer" value="" id="chkManufacturer" />Is Manufacturer
                                             </label>
-                                            <label>
+                                            <label class="checkbox-inline">
                                                 <input type="checkbox" name="isWholeSaler" value="" id="chkWholeSaler" /> Is WholeSaler
                                             </label>
-                                            <label>
+                                            <label class="checkbox-inline">
                                                 <input type="checkbox" name="isRetailer" value="" id="chkRetailer" />Is Retailer
                                             </label>
-                                            <label>
+                                            <label class="checkbox-inline">
                                                 <input type="checkbox" name="isOther" value="" id="chkOther" />Other
                                             </label>
                                         </div>

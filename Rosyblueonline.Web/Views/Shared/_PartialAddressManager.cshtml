@@ -1,9 +1,10 @@
 ﻿@model int
 <div id="pnlCustomerAddressManagerModule_@Model" class="row">
     <div class="col-md-12">
-        <button type="button" id="btnAddAddress_@Model" class="btn btn-primary">@Resource.Add_Address</button>
         <div id="lstAddress_@Model">
         </div>
+        <hr />
+        <button type="button" id="btnAddAddress_@Model" class="btn btn-primary">@Resource.Add_Address</button>
     </div>
     <!-- Modal -->
     <div id="CustomerAddressFormModal_@Model" class="modal fade" role="dialog">
