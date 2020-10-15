@@ -6,7 +6,7 @@
 }
 <div class="content-wrapper">
     @*<div id="uiPanel1"></div>*@
-    <section class="content">
+    <section class="container-fluid">
         <div id="uiPanel1"></div>
         @*<a href="/Inventory/ExportToExcelInventoryDownload" id="ancDownloadExcel" target="_blank" style="display:none;">Download Excel</a>*@
         @Html.Partial("~/Views/Shared/_PartialSpecificSearchResult.cshtml", "Cart")
@@ -20,9 +20,9 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <div class="panel panel-primary">
+                    <div class="dash-box">
                         @*style="overflow-x: scroll; max-height: 390px;"*@
-                        <div class="panel-body paneltable">
+                        <div class="table-box">
                             <table id="SearchTablePostForOrder" class="table table-fixed dataTable no-footer" role="grid" aria-describedby="SearchTablePost_info">
                                 <thead class="bordertp">
                                     <tr role="row" class="table-head">
@@ -157,81 +157,81 @@
             </div>
             <div class="row">
                 <div class="col-md-6">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">
+                    <div class="dash-box">
+                        <div class="dash-head">
                             @Resource.Select_Billing_Address
                         </div>
-                        <div class="panel-body" id="divBillingAddress">
+                        <div class="dash-inner" id="divBillingAddress">
                             @{
                                 Html.RenderPartial("~/Views/Shared/_PartialAddressManager.cshtml", 1);
                             }
                         </div>
                     </div>
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">
+                </div>
+                <div class="col-md-6">
+                    <div class="dash-box">
+                        <div class="dash-head">
                             @Resource.Select_Shipping_Address
                         </div>
-                        <div class="panel-body" id="divShippingAddress">
+                        <div class="dash-inner" id="divShippingAddress">
                             @{
                                 Html.RenderPartial("~/Views/Shared/_PartialAddressManager.cshtml", 2);
                             }
                         </div>
                     </div>
                 </div>
-
-                <div class="col-md-offset-6">
-                    <div class="panel panel-primary">
-                        <div class="panel-body paneltable">
-                            <table class="table">
-                                <thead class="bordertp">
-                                    <tr>
-                                        <th class="tbnew">
-                                            @Resource.Total_pcs
-                                        </th>
-                                        <th class="tbnew">
-                                            @Resource.Tot_Carat
-                                        </th>
-                                        <th class="tbnew">
-                                            @Resource.Tot_Amount
-                                        </th>
-                                        <th class="tbnew">
-                                            @Resource.Disc
-                                        </th>
-                                        <th class="tbnew">
-                                            @Resource.Price_ct
-                                        </th>
-                                        <th class="tbnew">
-                                            @Resource.Payable_Amount
-                                        </th>
-                                    </tr>
-                                    <tr></tr>
-                                </thead>
-                                <tbody id="tblBodySummaryForOrder">
-                                </tbody>
-                            </table>
-                            <table border="1" class="table">
-                                <thead>
-                                    <tr>
-                                        <th> @Resource.Shipping_Mode</th>
-                                        <th colspan="2">
-                                            <select class="form-control" id="ddlShippingMode" name="ddlShippingMode">
-                                                <option value="1" selected>@Resource.Direct_Ship</option>
-                                                <option value="0">@Resource.Self_Pickup</option>
-                                            </select>
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody id="tblOrder"></tbody>
-                            </table>
+                <div class="col-md-12">
+                    <div class="dash-box">
+                        <div class="dash-inner">
+                            <div class="table-box">
+                                <table class="table">
+                                    <thead class="bordertp">
+                                        <tr>
+                                            <th class="tbnew">
+                                                @Resource.Total_pcs
+                                            </th>
+                                            <th class="tbnew">
+                                                @Resource.Tot_Carat
+                                            </th>
+                                            <th class="tbnew">
+                                                @Resource.Tot_Amount
+                                            </th>
+                                            <th class="tbnew">
+                                                @Resource.Disc
+                                            </th>
+                                            <th class="tbnew">
+                                                @Resource.Price_ct
+                                            </th>
+                                            <th class="tbnew">
+                                                @Resource.Payable_Amount
+                                            </th>
+                                        </tr>
+                                        <tr></tr>
+                                    </thead>
+                                    <tbody id="tblBodySummaryForOrder">
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="form-inline mt-15">
+                                <div class="form-group">
+                                    <label for="exampleInputName2">@Resource.Shipping_Mode</label>
+                                    <select class="form-control" id="ddlShippingMode" name="ddlShippingMode">
+                                        <option value="1" selected>@Resource.Direct_Ship</option>
+                                        <option value="0">@Resource.Self_Pickup</option>
+                                    </select>
+                                </div>
+                            </div>
                             <br />
-                            <button class="btn btn-primary pull-right" id="btnConfirmOrder">@Resource.Confirm_Order</button>
-                            <button class="btn btn-default pull-right" id="btnCancelOrder">@Resource.Cancel_Order</button>
+                            <button class="btn btn-primary" id="btnConfirmOrder">@Resource.Confirm_Order</button>
+                            <button class="btn btn-default" id="btnCancelOrder">@Resource.Cancel_Order</button>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <b>@Resource.Disclaimer:</b> @Resource.DisclaimerText  
+                <div class="col-xs-12">
+                    <b>@Resource.Disclaimer:</b> @Resource.DisclaimerText
+                </div>
             </div>
         </section>
     </section>

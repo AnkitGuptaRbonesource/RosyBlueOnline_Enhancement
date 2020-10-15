@@ -1,4 +1,6 @@
-﻿.font-color-red {
+﻿.mt-10 {margin-top:10px}
+.mt-15 {margin-top:15px}
+.font-color-red {
     color: red;
 }
 
@@ -190,8 +192,10 @@ span.multiplecarat {
 .marginleft {
     margin-left: 18px;
 }
-
-input[type=checkbox], input[type=radio] {
+.checkbox label, .radio label {
+    line-height: 22px;
+}
+/*input[type=checkbox], input[type=radio] {
     margin: 0px 10px 0 0 !important;
 }
 
@@ -199,8 +203,7 @@ input[type=radio] {
     left: 0;
     top: -1px;
     margin: 6px 5px 0 0 !important;
-    /*opacity: 0;*/
-}
+}*/
 
 .radioleft {
     float: left;

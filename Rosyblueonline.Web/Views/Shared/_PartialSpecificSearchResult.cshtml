@@ -498,87 +498,128 @@
         }*@
 
     @if (Model == "Cart")
-    {
+    {<div class="row">
+            <div class="col-lg-12 col-sm-12 col-xs-12 header-padding">
+                <div class="heading-panel">
+                    <div class="panel-stonebox">
+                        <div class="heading-title">
+                            <h2>@Resource.Shopping_Cart</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="row">
-            <div class="col-md-2">
-                <button class="smbox" id="btnCompare">
-                    <div class="info-box-content">
-                        <span class="info-box-text"><i class="fa fa-balance-scale fontsz"></i><span class="pull-right"> @Resource.Compare </span></span>
+            <div class="col-lg-12 col-sm-12 col-xs-12">
+                <div class="search-result-box">
+                    <div class="export-box">
+                        <div class="campare-box">
+                            <ul>
+                                <li>
+                                    <a href="javascript:void(0);" id="btnCompare">
+                                        <span><img src="~/Content/img/Compare-img.svg" /></span>
+                                        <span>@Resource.Compare</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);"  id="btnOrder">
+                                        <span>
+                                            <img src="~/Content/img/panel-cart.svg" />
+                                        </span>
+                                        <span>@Resource.Order</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);" id="btnRemove">
+                                        <span>
+                                            <img src="~/Content/img/Modify-img.svg" />
+                                        </span>
+                                        <span>@Resource.Remove</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                </button>
+                </div>
             </div>
-            <div class="col-md-2">
-
-            </div>
-            <div class="col-md-2">
-                <button class="smbox" id="btnOrder">
-                    <div class="info-box-content">
-                        <span class="info-box-text"><i class="fa fa-cart-plus fontsz"></i><span class="pull-right">@Resource.Order</span></span>
-                    </div>
-                </button>
-            </div>
-
-            <div class="col-md-2">
-                <button class="smbox" id="btnRemove">
-                    <div class="info-box-content">
-                        <span class="info-box-text"><i class="fa fa-trash fontsz"></i><span class="pull-right">@Resource.Remove_Cart</span></span>
-                    </div>
-                </button>
-            </div>
-
         </div>
     }
 
     @if (Model == "WatchList")
     {
         <div class="row">
-            <div class="col-md-2">
-                <button class="smbox" id="btnCompare">
-                    <div class="info-box-content">
-                        <span class="info-box-text"><i class="fa fa-balance-scale fontsz"></i><span class="pull-right"> @Resource.Compare </span></span>
+            <div class="col-lg-12 col-sm-12 col-xs-12 header-padding">
+                <div class="heading-panel">
+                    <div class="panel-stonebox">
+                        <div class="heading-title">
+                            <h2>@Resource.Watch_List</h2>
+                        </div>
                     </div>
-                </button>
-            </div>
-
-            <div class="col-md-2">
-                <div class="dropdown">
-                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-                        <i class="fa fa-balance-scale fontsz"></i> @Resource.Export_Excel
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a href="#" id="btnExcel">@Resource.Selected</a></li>
-                        <li><a href="#" id="btnAllExcel">@Resource.All</a></li>
-                        <li><a href="#" id="btnMemoExcel">@Resource.Only_Memo</a></li>
-                    </ul>
+                    <div class="summery-box">
+                        <div class="excel-btnbox">
+                            <div class="dropdown print-btn nomar">
+                                <button class="dropdown-toggle" type="button" data-toggle="dropdown">
+                                    <img src="~/Content/img/export-icon.svg" />
+                                    <span>
+                                        @Resource.Export_Excel
+                                        <span class="caret"></span>
+                                    </span>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-right">
+                                    <li><a href="#" id="btnExcel">@Resource.Selected</a></li>
+                                    <li><a href="#" id="btnAllExcel">@Resource.All</a></li>
+                                    <li><a href="#" id="btnMemoExcel">@Resource.Only_Memo</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <div class="col-md-2">
-                <button class="smbox" id="btnAddToCart">
-                    <div class="info-box-content">
-                        <span class="info-box-text"><i class="fa fa-cart-plus fontsz"></i><span class="pull-right">@Resource.Cart</span></span>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-sm-12 col-xs-12">
+                <div class="search-result-box">
+                    <div class="export-box">
+                        <div class="campare-box">
+                            <ul>
+                                <li>
+                                    <a href="javascript:void(0);" id="btnCompare">
+                                        <span><img src="~/Content/img/Compare-img.svg" /></span>
+                                        <span>@Resource.Compare</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);" id="btnAddToCart">
+                                        <span>
+                                            <img src="~/Content/img/panel-cart.svg" />
+                                        </span>
+                                        <span>@Resource.Cart</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);" id="btnRemove">
+                                        <span>
+                                            <img src="~/Content/img/Modify-img.svg" />
+                                        </span>
+                                        <span>@Resource.Remove</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                </button>
-            </div>
-
-            <div class="col-md-2">
-                <button class="smbox" id="btnRemove">
-                    <div class="info-box-content">
-                        <span class="info-box-text"><i class="fa fa-trash fontsz"></i><span class="pull-right">@Resource.Remove</span></span>
-                    </div>
-                </button>
+                </div>
             </div>
         </div>
     }
 
+    @*gried and list*@
 
     <div class="search-header clearfix">
         <div class="switch-btn pull-right">
             <button type="button" class="btn list-viewbtn btn-primary" onclick="$(this).addClass('btn-primary');$(this).removeClass('btn-default');$('.thumb-viewbtn').removeClass('btn-primary');$('.thumb-viewbtn').addClass('btn-default'); $('.list-view').show(); $('.thumb-result').hide();"><i class="fa fa-th-list" aria-hidden="true"></i></button>
             <button id="btnShowListView" type="button" class="btn thumb-viewbtn btn-default" onclick="$(this).addClass('btn-primary');$(this).removeClass('btn-default');$('.list-viewbtn').addClass('btn-default');$('.list-viewbtn').removeClass('btn-primary'); $('.list-view').hide(); $('.thumb-result').show();"><i class="fa fa-th-large" aria-hidden="true"></i></button>
         </div>
-       
+
     </div>
 
 
@@ -611,7 +652,38 @@
     {
         <div class="list-view">
             <table class="table">
-                <thead class="bordertp">
+
+                <thead id="tblBodySummary">
+                    <tr class="rsearchnew" style="height: 25px;">
+                        <td class="rsearchnew">
+                            <b><span id="lblcountsel"></span></b>
+                        </td>
+                        <td class="rsearchnew">
+                            <b><span id="lblTCt1"></span></b>
+                        </td>
+                        <td class="rsearchnew" style="display: none;">
+                            <b><span id="lblTAmt"></span></b>
+                        </td>
+                        <td class="rsearchnew">
+                            <b><span id="lblNetORapValue"></span></b>
+                        </td>
+                        <td class="rsearchnew">
+                            <b><span id="lbltotRap"></span></b>
+                        </td>
+                        <td class="rsearchnew" style="display: none;">
+                            <b><span id="lblTAvgPrice"></span></b>
+                        </td>
+                        <td class="rsearchnew">
+                            <b><span id="lblNetRapPer"></span></b>
+                        </td>
+
+                        <td class="rsearchnew"><b><span id="lblavgpriceafterdis"></span></b></td>
+
+                        <td class="rsearchnew"><b><span id="lblfinalamoutpayment"></span></b></td>
+
+                    </tr>
+                </thead>
+                <tbody class="bordertp bordertp2">
                     <tr>
                         <th class="tbnew">
                             @Resource.Total_pcs
@@ -657,36 +729,6 @@
                         </th>
                     </tr>
                     <tr></tr>
-                </thead>
-                <tbody id="tblBodySummary">
-                    <tr class="rsearchnew" style="height: 25px;">
-                        <td class="rsearchnew">
-                            <b><span id="lblcountsel"></span></b>
-                        </td>
-                        <td class="rsearchnew">
-                            <b><span id="lblTCt1"></span></b>
-                        </td>
-                        <td class="rsearchnew" style="display: none;">
-                            <b><span id="lblTAmt"></span></b>
-                        </td>
-                        <td class="rsearchnew">
-                            <b><span id="lblNetORapValue"></span></b>
-                        </td>
-                        <td class="rsearchnew">
-                            <b><span id="lbltotRap"></span></b>
-                        </td>
-                        <td class="rsearchnew" style="display: none;">
-                            <b><span id="lblTAvgPrice"></span></b>
-                        </td>
-                        <td class="rsearchnew">
-                            <b><span id="lblNetRapPer"></span></b>
-                        </td>
-
-                        <td class="rsearchnew"><b><span id="lblavgpriceafterdis"></span></b></td>
-
-                        <td class="rsearchnew"><b><span id="lblfinalamoutpayment"></span></b></td>
-
-                    </tr>
                 </tbody>
                 @if (objToken != null && objToken.RoleID == 2)
                 {
@@ -700,30 +742,24 @@
     @if (Model == "Memo")
     {
         <div class="row">
-            <div class="col-md-2">
-                <button class="smbox btn btn-primary" id="btnSplitMemo">
-                    @Resource.Split_Memo
-                </button>
-            </div>
-            <div class="col-md-2">
-                <button class="smbox btn btn-primary" id="btnCancelMemo">
-                    @Resource.Cancel_Memo
-                </button>
-            </div>
-            <div class="col-md-2">
-                <button class="smbox btn btn-primary" id="btnSellPartialMemo">
-                    @Resource.Sell_Partial
-                </button>
-            </div>
-            <div class="col-md-2">
-                <button class="smbox btn btn-primary" id="btnReturnPartialSellMemo">
-                    @Resource.Return_Partial_Sell
-                </button>
-            </div>
-            <div class="col-md-2">
-                <button class="smbox btn btn-primary" id="btnBackMemo">
-                    @Resource.Back
-                </button>
+            <div class="col-lg-12 col-sm-12 col-xs-12">
+                <div class="memo-detailsbtn">
+                    <button class="smbox split-btn" id="btnSplitMemo">
+                        @Resource.Split_Memo
+                    </button>
+                    <button class="smbox split-btn" id="btnCancelMemo">
+                        @Resource.Cancel_Memo
+                    </button>
+                    <button class="smbox split-btn" id="btnSellPartialMemo">
+                        @Resource.Sell_Partial
+                    </button>
+                    <button class="smbox split-btn" id="btnReturnPartialSellMemo">
+                        @Resource.Return_Partial_Sell
+                    </button>
+                    <button class="smbox split-btn" id="btnBackMemo">
+                        @Resource.Back
+                    </button>
+                </div>
             </div>
         </div>
     }
@@ -754,137 +790,136 @@
                                                     <label for="Stock">@Resource.Stock</label>
                                                 </th>
 
-                                                <th class="tbnew">
-                                                    <label for="Certificate_">@Resource.CertificateId</label>
-                                                </th>
-                                                <th class="tbnew dt-V360">
-                                                    <label for="V360">@Resource.V360</label>
-                                                </th>
-                                                <th class="tbnew">
-                                                    <label for="Shape">@Resource.Shape</label>
-                                                </th>
-                                                <th class="tbnew dt-weight">
-                                                    <label for="Weight">@Resource.Weight</label>
-                                                </th>
-                                                <th class="tbnew">
-                                                    <label for="Color">@Resource.Color</label>
-                                                </th>
-                                                <th class="tbnew">
-                                                    <label for="Clarity">@Resource.Clarity</label>
-                                                </th>
-                                                <th class="tbnew">
-                                                    <label for="Diamentions">@Resource.Diamentions</label>
-                                                </th>
-                                                <th class="tbnew">
-                                                    <label for="Table_">@Resource.Table</label>
-                                                </th>
-                                                <th class="tbnew">
-                                                    <label for="Depth_">@Resource.Depth</label>
-                                                </th>
-                                                <th class="tbnew">
-                                                    <label for="Girdle">@Resource.Girdle</label>
-                                                </th>
-                                                <th class="tbnew">
-                                                    <label for="Cut">@Resource.Cut</label>
-                                                </th>
-                                                <th class="tbnew">
-                                                    <label for="Polish">@Resource.Polish</label>
-                                                </th>
-                                                <th class="tbnew">
-                                                    <label for="Symmetry">@Resource.Symmetry</label>
-                                                </th>
-                                                <th class="tbnew">
-                                                    <label for="Flora">@Resource.Flora</label>
-                                                </th>
-                                                <th class="tbnew lab">
-                                                    <label for="Lab">@Resource.Lab</label>
-                                                </th>
-                                                <th class="tbnew">
-                                                    <label for="RapPrice">@Resource.RapPrice</label>
-                                                </th>
-                                                <th class="tbnew">
-                                                    <label for="RapDisc___">@Resource.RapDisc</label>
-                                                </th>
-                                                <th class="tbnew" id="sl">
-                                                    <label for="Price____ct">@Resource.Price_ct</label>
-                                                </th>
-                                                <th class="tbnew">
-                                                    <label for="Amount">@Resource.Amount</label>
-                                                </th>
-                                                <th class="tbnew">
-                                                    <label for="D_R">@Resource.DR</label>
-                                                </th>
-                                                <th class="tbnew">
-                                                    <label for="CrownHeight">@Resource.CrownHeight</label>
-                                                </th>
-                                                <th class="tbnew">
-                                                    <label for="CrownAngle">@Resource.CrownAngle</label>
-                                                </th>
-                                                <th class="tbnew">
-                                                    <label for="PavilionDepth">@Resource.PavilionDepth</label>
-                                                </th>
-                                                <th class="tbnew">
-                                                    <label for="PavilionAngle">@Resource.PavilionAngle</label>
-                                                </th>
-                                                <th class="tbnew">
-                                                    <label for="Starlength">@Resource.Starlength</label>
-                                                </th>
-                                                <th class="tbnew">
-                                                    <label for="LowerHalf">@Resource.LowerHalf</label>
-                                                </th>
-                                                <th class="tbnew">
-                                                    <label for="Girdle_">@Resource.Girdle_Per</label>
-                                                </th>
-                                                <th class="tbnew laser">
-                                                    <label for="Laser">@Resource.Laser</label>
-                                                </th>
-                                                <th class="tbnew">
-                                                    <label for="EC">@Resource.EC</label>
-                                                </th>
-                                                <th class="tbnew">
-                                                    <label for="Shade">@Resource.Shade</label>
-                                                </th>
-                                                <th class="tbnew">
-                                                    <label for="Milky">@Resource.Milky</label>
-                                                </th>
-                                                <th class="tbnew">
-                                                    <label for="TableBlack">@Resource.TableBlack</label>
-                                                </th>
-                                                <th class="tbnew">
-                                                    <label for="CentreBlack">@Resource.CentreBlack</label>
-                                                </th>
-                                                <th class="tbnew ha">
-                                                    <label for="H_A">@Resource.HA</label>
-                                                </th>
-                                                <th class="tbnew">
-                                                    <label for="Opens">@Resource.Opens</label>
-                                                </th>
-                                                <th class="tbnew">
-                                                    <label for="Keytosymbol">@Resource.Keytosymbol</label>
-                                                </th>
-                                                <th class="tbnew">
-                                                    <label for="GIAcomments">@Resource.GIAcomments</label>
-                                                </th>
-                                                <th class="tbnew">
-                                                    <label for="ReportDate">@Resource.ReportDate</label>
-                                                </th>
-                                                <th class="tbnew">
-                                                    <label for="SalesLocation">@Resource.SalesLocation</label>
-                                                </th>
-                                                <th class="tbnew Status">
-                                                    <label for="Status">@Resource.Status</label>
-                                                </th>
-                                                <th class="tbnew CompanyName">
-                                                    <label for="CompanyName">@Resource.Company_Name</label>
-                                                </th>
-                                                <th class="tbnew StoneOrigin">
-                                                    <label for="StoneOrigin">@Resource.Origin1</label>
-                                                </th>
-                                            </tr>
-                                        </thead>
+                                                    <th class="tbnew">
+                                                        <label for="Certificate_">@Resource.CertificateId</label>
+                                                    </th>
+                                                    <th class="tbnew dt-V360">
+                                                        <label for="V360">@Resource.V360</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label for="Shape">@Resource.Shape</label>
+                                                    </th>
+                                                    <th class="tbnew dt-weight">
+                                                        <label for="Weight">@Resource.Weight</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label for="Color">@Resource.Color</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label for="Clarity">@Resource.Clarity</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label for="Diamentions">@Resource.Diamentions</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label for="Table_">@Resource.Table</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label for="Depth_">@Resource.Depth</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label for="Girdle">@Resource.Girdle</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label for="Cut">@Resource.Cut</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label for="Polish">@Resource.Polish</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label for="Symmetry">@Resource.Symmetry</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label for="Flora">@Resource.Flora</label>
+                                                    </th>
+                                                    <th class="tbnew lab">
+                                                        <label for="Lab">@Resource.Lab</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label for="RapPrice">@Resource.RapPrice</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label for="RapDisc___">@Resource.RapDisc</label>
+                                                    </th>
+                                                    <th class="tbnew" id="sl">
+                                                        <label for="Price____ct">@Resource.Price_ct</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label for="Amount">@Resource.Amount</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label for="D_R">@Resource.DR</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label for="CrownHeight">@Resource.CrownHeight</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label for="CrownAngle">@Resource.CrownAngle</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label for="PavilionDepth">@Resource.PavilionDepth</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label for="PavilionAngle">@Resource.PavilionAngle</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label for="Starlength">@Resource.Starlength</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label for="LowerHalf">@Resource.LowerHalf</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label for="Girdle_">@Resource.Girdle_Per</label>
+                                                    </th>
+                                                    <th class="tbnew laser">
+                                                        <label for="Laser">@Resource.Laser</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label for="EC">@Resource.EC</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label for="Shade">@Resource.Shade</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label for="Milky">@Resource.Milky</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label for="TableBlack">@Resource.TableBlack</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label for="CentreBlack">@Resource.CentreBlack</label>
+                                                    </th>
+                                                    <th class="tbnew ha">
+                                                        <label for="H_A">@Resource.HA</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label for="Opens">@Resource.Opens</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label for="Keytosymbol">@Resource.Keytosymbol</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label for="GIAcomments">@Resource.GIAcomments</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label for="ReportDate">@Resource.ReportDate</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label for="SalesLocation">@Resource.SalesLocation</label>
+                                                    </th>
+                                                    <th class="tbnew Status">
+                                                        <label for="Status">@Resource.Status</label>
+                                                    </th>
+                                                    <th class="tbnew CompanyName">
+                                                        <label for="CompanyName">@Resource.Company_Name</label>
+                                                    </th>
+                                                    <th class="tbnew StoneOrigin">
+                                                        <label for="StoneOrigin">@Resource.Origin1</label>
+                                                    </th>
+                                                </tr>
+                                            </thead>
 
-                                    </table>
-
+                                        </table>
                                 </div>
                             </div>
                         </div>

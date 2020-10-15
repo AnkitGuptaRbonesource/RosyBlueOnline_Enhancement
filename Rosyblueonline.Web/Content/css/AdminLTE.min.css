@@ -757,6 +757,9 @@ body{font-family: 'Karla', sans-serif !important;font-weight:400;overflow-x:hidd
 .excel-btnbox .dropdown.print-btn {
     margin: 0 12px;
 }
+.excel-btnbox .dropdown.print-btn.nomar {
+	margin:0
+}
 .clorbox img {
     width: 20px;
     height: 20px;
@@ -815,7 +818,7 @@ body{font-family: 'Karla', sans-serif !important;font-weight:400;overflow-x:hidd
     box-shadow: 0px 20px 100px rgba(58, 66, 118, 0.05);
     border-radius: 10px;
 }
-.list-view input[type='checkbox']:after {
+ input[type='checkbox']:after {
     line-height: 1.5em;
     content: '';
     display: inline-block;
@@ -827,7 +830,7 @@ body{font-family: 'Karla', sans-serif !important;font-weight:400;overflow-x:hidd
     border-radius: 5px;
     background: rgb(255 255 255);
 }
-.list-view input[type='checkbox']:checked:after {
+ input[type='checkbox']:checked:after {
     background-color: #e9978c;
     border-color: #e9978c;
     content: '';
@@ -836,6 +839,9 @@ body{font-family: 'Karla', sans-serif !important;font-weight:400;overflow-x:hidd
     background-repeat: no-repeat;
     text-align: center;
     color: #fff;
+}
+.checkbox {
+    margin-top: -5px;
 }
 .pagination > li:first-child > a, .pagination > li:first-child > span {
     color: #e9978c;
@@ -953,8 +959,9 @@ div.dataTables_wrapper div.dataTables_paginate {
 #pnlSSResult {
     padding-bottom: 0;
 }
-#SearchTablePost_wrapper .sorting_1 {
+.sorting_1 {
     box-shadow: 20px 0px 20px rgba(51,51,51,0.08);
+    color: #E9978C !important;
 }
 #SearchTablePost tr {
     border-bottom: 1px solid #ECE9F1;
@@ -1001,7 +1008,7 @@ span.gried-color {
     background: rgba(230, 0, 196, 0.80);
 }
 .active-watchlist {
-    background: rgb(58 ,66, 118) !important;
+    /*background: rgb(58 ,66, 118) !important;*/
     color: #fff !important;
 }
 #divMultipleSizes {
@@ -1011,6 +1018,9 @@ span.gried-color {
     width: 270px;
     display: inline-block;
     vertical-align: top;
+}
+.blockOverlay {
+	background: #fff !important
 }
 
 /*memo page*/
@@ -1063,7 +1073,7 @@ span.gried-color {
 .searchbox {
     min-width: 460px;
 }
-.memo-btn form button {
+.memo-btn form button , #divReturnSale button {
     font-weight: 500;
     font-size: 12px;
     line-height: 24px;
@@ -1073,6 +1083,9 @@ span.gried-color {
     border-radius: 6px;
     padding: 8px 20px;
     transition: 0.5s all ease;
+}
+#divReturnSale {
+    margin-right: 14px;
 }
 .memo-btn form button span {
     margin-right: 10px;
@@ -1100,6 +1113,72 @@ span.gried-color {
 .sold-btn span {
     margin-right: 10px;
 }
+.stock-add {
+    background-color: #E9978C !important;
+    border-radius: 4px;
+    color: #fff;
+    padding: 6px;
+    line-height: 0;
+    outline: none;
+}
+.stock-add i {
+    font-size: 12px;
+    color: #fff;
+    outline: none;
+}
+.dropdown-menu-add > li > a {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0.5px;
+    color: #828282;
+    padding: 10px 15px;
+    margin: 0;
+}
+.split-btn {
+    position: relative;
+    display: block;
+    width: fit-content;
+    border: 1px solid #3A4276;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 24px;
+    color: #FFFFFF;
+    background: #3A4276;
+    border-radius: 6px;
+    padding: 7px 23px;
+    outline: none;
+    transition: 0.5s all ease;
+    margin-bottom: 0;
+}
+.memo-detailsbtn {
+    position: relative;
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+.memo-detailsbtn .split-btn {
+    margin-right: 14px;
+}
+.borderound {
+    border-radius: 5px !important;
+}
+.img-container {
+    border-radius: 17px 17px 0 0 !important;
+    height: 230px !important;
+}
+.diamond{
+    border-radius: 17px !important;
+}
+.lab a {
+    color: #3A4276;
+}
+
+
+
+
+
+
 
 
 
@@ -1111,325 +1190,440 @@ span.gried-color {
 
 @media only screen and (min-width: 992px) and (max-width: 1100px) {
     .navbar-static-top {
-        width: 76%;
-    }
-    .searchbar {
-        width: 28%;
-        margin: 0;
-        margin-left: auto;
-    }
-}
-@media only screen and (min-width: 1100px) and (max-width: 1200px) {
-    .navbar-static-top {
-        width: 76%;
-    }
-    .searchbar {
-        width: 41%;
-        margin: 0;
-    }
-}
-@media only screen and (min-width: 1200px) and (max-width: 1300px) {
-    .navbar-static-top {
-        width: 82%;
-    }
-    .searchbar {
-        width: 35%;
-    }
-    .stone-panel ul li {
-        padding: 10px 12px;
-        margin: 0 3px;
-        font-size: 12px;
-    }
-    .stone-panel {
-        margin-left: 4px;
-    }
-    .info-box-text {
-        font-size: 12px;
-    }
-    .info-box-content {
-        padding: 5px 1px;
-        margin-left: 0px;
-    }
-    .clorbox {
-        margin-right: 7px;
-    }
-    .print-btn button {
-        padding: 7px 2px;
-        font-size: 12px;
-    }
-    .panel-dropdown .dropdown button {
-        padding: 8px 2px;
-        font-size: 12px;
-    }
-    .excel-btnbox .dropdown.print-btn {
-        margin: 0 5px;
-    }
-    .dataTables_scrollBody {
-        height: 410px !important;
-    }
-    .header-padding {
-        padding-right: 5px;
-    }
-    .inbx {
-        padding: 15px;
-    }
-}
+            width: 76%;
+        }
 
-@media only screen and (min-width: 1300px) and (max-width: 1400px) {
-    .navbar-static-top {
-        width: 82%;
-    }
-    .searchbar {
-        width: 40%;
-        margin: 0px 7%;
-    }
-    .stone-panel ul li {
-        padding: 10px 10px;
-        margin: 0 1px;
-        font-size: 13px;
-    }
-    .clorbox {
-        margin-right: 7px;
-    }
-    .print-btn button {
-        padding: 7px 4px;
-        font-size: 12px;
-    }
-    .panel-dropdown .dropdown button {
-        padding: 8px 5px;
-        font-size: 12px;
-    }
-    .dataTables_scrollBody{
-        height: 380px !important;
-    }
-    .header-padding {
-        padding-right: 10px;
-    }
-    .inbx {
-        padding: 15px;
-    }
-    .r10 .cl {
-        padding-left: 5px;
-        padding-right: 5px;
+        .searchbar {
+            width: 28%;
+            margin: 0;
+            margin-left: auto;
+        }
     }
 
-}
+    @media only screen and (min-width: 1100px) and (max-width: 1200px) {
+        .navbar-static-top {
+            width: 76%;
+        }
 
-@media only screen and (min-width: 1400px) and (max-width: 1500px) {
-    .navbar-static-top {
-        width: 84%;
+        .searchbar {
+            width: 41%;
+            margin: 0;
+        }
     }
-    .searchbar {
-        width: 40%;
-    }
-    .stone-panel ul li {
-        padding: 10px 10px;
-        margin: 0 2px;
-        font-size: 13px;
-    }
-    .print-btn button {
-        padding: 7px 5px;
-    }
-    .panel-dropdown .dropdown button {
-        padding: 8px 5px;
-    }
-    .dataTables_scrollBody{
-        height: 530px !important;
-    }
-}
 
-@media only screen and (min-width: 1500px) and (max-width: 1650px) {
-    .navbar-static-top {
-        width: 86%;
-    }
-    .searchbar {
-        width: 46%;
-        margin: 0 auto;
-    }
-    .stone-panel ul li {
-        padding: 10px 10px;
-    }
-    .print-btn button {
-        padding: 7px 10px;
-    }
-    .panel-dropdown .dropdown button {
-        padding: 8px 10px;
-    }
-}
+    @media only screen and (min-width: 1200px) and (max-width: 1300px) {
+        .navbar-static-top {
+            width: 82%;
+        }
 
-@media only screen and (max-width: 767px){
-    .searchbar {
-        display: none;
+        .searchbar {
+            width: 35%;
+        }
+
+        .stone-panel ul li {
+            padding: 10px 12px;
+            margin: 0 3px;
+            font-size: 12px;
+        }
+
+        .stone-panel {
+            margin-left: 4px;
+        }
+
+        .info-box-text {
+            font-size: 12px;
+        }
+
+        .info-box-content {
+            padding: 5px 1px;
+            margin-left: 0px;
+        }
+
+        .clorbox {
+            margin-right: 7px;
+        }
+
+        .print-btn button {
+            padding: 7px 2px;
+            font-size: 12px;
+        }
+
+        .panel-dropdown .dropdown button {
+            padding: 8px 2px;
+            font-size: 12px;
+        }
+
+        .excel-btnbox .dropdown.print-btn {
+            margin: 0 5px;
+        }
+
+        .dataTables_scrollBody {
+            height: 410px !important;
+        }
+
+        .header-padding {
+            padding-right: 5px;
+        }
+
+        .inbx {
+            padding: 15px;
+        }
     }
-    .content-wrapper, .right-side, .main-footer {
-        margin-left: 0;
+
+    @media only screen and (min-width: 1300px) and (max-width: 1400px) {
+        .navbar-static-top {
+            width: 82%;
+        }
+
+        .searchbar {
+            width: 40%;
+            margin: 0px 7%;
+        }
+
+        .stone-panel ul li {
+            padding: 10px 10px;
+            margin: 0 1px;
+            font-size: 13px;
+        }
+
+        .clorbox {
+            margin-right: 7px;
+        }
+
+        .print-btn button {
+            padding: 7px 4px;
+            font-size: 12px;
+        }
+
+        .panel-dropdown .dropdown button {
+            padding: 8px 5px;
+            font-size: 12px;
+        }
+
+        .dataTables_scrollBody {
+            height: 380px !important;
+        }
+
+        .header-padding {
+            padding-right: 10px;
+        }
+
+        .inbx {
+            padding: 15px;
+        }
+
+        .r10 .cl {
+            padding-left: 5px;
+            padding-right: 5px;
+        }
     }
-    .menuname {
-        display: none;
+
+    @media only screen and (min-width: 1400px) and (max-width: 1500px) {
+        .navbar-static-top {
+            width: 84%;
+        }
+
+        .searchbar {
+            width: 40%;
+        }
+
+        .stone-panel ul li {
+            padding: 10px 10px;
+            margin: 0 2px;
+            font-size: 13px;
+        }
+
+        .print-btn button {
+            padding: 7px 5px;
+        }
+
+        .panel-dropdown .dropdown button {
+            padding: 8px 5px;
+        }
+
+        .dataTables_scrollBody {
+            height: 530px !important;
+        }
     }
-    .main-header .navbar .nav > li > a > .label {
-        font-size: 10px;
-        width: 18px;
-        height: 18px;
-        line-height: 15px;
+
+    @media only screen and (min-width: 1500px) and (max-width: 1650px) {
+        .navbar-static-top {
+            width: 86%;
+        }
+
+        .searchbar {
+            width: 46%;
+            margin: 0 auto;
+        }
+
+        .stone-panel ul li {
+            padding: 10px 10px;
+        }
+
+        .print-btn button {
+            padding: 7px 10px;
+        }
+
+        .panel-dropdown .dropdown button {
+            padding: 8px 10px;
+        }
     }
-    .main-header .navbar .nav > li > a > .label {
-        right: 2px;
+
+    @media only screen and (max-width: 767px) {
+        .searchbar {
+            display: none;
+        }
+
+        .content-wrapper, .right-side, .main-footer {
+            margin-left: 0;
+        }
+
+        .menuname {
+            display: none;
+        }
+
+        .main-header .navbar .nav > li > a > .label {
+            font-size: 10px;
+            width: 18px;
+            height: 18px;
+            line-height: 15px;
+        }
+
+        .main-header .navbar .nav > li > a > .label {
+            right: 2px;
+        }
+
+        .skin-black-light .main-header .navbar .nav > li > a {
+            position: relative;
+            display: block;
+            padding: 0px 3px !important;
+        }
+
+        .content {
+            padding: 20px 10px !important;
+        }
+
+        .menutoggle a img {
+            width: 25px;
+            height: 25px;
+            margin-top: -7px;
+        }
+
+        .main-header .navbar {
+            padding: 0 10px;
+        }
+
+        .menutoggle a {
+            position: relative;
+            display: block;
+            width: fit-content;
+        }
+
+        .navbar-custom-menu > .navbar-nav > li .dropdown-menu.orderdropmenu {
+            min-width: 310px;
+        }
+
+        .main-sidebar.sideactive {
+            -webkit-transform: translate(0px, 0);
+            -ms-transform: translate(0px, 0);
+            -o-transform: translate(0px, 0);
+            transform: translate(0px, 0);
+        }
+
+        .close-btn img {
+            width: 18px;
+        }
+
+        .close-btn a {
+            position: absolute;
+            display: block;
+            width: fit-content;
+            top: 20px;
+            right: 20px;
+            z-index: 5;
+        }
+
+        .large-header {
+            display: none;
+        }
+
+        .small-header {
+            display: block;
+        }
+
+        .sidebar-menu, .main-sidebar .user-panel, .sidebar-menu > li.header {
+            max-height: 490px;
+            overflow: auto;
+        }
+
+        .close-btn {
+            display: block;
+        }
+
+        .stone-details-box {
+            padding: 20px 15px;
+        }
+
+        #ddlLanguage {
+            font-size: 13px;
+            margin-top: 0px;
+        }
+
+        .diamond-demand-box {
+            width: 100% !important;
+            display: block !important;
+        }
+
+            .diamond-demand-box .demand-key-box {
+                width: 100% !important;
+            }
+
+        .paddding-box {
+            padding: 0;
+        }
+
+        .girle-para {
+            position: relative;
+            display: inline-block;
+            width: 44%;
+            float: none;
+            margin: 0;
+            margin-right: 15px;
+            margin-bottom: 25px;
+        }
+
+        .shape-cut-box {
+            display: block;
+        }
+
+        .shape-cut-box {
+            display: block;
+        }
+
+        .heart-box {
+            display: block;
+        }
+
+            .heart-box .describe-line {
+                width: 100%;
+            }
+
+        .main-dashboxes {
+            display: block;
+        }
+
+        .dashboxes {
+            width: 100%;
+        }
+
+        .heading-panel {
+            display: block;
+        }
+
+        .panel-stonebox {
+            display: block;
+        }
+
+        .stone-panel {
+            margin-left: 0;
+        }
+
+            .stone-panel ul li {
+                display: block;
+                margin: 0;
+                margin-bottom: 10px;
+                text-align: center;
+            }
+
+        .summery-box {
+            display: block;
+        }
+
+        .clorbox {
+            margin-right: 0;
+        }
+
+        .panel-dropdown .dropdown button {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .excel-btnbox {
+            display: block;
+            width: 100%;
+        }
+
+            .excel-btnbox .dropdown.print-btn {
+                margin: 0;
+                width: 100%;
+                display: block;
+                margin-bottom: 10px;
+            }
+
+        .print-btn button {
+            width: 100%;
+        }
+
+        .campare-box ul li {
+            margin-right: 15px;
+            margin-bottom: 0;
+        }
+
+        .campare-box {
+            overflow: hidden;
+            overflow-x: scroll;
+            overflow-y: hidden;
+            white-space: nowrap;
+        }
+
+        .panel-dropdown .dropdown.open > .dropdown-menu {
+            left: 0px;
+        }
+
+        .list-view {
+            overflow: hidden;
+            overflow-x: scroll;
+            overflow-y: hidden;
+            white-space: nowrap;
+        }
+
+        .customers-list-table .panel-body {
+            overflow: auto;
+            position: inherit !important;
+        }
+
+        .memo-btn {
+            display: block;
+        }
+
+            .memo-btn form {
+                margin: 14px 0;
+            }
+
+        .searchbox {
+            min-width: 100%;
+        }
+
+        .memo-title h2 span {
+            display: block;
+            margin-top: 10px;
+        }
+
+        #divReturnSale {
+            margin-right: 0;
+            margin-bottom: 14px;
+        }
+
+        .memo-detailsbtn {
+            display: block;
+        }
+
+            .memo-detailsbtn .split-btn {
+                margin-right: 0;
+                width: 100%;
+            }
+
+        .memo-btn form button, #divReturnSale button, .sold-btn {
+            width: 100%;
+        }
     }
-    .skin-black-light .main-header .navbar .nav > li > a {
-        position: relative;
-        display: block;
-        padding: 0px 3px !important;
-    }
-    .content {
-        padding: 20px 10px !important;
-    }
-    .menutoggle a img {
-        width: 25px;
-        height: 25px;
-        margin-top: -7px;
-    }
-    .main-header .navbar{
-        padding: 0 10px;
-    }
-    .menutoggle a {
-        position: relative;
-        display: block;
-        width: fit-content;
-    }
-    .navbar-custom-menu > .navbar-nav > li .dropdown-menu.orderdropmenu {
-        min-width: 310px;
-    }
-    .main-sidebar.sideactive {
-        -webkit-transform: translate(0px, 0);
-        -ms-transform: translate(0px, 0);
-        -o-transform: translate(0px, 0);
-        transform: translate(0px, 0);
-    }
-    .close-btn img {
-        width: 18px;
-    }
-    .close-btn a {
-        position: absolute;
-        display: block;
-        width: fit-content;
-        top: 20px;
-        right: 20px;
-        z-index: 5;
-    }
-    .large-header {
-        display: none;
-    }
-    .small-header {
-        display: block;
-    }
-    .sidebar-menu, .main-sidebar .user-panel, .sidebar-menu > li.header {
-        max-height: 490px;
-        overflow: auto;
-    }
-    .close-btn {
-        display: block;
-    }
-    .stone-details-box{
-        padding: 20px 15px;
-    }
-    #ddlLanguage {
-        font-size: 13px;
-        margin-top: 0px;
-    }
-    .diamond-demand-box {
-        width: 100% !important;
-        display: block !important;
-    }
-    .diamond-demand-box .demand-key-box {
-        width: 100% !important;
-    }
-    .paddding-box {
-        padding: 0;
-    }
-    .girle-para {
-        position: relative;
-        display: inline-block;
-        width: 44%;
-        float: none;
-        margin: 0;
-        margin-right: 15px;
-        margin-bottom: 25px;
-    }
-    
-    .shape-cut-box {
-        display: block;
-    }
-    .shape-cut-box {
-        display: block;
-    }
-    .heart-box {
-        display: block;
-    }
-    .heart-box .describe-line {
-        width: 100%;
-    }
-    .main-dashboxes {
-        display: block;
-    }
-    .dashboxes {
-        width: 100%;
-    }
-    .heading-panel {
-        display: block;
-    }
-    .panel-stonebox {
-        display: block;
-    }
-    .stone-panel {
-        margin-left: 0;
-    }
-    .stone-panel ul li {
-        display: block;
-        margin: 0;
-        margin-bottom: 10px;
-        text-align: center;
-    }
-    .summery-box {
-        display: block;
-    }
-    .clorbox {
-        margin-right: 0;
-    }
-    .panel-dropdown .dropdown button {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-    .excel-btnbox {
-        display: block;
-        width: 100%;
-    }
-    .excel-btnbox .dropdown.print-btn {
-        margin: 0;
-        width: 100%;
-        display: block;
-        margin-bottom: 10px;
-    }
-    .print-btn button {
-        width: 100%;
-    }
-    .campare-box ul li {
-        margin-right: 15px;
-        margin-bottom: 0;
-    }
-    .campare-box {
-        overflow: hidden;
-        overflow-x: scroll;
-        overflow-y: hidden;
-        white-space: nowrap;
-    }
-    .panel-dropdown .dropdown.open > .dropdown-menu {
-        left: 0px;
-    }
-    .list-view {
-        overflow: hidden;
-        overflow-x: scroll;
-        overflow-y: hidden;
-        white-space: nowrap;
-    }
-}
