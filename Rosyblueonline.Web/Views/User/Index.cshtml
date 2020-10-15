@@ -22,257 +22,37 @@
 <div class="content-wrapper">
     <section class="content">
         <div id="uiPanel"></div>
-        <div class="row">
-            <div class="col-lg-12">
-                <section class="panel panel-primary">
-                    <div class="panel-heading">
-                        @Resource.User_Detail
+        <div id="frmUserDetailGrid">
+            <div class="row">
+                <div class="col-lg-12 col-sm-12 col-xs-12 header-padding">
+                    <div class="heading-panel">
+                        <div class="panel-stonebox">
+                            <div class="heading-title">
+                                <h2>@Resource.User_Detail</h2>
+                            </div>
+                            <button class="btn btn-primary ml-15" id="btnAddUser">@Resource.Add_User</button>
+                        </div>
+                        <div class="form-inline top-select">
+                            <div class="form-group @(objToken.RoleID==2?"":"hide")">
+                                <label>
+                                    @Resource.Filter_By_Role
+                                </label>
+                                <select class="form-control" id="ddlRoleFilter">
+                                    <option value="">ALL_ROLES</option>
+                                    <option value="1">SUPER_ADMIN</option>
+                                    <option value="3" @(objToken.RoleID == 2 ? "" : "selected")>CUSTOMER</option>
+                                    <option value="8">SALES_PERSON</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
-                    <div class="panel-body">
-                        <form class="row" id="frmUserDetail" style="display:none">
-                            <div class="col-lg-6 col-md-6 col-sm-12">
-                                <div class="introduce-bg">
-                                    <div class="company-info">
-                                        <div class="form-horizontal">
-                                            <div class="form-group">
-                                                <div class="row">
-                                                    <div class="col-sm-12">
-                                                        <label class="radio-inline">
-                                                            <input type="radio" name="optradio" id="rbtnCustomer" value="CUSTOMER" checked><label for="rbtnCustomer" class="controll-label">@Resource.Customer</label>
-                                                        </label>
-                                                        <label class="radio-inline">
-                                                            @*@(objToken.RoleID != 2 ? "" : "checked")*@
-                                                            <input type="radio" name="optradio" id="rbtnSupportAdmin" value="SALES_PERSON" @(objToken.RoleID == 2 ? "" : "disabled")><label for="rbtnSupportAdmin" class="controll-label">@Resource.Support_Admin</label>
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="row">
-                                                    <div class="col-sm-6">
-                                                        <label class="control-label">
-                                                            <label>@Resource.First_Name</label>
-                                                        </label>
-                                                        <input type="text" name="FirstName" value="" class="form-control" id="txtFirstName" />
-                                                    </div>
-                                                    <div class="col-sm-6">
-                                                        <label class="control-label">
-                                                            <label>@Resource.Last_Name</label>
-                                                        </label>
-                                                        <input type="text" name="LastName" value="" class="form-control" id="txtLastName" />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="row">
-                                                    <div class="col-sm-12">
-                                                        <label class="control-label">
-                                                            <label>@Resource.Email_ID</label>
-                                                        </label>
-                                                        <input type="text" name="emailId" value="" class="form-control" id="txtEmailID" />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="row">
-                                                    <div class="col-sm-6">
-                                                        <label class="control-label">
-                                                            <label>@Resource.User_Name</label>
-                                                        </label>
-                                                        <input type="hidden" name="LoginID" id="hfLoginID" value="0" />
-                                                        <input type="text" name="UserName" value="" class="form-control" id="txtUserName" />
-                                                    </div>
-                                                    <div class="col-sm-6">
-                                                        <label class="control-label">
-                                                            <label>@Resource.Password</label>
-                                                        </label>
-                                                        <input type="password" name="Password" value="" class="form-control" id="txtPassword" />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="row">
-                                                    <div class="col-sm-6">
-                                                        <label class="control-label">
-                                                            <label>@Resource.Company_Name</label>
-                                                        </label>
-                                                        <input type="text" name="CompanyName" value="" class="form-control" id="txtCompanyName" />
-                                                    </div>
-                                                    <div class="col-sm-6">
-                                                        <label class="control-label">
-                                                            <label>@Resource.Address_of_Registered_Office</label>
-                                                        </label>
-                                                        <textarea id="txtAddress" rows="5" name="OfficeAddress" class="form-control"></textarea>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="row">
-                                                    <div class="col-sm-6">
-                                                        <label class="control-label">
-                                                            <label for="Country">@Resource.Country</label>
-                                                        </label>
-                                                        <select class="form-control" id="ddlCountry" name="countryID">
-                                                            <option data-phoneCode="" value=""><-- Select Country --></option>
-                                                            @{
-                                                                for (int i = 0; i < @Model.Country.Count; i++)
-                                                                {
-                                                                    <option data-phoneCode="@Model.Country[i].Text2" value="@Model.Country[i].Value">@Model.Country[i].Text</option>
-                                                                }
-                                                            }
-                                                        </select>
-                                                    </div>
-                                                    <div class="col-sm-6">
-                                                        <label class="control-label">
-                                                            <label for="State">@Resource.State</label>
-                                                        </label>
-                                                        <select class="form-control" id="ddlState" name="stateID">
-                                                            <option value=""><-- Select State --></option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="row">
-                                                    <div class="col-sm-6">
-                                                        <label class="control-label">
-                                                            <label for="City">@Resource.City</label>
-                                                        </label>
-                                                        <input type="text" class="form-control" name="cityName" value="" id="txtCity" />
-                                                    </div>
-                                                    <div class="col-sm-6">
-                                                        <label class="control-label">
-                                                            <label for="ZIP">@Resource.ZIP_PIN</label>
-                                                        </label>
-                                                        <input type="text" class="form-control" id="txtZip" name="ZIP" placeholder="" maxlength="10">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="row">
-                                                    <div class="col-sm-6">
-                                                        <label class="control-label">
-                                                            <label>@Resource.Phone</label>
-                                                        </label>
-                                                        <div>
-                                                            <input type="text" name="phoneCode01" value="" class="form-control pho-code" id="txtPhoneCode" />
-                                                            <input type="text" name="phone01" value="" class="form-control pho-num" id="txtPhone" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-sm-6">
-                                                        <label class="control-label">
-                                                            <label>@Resource.Mobile</label>
-                                                        </label>
-                                                        <input type="text" class="form-control" id="txtMobile" name="Mobile" placeholder="" maxlength="12">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-12">
-                                <div class="introduce-bg">
-                                    <div class="company-info">
-                                        <div class="form-horizontal">
-                                            <div class="form-group">
-                                                <div class="row">
-                                                    <div class="col-sm-12">
-                                                        <label class="control-label">
-                                                            <label>@Resource.Account_Number</label>
-                                                        </label>
-                                                        <input type="text" name="AccountNumber" value="" class="form-control" id="txtAccountNumber" />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="row">
-                                                    <div class="col-sm-6">
-                                                        <label class="control-label">
-                                                            <label>@Resource.Bank_Name</label>
-                                                        </label>
-                                                        <input type="text" name="BankName" value="" class="form-control" id="txtBankName" />
-                                                    </div>
-                                                    <div class="col-sm-6">
-                                                        <label class="control-label">
-                                                            <label>@Resource.Branch_Name</label>
-                                                        </label>
-                                                        <input type="text" name="BranchName" value="" class="form-control" id="txtBranchName" />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="row">
-                                                    <div class="col-sm-12">
-                                                        <label class="control-label">
-                                                            <label>@Resource.Branch_Address</label>
-                                                        </label>
-                                                        <textarea id="txtBranchAddress" rows="5" name="BranchAddress" class="form-control"></textarea>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="row">
-                                                    <div class="col-sm-12">
-                                                        <label class="control-label">
-                                                            <label>@Resource.User_Status</label>
-                                                        </label>
-                                                        <div class="row">
-                                                            <div class="col-sm-12">
-                                                                <label class="radio-inline">
-                                                                    <input type="radio" name="userStatus" id="rbtnActive" value="1" checked><label for="rbtnActive" class="controll-label">@Resource.Active</label>
-                                                                </label>
-                                                                <label class="radio-inline">
-                                                                    <input type="radio" name="userStatus" id="rbtnInActive" value="0"><label for="rbtnInActive" class="controll-label">@Resource.In_Active</label>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <button id="btnSave" type="button" value="Save" class="btn btn-success pull-right">@Resource.Save</button>
-                                                <button id="btnUpdate" type="button" value="Update" class="btn btn-success pull-right" style="display:none">@Resource.Update</button>
-                                                <button id="btnCancel" type="button" value="Save" class="btn btn-success pull-right">@Resource.Cancel</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                        <div id="frmUserDetailGrid" class="row">
-                            <div class="col-lg-12">
-                                <div class="company-info">
-                                    <div class="form-horizontal">
-                                        <div class="form-group">
-                                            <div class="row">
-                                                <div class="col-sm-9">
-                                                    <button class="btn btn-primary" id="btnAddUser">@Resource.Add_User</button>
-                                                </div>
-                                                <div class="col-sm-3 @(objToken.RoleID==2?"":"hide")">
-                                                    <label class="control-label">
-                                                        <label>@Resource.Filter_By_Role</label>
-                                                    </label>
-                                                    <select class="form-control" id="ddlRoleFilter">
-                                                        <option value="">ALL_ROLES</option>
-                                                        <option value="1">SUPER_ADMIN</option>
-                                                        <option value="3" @(objToken.RoleID == 2 ? "" : "selected")>CUSTOMER</option>
-                                                        <option value="8">SALES_PERSON</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-
-                                        </div>
-                                        <div class="col-lg-6">
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-12">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="customers-list-table">
+                        <div class="list-view">
+                            <div class="paneltable">
                                 <table id="tblUserDetail" class="table table-fixed dataTable no-footer" role="grid">
                                     <thead class="bordertp">
                                         <tr role="row" class="table-head">
@@ -321,10 +101,219 @@
                             </div>
                         </div>
                     </div>
-                </section>
+                </div>
             </div>
         </div>
-    </section>
+        <form class="row" id="frmUserDetail" style="display:none">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="dash-box">
+                    <div class="dash-inner">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <label class="radio-inline controll-radio">
+                                            <input type="radio" name="optradio" id="rbtnCustomer" value="CUSTOMER" checked><label for="rbtnCustomer" class="controll-label">@Resource.Customer</label>
+                                        </label>
+                                        <label class="radio-inline controll-radio">
+                                            @*@(objToken.RoleID != 2 ? "" : "checked")*@
+                                            <input type="radio" name="optradio" id="rbtnSupportAdmin" value="SALES_PERSON" @(objToken.RoleID == 2 ? "" : "disabled")><label for="rbtnSupportAdmin" class="controll-label">@Resource.Support_Admin</label>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <label class="control-label">
+                                            <label>@Resource.First_Name</label>
+                                        </label>
+                                        <input type="text" name="FirstName" value="" class="form-control" id="txtFirstName" />
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label class="control-label">
+                                            <label>@Resource.Last_Name</label>
+                                        </label>
+                                        <input type="text" name="LastName" value="" class="form-control" id="txtLastName" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <label class="control-label">
+                                            <label>@Resource.Email_ID</label>
+                                        </label>
+                                        <input type="text" name="emailId" value="" class="form-control" id="txtEmailID" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <label class="control-label">
+                                            <label>@Resource.User_Name</label>
+                                        </label>
+                                        <input type="hidden" name="LoginID" id="hfLoginID" value="0" />
+                                        <input type="text" name="UserName" value="" class="form-control" id="txtUserName" />
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label class="control-label">
+                                            <label>@Resource.Password</label>
+                                        </label>
+                                        <input type="password" name="Password" value="" class="form-control" id="txtPassword" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <label class="control-label">
+                                            <label>@Resource.Company_Name</label>
+                                        </label>
+                                        <input type="text" name="CompanyName" value="" class="form-control" id="txtCompanyName" />
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label class="control-label">
+                                            <label>@Resource.Address_of_Registered_Office</label>
+                                        </label>
+                                        <textarea id="txtAddress" rows="5" name="OfficeAddress" class="form-control"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <label class="control-label">
+                                            <label for="Country">@Resource.Country</label>
+                                        </label>
+                                        <select class="form-control" id="ddlCountry" name="countryID">
+                                            <option data-phoneCode="" value=""><-- Select Country --></option>
+                                            @{
+                                                for (int i = 0; i < @Model.Country.Count; i++)
+                                                {
+                                                    <option data-phoneCode="@Model.Country[i].Text2" value="@Model.Country[i].Value">@Model.Country[i].Text</option>
+                                                }
+                                            }
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label class="control-label">
+                                            <label for="State">@Resource.State</label>
+                                        </label>
+                                        <select class="form-control" id="ddlState" name="stateID">
+                                            <option value=""><-- Select State --></option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <label class="control-label">
+                                            <label for="City">@Resource.City</label>
+                                        </label>
+                                        <input type="text" class="form-control" name="cityName" value="" id="txtCity" />
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label class="control-label">
+                                            <label for="ZIP">@Resource.ZIP_PIN</label>
+                                        </label>
+                                        <input type="text" class="form-control" id="txtZip" name="ZIP" placeholder="" maxlength="10">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <label class="control-label">
+                                            <label>@Resource.Phone</label>
+                                        </label>
+                                        <div>
+                                            <input type="text" name="phoneCode01" value="" class="form-control pho-code" id="txtPhoneCode" />
+                                            <input type="text" name="phone01" value="" class="form-control pho-num" id="txtPhone" />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label class="control-label">
+                                            <label>@Resource.Mobile</label>
+                                        </label>
+                                        <input type="text" class="form-control" id="txtMobile" name="Mobile" placeholder="" maxlength="12">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="dash-box">
+                    <div class="dash-inner">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <label class="control-label">
+                                            <label>@Resource.Account_Number</label>
+                                        </label>
+                                        <input type="text" name="AccountNumber" value="" class="form-control" id="txtAccountNumber" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <label class="control-label">
+                                            <label>@Resource.Bank_Name</label>
+                                        </label>
+                                        <input type="text" name="BankName" value="" class="form-control" id="txtBankName" />
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label class="control-label">
+                                            <label>@Resource.Branch_Name</label>
+                                        </label>
+                                        <input type="text" name="BranchName" value="" class="form-control" id="txtBranchName" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <label class="control-label">
+                                            <label>@Resource.Branch_Address</label>
+                                        </label>
+                                        <textarea id="txtBranchAddress" rows="5" name="BranchAddress" class="form-control"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <label class="control-label">
+                                            <label>@Resource.User_Status</label>
+                                        </label>
+                                        <div class="row mt-10">
+                                            <div class="col-sm-12">
+                                                <label class="radio-inline controll-radio">
+                                                    <input type="radio" name="userStatus" id="rbtnActive" value="1" checked><label for="rbtnActive" class="controll-label">@Resource.Active</label>
+                                                </label>
+                                                <label class="radio-inline controll-radio">
+                                                    <input type="radio" name="userStatus" id="rbtnInActive" value="0"><label for="rbtnInActive" class="controll-label">@Resource.In_Active</label>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                            
+                        </div>
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <div class="text-center">
+                    <button id="btnCancel" type="button" value="Save" class="btn btn-default">@Resource.Cancel</button>
+                    <button id="btnSave" type="button" value="Save" class="btn btn-primary">@Resource.Save</button>
+                    <button id="btnUpdate" type="button" value="Update" class="btn btn-info" style="display:none">@Resource.Update</button>
+                </div>
+            </div>
+        </form>
+</section>
 </div>
 
 

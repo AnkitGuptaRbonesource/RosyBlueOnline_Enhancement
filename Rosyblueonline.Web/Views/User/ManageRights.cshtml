@@ -9,31 +9,28 @@
 <div class="content-wrapper">
     <section class="content">
         <div id="uiPanel2"></div>
-        <section class="content" id="pnlOrderConfirmation">
+        <section class="container-fluid" id="pnlOrderConfirmation">
             @*style="display:none"*@
             <div class="row">
-                <div class="col-md-4">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">
+                <div class="col-md-12">
+                    <div class="dash-box">
+                        <div class="dash-head">
                             Manage Rights
                         </div>
-                        <div class="panel-body">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label class="control-label">Select User</label>
-                                        <select class="form-control" id="ddlUser">
-                                            <option value="">Select User</option>
-                                            @for (int i = 0; i < Model.Users.Count; i++)
-                                            {
-                                                <option value="@Model.Users[i].Value">@Model.Users[i].Text</option>
-                                            }
-                                        </select>
-                                    </div>
+                        <div class="dash-inner">
+                            <div class="form-inline">
+                                <div class="form-group">
+                                    <label class="control-label">Select User</label>
+                                    <select class="form-control" id="ddlUser">
+                                        <option value="">Select User</option>
+                                        @for (int i = 0; i < Model.Users.Count; i++)
+                                        {
+                                            <option value="@Model.Users[i].Value">@Model.Users[i].Text</option>
+                                        }
+                                    </select>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-12">
+                            <div class="form-inline mt-15">
                                     <div class="form-group">
                                         @for (int i = 0; i < Model.Menus.Count; i++)
                                         {
@@ -41,28 +38,26 @@
                                             <label for="chkRight@(Model.Menus[i].RowID)">@Model.Menus[i].Name</label>
                                         }
                                     </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <button class="btn btn-primary" id="btnUpdate">Update</button>
-                                </div>
+                                </div>       
+                            
+                            <div class="mt-10">
+                                <button class="btn btn-primary" id="btnUpdate">Update</button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-8">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">
+                <div class="col-md-12">
+                    <div class="dash-box">
+                        <div class="dash-head">
                             User Vs Rights
                         </div>
-                        <div class="panel-body" id="divOtherDetails">
+                        <div class="table-box list-view" id="divOtherDetails">
                             <div class="customers-list-table">
                                 <table class="table customers-table">
                                     <thead>
                                         <tr class="table-head">
-                                            <td>User</td>
-                                            <td>Rights</td>
+                                            <td class="tbnew">User</td>
+                                            <td class="tbnew">Rights</td>
                                         </tr>
                                     </thead>
                                     <tbody>
