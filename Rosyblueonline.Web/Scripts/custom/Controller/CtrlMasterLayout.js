@@ -34,17 +34,18 @@
         objDS.GetOrderDetails(OType).then(function (data) {
             if (data.IsSuccess == true) {
                 if (data.Result.length > 0) {
-                    $.each(data.Result, function (i, item) {
+                    $.each(data.Result, function (i, item) { 
+
                         var newListItem = '<div class="order-data">' +
-                            '<div class="order-cnt">' + 
-                            '<h5><a target="_blank" href="/order/info/' + item.orderDetailsId+'">#' + item.orderDetailsId + '</a></h5>'+
+                            '<a  class="order-data" target="_blank" href="/order/info/' + item.orderDetailsId + '"><div class="order-cnt">' +
+                            '<h5>#' + item.orderDetailsId + '</h5>' +
                             '<p> ' + item.firstName + ' ' + item.lastName + '<span>(' + item.companyName + ')</span></p>' +
                             '</div>' +
                             '<div class="order-nmbr">' +
                             '<p>' + moment(item.orderCreatedOn).format("DD-MM-YY") + '</p>' +
                             '<h5></h5>' +
                             '<h5>' + item.orderPayableAmount + '</h5>' +
-                            '</div></div>';
+                            '</div></a></div>';
 
 
                         if (OType == "Pending") {
