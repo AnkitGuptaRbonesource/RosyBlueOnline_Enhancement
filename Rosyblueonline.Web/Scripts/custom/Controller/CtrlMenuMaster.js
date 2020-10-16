@@ -152,7 +152,8 @@
                     searching: true,
                     dataTable: {
                         //deferLoading: 0,
-
+                        scrollY: "400px",
+                        scrollX: true,
                         paging: true,
                         order: [[1, "desc"]],
                         ajax: {

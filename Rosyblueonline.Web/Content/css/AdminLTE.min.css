@@ -757,9 +757,6 @@ body{font-family: 'Karla', sans-serif !important;font-weight:400;overflow-x:hidd
 .excel-btnbox .dropdown.print-btn {
     margin: 0 12px;
 }
-.excel-btnbox .dropdown.print-btn.nomar {
-	margin:0
-}
 .clorbox img {
     width: 20px;
     height: 20px;
@@ -1019,19 +1016,18 @@ span.gried-color {
     display: inline-block;
     vertical-align: top;
 }
-.blockOverlay {
-	background: #fff !important
-}
 
 /*memo page*/
 
 .memo-title h2 {
     font-weight: 600;
     font-size: 26px;
-    line-height: 24px;
+    line-height: 35px;
     color: #3A4276;
     letter-spacing: 0.5px;
+    margin: 0;
 }
+
 .memo-title h2 span {
     font-weight: 500;
     font-size: 16px;
@@ -1068,7 +1064,7 @@ span.gried-color {
     display: flex;
     width: 100%;
     align-items: center;
-    margin-bottom: 20px;
+    margin: 20px 0;
 }
 .searchbox {
     min-width: 460px;
@@ -1173,6 +1169,196 @@ span.gried-color {
 .lab a {
     color: #3A4276;
 }
+
+/*order details page*/
+
+
+.order-detailsbox {
+    position: relative;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 25px;
+}
+.excel-btn {
+    position: relative;
+    display: block;
+    width: fit-content;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 24px;
+    color: #FFFFFF;
+    background: #62CA76;
+    border-radius: 6px;
+    border: 1px solid #62CA76;
+    padding: 8px 30px;
+    margin-left: 14px;
+    letter-spacing: 0.5px;
+    transition: 0.5s all ease;
+}
+.pending-orderbtn {
+    position: relative;
+    display: block;
+    width: fit-content;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 24px;
+    color: #FFFFFF;
+    background: #E9978C;
+    border-radius: 6px;
+    border: 1px solid #e9978c;
+    padding: 8px 20px;
+    margin-left: 14px;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    transition: 0.5s all ease;
+}
+.order-pending {
+    position: relative;
+    display: flex;
+}
+.order-date h4 {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+    color: #4F4F4F;
+}
+.customer-details h5 {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+    color: #4F4F4F;
+    margin-bottom: 14px;
+}
+.customer-table {
+    position: relative;
+    display: block;
+    width: 100%;
+    background: #FFFFFF;
+    box-shadow: 0px 15px 60px rgba(51, 51, 51, 0.03);
+}
+.customer-table .form-control {
+    border: none;
+}
+.customer-table table tbody tr td {
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: #3A4276;
+}
+.customer-table table tbody tr td:first-child{
+    color: #828282;
+}
+.top-select .form-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.top-select {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.top-select .form-group label {
+    margin: 0 14px;
+}
+.top-select .select2-container {
+    width: 200px !important;
+}
+.order-btn {
+    position: relative;
+    display: block;
+    width: fit-content;
+    border: 1px solid #3A4276;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 24px;
+    color: #FFFFFF;
+    background: #3A4276;
+    border-radius: 6px;
+    padding: 7px 23px;
+    outline: none;
+    transition: 0.5s all ease;
+}
+.form-horizontal .form-group {
+    margin-right: 0;
+    margin-left: 0;
+}
+.inventory-form {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 20px;
+    background: #fff;
+    border-radius: 4px;
+    min-height: 160px;
+    margin-bottom: 20px;
+    box-shadow: 0px 15px 60px rgba(51, 51, 51, 0.03);
+}
+.inventory-form label {
+    margin-bottom: 10px !important;
+}
+.inventory-form .excel-btn {
+    margin: 0;
+    margin-top: 10px;
+}
+.inventory-form .excel-btn span {
+    margin-right: 10px;
+}
+.excel-btn:hover{
+    color: #fff;
+}
+#btnUpload {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 24px;
+    border-radius: 6px;
+    padding: 8px 30px;
+    margin-top: 10px;
+    letter-spacing: 0.5px;
+    transition: 0.5s all ease;
+}
+.inventory-box .memo-title {
+    margin-bottom: 30px;
+}
+.upload-history {
+    position: relative;
+    display: block;
+    width: 100%;
+    background: #fff;
+    /*box-shadow: 0px 15px 60px rgba(51, 51, 51, 0.03);*/
+}
+.stonestatusbox {
+    margin: 0!important;
+    border: none;
+}
+.status-box input {
+    float: left;
+    top: 9px !important;
+}
+.status-boxes {
+    position: relative;
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+.status-box {
+    position: relative;
+    display: block;
+    width: 28%;
+    margin: 0 15px;
+}
+.status-box2 button {
+    margin: 0 10px;
+}
+.status-title {
+    margin-bottom: 20px;
+}
+
+
 
 
 
