@@ -1,4 +1,8 @@
-﻿.font-color-red {
+﻿.mt-10 {margin-top:10px}
+.mt-15 {margin-top:15px}
+.ml-10 {margin-left:10px}
+.ml-15 {margin-left:15px}
+.font-color-red {
     color: red;
 }
 
@@ -185,11 +189,17 @@ span.multiplecarat {
 .select2-container {
     width: 100% !important;
 }
+.form-inline .select2-container  {
+	 width: 150px !important;
+}
 /*.select2-container--default .select2-selection--single {
    
     padding: 15px !important;
 
 }*/
+.checkbox label, .radio label {
+    line-height: 22px;
+}
 .marginleft {
     margin-left: 18px;
 }
@@ -246,3 +256,30 @@ input[type=radio] {
 /*.milky {
     background-color: #00BFFF;
 }*/
+
+.fhmodal, .fhmodal .modal-content {
+	height: 100%;
+}
+.fhmodal .modal-dialog {
+	height: calc(100% - 60px);
+}
+.fhmodal .modal-body {
+    height: calc(100% - 130px);
+    overflow: auto;
+	margin-bottom: 0;
+}
+.fixwtable {
+	table-layout: fixed
+}
+.fixwtable td, .fixwtable th {
+	white-space: normal !important;
+	vertical-align: top;
+}
+
+div.dataTables_wrapper div#tblUserDetail_filter {
+	text-align: left
+}
+.controll-radio  input[type=radio] {
+	top: 0;
+	margin-top: 12px !important
+}
