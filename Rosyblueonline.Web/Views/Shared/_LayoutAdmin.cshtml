@@ -32,11 +32,11 @@
         <header class="main-header">
             <nav class="navbar navbar-static-top">
                 @*<a href="#" class="logo">
-                    <img src="/Content/img/newlogo.png">
-                </a>
-                <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-                    <span class="sr-only"> Toggle navigation</span>
-                </a>*@
+            <img src="/Content/img/newlogo.png">
+        </a>
+        <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+            <span class="sr-only"> Toggle navigation</span>
+        </a>*@
                 <div class="searchbar">
                     <input type="text" class="header-search" placeholder="Enter Lot/Cert. number to quick search ...." />
                     <div class="inseach">
@@ -53,12 +53,17 @@
                         </div>
                     </div>
                 </div>
+                <div class="menutoggle">
+                    <a href="javascript:void(0);">
+                        <img src="/Content/img/menu.svg" class="img-responsive" />
+                    </a>
+                </div>
                 <div class="navbar-custom-menu">
                     @*<ul class="nav navbar-nav">
-                        <li>
-                            <a href="#">Select Language</a>
-                        </li>
-                    </ul>*@
+                <li>
+                    <a href="#">Select Language</a>
+                </li>
+            </ul>*@
                     <ul class="nav navbar-nav">
                         <li class="dropdown notifications-menu">
                             <a href="/Order/List" class="dropdown-toggle userorder" data-toggle="dropdown">
@@ -263,6 +268,11 @@
                             </a>
                         </li>
                     </ul>
+                    <div class="close-btn">
+                        <a href="javascript:void(0);">
+                            <img src="/Content/img/close-button.svg" />
+                        </a>
+                    </div>
                 </div>
                 <ul class="sidebar-menu sidebar-nav">
                     @if (objMenuAccess.Home == 1)
@@ -474,9 +484,11 @@
             })         
 
         });
-        $(document).on("click", ".menutoggle a", function () {
-            alert("s");
+        $(".menutoggle a").click(function () {
             $(".main-sidebar").addClass("sideactive");
+        });
+        $(".close-btn a").click(function () {
+            $(".main-sidebar").removeClass("sideactive");
         });
 
         $(document).mouseup(function (e) {

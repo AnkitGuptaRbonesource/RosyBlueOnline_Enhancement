@@ -3,36 +3,34 @@
     <div class="customers-list-table">
         <div class="customers-list-table">
             <div class="col-md-12">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        <div class="panel-heading">@Resource.Stock_Summary</div>
+                <div class="stock-box">
+                    <div class="memo-title">
+                        <h2>@Resource.Stock_Summary</h2>
                         <input type="hidden" name="StockSStatus" id="hfStockS" value="ByValue" />
                     </div>
                     <div class="panel-body paneltable">
-                        <div class="form-horizontal col-md-12">
+                        <div class="form-horizontal row">
                             <div class="form-group">
-
-                                <label class="col-md-2 control-label">
-                                    @Resource.Select_Type
-                                </label>
-                                <div class="col-md-2">
-                                    <select class="form-control" id="ddlSType_@Model"> 
+                                <div class="col-md-4 col-xs-12">
+                                    <label class="control-label">
+                                        @Resource.Select_Type
+                                    </label>
+                                    <select class="form-control" id="ddlSType_@Model">
                                         <option value="ByValue"> @Resource.By_Value</option>
                                         <option value="ByStone"> @Resource.By_no_of_stone</option>
                                     </select>
                                 </div>
 
-
-                                <label class="col-md-2 control-label">
-                                    @Resource.Select_Sales_Location
-                                </label>
-                                <div class="col-md-2">
+                                <div class="col-md-4 col-xs-12">
+                                    <label class="control-label">
+                                        @Resource.Select_Sales_Location
+                                    </label>
                                     <select class="form-control" id="ddlSalesLocation_@Model"></select>
                                 </div>
-                                <label class="col-md-2 control-label">
-                                    @Resource.Select_Shape
-                                </label>
-                                <div class="col-md-2">
+                                <div class="col-md-4 col-xs-12">
+                                    <label class="control-label">
+                                        @Resource.Select_Shape
+                                    </label>
                                     <select class="form-control" id="ddlShape_@Model">
                                         <option value="ALL"> @Resource.All</option>
                                         <option value="FancyShape"> @Resource.Fancy_Shapesm</option>
