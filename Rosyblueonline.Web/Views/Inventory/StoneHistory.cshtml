@@ -9,9 +9,9 @@
         <div id="uiPanel1"></div>
         <div class="row">
             <div class="col-lg-12">
-                <section class="panel panel-primary">
-                    <div class="panel-heading">
-                        @Resource.Stone_History
+                <section class="stock-box">
+                    <div class="memo-title">
+                        <h2>@Resource.Stone_History</h2>
                     </div>
                     <div class="panel-body">
                         <div class="row">
@@ -19,18 +19,27 @@
                                 <form id="frmStoneHistory" class="customers-info">
                                     <div class="form-horizontal">
                                         <div class="form-group">
-                                            <div class="col-lg-2"><label class="control-label">@Resource.Upload_Stone_IDs</label></div>
-                                            <div class="col-lg-3">
-                                                <input type="file" name="name" accept=".csv" id="fuStoneIDs" class="form-control" value="" />
+                                            <div class="col-lg-6 col-xs-12">
+                                                <div class="stone-inputbox">
+                                                    <label class="control-label">
+                                                        @Resource.Upload_Stone_IDs
+                                                    </label>
+                                                    <div class="stone-input">
+                                                        <input type="file" name="name" accept=".csv" id="fuStoneIDs" class="form-control" value="" />
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="col-lg-1"><label class="control-label">@Resource.Stone_IDs</label></div>
-                                            <div class="col-lg-3">
-                                                <input name="StoneIDs" class="form-control" id="txtStoneIDs" type="text" value="" required>
+                                            <div class="col-lg-6 col-xs-12">
+                                                <div class="stone-inputbox">
+                                                    <label class="control-label">
+                                                        @Resource.Stone_IDs
+                                                    </label>
+                                                    <div class="stone-input">
+                                                        <input name="StoneIDs" class="form-control" id="txtStoneIDs" type="text" value="" required>
+                                                        <button type="button" class="btn btn-primary" id="btnShow">@Resource.Show</button>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="col-lg-2">
-                                                <button type="button" class="btn btn-primary" id="btnShow">@Resource.Show</button>
-                                            </div>
-
                                         </div>
                                     </div>
                                 </form>
@@ -42,7 +51,7 @@
                                     <thead class="bordertp">
                                         <tr role="row" class="table-head">
                                             <th class="tbnew">
-                                                <label for="LotNo">@Resource.LotNo</label>
+                                                <label for="LotNo">LotNo</label>
                                             </th>
                                             <th class="tbnew">
                                                 <label for="shape">@Resource.Shape</label>
