@@ -69,9 +69,11 @@ namespace RosyblueonlineORRA_API.Controllers
                 {
                     objOrderService.SendMailPreBookOrder(obj.OrderId, obj.CustomerId , ConfigurationManager.AppSettings["EmailTemplate_PlaceOrderAdmin"].ToString(), "Customer order details @ www.rosyblueonline.com");
                     objOrderService.SendMailPreBookOrder(obj.OrderId, obj.CustomerId,  ConfigurationManager.AppSettings["EmailTemplate_PlaceOrderCustomer"].ToString(), "Your order details @ www.rosyblueonline.com", true);
+                    return new Response { Code = 200, IsSuccess = true, Message = "Order placed", Result = obj };
 
                 }
-                return new Response { Code = 200, IsSuccess = true, Message = "Order placed", Result = obj };
+                return new Response { Code = 200, IsSuccess = false, Message = "No Order placed", Result = obj };
+
 
             }
             catch (Exception ex)

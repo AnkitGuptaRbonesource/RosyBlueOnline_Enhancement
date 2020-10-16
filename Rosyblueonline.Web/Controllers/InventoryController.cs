@@ -88,7 +88,7 @@ namespace Rosyblueonline.Web.Controllers
             // ViewBag.SearchResultList = objInvVM.Take(10); 
             //  return View("SpecificSearch", objVM);
             // return PartialView("~/Views/Shared/_PartialSpecificSearchResult.cshtml", "SS");
-            return Json(new Response { IsSuccess = true, Message = "200", Result = objInvVM.Take(10) });
+            return Json(new Response { IsSuccess = true, Message = "200", Result = objInvVM });
 
         }
 

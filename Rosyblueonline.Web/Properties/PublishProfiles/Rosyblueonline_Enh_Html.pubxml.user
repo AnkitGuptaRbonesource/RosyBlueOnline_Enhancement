@@ -16,13 +16,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/10/2013 16:29:20</publishTime>
     </File>
     <File Include="bin/App_global.asax.compiled">
-      <publishTime>10/15/2020 11:56:29</publishTime>
+      <publishTime>10/15/2020 12:20:42</publishTime>
     </File>
     <File Include="bin/App_global.asax.dll">
-      <publishTime>10/15/2020 11:56:29</publishTime>
+      <publishTime>10/15/2020 12:20:42</publishTime>
     </File>
     <File Include="bin/App_global.asax.pdb">
-      <publishTime>10/15/2020 11:56:29</publishTime>
+      <publishTime>10/15/2020 12:20:42</publishTime>
     </File>
     <File Include="bin/Autofac.dll">
       <publishTime>03/21/2019 17:17:50</publishTime>
@@ -76,7 +76,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/06/2018 05:29:48</publishTime>
     </File>
     <File Include="bin/ja/Rosyblueonline.Web.resources.dll">
-      <publishTime>10/15/2020 11:56:05</publishTime>
+      <publishTime>10/15/2020 12:20:29</publishTime>
     </File>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
       <publishTime>05/24/2018 13:38:22</publishTime>
@@ -268,10 +268,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/09/2020 17:19:35</publishTime>
     </File>
     <File Include="bin/Rosyblueonline.Web.dll">
-      <publishTime>10/15/2020 11:56:05</publishTime>
+      <publishTime>10/15/2020 12:20:29</publishTime>
     </File>
     <File Include="bin/Rosyblueonline.Web.pdb">
-      <publishTime>10/15/2020 11:56:05</publishTime>
+      <publishTime>10/15/2020 12:20:29</publishTime>
     </File>
     <File Include="bin/SRVTextToImage.dll">
       <publishTime>09/07/2020 14:26:18</publishTime>
@@ -1858,7 +1858,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/27/2019 13:48:37</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>10/15/2020 11:56:12</publishTime>
+      <publishTime>10/15/2020 12:20:33</publishTime>
     </File>
     <File Include="Scripts/bootbox.js">
       <publishTime>09/07/2020 14:26:27</publishTime>
@@ -2770,7 +2770,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/09/2020 11:11:49</publishTime>
     </File>
     <File Include="Views/Dashboard/Customer.cshtml">
-      <publishTime>10/12/2020 16:13:43</publishTime>
+      <publishTime>10/15/2020 12:07:03</publishTime>
     </File>
     <File Include="Views/Dashboard/Index.cshtml">
       <publishTime>10/09/2020 11:11:49</publishTime>
