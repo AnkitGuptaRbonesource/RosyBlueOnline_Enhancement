@@ -1357,7 +1357,7 @@ ul.view-diam-pric {
 }
 .table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td {
     font-weight: 500;
-    font-size: 12px;
+    font-size: 13px;
     line-height: 24px;
     letter-spacing: 0.5px;
     color: #4F4F4F;
@@ -1366,7 +1366,7 @@ ul.view-diam-pric {
 }
 .table > thead > tr > th {
 	font-weight: 500;
-	font-size: 12px;
+	font-size: 13px;
 	line-height: 24px;
 	letter-spacing: 1px;
 	text-transform: uppercase;
