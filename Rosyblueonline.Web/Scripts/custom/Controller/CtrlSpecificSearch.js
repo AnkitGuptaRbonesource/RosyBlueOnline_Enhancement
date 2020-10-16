@@ -24,7 +24,7 @@
         <td class="rsearchnew"><b><span id="lblavgpriceafterdis">${PricePerct}</span></b></td>\
         <td class="rsearchnew"><b><span id="lblfinalamoutpayment">${PayableAmount}</span></b></td>\
         </tr>';
-
+   
 
     //var ListViewDataTemplate = ' < div  class="col-md-3 col-sm-4 col-xs-6 post" >\
     //                            <div class="align-centerd diamond">\
@@ -1184,6 +1184,15 @@
             objSF.SummaryData(obj).then(function (data) {
                 $("#tblBodySummary").html('');
                 data.Result.TotalPcs = obj.length;
+
+                data.Result.AvgRapPerCT = data.Result.AvgRapPerCT.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+                data.Result.AvgRapoff = data.Result.AvgRapoff.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+                data.Result.PayableAmount = data.Result.PayableAmount.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+                data.Result.PricePerct = data.Result.PricePerct.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+                data.Result.TotalCarat = data.Result.TotalCarat.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,"); 
+                data.Result.TotalRap = data.Result.TotalRap.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+
+
                 $.tmpl(SummeryTemp, data.Result).appendTo("#tblBodySummary");
             }, function (error) {
             });
