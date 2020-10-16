@@ -8,76 +8,70 @@
 <div class="content-wrapper">
     <section class="content">
         <div id="uiPanel1"></div>
-        <section class="content">
-            <div class="">
-                <div class="row">
-                    <div class="col-lg-5">
-                        <section class="panel panel-primary">
-                            <div class="panel-heading"> @Resource.RFID Master</div>
-                            <form>
-                                <div class="panel-body">
-                                    <div class="">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-5">
+                        <div class="dash-box mt-10">
+                            <div class="dash-head"> @Resource.RFID Master</div>
+                            <div class="dash-inner">
+                                <form>
+                                    <div class="form-group">
                                         <div class="upload-info">
                                             @Resource.Select__file_for_RFID_master  -
-                                            <span class="sample-format">
+                                            <div class="sample-format">
                                                 <a href="~/Content/INV/Temp/RFIDMaster.xlsx"> @Resource.Download_sample_file_for_upload</a>
-                                            </span>
-                                        </div>
-                                        <div>
-                                            <span class="upload-filter"> @Resource.Select_file</span>
-                                            <input type="file" id="fileUpload" class="form-control" name="fileUpload">
-                                        </div>
-                                        <br />
-                                        <div class="textright">
-                                            <button type="button" id="mstRFIDUpload" class="btn btn-primary">@Resource.Upload <i class="fa fa-upload"></i></button>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </form>
-                        </section>
-                    </div>
-                    <div class="col-lg-7">
-                        <section class="panel panel-primary">
-                            <div class="panel-heading"> @Resource.RFID Master</div>
-                            <div class="panel-body">
-                                <table class="table table-bordered table-hover">
-                                    <thead>
-                                        <tr>
-                                            <th class="cust-table"> @Resource.RFID</th>
-                                            <th class="cust-table"> @Resource.Status</th>
-                                            <th class="cust-table"> @Resource.Active</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach (var rfidmst in Model)
-                                        {
-                                            var curStatus = rfidmst.CurrentStatus == 0 ? "Not Available" : (rfidmst.CurrentStatus == 1 ? "Already Assigned" : (rfidmst.CurrentStatus == 2 ? "Free" : (rfidmst.CurrentStatus == 3 ? "Expired" : "Not Defined")));
-                                            <tr>
-                                                <td class="cust-table">@rfidmst.RfidNo</td>
-                                                <td class="cust-table">@curStatus</td>
-                                                <td class="cust-table" style="text-align:left;width">
-                                                    <div class="form-group">
-                                                        <label>
-                                                            <input type="radio" name="group1_@rfidmst.RfidNo" value="1" data-rfid="@rfidmst.RfidNo" @(rfidmst.Isactive == true ? "checked" : "")> @Resource.Active
-                                                        </label>
-                                                        <label>
-                                                            <input type="radio" name="group1_@rfidmst.RfidNo" value="0" data-rfid="@rfidmst.RfidNo" @(rfidmst.Isactive == false ? "checked" : "")> @Resource.In_Active
-                                                        </label>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        }
-                                    </tbody>
-                                </table>
+                                    <div class="form-group">
+                                        <label class="upload-filter"> @Resource.Select_file</label>
+                                        <input type="file" id="fileUpload" name="fileUpload">
+                                    </div>
+                                    <div class="text-left">
+                                        <button type="button" id="mstRFIDUpload" class="btn btn-primary">@Resource.Upload</button>
+                                    </div>
+                                </form>
                             </div>
-                        </section>
-                        <br />
-                        <br />
+                        </div>
+                    </div>
+                <div class="col-md-7">
+                    <div class="dash-box  mt-10">
+                        <div class="dash-head"> @Resource.RFID Master</div>
+                        <div class="table-box list-view">
+                            <table class="table">
+                                <thead class="bordertp">
+                                    <tr>
+                                        <th class="tbnew"> @Resource.RFID</th>
+                                        <th class="tbnew"> @Resource.Status</th>
+                                        <th class="tbnew"> @Resource.Active</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var rfidmst in Model)
+                                    {
+                                        var curStatus = rfidmst.CurrentStatus == 0 ? "Not Available" : (rfidmst.CurrentStatus == 1 ? "Already Assigned" : (rfidmst.CurrentStatus == 2 ? "Free" : (rfidmst.CurrentStatus == 3 ? "Expired" : "Not Defined")));
+                                        <tr>
+                                            <td class="tbnew">@rfidmst.RfidNo</td>
+                                            <td class="tbnew">@curStatus</td>
+                                            <td class="tbnew" style="text-align:left;width">
+                                                <div class="form-group">
+                                                    <label>
+                                                        <input type="radio" name="group1_@rfidmst.RfidNo" value="1" data-rfid="@rfidmst.RfidNo" @(rfidmst.Isactive == true ? "checked" : "")> @Resource.Active
+                                                    </label>
+                                                    <label class="ml-10">
+                                                        <input type="radio" name="group1_@rfidmst.RfidNo" value="0" data-rfid="@rfidmst.RfidNo" @(rfidmst.Isactive == false ? "checked" : "")> @Resource.In_Active
+                                                    </label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
-
+        </div>
     </section>
 </div>
 @section script{

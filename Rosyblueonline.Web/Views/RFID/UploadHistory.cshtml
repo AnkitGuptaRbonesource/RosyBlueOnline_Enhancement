@@ -8,46 +8,41 @@
     @*<div id="uiPanel1"></div>*@
     <section class="content">
         <div id="uiPanel1"></div>
-        <div class="row">
-            <div class="customers-list-table">
-                <div class="">
-                    <div class="customers-list-table">
-                        <div class="col-md-12">
-                            <div class="panel panel-primary">
-                                <div class="panel-body paneltable">
-                                    <table id="tblUploadHistory" class="table table-fixed dataTable no-footer" role="grid" aria-describedby="SearchTablePost_info">
-                                        <thead class="bordertp">
-                                            <tr role="row" class="table-head">
-                                                <th class="tbnew">
-                                                    <label>@Resource.File_ID</label>
-                                                </th>
-                                                <th class="tbnew">
-                                                    <label>@Resource.File_Type</label>
-                                                </th>
-                                                @*<th class="tbnew">
-                                                    <label>Before Change</label>
-                                                </th>*@
-                                                <th class="tbnew">
-                                                    <label>@Resource.File_Name</label>
-                                                </th>
-                                                <th class="tbnew">
-                                                    <label>@Resource.Uploaded_Date</label>
-                                                </th>
-                                                <th class="tbnew">
-                                                    <label>@Resource.Valid</label>
-                                                </th>
-                                                <th class="tbnew">
-                                                    <label>@Resource.Invalid</label>
-                                                </th>
-                                            </tr>
-                                        </thead>
+        <div class="container-fluid">
+            <div class="dash-box mt-10">
+                <div class="dash-head">
+                    Upload History
+                </div>
+                <div class="table-box list-view">
+                    <table id="tblUploadHistory" class="table table-fixed dataTable no-footer" role="grid" aria-describedby="SearchTablePost_info">
+                        <thead class="bordertp">
+                            <tr role="row" class="table-head">
+                                <th class="tbnew">
+                                    <label>@Resource.File_ID</label>
+                                </th>
+                                <th class="tbnew">
+                                    <label>@Resource.File_Type</label>
+                                </th>
+                                @*<th class="tbnew">
+                            <label>Before Change</label>
+                        </th>*@
+                                <th class="tbnew">
+                                    <label>@Resource.File_Name</label>
+                                </th>
+                                <th class="tbnew">
+                                    <label>@Resource.Uploaded_Date</label>
+                                </th>
+                                <th class="tbnew">
+                                    <label>@Resource.Valid</label>
+                                </th>
+                                <th class="tbnew">
+                                    <label>@Resource.Invalid</label>
+                                </th>
+                            </tr>
+                        </thead>
 
-                                    </table>
+                    </table>
 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

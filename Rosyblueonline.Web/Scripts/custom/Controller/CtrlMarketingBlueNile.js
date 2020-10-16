@@ -72,6 +72,8 @@
                 src: '#tblMarketing',
                 dataTable: {
                     //deferLoading: 0,
+                    scrollX: "300px",
+                    scrollY: true,
                     paging: true,
                     order: [[0, "desc"]],
                     ajax: {
