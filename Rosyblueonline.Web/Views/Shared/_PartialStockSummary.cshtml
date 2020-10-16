@@ -12,109 +12,117 @@
                         <div class="form-horizontal row">
                             <div class="form-group">
                                 <div class="col-md-4 col-xs-12">
-                                    <label class="control-label">
-                                        @Resource.Select_Type
-                                    </label>
-                                    <select class="form-control" id="ddlSType_@Model">
-                                        <option value="ByValue"> @Resource.By_Value</option>
-                                        <option value="ByStone"> @Resource.By_no_of_stone</option>
-                                    </select>
+                                    <div class="stone-inputbox">
+                                        <label class="control-label">
+                                            @Resource.Select_Type
+                                        </label>
+                                        <select class="form-control" id="ddlSType_@Model">
+                                            <option value="ByValue"> @Resource.By_Value</option>
+                                            <option value="ByStone"> @Resource.By_no_of_stone</option>
+                                        </select>
+                                    </div>
                                 </div>
 
                                 <div class="col-md-4 col-xs-12">
-                                    <label class="control-label">
-                                        @Resource.Select_Sales_Location
-                                    </label>
-                                    <select class="form-control" id="ddlSalesLocation_@Model"></select>
+                                    <div class="stone-inputbox">
+                                        <label class="control-label">
+                                            @Resource.Select_Sales_Location
+                                        </label>
+                                        <select class="form-control" id="ddlSalesLocation_@Model"></select>
+                                    </div>
                                 </div>
                                 <div class="col-md-4 col-xs-12">
-                                    <label class="control-label">
-                                        @Resource.Select_Shape
-                                    </label>
-                                    <select class="form-control" id="ddlShape_@Model">
-                                        <option value="ALL"> @Resource.All</option>
-                                        <option value="FancyShape"> @Resource.Fancy_Shapesm</option>
-                                        <option value="RoundShape"> @Resource.Round_Shapesm</option>
-                                    </select>
+                                    <div class="stone-inputbox">
+                                        <label class="control-label">
+                                            @Resource.Select_Shape
+                                        </label>
+                                        <select class="form-control" id="ddlShape_@Model">
+                                            <option value="ALL"> @Resource.All</option>
+                                            <option value="FancyShape"> @Resource.Fancy_Shapesm</option>
+                                            <option value="RoundShape"> @Resource.Round_Shapesm</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-12">
-                                <table id="tblStockStatus_@Model" class="table table-fixed dataTable no-footer">
-                                    <thead class="bordertp">
-                                        <tr role="row" class="table-head">
+                                <div class="stock_scrollBody">
+                                    <table id="tblStockStatus_@Model" class="table table-fixed dataTable no-footer">
+                                        <thead class="bordertp">
+                                            <tr role="row" class="table-head">
 
-                                            <th class="tbnew">
+                                                <th class="tbnew">
                                                 
-                                            </th>
-                                            <th class="tbnew">
-                                                <label> @Resource.Sizes</label>
-                                            </th>
-                                            <th class="tbnew">
-                                                <label> @Resource.Total_Inventory</label>
-                                            </th>
-                                            <th class="tbnew">
-                                                <label> @Resource.On_Memo</label>
-                                            </th>
-                                            <th class="tbnew">
-                                                <label> @Resource.Website_Order_Pending</label>
-                                            </th>
-                                            <th class="tbnew">
-                                                <label> @Resource.Available</label>
-                                            </th>
+                                                </th>
+                                                <th class="tbnew">
+                                                    <label> @Resource.Sizes</label>
+                                                </th>
+                                                <th class="tbnew">
+                                                    <label> @Resource.Total_Inventory</label>
+                                                </th>
+                                                <th class="tbnew">
+                                                    <label> @Resource.On_Memo</label>
+                                                </th>
+                                                <th class="tbnew">
+                                                    <label> @Resource.Website_Order_Pending</label>
+                                                </th>
+                                                <th class="tbnew">
+                                                    <label> @Resource.Available</label>
+                                                </th>
 
-                                            @*<th class="tbnew">
-            <label>TotInvValue</label>
-        </th>
+                                                @*<th class="tbnew">
+                <label>TotInvValue</label>
+            </th>
 
-        <th class="tbnew">
-            <label>TotOnMemoValue</label>
-        </th>
+            <th class="tbnew">
+                <label>TotOnMemoValue</label>
+            </th>
 
-        <th class="tbnew">
-            <label>TotOrdPendingValue</label>
-        </th>
+            <th class="tbnew">
+                <label>TotOrdPendingValue</label>
+            </th>
 
-        <th class="tbnew">
-            <label>TotAvailbaleValue</label>
-        </th>*@
-                                        </tr>
-                                    </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th class="tbnew">
-                                            </th>
-                                            <th class="tbnew">
-                                                <label> @Resource.Total</label>
-                                            </th>
-                                            <th class="tbnew">
+            <th class="tbnew">
+                <label>TotAvailbaleValue</label>
+            </th>*@
+                                            </tr>
+                                        </thead>
+                                        <tfoot>
+                                            <tr>
+                                                <th class="tbnew">
+                                                </th>
+                                                <th class="tbnew">
+                                                    <label> @Resource.Total</label>
+                                                </th>
+                                                <th class="tbnew">
 
-                                            </th>
-                                            <th class="tbnew">
+                                                </th>
+                                                <th class="tbnew">
 
-                                            </th>
-                                            <th class="tbnew">
+                                                </th>
+                                                <th class="tbnew">
 
-                                            </th>
-                                            <th class="tbnew">
+                                                </th>
+                                                <th class="tbnew">
 
-                                            </th>
-                                            @*<th class="tbnew">
+                                                </th>
+                                                @*<th class="tbnew">
 
-        </th>
-        <th class="tbnew">
+            </th>
+            <th class="tbnew">
 
-        </th>
-        <th class="tbnew">
+            </th>
+            <th class="tbnew">
 
-        </th>
-        <th class="tbnew">
+            </th>
+            <th class="tbnew">
 
-        </th>*@
-                                        </tr>
-                                    </tfoot>
-                                </table>
+            </th>*@
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -1386,7 +1386,70 @@ span.gried-color {
     border-radius: 4px;
     margin-top: 15px;
 }
+.stock_scrollBody {
+    position: relative;
+    display: block;
+    width: 100%;
+    overflow: auto;
+}
+.stock_scrollBody::-webkit-scrollbar-track ,.sidebar-nav::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(242,242,242,0.4);
+    background-color: rgba(242,242,242,0.45);
+}
 
+.stock_scrollBody::-webkit-scrollbar ,.sidebar-nav::-webkit-scrollbar {
+    height: 3px;
+    width: 3px;
+    border-radius: 10px;
+    background-color: rgba(242,242,242,0.45);
+}
+
+.stock_scrollBody::-webkit-scrollbar-thumb ,.sidebar-nav::-webkit-scrollbar-thumb {
+    background-color: #BDBDBD;
+}
+.memopopup .form-group {
+    width: 100%;
+}
+.memopopup select {
+    width: 100%;
+}
+.memopopup input#txtMemoRemark {
+    width: 100% !important;
+}
+.memopopup .checkbox {
+    margin-right: 10px;
+}
+.memopopup {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding-top: 20px;
+}
+.memo-btnox {
+    position: relative;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.memo-btnox .form-group {
+    margin: 0;
+}
+.memobtn {
+    position: relative;
+    display: block;
+    width: fit-content;
+    background: #3a4276;
+    color: #fff;
+    border: 1px solid #3a4276;
+    padding: 10px 30px !important;
+    font-size: 14px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: 0.5s all ease;
+}
 
 
 
@@ -1422,6 +1485,9 @@ span.gried-color {
         .searchbar {
             width: 41%;
             margin: 0;
+        }
+        .sidebar-nav{
+            max-height: 630px;
         }
     }
 
@@ -1530,6 +1596,9 @@ span.gried-color {
             padding-left: 5px;
             padding-right: 5px;
         }
+        .sidebar-nav {
+            max-height: 600px;
+        }
     }
 
     @media only screen and (min-width: 1400px) and (max-width: 1500px) {
@@ -1558,6 +1627,9 @@ span.gried-color {
         .dataTables_scrollBody {
             height: 530px !important;
         }
+        .sidebar-nav {
+            max-height: 630px;
+        }
     }
 
     @media only screen and (min-width: 1500px) and (max-width: 1650px) {
@@ -1582,7 +1654,6 @@ span.gried-color {
             padding: 8px 10px;
         }
     }
-
     @media only screen and (max-width: 767px) {
         .searchbar {
             display: none;
@@ -1850,5 +1921,12 @@ span.gried-color {
         }
         .stone-inputbox {
             margin-bottom: 15px;
+        }
+        .status-boxes {
+            display: block;
+            overflow: hidden;
+        }
+        .status-box {
+            width: 100%;
         }
     }

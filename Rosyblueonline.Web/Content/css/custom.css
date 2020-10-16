@@ -190,9 +190,9 @@ span.multiplecarat {
 .select2-container {
     width: 100% !important;
 }
-.form-inline .select2-container  {
+/*.form-inline .select2-container  {
 	 width: 150px !important;
-}
+}*/
 /*.select2-container--default .select2-selection--single {
    
     padding: 15px !important;
