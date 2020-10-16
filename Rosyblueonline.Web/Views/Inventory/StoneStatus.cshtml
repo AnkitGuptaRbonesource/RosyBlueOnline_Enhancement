@@ -9,38 +9,44 @@
     <div id="uiPanel1"></div>
     <section class="content">
         <div class="row">
+            <div class="col-lg-12 col-sm-12 col-xs-12">
+                <div class="memo-title status-title">
+                    <h2>@Resource.Stone_Status</h2>
+                </div>
+            </div>
             <div class="col-lg-12">
                 <form id="frmStoneStatus">
 
-                    <div class="panel panel-primary proshad">
-                        <div class="panel-heading">
-                            @Resource.Stone_Status
-                        </div>
-                        <div class="panel-body">
+                    <div class="panel panel-primary">
+                        <div class="panel-body stonestatusbox">
                             <div class="customers-info">
                                 <div class="form-group">
                                     <div class="row">
-                                        <div class="col-sm-3">
-                                            <label class="radio-inline">
-                                                <input type="radio" name="optradio" id="rbtnLotNo" value="LOTNO" checked><label for="rbtnLotNo" class="controll-label">@Resource.Lot_No</label>
-                                            </label>
-                                            <label class="radio-inline">
-                                                <input type="radio" name="optradio" id="rbtnCertNo" value="CERTNO"><label for="rbtnCertNo" class="controll-label">@Resource.Cert_No</label>
-                                            </label>
-                                        </div>
-                                        <div class="col-sm-1"><label for="fuName" class="control-label">@Resource.Select_file</label></div>
-                                        <div class="col-sm-2">
-                                            <input class="form-control" id="fuName" name="Name" type="file">
-                                        </div>
-                                        <div class="col-sm-1"><label for="fuName" class="control-label">@Resource.Lot_Cret_No</label></div>
-                                        <div class="col-sm-3">
-                                            <input class="form-control" id="txtLotNo" name="LotNoName" type="text">
-                                        </div>
-                                        <div class="col-sm-1">
-                                            <button class="btn btn-primary pull-right" id="btnSubmit">@Resource.Submit</button>
-                                        </div>
-                                        <div class="col-sm-1">
-                                            <button class="btn btn-primary pull-right" id="btnExcel">@Resource.Excel</button>
+                                        <div class="col-lg-12 col-sm-12 col-xs-12">
+                                            <div class="status-boxes">
+                                                <div class="status-box">
+                                                    <label class="radio-inline">
+                                                        <input type="radio" name="optradio" id="rbtnLotNo" value="LOTNO" checked><label for="rbtnLotNo" class="controll-label">@Resource.Lot_No</label>
+                                                    </label>
+                                                    <label class="radio-inline">
+                                                        <input type="radio" name="optradio" id="rbtnCertNo" value="CERTNO"><label for="rbtnCertNo" class="controll-label">@Resource.Cert_No</label>
+                                                    </label>
+                                                </div>
+                                                <div class="status-box">
+                                                    <label for="fuName" class="control-label">@Resource.Select_file</label>
+                                                    <input class="form-control" id="fuName" name="Name" type="file">
+                                                </div>
+                                                <div class="status-box">
+                                                    <label for="fuName" class="control-label">@Resource.Lot_Cret_No</label>
+                                                    <input class="form-control" id="txtLotNo" name="LotNoName" type="text">
+                                                </div>
+                                                <div class="status-box2">
+                                                    <div class="status-btn">
+                                                        <button class="btn btn-primary pull-right" id="btnSubmit">@Resource.Submit</button>
+                                                        <button class="btn btn-primary pull-right" id="btnExcel">@Resource.Excel</button>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -181,7 +187,7 @@
                                         <label for="SalesLocation">@Resource.SalesLocation</label>
                                     </th>
                                     <th class="tbnew">
-                                        <label for="solddate">@Resource.Sold_Date</label>
+                                        <label for="solddate">Sold_Date</label>
                                     </th>
                                     
                                 </tr>

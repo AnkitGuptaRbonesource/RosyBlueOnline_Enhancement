@@ -1,8 +1,4 @@
-﻿.mt-10 {margin-top:10px}
-.mt-15 {margin-top:15px}
-.ml-10 {margin-left:10px}
-.ml-15 {margin-left:15px}
-.font-color-red {
+﻿.font-color-red {
     color: red;
 }
 
@@ -131,6 +127,10 @@ span.multiplecarat {
     padding-top: 0;
     border-top: none;
     margin-top: 0;
+    position: relative;
+    /* overflow: auto; */
+    width: 100%;
+    /* min-height: 485px; */
 }
 
 #uiPanel {
@@ -152,15 +152,14 @@ span.multiplecarat {
             position: relative;
         }
 
-.table-condensed {
+/*.table-condensed {
     border: 1px solid #000;
+}*/
+
+.table-condensed > tbody > tr > td {
+    border-bottom: 1px solid #ECE9F1;
+    text-align: left !important;
 }
-
-    .table-condensed > tbody > tr > td {
-        border: 1px solid #000;
-        text-align: left !important;
-    }
-
 .whspace {
     white-space: nowrap;
 }
@@ -186,9 +185,6 @@ span.multiplecarat {
 .select2-container {
     width: 100% !important;
 }
-.form-inline .select2-container  {
-	 width: 150px !important;
-}
 /*.select2-container--default .select2-selection--single {
    
     padding: 15px !important;
@@ -197,18 +193,17 @@ span.multiplecarat {
 .marginleft {
     margin-left: 18px;
 }
-.checkbox label, .radio label {
-    line-height: 22px;
-}
-/*input[type=checkbox], input[type=radio] {
+
+input[type=checkbox], input[type=radio] {
     margin: 0px 10px 0 0 !important;
 }
 
 input[type=radio] {
     left: 0;
-    top: -1px;
+    top: -3px;
     margin: 6px 5px 0 0 !important;
-}*/
+    /* opacity: 0; */
+}
 
 .radioleft {
     float: left;
@@ -243,32 +238,11 @@ input[type=radio] {
     width: auto;
     margin-left: 4px;
 }
+
+.modal-body {
+    overflow: hidden;
+}
+
 /*.milky {
     background-color: #00BFFF;
 }*/
-.fhmodal, .fhmodal .modal-content {
-	height: 100%;
-}
-.fhmodal .modal-dialog {
-	height: calc(100% - 60px);
-}
-.fhmodal .modal-body {
-    height: calc(100% - 130px);
-    overflow: auto;
-	margin-bottom: 0;
-}
-.fixwtable {
-	table-layout: fixed
-}
-.fixwtable td, .fixwtable th {
-	white-space: normal !important;
-	vertical-align: top;
-}
-
-div.dataTables_wrapper div#tblUserDetail_filter {
-	text-align: left
-}
-
-.controll-radio  input[type=radio] {
-	margin-top: 12px;
-}

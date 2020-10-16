@@ -14,16 +14,36 @@
             <a id="ancInventoryDownload" href="/Inventory/ExportToExcelInventoryDownload"></a>
         </div>
         <div class="row">
-            <div class="col-lg-12">
-                <section class="panel panel-primary">
-                    <div class="panel-heading">
-                        @Resource.Order_Details
+            <div class="col-lg-12 col-sm-12 col-xs-12">
+                <div class="order-detailsbox">
+                    <div class="memo-title">
+                        <h2>@Resource.Order_Details</h2>
                     </div>
-                    @if (objToken.RoleID == 8 || objToken.RoleID == 9 || objToken.RoleID == 2)
+                    <div class="order-excel">
+                        <button class="excel-btn dropdown-toggle" id="btnExcelDownload"><span><img src="~/Content/img/memo-save.png" /></span> @Resource.Excel_Download</button>
+                    </div>
+                    <div class="order-pending">
+                        @if (objToken.RoleID == 8 || objToken.RoleID == 9 || objToken.RoleID == 2)
+                        {
+                            <button class="pending-orderbtn dropdown-toggle" id="btnRemoveItem">@Resource.Remove_Order_Item</button>
+                            <a class="pending-orderbtn dropdown-toggle" href="/Order/List"><span><img src="~/Content/img/pending-order.png" /></span> @Resource.View_Pending_Orders</a>
+                        }
+                    </div>
+                </div>
+                <div class="order-date">
+                    <h4 class="no-top-bottom-padding no-top-bottom-margin">@Resource.Order : @Model | @Resource.Order @Resource.Date :  <span id="spnOrderDate"></span></h4>
+                    <input type="hidden" name="OrderID" id="hfOrderID" value="@Model" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <section class="">
+                    @*@if (objToken.RoleID == 8 || objToken.RoleID == 9 || objToken.RoleID == 2)
                     {
                         <div class="panel-body">
                             <div class="row">
-                                <div class="col-lg-6">
+                                <div class="c ol-lg-6">
                                     <button class="btn-primary btn-qu dropdown-toggle" id="btnRemoveItem">@Resource.Remove_Order_Item</button>
                                 </div>
                                 <div class="col-lg-6">
@@ -35,7 +55,7 @@
                     <div class="panel-body no-top-bottom-padding no-top-bottom-margin">
                         <div class="row">
                             <div class="col-lg-6">
-                                <button class="btn-primary btn-qu dropdown-toggle" id="btnExcelDownload">@Resource.Excel_Download</button>
+                                <button class="btn-qu dropdown-toggle" id="btnExcelDownload">@Resource.Excel_Download</button>
                             </div>
                         </div>
                     </div>
@@ -46,112 +66,121 @@
                                 <input type="hidden" name="OrderID" id="hfOrderID" value="@Model" />
                             </div>
                         </div>
-                    </div>
+                    </div>*@
 
                     @Html.Partial("~/Views/Shared/_PartialSpecificSearchResult.cshtml", "OrderInfo")
                     <div class="panel-body">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <table class="table table-condensed">
-                                    <tbody>
-                                        <tr>
-                                            <td>@Resource.First_Name</td>
-                                            <td><span id="spnFirstName"></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>@Resource.List_Name</td>
-                                            <td><span id="spnLastName"></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>@Resource.CompanyName</td>
-                                            <td><span id="spnCompanyName"></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>@Resource.Address_Line_1</td>
-                                            <td><span id="spnAddress01"></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>@Resource.Address_Line_2</td>
-                                            <td><span id="spnAddress02"></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>@Resource.City</td>
-                                            <td><span id="spnCityName"></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>@Resource.Zip_Code</td>
-                                            <td><span id="spnZipCode"></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>@Resource.State</td>
-                                            <td><span id="spnStateName"></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>@Resource.Country</td>
-                                            <td><span id="spnCountryName"></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>@Resource.Phone</td>
-                                            <td><span id="spnPhone"></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>@Resource.Mobile</td>
-                                            <td><span id="spnMobile"></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>@Resource.Fax</td>
-                                            <td><span id="spnFax"></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>@Resource.Bank_Name</td>
-                                            <td><span id="spnBankName"></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>@Resource.Branch</td>
-                                            <td><span id="spnBranchName"></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>@Resource.Address</td>
-                                            <td><span id="spnBranchAddress"></span></td>
-                                        </tr>
-                                        @if (objToken.RoleID == 8 || objToken.RoleID == 9 || objToken.RoleID == 2)
-                                        {
+                        <div class="row custom-row">
+                            <div class="col-lg-6 col-md-6 col-xs-12 custom-col">
+                                <div class="customer-details">
+                                    <h5>Customer Details</h5>
+                                </div>
+                                <div class="customer-table">
+                                    <table class="table table-condensed">
+                                        <tbody>
                                             <tr>
-                                                <td>@Resource.Shipping_Company</td>
-                                                <td>
-                                                    <input type="text" id="txtShippingCompany" class="form-control" name="ShippingCompany" value="" />
-                                                </td>
+                                                <td>@Resource.First_Name</td>
+                                                <td><span id="spnFirstName"></span></td>
                                             </tr>
                                             <tr>
-                                                <td>@Resource.Tracking_Number</td>
-                                                <td>
-                                                    <input type="text" id="txtTrackingNumber" class="form-control" name="TrackingNumber" value="" />
-                                                </td>
-                                            </tr>
-                                        }
-                                        else
-                                        {
-                                            <tr>
-                                                <td>@Resource.Shipping_Company</td>
-                                                <td><span id="spnShippingCompany"></span></td>
+                                                <td>@Resource.List_Name</td>
+                                                <td><span id="spnLastName"></span></td>
                                             </tr>
                                             <tr>
-                                                <td>@Resource.Tracking_Number</td>
-                                                <td><span id="spnTrackingNumber"></span></td>
+                                                <td>@Resource.CompanyName</td>
+                                                <td><span id="spnCompanyName"></span></td>
                                             </tr>
-                                        }
-                                        <tr>
-                                            <td>@Resource.Shipping_Mode_1</td>
-                                            <td><span id="spnShippingMode"></span></td>
-                                        </tr>
-                                    </tbody>
-
-                                </table>
+                                            <tr>
+                                                <td>@Resource.Address_Line_1</td>
+                                                <td><span id="spnAddress01"></span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>@Resource.Address_Line_2</td>
+                                                <td><span id="spnAddress02"></span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>@Resource.City</td>
+                                                <td><span id="spnCityName"></span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>@Resource.Zip_Code</td>
+                                                <td><span id="spnZipCode"></span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>@Resource.State</td>
+                                                <td><span id="spnStateName"></span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>@Resource.Country</td>
+                                                <td><span id="spnCountryName"></span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>@Resource.Phone</td>
+                                                <td><span id="spnPhone"></span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>@Resource.Mobile</td>
+                                                <td><span id="spnMobile"></span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>@Resource.Fax</td>
+                                                <td><span id="spnFax"></span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>@Resource.Bank_Name</td>
+                                                <td><span id="spnBankName"></span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>@Resource.Branch</td>
+                                                <td><span id="spnBranchName"></span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>@Resource.Address</td>
+                                                <td><span id="spnBranchAddress"></span></td>
+                                            </tr>
+                                            @if (objToken.RoleID == 8 || objToken.RoleID == 9 || objToken.RoleID == 2)
+                                            {
+                                                <tr>
+                                                    <td>@Resource.Shipping_Company</td>
+                                                    <td>
+                                                        <input type="text" id="txtShippingCompany" class="form-control" name="ShippingCompany" value="" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>@Resource.Tracking_Number</td>
+                                                    <td>
+                                                        <input type="text" id="txtTrackingNumber" class="form-control" name="TrackingNumber" value="" />
+                                                    </td>
+                                                </tr>
+                                            }
+                                            else
+                                            {
+                                                <tr>
+                                                    <td>@Resource.Shipping_Company</td>
+                                                    <td><span id="spnShippingCompany"></span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>@Resource.Tracking_Number</td>
+                                                    <td><span id="spnTrackingNumber"></span></td>
+                                                </tr>
+                                            }
+                                            <tr>
+                                                <td>@Resource.Shipping_Mode_1</td>
+                                                <td><span id="spnShippingMode"></span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
-                            <div class="col-md-6">
-                                <table class="table table-condensed">
-                                    <tbody id="tblOrder"></tbody>
-                                </table>
+                            <div class="col-lg-6 col-md-6 col-xs-12 custom-col">
+                                <div class="customer-details">
+                                    <h5>Additional details</h5>
+                                </div>
+                                <div class="customer-table">
+                                    <table class="table table-condensed">
+                                        <tbody id="tblOrder"></tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
 
