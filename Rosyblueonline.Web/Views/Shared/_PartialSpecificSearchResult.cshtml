@@ -157,96 +157,100 @@
                         @if (Model != "OrderInfo" && Model != "Memo" && !string.IsNullOrEmpty(Model))
                         {
 
-                            <div class="campare-box">
-                                <ul>
+                        <div class="campare-box clearfix text-right">
+                            <ul class="pull-left">
+                                <li>
+                                    <a href="javascript:void(0);" id="btnCompare">
+                                        <span><img src="~/Content/img/Compare-img.svg" /></span>
+                                        <span>@Resource.Compare</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);" id="btnBack">
+                                        <span>
+                                            <img src="~/Content/img/Modify-img.svg" />
+                                        </span>
+                                        <span>@Resource.Modify</span>
+                                    </a>
+                                </li>
+                                @if (objToken.RoleID == 3)
+                                {
                                     <li>
-                                        <a href="javascript:void(0);" id="btnCompare">
-                                            <span><img src="~/Content/img/Compare-img.svg" /></span>
-                                            <span>@Resource.Compare</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);" id="btnBack">
+                                        <a href="javascript:void(0);" id="btnInspectionReport">
                                             <span>
-                                                <img src="~/Content/img/Modify-img.svg" />
+                                                <img src="~/Content/img/inspection-img.svg" />
                                             </span>
-                                            <span>@Resource.Modify</span>
+                                            <span>@Resource.Inspection_Request</span>
                                         </a>
                                     </li>
-                                    @if (objToken.RoleID == 3)
-                                    {
-                                        <li>
-                                            <a href="javascript:void(0);" id="btnInspectionReport">
-                                                <span>
-                                                    <img src="~/Content/img/inspection-img.svg" />
-                                                </span>
-                                                <span>@Resource.Inspection_Request</span>
-                                            </a>
-                                        </li>
-                                    }
-                                    @if (objToken.RoleID == 3)
-                                    {
-                                        <li>
-                                            <a href="javascript:void(0);" id="btnWatchList">
-                                                <span>
-                                                    <img src="~/Content/img/addwatchlist-img.svg" />
-                                                </span>
-                                                <span>@Resource.Watch_List</span>
-                                            </a>
-                                        </li>
-                                    }
-                                    @if (objToken.RoleID == 2)
-                                    {
-                                        <li>
-                                            <a href="javascript:void(0);" id="btnAddBestDeal">
-                                                <span>
-                                                    <img src="~/Content/img/addbestdeal.svg" />
-                                                </span>
-                                                <span>Add Deal</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0);" id="btnRemoveBestDeal">
-                                                <span>
-                                                    <img src="~/Content/img/removedeal.svg" />
-                                                </span>
-                                                <span>Remove Deal</span>
-                                            </a>
-                                        </li>
-                                    }
-                                    @if (objToken.RoleID == 2 || objToken.RoleID == 9)
-                                    {
-                                        <li>
-                                            <a href="javascript:void(0);" id="btnAddToMemo">
-                                                <span>
-                                                    <img src="~/Content/img/memo_outlined.svg" />
-                                                </span>
-                                                <span>Memo</span>
-                                            </a>
-                                        </li>
+                                }
+                                @if (objToken.RoleID == 3)
+                                {
+                                    <li>
+                                        <a href="javascript:void(0);" id="btnWatchList">
+                                            <span>
+                                                <img src="~/Content/img/addwatchlist-img.svg" />
+                                            </span>
+                                            <span>@Resource.Watch_List</span>
+                                        </a>
+                                    </li>
+                                }
+                                @if (objToken.RoleID == 2)
+                                {
+                                    <li>
+                                        <a href="javascript:void(0);" id="btnAddBestDeal">
+                                            <span>
+                                                <img src="~/Content/img/addbestdeal.svg" />
+                                            </span>
+                                            <span>Add Deal</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" id="btnRemoveBestDeal">
+                                            <span>
+                                                <img src="~/Content/img/removedeal.svg" />
+                                            </span>
+                                            <span>Remove Deal</span>
+                                        </a>
+                                    </li>
+                                }
+                                @if (objToken.RoleID == 2 || objToken.RoleID == 9)
+                                {
+                                    <li>
+                                        <a href="javascript:void(0);" id="btnAddToMemo">
+                                            <span>
+                                                <img src="~/Content/img/memo_outlined.svg" />
+                                            </span>
+                                            <span>Memo</span>
+                                        </a>
+                                    </li>
 
-                                        <li>
-                                            <a href="javascript:void(0);" id="btnEmail">
-                                                <span>
-                                                    <img src="~/Content/img/email_outlined.svg" />
-                                                </span>
-                                                <span>Email</span>
-                                            </a>
-                                        </li>
-                                    }
-                                    @if (objToken.RoleID == 3)
-                                    {
-                                        <li>
-                                            <a href="javascript:void(0);" id="btnCart">
-                                                <span>
-                                                    <img src="~/Content/img/panel-cart.svg" />
-                                                </span>
-                                                <span>@Resource.Cart</span>
-                                            </a>
-                                        </li>
-                                    }
-                                </ul>
+                                    <li>
+                                        <a href="javascript:void(0);" id="btnEmail">
+                                            <span>
+                                                <img src="~/Content/img/email_outlined.svg" />
+                                            </span>
+                                            <span>Email</span>
+                                        </a>
+                                    </li>
+                                }
+                                @if (objToken.RoleID == 3)
+                                {
+                                    <li>
+                                        <a href="javascript:void(0);" id="btnCart">
+                                            <span>
+                                                <img src="~/Content/img/panel-cart.svg" />
+                                            </span>
+                                            <span>@Resource.Cart</span>
+                                        </a>
+                                    </li>
+                                }
+                            </ul>
+                            <div class="switch-btn">
+                                <button type="button" class="btn list-viewbtn btn-primary" onclick="$(this).addClass('btn-primary');$(this).removeClass('btn-default');$('.thumb-viewbtn').removeClass('btn-primary');$('.thumb-viewbtn').addClass('btn-default'); $('.list-view').show(); $('.thumb-result').hide();"><i class="fa fa-th-list" aria-hidden="true"></i></button>
+                                <button id="btnShowListView" type="button" class="btn thumb-viewbtn btn-default" onclick="$(this).addClass('btn-primary');$(this).removeClass('btn-default');$('.list-viewbtn').addClass('btn-default');$('.list-viewbtn').removeClass('btn-primary'); $('.list-view').hide(); $('.thumb-result').show();"><i class="fa fa-th-large" aria-hidden="true"></i></button>
                             </div>
+                        </div>
                             <div class="list-view">
                                 <table class="table listvalue">
                                     <tbody class="bordertp bordertp2">
@@ -656,14 +660,6 @@
     @*gried and list*@
     @if (Model == "SS")
     {
-        <div class="search-header clearfix">
-            <div class="switch-btn pull-right">
-                <button type="button" class="btn list-viewbtn btn-primary" onclick="$(this).addClass('btn-primary');$(this).removeClass('btn-default');$('.thumb-viewbtn').removeClass('btn-primary');$('.thumb-viewbtn').addClass('btn-default'); $('.list-view').show(); $('.thumb-result').hide();"><i class="fa fa-th-list" aria-hidden="true"></i></button>
-                <button id="btnShowListView" type="button" class="btn thumb-viewbtn btn-default" onclick="$(this).addClass('btn-primary');$(this).removeClass('btn-default');$('.list-viewbtn').addClass('btn-default');$('.list-viewbtn').removeClass('btn-primary'); $('.list-view').hide(); $('.thumb-result').show();"><i class="fa fa-th-large" aria-hidden="true"></i></button>
-            </div>
-
-        </div>
-
 
         <div id="ListViewData" class="thumb-result row pagination12" style="display:none"> </div>
 
