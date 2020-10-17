@@ -498,6 +498,8 @@
                 dataTable: {
                     //deferLoading: 0,
                     //scrollY: "500px",
+                    scrollY: "485px",
+                    scrollX: true,
                     paging: true,
                     pageLength: 200,
                     lengthMenu: [[10, 25, 50, 100, 200, 500000], [10,25,50, 100, 200, "All"]],
@@ -740,6 +742,8 @@
                     order: [[1, "desc"]],
                     processing: false,
                     serverSide: false,
+                    scrollY: "270px",
+                    scrollX: true,
                     data: data,
                     columns: colStruct.SpecificSearch.columns,
                     columnDefs: colStruct.SpecificSearch.columnDefs,
