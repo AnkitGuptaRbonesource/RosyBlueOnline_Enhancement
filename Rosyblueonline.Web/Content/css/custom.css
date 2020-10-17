@@ -284,3 +284,6 @@ div.dataTables_wrapper div#tblUserDetail_filter {
 	top: 0;
 	margin-top: 12px !important
 }
+.switch-btn {
+	margin-top: 6px;
+}
