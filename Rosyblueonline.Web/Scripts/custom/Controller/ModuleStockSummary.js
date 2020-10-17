@@ -209,7 +209,7 @@
                             orderable: false,
                             render: function (data, type, row) {
 
-                                return '<span id="expandCollapse_level1" collapse="true" level="1" class="btn btn-info btn-sm glyphicon glyphicon-plus"></span>';
+                                return '<span id="expandCollapse_level1" collapse="true" level="1" class="btn stock-add  glyphicon glyphicon-plus"></span>';
 
                             }
                         },

@@ -1067,7 +1067,7 @@ tbody {
 /*Popup CSS*/
 .modal-header {
     font-size: 18px;
-    background-color: #333362 !important;
+    background-color: #3A4276 !important;
     color: #FFF !important;
     padding: 12px 15px;
 }
@@ -1948,10 +1948,6 @@ a.sele-all {
   background-repeat: repeat-x;
   border-color: #dbdbdb;
   border-color: #ccc;
-}
-
-.btn-default {
-  margin-right: 10px;
 }
 
 .all-memo-down {

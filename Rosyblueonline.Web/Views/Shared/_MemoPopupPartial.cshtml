@@ -159,33 +159,42 @@
                 </table>
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="form-inline">
-                            <div class="form-group col-md-2">
-                                <div class="checkbox">
-                                    <label><input type="checkbox" value="" id="chkSellDirectly">@Resource.Sell_Directly</label>
+                        <div class="form-inline memopopup">
+                            <div class="col-md-4 col-xs-12">
+                                <div class="form-group">
+                                    <div class="checkbox">
+                                        <label><input type="checkbox" value="" id="chkSellDirectly">@Resource.Sell_Directly</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label><input type="checkbox" value="" id="chkConfirmMemo">@Resource.Confirm_Memo</label>
+                                    </div>
                                 </div>
-                                <div class="checkbox">
-                                    <label><input type="checkbox" value="" id="chkConfirmMemo">@Resource.Confirm_Memo</label>
+                            </div>
+                            <div class="col-md-4 col-xs-12">
+                                <div class="form-group">
+                                    <select class="form-control" name="CustomerID" id="ddlCustomer"></select>
                                 </div>
                             </div>
-                            <div class="form-group col-md-3">
-                                <select class="form-control" name="CustomerID" id="ddlCustomer"></select>
+                            <div class="col-md-4 col-xs-12">
+                                <div class="form-group">
+                                    <input class="form-control" name="Remark" id="txtMemoRemark" placeholder="Remark" />
+                                </div>
                             </div>
-                            <div class="form-group col-md-3">
-                                <input class="form-control" name="Remark" id="txtMemoRemark" placeholder="Remark" />
-                            </div>
-                            <div class="form-group marginleft">
-                                <a class="btn btn-primary" target="_blank" href="/User?OnlyAddCustomer=true"><i class="fa fa-plus" aria-hidden="true"></i>@Resource.Add_Customer</a>
-                            </div>
-                            <div class="form-group marginleft">
-                                <button class="btn btn-primary" id="btnSaveMemo"> @Resource.Proceed <i class="fa fa-step-forward" aria-hidden="true"></i></button>
-                            </div>
+
                         </div>
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">@Resource.Close</button>
+                <div class="memo-btnox">
+                    <div class="form-group">
+                        <a class="memobtn" target="_blank" href="/User?OnlyAddCustomer=true"><i class="fa fa-plus" aria-hidden="true"></i>@Resource.Add_Customer</a>
+                    </div>
+                    <div class="form-group">
+                        <button class="memobtn" id="btnSaveMemo"> @Resource.Proceed <i class="fa fa-step-forward" aria-hidden="true"></i></button>
+                    </div>
+                    <button type="button" class="memobtn" data-dismiss="modal">@Resource.Close</button>
+                </div>
             </div>
         </div>
 

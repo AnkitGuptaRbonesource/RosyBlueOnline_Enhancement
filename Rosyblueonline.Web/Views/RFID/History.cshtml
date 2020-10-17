@@ -9,39 +9,35 @@
         <div id="uiPanel1"></div>
         <div class="row">
             <div class="col-lg-12">
-                <section class="panel panel-primary">
-                    <div class="panel-heading">
-                        @Resource.RFID_History
-                    </div>
-                    <div class="panel-body">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <table id="tblRFID" class="table table-condensed">
-                                    <thead>
-                                        <tr role="row" class="table-head">
-                                            <th class="cust-table">
-                                                @Resource.RFID_No
-                                            </th>
-                                            <th class="cust-table">
-                                                @Resource.Certificate_No
-                                            </th>
-                                            <th class="cust-table">
-                                                @Resource.Created_On
-                                            </th>
-                                            <th class="cust-table">
-                                                @Resource.Created_By
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                </table>
-                            </div>
+                <section class="container-fluid">
+                    <div class="dash-box">
+                        <div class="dash-head">
+                            @Resource.RFID_History
+                        </div>
+                        <div class="table-box list-view">
+                            <table id="tblRFID" class="table">
+                                <thead>
+                                    <tr role="row" class="table-head">
+                                        <th class="tbnew">
+                                            @Resource.RFID_No
+                                        </th>
+                                        <th class="tbnew">
+                                            @Resource.Certificate_No
+                                        </th>
+                                        <th class="tbnew">
+                                            @Resource.Created_On
+                                        </th>
+                                        <th class="tbnew">
+                                            @Resource.Created_By
+                                        </th>
+                                    </tr>
+                                </thead>
+                            </table>
                         </div>
                     </div>
                 </section>
             </div>
-
         </div>
-
     </section>
 </div>
 @section script{

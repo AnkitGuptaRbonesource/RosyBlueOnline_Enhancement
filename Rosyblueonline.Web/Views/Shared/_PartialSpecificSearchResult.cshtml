@@ -195,6 +195,45 @@
                                             </a>
                                         </li>
                                     }
+                                    @if (objToken.RoleID == 2)
+                                    {
+                                        <li>
+                                            <a href="javascript:void(0);" id="btnAddBestDeal">
+                                                <span>
+                                                    <img src="~/Content/img/addbestdeal.svg" />
+                                                </span>
+                                                <span>Add Deal</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);" id="btnRemoveBestDeal">
+                                                <span>
+                                                    <img src="~/Content/img/removedeal.svg" />
+                                                </span>
+                                                <span>Remove Deal</span>
+                                            </a>
+                                        </li>
+                                    }
+                                    @if (objToken.RoleID == 2 || objToken.RoleID == 9)
+                                    {
+                                        <li>
+                                            <a href="javascript:void(0);" id="btnAddToMemo">
+                                                <span>
+                                                    <img src="~/Content/img/memo_outlined.svg" />
+                                                </span>
+                                                <span>Memo</span>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="javascript:void(0);" id="btnEmail">
+                                                <span>
+                                                    <img src="~/Content/img/email_outlined.svg" />
+                                                </span>
+                                                <span>Email</span>
+                                            </a>
+                                        </li>
+                                    }
                                     @if (objToken.RoleID == 3)
                                     {
                                         <li>

@@ -8,135 +8,128 @@
 <div class="content-wrapper">
     <div id="uiPanel1"></div>
     <section class="content">
-        <div class="row">
-            <div class="col-lg-5 col-md-5">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        @Resource.RFID_Memo_Stock_Tally
-                    </div>
-                    <div class="panel-body">
-                        <div class="">
-                            <div class="customers-info form-horizontal">
-                                <div class="rfid-mch">
-                                    <div class="form-group">
-                                        <label class="col-sm-4">@Resource.Machine</label>
-                                        <div class="col-sm-8">
-                                            <select id="ddlipaddress" class="form-control">
-                                                <option value="192.168.20.121">RFID_1</option>
-                                                <option value="192.168.20.122">RFID_2</option>
-                                            </select>
-                                        </div>
-                                    </div>
+        <div class="container-fluid">
+            <div class="dash-box">
+                <div class="dash-head">
+                    @Resource.RFID_Memo_Stock_Tally
+                </div>
+                <div class="dash-inner">
+                    <div class="customers-info form-horizontal">
+                        <div class="rfid-mch">
+                            <div class="form-group">
+                                <label class="col-sm-4">@Resource.Machine</label>
+                                <div class="col-sm-8">
+                                    <select id="ddlipaddress" class="form-control">
+                                        <option value="192.168.20.121">RFID_1</option>
+                                        <option value="192.168.20.122">RFID_2</option>
+                                    </select>
                                 </div>
-                                <div class="rfid-number">
-                                    <div class="form-group">
-                                        <label class="col-sm-4">@Resource.Rfid_Number</label>
-                                        <div class="col-sm-8">
-                                            <textarea id="list" name="Command" class="form-control" disabled></textarea>
-                                        </div>
-                                    </div>
+                            </div>
+                        </div>
+                        <div class="rfid-number">
+                            <div class="form-group">
+                                <label class="col-sm-4">@Resource.Rfid_Number</label>
+                                <div class="col-sm-8">
+                                    <textarea id="list" name="Command" class="form-control" disabled></textarea>
                                 </div>
-                                <div class="total-rfid">
-                                    <div class="form-group">
-                                        <label class="col-sm-4">@Resource.Total_RFID_Count</label>
-                                        <div class="col-sm-8">
-                                            <div id="count"></div>
-                                            <div id="rfidtotalCount"></div>
-                                            <div id="summary"></div>
-                                        </div>
-                                    </div>
+                            </div>
+                        </div>
+                        <div class="total-rfid">
+                            <div class="form-group">
+                                <label class="col-sm-4">@Resource.Total_RFID_Count</label>
+                                <div class="col-sm-8">
+                                    <div id="count"></div>
+                                    <div id="rfidtotalCount"></div>
+                                    <div id="summary"></div>
                                 </div>
-                                <div class="total-rfid">
-                                    <div class="form-group">
-                                        <label class="col-sm-4">@Resource.Recent_RFID_Count</label>
-                                        <div class="col-sm-8">
-                                            <div id="notify"></div>
-                                        </div>
-                                    </div>
+                            </div>
+                        </div>
+                        <div class="total-rfid">
+                            <div class="form-group">
+                                <label class="col-sm-4">@Resource.Recent_RFID_Count</label>
+                                <div class="col-sm-8">
+                                    <div id="notify"></div>
                                 </div>
-                                <div class="total-rfid">
-                                    <div class="form-group">
-                                        <label class="col-sm-4">@Resource.Continue_mode</label>
-                                        <div class="col-sm-8">
-                                            <div class="checkbox">
-                                                <label><input type="checkbox" value="" id="chkContinueMode"></label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-sm-6">
-                                        <button id="btnScanRF" class="btn btn-primary pull-right">@Resource.Scan</button>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <button id="btnReset" name="command" value="reset" class="btn btn-warning">@Resource.Reset1</button>
-                                        <input id="hfMemoID" value="@Model.ToString()" type="hidden" />
+                            </div>
+                        </div>
+                        <div class="total-rfid">
+                            <div class="form-group">
+                                <label class="col-sm-4">@Resource.Continue_mode</label>
+                                <div class="col-sm-8">
+                                    <div class="checkbox">
+                                        <label><input type="checkbox" value="" id="chkContinueMode"></label>
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-6">
+                                <button id="btnScanRF" class="btn btn-primary pull-right">@Resource.Scan</button>
+                            </div>
+                            <div class="col-sm-6">
+                                <button id="btnReset" name="command" value="reset" class="btn btn-warning">@Resource.Reset1</button>
+                                <input id="hfMemoID" value="@Model.ToString()" type="hidden" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dash-box">
+                <div class="dash-box">
+                    <div class="dash-inner">
+                        <div class="text-right">
+                            <div id="Divbtnexport">
+                                <button id="btnexport" class="btn btn-primary">@Resource.ExportToExcel</button>
+                            </div>
+                        </div>
+                        <div class="mt-15">
+                            <table id="SearchTablePost" class="table table-fixed dataTable no-footer" role="grid" aria-describedby="SearchTablePost_info">
+                                <thead class="bordertp">
+                                    <tr role="row" class="table-head">
+                                        <th class="tbnew">
+                                            <label for="Stock">@Resource.Stock</label>
+                                        </th>
+                                        <th class="tbnew">
+                                            <label for="Certificate_">@Resource.CertificateId</label>
+                                        </th>
+                                        <th class="tbnew">
+                                            <label for="Shape">@Resource.RFID</label>
+                                        </th>
+                                        <th class="tbnew">
+                                            <label for="Shape">@Resource.Shape</label>
+                                        </th>
+                                        <th class="tbnew dt-weight">
+                                            <label for="Weight">@Resource.Weight</label>
+                                        </th>
+                                        <th class="tbnew">
+                                            <label for="Color">@Resource.Color</label>
+                                        </th>
+                                        <th class="tbnew">
+                                            <label for="Clarity">@Resource.Clarity</label>
+                                        </th>
+                                        <th class="tbnew">
+                                            <label for="Cut">@Resource.Cut</label>
+                                        </th>
+                                        <th class="tbnew">
+                                            <label for="MO">@Resource.Memo_Order</label>
+                                        </th>
+                                        <th class="tbnew">
+                                            <label for="MS">@Resource.Memo_Status</label>
+                                        </th>
+                                        <th class="tbnew dt-status">
+                                            <label for="MS">@Resource.Stock_Status</label>
+                                        </th>
+                                    </tr>
+                                </thead>
+
+                            </table>
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <div class="customers-list-table">
-        <div class="col-md-12">
-            <div class="panel panel-primary">
-                <div class="panel-body">
-                    <div class="row">
-                        <div class="col-sm-6 pull-right" id="Divbtnexport">
-                            <button id="btnexport" class="btn btn-primary pull-right">@Resource.ExportToExcel</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="panel-body paneltable">
-                    <table id="SearchTablePost" class="table table-fixed dataTable no-footer" role="grid" aria-describedby="SearchTablePost_info">
-                        <thead class="bordertp">
-                            <tr role="row" class="table-head">
-                                <th class="tbnew">
-                                    <label for="Stock">@Resource.Stock</label>
-                                </th>
-                                <th class="tbnew">
-                                    <label for="Certificate_">@Resource.CertificateId</label>
-                                </th>
-                                <th class="tbnew">
-                                    <label for="Shape">@Resource.RFID</label>
-                                </th>
-                                <th class="tbnew">
-                                    <label for="Shape">@Resource.Shape</label>
-                                </th>
-                                <th class="tbnew dt-weight">
-                                    <label for="Weight">@Resource.Weight</label>
-                                </th>
-                                <th class="tbnew">
-                                    <label for="Color">@Resource.Color</label>
-                                </th>
-                                <th class="tbnew">
-                                    <label for="Clarity">@Resource.Clarity</label>
-                                </th>
-                                <th class="tbnew">
-                                    <label for="Cut">@Resource.Cut</label>
-                                </th>
-                                <th class="tbnew">
-                                    <label for="MO">@Resource.Memo_Order</label>
-                                </th>
-                                <th class="tbnew">
-                                    <label for="MS">@Resource.Memo_Status</label>
-                                </th>
-                                <th class="tbnew dt-status">
-                                    <label for="MS">@Resource.Stock_Status</label>
-                                </th>
-                            </tr>
-                        </thead>
-
-                    </table>
-
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 @section script{
     @Scripts.Render("~/bundles/DataTable/Script")

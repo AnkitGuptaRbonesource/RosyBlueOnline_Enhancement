@@ -13,152 +13,147 @@
 <div class="content-wrapper">
     <div id="uiPanel1"></div>
     <section class="content">
-        <div class="row">
-            <div class="col-lg-5 col-md-5">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        @Resource.RFID_StockTally
-                    </div>
-                    <div class="panel-body">
-                        <div class="">
-                            <div class="customers-info form-horizontal">
-                                <div class="rfid-mch">
-                                    <div class="form-group">
-                                        <label class="col-sm-4">@Resource.Machine</label>
-                                        <div class="col-sm-8">
-                                            <select id="ddlipaddress" class="form-control">
-                                                <option value="192.168.20.121">RFID_1</option>
-                                                <option value="192.168.20.122">RFID_2</option>
-                                            </select>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="dash-box">
+                        <div class="dash-head">
+                            @Resource.RFID_StockTally
+                        </div>
+                        <div class="dash-box">
+                            <div class="dash-inner">
+                                <div class="customers-info form-horizontal">
+                                    <div class="rfid-mch">
+                                        <div class="form-group">
+                                            <label class="col-sm-4">@Resource.Machine</label>
+                                            <div class="col-sm-8">
+                                                <select id="ddlipaddress" class="form-control">
+                                                    <option value="192.168.20.121">RFID_1</option>
+                                                    <option value="192.168.20.122">RFID_2</option>
+                                                </select>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="rfid-number">
-                                    <div class="form-group">
-                                        <label class="col-sm-4">@Resource.Rfid_Number</label>
-                                        <div class="col-sm-8">
-                                            <textarea id="list" name="Command" class="form-control"></textarea>
+                                    <div class="rfid-number">
+                                        <div class="form-group">
+                                            <label class="col-sm-4">@Resource.Rfid_Number</label>
+                                            <div class="col-sm-8">
+                                                <textarea id="list" name="Command" class="form-control"></textarea>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="rfid-number">
-                                    <div class="form-group">
-                                        <label class="col-sm-4">@Resource.Box_Name</label>
-                                        <div class="col-sm-8">
-                                            <input type="text" id="txtboxname" name="command" value="" class="form-control" />
+                                    <div class="rfid-number">
+                                        <div class="form-group">
+                                            <label class="col-sm-4">@Resource.Box_Name</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" id="txtboxname" name="command" value="" class="form-control" />
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="total-rfid">
-                                    <div class="form-group">
-                                        <label class="col-sm-4">@Resource.Total_RFID_Count</label>
-                                        <div class="col-sm-8">
-                                            <div id="count"></div>
-                                            <div id="rfidtotalCount"></div>
-                                            <div id="summary"></div>
+                                    <div class="total-rfid">
+                                        <div class="form-group">
+                                            <label class="col-sm-4">@Resource.Total_RFID_Count</label>
+                                            <div class="col-sm-8">
+                                                <div id="count"></div>
+                                                <div id="rfidtotalCount"></div>
+                                                <div id="summary"></div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="total-rfid">
-                                    <div class="form-group">
-                                        <label class="col-sm-4">@Resource.Recent_RFID_Count</label>
-                                        <div class="col-sm-8">
-                                            <div id="notify"></div>
+                                    <div class="total-rfid">
+                                        <div class="form-group">
+                                            <label class="col-sm-4">@Resource.Recent_RFID_Count</label>
+                                            <div class="col-sm-8">
+                                                <div id="notify"></div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="form-group">
-                                    <div class="col-sm-6">
-                                        <button id="btnScanRF" class="btn btn-primary pull-right">@Resource.Scan</button>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <button id="btnReset" name="command" value="reset" class="btn btn-warning">@Resource.Reset1</button>
-                                        <input id="hdnrfID" value="0" name="command" style="width: 24px" type="hidden" />
-                                    </div>
+
+                                <div class="text-center">
+                                    <button id="btnScanRF" class="btn btn-primary">@Resource.Scan</button>
+                                    <button id="btnReset" name="command" value="reset" class="btn btn-default">@Resource.Reset1</button>
+                                    <input id="hdnrfID" value="0" name="command" style="width: 24px" type="hidden" />
                                 </div>
                             </div>
                         </div>
-                    </div>
+                        </div>
                 </div>
-            </div>
-            <div class="col-lg-2 col-md-2">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        @Resource.Stock
-                    </div>
-                    <div class="panel-body">
-                        <div class="">
-                            <div class="form-group">
-                                <table>
-                                    <tr>
-                                        <td style="width: 100px;">@Resource.Physical_Stock</td>
-                                        <td>
-                                            <button id="btnPhysicalStock" class="btn-link btn-count-click" data-type="PhysicalStock" data-rfid="">0</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>@Resource.Active_Stock</td>
-                                        <td>
-                                            <button id="btnActiveStock" class="btn-link btn-count-click" data-type="ActiveStock" data-rfid="">0</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>@Resource.OnMemo</td>
-                                        <td>
-                                            <button id="btnOnMemoStock" class="btn-link btn-count-click" data-type="OnMemoStock" data-rfid="">0</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>@Resource.Sold</td>
-                                        <td>
-                                            <button id="btnSoldStock" class="btn-link btn-count-click" data-type="SoldStock" data-rfid="">0</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>@Resource.Order_Pending</td>
-                                        <td>
-                                            <button id="btnOrderPendingStock" class="btn-link btn-count-click" data-type="OrderPendingStock" data-rfid="">0</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>@Resource.InActive</td>
-                                        <td>
-                                            <button id="btnInvalidStock" class="btn-link btn-count-click" data-type="InvalidStock" data-rfid="">0</button>
-                                        <td>
-                                    </tr>
-                                </table>
-                            </div>
+                <div class="col-md-5">
+                    <div class="dash-box">
+                        <div class="dash-head">
+                            @Resource.Stock
+                        </div>
+                        <div class="table-box">
+                            <table class="table">
+                                <tr>
+                                    <td style="width: 200px;">@Resource.Physical_Stock</td>
+                                    <td>
+                                        <button id="btnPhysicalStock" class="btn-link btn-count-click" data-type="PhysicalStock" data-rfid="">0</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Resource.Active_Stock</td>
+                                    <td>
+                                        <button id="btnActiveStock" class="btn-link btn-count-click" data-type="ActiveStock" data-rfid="">0</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Resource.OnMemo</td>
+                                    <td>
+                                        <button id="btnOnMemoStock" class="btn-link btn-count-click" data-type="OnMemoStock" data-rfid="">0</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Resource.Sold</td>
+                                    <td>
+                                        <button id="btnSoldStock" class="btn-link btn-count-click" data-type="SoldStock" data-rfid="">0</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Resource.Order_Pending</td>
+                                    <td>
+                                        <button id="btnOrderPendingStock" class="btn-link btn-count-click" data-type="OrderPendingStock" data-rfid="">0</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Resource.InActive</td>
+                                    <td>
+                                        <button id="btnInvalidStock" class="btn-link btn-count-click" data-type="InvalidStock" data-rfid="">0</button>
+                                    <td>
+                                </tr>
+                            </table>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="row">
-            <div class="col-lg-12 col-md-12">
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <div class="customers-list-table">
-                            <div class="col-sm-6 pull-right" id="Divbtnexport">
-                                <button id="btnexport" class="btn btn-primary pull-right">@Resource.ExportToExcel</button>
-                            </div>
-                            <div id="ResultArea">
-                                <table id="tableStockCountDetail" class="table table-fixed dataTable no-footer">
-                                    <thead>
-                                        <tr role="row" class="table-head">
-                                            <th>@Resource.Box_Name</th>
-                                            <th>@Resource.Physical_Stock</th>
-                                            <th>@Resource.Active</th>
-                                            <th>@Resource.On_Memo</th>
-                                            <th>@Resource.Sold</th>
-                                            <th>@Resource.Order_Pending</th>
-                                            <th>@Resource.InActive</th>
-                                            <th>@Resource.UnReferenced</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="tblStockCountDetail"></tbody>
-                                </table>
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <div class="dash-box">
+                        <div class="dash-inner">
+                            <div class="customers-list-table">
+                                <div class="text-right">
+                                    <button id="btnexport" class="btn btn-primary">@Resource.ExportToExcel</button>
+                                </div>
+                                <div class="mt-10" id="ResultArea">
+                                    <table id="tableStockCountDetail" class="table table-fixed dataTable no-footer">
+                                        <thead class="bordertp">
+                                            <tr role="row" class="table-head">
+                                                <th class="tbnew">@Resource.Box_Name</th>
+                                                <th class="tbnew">@Resource.Physical_Stock</th>
+                                                <th class="tbnew">@Resource.Active</th>
+                                                <th class="tbnew">@Resource.On_Memo</th>
+                                                <th class="tbnew">@Resource.Sold</th>
+                                                <th class="tbnew">@Resource.Order_Pending</th>
+                                                <th class="tbnew">@Resource.InActive</th>
+                                                <th class="tbnew">@Resource.UnReferenced</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tblStockCountDetail"></tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -166,65 +161,54 @@
             </div>
         </div>
     </section>
-    <section id="secInvTbl">
-        <section class="content">
-            <div class="row">
-                <div class="customers-list-table">
-                    <div class="">
-                        <div class="customers-list-table">
-                            <div class="col-md-12">
-                                <div class="panel panel-primary">
-                                    <div class="panel-body paneltable">
-                                        <table id="SearchTablePost" class="table table-fixed dataTable no-footer" role="grid" aria-describedby="SearchTablePost_info">
-                                            <thead class="bordertp">
-                                                <tr role="row" class="table-head">
-                                                    <th class="tbnew">
-                                                        <label for="BoxNo">@Resource.Box_No</label>
-                                                    </th>
-                                                    <th class="tbnew">
-                                                        <label for="Rfid">@Resource.RFID</label>
-                                                    </th>
-                                                    <th class="tbnew">
-                                                        <label for="Stock">@Resource.Stock</label>
-                                                    </th>
-                                                    <th class="tbnew">
-                                                        <label for="Certificate">@Resource.CertificateId</label>
-                                                    </th>
-                                                    <th class="tbnew">
-                                                        <label for="Carat">@Resource.Carat</label>
-                                                    </th>
-                                                    <th class="tbnew">
-                                                        <label for="Shape">@Resource.Shape</label>
-                                                    </th>
-                                                    <th class="tbnew">
-                                                        <label for="Color">@Resource.Color</label>
-                                                    </th>
-                                                    <th class="tbnew">
-                                                        <label for="Clarity">@Resource.Clarity</label>
-                                                    </th>
-                                                    <th class="tbnew">
-                                                        <label for="Cut">@Resource.Cut</label>
-                                                    </th>
-                                                    <th class="tbnew ss">
-                                                        <label for="stockStatusID">@Resource.Status</label>
-                                                    </th>
-                                                    <th class="tbnew">
-                                                        <label for="Memo">@Resource.MEMO</label>
-                                                    </th>
-                                                </tr>
-                                            </thead>
+    <section class="content" id="secInvTbl">
+        <div class="container-fluid">
+            <div class="dash-box">
+                <div class="table-box">
+                    <table id="SearchTablePost" class="table table-fixed dataTable no-footer" role="grid" aria-describedby="SearchTablePost_info">
+                        <thead class="bordertp">
+                            <tr role="row" class="table-head">
+                                <th class="tbnew">
+                                    <label for="BoxNo">@Resource.Box_No</label>
+                                </th>
+                                <th class="tbnew">
+                                    <label for="Rfid">@Resource.RFID</label>
+                                </th>
+                                <th class="tbnew">
+                                    <label for="Stock">@Resource.Stock</label>
+                                </th>
+                                <th class="tbnew">
+                                    <label for="Certificate">@Resource.CertificateId</label>
+                                </th>
+                                <th class="tbnew">
+                                    <label for="Carat">@Resource.Carat</label>
+                                </th>
+                                <th class="tbnew">
+                                    <label for="Shape">@Resource.Shape</label>
+                                </th>
+                                <th class="tbnew">
+                                    <label for="Color">@Resource.Color</label>
+                                </th>
+                                <th class="tbnew">
+                                    <label for="Clarity">@Resource.Clarity</label>
+                                </th>
+                                <th class="tbnew">
+                                    <label for="Cut">@Resource.Cut</label>
+                                </th>
+                                <th class="tbnew ss">
+                                    <label for="stockStatusID">@Resource.Status</label>
+                                </th>
+                                <th class="tbnew">
+                                    <label for="Memo">@Resource.MEMO</label>
+                                </th>
+                            </tr>
+                        </thead>
 
-                                        </table>
+                    </table>
 
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
-        </section>
-
+        </div>
     </section>
     @*<a href="~/Views/Shared/_PartialSpecificSearchResult.cshtml">~/Views/Shared/_PartialSpecificSearchResult.cshtml</a>*@
 </div>
