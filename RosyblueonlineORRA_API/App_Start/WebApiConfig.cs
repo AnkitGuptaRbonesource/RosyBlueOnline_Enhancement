@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using Microsoft.Owin.Security.OAuth;
 
 namespace RosyblueonlineORRA_API
 {
@@ -12,6 +13,10 @@ namespace RosyblueonlineORRA_API
             // Web API configuration and services
 
             // Web API routes
+            config.SuppressDefaultHostAuthentication();
+            config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
+
+
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(

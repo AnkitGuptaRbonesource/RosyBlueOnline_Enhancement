@@ -53,7 +53,8 @@
         });
 
         $(document).on('click', '.loadData', function (e) {
-            var criteria = $(e.target.parentElement).attr('data-criteria');
+          //  var criteria = $(e.target.parentElement).attr('data-criteria');
+            var criteria = e.target.dataset.criteria;
             $('#hfQuery').val(criteria);
             $('#frmPostSearch').submit();
             //location.href = '/Inventory/SpecificSearchPost?c=' + criteria;
@@ -225,13 +226,13 @@
                     }, {
                         targets: [3],
                         render: function (data, type, row) {
-                            return '<a class="loadData show-selink" data-Criteria="' + row.searchCriteria + '" href="#"><span class="se-bx"><i class="fa fa-search" aria-hidden="true"></i></span> Show Results</a>';
+                            return '<a class="loadData show-selink" data-Criteria="' + row.searchCriteria + '" href="#"><span class="se-bx" data-Criteria="' + row.searchCriteria + '"><i class="fa fa-search" aria-hidden="true" data-Criteria="' + row.searchCriteria + '"></i></span> Show Results</a>';
                         },
                         orderable: false
                     }, {
                         targets: [4],
                         render: function (data, type, row) {
-                            return '<a class="removeSearch" data-id="' + row.recentSearchID + '" href="#"><span class="se-bx de-bx"><i class="fa fa-trash" aria-hidden="true"></i></span></a>';
+                            return '<a class="removeSearch" data-id="' + row.recentSearchID + '" href="#"><span class="se-bx de-bx"  data-id="' + row.recentSearchID + '"><i class="fa fa-trash" aria-hidden="true"  data-id="' + row.recentSearchID + '"></i></span></a>';
                         },
                         orderable: false,
                         visible: false
@@ -282,13 +283,13 @@
                     }, {
                         targets: [3],
                         render: function (data, type, row) {
-                            return '<a class="loadData" data-Criteria="' + row.searchCriteria + '" href="#"><span class="se-bx"><i class="fa fa-search" aria-hidden="true"></i></span></a>';
+                            return '<a class="loadData" data-Criteria="' + row.searchCriteria + '" href="#"><span class="se-bx" data-Criteria="' + row.searchCriteria + '"><i class="fa fa-search" aria-hidden="true" data-Criteria="' + row.searchCriteria + '"></i></span></a>';
                         },
                         orderable: false
                     }, {
                         targets: [4],
                         render: function (data, type, row) {
-                            return '<a class="removeSearch" data-id="' + row.recentSearchID + '" href="#"><span class="se-bx de-bx"><i class="fa fa-times" aria-hidden="true"></i></span></a>';
+                            return '<a class="removeSearch" data-id="' + row.recentSearchID + '" href="#"><span class="se-bx de-bx" data-id="' + row.recentSearchID + '"><i class="fa fa-times" aria-hidden="true" data-id="' + row.recentSearchID + '"></i></span></a>';
                         },
                         orderable: false
                     }]
@@ -338,13 +339,13 @@
                     }, {
                         targets: [3],
                         render: function (data, type, row) {
-                            return '<a class="loadData" data-Criteria="' + row.searchCriteria + '" href="#"><span class="se-bx"><i class="fa fa-search" aria-hidden="true"></i></span></a>';
+                            return '<a class="loadData" data-Criteria="' + row.searchCriteria + '" href="#"><span class="se-bx" data-Criteria="' + row.searchCriteria + '"><i class="fa fa-search" aria-hidden="true" data-Criteria="' + row.searchCriteria + '"></i></span></a>';
                         },
                         orderable: false
                     }, {
                         targets: [4],
                         render: function (data, type, row) {
-                            return '<a class="removeSearch" data-id="' + row.recentSearchID + '" href="#"><span class="se-bx de-bx"><i class="fa fa-times" aria-hidden="true"></i></span></a>';
+                            return '<a class="removeSearch" data-id="' + row.recentSearchID + '" href="#"><span class="se-bx de-bx" data-id="' + row.recentSearchID + '"><i class="fa fa-times" aria-hidden="true" data-id="' + row.recentSearchID + '"></i></span></a>';
                         },
                         orderable: false
                     }]
@@ -676,7 +677,7 @@
                     }, {
                         targets: [4],
                         render: function (data, type, row) {
-                            return '<a class="loadData" data-Criteria="' + row.demandCriteria + '" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>';
+                            return '<a class="loadData" data-Criteria="' + row.demandCriteria + '" href="#"><i class="fa fa-search" aria-hidden="true" data-Criteria="' + row.demandCriteria + '"></i></a>';
                         },
                         orderable: false
                     }]
@@ -729,7 +730,7 @@
                     }, {
                         targets: [2],
                         render: function (data, type, row) {
-                            return '<a class="loadDataRecentSearches" data-userid="' + row.loginID + '" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>';
+                            return '<a class="loadDataRecentSearches" data-userid="' + row.loginID + '" href="#"><i class="fa fa-search" aria-hidden="true" data-userid="' + row.loginID + '"></i></a>';
                         },
                         orderable: false
                     }]
@@ -779,13 +780,13 @@
                     }, {
                         targets: [3],
                         render: function (data, type, row) {
-                            return '<a class="loadData" data-Criteria="' + row.searchCriteria + '" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>';
+                            return '<a class="loadData" data-Criteria="' + row.searchCriteria + '" href="#"><i class="fa fa-search" aria-hidden="true" data-Criteria="' + row.searchCriteria + '"></i></a>';
                         },
                         orderable: false
                     }, {
                         targets: [4],
                         render: function (data, type, row) {
-                            return '<a class="removeSearch" data-id="' + row.recentSearchID + '" href="#"><i class="fa fa-times" aria-hidden="true"></i></a>';
+                            return '<a class="removeSearch" data-id="' + row.recentSearchID + '" href="#"><i class="fa fa-times" aria-hidden="true" data-id="' + row.recentSearchID + '"></i></a>';
                         },
                         orderable: false,
                         visible: false

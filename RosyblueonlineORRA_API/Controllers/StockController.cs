@@ -8,7 +8,14 @@ using System.Web.Http;
 using Rosyblueonline.Repository.Context;
 using Rosyblueonline.Repository.UnitOfWork;
 using System.Configuration;
-using Rosyblueonline.ServiceProviders.Abstraction;
+using Rosyblueonline.ServiceProviders.Abstraction;  
+using Microsoft.IdentityModel.Tokens;   
+using System.Net;
+using System.Net.Http;
+using System.Security.Claims;
+using System.Text;
+using System.IdentityModel.Tokens.Jwt;
+using Rosyblueonline.Models.ViewModel;
 
 namespace RosyblueonlineORRA_API.Controllers
 {
@@ -16,34 +23,23 @@ namespace RosyblueonlineORRA_API.Controllers
     public class StockController : ApiController
     {
         IOrderService objOrderService;
-        public StockController(IOrderService objOrderService)
+        IUserDetailService objUDSvc = null;
+        public StockController(IOrderService objOrderService, IUserDetailService objUDSvc)
         {
             this.objOrderService = objOrderService as OrderService;
+            this.objUDSvc = objUDSvc as UserDetailService;
         }
-
-
-        // DBSQLServer db = new DBSQLServer();
-        //  DataContext db1 = new DataContext();
-        // readonly UnitOfWork uow = null;
-        // DBSQLServer dBSQL = new DBSQLServer();
+         
         DataContext db = new  DataContext();
+        [Authorize]
         [HttpGet]
         [Route("GetData")]
         public Response GetData()
         {
             try
-            {
-                // ORRAStockDetailsModel obj = new ORRAStockDetailsModel();
-                //  List<ORRAStockDetailsModel> obj = this.objStockDetailsService.GetORRAStockData(6, "STOCK_FOR_ORRA_API");
-                //string LoginID = "6";
-                //string RaiseEvent = "STOCK_FOR_ORRA_API";
-
-                // return this.db.Database.SqlQuery<T>(string.Format(Text, Parameters)).ToList();
-
+            { 
                 List<ORRAStockDetailsModel> obj =  db.Database.SqlQuery<ORRAStockDetailsModel>("Exec  prcGetReports 6, 'STOCK_FOR_ORRA_API'").ToList();
-
-                //  List<ORRAStockDetailsModel> obj =this.uow.ExecuteQuery<ORRAStockDetailsModel>("Exec  prcGetReports 6, 'STOCK_FOR_ORRA_API'");
-
+ 
                 return new Response { Code = 200, IsSuccess = true, Message = "Total Rows "+obj.Count().ToString(), Result = obj };
 
             }
@@ -54,15 +50,13 @@ namespace RosyblueonlineORRA_API.Controllers
             }
         }
 
+        [Authorize]
         [HttpGet]
         [Route("PlaceOrder")]
         public Response PlaceOrder(string LotNos)
         {
             try
             {
-                //UnitOfWork uow = null;
-                //DBSQLServer db1 = null; 
-                //OrderService objOrderService  = new OrderService(uow, db1);
                 
                 PlaceOrderOrra  obj = db.Database.SqlQuery<PlaceOrderOrra>("Exec  proc_PlaceOrderFromAPI 0,"+LotNos.ToString()).FirstOrDefault();
                 if (obj.OrderId > 0)
@@ -81,6 +75,59 @@ namespace RosyblueonlineORRA_API.Controllers
                 ErrorLog.Log("Order", "PlaceOrder", ex);
                 return new Response { Code = 500, IsSuccess = false, Message = ex.Message };
             }
+        }
+
+
+        [HttpGet]
+        [Route("UserLogin")]
+        public Response UserLogin(string UserName,string Password)
+        {
+            try
+            {
+                LoginViewModel obj = new LoginViewModel(); 
+                obj.Username = UserName;
+                obj.Password = Password;
+                obj.DeviceName = "Test";
+                obj.IpAddress = "1.0.1.0"; 
+
+                TokenLogModel objToken = this.objUDSvc.Login(obj);
+                if (objToken != null)
+                {
+                    var tokenString = GenerateJSONWebToken();
+                    return new Response { Code = 200, IsSuccess = true, Result = tokenString,Message= "Login Successfully !" };
+
+                }
+
+                return new Response { Code = 200, IsSuccess = false, Result = null, Message="Incorrect username and password !" };
+            }
+            catch (Exception ex)
+            {
+                return new Response { Code = 500, IsSuccess = false, Message = ex.Message };
+            }
+
+        }
+
+
+        private string GenerateJSONWebToken()
+        {
+
+            string key = "Secret key use for validation orra api web request";  
+            var issuer = "ORRA_API";      
+
+            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key));
+            var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
+              
+            var permClaims = new List<Claim>();
+            permClaims.Add(new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()));
+              
+            var token = new JwtSecurityToken(issuer,   
+                            issuer,   
+                            permClaims,
+                            expires: DateTime.Now.AddDays(1),
+                            signingCredentials: credentials);
+            var jwt_token = new JwtSecurityTokenHandler().WriteToken(token);
+
+            return jwt_token;
         }
 
 
