@@ -126,6 +126,8 @@
                 dataTable: {
                     //deferLoading: 0,
                     paging: false,
+                    scrollY: "270px",
+                    scrollX: true,
                     order: [[1, "desc"]],
                     processing: false,
                     serverSide: false,

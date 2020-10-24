@@ -76,7 +76,9 @@
         $('.info-boxtxt').click(function (e) {
             e.preventDefault();
             var criteria = $(this).data('criteria');
-            if (criteria != undefined && criteria != "") {
+            if (criteria == "Memo") {
+                location.href = '/Memo'; 
+            }else  if (criteria != undefined && criteria != "") {
                 $('#hfQuery').val(criteria);
                 $('#frmPostSearch').submit();
                 //location.href = '/Inventory/SpecificSearchPost?c=' + criteria;
@@ -381,6 +383,8 @@
             $('#ancRoundCount').data('criteria', data.criteria.RoundShapeCriteria);
             $('#ancFancyColorCount').data('criteria', data.criteria.FancyCountCriteria);
             $('#ancFancyShapeCount').data('criteria', data.criteria.FancyShapeCriteria);
+            $('#ancMemoCount').data('criteria','Memo');
+
         }
     }
 

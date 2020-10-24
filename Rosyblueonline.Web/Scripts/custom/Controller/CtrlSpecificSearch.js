@@ -616,10 +616,7 @@
                                 '<div class="flex column space-around actions">'+
                                     '<div class="flex space-between align-centered">'+
                                         '<div class="lab">'+item.Certificate+'</div>'+
-                                          '<div class="lab">' + item.Clarity + '</div>' +
-                                        '<div class="lab add-link"><a href="#"  class="btnlistcart btn-link fa fa-shopping-cart fontsz"  data-id="' + item.Stock + '"   aria - hidden="true" ></a ></div > '+
-                                        '<div class="lab add-link"><a href="#"  class="btnlistWatchlist btn-link fa fa-list fontsz" data-id="' + item.Stock + '"   aria - hidden="true" ></a ></div > ' +
-                                          '</div>' +
+                                          '<div class="lab">' + item.Clarity + '</div> </div>' +
                                     '<div class="flex align-centered space-between details"><div>'+item.Shape+'</div><div>'+item.Weight+'</div><div>'+item.Shade+'</div><div>'+item.Color+'</div></div>'+
                                    ' <div class="flex space-between align-centered reserve"><div class="flex align-centered price"><div class="">'+item.Amount+'</div></div></div>'+
                                ' </div>'+
@@ -628,6 +625,10 @@
                         $("#ListViewData").append(newListItem);
                         j++;
                     });
+
+
+                    //'<div class="lab add-link"><a href="#"  class="btnlistcart btn-link fa fa-shopping-cart fontsz"  data-id="' + item.Stock + '"   aria - hidden="true" ></a ></div > ' +
+                    //    '<div class="lab add-link"><a href="#"  class="btnlistWatchlist btn-link fa fa-list fontsz" data-id="' + item.Stock + '"   aria - hidden="true" ></a ></div > ' +
 
                     //$('.pagination12 .post:not(#page' + page + ')').hide();
                     //$('.pagination12 .post#page' + page).show();
