@@ -13,7 +13,7 @@
         <div style="display:none;">
             <a id="ancInventoryDownload" href="/Inventory/ExportToExcelInventoryDownload"></a>
         </div>
-        <section class="content" id="secGrid">
+        <section id="secGrid">
             <div class="row">
                 <div class="col-lg-12 col-sm-12 col-xs-12">
                     <div id="panelHeading" class="memo-title">
@@ -160,7 +160,7 @@
                 </div>
             </div>
         </section>
-        <section class="content" id="secMemoItems" style="display:none">
+        <section id="secMemoItems" style="display:none">
             @Html.Partial("~/Views/Shared/_PartialSpecificSearchResult.cshtml", "Memo")
             <div>
                 <input type="hidden" name="OrderID" id="hfOrderID" value="" />

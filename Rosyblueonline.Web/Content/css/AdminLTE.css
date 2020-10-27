@@ -3584,6 +3584,13 @@ table.text-center th {
 .post .user-block {
   margin-bottom: 15px;
 }
+.thumb-result .post {
+	border-bottom: 0 none;
+	padding-bottom:0;
+}
+.thumb-result .post .diamond iframe {
+	max-width: 100%;
+}
 /*
  * Social Buttons for Bootstrap
  *
