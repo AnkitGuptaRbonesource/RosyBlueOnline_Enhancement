@@ -926,11 +926,12 @@
 
     function GetCount(FinalQuery, newArrival, callback) {
         $('#dydEdit').attr('disable', true);
+        $('.small-loader').show();
         objSF.StockCount(FinalQuery, newArrival).then(function (data) {
             console.log(data);
             if (data.IsSuccess) {
                 CurrentCount = data.Result;
-                $s('#dydEdit > span.badge').html(CurrentCount[0]["ResultCount"]);
+                $s('#dydEdit > span.badge .sscount').html(CurrentCount[0]["ResultCount"]);
                 if (callback != undefined) {
                     callback({
                         count: CurrentCount,
@@ -939,11 +940,15 @@
                     });
                 }
             } else {
-                $s('#dydEdit > span.badge').html("0");
+                $s('#dydEdit > span.badge .sscount').html("0");
             }
             $('#dydEdit').attr('disable', false);
+            $('.small-loader').hide();
+
         }, function (error) {
-            $('#dydEdit').attr('disable', false);
+                $('#dydEdit').attr('disable', false);
+                $('.small-loader').hide();
+
         });
     };
 
@@ -954,7 +959,7 @@
 
     var setCount = function (count) {
         //ChangeCount(count);
-        $s('#dydEdit > span.badge').html(count);
+        $s('#dydEdit > span.badge .sscount').html(count);
     };
 
 

@@ -16,6 +16,7 @@ using System.Security.Claims;
 using System.Text;
 using System.IdentityModel.Tokens.Jwt;
 using Rosyblueonline.Models.ViewModel;
+using Newtonsoft.Json;
 
 namespace RosyblueonlineORRA_API.Controllers
 {
@@ -29,18 +30,18 @@ namespace RosyblueonlineORRA_API.Controllers
             this.objOrderService = objOrderService as OrderService;
             this.objUDSvc = objUDSvc as UserDetailService;
         }
-         
-        DataContext db = new  DataContext();
+
+        DataContext db = new DataContext();
         [Authorize]
         [HttpGet]
         [Route("GetData")]
         public Response GetData()
         {
             try
-            { 
-                List<ORRAStockDetailsModel> obj =  db.Database.SqlQuery<ORRAStockDetailsModel>("Exec  prcGetReports 6, 'STOCK_FOR_ORRA_API'").ToList();
- 
-                return new Response { Code = 200, IsSuccess = true, Message = "Total Rows "+obj.Count().ToString(), Result = obj };
+            {
+                List<ORRAStockDetailsModel> obj = db.Database.SqlQuery<ORRAStockDetailsModel>("Exec  prcGetReports 6, 'STOCK_FOR_ORRA_API'").ToList();
+
+                return new Response { Code = 200, IsSuccess = true, Message = "Total Rows " + obj.Count().ToString(), Result = obj };
 
             }
             catch (Exception ex)
@@ -57,12 +58,12 @@ namespace RosyblueonlineORRA_API.Controllers
         {
             try
             {
-                
-                PlaceOrderOrra  obj = db.Database.SqlQuery<PlaceOrderOrra>("Exec  proc_PlaceOrderFromAPI 0,"+LotNos.ToString()).FirstOrDefault();
+
+                PlaceOrderOrra obj = db.Database.SqlQuery<PlaceOrderOrra>("Exec  proc_PlaceOrderFromAPI 0," + LotNos.ToString()).FirstOrDefault();
                 if (obj.OrderId > 0)
                 {
-                    objOrderService.SendMailPreBookOrder(obj.OrderId, obj.CustomerId , ConfigurationManager.AppSettings["EmailTemplate_PlaceOrderAdmin"].ToString(), "Customer order details @ www.rosyblueonline.com");
-                    objOrderService.SendMailPreBookOrder(obj.OrderId, obj.CustomerId,  ConfigurationManager.AppSettings["EmailTemplate_PlaceOrderCustomer"].ToString(), "Your order details @ www.rosyblueonline.com", true);
+                    objOrderService.SendMailPreBookOrder(obj.OrderId, obj.CustomerId, ConfigurationManager.AppSettings["EmailTemplate_PlaceOrderAdmin"].ToString(), "Customer order details @ www.rosyblueonline.com");
+                    objOrderService.SendMailPreBookOrder(obj.OrderId, obj.CustomerId, ConfigurationManager.AppSettings["EmailTemplate_PlaceOrderCustomer"].ToString(), "Your order details @ www.rosyblueonline.com", true);
                     return new Response { Code = 200, IsSuccess = true, Message = "Order placed", Result = obj };
 
                 }
@@ -80,25 +81,25 @@ namespace RosyblueonlineORRA_API.Controllers
 
         [HttpGet]
         [Route("UserLogin")]
-        public Response UserLogin(string UserName,string Password)
+        public Response UserLogin(string UserName, string Password)
         {
             try
             {
-                LoginViewModel obj = new LoginViewModel(); 
+                LoginViewModel obj = new LoginViewModel();
                 obj.Username = UserName;
                 obj.Password = Password;
                 obj.DeviceName = "Test";
-                obj.IpAddress = "1.0.1.0"; 
+                obj.IpAddress = "1.0.1.0";
 
                 TokenLogModel objToken = this.objUDSvc.Login(obj);
                 if (objToken != null)
                 {
                     var tokenString = GenerateJSONWebToken();
-                    return new Response { Code = 200, IsSuccess = true, Result = tokenString,Message= "Login Successfully !" };
+                    return new Response { Code = 200, IsSuccess = true, Result = tokenString, Message = "Login Successfully !" };
 
                 }
 
-                return new Response { Code = 200, IsSuccess = false, Result = null, Message="Incorrect username and password !" };
+                return new Response { Code = 200, IsSuccess = false, Result = null, Message = "Incorrect username and password !" };
             }
             catch (Exception ex)
             {
@@ -111,17 +112,17 @@ namespace RosyblueonlineORRA_API.Controllers
         private string GenerateJSONWebToken()
         {
 
-            string key = "Secret key use for validation orra api web request";  
-            var issuer = "ORRA_API";      
+            string key = "Secret key use for validation orra api web request";
+            var issuer = "ORRA_API";
 
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
-              
+
             var permClaims = new List<Claim>();
             permClaims.Add(new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()));
-              
-            var token = new JwtSecurityToken(issuer,   
-                            issuer,   
+
+            var token = new JwtSecurityToken(issuer,
+                            issuer,
                             permClaims,
                             expires: DateTime.Now.AddDays(1),
                             signingCredentials: credentials);
@@ -129,7 +130,48 @@ namespace RosyblueonlineORRA_API.Controllers
 
             return jwt_token;
         }
+        [HttpGet]
+        [Route("test")]
+        public string test()
+        {
+            var query = @"
+                    query ReportQuery($ReportNumber: String!) {
+                        getReport(report_number: $ReportNumber){
+                            report_number
+                            report_date
+                            report_type
+                            results {
+                                __typename
+                                ... on DiamondGradingReportResults {
+                                    shape_and_cutting_style
+                                    carat_weight
+                                    clarity_grade
+                                    color_grade
+                                }
+                            }
+                            quota {
+                                remaining
+                            }
+                        }
+                    }"; 
+            var reportNumber = "2141438171";
 
+            // Construct the request body to be POSTed to the graphql server
+            var query_variables = new Dictionary<string, string>
+            {
+              { "ReportNumber", reportNumber}
+                };
+            var body = new Dictionary<string, object>
+                {
+               { "query", query },
+              { "variables", query_variables }
+                };
+
+            string json = JsonConvert.SerializeObject(body);
+
+            //string json = serializer.Serialize(body);
+            return json;
+        }
 
 
     }
