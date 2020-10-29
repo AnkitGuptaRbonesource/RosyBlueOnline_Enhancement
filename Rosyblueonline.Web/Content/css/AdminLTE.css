@@ -17,12 +17,16 @@ body {
     overflow-x: hidden;
     overflow-y: auto;
 }
+.ck-inline .checkbox-inline input[type=checkbox] {
+    margin: 3px 0 0 -18px !important;
+}
+}
 /* Layout */
 .wrapper {
-  height: 80%;
-  position: relative;
-  overflow-x: hidden;
-  overflow-y: auto;
+    height: 80%;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 .wrapper:before,
 .wrapper:after {

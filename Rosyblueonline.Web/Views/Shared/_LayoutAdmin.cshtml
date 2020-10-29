@@ -78,10 +78,10 @@
                                 <li class="order-box">
                                     <ul class="nav nav-pills">
                                         <li class="nav-item active">
-                                            <a class="nav-link" data-toggle="pill" href="#home">Pending orders</a>
+                                            <a class="nav-link" id="pending-order" href="#home">Pending orders</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" data-toggle="pill" href="#menu1">View orders</a>
+                                            <a class="nav-link" id="view-order" href="#menu1">View orders</a>
                                         </li>
                                     </ul>
                                     <div class="tab-content">
@@ -346,7 +346,7 @@
                             <ul class="treeview-menu">
                                 @if (objMenuAccess.SummaryDiscount == 1)
                                 {
-                                    <li><a href="/Charges"><div class="img-icon"><i class="fa fa-plus-circle"></i></div> Summary Discount</a></li>
+                                    <li><a href="/Charges"><div class="img-icon"><i class="fa fa-plus-circle"></i></div> @Resource.Summary_Discount</a></li>
                                 }
                                 @if (objMenuAccess.BlockSite == 1)
                                 {
@@ -507,6 +507,24 @@
                 }, function (error) {
 
                 });
+            });
+            $("#pending-order").click(function () {
+                $(".tab-content").find("#menu1").toggleClass("active in");
+                $(".tab-content").find("#home").toggleClass("active in");
+                $(".notifications-menu").addClass("open");
+                $(this).parent("li").addClass("active");
+                $("#view-order").parent("li").removeClass("active");
+                return false;
+
+            });
+
+            $("#view-order").click(function () {
+                $(".tab-content").find("#menu1").toggleClass("active in");
+                $(".tab-content").find("#home").toggleClass("active in");
+                $(".notifications-menu").addClass("open");
+                $(this).parent("li").addClass("active");
+                $("#pending-order").parent("li").removeClass("active");
+                return false;
             });
         });
 
