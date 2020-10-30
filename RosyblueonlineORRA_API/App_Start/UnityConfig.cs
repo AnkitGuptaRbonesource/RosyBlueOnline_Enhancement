@@ -31,7 +31,7 @@ namespace RosyblueonlineORRA_API
             container.RegisterType<IDBSQLServer, DBSQLServer>();
             container.RegisterType<IOrderService, OrderService>();
             container.RegisterType<IUserDetailService, UserDetailService>();
-
+            container.RegisterType<IStockDetailsService, StockDetailsService>();
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
         }
         private static Lazy<IUnityContainer> Container = new Lazy<IUnityContainer>(() =>

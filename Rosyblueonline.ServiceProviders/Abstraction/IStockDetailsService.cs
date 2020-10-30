@@ -58,5 +58,9 @@ namespace Rosyblueonline.ServiceProviders.Abstraction
 
         List<ORRAStockDetailsModel> GetORRAStockData(int LoginID, string RaiseEvent);
 
+        ORRAStockDetailsValidate ORRAStockDetailsValidate(int LoginID, string LotNos, string RaiseEvent);
+
+        List<PlaceOrderOrra> ORRAPlaceOrder(int LoginID, int OrderBlockedId, string LotNos);
+
     }
 }

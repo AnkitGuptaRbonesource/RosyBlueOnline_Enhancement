@@ -49,6 +49,8 @@ namespace Rosyblueonline.Models
         public string GroupName { get; set; }
         public string MemberComments { get; set; }
         public string V360 { get; set; } 
+        public string Stockstatus { get; set; }
+
         
 
     }
@@ -59,5 +61,12 @@ namespace Rosyblueonline.Models
         public int InvalidCount { get; set; }
         public int OrderId { get; set; }
         public int CustomerId { get; set; }  
+    }
+
+    public class ORRAStockDetailsValidate
+    {
+        public List<ORRAStockDetailsModel> StockDetails { get; set; }
+         public List<PlaceOrderOrra> OrderDetails { get; set; }
+
     }
 }

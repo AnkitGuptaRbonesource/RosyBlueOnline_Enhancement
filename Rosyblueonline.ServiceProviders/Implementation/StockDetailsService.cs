@@ -667,5 +667,14 @@ namespace Rosyblueonline.ServiceProviders.Implementation
             return this.uow.ExecuteQuery<ORRAStockDetailsModel>("Exec prcGetReports " + LoginID.ToString() + ","+ RaiseEvent.ToString() );
         }
 
+        public ORRAStockDetailsValidate ORRAStockDetailsValidate(int LoginID, string LotNos, string RaiseEvent)
+        {
+            return uow.Inventory.ORRAStockDetailsValidate(LoginID, LotNos, RaiseEvent);
+        }
+        public List<PlaceOrderOrra> ORRAPlaceOrder(int LoginID, int OrderBlockedId, string LotNos)
+        {
+            return this.uow.ExecuteQuery<PlaceOrderOrra>("Exec proc_PlaceOrderFromAPI " + LoginID.ToString() + "," + OrderBlockedId.ToString() + "," + LotNos.ToString());
+        }
+ 
     }
 }
