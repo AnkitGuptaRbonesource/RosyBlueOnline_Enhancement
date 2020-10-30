@@ -182,7 +182,7 @@
     </div>
 </div>
 <form id="Modal-Forgetpassword" class="modal fade" role="dialog">
-    <div class="modal-dialog modal-sm">
+    <div class="modal-dialog">
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
@@ -191,15 +191,11 @@
                 <h4 class="modal-title">@Resource.Forget_Password</h4>
             </div>
             <div class="modal-body">
-                <div class="form-inline">
-                    <div class="col-md-9">
-                        <input class="form-control col-md-12" name="ForgetpasswordEmail" id="txtForgetpasswordEmail" placeholder="Registered Email ID" />
-                    </div>
-                </div>
+                <input class="form-control" name="ForgetpasswordEmail" id="txtForgetpasswordEmail" placeholder="Registered Email ID" />
             </div>
             <div class="modal-footer">
-                <button class="btn btn-primary" id="btnForgetPassword">@Resource.Submit</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">@Resource.Close</button>
+                <button class="btn btn-primary" id="btnForgetPassword">@Resource.Submit</button>
             </div>
         </div>
     </div>
