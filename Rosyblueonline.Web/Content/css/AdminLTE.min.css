@@ -439,7 +439,7 @@
 	.skin-black-light .main-header .navbar .nav > li > a.userorder:after {
 		border: none;
 	}
-	.navbar-custom-menu > .navbar-nav > li a:after {
+	/*.navbar-custom-menu > .navbar-nav > li a:after {
 		position: absolute;
 		display: block;
 		content: '';
@@ -453,9 +453,10 @@
 		border-color: #3A4276;
 		transition: 0.5s all ease;
 	}
-	.navbar-nav > .user-menu > .dropdown-menu > .user-footer a:after {
-		display: none;
-	}
+	*/
+.navbar-nav > .user-menu > .dropdown-menu > .user-footer a:after {
+	display: none;
+}
 	.order-data .order-cnt h5 a:after {
 		border: none;
 	}

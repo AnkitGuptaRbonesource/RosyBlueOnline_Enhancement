@@ -13,67 +13,54 @@
     @RenderSection("header", false)
 </head>
 <body>
-    <header>
-        <div class="logo-div">
+    <header>        
+        <div class="topbar hidden-xs">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                        <div class="logo">
-                            <img src="~/Content/img/logo.png" style="height: 70px;" />
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                        <div class="login-name pull-right">Welcome, guest!</div>
-                    </div>
+                <ul class="nav navbar-nav">
+                    <li><a href="tel:+912266650000"><i class="fa fa-phone" aria-hidden="true"></i> +91 22 66650000</a></li>
+                    <li><a href="mailto:shanay.mehta@rosyblue.com"><i class="fa fa-envelope" aria-hidden="true"></i> shanay.mehta@rosyblue.com</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="spblink">GST will be applied for Indian customers</li>
+                    <li class="form-inline">
+                        <label>Select Language</label>
+                        <select name="Language" id="ddlLanguage" class="form-control">
+                            <option value="en" @(@CurrentCulture == "en" ? "selected" : "")>English</option>
+                            <option value="ja" @(@CurrentCulture == "ja" ? "selected" : "")>Japanese</option>
+                            @* <option value="hi" @(@CurrentCulture == "hi" ? "selected" : "")>Hindi</option>*@
+                        </select>
+                    </li>
+                </ul>
+            </div>  
+        </div>
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"><img src="/Content/img/newlogo.png" /></a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>@Html.ActionLink(Resource.Home, "Index", "Home")</li>
+                        <li><a href="https://www.rosyblue.com/about-us" target="_blank">@Resource.About</a></li>
+                        <li>@Html.ActionLink(Resource.Features, "Features", "Home")</li>
+                        <li>@Html.ActionLink(Resource.Register, "Registration", "Home")</li>
+                        <li>@Html.ActionLink(Resource.Contact_Us, "ContactUs", "Home")</li>
+                    </ul>
                 </div>
             </div>
-        </div>
-        <div class="nav-bg">
-            <div class="container">
-                <div class="row">
-                    <nav class="navbar navbar-default">
-                        <div class="container-fluid">
-                            <div class="navbar-header">
-                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                </button>
-                            </div>
-                            <div class="collapse navbar-collapse" id="myNavbar">
-                                <ul class="nav navbar-nav">
-                                    <li>@Html.ActionLink(Resource.Home, "Index", "Home")</li>
-                                    <li><a href="http://www.rosyblue.com/" target="_blank">@Resource.About</a></li>
-                                    <li>@Html.ActionLink(Resource.Features, "Features", "Home")</li>
-                                    <li>@Html.ActionLink(Resource.Register, "Registration", "Home")</li>
-                                    <li>@Html.ActionLink(Resource.Contact_Us, "ContactUs", "Home")</li> 
-                                </ul>
-                                <ul class="nav navbar-nav navbar-right spblink" style="text-align: center; color: red">
-                                    <li>GST will be applied for Indian customers</li>
-                                </ul>
-                                <ul class="nav navbar-nav language">
-                                    <li>
-                                        <a href="#">Select Language</a>
-                                    </li>
-                                </ul>
-                                <ul class="nav navbar-nav"  >
-                                    <li>
-                                        <select name="Language" id="ddlLanguage" class="form-control">
-                                            <option value="en" @(@CurrentCulture == "en" ? "selected" : "")>English</option>
-                                            <option value="ja" @(@CurrentCulture == "ja" ? "selected" : "")>Japanese</option>
-                                           @* <option value="hi" @(@CurrentCulture == "hi" ? "selected" : "")>Hindi</option>*@
-                                        </select>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </nav>
-                </div>
-            </div>
-        </div>
+        </nav>
     </header>
+    
     <div id="body">
-        
+
         @RenderSection("featured", required: false)
         <section class="content-wrapper main-content clear-fix">
             @RenderBody()

@@ -5,12 +5,16 @@
             <input type="text" class="login-input" name="Username" placeholder="@Resource.User_Name" />
             <input type="password" class="login-input" name="Password" placeholder="@Resource.Password" />
         </div>
-        <p class="clearfix">
-            <input type="submit" class="btn btn-md btn-login pull-right" value="@Resource.Login" />
-        </p>
-        <p class="no-margin">
-            <a href="#" class="new-user" id="ancFP">@Resource.Forget_Password</a>
-            <a href="/Home/Registration" class="new-user">@Resource.New_UserPlease_Register_Here</a>
-        </p>
+        <div class="row">
+            <div class="col-xs-6">
+                <input type="submit" class="btn btn-primary" value="@Resource.Login" />
+            </div>
+            <div class="col-xs-6 text-right">
+                <a href="#" class="forgot-pass" id="ancFP">@Resource.Forget_Password</a>
+            </div>
+        </div>
+        <div class="newuser-block text-center mt-20">
+            <a href="/Home/Registration">@Resource.New_UserPlease_Register_Here</a>
+        </div>
     </div>
 </form>

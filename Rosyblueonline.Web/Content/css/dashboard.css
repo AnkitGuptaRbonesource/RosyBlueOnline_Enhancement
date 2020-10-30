@@ -1364,14 +1364,27 @@ ul.view-diam-pric {
     border-top: none;
     vertical-align: middle;
 }
+    .table > tbody > tr > td.open {
+        position: relative;
+    }
+    .table > tbody > tr > td.open .dropdown-menu-add {
+        border: 1px solid #3a4276;
+        background: #3a4276;
+    }
+        .table > tbody > tr > td.open .dropdown-menu-add > li > a {
+            color: #fff;
+        }
+        .table > tbody > tr > td.open .dropdown-menu-add > li > a:hover {
+            color: #262626;
+        }
 .table > thead > tr > th {
-	font-weight: 500;
-	font-size: 13px;
-	line-height: 24px;
-	letter-spacing: 1px;
-	text-transform: uppercase;
-	color: #828282;
-	background: #FAFAFA;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 24px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #828282;
+    background: #FAFAFA;
 }
 
 .diamond-view-border {
@@ -1992,51 +2005,6 @@ a.sele-all {
 
 /*------sunny Css Code*/
 
-
-.spblink {
-  -moz-animation-duration: 200ms;
-  -moz-animation-name: blink;
-  -moz-animation-iteration-count: infinite;
-  -moz-animation-direction: alternate;
-  -webkit-animation-duration: 400ms;
-  -webkit-animation-name: blink;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-direction: alternate;
-  animation-duration: 1000ms;
-  animation-name: blink;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-
-@-moz-keyframes blink {
-  from {
-    opacity: 1;
-  }
-
-  to {
-    opacity: 0;
-  }
-}
-
-@-webkit-keyframes blink {
-  from {
-    opacity: 1;
-  }
-
-  to {
-    opacity: 0;
-  }
-}
-
-@keyframes blink {
-  from {
-    opacity: 1;
-  }
-
-  to {
-    opacity: 0;
-  }
-}
 
 /* Thumb view CSS*/
 .search-header {

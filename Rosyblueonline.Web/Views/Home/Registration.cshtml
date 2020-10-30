@@ -10,905 +10,867 @@
 
 
 <div class="content-wrapper">
-    <section class="content">
-        <div class="row">
-
-            <div class="col-lg-8 col-md-6 col-md-offset-2">
-                @if (objToken == null)
-                {
-                    <input type="hidden" name="RegistrationType" id="hfRegistrationType" value="Self" />
-                    <div class="panel-group" id="accordion">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a>
-                                        @Resource.Registration
-                                    </a>
-                                </h4>
-                            </div>
-                            <form id="pnlRegistration" class="panel-collapse collapse in">
-                                <div class="panel-body">
-                                    <div class="row">
-                                        <div class="col-lg-12 col-md-12 col-sm-12">
-                                            <span>@Resource.Mandatory_fields</span>
-                                            <div class="introduce-bg">
-                                                <div class="company-info">
-                                                    <div class="form-horizontal">
-                                                        <div class="form-group">
-                                                            <label class="control-label">
-                                                                <label for="companyName">@Resource.Company_Name<span class="font-color-red">*</span></label>
-                                                            </label>
-                                                            <input type="text" class="form-control input-pos-alpha" name="companyName" value="" id="txtCompanyName" />
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label class="control-label">
-                                                                <label for="Address">@Resource.Address_of_Registered_Office<span class="font-color-red">*</span></label>
-                                                            </label>
-                                                            <textarea class="form-control" name="address01" value="" id="txtAddress"></textarea>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <div class="row">
-                                                                <div class="col-sm-4">
-                                                                    <label class="control-label">
-                                                                        <label for="Country">@Resource.Country</label><span class="font-color-red">*</span>
-                                                                    </label>
-                                                                    <select class="form-control" id="ddlCountry" name="countryID">
-                                                                        <option data-phoneCode="" value=""><-- Select Country --></option>
-                                                                        @{
-                                                                            for (int i = 0; i < @Model.Country.Count; i++)
-                                                                            {
-                                                                                <option data-phoneCode="@Model.Country[i].Text2" value="@Model.Country[i].Value">@Model.Country[i].Text</option>
-                                                                            }
-                                                                        }
-                                                                    </select>
-                                                                </div>
-                                                                <div class="col-sm-4">
-                                                                    <label class="control-label">
-                                                                        <label for="State">@Resource.State</label><span class="font-color-red">*</span>
-                                                                    </label>
-                                                                    <select class="form-control" id="ddlState" name="stateID">
-                                                                        <option value=""><-- Select State --></option>
-                                                                    </select>
-                                                                </div>
-                                                                <div class="col-sm-4">
-                                                                    <label class="control-label">
-                                                                        <label for="City">@Resource.City</label><span class="font-color-red">*</span>
-                                                                    </label>
-                                                                    <input type="text" class="form-control" name="cityName" value="" id="txtCity" />
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <div class="row">
-                                                                <div class="col-sm-4">
-                                                                    <label class="control-label">
-                                                                        <label for="ZIP">@Resource.ZIP_PIN<span class="font-color-red">*</span></label>
-                                                                    </label>
-                                                                    <input type="text" class="form-control" id="ZIP" name="ZIP" placeholder="" maxlength="10">
-                                                                </div>
-                                                                <div class="col-sm-4">
-                                                                    @*<label class="control-label">
-                                                                            <label>Type<span class="font-color-red">*</span></label>
-                                                                        </label><br>
-                                                                        <input type="checkbox" name="isManufacturer" value="" id="chkManufacturer" />Is Manufacturer
-                                                                        <input type="checkbox" name="isWholeSaler" value="" id="chkWholeSaler" /> Is WholeSaler
-                                                                        <input type="checkbox" name="isRetailer" value="" id="chkRetailer" />Is Retailer
-                                                                        <input type="checkbox" name="isOther" value="" id="chkOther" />Other*@
-
-                                                                    <label class="control-label">
-                                                                        <label for="Country">@Resource.Type</label><span class="font-color-red">*</span>
-                                                                    </label>
-                                                                    <select class="form-control" id="ddlRTypes" name="TypeId">
-                                                                        <option data-phoneCode="" value=""><-- Select Type --></option>
-                                                                        @{
-                                                                            for (int i = 0; i < @Model.RTypes.Count; i++)
-                                                                            {
-                                                                                <option value="@Model.RTypes[i].Value">@Model.RTypes[i].Text</option>
-                                                                            }
-                                                                        }
-                                                                    </select>
-
-
-                                                                </div>
-                                                            </div>
-
-                                                        </div>
-                                                        <div class="form-group" style="display: none;">
-                                                            <div class="row">
-                                                                <div class="col-sm-4">
-                                                                    <div id="DivOtherType" style="display: none;">
-                                                                        <input type="text" name="otherType" class="form-control" id="txtOtherType" placeholder="Write Other Type" value="" maxlength="30" size="30" />
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <div class="row">
-                                                                <div class="col-sm-4">
-                                                                    <label class="control-label">
-                                                                        <label>@Resource.Phone</label>
-                                                                    </label>
-                                                                    <div class="row">
-                                                                        <div class="col-xs-4">
-                                                                            <input type="text" name="phoneCode01" value="" class="form-control" id="txtPhoneCode" />
-                                                                        </div>
-                                                                        <div class="col-xs-8">
-                                                                            <input type="text" name="phone01" value="" class="form-control" id="txtPhone" />
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-sm-4">
-                                                                    <label class="control-label">
-                                                                        <label>@Resource.Fax</label>
-                                                                    </label>
-                                                                    <input type="text" class="form-control" id="txtFax" name="Fax" placeholder="" maxlength="12">
-                                                                </div>
-                                                                <div class="col-sm-4">
-                                                                    <label class="control-label">
-                                                                        <label>@Resource.Mobile</label>
-                                                                    </label>
-                                                                    <input type="text" class="form-control" id="txtMobile" name="Mobile" placeholder="" maxlength="12">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="form-group">
-                                                            <div class="row">
-                                                                <div class="col-sm-4">
-                                                                    <label class="control-label">
-                                                                        <label>@Resource.Date_Of_Establishment</label>
-                                                                    </label>
-                                                                    <div class="input-group input-append date">
-                                                                        <input type="text" name="dateOfEstablishment" value="" class="form-control datepicker" id="txtDateOfEstablishment" placeholder="" />
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-sm-4">
-                                                                    <label class="control-label">
-                                                                        <label>@Resource.Email_ID<span class="font-color-red">*</span></label>
-                                                                    </label>
-                                                                    <input type="text" name="emailId" value="" class="form-control" id="txtEmail" placeholder="" />
-                                                                </div>
-                                                                <div class="col-sm-4">
-                                                                    <label class="control-label">
-                                                                        <label>@Resource.Website</label>
-                                                                    </label>
-                                                                    <input type="text" name="website" value="" class="form-control" id="txtWebsite" placeholder="" />
-                                                                </div>
-                                                            </div>
-
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <div class="row">
-                                                                <div class="col-sm-6" id="otpDiv" style="display:none">
-
-                                                                    <div>
-                                                                        <label class="control-label">
-                                                                            <label>@Resource.OTP<span class="font-color-red">*</span></label>
-                                                                        </label>
-                                                                        <div class="input-group" style="width: 200px;margin-bottom: 5px;">
-                                                                            <input type="text" class="form-control" id="txtOtp" name="otp" placeholder="6 digit opt" maxlength="6" minlength="6">
-                                                                            <span class="input-group-btn">
-                                                                                <button class="btn btn-success" id="btnVerifyOtp">@Resource.Verify_OTP</button>
-                                                                            </span>
-                                                                        </div>
-
-                                                                    </div>
-                                                                    <span>@Resource.Please_enter_OTP </span>
-                                                                    <br>
-                                                                    <span>@Resource.Maximum_3_Attempt </span>
-                                                                    <br>
-                                                                    <span>@Resource.If_you_have <a href="#" id="ancResend"> @Resource.Resend</a></span>
-                                                                </div>
-                                                                <div class="col-sm-4"></div>
-                                                            </div>
-                                                            <label id="err"></label>
-                                                        </div>
-
-                                                        <div class="form-group">
-                                                            <button id="btnNext" name="submit" type="button" value="Next" class="btn btn-success pull-right">@Resource.Next</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-
-                        </div>
-                        <div id="MainPersonalDetail" class="panel panel-default" style="display: none">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a>
-                                        @Resource.Personal_Details
-                                    </a>
-                                </h4>
-                            </div>
-                            <form id="pnlPersonalDetail" class="panel-collapse collpsae"> 
-                                <div class="panel-body">
-                                    <div class="row">
-                                        <div class="col-lg-12 col-md-12 col-sm-12">
-                                            <span>@Resource.Mandatory_fields</span>
-                                            <div class="introduce-bg">
-                                                <div class="company-info">
-                                                    <div class="form-horizontal">
-                                                        <div class="form-group">
-                                                            <div class="row">
-                                                                <div class="col-sm-6">
-                                                                    <label class="control-label">
-                                                                        <label for="firstName">@Resource.First_Name<span class="font-color-red">*</span></label>
-                                                                    </label>
-                                                                    <input type="text" class="form-control" name="firstName" value="" id="txtFirstName" />
-                                                                </div>
-                                                                <div class="col-sm-6">
-                                                                    <label class="control-label">
-                                                                        <label for="lastName">@Resource.Last_Name<span class="font-color-red">*</span></label>
-                                                                    </label>
-                                                                    <input type="text" class="form-control" name="lastName" value="" id="txtLastName" />
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label class="control-label">
-                                                                <label for="accNumber">@Resource.Account_Number<span class="font-color-red">*</span></label>
-                                                            </label>
-                                                            <input type="text" class="form-control" name="accNumber" value="" id="txtAccNumber" />
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <div class="row">
-                                                                <div class="col-sm-6">
-                                                                    <label class="control-label">
-                                                                        <label for="bankName">@Resource.Bank_Name<span class="font-color-red">*</span></label>
-                                                                    </label>
-                                                                    <input type="text" class="form-control" name="bankName" value="" id="txtBankName" />
-                                                                </div>
-                                                                <div class="col-sm-6">
-                                                                    <label class="control-label">
-                                                                        <label for="branchName">@Resource.Branch_Name<span class="font-color-red">*</span></label>
-                                                                    </label>
-                                                                    <input type="text" class="form-control" name="branchName" value="" id="txtBranchName" />
-                                                                </div>
-
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label class="control-label">
-                                                                <label for="branchAddress">@Resource.Branch_Address<span class="font-color-red">*</span></label>
-                                                            </label>
-                                                            <textarea class="form-control" name="branchAddress" value="" id="txtBranchAddress"></textarea>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <div class="row">
-                                                                <div class="col-sm-4">
-                                                                    <label class="control-label">
-                                                                        <label for="tinNo">@Resource.TIN</label>
-                                                                    </label>
-                                                                    <input type="text" class="form-control" name="tinNo" value="" id="txtTinNo" />
-                                                                </div>
-                                                                <div class="col-sm-4">
-                                                                    <label class="control-label">
-                                                                        <label for="pan">@Resource.PAN_No</label>
-                                                                    </label>
-                                                                    <input type="text" class="form-control" name="pan" value="" id="txtPan" />
-                                                                </div>
-                                                                <div class="col-sm-4">
-                                                                    <label class="control-label">
-                                                                        <label for="gstNo">@Resource.GST_No</label>
-                                                                    </label>
-                                                                    <input type="text" class="form-control" name="gstNo" value="" id="txtGstNo" />
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label class="control-label">
-                                                                <label for="username">@Resource.User_Name<span class="font-color-red">*</span></label>
-                                                            </label>
-                                                            <input type="text" class="form-control" name="username" value="" id="txtUsername" />
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <div class="row">
-                                                                <div class="col-sm-6">
-                                                                    <label class="control-label">
-                                                                        <label for="password">@Resource.Password<span class="font-color-red">*</span></label>
-                                                                    </label>
-                                                                    <input type="text" class="form-control" name="password" value="" id="txtPassword" />
-                                                                </div>
-                                                                <div class="col-sm-6">
-                                                                    <label class="control-label">
-                                                                        <label for="confirmPassword">@Resource.Confirm_Password<span class="font-color-red">*</span></label>
-                                                                    </label>
-                                                                    <input type="text" class="form-control" name="confirmPassword" value="" id="txtConfirmPassword" />
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div id="DocUploadForm" class="form-group" style="border-style: ridge;padding: 15px;">
-                                                            <div class="row">
-                                                                <input type="hidden" name="DocRandomID" id="hrRandomID" value="" />
-                                                                <div class="col-sm-4">
-                                                                    @*<label class="control-label">
-                <label for="kycDocName">Select Identity<span class="font-color-red">*</span></label>
-            </label>
-            <select class="form-control" name="kycDocName" id="ddlKycDocName">
-                <option value=""><- Select Identity -></option>
-                <option value="PAN">PAN Card</option>
-                <option value="Aadhar">Aadhar Card</option>
-                <option value="Voter Id">Voter Id</option>
-                <option value="Passport">Passport</option>
-                <option value="Driving License">Driving License</option>
-            </select>*@
-
-                                                                    <label class="control-label">
-                                                                        <label for="kycDocName">@Resource.Select_Identity</label><span class="font-color-red">*</span>
-                                                                    </label>
-                                                                    <select class="form-control" id="ddlKycDocName" name="DocId">
-                                                                        <option value=""><-- Select Identity --></option>
-                                                                        @{
-                                                                            for (int i = 0; i < @Model.RIdentityType.Count; i++)
-                                                                            {
-                                                                                <option value="@Model.RIdentityType[i].Value">@Model.RIdentityType[i].Text</option>
-                                                                            }
-                                                                        }
-                                                                    </select>
-
-                                                                </div>
-                                                                <div class="col-sm-4">
-                                                                    <label class="control-label">
-                                                                        <label for="kycDocNo">@Resource.Kyc_Doc_No<span class="font-color-red">*</span></label>
-                                                                    </label>
-                                                                    <input type="text" class="form-control" name="DocNo" value="" id="txtKycDocNo" />
-                                                                </div>
-
-                                                                <div class="col-sm-4">
-                                                                    <label class="control-label">
-                                                                        <label>@Resource.Doc_Expiry_Date</label>
-                                                                    </label>
-                                                                    <div class="input-group input-append date">
-                                                                        <input type="text" name="DocExpiryDate" class="form-control  datepicker" id="txtDateOfDocExpiry" placeholder="dd-mm-yyyy" />
-                                                                    </div>
-
-
-                                                                </div>
-                                                                <div class="col-sm-4">
-                                                                    <label class="control-label">
-                                                                        <label for="uploadFile">@Resource.Upload_Id_Proof<span class="font-color-red">*</span></label>
-                                                                    </label>
-                                                                    <input type="file" name="DocFile" value="" id="fuUploadFile" />
-                                                                </div>
-                                                                <div class="col-sm-4">
-                                                                    <br />
-                                                                    <button id="btnDocUpload" name="submit" type="button" value="Upload" class="btn btn-success">@Resource.Add</button>
-                                                                </div>
-
-                                                                <div class="col-md-12" id="DocFileData" style="margin-top: 15px;display:none;">
-
-                                                                    <table class="table table-fixed dataTable no-footer" id="DocFIleInfoTable">
-                                                                        <thead class="bordertp" style="background-color: #bedce7;">
-                                                                            <tr role="row" class="table-head">
-
-                                                                                <th class="tbnew">
-                                                                                    <label>@Resource.Identity</label>
-                                                                                </th>
-                                                                                <th class="tbnew">
-                                                                                    <label>@Resource.Kyc_Doc_No</label>
-                                                                                </th>
-                                                                                <th class="tbnew">
-                                                                                    <label>@Resource.Image_Name</label>
-                                                                                </th>
-
-                                                                                <th class="tbnew">
-                                                                                    <label>@Resource.Doc_Expiry_Date</label>
-                                                                                </th>
-                                                                                <th class="tbnew">
-                                                                                    <label>@Resource.Delete</label>
-                                                                                </th>
-
-                                                                            </tr>
-                                                                        </thead>
-
-
-                                                                        <tbody id="tblBodySDocFiles">
-                                                                            <tr class="rsearchnew">
-
-                                                                                <td class="rsearchnew">
-                                                                                    <b><span id="lbKycDocId"></span></b>
-                                                                                </td>
-                                                                                <td class="rsearchnew">
-                                                                                    <b><span id="lbkycDocNo"></span></b>
-                                                                                </td>
-                                                                                <td class="rsearchnew">
-                                                                                    <b><span id="lblOrgFileName"></span></b>
-                                                                                </td>
-
-                                                                                <td class="rsearchnew">
-                                                                                    <b><span id="lbKycDocExpiryDate"></span></b>
-                                                                                </td>
-                                                                                <td class="rsearchnew">
-                                                                                    <b><span id="lblUserDocId"></span></b>
-                                                                                </td>
-
-                                                                            </tr>
-                                                                        </tbody>
-
-                                                                    </table>
-                                                                </div>
-
-
-
-                                                                </div>
-                                                            </div>
-                                                        <div class="form-group">
-                                                            <label for="Captchacode" class="control-label">
-                                                                <label for="Captchacode">@Resource.Enter_the_code<span style="color:red">*</span></label>
-                                                            </label>
-                                                            <div class="row">
-                                                                <div class="col-sm-4">
-                                                                    <img src="/Home/GetCaptchaImage" class="img-responsive" id="imgCaptcha">
-                                                                    <button id="btnReLoadCaptcha" class="btn btn-info"><i class="fa fa-refresh" aria-hidden="true"></i></button>
-                                                                </div>
-                                                                <div class="col-sm-4">
-                                                                    <input type="text" class="form-control" id="txtCaptchacode" name="Captchacode">
-                                                                </div>
-                                                                <div class="col-sm-4"></div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <button id="btnPrevious" name="submit" type="button" value="Previous" class="pull-left btn btn-success">@Resource.Previous</button>
-                                                            <button id="btnSave" name="submit" type="button" value="Save" class="btn btn-success pull-right">@Resource.Save</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
+    <div class="banner-div">
+        <div class="container">
+            @if (objToken == null)
+            {
+                <input type="hidden" name="RegistrationType" id="hfRegistrationType" value="Self" />
+                <div class="login-box clearfix">
+                    <div class="login-heading text-right clearfix">
+                        <h3 class="login-title pull-left">
+                            @Resource.Registration
+                        </h3>
+                        <span>@Resource.Mandatory_fields</span>
                     </div>
-                }
-                else
-                {
-                    <div class="panel-group" id="pnlForAlert" style="display:none"></div>
-                    <input type="hidden" name="RegistrationType" id="hfRegistrationType" value="Admin" />
-                    <div class="panel-group" id="accordion">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a>
-                                        @Resource.Registration
-                                    </a>
-                                </h4>
+                    <form id="pnlRegistration">
+                        <div class="reg-box">
+                            <div class="company-info">
+                                <div class="form-horizontal">
+                                    <div class="form-group">
+                                        <label class="control-label">
+                                            <label for="companyName">@Resource.Company_Name<span class="font-color-red">*</span></label>
+                                        </label>
+                                        <input type="text" class="form-control input-pos-alpha" name="companyName" value="" id="txtCompanyName" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">
+                                            <label for="Address">@Resource.Address_of_Registered_Office<span class="font-color-red">*</span></label>
+                                        </label>
+                                        <textarea class="form-control" name="address01" value="" id="txtAddress"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <label class="control-label">
+                                                    <label for="Country">@Resource.Country</label><span class="font-color-red">*</span>
+                                                </label>
+                                                <select class="form-control" id="ddlCountry" name="countryID">
+                                                    <option data-phoneCode="" value=""><-- Select Country --></option>
+                                                    @{
+                                                        for (int i = 0; i < @Model.Country.Count; i++)
+                                                        {
+                                                            <option data-phoneCode="@Model.Country[i].Text2" value="@Model.Country[i].Value">@Model.Country[i].Text</option>
+                                                        }
+                                                    }
+                                                </select>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <label class="control-label">
+                                                    <label for="State">@Resource.State</label><span class="font-color-red">*</span>
+                                                </label>
+                                                <select class="form-control" id="ddlState" name="stateID">
+                                                    <option value=""><-- Select State --></option>
+                                                </select>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <label class="control-label">
+                                                    <label for="City">@Resource.City</label><span class="font-color-red">*</span>
+                                                </label>
+                                                <input type="text" class="form-control" name="cityName" value="" id="txtCity" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <label class="control-label">
+                                                    <label for="ZIP">@Resource.ZIP_PIN<span class="font-color-red">*</span></label>
+                                                </label>
+                                                <input type="text" class="form-control" id="ZIP" name="ZIP" placeholder="" maxlength="10">
+                                            </div>
+                                            <div class="col-sm-4">
+                                                @*<label class="control-label">
+                                                <label>Type<span class="font-color-red">*</span></label>
+                                            </label><br>
+                                            <input type="checkbox" name="isManufacturer" value="" id="chkManufacturer" />Is Manufacturer
+                                            <input type="checkbox" name="isWholeSaler" value="" id="chkWholeSaler" /> Is WholeSaler
+                                            <input type="checkbox" name="isRetailer" value="" id="chkRetailer" />Is Retailer
+                                            <input type="checkbox" name="isOther" value="" id="chkOther" />Other*@
+
+                                                <label class="control-label">
+                                                    <label for="Country">@Resource.Type</label><span class="font-color-red">*</span>
+                                                </label>
+                                                <select class="form-control" id="ddlRTypes" name="TypeId">
+                                                    <option data-phoneCode="" value=""><-- Select Type --></option>
+                                                    @{
+                                                        for (int i = 0; i < @Model.RTypes.Count; i++)
+                                                        {
+                                                            <option value="@Model.RTypes[i].Value">@Model.RTypes[i].Text</option>
+                                                        }
+                                                    }
+                                                </select>
+
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="form-group" style="display: none;">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <div id="DivOtherType" style="display: none;">
+                                                    <input type="text" name="otherType" class="form-control" id="txtOtherType" placeholder="Write Other Type" value="" maxlength="30" size="30" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <label class="control-label">
+                                                    <label>@Resource.Phone</label>
+                                                </label>
+                                                <div class="row">
+                                                    <div class="col-xs-4">
+                                                        <input type="text" name="phoneCode01" value="" class="form-control" id="txtPhoneCode" />
+                                                    </div>
+                                                    <div class="col-xs-8">
+                                                        <input type="text" name="phone01" value="" class="form-control" id="txtPhone" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <label class="control-label">
+                                                    <label>@Resource.Fax</label>
+                                                </label>
+                                                <input type="text" class="form-control" id="txtFax" name="Fax" placeholder="" maxlength="12">
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <label class="control-label">
+                                                    <label>@Resource.Mobile</label>
+                                                </label>
+                                                <input type="text" class="form-control" id="txtMobile" name="Mobile" placeholder="" maxlength="12">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <label class="control-label">
+                                                    <label>@Resource.Date_Of_Establishment</label>
+                                                </label>
+                                                <div class="input-group input-append date">
+                                                    <input type="text" name="dateOfEstablishment" value="" class="form-control datepicker" id="txtDateOfEstablishment" placeholder="" />
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <label class="control-label">
+                                                    <label>@Resource.Email_ID<span class="font-color-red">*</span></label>
+                                                </label>
+                                                <input type="text" name="emailId" value="" class="form-control" id="txtEmail" placeholder="" />
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <label class="control-label">
+                                                    <label>@Resource.Website</label>
+                                                </label>
+                                                <input type="text" name="website" value="" class="form-control" id="txtWebsite" placeholder="" />
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-sm-6" id="otpDiv" style="display:none">
+
+                                                <div>
+                                                    <label class="control-label">
+                                                        <label>@Resource.OTP<span class="font-color-red">*</span></label>
+                                                    </label>
+                                                    <div class="input-group" style="width: 200px;margin-bottom: 5px;">
+                                                        <input type="text" class="form-control" id="txtOtp" name="otp" placeholder="6 digit opt" maxlength="6" minlength="6">
+                                                        <span class="input-group-btn">
+                                                            <button class="btn btn-success" id="btnVerifyOtp">@Resource.Verify_OTP</button>
+                                                        </span>
+                                                    </div>
+
+                                                </div>
+                                                <span>@Resource.Please_enter_OTP </span>
+                                                <br>
+                                                <span>@Resource.Maximum_3_Attempt </span>
+                                                <br>
+                                                <span>@Resource.If_you_have <a href="#" id="ancResend"> @Resource.Resend</a></span>
+                                            </div>
+                                            <div class="col-sm-4"></div>
+                                        </div>
+                                        <label id="err"></label>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <button id="btnNext" name="submit" type="button" value="Next" class="btn btn-success pull-right">@Resource.Next</button>
+                                    </div>
+                                </div>
                             </div>
-                            <form id="pnlRegistration" class="panel-collapse collapse in">
-                                <div class="panel-body">
-                                    <div class="row">
-                                        <div class="col-lg-12 col-md-12 col-sm-12">
-                                            <span>@Resource.Mandatory_fields</span>
-                                            <div class="introduce-bg">
-                                                <div class="company-info">
-                                                    <div class="form-horizontal">
-                                                        <div class="form-group">
-                                                            <label class="control-label">
-                                                                <label for="companyName">@Resource.Company_Name<span class="font-color-red">*</span></label>
-                                                            </label>
-                                                            <input type="text" class="form-control input-pos-alpha" name="companyName" value="" id="txtCompanyName" />
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label class="control-label">
-                                                                <label for="Address">@Resource.Address_of_Registered_Office<span class="font-color-red">*</span></label>
-                                                            </label>
-                                                            <textarea class="form-control" name="address01" value="" id="txtAddress"></textarea>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <div class="row">
-                                                                <div class="col-sm-4">
-                                                                    <label class="control-label">
-                                                                        <label for="Country">@Resource.Country</label><span class="font-color-red">*</span>
-                                                                    </label>
-                                                                    <select class="form-control" id="ddlCountry" name="countryID">
-                                                                        <option data-phoneCode="" value=""><-- Select Country --></option>
-                                                                        @{
-                                                                            for (int i = 0; i < @Model.Country.Count; i++)
-                                                                            {
-                                                                                <option data-phoneCode="@Model.Country[i].Text2" value="@Model.Country[i].Value">@Model.Country[i].Text</option>
-                                                                            }
-                                                                        }
-                                                                    </select>
-                                                                </div>
-                                                                <div class="col-sm-4">
-                                                                    <label class="control-label">
-                                                                        <label for="State">@Resource.State</label><span class="font-color-red">*</span>
-                                                                    </label>
-                                                                    <select class="form-control" id="ddlState" name="stateID">
-                                                                        <option value=""><-- Select State --></option>
-                                                                    </select>
-                                                                </div>
-                                                                <div class="col-sm-4">
-                                                                    <label class="control-label">
-                                                                        <label for="City">@Resource.City</label><span class="font-color-red">*</span>
-                                                                    </label>
-                                                                    <input type="text" class="form-control" name="cityName" value="" id="txtCity" />
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <div class="row">
-                                                                <div class="col-sm-4">
-                                                                    <label class="control-label">
-                                                                        <label for="ZIP">@Resource.ZIP_PIN<span class="font-color-red">*</span></label>
-                                                                    </label>
-                                                                    <input type="text" class="form-control" id="ZIP" name="ZIP" placeholder="" maxlength="10">
-                                                                </div>
-                                                                <div class="col-sm-4">
-                                                                    @*<label class="control-label">
-                                                                            <label>Type<span class="font-color-red">*</span></label>
-                                                                        </label><br>
-                                                                        <input type="checkbox" name="isManufacturer" value="" id="chkManufacturer" />Is Manufacturer
-                                                                        <input type="checkbox" name="isWholeSaler" value="" id="chkWholeSaler" /> Is WholeSaler
-                                                                        <input type="checkbox" name="isRetailer" value="" id="chkRetailer" />Is Retailer
-                                                                        <input type="checkbox" name="isOther" value="" id="chkOther" />Other*@
-
-
-                                                                    <label class="control-label">
-                                                                        <label for="Country">@Resource.Type</label><span class="font-color-red">*</span>
-                                                                    </label>
-                                                                    <select class="form-control" id="ddlRTypes" name="TypeId">
-                                                                        <option data-phoneCode="" value=""><-- Select Type --></option>
-                                                                        @{
-                                                                            for (int i = 0; i < @Model.RTypes.Count; i++)
-                                                                            {
-                                                                                <option value="@Model.RTypes[i].Value">@Model.RTypes[i].Text</option>
-                                                                            }
-                                                                        }
-                                                                    </select>
-
-
-                                                                </div>
-                                                            </div>
-
-                                                        </div>
-                                                        <div class="form-group" style="display: none;">
-                                                            <div class="row">
-                                                                <div class="col-sm-4">
-                                                                    <div id="DivOtherType" style="display: none;">
-                                                                        <input type="text" name="otherType" class="form-control" id="txtOtherType" placeholder="Write Other Type" value="" maxlength="30" size="30" />
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <div class="row">
-                                                                <div class="col-sm-4">
-                                                                    <label class="control-label">
-                                                                        <label>@Resource.Phone</label>
-                                                                    </label>
-                                                                    <div class="row">
-                                                                        <div class="col-xs-4">
-                                                                            <input type="text" name="phoneCode01" value="" class="form-control" id="txtPhoneCode" />
-                                                                        </div>
-                                                                        <div class="col-xs-8">
-                                                                            <input type="text" name="phone01" value="" class="form-control" id="txtPhone" />
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-sm-4">
-                                                                    <label class="control-label">
-                                                                        <label>@Resource.Fax</label>
-                                                                    </label>
-                                                                    <input type="text" class="form-control" id="txtFax" name="Fax" placeholder="" maxlength="12">
-                                                                </div>
-                                                                <div class="col-sm-4">
-                                                                    <label class="control-label">
-                                                                        <label>@Resource.Mobile</label>
-                                                                    </label>
-                                                                    <input type="text" class="form-control" id="txtMobile" name="Mobile" placeholder="" maxlength="12">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="form-group">
-                                                            <div class="row">
-                                                                <div class="col-sm-4">
-                                                                    <label class="control-label">
-                                                                        <label>@Resource.Date_Of_Establishment</label>
-                                                                    </label>
-                                                                    <div class="input-group input-append date">
-                                                                        <input type="text" name="dateOfEstablishment" value="" class="form-control datepicker" id="txtDateOfEstablishment" placeholder="" />
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-sm-4">
-                                                                    <label class="control-label">
-                                                                        <label>@Resource.Email_ID<span class="font-color-red">*</span></label>
-                                                                    </label>
-                                                                    <input type="text" name="emailId" value="" class="form-control" id="txtEmail" placeholder="" />
-                                                                </div>
-                                                                <div class="col-sm-4">
-                                                                    <label class="control-label">
-                                                                        <label>@Resource.Website</label>
-                                                                    </label>
-                                                                    <input type="text" name="website" value="" class="form-control" id="txtWebsite" placeholder="" />
-                                                                </div>
-                                                            </div>
-
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <div class="row">
-                                                                <div class="col-sm-6" id="otpDiv" style="display:none">
-
-                                                                    <div>
-                                                                        <label class="control-label">
-                                                                            <label>@Resource.OTP<span class="font-color-red">*</span></label>
-                                                                        </label>
-                                                                        <div class="input-group" style="width: 200px;margin-bottom: 5px;">
-                                                                            <input type="text" class="form-control" id="txtOtp" name="otp" placeholder="6 digit opt" maxlength="6" minlength="6">
-                                                                            <span class="input-group-btn">
-                                                                                <button class="btn btn-success" id="btnVerifyOtp">@Resource.Verify_OTP</button>
-                                                                            </span>
-                                                                        </div>
-
-                                                                    </div>
-                                                                    <span>@Resource.Please_enter_OTP  </span>
-                                                                    <br>
-                                                                    <span>@Resource.Maximum_3_Attempt </span>
-                                                                    <br>
-                                                                    <span>@Resource.If_you_have  <a href="#" id="ancResend"> @Resource.Resend</a></span>
-                                                                </div>
-                                                                <div class="col-sm-4"></div>
-                                                            </div>
-                                                            <label id="err"></label>
-                                                        </div>
-
-                                                        @*<div class="form-group">
-                                                                <button id="btnNext" name="submit" type="button" value="Next" class="btn btn-success pull-right">Next</button>
-                                                            </div>*@
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-
-                            <form id="pnlPersonalDetail" class="panel-collapse collapse in">
-                                <div class="panel-body">
-                                    <div class="row">
-                                        <div class="col-lg-12 col-md-12 col-sm-12">
-                                            <div class="introduce-bg">
-                                                <div class="company-info">
-                                                    <div class="form-horizontal">
-                                                        <div class="form-group">
-                                                            <div class="row">
-                                                                <div class="col-sm-6">
-                                                                    <label class="control-label">
-                                                                        <label for="firstName">@Resource.First_Name<span class="font-color-red">*</span></label>
-                                                                    </label>
-                                                                    <input type="text" class="form-control" name="firstName" value="" id="txtFirstName" />
-                                                                </div>
-                                                                <div class="col-sm-6">
-                                                                    <label class="control-label">
-                                                                        <label for="lastName">@Resource.Last_Name<span class="font-color-red">*</span></label>
-                                                                    </label>
-                                                                    <input type="text" class="form-control" name="lastName" value="" id="txtLastName" />
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label class="control-label">
-                                                                <label for="accNumber">@Resource.Account_Number<span class="font-color-red">*</span></label>
-                                                            </label>
-                                                            <input type="text" class="form-control" name="accNumber" value="" id="txtAccNumber" />
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <div class="row">
-                                                                <div class="col-sm-6">
-                                                                    <label class="control-label">
-                                                                        <label for="bankName">@Resource.Bank_Name<span class="font-color-red">*</span></label>
-                                                                    </label>
-                                                                    <input type="text" class="form-control" name="bankName" value="" id="txtBankName" />
-                                                                </div>
-                                                                <div class="col-sm-6">
-                                                                    <label class="control-label">
-                                                                        <label for="branchName">@Resource.Branch_Name<span class="font-color-red">*</span></label>
-                                                                    </label>
-                                                                    <input type="text" class="form-control" name="branchName" value="" id="txtBranchName" />
-                                                                </div>
-
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label class="control-label">
-                                                                <label for="branchAddress">@Resource.Branch_Address<span class="font-color-red">*</span></label>
-                                                            </label>
-                                                            <textarea class="form-control" name="branchAddress" value="" id="txtBranchAddress"></textarea>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <div class="row">
-                                                                <div class="col-sm-4">
-                                                                    <label class="control-label">
-                                                                        <label for="tinNo">@Resource.TIN </label>
-                                                                    </label>
-                                                                    <input type="text" class="form-control" name="tinNo" value="" id="txtTinNo" />
-                                                                </div>
-                                                                <div class="col-sm-4">
-                                                                    <label class="control-label">
-                                                                        <label for="pan">@Resource.PAN_No</label>
-                                                                    </label>
-                                                                    <input type="text" class="form-control" name="pan" value="" id="txtPan" />
-                                                                </div>
-                                                                <div class="col-sm-4">
-                                                                    <label class="control-label">
-                                                                        <label for="gstNo">@Resource.GST_No</label>
-                                                                    </label>
-                                                                    <input type="text" class="form-control" name="gstNo" value="" id="txtGstNo" />
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label class="control-label">
-                                                                <label for="username">@Resource.User_Name<span class="font-color-red">*</span></label>
-                                                            </label>
-                                                            <input type="text" class="form-control" name="username" value="" id="txtUsername" />
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <div class="row">
-                                                                <div class="col-sm-6">
-                                                                    <label class="control-label">
-                                                                        <label for="password">@Resource.Password<span class="font-color-red">*</span></label>
-                                                                    </label>
-                                                                    <input type="text" class="form-control" name="password" value="" id="txtPassword" />
-                                                                </div>
-                                                                <div class="col-sm-6">
-                                                                    <label class="control-label">
-                                                                        <label for="confirmPassword">@Resource.Confirm_Password<span class="font-color-red">*</span></label>
-                                                                    </label>
-                                                                    <input type="text" class="form-control" name="confirmPassword" value="" id="txtConfirmPassword" />
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div id="DocUploadForm" class="form-group" style="border-style: ridge;padding: 15px;">
-                                                            <div class="row">
-                                                                <input type="hidden" name="DocRandomID" id="hrRandomID" value="" />
-                                                                <div class="col-sm-4">
-                                                                    @*<label class="control-label">
-                <label for="kycDocName">Select Identity<span class="font-color-red">*</span></label>
-            </label>
-            <select class="form-control" name="kycDocName" id="ddlKycDocName">
-                <option value=""><- Select Identity -></option>
-                <option value="PAN">PAN Card</option>
-                <option value="Aadhar">Aadhar Card</option>
-                <option value="Voter Id">Voter Id</option>
-                <option value="Passport">Passport</option>
-                <option value="Driving License">Driving License</option>
-            </select>*@
-
-
-                                                                    <label class="control-label">
-                                                                        <label for="kycDocName">@Resource.Select_Identity</label><span class="font-color-red">*</span>
-                                                                    </label>
-                                                                    <select class="form-control" id="ddlKycDocName" name="kycDocName">
-                                                                        <option value=""><-- Select Identity --></option>
-                                                                        @{
-                                                                            for (int i = 0; i < @Model.RIdentityType.Count; i++)
-                                                                            {
-                                                                                <option value="@Model.RIdentityType[i].Value">@Model.RIdentityType[i].Text</option>
-                                                                            }
-                                                                        }
-                                                                    </select>
-
-
-
-                                                                </div>
-                                                                <div class="col-sm-4">
-                                                                    <label class="control-label">
-                                                                        <label for="kycDocNo">@Resource.Kyc_Doc_No<span class="font-color-red">*</span></label>
-                                                                    </label>
-                                                                    <input type="text" class="form-control" name="kycDocNo" value="" id="txtKycDocNo" />
-                                                                </div>
-
-                                                                <div class="col-sm-4">
-                                                                    <label class="control-label">
-                                                                        <label>@Resource.Doc_Expiry_Date</label>
-                                                                    </label>
-                                                                    <div class="input-group input-append date">
-                                                                        <input type="text" name="KycDocExpiryDate" class="form-control  datepicker" id="txtDateOfDocExpiry" placeholder="dd-mm-yyyy" />
-                                                                    </div>
-                                                                </div>
-
-
-                                                                <div class="col-sm-4">
-                                                                    <label class="control-label">
-                                                                        <label for="uploadFile">@Resource.Upload_Id_Proof<span class="font-color-red">*</span></label>
-                                                                    </label>
-                                                                    <input type="file" name="uploadFile" value="" id="fuUploadFile" />
-                                                                </div>
-                                                                <div class="col-sm-4">
-                                                                    <br />
-                                                                    <button id="btnDocUpload" name="submit" type="button" value="Upload" class="btn btn-success">@Resource.Add</button>
-                                                                </div>
-                                                                    <div class="col-md-12" id="DocFileData" style="margin-top: 15px;display:none;">
-
-                                                                        <table class="table table-fixed dataTable no-footer" id="DocFIleInfoTable">
-                                                                            <thead class="bordertp" style="background-color: #bedce7;">
-                                                                                <tr role="row" class="table-head">
-
-                                                                                    <th class="tbnew">
-                                                                                        <label>@Resource.Identity</label>
-                                                                                    </th>
-                                                                                    <th class="tbnew">
-                                                                                        <label>@Resource.Kyc_Doc_No</label>
-                                                                                    </th>
-                                                                                    <th class="tbnew">
-                                                                                        <label>@Resource.OrgFileName</label>
-                                                                                    </th>
-
-                                                                                    <th class="tbnew">
-                                                                                        <label>@Resource.Doc_Expiry_Date</label>
-                                                                                    </th>
-                                                                                    <th class="tbnew">
-                                                                                        <label>@Resource.Delete</label>
-                                                                                    </th>
-
-                                                                                </tr>
-                                                                            </thead>
-
-
-                                                                            <tbody id="tblBodySDocFiles">
-                                                                                <tr class="rsearchnew">
-
-                                                                                    <td class="rsearchnew">
-                                                                                        <b><span id="lbKycDocId"></span></b>
-                                                                                    </td>
-                                                                                    <td class="rsearchnew">
-                                                                                        <b><span id="lbkycDocNo"></span></b>
-                                                                                    </td>
-                                                                                    <td class="rsearchnew">
-                                                                                        <b><span id="lblOrgFileName"></span></b>
-                                                                                    </td>
-
-                                                                                    <td class="rsearchnew">
-                                                                                        <b><span id="lbKycDocExpiryDate"></span></b>
-                                                                                    </td>
-                                                                                    <td class="rsearchnew">
-                                                                                        <b><span id="lblUserDocId"></span></b>
-                                                                                    </td>
-
-                                                                                </tr>
-                                                                            </tbody>
-
-                                                                        </table>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        <div class="form-group" style="display:none">
-                                                            <label for="Captchacode" class="control-label">
-                                                                <label for="Captchacode">@Resource.Enter_the_code<span style="color:red">*</span></label>
-                                                            </label>
-                                                            <div class="row">
-                                                                <div class="col-sm-4">
-                                                                    <img src="/Home/GetCaptchaImage" class="img-responsive" id="imgCaptcha">
-                                                                    <button id="btnReLoadCaptcha" class="btn btn-info"><i class="fa fa-refresh" aria-hidden="true"></i></button>
-                                                                </div>
-                                                                <div class="col-sm-4">
-                                                                    <input type="text" class="form-control" id="txtCaptchacode" name="Captchacode" value="@Session["CaptchaImageText"]">
-                                                                </div>
-                                                                <div class="col-sm-4"></div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <button id="btnSave" name="submit" type="button" value="Save" class="btn btn-success pull-right">@Resource.Save</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
                         </div>
+                    </form>
+                </div>
+                <div class="login-box clearfix" id="MainPersonalDetail" style="display: none">
+                    <div class="login-heading text-right clearfix">
+                        <h3 class="login-title pull-left">
+                            @Resource.Personal_Details
+                        </h3>
+                        <span>@Resource.Mandatory_fields</span>
                     </div>
-                }
-            </div>
+                    <form id="pnlPersonalDetail">
+                        <div class="reg-box">
+                            <div class="company-info">
+                                <div class="form-horizontal">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <label class="control-label">
+                                                    <label for="firstName">@Resource.First_Name<span class="font-color-red">*</span></label>
+                                                </label>
+                                                <input type="text" class="form-control" name="firstName" value="" id="txtFirstName" />
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <label class="control-label">
+                                                    <label for="lastName">@Resource.Last_Name<span class="font-color-red">*</span></label>
+                                                </label>
+                                                <input type="text" class="form-control" name="lastName" value="" id="txtLastName" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">
+                                            <label for="accNumber">@Resource.Account_Number<span class="font-color-red">*</span></label>
+                                        </label>
+                                        <input type="text" class="form-control" name="accNumber" value="" id="txtAccNumber" />
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <label class="control-label">
+                                                    <label for="bankName">@Resource.Bank_Name<span class="font-color-red">*</span></label>
+                                                </label>
+                                                <input type="text" class="form-control" name="bankName" value="" id="txtBankName" />
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <label class="control-label">
+                                                    <label for="branchName">@Resource.Branch_Name<span class="font-color-red">*</span></label>
+                                                </label>
+                                                <input type="text" class="form-control" name="branchName" value="" id="txtBranchName" />
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">
+                                            <label for="branchAddress">@Resource.Branch_Address<span class="font-color-red">*</span></label>
+                                        </label>
+                                        <textarea class="form-control" name="branchAddress" value="" id="txtBranchAddress"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <label class="control-label">
+                                                    <label for="tinNo">@Resource.TIN</label>
+                                                </label>
+                                                <input type="text" class="form-control" name="tinNo" value="" id="txtTinNo" />
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <label class="control-label">
+                                                    <label for="pan">@Resource.PAN_No</label>
+                                                </label>
+                                                <input type="text" class="form-control" name="pan" value="" id="txtPan" />
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <label class="control-label">
+                                                    <label for="gstNo">@Resource.GST_No</label>
+                                                </label>
+                                                <input type="text" class="form-control" name="gstNo" value="" id="txtGstNo" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">
+                                            <label for="username">@Resource.User_Name<span class="font-color-red">*</span></label>
+                                        </label>
+                                        <input type="text" class="form-control" name="username" value="" id="txtUsername" />
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <label class="control-label">
+                                                    <label for="password">@Resource.Password<span class="font-color-red">*</span></label>
+                                                </label>
+                                                <input type="text" class="form-control" name="password" value="" id="txtPassword" />
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <label class="control-label">
+                                                    <label for="confirmPassword">@Resource.Confirm_Password<span class="font-color-red">*</span></label>
+                                                </label>
+                                                <input type="text" class="form-control" name="confirmPassword" value="" id="txtConfirmPassword" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="DocUploadForm" class="form-group" style="border-style: ridge;padding: 15px;">
+                                        <div class="row">
+                                            <input type="hidden" name="DocRandomID" id="hrRandomID" value="" />
+                                            <div class="col-sm-4">
+                                                @*<label class="control-label">
+                                <label for="kycDocName">Select Identity<span class="font-color-red">*</span></label>
+                            </label>
+                            <select class="form-control" name="kycDocName" id="ddlKycDocName">
+                                <option value=""><- Select Identity -></option>
+                                <option value="PAN">PAN Card</option>
+                                <option value="Aadhar">Aadhar Card</option>
+                                <option value="Voter Id">Voter Id</option>
+                                <option value="Passport">Passport</option>
+                                <option value="Driving License">Driving License</option>
+                            </select>*@
+
+                                                <label class="control-label">
+                                                    <label for="kycDocName">@Resource.Select_Identity</label><span class="font-color-red">*</span>
+                                                </label>
+                                                <select class="form-control" id="ddlKycDocName" name="DocId">
+                                                    <option value=""><-- Select Identity --></option>
+                                                    @{
+                                                        for (int i = 0; i < @Model.RIdentityType.Count; i++)
+                                                        {
+                                                            <option value="@Model.RIdentityType[i].Value">@Model.RIdentityType[i].Text</option>
+                                                        }
+                                                    }
+                                                </select>
+
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <label class="control-label">
+                                                    <label for="kycDocNo">@Resource.Kyc_Doc_No<span class="font-color-red">*</span></label>
+                                                </label>
+                                                <input type="text" class="form-control" name="DocNo" value="" id="txtKycDocNo" />
+                                            </div>
+
+                                            <div class="col-sm-4">
+                                                <label class="control-label">
+                                                    <label>@Resource.Doc_Expiry_Date</label>
+                                                </label>
+                                                <div class="input-group input-append date">
+                                                    <input type="text" name="DocExpiryDate" class="form-control  datepicker" id="txtDateOfDocExpiry" placeholder="dd-mm-yyyy" />
+                                                </div>
+
+
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <label class="control-label">
+                                                    <label for="uploadFile">@Resource.Upload_Id_Proof<span class="font-color-red">*</span></label>
+                                                </label>
+                                                <input type="file" name="DocFile" value="" id="fuUploadFile" />
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <br />
+                                                <button id="btnDocUpload" name="submit" type="button" value="Upload" class="btn btn-success">@Resource.Add</button>
+                                            </div>
+
+                                            <div class="col-md-12" id="DocFileData" style="margin-top: 15px;display:none;">
+
+                                                <table class="table table-fixed dataTable no-footer" id="DocFIleInfoTable">
+                                                    <thead class="bordertp" style="background-color: #bedce7;">
+                                                        <tr role="row" class="table-head">
+
+                                                            <th class="tbnew">
+                                                                <label>@Resource.Identity</label>
+                                                            </th>
+                                                            <th class="tbnew">
+                                                                <label>@Resource.Kyc_Doc_No</label>
+                                                            </th>
+                                                            <th class="tbnew">
+                                                                <label>@Resource.Image_Name</label>
+                                                            </th>
+
+                                                            <th class="tbnew">
+                                                                <label>@Resource.Doc_Expiry_Date</label>
+                                                            </th>
+                                                            <th class="tbnew">
+                                                                <label>@Resource.Delete</label>
+                                                            </th>
+
+                                                        </tr>
+                                                    </thead>
+
+
+                                                    <tbody id="tblBodySDocFiles">
+                                                        <tr class="rsearchnew">
+
+                                                            <td class="rsearchnew">
+                                                                <b><span id="lbKycDocId"></span></b>
+                                                            </td>
+                                                            <td class="rsearchnew">
+                                                                <b><span id="lbkycDocNo"></span></b>
+                                                            </td>
+                                                            <td class="rsearchnew">
+                                                                <b><span id="lblOrgFileName"></span></b>
+                                                            </td>
+
+                                                            <td class="rsearchnew">
+                                                                <b><span id="lbKycDocExpiryDate"></span></b>
+                                                            </td>
+                                                            <td class="rsearchnew">
+                                                                <b><span id="lblUserDocId"></span></b>
+                                                            </td>
+
+                                                        </tr>
+                                                    </tbody>
+
+                                                </table>
+                                            </div>
+
+
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="Captchacode" class="control-label">
+                                            <label for="Captchacode">@Resource.Enter_the_code<span style="color:red">*</span></label>
+                                        </label>
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <img src="/Home/GetCaptchaImage" class="img-responsive" id="imgCaptcha">
+                                                <button id="btnReLoadCaptcha" class="btn btn-info"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="txtCaptchacode" name="Captchacode">
+                                            </div>
+                                            <div class="col-sm-4"></div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <button id="btnPrevious" name="submit" type="button" value="Previous" class="pull-left btn btn-success">@Resource.Previous</button>
+                                        <button id="btnSave" name="submit" type="button" value="Save" class="btn btn-success pull-right">@Resource.Save</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            }
+            else
+            {
+                <div class="panel-group" id="pnlForAlert" style="display:none"></div>
+                <input type="hidden" name="RegistrationType" id="hfRegistrationType" value="Admin" />
+                <div class="login-box clearfix">
+                    <div class="login-heading text-right clearfix">
+                        <h3 class="login-title pull-left">
+                            @Resource.Registration
+                        </h3>
+                        <span>@Resource.Mandatory_fields</span>
+                    </div>
+                    <form id="pnlRegistration">
+                        <div class="reg-box">
+                            <div class="company-info">
+                                <div class="form-horizontal">
+                                    <div class="form-group">
+                                        <label class="control-label">
+                                            <label for="companyName">@Resource.Company_Name<span class="font-color-red">*</span></label>
+                                        </label>
+                                        <input type="text" class="form-control input-pos-alpha" name="companyName" value="" id="txtCompanyName" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">
+                                            <label for="Address">@Resource.Address_of_Registered_Office<span class="font-color-red">*</span></label>
+                                        </label>
+                                        <textarea class="form-control" name="address01" value="" id="txtAddress"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <label class="control-label">
+                                                    <label for="Country">@Resource.Country</label><span class="font-color-red">*</span>
+                                                </label>
+                                                <select class="form-control" id="ddlCountry" name="countryID">
+                                                    <option data-phoneCode="" value=""><-- Select Country --></option>
+                                                    @{
+                                                        for (int i = 0; i < @Model.Country.Count; i++)
+                                                        {
+                                                            <option data-phoneCode="@Model.Country[i].Text2" value="@Model.Country[i].Value">@Model.Country[i].Text</option>
+                                                        }
+                                                    }
+                                                </select>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <label class="control-label">
+                                                    <label for="State">@Resource.State</label><span class="font-color-red">*</span>
+                                                </label>
+                                                <select class="form-control" id="ddlState" name="stateID">
+                                                    <option value=""><-- Select State --></option>
+                                                </select>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <label class="control-label">
+                                                    <label for="City">@Resource.City</label><span class="font-color-red">*</span>
+                                                </label>
+                                                <input type="text" class="form-control" name="cityName" value="" id="txtCity" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <label class="control-label">
+                                                    <label for="ZIP">@Resource.ZIP_PIN<span class="font-color-red">*</span></label>
+                                                </label>
+                                                <input type="text" class="form-control" id="ZIP" name="ZIP" placeholder="" maxlength="10">
+                                            </div>
+                                            <div class="col-sm-4">
+                                                @*<label class="control-label">
+                                        <label>Type<span class="font-color-red">*</span></label>
+                                    </label><br>
+                                    <input type="checkbox" name="isManufacturer" value="" id="chkManufacturer" />Is Manufacturer
+                                    <input type="checkbox" name="isWholeSaler" value="" id="chkWholeSaler" /> Is WholeSaler
+                                    <input type="checkbox" name="isRetailer" value="" id="chkRetailer" />Is Retailer
+                                    <input type="checkbox" name="isOther" value="" id="chkOther" />Other*@
+
+
+                                                <label class="control-label">
+                                                    <label for="Country">@Resource.Type</label><span class="font-color-red">*</span>
+                                                </label>
+                                                <select class="form-control" id="ddlRTypes" name="TypeId">
+                                                    <option data-phoneCode="" value=""><-- Select Type --></option>
+                                                    @{
+                                                        for (int i = 0; i < @Model.RTypes.Count; i++)
+                                                        {
+                                                            <option value="@Model.RTypes[i].Value">@Model.RTypes[i].Text</option>
+                                                        }
+                                                    }
+                                                </select>
+
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="form-group" style="display: none;">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <div id="DivOtherType" style="display: none;">
+                                                    <input type="text" name="otherType" class="form-control" id="txtOtherType" placeholder="Write Other Type" value="" maxlength="30" size="30" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <label class="control-label">
+                                                    <label>@Resource.Phone</label>
+                                                </label>
+                                                <div class="row">
+                                                    <div class="col-xs-4">
+                                                        <input type="text" name="phoneCode01" value="" class="form-control" id="txtPhoneCode" />
+                                                    </div>
+                                                    <div class="col-xs-8">
+                                                        <input type="text" name="phone01" value="" class="form-control" id="txtPhone" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <label class="control-label">
+                                                    <label>@Resource.Fax</label>
+                                                </label>
+                                                <input type="text" class="form-control" id="txtFax" name="Fax" placeholder="" maxlength="12">
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <label class="control-label">
+                                                    <label>@Resource.Mobile</label>
+                                                </label>
+                                                <input type="text" class="form-control" id="txtMobile" name="Mobile" placeholder="" maxlength="12">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <label class="control-label">
+                                                    <label>@Resource.Date_Of_Establishment</label>
+                                                </label>
+                                                <div class="input-group input-append date">
+                                                    <input type="text" name="dateOfEstablishment" value="" class="form-control datepicker" id="txtDateOfEstablishment" placeholder="" />
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <label class="control-label">
+                                                    <label>@Resource.Email_ID<span class="font-color-red">*</span></label>
+                                                </label>
+                                                <input type="text" name="emailId" value="" class="form-control" id="txtEmail" placeholder="" />
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <label class="control-label">
+                                                    <label>@Resource.Website</label>
+                                                </label>
+                                                <input type="text" name="website" value="" class="form-control" id="txtWebsite" placeholder="" />
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-sm-6" id="otpDiv" style="display:none">
+
+                                                <div>
+                                                    <label class="control-label">
+                                                        <label>@Resource.OTP<span class="font-color-red">*</span></label>
+                                                    </label>
+                                                    <div class="input-group" style="width: 200px;margin-bottom: 5px;">
+                                                        <input type="text" class="form-control" id="txtOtp" name="otp" placeholder="6 digit opt" maxlength="6" minlength="6">
+                                                        <span class="input-group-btn">
+                                                            <button class="btn btn-success" id="btnVerifyOtp">@Resource.Verify_OTP</button>
+                                                        </span>
+                                                    </div>
+
+                                                </div>
+                                                <span>@Resource.Please_enter_OTP  </span>
+                                                <br>
+                                                <span>@Resource.Maximum_3_Attempt </span>
+                                                <br>
+                                                <span>@Resource.If_you_have  <a href="#" id="ancResend"> @Resource.Resend</a></span>
+                                            </div>
+                                            <div class="col-sm-4"></div>
+                                        </div>
+                                        <label id="err"></label>
+                                    </div>
+
+                                    @*<div class="form-group">
+                            <button id="btnNext" name="submit" type="button" value="Next" class="btn btn-success pull-right">Next</button>
+                        </div>*@
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                    <form id="pnlPersonalDetail">
+                        <div class="reg-box">
+                            <div class="company-info">
+                                <div class="form-horizontal">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <label class="control-label">
+                                                    <label for="firstName">@Resource.First_Name<span class="font-color-red">*</span></label>
+                                                </label>
+                                                <input type="text" class="form-control" name="firstName" value="" id="txtFirstName" />
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <label class="control-label">
+                                                    <label for="lastName">@Resource.Last_Name<span class="font-color-red">*</span></label>
+                                                </label>
+                                                <input type="text" class="form-control" name="lastName" value="" id="txtLastName" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">
+                                            <label for="accNumber">@Resource.Account_Number<span class="font-color-red">*</span></label>
+                                        </label>
+                                        <input type="text" class="form-control" name="accNumber" value="" id="txtAccNumber" />
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <label class="control-label">
+                                                    <label for="bankName">@Resource.Bank_Name<span class="font-color-red">*</span></label>
+                                                </label>
+                                                <input type="text" class="form-control" name="bankName" value="" id="txtBankName" />
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <label class="control-label">
+                                                    <label for="branchName">@Resource.Branch_Name<span class="font-color-red">*</span></label>
+                                                </label>
+                                                <input type="text" class="form-control" name="branchName" value="" id="txtBranchName" />
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">
+                                            <label for="branchAddress">@Resource.Branch_Address<span class="font-color-red">*</span></label>
+                                        </label>
+                                        <textarea class="form-control" name="branchAddress" value="" id="txtBranchAddress"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <label class="control-label">
+                                                    <label for="tinNo">@Resource.TIN </label>
+                                                </label>
+                                                <input type="text" class="form-control" name="tinNo" value="" id="txtTinNo" />
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <label class="control-label">
+                                                    <label for="pan">@Resource.PAN_No</label>
+                                                </label>
+                                                <input type="text" class="form-control" name="pan" value="" id="txtPan" />
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <label class="control-label">
+                                                    <label for="gstNo">@Resource.GST_No</label>
+                                                </label>
+                                                <input type="text" class="form-control" name="gstNo" value="" id="txtGstNo" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">
+                                            <label for="username">@Resource.User_Name<span class="font-color-red">*</span></label>
+                                        </label>
+                                        <input type="text" class="form-control" name="username" value="" id="txtUsername" />
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <label class="control-label">
+                                                    <label for="password">@Resource.Password<span class="font-color-red">*</span></label>
+                                                </label>
+                                                <input type="text" class="form-control" name="password" value="" id="txtPassword" />
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <label class="control-label">
+                                                    <label for="confirmPassword">@Resource.Confirm_Password<span class="font-color-red">*</span></label>
+                                                </label>
+                                                <input type="text" class="form-control" name="confirmPassword" value="" id="txtConfirmPassword" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="DocUploadForm" class="form-group" style="border-style: ridge;padding: 15px;">
+                                        <div class="row">
+                                            <input type="hidden" name="DocRandomID" id="hrRandomID" value="" />
+                                            <div class="col-sm-4">
+                                                @*<label class="control-label">
+                                <label for="kycDocName">Select Identity<span class="font-color-red">*</span></label>
+                            </label>
+                            <select class="form-control" name="kycDocName" id="ddlKycDocName">
+                                <option value=""><- Select Identity -></option>
+                                <option value="PAN">PAN Card</option>
+                                <option value="Aadhar">Aadhar Card</option>
+                                <option value="Voter Id">Voter Id</option>
+                                <option value="Passport">Passport</option>
+                                <option value="Driving License">Driving License</option>
+                            </select>*@
+
+
+                                                <label class="control-label">
+                                                    <label for="kycDocName">@Resource.Select_Identity</label><span class="font-color-red">*</span>
+                                                </label>
+                                                <select class="form-control" id="ddlKycDocName" name="kycDocName">
+                                                    <option value=""><-- Select Identity --></option>
+                                                    @{
+                                                        for (int i = 0; i < @Model.RIdentityType.Count; i++)
+                                                        {
+                                                            <option value="@Model.RIdentityType[i].Value">@Model.RIdentityType[i].Text</option>
+                                                        }
+                                                    }
+                                                </select>
+
+
+
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <label class="control-label">
+                                                    <label for="kycDocNo">@Resource.Kyc_Doc_No<span class="font-color-red">*</span></label>
+                                                </label>
+                                                <input type="text" class="form-control" name="kycDocNo" value="" id="txtKycDocNo" />
+                                            </div>
+
+                                            <div class="col-sm-4">
+                                                <label class="control-label">
+                                                    <label>@Resource.Doc_Expiry_Date</label>
+                                                </label>
+                                                <div class="input-group input-append date">
+                                                    <input type="text" name="KycDocExpiryDate" class="form-control  datepicker" id="txtDateOfDocExpiry" placeholder="dd-mm-yyyy" />
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-sm-4">
+                                                <label class="control-label">
+                                                    <label for="uploadFile">@Resource.Upload_Id_Proof<span class="font-color-red">*</span></label>
+                                                </label>
+                                                <input type="file" name="uploadFile" value="" id="fuUploadFile" />
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <br />
+                                                <button id="btnDocUpload" name="submit" type="button" value="Upload" class="btn btn-success">@Resource.Add</button>
+                                            </div>
+                                            <div class="col-md-12" id="DocFileData" style="margin-top: 15px;display:none;">
+
+                                                <table class="table table-fixed dataTable no-footer" id="DocFIleInfoTable">
+                                                    <thead class="bordertp" style="background-color: #bedce7;">
+                                                        <tr role="row" class="table-head">
+
+                                                            <th class="tbnew">
+                                                                <label>@Resource.Identity</label>
+                                                            </th>
+                                                            <th class="tbnew">
+                                                                <label>@Resource.Kyc_Doc_No</label>
+                                                            </th>
+                                                            <th class="tbnew">
+                                                                <label>@Resource.OrgFileName</label>
+                                                            </th>
+
+                                                            <th class="tbnew">
+                                                                <label>@Resource.Doc_Expiry_Date</label>
+                                                            </th>
+                                                            <th class="tbnew">
+                                                                <label>@Resource.Delete</label>
+                                                            </th>
+
+                                                        </tr>
+                                                    </thead>
+
+
+                                                    <tbody id="tblBodySDocFiles">
+                                                        <tr class="rsearchnew">
+
+                                                            <td class="rsearchnew">
+                                                                <b><span id="lbKycDocId"></span></b>
+                                                            </td>
+                                                            <td class="rsearchnew">
+                                                                <b><span id="lbkycDocNo"></span></b>
+                                                            </td>
+                                                            <td class="rsearchnew">
+                                                                <b><span id="lblOrgFileName"></span></b>
+                                                            </td>
+
+                                                            <td class="rsearchnew">
+                                                                <b><span id="lbKycDocExpiryDate"></span></b>
+                                                            </td>
+                                                            <td class="rsearchnew">
+                                                                <b><span id="lblUserDocId"></span></b>
+                                                            </td>
+
+                                                        </tr>
+                                                    </tbody>
+
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group" style="display:none">
+                                        <label for="Captchacode" class="control-label">
+                                            <label for="Captchacode">@Resource.Enter_the_code<span style="color:red">*</span></label>
+                                        </label>
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <img src="/Home/GetCaptchaImage" class="img-responsive" id="imgCaptcha">
+                                                <button id="btnReLoadCaptcha" class="btn btn-info"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="txtCaptchacode" name="Captchacode" value="@Session["CaptchaImageText"]">
+                                            </div>
+                                            <div class="col-sm-4"></div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <button id="btnSave" name="submit" type="button" value="Save" class="btn btn-success pull-right">@Resource.Save</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            }
         </div>
-    </section>
+    </div>
 </div>
 
 @section script {

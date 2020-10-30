@@ -36,7 +36,7 @@
                 if (data.Result.length > 0) {
                     $.each(data.Result, function (i, item) { 
 
-                        var newListItem = '<div class="order-data">' +
+                        var newListItem = '<div class="order-data-row">' +
                             '<a  class="order-data" target="_blank" href="/order/info/' + item.orderDetailsId + '"><div class="order-cnt">' +
                             '<h5>#' + item.orderDetailsId + '</h5>' +
                             '<p> ' + item.firstName + ' ' + item.lastName + '<span>(' + item.companyName + ')</span></p>' +
