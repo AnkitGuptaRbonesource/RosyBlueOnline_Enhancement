@@ -337,29 +337,26 @@ var SearchFilter = function () {
     obj.GetDataFromGiaApi = function (ip, pData) {
 
         var data = [];
-        data.push(pData);
-        //for (var i = 0; i < pData.length; i++) {
-        //    data.push({
-        //        reportNo: pData[i].Certificate,
-        //        reportWeight: pData[i].Weight,
-        //    });
-        //}
-        var jStr = JSON.stringify({
-            header: {
-                ipAddress: ip,
-            },
-            body: {
-                reportDtls: {
-                    reportDtl: data
-                }
+        data.push(pData); 
+
+        var jStr = JSON.stringify({ 
+            body: { 
+                "query": " query ReportQuery($ReportNumber: String!) {     getReport(report_number: $ReportNumber){ report_number  report_date   report_type results { __typename  ... on DiamondGradingReportResults { shape_and_cutting_style  measurements  carat_weight  color_grade color_origin color_distribution  clarity_grade cut_grade  polish  symmetry  fluorescence  clarity_characteristics  inscriptions   report_comments      proportions {  depth_pct   table_pct  crown_angle  crown_height   pavilion_angle  pavilion_depth  star_length lower_half  girdle culet        }  }   }    quota {   remaining   }   } }",
+                "variables": { "ReportNumber": "2141438171" }
+            
             }
         });
         return $.ajax({
             type: 'POST',
-            url: 'https://labws.gia.edu/ReportCheck/processrequest.do',
+            url: 'https://api.reportresults.gia.edu',
             headers: {
                 "Accept": "application/json",
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                "Authorization": "68bd3cfb-f113-41e1-896b-fb98527f8742",
+                 "Access-Control-Allow-Origin": "*",
+                //"Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTION",
+                "Access-Control-Allow-Headers": "*"
+               
             },
             data: jStr
         });
