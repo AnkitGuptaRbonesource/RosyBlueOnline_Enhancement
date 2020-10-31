@@ -3085,7 +3085,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to New User?Please Register Here.
+        ///   Looks up a localized string similar to New User? Please Register Here.
         /// </summary>
         public static string New_UserPlease_Register_Here {
             get {

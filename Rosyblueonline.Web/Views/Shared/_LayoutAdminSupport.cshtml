@@ -27,16 +27,16 @@
     @Styles.Render("~/Content/Admin/Css")
     @RenderSection("header")
 </head>
-<body class="sidebar-mini skin-black-light">
+<body class="sidebar-mini skin-black-light sidebar-collapse">
     <div class="wrapper">
         <header class="main-header">
             <nav class="navbar navbar-static-top">
                 @*<a href="#" class="logo">
-                <img src="/Content/img/newlogo.png">
-            </a>
-            <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-                <span class="sr-only"> Toggle navigation</span>
-            </a>*@
+                        <img src="/Content/img/newlogo.png">
+                    </a>
+                    <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                        <span class="sr-only"> Toggle navigation</span>
+                    </a>*@
                 <div class="searchbar">
                     <input id="LotCertSearchInput" type="text" class="header-search" placeholder="Enter Lot/Cert. number to quick search ...." />
                     <div class="inseach" id="SearchId">
@@ -60,10 +60,10 @@
                 </div>
                 <div class="navbar-custom-menu">
                     @*<ul class="nav navbar-nav">
-                    <li>
-                        <a href="#">Select Language</a>
-                    </li>
-                </ul>*@
+                            <li>
+                                <a href="#">Select Language</a>
+                            </li>
+                        </ul>*@
                     <ul class="nav navbar-nav">
                         <li class="dropdown notifications-menu">
                             <a href="/Order/List" class="dropdown-toggle userorder" data-toggle="dropdown">
@@ -205,11 +205,11 @@
 
                 <ul class="sidebar-menu sidebar-nav">
                     @*<li class="treeview">
-                    <a href="/Dashboard/AdminSupport">
-                        <i class="fa fa-dashboard"></i>
-                        <span>Dashboard</span>
-                    </a>
-                </li>*@
+                <a href="/Dashboard/AdminSupport">
+                    <i class="fa fa-dashboard"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>*@
                     @if (objMenuAccess.Dashboard == 1)
                     {
                         <li class="treeview">
@@ -253,71 +253,71 @@
                     }
                     @if (objMenuAccess.Inventory == 1)
                     {
-                <li class="treeview">
-                    <a href="#">
-                        <div class="img-icon"><img src="/Content/img/Inventory.png" /></div>
-                        <span>@Resource.Inventory</span>
-                        <span class="pull-right-container">
-                            <i class="fa fa-angle-left pull-right"></i>
-                        </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        @if (objMenuAccess.StockSummary == 1)
-                        {
-                            <li><a href="/Dashboard/StockSummary"><div class="img-icon"><i class="fa fa-diamond"></i></div> @Resource.Stock_Summary</a></li>
-                        }
-                        @if (objMenuAccess.InventoryUpload == 1)
-                        {
-                            <li><a href="/Inventory/upload"><div class="img-icon"><i class="fa fa-eject"></i></div> @Resource.Inventory_Upload</a></li>
-                        }
-                        @if (objMenuAccess.InventoryDownload == 1)
-                        {
-                            <li><a href="/Inventory/downloads"><div class="img-icon"><i class="fa fa-eject"></i></div> @Resource.Inventory_Download</a></li>
-                        }
-                        @if (objMenuAccess.UploadHistory == 1)
-                        {
-                            <li><a href="/Inventory/UploadHistory"><div class="img-icon"><i class="fa fa-upload"></i></div> @Resource.Upload_History</a></li>
-                        }
-                        @if (objMenuAccess.StoneStatus == 1)
-                        {
-                            <li><a href="/Inventory/stonestatus"><div class="img-icon"><i class="fa fa-diamond"></i></div> @Resource.Stone_Status</a></li>
-                        }
-                        @if (objMenuAccess.StoneHistory == 1)
-                        {
-                            <li><a href="/Inventory/stonehistory"><div class="img-icon"><i class="fa fa-diamond"></i></div> @Resource.Stone_History</a></li>
-                        }
-                        @if (objMenuAccess.GIAReports == 1)
-                        {
-                            <li><a href="/Inventory/gia"><div class="img-icon"><i class="fa fa-plus-square"></i></div> @Resource.GIA_Reports</a></li>
-                        }
-                    </ul>
-                </li>
+                        <li class="treeview">
+                            <a href="#">
+                                <div class="img-icon"><img src="/Content/img/Inventory.png" /></div>
+                                <span>@Resource.Inventory</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                @if (objMenuAccess.StockSummary == 1)
+                                {
+                                    <li><a href="/Dashboard/StockSummary"><div class="img-icon"><i class="fa fa-diamond"></i></div> @Resource.Stock_Summary</a></li>
+                                }
+                                @if (objMenuAccess.InventoryUpload == 1)
+                                {
+                                    <li><a href="/Inventory/upload"><div class="img-icon"><i class="fa fa-eject"></i></div> @Resource.Inventory_Upload</a></li>
+                                }
+                                @if (objMenuAccess.InventoryDownload == 1)
+                                {
+                                    <li><a href="/Inventory/downloads"><div class="img-icon"><i class="fa fa-eject"></i></div> @Resource.Inventory_Download</a></li>
+                                }
+                                @if (objMenuAccess.UploadHistory == 1)
+                                {
+                                    <li><a href="/Inventory/UploadHistory"><div class="img-icon"><i class="fa fa-upload"></i></div> @Resource.Upload_History</a></li>
+                                }
+                                @if (objMenuAccess.StoneStatus == 1)
+                                {
+                                    <li><a href="/Inventory/stonestatus"><div class="img-icon"><i class="fa fa-diamond"></i></div> @Resource.Stone_Status</a></li>
+                                }
+                                @if (objMenuAccess.StoneHistory == 1)
+                                {
+                                    <li><a href="/Inventory/stonehistory"><div class="img-icon"><i class="fa fa-diamond"></i></div> @Resource.Stone_History</a></li>
+                                }
+                                @if (objMenuAccess.GIAReports == 1)
+                                {
+                                    <li><a href="/Inventory/gia"><div class="img-icon"><i class="fa fa-plus-square"></i></div> @Resource.GIA_Reports</a></li>
+                                }
+                            </ul>
+                        </li>
                     }
                     @if (objMenuAccess.Marketing == 1)
                     {
-                    <li class="treeview">
-                        <a href="#">
-                            <div class="img-icon"><img src="/Content/img/Marketing.png" /></div>
-                            <span>@Resource.Marketing</span>
-                            <span class="pull-right-container">
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </span>
-                        </a>
-                        <ul class="treeview-menu">
-                            @if (objMenuAccess.BlueNile == 1)
-                            {
-                                <li><a href="/Marketing/BlueNile"><div class="img-icon"><i class="fa fa-diamond"></i></div> @Resource.Blue_Nile</a></li>
-                            }
-                            @if (objMenuAccess.JamesAllen == 1)
-                            {
-                                <li><a href="/Marketing/JamesAllen"><div class="img-icon"><i class="fa fa-diamond"></i></div> @Resource.James_Allen</a></li>
-                            }
-                            @if (objMenuAccess.JamesAllenHK == 1)
-                            {
-                                <li><a href="/Marketing/JamesAllenHK"><div class="img-icon"><i class="fa fa-diamond"></i></div> @Resource.James_Allen_HK</a></li>
-                            }
-                        </ul>
-                </li>
+                        <li class="treeview">
+                            <a href="#">
+                                <div class="img-icon"><img src="/Content/img/Marketing.png" /></div>
+                                <span>@Resource.Marketing</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                @if (objMenuAccess.BlueNile == 1)
+                                {
+                                    <li><a href="/Marketing/BlueNile"><div class="img-icon"><i class="fa fa-diamond"></i></div> @Resource.Blue_Nile</a></li>
+                                }
+                                @if (objMenuAccess.JamesAllen == 1)
+                                {
+                                    <li><a href="/Marketing/JamesAllen"><div class="img-icon"><i class="fa fa-diamond"></i></div> @Resource.James_Allen</a></li>
+                                }
+                                @if (objMenuAccess.JamesAllenHK == 1)
+                                {
+                                    <li><a href="/Marketing/JamesAllenHK"><div class="img-icon"><i class="fa fa-diamond"></i></div> @Resource.James_Allen_HK</a></li>
+                                }
+                            </ul>
+                        </li>
                     }
                     @if (objMenuAccess.Utility == 1)
                     {
@@ -353,8 +353,18 @@
                             <li><a href="/User/ChangePassword"><div class="img-icon"><i class="fa fa-lock"></i></div> @Resource.Change_Password</a></li>
                             <li><a href="/User"><div class="img-icon"><i class="fa fa-user-plus"></i></div> @Resource.Add_Customer</a></li>
                         </ul>
-                </li>
+                    </li>
                 </ul>
+                <div class="sign-bottom">
+                    <ul class="sidebar-menu">
+                        <li class="signout">
+                            <a href="/Home/LogOut">
+                                <div class="img-icon"><img src="/Content/img/signout.png" /></div>
+                                <span>Sign out</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </section>
         </aside>
     </div>
@@ -362,6 +372,52 @@
     <script type="text/javascript" src="/Scripts/custom/myApp.js"></script>
     <script type="text/javascript" src="/Scripts/custom/uiApp.js"></script>
     <script type="text/javascript" src="/Scripts/custom/Service/ServiceMethods.js"></script>
+    <script>
+        $(".main-sidebar").hover(
+            function () {
+                $("body").removeClass("sidebar-collapse");
+            },
+            function () {
+                $("body").addClass("sidebar-collapse");
+            }
+        );
+
+        $(document).ready(function () {
+            $(".csv").click(function () {
+                $(".searchbar").toggleClass("searchbar2");
+            });
+
+            $('.dropdown-menu').click((event) => {
+                if (event.target.tagName != "A") {
+                    event.stopPropagation();
+                }
+            })
+
+        });
+        $(".menutoggle a").click(function () {
+            $(".main-sidebar").addClass("sideactive");
+        });
+        $(".close-btn a").click(function () {
+            $(".main-sidebar").removeClass("sideactive");
+        });
+
+        $(document).mouseup(function (e) {
+            var container = $(".searchbar2 .dropbox");
+
+            // if the target of the click isn't the container nor a descendant of the container
+            if (!container.is(e.target) && container.has(e.target).length === 0) {
+                $(".searchbar").removeClass("searchbar2");
+
+            }
+        });
+        $(document).ready(function () {
+            $(".key-title").click(function () {
+                $(".key-input-box").toggleClass("active");
+            });
+        });
+
+
+    </script>
     @RenderSection("script", false)
 
 
@@ -379,6 +435,24 @@
                 }, function (error) {
 
                 });
+            });
+            $("#pending-order").click(function () {
+                $(".tab-content").find("#menu1").toggleClass("active in");
+                $(".tab-content").find("#home").toggleClass("active in");
+                $(".notifications-menu").addClass("open");
+                $(this).parent("li").addClass("active");
+                $("#view-order").parent("li").removeClass("active");
+                return false;
+
+            });
+
+            $("#view-order").click(function () {
+                $(".tab-content").find("#menu1").toggleClass("active in");
+                $(".tab-content").find("#home").toggleClass("active in");
+                $(".notifications-menu").addClass("open");
+                $(this).parent("li").addClass("active");
+                $("#pending-order").parent("li").removeClass("active");
+                return false;
             });
         });
 
