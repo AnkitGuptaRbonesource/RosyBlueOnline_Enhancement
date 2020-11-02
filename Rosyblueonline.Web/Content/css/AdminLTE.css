@@ -20,6 +20,8 @@ body {
 .ck-inline .checkbox-inline input[type=checkbox] {
     margin: 3px 0 0 -18px !important;
 }
+img, iframe {
+    max-width: 100%;
 }
 /* Layout */
 .wrapper {
@@ -3589,11 +3591,9 @@ table.text-center th {
   margin-bottom: 15px;
 }
 .thumb-result .post {
-	border-bottom: 0 none;
-	padding-bottom:0;
-}
-.thumb-result .post .diamond iframe {
-	max-width: 100%;
+    border-bottom: 0 none;
+    padding-bottom: 0;
+    width: 260px !important
 }
 /*
  * Social Buttons for Bootstrap

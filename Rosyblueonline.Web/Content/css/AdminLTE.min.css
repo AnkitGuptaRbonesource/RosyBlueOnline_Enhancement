@@ -533,7 +533,7 @@
 		overflow: hidden;
 	}
 	.nav-logo ul {
-		margin: 14px 0;
+		margin: 18px 0;
 		padding-left: 20px;
 	}
 	.sidebar-nav {
@@ -819,18 +819,18 @@
 		box-shadow: 0px 20px 100px rgba(58, 66, 118, 0.05);
 		border-radius: 10px;
 	}
-	 input[type='checkbox']:after {
-		line-height: 1.5em;
-		content: '';
-		display: inline-block;
-		width: 18px;
-		height: 18px;
-		margin-top: -2px;
-		margin-left: -4px;
-		border: 1px solid #E8E9EC;
-		border-radius: 5px;
-		background: rgb(255 255 255);
-	}
+input[type='checkbox']:after {
+	line-height: 1.5em;
+	content: '';
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	margin-top: -2px;
+	margin-left: -4px;
+	border: 1px solid #afafaf;
+	border-radius: 5px;
+	background: rgb(255 255 255);
+}
 	 input[type='checkbox']:checked:after {
 		background-color: #e9978c;
 		border-color: #e9978c;
@@ -960,10 +960,11 @@
 	#pnlSSResult {
 		padding-bottom: 0;
 	}
-	.sorting_1 {
-		box-shadow: 20px 0px 20px rgba(51,51,51,0.08);
-		color: #E9978C !important;
-	}
+.sorting_1 {
+	box-shadow: 20px 0px 20px rgba(51,51,51,0.08);
+	box-shadow: inset 12px 0 7px -7px rgba(51,51,51,0.08);
+	color: #E9978C !important;
+}
 	#SearchTablePost tr {
 		border-bottom: 1px solid #ECE9F1;
 	}
@@ -1598,7 +1599,7 @@
 				padding-right: 5px;
 			}
 			.sidebar-nav {
-				max-height: 600px;
+				max-height: 470px;
 			}
 		}
 	
