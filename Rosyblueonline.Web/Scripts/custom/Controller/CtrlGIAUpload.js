@@ -19,7 +19,8 @@
                 uiApp.BlockUI();
                 objSF.GetGIADataFromExcel(fd).then(function (data) {
                     if (data.IsSuccess) {
-                        GetDataFromApi(data.Result);
+                      //GetDataFromApi(data.Result);
+                         TestApi();
                     } else {
                         uiApp.Alert({ container: '#uiPanel1', message: data.Message, type: "warning" });
                         uiApp.UnBlockUI();
@@ -39,6 +40,34 @@
         //});
     }
 
+    var TestApi = function () {
+
+
+        var url = "https://api.reportresults.gia.edu";
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", url);
+
+        xhr.setRequestHeader("Authorization", "68bd3cfb-f113-41e1-896b-fb98527f8742");
+        xhr.setRequestHeader("Content-Type", "application/json");
+
+        xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
+        xhr.setRequestHeader("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE,PATCH,OPTION");
+        xhr.setRequestHeader("Access-Control-Allow-Headers", "origin, x-requested-with, accept, x-api-key");
+         
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+                console.log(xhr.status);
+                console.log(xhr.responseText);
+            }
+        };
+
+        var data = ' {"query":" query ReportQuery($ReportNumber: String!) {     getReport(report_number: $ReportNumber){ report_number  report_date   report_type results { __typename  ... on DiamondGradingReportResults { shape_and_cutting_style  measurements  carat_weight  color_grade color_origin color_distribution  clarity_grade cut_grade  polish  symmetry  fluorescence  clarity_characteristics  inscriptions   report_comments      proportions {  depth_pct   table_pct  crown_angle  crown_height   pavilion_angle  pavilion_depth  star_length lower_half  girdle culet        }  }   }    quota {   remaining   }   } }","variables":{"ReportNumber":"2141438171"}}';
+
+        xhr.send(data);
+        uiApp.UnBlockUI();
+    }
+
     var GetDataFromApi = function (pData) {
         var ListOfData = [];
         var data = [];
@@ -47,8 +76,9 @@
         for (var i = 0; i < pData.length; i++) {
             data.push({
                 reportNo: pData[i].Certificate,
-                reportWeight: pData[i].Weight,
+                //reportWeight: pData[i].Weight,
             });
+
             objSF.GetDataFromGiaApi($('#hfIP').val(), data[i]).then(function (rData) {
                 var idx = 0;
                 for (var k = 0; k < pData.length; k++) {

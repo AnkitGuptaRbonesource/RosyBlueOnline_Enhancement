@@ -495,19 +495,27 @@ namespace Rosyblueonline.Web.Controllers
         public ActionResult GetOrderDetails(string OType)
         {
             int LoginID = GetLogin();
+            int RoleID = GetRole();
 
             List<OrderListView> objResp = new List<OrderListView>();
             IQueryable<OrderListView> query = this.objOrderService.OrderListView();
+ 
             if (OType == "Pending")
             {
-                query = query.Where(x => x.orderType == 14 && x.orderStatus == 10 &&  x.loginID == LoginID);
+                query = query.Where(x => x.orderType == 14 && x.orderStatus == 10 );
             }
             else
             {
-                query = query.Where(x => x.orderType == 14 && x.orderStatus == 11 &&  x.loginID == LoginID);
+                query = query.Where(x => x.orderType == 14 && x.orderStatus == 11 );
             }
               
-            objResp= query.Take(10).ToList(); 
+            if (RoleID == 3)
+            {
+                query = query.Where(x => x.loginID == LoginID);
+            }
+
+
+            objResp = query.Take(10).ToList(); 
 
             // ViewBag.SearchResultList = objInvVM.Take(10);  
             return Json(new Response { IsSuccess = true, Message = "200", Result = objResp });
