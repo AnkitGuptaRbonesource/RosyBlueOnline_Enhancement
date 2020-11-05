@@ -209,9 +209,14 @@
 
             }
         });
-    };
-    
-    
+    }; 
+    obj.Backtodashboard = function () {
+         
+        return myApp.http({
+            method: 'get',
+            url: '/User/Backtodashboard'
+        });
+    }
 
 
 
@@ -462,7 +467,15 @@ var SearchFilter = function () {
         });
     };
 
-    
+    obj.SearchDataFromExcel = function (pData) {
+        return myApp.http({
+            method: 'post',
+            url: '/Dashboard/SearchDataFromExcel',
+            data: pData,
+            processData: false,
+            contentType: false
+        });
+    };
 
     return obj;
 };

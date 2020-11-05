@@ -119,7 +119,7 @@
                     columnDefs: [{
                         targets: [28],
                         render: function (data, type, row) {
-                            return moment(row.orderCreatedOn).format(myApp.dateFormat.Client);
+                            return moment(row.createdOn).format(myApp.dateFormat.Client);
                         },
                         orderable: true
                     }]

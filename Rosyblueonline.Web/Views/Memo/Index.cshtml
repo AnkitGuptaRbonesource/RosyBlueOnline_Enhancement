@@ -22,12 +22,12 @@
                 </div>
                 <div class="col-lg-12 col-sm-12 col-xs-12">
                     <div class="memo-btn">
-                        <div class="searchbox">
+                        @*<div class="searchbox">
                             <input type="text" class="search-input" placeholder="Enter Lot/Cert. number to quick search ...." /> 
                             <div class="search-icon">
                                 <img src="~/Content/img/memo-search.png" />
                             </div>
-                        </div>
+                        </div>*@
                         <form method="post" action="/Order/OrderListingDownloadExcel">
                             <button class="btn btn-info" id="btnMergeMemo" style="display:none;">@Resource.Merge_Memo</button>
                             <button type="submit" class="btn"><span><img src="~/Content/img/memo-save.png" /></span> @Resource.Download</button>

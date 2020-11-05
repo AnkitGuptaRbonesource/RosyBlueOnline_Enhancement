@@ -1094,6 +1094,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\kyc\" />
+    <Folder Include="Content\SearchFiles\" />
     <Folder Include="ErrorLogs\" />
     <Folder Include="Models\" />
     <Folder Include="Views\_Base\" />

@@ -28,6 +28,9 @@
     @RenderSection("header")
 </head>
 <body class="sidebar-mini skin-black-light sidebar-collapse">
+    <form style="display:none" id="frmPostSearch111" method="post" action="/Inventory/SpecificSearchPost">
+        <input type="hidden" name="Query" id="hfQuery111" value="" />
+    </form>
     <div class="wrapper">
         <header class="main-header">
             <nav class="navbar navbar-static-top">
@@ -46,7 +49,7 @@
                         <img src="/Content/img/csv.png" />
                     </div>
                     <div class="dropbox">
-                        <input type="file" class="drop-file" />
+                        <input id="searchfile" type="file" class="drop-file" />
                         <div class="drop-cont">
                             <img src="/Content/img/dropfile.png" />
                             <h5>Drag your CSV file, or <span>Browse</span></h5>
@@ -180,13 +183,13 @@
         <aside class="main-sidebar">
             <section class="sidebar">
                 @*<div class="user-panel">
-            <div class="pull-left image">
-                <img class="img-circle" />
-            </div>
-            <div class="pull-left info">
-                <p>@objToken.FullName</p>
-            </div>
-        </div>*@
+                        <div class="pull-left image">
+                            <img class="img-circle" />
+                        </div>
+                        <div class="pull-left info">
+                            <p>@objToken.FullName</p>
+                        </div>
+                    </div>*@
                 <div class="nav-logo">
                     <ul>
                         <li>
@@ -205,11 +208,11 @@
 
                 <ul class="sidebar-menu sidebar-nav">
                     @*<li class="treeview">
-                <a href="/Dashboard/AdminSupport">
-                    <i class="fa fa-dashboard"></i>
-                    <span>Dashboard</span>
-                </a>
-            </li>*@
+                            <a href="/Dashboard/AdminSupport">
+                                <i class="fa fa-dashboard"></i>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>*@
                     @if (objMenuAccess.Dashboard == 1)
                     {
                         <li class="treeview">
@@ -372,6 +375,8 @@
     <script type="text/javascript" src="/Scripts/custom/myApp.js"></script>
     <script type="text/javascript" src="/Scripts/custom/uiApp.js"></script>
     <script type="text/javascript" src="/Scripts/custom/Service/ServiceMethods.js"></script>
+    <script type="text/javascript" src="/Scripts/custom/Controller/CtrlMasterLayout.js"></script>
+
     <script>
         $(".main-sidebar").hover(
             function () {

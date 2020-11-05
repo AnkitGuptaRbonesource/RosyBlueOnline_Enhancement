@@ -485,5 +485,25 @@ namespace Rosyblueonline.Web.Controllers
             }
         }
 
+         
+        [HttpGet]
+        public ActionResult Backtodashboard()
+        {
+            try
+            {
+                int LoginID = base.GetLogin();
+                int RoleID = base.GetRole();
+
+                return Json(RoleID, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                ErrorLog.Log("UserController", "Backtodashboard", ex);
+
+                throw ex;
+            }
+
+        }
+
     }
 }

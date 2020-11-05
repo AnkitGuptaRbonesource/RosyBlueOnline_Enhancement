@@ -44,7 +44,7 @@
                             '<div class="order-nmbr">' +
                             '<p>' + moment(item.orderCreatedOn).format("DD-MM-YY") + '</p>' +
                             '<h5></h5>' +
-                            '<h5>' + item.orderPayableAmount + '</h5>' +
+                            '<h5>' + item.orderPayableAmount.toLocaleString('en')  + '</h5>' +
                             '</div></a></div>';
 
 
@@ -115,6 +115,44 @@
             $('#frmPostSearch111').submit();
         }
     });
+
+
+    $("#LotCertSearchInput").keypress(function (event) {
+        if (event.keyCode === 13) {
+            $("#SearchId").click();
+        }
+    });
+
+    $("#searchfile").change(function () {
+        //alert($('input[type=file]').val().split('\\').pop()); 
+
+        var fd = new FormData();
+        fd.append("File", $('#searchfile').get(0).files[0]);
+        uiApp.BlockUI();
+        objSF.SearchDataFromExcel(fd).then(function (data) {
+            if (data.IsSuccess) {
+                $("#LotCertSearchInput").val(data.Result);
+                if ($("#LotCertSearchInput").val() != "" || $("#LotCertSearchInput").val() != undefined) {
+                    $("#SearchId").click();
+                } else {
+                    alert("Try again later !");
+                }
+
+                uiApp.UnBlockUI();
+            } else {
+
+                alert(data.Message);
+                uiApp.UnBlockUI();
+            }
+        }, function () {
+            uiApp.Alert({ container: '#uiPanel1', message: "Some error occured", type: "warning" });
+            uiApp.UnBlockUI();
+        });
+
+    });
+   
+    
+   
 
     return {
         init: function () {

@@ -151,7 +151,13 @@ namespace Rosyblueonline.Web.Controllers
                     {
                         query = query.Where(x => x.loginID == FilterCustomerID);
                     }
-
+                    if (!string.IsNullOrEmpty(objReq.search.value))
+                    {
+                        query = query.Where(x => (x.orderDetailsId.ToString()).Contains(objReq.search.value) ||
+                                                 x.remark.Contains(objReq.search.value) ||
+                                                 x.CreatedName.Contains(objReq.search.value) ||
+                                                 x.companyName.Contains(objReq.search.value) );
+                    }
                     //if (OrderId != 0)  //Added BY ANkit 03JUly2020
                     //{
                     //    query = query.Where(x => x.loginID == OrderId);

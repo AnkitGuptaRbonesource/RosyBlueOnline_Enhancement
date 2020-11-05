@@ -25,7 +25,40 @@
                 });
             }
         });
+
+
+        $('#btnCancel').click(function (e) {
+            e.preventDefault(); 
+            objLRS.Backtodashboard().then(function (data) {
+               
+                if (data !== null) { 
+                    if (data == 3) { 
+                         
+                     location.href = '/Dashboard/Customer';
+                       
+                    }
+                    if (data == 2) {
+                        location.href = '/Dashboard/Admin';
+                    }
+                    if (data == 8) {
+                        location.href = '/Dashboard';
+                    }
+                    if (data == 9) {
+                        location.href = '/Dashboard';
+                    }
+
+                } else {
+                    uiApp.Alert({ container: '#uiPanel1', message: data.Message, type: "error" });
+                }
+            }, function (error) {
+                uiApp.Alert({ container: '#uiPanel1', message: "", type: "error" });
+            });
+
+        });
+
     }
+
+
 
     var ClearForm = function () {
         $('#txtOldPassword').val('');

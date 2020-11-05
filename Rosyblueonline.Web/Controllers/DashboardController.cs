@@ -6,7 +6,10 @@ using Rosyblueonline.ServiceProviders.Implementation;
 using Rosyblueonline.Web.Attribute;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Web;
@@ -374,6 +377,42 @@ namespace Rosyblueonline.Web.Controllers
                 ErrorLog.Log("Dashboard", "GetCustomerLogDetails", ex);
                 throw ex;
             }
+        }
+
+        public ActionResult SearchDataFromExcel()
+        {
+            try
+            {
+                if (Request.Files.Count > 0)
+                {
+                    CommonFunction com = new CommonFunction();
+                    string path = Server.MapPath("~/Content/SearchFiles/");
+                    string extension = Path.GetExtension(Request.Files[0].FileName);
+                    Guid guid = Guid.NewGuid();
+                    string FileName = guid.ToString() + extension;
+                    Request.Files[0].SaveAs(path + "/" + FileName);
+                    DataTable dt = com.GetDataFromExcel2(path + "/" + FileName, true);
+                    string Searchid = "";
+                    if (dt.Columns[0].ToString() == "Lotnumber")
+                    {
+                        for (int i = 0; i < dt.Rows.Count; i++)
+                        {
+                            Searchid = Searchid + dt.Rows[i]["Lotnumber"].ToString() + "," + dt.Rows[i]["Certificate"].ToString() + ",";
+
+                        }
+                        return Json(new Response { IsSuccess = true, Message = "", Result = Searchid });
+                    }
+                    return Json(new Response { IsSuccess = false, Message = "Wrong file format!" });
+
+                }
+                return Json(new Response { IsSuccess = false, Message = "No file uploaded" });
+            }
+            catch (Exception ex)
+            {
+                ErrorLog.Log("InventoryController", "GetGIADataFromExcel", ex);
+                return Json(new Response { IsSuccess = false, Message = "Error" });
+            }
+
         }
 
 

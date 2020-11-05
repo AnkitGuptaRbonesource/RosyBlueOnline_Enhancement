@@ -495,6 +495,7 @@
         if (dtOrder.getDataTable() == null || dtOrder.getDataTable() == undefined) {
             dtOrder.init({
                 src: '#tblOrders',
+                searching: true,
                 dataTable: {
                     //deferLoading: 0,
                     //scrollY: "500px",

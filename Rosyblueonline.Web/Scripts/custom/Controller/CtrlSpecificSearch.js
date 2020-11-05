@@ -622,7 +622,7 @@
 
 
                                     '<div class="flex align-centered space-between details"><div>'+item.Shape+'</div><div>'+item.Weight+'</div><div>'+item.Shade+'</div><div>'+item.Color+'</div></div>'+
-                                   ' <div class="flex space-between align-centered reserve"><div class="flex align-centered price"><div class=""> $ '+item.Amount+'</div></div></div>'+
+                            ' <div class="flex space-between align-centered reserve"><div class="flex align-centered price"><div class=""> $ ' + item.Amount.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") +'</div></div></div>'+
                                ' </div>'+
                                 '</div ></div > ';
 
