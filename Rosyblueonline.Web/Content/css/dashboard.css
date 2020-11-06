@@ -1241,19 +1241,22 @@ ul.dyd-shape {
     display: block;
     width: 100%;
 }*/
-
+#divCompareModal .fixwtable {
+    min-width:800px;
+}
 .btncomapshow {
-  position: fixed;
-  bottom: 12%;
-  margin: 0 auto;
-  display: block;
-  width: 100%;
+    position: fixed;
+    bottom: 12%;
+    margin: 0 auto;
+    display: block;
+    width: 100%;
 }
 
 .comappop-head {
-  background: #4d80b1 !important;
-  color: #fff;
-  text-align: left !important;
+    background: #3a4176 !important;
+    color: #fff !important;
+    text-align: left !important;
+    border-radius: 0;
 }
 
 .btncomapshow button {
@@ -2982,14 +2985,18 @@ a.sele-all {
 .search-stone-box2 .dimaond-list-box::-webkit-scrollbar-thumb {
     background-color: #232323;
 }
-
-
-
-
-/*@media queries for different display*/
-
-@media only screen and (min-width: 1921px){
-    .stone-details-box {
+.memo-table div.dataTables_wrapper div.dataTables_filter  {
+    text-align:left;
+}
+.memo-table div.dataTables_wrapper div.dataTables_filter .form-control {
+    width: 250px
+}
+.memo-table div.dataTables_wrapper div.dataTables_filter label::before {
+    content: "Search Memo no/ Customer/ Remark";
+}
+    /*@media queries for different display*/
+    @media only screen and (min-width: 1921px) {
+        .stone-details-box {
         max-height: 1260px;
     }
     .dimaond-list-box {

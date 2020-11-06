@@ -130,8 +130,17 @@ background-color:#ddd;
   background: #fff;
 }
 
+.table .nav-tabs > li > a {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.table .nav-tabs > li.active > a {
+    border: 1px solid #ECE9F1;
+    border-bottom: 0 none;
+}
+
 .proshad:hover {
-  box-shadow: 2px 2px 10px 2px #337ab7;
+    box-shadow: 2px 2px 10px 2px #337ab7;
 }
 
 .proshad {
