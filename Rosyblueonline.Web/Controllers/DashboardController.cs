@@ -369,6 +369,7 @@ namespace Rosyblueonline.Web.Controllers
         {
             try
             {
+               
                 List<UserActivityLogModel> objVM = objUserDetailService.GetCustomerLog(UserID);
                 return Json(objVM, JsonRequestBehavior.AllowGet);
             }
@@ -392,6 +393,11 @@ namespace Rosyblueonline.Web.Controllers
                     string FileName = guid.ToString() + extension;
                     Request.Files[0].SaveAs(path + "/" + FileName);
                     DataTable dt = com.GetDataFromExcel2(path + "/" + FileName, true);
+
+                    if (System.IO.File.Exists(path + "/" + FileName))
+                    {
+                        System.IO.File.Delete(path + "/" + FileName);
+                    } 
                     string Searchid = "";
                     if (dt.Columns[0].ToString() == "Lotnumber")
                     {
@@ -402,6 +408,7 @@ namespace Rosyblueonline.Web.Controllers
                         }
                         return Json(new Response { IsSuccess = true, Message = "", Result = Searchid });
                     }
+                   
                     return Json(new Response { IsSuccess = false, Message = "Wrong file format!" });
 
                 }

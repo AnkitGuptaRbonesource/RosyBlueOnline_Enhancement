@@ -222,7 +222,8 @@
                     }, {
                         targets: [0],
                         render: function (data, type, row) {
-                            return moment(row.Createdon).format(myApp.dateFormat.Client);
+                           // return moment(row.Createdon).format(myApp.dateFormat.Client);
+                            return moment(row.Createdon).fromNow(true) + ' ago';
                         },
                         orderable: false
                     }, {

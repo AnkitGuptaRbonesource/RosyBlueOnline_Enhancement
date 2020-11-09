@@ -932,9 +932,9 @@ var DataTableColumnStruct = function (mode) {
         { data: "giaComments", class: 'whspace' },
         { data: "Reportdate" },
         { data: "SalesLocation" },
-       { data: "refdata" }, /*Added by Ankit 24JUn2020*/
-        { data: "refdata" }, /*Added by Ankit 24JUn2020*/
-        { data: "Origin" }, /*Added by Ankit 20July2020*/
+        { data: "refdata", class: 'whspace' }, /*Added by Ankit 24JUn2020*/
+        { data: "refdata", class: 'whspace'}, /*Added by Ankit 24JUn2020*/
+        { data: "Origin", class: 'whspace'}, /*Added by Ankit 20July2020*/
     ];
 
     SpecificSearch.columnDefs = [
