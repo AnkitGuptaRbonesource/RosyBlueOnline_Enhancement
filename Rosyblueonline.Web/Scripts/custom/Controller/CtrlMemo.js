@@ -640,10 +640,7 @@
                                         </ul>';
                             }
                         }
-                        }],
-                    "oLanguage": {
-                        "sSearch": "Search by customer name ,memo no and remark" 
-                    },
+                        }], 
                     rowCallback: function (row, data, index) { 
                         if (data.orderDetailsId == $('#hfOrdID').val()) {
                             $(row).css('background-color', '#d6d5d5');

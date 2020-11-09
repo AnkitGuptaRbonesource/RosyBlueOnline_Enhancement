@@ -1223,6 +1223,82 @@ var MarketingService = function () {
         });
     };
 
+
+
+    obj.EditBlueNile = function (id) {
+
+        return myApp.http({
+            method: 'get',
+            url: '/Marketing/EditBlueNile?id=' + id
+        });
+    };
+
+    obj.UpdateBlueNile = function (obj) {
+        return myApp.http({
+            method: 'post',
+            url: '/Marketing/UpdateBlueNile',
+            data: obj
+        });
+    };
+
+    obj.DeleteBlueNile = function (id) {
+
+        return myApp.http({
+            method: 'get',
+            url: '/Marketing/DeleteBlueNile?id=' + id
+        });
+    };
+
+
+    obj.EditJamesAllen = function (id) {
+
+        return myApp.http({
+            method: 'get',
+            url: '/Marketing/EditJamesAllen?id=' + id
+        });
+    };
+
+    obj.UpdateJamesAllen = function (obj) {
+        return myApp.http({
+            method: 'post',
+            url: '/Marketing/UpdateJamesAllen',
+            data: obj
+        });
+    };
+
+    obj.DeleteJamesAllen = function (id) {
+
+        return myApp.http({
+            method: 'get',
+            url: '/Marketing/DeleteJamesAllen?id=' + id
+        });
+    };
+
+
+    obj.EditJamesAllenHK = function (id) {
+
+        return myApp.http({
+            method: 'get',
+            url: '/Marketing/EditJamesAllenHK?id=' + id
+        });
+    };
+
+    obj.UpdateJamesAllenHK = function (obj) {
+        return myApp.http({
+            method: 'post',
+            url: '/Marketing/UpdateJamesAllenHK',
+            data: obj
+        });
+    };
+
+    obj.DeleteJamesAllenHK = function (id) {
+
+        return myApp.http({
+            method: 'get',
+            url: '/Marketing/DeleteJamesAllenHK?id=' + id
+        });
+    };
+
     return obj;
 }
 

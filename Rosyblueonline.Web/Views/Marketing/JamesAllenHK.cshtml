@@ -8,6 +8,8 @@
 <div class="content-wrapper">
     <section class="content">
         <div id="uiPanel1"></div>
+        <input type="hidden" name="JamesAllenHK" id="hfJamesAllenHK" value="" />
+
         <div class="row">
             <div class="col-lg-12">
                 <section class="container-fluid">
@@ -15,7 +17,7 @@
                         <div class="dash-head">
                             Set differential discount for James Allen Hong Kong's upload
                         </div>
-                        <div class="dash-box">
+                        <div class="dash-inner">
                             <div class="row">
                                 <div class="col-md-12">
                                     <form id="frmJamesAllenHK" class="customers-info">
@@ -322,9 +324,19 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div class="col-lg-4" id="JamesAllenHKStatus" style="display:none;">
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="JamesAllenHK_Status" id="rbtnActiveS" value="true"><label for="rbtnActiveS" class="controll-label" style="width:90px;padding:2px;">Active</label>
+                                                </label>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="JamesAllenHK_Status" id="rbtnInActiveS" value="false"><label for="rbtnInActiveS" class="controll-label" style="width:100px;padding:2px;">In-Active</label>
+                                                </label>
+                                            </div>
                                         </div>
                                         <div class="pull-right">
                                             <button type="button" class="btn btn-primary" id="btnSave">Add New</button>
+                                            <button type="button" class="btn btn-primary" id="btnUpdate" style="display:none;">Update</button>
+
                                         </div>
                                     </form>
                                 </div>
@@ -426,8 +438,20 @@
                                         <th class="tbnew">
                                             CNR Disc HA
                                         </th>
-                                        <th class="tbnew">
+                                        <th class="cust-table">
+                                            Status
+                                        </th>
+                                        <th class="cust-table">
                                             Applied On
+                                        </th>
+                                        <th class="cust-table">
+                                            Updated On
+                                        </th>
+                                        <th class="cust-table">
+                                            Edit
+                                        </th>
+                                        <th class="cust-table">
+                                            Delete
                                         </th>
                                     </tr>
                                 </thead>

@@ -34,12 +34,62 @@ namespace Rosyblueonline.Web.Controllers
         {
             try
             {
+                int LoginId = GetLogin();
+                obj.createdBy = LoginId;
+                obj.Isactive = true;
                 int RowCount = this.objSvc.AddBlueNileDiscount(obj);
                 return Json(new Response { Code = 200, IsSuccess = true, Message = "", Result = RowCount });
             }
             catch (Exception ex)
             {
                 ErrorLog.Log("MarketingController", "CreateBlueNile", ex);
+                return Json(new Response { IsSuccess = false, Message = ex.Message });
+            }
+        }
+        [HttpGet]
+        public ActionResult EditBlueNile(int id)
+        {
+            try
+            {
+                BlueNileDiscountModel obj = new BlueNileDiscountModel();
+                obj = this.objSvc.EditBlueNile(id);
+                return Json(obj, JsonRequestBehavior.AllowGet);
+
+            }
+            catch (Exception ex)
+            {
+                ErrorLog.Log("MarketingController", "EditBlueNile", ex);
+                return Json(new Response { IsSuccess = false, Message = ex.Message });
+            }
+        }
+
+        public ActionResult UpdateBlueNile(BlueNileDiscountModel obj)
+        {
+            try
+            {
+                int LoginId = GetLogin();
+                obj.UpdatedBy = LoginId;
+                int RowCount = this.objSvc.UpdateBlueNileDiscount(obj);
+                return Json(new Response { Code = 200, IsSuccess = true, Message = "", Result = RowCount });
+            }
+            catch (Exception ex)
+            {
+                ErrorLog.Log("MarketingController", "UpdateBlueNile", ex);
+                return Json(new Response { IsSuccess = false, Message = ex.Message });
+            }
+        }
+        public ActionResult DeleteBlueNile(int id)
+        {
+            try
+            {
+                int RowCount = this.objSvc.DeleteBlueNileDiscount(id);
+                return Json(RowCount, JsonRequestBehavior.AllowGet);
+
+                // return Json(new Response { Code = 200, IsSuccess = true, Message = "", Result = RowCount });
+            }
+            catch (Exception ex)
+            {
+                ErrorLog.Log("MarketingController", "DeleteBlueNile", ex);
                 return Json(new Response { IsSuccess = false, Message = ex.Message });
             }
         }
@@ -289,12 +339,62 @@ namespace Rosyblueonline.Web.Controllers
         {
             try
             {
+                int LoginId = GetLogin();
+                obj.createdBy = LoginId;
+                obj.Isactive = true;
                 int RowCount = this.objSvc.AddJamesAllenDiscount(obj);
                 return Json(new Response { Code = 200, IsSuccess = true, Message = "", Result = RowCount });
             }
             catch (Exception ex)
             {
                 ErrorLog.Log("MarketingController", "CreateJamesAllen", ex);
+                return Json(new Response { IsSuccess = false, Message = ex.Message });
+            }
+        }
+        [HttpGet]
+        public ActionResult EditJamesAllen(int id)
+        {
+            try
+            {
+                JamesAllenDiscountModel obj = new JamesAllenDiscountModel();
+                obj = this.objSvc.EditJamesAllen(id);
+                return Json(obj, JsonRequestBehavior.AllowGet);
+
+            }
+            catch (Exception ex)
+            {
+                ErrorLog.Log("MarketingController", "EditJamesAllen", ex);
+                return Json(new Response { IsSuccess = false, Message = ex.Message });
+            }
+        }
+
+        public ActionResult UpdateJamesAllen(JamesAllenDiscountModel obj)
+        {
+            try
+            {
+                int LoginId = GetLogin();
+                obj.UpdatedBy = LoginId;
+                int RowCount = this.objSvc.UpdateJamesAllenDiscount(obj);
+                return Json(new Response { Code = 200, IsSuccess = true, Message = "", Result = RowCount });
+            }
+            catch (Exception ex)
+            {
+                ErrorLog.Log("MarketingController", "UpdateJamesAllenDiscount", ex);
+                return Json(new Response { IsSuccess = false, Message = ex.Message });
+            }
+        }
+        public ActionResult DeleteJamesAllen(int id)
+        {
+            try
+            {
+                int RowCount = this.objSvc.DeleteJamesAllenDiscount(id);
+                return Json(RowCount, JsonRequestBehavior.AllowGet);
+
+                // return Json(new Response { Code = 200, IsSuccess = true, Message = "", Result = RowCount });
+            }
+            catch (Exception ex)
+            {
+                ErrorLog.Log("MarketingController", "DeleteJamesAllenDiscount", ex);
                 return Json(new Response { IsSuccess = false, Message = ex.Message });
             }
         }
@@ -557,6 +657,9 @@ namespace Rosyblueonline.Web.Controllers
         {
             try
             {
+                int LoginId = GetLogin();
+                obj.createdBy = LoginId;
+                obj.Isactive = true;
                 int RowCount = this.objSvc.AddJamesAllenDiscountHK(obj);
                 return Json(new Response { Code = 200, IsSuccess = true, Message = "", Result = RowCount });
             }
@@ -566,6 +669,54 @@ namespace Rosyblueonline.Web.Controllers
                 return Json(new Response { IsSuccess = false, Message = ex.Message });
             }
         }
+        [HttpGet]
+        public ActionResult EditJamesAllenHK(int id)
+        {
+            try
+            {
+                JamesAllenDiscountHKModel obj = new JamesAllenDiscountHKModel();
+                obj = this.objSvc.EditJamesAllenHK(id);
+                return Json(obj, JsonRequestBehavior.AllowGet);
+
+            }
+            catch (Exception ex)
+            {
+                ErrorLog.Log("MarketingController", "EditJamesAllenHK", ex);
+                return Json(new Response { IsSuccess = false, Message = ex.Message });
+            }
+        }
+
+        public ActionResult UpdateJamesAllenHK(JamesAllenDiscountHKModel obj)
+        {
+            try
+            {
+                int LoginId = GetLogin();
+                obj.UpdatedBy = LoginId;
+                int RowCount = this.objSvc.UpdateJamesAllenHKDiscount(obj);
+                return Json(new Response { Code = 200, IsSuccess = true, Message = "", Result = RowCount });
+            }
+            catch (Exception ex)
+            {
+                ErrorLog.Log("MarketingController", "UpdateJamesAllenHKDiscount", ex);
+                return Json(new Response { IsSuccess = false, Message = ex.Message });
+            }
+        }
+        public ActionResult DeleteJamesAllenHK(int id)
+        {
+            try
+            {
+                int RowCount = this.objSvc.DeleteJamesAllenHKDiscount(id);
+                return Json(RowCount, JsonRequestBehavior.AllowGet);
+
+                // return Json(new Response { Code = 200, IsSuccess = true, Message = "", Result = RowCount });
+            }
+            catch (Exception ex)
+            {
+                ErrorLog.Log("MarketingController", "DeleteJamesAllenHKDiscount", ex);
+                return Json(new Response { IsSuccess = false, Message = ex.Message });
+            }
+        }
+
         [HttpPost]
         public JsonResult GridJamesAllenHK(DataTableViewModel objReq)
         {
