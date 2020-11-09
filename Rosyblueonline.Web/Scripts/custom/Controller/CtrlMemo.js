@@ -387,14 +387,14 @@
                 $('#hfOStatus').val('Pending');
                 $('#divReturnSale').hide();
                 dtOrder.setAjaxParam('OStatus', 'Pending');
-                $('#panelHeading').html('Memo Pending');
+                $('#panelHeading h2').html('Memo Pending');
             } else {
                 $(this).data('toggle', 'ViewSoldHistory')
                 $(this).html('View Pending Order');
                 $('#hfOStatus').val('Completed');
                 $('#divReturnSale').show();
                 dtOrder.setAjaxParam('OStatus', 'Completed');
-                $('#panelHeading').html('Memo Sold');
+                $('#panelHeading h2').html('Memo Sold');
             }
             dtOrder.getDataTable().draw();
         });

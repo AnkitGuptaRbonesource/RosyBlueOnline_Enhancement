@@ -243,6 +243,8 @@ ul.inventory-links {
 
 .event-box {
     margin-top: 25px;
+    height:133px;
+    overflow: hidden;
 }
 
 .hscroll {
