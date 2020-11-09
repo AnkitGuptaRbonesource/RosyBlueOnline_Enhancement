@@ -19,7 +19,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rosyblueonline.Repository",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rosyblueonline.ServiceProviders", "Rosyblueonline.ServiceProviders\Rosyblueonline.ServiceProviders.csproj", "{44440F91-A3AD-4F76-A34A-2B11BA5F790E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RosyblueonlineORRA_API", "RosyblueonlineORRA_API\RosyblueonlineORRA_API.csproj", "{D33C9A88-B8F5-46B8-9A59-64F2F6744F73}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rosyblueonline_API", "Rosyblueonline_API\Rosyblueonline_API.csproj", "{D33C9A88-B8F5-46B8-9A59-64F2F6744F73}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libs", "Libs", "{3987ABB1-FE3D-4E36-9109-7462ABE601C0}"
 	ProjectSection(SolutionItems) = preProject
