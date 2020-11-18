@@ -675,6 +675,44 @@ namespace Rosyblueonline.ServiceProviders.Implementation
         {
             return this.uow.ExecuteQuery<PlaceOrderOrra>("Exec proc_PlaceOrderFromAPI " + LoginID.ToString() + "," + OrderBlockedId.ToString() + "," + LotNos.ToString());
         }
- 
+
+
+        public List<TanishqStockModel> TanishqStockInventory(params string[] Parameters)
+        {
+            if (Parameters.Length > 7)
+            {
+                return this.uow.ExecuteQuery<TanishqStockModel>("Exec proc_CustomSiteSearch '{0}','{1}',{2},{3},'{4}','{5}','{6}','{7}'", Parameters);
+            }
+            else
+            {
+                return this.uow.ExecuteQuery<TanishqStockModel>("Exec proc_CustomSiteSearch '{0}','{1}',{2},{3},'{4}','{5}','{6}','NormalSearch'", Parameters);
+            }
+        }
+
+
+        public List<BuildSearchCriterias> BuildSearchCriteria(string SearchCriteria,int LoginId)
+        {
+            return this.uow.ExecuteQuery<BuildSearchCriterias>("Exec proc_BuildCriteria_API " + LoginId.ToString() + "," + SearchCriteria.ToString());
+
+        }
+
+        public List<TanishqPlaceOrder> TanishqPlaceOrder(int LoginID,  string MergeOrderList)
+        {
+            return this.uow.ExecuteQuery<TanishqPlaceOrder>("Exec proc_CartOrderPlacement_API " + LoginID.ToString() + "," + MergeOrderList.ToString());
+        }
+
+        public List<TanishqStockModel> TanishqSoldStockInventory(params string[] Parameters)
+        {
+            
+           return this.uow.ExecuteQuery<TanishqStockModel>("Exec proc_GetSoldInventoryDetails_API '{0}'", Parameters);
+            
+        }
+
+        public List<RemoveFromCartInventory> RemoveFromCart(params string[] Parameters)
+        {
+
+            return this.uow.ExecuteQuery<RemoveFromCartInventory>("Exec proc_UnblockCartStone_API '{0}','{1}'", Parameters);
+
+        }
     }
 }

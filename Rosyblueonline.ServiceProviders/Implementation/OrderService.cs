@@ -278,5 +278,76 @@ namespace Rosyblueonline.ServiceProviders.Implementation
         {
             return this.uow.Orders.MemoTallyStockByRfid(LoginID, OrderID, RFIDs);
         }
+
+
+        public void SendMailForApiOrderBook(int OrderID, int CustomerId, string TemplatePath, string Subject, string CCEmail, string BCCEmail, bool SentToCustomer = false)
+        {
+            StringBuilder sbMailTemplate = new StringBuilder();
+            sbMailTemplate.Append(System.IO.File.ReadAllText(TemplatePath));
+            OrderInfoViewModel objOInfo = OrderInfo(OrderID);
+            List<string> lstOfEmailIDs = new List<string>();
+            if (SentToCustomer && objOInfo != null && objOInfo.UserDetail != null)
+            {
+                lstOfEmailIDs.Add(objOInfo.UserDetail.emailId);
+            }
+            else
+            {
+                lstOfEmailIDs.Add(ConfigurationManager.AppSettings["Email_ID"].ToString());
+                lstOfEmailIDs.Add(ConfigurationManager.AppSettings["CCemail"].ToString());
+            }
+            if (objOInfo != null && objOInfo.BillingAddress != null)
+            {
+                List<string> objLst = objOInfo.OrderItemDetail.Select(x => x.Stock).ToList();
+                string LotNos = "LOTNO~" + string.Join(",", objLst);
+                DataTable dt = this.objStockDetailsService.GetDataForExcelExport(LotNos, false, CustomerId);
+                if (dt.Columns.Count > 0)
+                {
+                    dt.Columns.Remove("Sizes");
+                    dt.Columns.Remove("CertificateNo");
+                    dt.Columns.Remove("Reportdate");
+                    dt.Columns.Remove("EyeClean");
+                    dt.Columns.Remove("Shade");
+                    dt.Columns.Remove("TableBlack");
+                    dt.Columns.Remove("SideBlack");
+                    dt.Columns.Remove("Milky");
+                    dt.Columns.Remove("CuletSize");
+                    dt.Columns.Remove("OpensName");
+                    dt.Columns.Remove("GroupName");
+                    dt.Columns.Remove("MemberComments");
+                    dt.Columns.Remove("refdata");
+                    dt.Columns.Remove("V360");
+                    dt.Columns.Remove("Video");
+                    if (SentToCustomer == true)
+                    {
+                        dt.Columns.Remove("SalesLocation");
+                    }
+                }
+                DataTable dtOrderCharges = objOInfo.ConvertOrderChangesInDatetable();
+                string htmlTableForOrderDetail = CommonFunction.ConvertDataTableToHTML(dt, false, true);
+                string htmlTableForOrderChargesDetail = CommonFunction.ConvertDataTableToHTML(dtOrderCharges, false, true);
+                sbMailTemplate = sbMailTemplate.Replace("${CustomerName}", objOInfo.BillingAddress.firstName + " " + objOInfo.BillingAddress.lastName);
+                sbMailTemplate = sbMailTemplate.Replace("${OrderNo}", OrderID.ToString());
+                sbMailTemplate = sbMailTemplate.Replace("${TABLEDATA}", htmlTableForOrderDetail);
+                sbMailTemplate = sbMailTemplate.Replace("${TABLEDATAFORCHARGES}", htmlTableForOrderChargesDetail);
+                sbMailTemplate = sbMailTemplate.Replace("${CompanyName}", objOInfo.BillingAddress.companyName);
+                sbMailTemplate = sbMailTemplate.Replace("${Address}", objOInfo.BillingAddress.address01 + " " + objOInfo.BillingAddress.address02);
+                sbMailTemplate = sbMailTemplate.Replace("${CountryName}", objOInfo.BillingAddress.countryName);
+                sbMailTemplate = sbMailTemplate.Replace("${phoneCode01}", objOInfo.UserDetail.phoneCode01);
+                sbMailTemplate = sbMailTemplate.Replace("${phone01}", objOInfo.UserDetail.phone01);
+                sbMailTemplate = sbMailTemplate.Replace("${emailId}", objOInfo.UserDetail.emailId);
+                sbMailTemplate = sbMailTemplate.Replace("${bankName}", objOInfo.UserDetail.bankName);
+                sbMailTemplate = sbMailTemplate.Replace("${branchName}", objOInfo.UserDetail.branchName);
+                sbMailTemplate = sbMailTemplate.Replace("${branchAddress}", objOInfo.UserDetail.branchAddress);
+                sbMailTemplate = sbMailTemplate.Replace("${accNumber}", objOInfo.UserDetail.accNumber);
+                sbMailTemplate = sbMailTemplate.Replace("${swiftCode}", objOInfo.UserDetail.swiftCode);
+
+                if (this.objMU == null)
+                {
+                    this.objMU = new MailUtility();
+                }
+                objMU.SendMail(lstOfEmailIDs, Subject, true, sbMailTemplate.ToString(),null, CCEmail, BCCEmail);
+            }
+
+        }
     }
 }

@@ -62,5 +62,16 @@ namespace Rosyblueonline.ServiceProviders.Abstraction
 
         List<PlaceOrderOrra> ORRAPlaceOrder(int LoginID, int OrderBlockedId, string LotNos);
 
+        List<TanishqStockModel> TanishqStockInventory (params string[] Parameters);
+
+        List<BuildSearchCriterias> BuildSearchCriteria(string SearchCriteria,int LoginId);
+
+        List<TanishqPlaceOrder> TanishqPlaceOrder(int LoginID, string MergeOrderList);
+
+        List<TanishqStockModel> TanishqSoldStockInventory(params string[] Parameters);
+
+        List<RemoveFromCartInventory> RemoveFromCart(params string[] Parameters);
+
+
     }
 }

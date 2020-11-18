@@ -178,14 +178,14 @@ namespace Rosyblueonline.Web.Controllers
         //Added by Ankit 11July2020
 
         [HttpPost]
-        public ActionResult GetStoneDetailsStockSummary(string StartRange,string EndRange,string Shape,string Location,string Mode,string Event)
+        public ActionResult GetStoneDetailsStockSummary(string StartRange, string EndRange, string Shape, string Location, string Mode, string Event)
         {
             try
             {
                 int LoginID = GetLogin();
                 //List<StoneDetailsStockSummaryModel> objVM = objStockDetailsService.StoneDetailsStockSummary("0.23", "4.30", "ALL", "1,11", "VALUES", "FOR_TOTAL_INVENTORY");
                 List<StoneDetailsStockSummaryModel> objVM = objStockDetailsService.StoneDetailsStockSummary(StartRange, EndRange, Shape, Location, Mode, Event);
-               // List<StoneDetailsStockSummaryModel> objVM = objStockDetailsService.StoneDetailsStockSummary(StartRange, EndRange, "ALL", "1,11", "VALUES", "FOR_TOTAL_INVENTORY");
+                // List<StoneDetailsStockSummaryModel> objVM = objStockDetailsService.StoneDetailsStockSummary(StartRange, EndRange, "ALL", "1,11", "VALUES", "FOR_TOTAL_INVENTORY");
 
                 return Json(objVM, JsonRequestBehavior.AllowGet);
             }
@@ -218,7 +218,7 @@ namespace Rosyblueonline.Web.Controllers
         {
             try
             {
-               var RCount = objRecentSearchService.Delete(recentSearchID);
+                var RCount = objRecentSearchService.Delete(recentSearchID);
                 return Json(new Response { IsSuccess = true, Message = "200", Result = RCount });
             }
             catch (Exception ex)
@@ -309,7 +309,7 @@ namespace Rosyblueonline.Web.Controllers
             }
         }
 
-     
+
 
         [HttpPost]
         public JsonResult UserActivityDetails(DataTableViewModel objReq)
@@ -320,10 +320,10 @@ namespace Rosyblueonline.Web.Controllers
                 int CustomerID = GetLogin();
                 int RoleID = GetRole();
                 if (objReq != null)
-                { 
+                {
 
                     DataTableResponse<UserGeoLocationModel> objResp = new DataTableResponse<UserGeoLocationModel>();
-                   // IQueryable<UserGeoLocationModel> query = this.objUserDetailService.UserActivityDetails();
+                    // IQueryable<UserGeoLocationModel> query = this.objUserDetailService.UserActivityDetails();
 
                     List<UserGeoLocationModel> objgeo = objUserDetailService.GetUserGeoLoctionLog(CustomerID);
 
@@ -369,7 +369,7 @@ namespace Rosyblueonline.Web.Controllers
         {
             try
             {
-               
+
                 List<UserActivityLogModel> objVM = objUserDetailService.GetCustomerLog(UserID);
                 return Json(objVM, JsonRequestBehavior.AllowGet);
             }
@@ -392,23 +392,26 @@ namespace Rosyblueonline.Web.Controllers
                     Guid guid = Guid.NewGuid();
                     string FileName = guid.ToString() + extension;
                     Request.Files[0].SaveAs(path + "/" + FileName);
+                    ErrorLog.TestLog("Test1", path + "/" + FileName);
+
                     DataTable dt = com.GetDataFromExcel2(path + "/" + FileName, true);
+                    ErrorLog.TestLog("Test1", dt.Rows.Count.ToString());
 
                     if (System.IO.File.Exists(path + "/" + FileName))
                     {
                         System.IO.File.Delete(path + "/" + FileName);
-                    } 
+                    }
                     string Searchid = "";
                     if (dt.Columns[0].ToString() == "Lotnumber")
                     {
                         for (int i = 0; i < dt.Rows.Count; i++)
                         {
-                            Searchid = Searchid + dt.Rows[i]["Lotnumber"].ToString() + "," + dt.Rows[i]["Certificate"].ToString() + ",";
+                            Searchid = Searchid + dt.Rows[i]["Lotnumber"].ToString() + " " + dt.Rows[i]["Certificate"].ToString() + " ";
 
                         }
                         return Json(new Response { IsSuccess = true, Message = "", Result = Searchid });
                     }
-                   
+
                     return Json(new Response { IsSuccess = false, Message = "Wrong file format!" });
 
                 }
@@ -416,7 +419,7 @@ namespace Rosyblueonline.Web.Controllers
             }
             catch (Exception ex)
             {
-                ErrorLog.Log("InventoryController", "GetGIADataFromExcel", ex);
+                ErrorLog.Log("DashboardController", "SearchDataFromExcel", ex);
                 return Json(new Response { IsSuccess = false, Message = "Error" });
             }
 

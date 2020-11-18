@@ -91,8 +91,11 @@ namespace Rosyblueonline_API.Controllers
                 
                 if (obj[0].OrderId > 0)
                 {
-                    objOrderService.SendMailPreBookOrder(obj[0].OrderId, obj[0].CustomerId, ConfigurationManager.AppSettings["EmailTemplate_PlaceOrderAdmin"].ToString(), "Customer order details @ www.rosyblueonline.com");
-                    objOrderService.SendMailPreBookOrder(obj[0].OrderId, obj[0].CustomerId, ConfigurationManager.AppSettings["EmailTemplate_PlaceOrderCustomer"].ToString(), "Your order details @ www.rosyblueonline.com", true);
+                    string CCEmail = "";
+                    string BCCEmail = "";
+                    objOrderService.SendMailForApiOrderBook(obj[0].OrderId, obj[0].CustomerId, ConfigurationManager.AppSettings["EmailTemplate_PlaceOrderAdmin"].ToString(), "Customer order details @ www.rosyblueonline.com", CCEmail, BCCEmail, false);
+                    objOrderService.SendMailForApiOrderBook(obj[0].OrderId, obj[0].CustomerId, ConfigurationManager.AppSettings["EmailTemplate_PlaceOrderCustomer"].ToString(), "Your order details @ www.rosyblueonline.com", CCEmail, BCCEmail, true);
+
                     return new Response { Code = 200, IsSuccess = true, Message = "Order placed", Result = obj };
 
                 }
@@ -117,11 +120,11 @@ namespace Rosyblueonline_API.Controllers
                 LoginViewModel obj = new LoginViewModel();
                 obj.Username = UserName;
                 obj.Password = Password;
-                obj.DeviceName = "Test";
+                obj.DeviceName = "OrraApi";
                 obj.IpAddress = "1.0.1.0";
 
                 TokenLogModel objToken = this.objUDSvc.Login(obj);
-                if (objToken != null)
+                if (objToken != null && objToken.loginID == 241)
                 {
                     var tokenString = GenerateJSONWebToken();
                     return new Response { Code = 200, IsSuccess = true, Result = tokenString, Message = "Login Successfully !" };

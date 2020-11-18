@@ -15,6 +15,7 @@
         objLogSvc = new LoginRegistrationService();
         SetValidation();
         getLocation();
+         
     };
 
     var RegisterEvent = function () {

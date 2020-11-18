@@ -271,40 +271,40 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/24/2018 13:38:24</publishTime>
     </File>
     <File Include="bin/Rosyblueonline.Adapters.dll">
-      <publishTime>11/09/2020 16:51:49</publishTime>
+      <publishTime>11/13/2020 11:35:52</publishTime>
     </File>
     <File Include="bin/Rosyblueonline.Adapters.pdb">
-      <publishTime>11/09/2020 16:51:49</publishTime>
+      <publishTime>11/13/2020 11:35:52</publishTime>
     </File>
     <File Include="bin/Rosyblueonline.Framework.dll">
-      <publishTime>11/09/2020 16:51:49</publishTime>
+      <publishTime>11/13/2020 11:35:52</publishTime>
     </File>
     <File Include="bin/Rosyblueonline.Framework.pdb">
-      <publishTime>11/09/2020 16:51:49</publishTime>
+      <publishTime>11/13/2020 11:35:52</publishTime>
     </File>
     <File Include="bin/Rosyblueonline.Models.dll">
-      <publishTime>11/09/2020 16:51:49</publishTime>
+      <publishTime>11/13/2020 11:35:51</publishTime>
     </File>
     <File Include="bin/Rosyblueonline.Models.pdb">
-      <publishTime>11/09/2020 16:51:49</publishTime>
+      <publishTime>11/13/2020 11:35:51</publishTime>
     </File>
     <File Include="bin/Rosyblueonline.Repository.dll">
-      <publishTime>11/09/2020 16:51:50</publishTime>
+      <publishTime>11/13/2020 11:35:53</publishTime>
     </File>
     <File Include="bin/Rosyblueonline.Repository.dll.config">
       <publishTime>09/07/2020 14:26:18</publishTime>
     </File>
     <File Include="bin/Rosyblueonline.Repository.pdb">
-      <publishTime>11/09/2020 16:51:50</publishTime>
+      <publishTime>11/13/2020 11:35:53</publishTime>
     </File>
     <File Include="bin/Rosyblueonline.ServiceProviders.dll">
-      <publishTime>11/09/2020 16:51:51</publishTime>
+      <publishTime>11/13/2020 11:35:55</publishTime>
     </File>
     <File Include="bin/Rosyblueonline.ServiceProviders.dll.config">
       <publishTime>09/07/2020 14:26:18</publishTime>
     </File>
     <File Include="bin/Rosyblueonline.ServiceProviders.pdb">
-      <publishTime>11/09/2020 16:51:51</publishTime>
+      <publishTime>11/13/2020 11:35:55</publishTime>
     </File>
     <File Include="bin/RosyblueonlineORRA_API.dll">
       <publishTime>10/29/2020 15:53:03</publishTime>
@@ -313,10 +313,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/29/2020 15:53:03</publishTime>
     </File>
     <File Include="bin/Rosyblueonline_API.dll">
-      <publishTime>11/09/2020 16:51:53</publishTime>
+      <publishTime>11/13/2020 16:08:04</publishTime>
     </File>
     <File Include="bin/Rosyblueonline_API.pdb">
-      <publishTime>11/09/2020 16:51:53</publishTime>
+      <publishTime>11/13/2020 16:08:04</publishTime>
     </File>
     <File Include="bin/System.IdentityModel.Tokens.Jwt.dll">
       <publishTime>10/13/2020 00:20:12</publishTime>
@@ -514,7 +514,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/07/2020 14:26:29</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>11/09/2020 16:51:54</publishTime>
+      <publishTime>11/13/2020 11:35:59</publishTime>
     </File>
   </ItemGroup>
 </Project>

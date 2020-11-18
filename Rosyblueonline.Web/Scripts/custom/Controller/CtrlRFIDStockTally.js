@@ -4,6 +4,7 @@
     var InventoryCount = [];
     var Inventory = [];
     var Result = [];
+    var inv = []; 
     var LoadForm = function () {
         dtStockTally = new Datatable();
         objSvc = new RFIDService();
@@ -17,6 +18,7 @@
     var RegisterEvent = function () {
         //3005555574,3005577253,3006331403,3006573604,3006643415
         $('#btnScanRF').click(function () {
+            uiApp.BlockUI();
             if ($('#txtboxname').val() != '') {
                 var lastInventory = [];
                 var device = new Spacecode.Device($('#ddlipaddress').val());
@@ -98,6 +100,7 @@
                     //}
                     device = null;
                     GetStockCount($("#list").val());
+                    uiApp.UnBlockUI();
                 });
 
                 device.on('tagadded', function (tagUid) {
@@ -129,9 +132,11 @@
                     device.requestScan();
                     return false;
                 }
+                uiApp.UnBlockUI();
             }
             else {
                 uiApp.Alert({ container: '#uiPanel1', message: "Box name is mandatory", type: "error" });
+                uiApp.UnBlockUI();
             }
         });
 
@@ -191,8 +196,9 @@
                 if (data.IsSuccess) {
                     Result.push(data.Result);
                     console.log(data.Result);
-                    BindStockCount(data.Result.StockCount);
                     Inventory = data.Result.Inventory;
+                    BindStockCount(data.Result.StockCount);
+                    
                     BindTotalStockCount();
                 } else {
                     uiApp.Alert({ container: '#uiPanel1', message: data.Message, type: "error" });
@@ -211,32 +217,51 @@
             data[0]["BoxName"] = $('#txtboxname').val().trim();
         }
         $('#tmplStockCountDetail').tmpl(data).appendTo("#tblStockCountDetail");
-    };
 
-    var FilerData = function (type, rfid) {
-        var invLst = rfid.split(',');
-        var inv = [];
 
-        for (var k = 0; k < Result.length; k++) {
-            var Inventory = Result[k].Inventory;
-            for (var i = 0; i < invLst.length; i++) {
-                for (var j = 0; j < Inventory.length; j++) {
-                    if (invLst[i] != "") {
-                        if (invLst[i] == Inventory[j].rfid) {
-                            Inventory[j]["bookNo"] = $('#txtboxname').val();
-                            inv.push(Inventory[j]);
-                        }
+        var invLst = $("#list").val().split(',');
+      
+
+        for (var i = 0; i < invLst.length; i++) {
+            for (var j = 0; j < Inventory.length; j++) {
+                if (invLst[i] != "") {
+                    if (invLst[i] == Inventory[j].rfid) {
+                        Inventory[j]["bookNo"] = $('#txtboxname').val();
+                        inv.push(Inventory[j]);
                     }
                 }
             }
         }
+                
 
         renderData(inv);
-        if (inv.length > 0) {
-            doit();
-        } else {
-            uiApp.Alert({ container: '#uiPanel1', message: "No valid inventory", type: "warning" });
-        }
+    };
+
+    var FilerData = function (type, rfid) {
+        //var invLst = rfid.split(',');
+        //var inv = [];
+
+        //for (var k = 0; k < Result.length; k++) {
+        //    var Inventory = Result[k].Inventory;
+        //    for (var i = 0; i < invLst.length; i++) {
+        //        for (var j = 0; j < Inventory.length; j++) {
+        //            if (invLst[i] != "") {
+        //                if (invLst[i] == Inventory[j].rfid) {
+        //                    Inventory[j]["bookNo"] = $('#txtboxname').val();
+        //                    inv.push(Inventory[j]);
+        //                }
+        //            }
+        //        }
+        //    }
+        //}
+
+        //renderData(inv);
+        doit();
+        //if (inv.length > 0) {
+        //    doit();
+        //} else {
+        //    uiApp.Alert({ container: '#uiPanel1', message: "No valid inventory", type: "warning" });
+        //}
     }
 
     var renderData = function (data) {

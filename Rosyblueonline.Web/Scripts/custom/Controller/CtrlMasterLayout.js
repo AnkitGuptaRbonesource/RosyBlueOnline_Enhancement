@@ -79,6 +79,11 @@
     } 
 
 
+    function Comma(Num, ele) { //function to add commas to textboxes
+        var x1 = Num.split(' ').join(',');
+        $(ele).val(x1);
+    }
+
     //$('#SearchId').click(function (e) {
     //    e.preventDefault();
     //    var query = '';
@@ -132,6 +137,7 @@
         objSF.SearchDataFromExcel(fd).then(function (data) {
             if (data.IsSuccess) {
                 $("#LotCertSearchInput").val(data.Result);
+                $('#LotCertSearchInput').trigger('keyup');
                 if ($("#LotCertSearchInput").val() != "" || $("#LotCertSearchInput").val() != undefined) {
                     $("#SearchId").click();
                 } else {
@@ -151,7 +157,11 @@
 
     });
    
-    
+    $('#LotCertSearchInput').on('keyup', function () {
+        Comma($(this).val(), this); 
+    });
+
+
    
 
     return {

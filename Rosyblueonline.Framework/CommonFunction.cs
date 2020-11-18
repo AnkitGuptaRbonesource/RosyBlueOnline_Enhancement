@@ -155,8 +155,8 @@ namespace Rosyblueonline.Framework
 
         public DataTable GetDataFromExcel2(string excelFile, bool HasHeader = true)
         {
-            //Instance reference for Excel Application
-            Microsoft.Office.Interop.Excel.Application objXL = null;
+          //Instance reference for Excel Application
+              Microsoft.Office.Interop.Excel.Application objXL = new Microsoft.Office.Interop.Excel.Application();
             //Workbook refrence
             Microsoft.Office.Interop.Excel.Workbook objWB = null;
             //System.Data.DataSet ds = new System.Data.DataSet();
@@ -164,7 +164,7 @@ namespace Rosyblueonline.Framework
             try
             {
                 //Instancing Excel using COM services
-                objXL = new Microsoft.Office.Interop.Excel.Application();
+               // objXL = new Microsoft.Office.Interop.Excel.Application();
                 //Adding WorkBook
                 objWB = objXL.Workbooks.Open(excelFile);
 

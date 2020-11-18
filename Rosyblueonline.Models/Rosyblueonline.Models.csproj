@@ -120,6 +120,7 @@
     <Compile Include="RFIDstockmaster.cs" />
     <Compile Include="savedSearchModel.cs" />
     <Compile Include="StockHistoryViewModel.cs" />
+    <Compile Include="TanishqStockModel.cs" />
     <Compile Include="TokenLogModel.cs" />
     <Compile Include="UpcomingShowModel.cs" />
     <Compile Include="UserActivityLogModel.cs" />

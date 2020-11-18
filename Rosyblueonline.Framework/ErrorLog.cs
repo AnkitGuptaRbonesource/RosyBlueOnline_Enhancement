@@ -64,5 +64,47 @@ namespace Rosyblueonline.Framework
 
             }
         }
+
+
+        public static void TestLog(string ClassName, string MethodName)
+        {
+            try
+            { 
+                    string ErrorPath = ConfigurationManager.AppSettings["ErrorPath"];
+                    if (!string.IsNullOrEmpty(ErrorPath))
+                    {
+                        var path = HttpContext.Current.Server.MapPath(ErrorPath);
+                        var FileName = DateTime.Now.ToString("yyyy-MM-dd");
+                        var FilePath = path + FileName + "121.txt";
+                        if (!File.Exists(FilePath))
+                        {
+                            File.Create(FilePath);
+                        }
+                        //File.ReadAllLines(FilePath)
+                        using (FileStream fs = new FileStream(FilePath, FileMode.Append, FileAccess.Write))
+                        {
+                            using (StreamWriter writer = new StreamWriter(fs))
+                            //using (StreamWriter writer = File.CreateText(FilePath))
+                            {
+
+                                writer.WriteLine("-----------------------------------------------------------------------------");
+                                writer.WriteLine("ClassName : " + ClassName + " Method: " + MethodName);
+                                 
+                                writer.Flush();
+                                writer.Close();
+                                writer.Dispose();
+                            }
+                            //fs.Flush();
+                            fs.Close();
+                            fs.Dispose();
+                        }
+                    }
+                 
+            }
+            catch (Exception e)
+            {
+
+            }
+        }
     }
 }
