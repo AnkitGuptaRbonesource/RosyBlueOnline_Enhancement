@@ -141,14 +141,17 @@ namespace Rosyblueonline_API.Controllers
 
                 List<TanishqPlaceOrder> obj = objStockDetailsService.TanishqPlaceOrder(12227, MergeOrderList);
 
-                if (obj[0].OrderId > 0)
+                if (obj != null)
                 {
-                    string CCEmail = "";
-                    string BCCEmail = "";
-                     objOrderService.SendMailForApiOrderBook(obj[0].OrderId, obj[0].CustomerId, ConfigurationManager.AppSettings["EmailTemplate_PlaceOrderAdmin"].ToString(), "Customer order details @ www.rosyblueonline.com",CCEmail,BCCEmail,false);
-                    objOrderService.SendMailForApiOrderBook(obj[0].OrderId, obj[0].CustomerId, ConfigurationManager.AppSettings["EmailTemplate_PlaceOrderCustomer"].ToString(), "Your order details @ www.rosyblueonline.com",CCEmail,BCCEmail, true);
-                    return new Response { Code = 200, IsSuccess = true, Message = "Order placed", Result = obj };
+                    if (obj[0].OrderId > 0)
+                    {
+                        string CCEmail = "";
+                        string BCCEmail = "";
+                        objOrderService.SendMailForApiOrderBook(obj[0].OrderId, obj[0].CustomerId, ConfigurationManager.AppSettings["EmailTemplate_PlaceOrderAdmin"].ToString(), "Customer order details @ www.rosyblueonline.com", CCEmail, BCCEmail, false);
+                        objOrderService.SendMailForApiOrderBook(obj[0].OrderId, obj[0].CustomerId, ConfigurationManager.AppSettings["EmailTemplate_PlaceOrderCustomer"].ToString(), "Your order details @ www.rosyblueonline.com", CCEmail, BCCEmail, true);
+                        return new Response { Code = 200, IsSuccess = true, Message = "Order placed", Result = obj };
 
+                    }
                 }
                 return new Response { Code = 200, IsSuccess = false, Message = "No Order placed", Result = obj };
 

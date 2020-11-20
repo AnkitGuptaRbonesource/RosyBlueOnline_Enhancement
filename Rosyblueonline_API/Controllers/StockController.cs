@@ -88,16 +88,18 @@ namespace Rosyblueonline_API.Controllers
             {
                  
                 List<PlaceOrderOrra> obj = objStockDetailsService.ORRAPlaceOrder(241, BlockedOrderId , LotNos.ToString());
-                
-                if (obj[0].OrderId > 0)
+                if(obj!=null)
                 {
-                    string CCEmail = "";
-                    string BCCEmail = "";
-                    objOrderService.SendMailForApiOrderBook(obj[0].OrderId, obj[0].CustomerId, ConfigurationManager.AppSettings["EmailTemplate_PlaceOrderAdmin"].ToString(), "Customer order details @ www.rosyblueonline.com", CCEmail, BCCEmail, false);
-                    objOrderService.SendMailForApiOrderBook(obj[0].OrderId, obj[0].CustomerId, ConfigurationManager.AppSettings["EmailTemplate_PlaceOrderCustomer"].ToString(), "Your order details @ www.rosyblueonline.com", CCEmail, BCCEmail, true);
+                    if (obj[0].OrderId > 0)
+                    {
+                        string CCEmail = "kapil.mehta@orra.co.in,mitesh.dusara@orra.co.in";
+                        string BCCEmail = "lokendra.joshi@rbonesource.com,ankit.gupta@rbonesource.com";
+                        objOrderService.SendMailForApiOrderBook(obj[0].OrderId, obj[0].CustomerId, ConfigurationManager.AppSettings["EmailTemplate_PlaceOrderAdmin"].ToString(), "Customer order details @ www.rosyblueonline.com", CCEmail, BCCEmail, false);
+                        objOrderService.SendMailForApiOrderBook(obj[0].OrderId, obj[0].CustomerId, ConfigurationManager.AppSettings["EmailTemplate_PlaceOrderCustomer"].ToString(), "Your order details @ www.rosyblueonline.com", CCEmail, BCCEmail, true);
 
-                    return new Response { Code = 200, IsSuccess = true, Message = "Order placed", Result = obj };
+                        return new Response { Code = 200, IsSuccess = true, Message = "Order placed", Result = obj };
 
+                    }
                 }
                 return new Response { Code = 200, IsSuccess = false, Message = "No Order placed", Result = obj };
 
@@ -205,6 +207,29 @@ namespace Rosyblueonline_API.Controllers
             return json;
         }
 
+
+         
+        [HttpGet]
+        [Route("TestMail")]
+        public Response TestMail()
+        {
+            try
+            {
+                string CCEmail = "lokendra.joshi@rbonesource.com,ankit.gupta@rbonesource.com";
+                string BCCEmail = "lokendra.joshi@rbonesource.com,ankit.gupta@rbonesource.com";
+                objOrderService.SendMailForApiOrderBook(81089, 241, ConfigurationManager.AppSettings["EmailTemplate_PlaceOrderAdmin"].ToString(), "Customer order details @ www.rosyblueonline.com", CCEmail, BCCEmail, false);
+                    objOrderService.SendMailForApiOrderBook(81089, 241, ConfigurationManager.AppSettings["EmailTemplate_PlaceOrderCustomer"].ToString(), "Your order details @ www.rosyblueonline.com", CCEmail, BCCEmail, true);
+
+                    return new Response { Code = 200, IsSuccess = true, Message = "Order placed", Result = null };
+                 
+
+            }
+            catch (Exception ex)
+            {
+                ErrorLog.Log("Order", "TestMail", ex);
+                return new Response { Code = 500, IsSuccess = false, Message = ex.Message };
+            }
+        }
 
     }
 }

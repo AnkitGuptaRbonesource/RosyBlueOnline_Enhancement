@@ -180,7 +180,7 @@ namespace Rosyblueonline.Framework
             }
             if (!string.IsNullOrEmpty(BCC))
             {
-                string[] bccs = CC.Split(',');
+                string[] bccs = BCC.Split(',');
                 for (int i = 0; i < bccs.Length; i++)
                 {
                     mail.Bcc.Add(new MailAddress(bccs[i]));

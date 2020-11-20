@@ -345,9 +345,12 @@ namespace Rosyblueonline.ServiceProviders.Implementation
                 {
                     this.objMU = new MailUtility();
                 }
-                objMU.SendMail(lstOfEmailIDs, Subject, true, sbMailTemplate.ToString(),null, CCEmail, BCCEmail);
+                objMU.SendMail(lstOfEmailIDs, Subject, true, sbMailTemplate.ToString(), null, CCEmail, BCCEmail);
             }
 
         }
+
+
+
     }
 }

@@ -25,6 +25,6 @@ namespace Rosyblueonline.ServiceProviders.Abstraction
         DataTable OrderDetailForDownload(string OType, string OStatus, int FilterCustomerID);
         MemoTallyStockByRfidViewModel MemoTallyStockByRfid(int LoginID, int OrderID, string RFIDs);
         void SendMailForApiOrderBook(int OrderID, int CustomerId, string TemplatePath, string Subject, string CCEmail, string BCCEmail, bool SentToCustomer = false);
-
+        
     }
 }

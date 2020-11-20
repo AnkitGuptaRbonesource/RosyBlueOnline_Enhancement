@@ -363,11 +363,11 @@ namespace Rosyblueonline.Framework
                 {
                     if (dt.Columns[i].ColumnName != "_blank")
                     {
-                        html += "<td style='border-right:solid 1px #ffffff;font: 300 13px sans-serif, Verdana'>" + dt.Columns[i].ColumnName + "</td>";
+                        html += "<td style='border-left:solid 1px #ffffff;border-right:solid 1px #ffffff;font: 300 13px sans-serif, Verdana'>" + dt.Columns[i].ColumnName + "</td>";
                     }
                     else
                     {
-                        html += "<td style='border-right:solid 1px #ffffff;font: 300 13px sans-serif, Verdana;'></td>";
+                        html += "<td style='border-left:solid 1px #ffffff;border-right:solid 1px #ffffff;font: 300 13px sans-serif, Verdana;'></td>";
                     }
                 }
                 html += "</tr>";
@@ -380,7 +380,7 @@ namespace Rosyblueonline.Framework
                 {
                     //if (dt.Columns[j].ColumnName != "_blank")
                     //{
-                    html += "<td align='center' style='border-right:solid 1px #365f91;border-top:solid 1px #365f91;padding:4px'><font face='Verdana' ,'sans-serif' size=2px color='#365f91'>" + dt.Rows[i][j].ToString() + "</font></td>";
+                    html += "<td align='center' style='border-left:solid 1px #365f91;border-right:solid 1px #365f91;border-top:solid 1px #365f91;padding:4px'><font face='Verdana' ,'sans-serif' size=2px color='#365f91'>" + dt.Rows[i][j].ToString() + "</font></td>";
                     //}
                     //else
                     //{
