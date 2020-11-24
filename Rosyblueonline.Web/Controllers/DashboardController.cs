@@ -391,11 +391,9 @@ namespace Rosyblueonline.Web.Controllers
                     string extension = Path.GetExtension(Request.Files[0].FileName);
                     Guid guid = Guid.NewGuid();
                     string FileName = guid.ToString() + extension;
-                    Request.Files[0].SaveAs(path + "/" + FileName);
-                    ErrorLog.TestLog("Test1", path + "/" + FileName);
+                    Request.Files[0].SaveAs(path + "/" + FileName); 
 
-                    DataTable dt = com.GetDataFromExcel2(path + "/" + FileName, true);
-                    ErrorLog.TestLog("Test1", dt.Rows.Count.ToString());
+                    DataTable dt = com.GetDataFromExcel2(path + "/" + FileName, true); 
 
                     if (System.IO.File.Exists(path + "/" + FileName))
                     {

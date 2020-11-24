@@ -71,7 +71,7 @@ namespace Rosyblueonline.Web
                   "~/Content/DataTables/css/dataTables.bootstrap.min.css"));
 
 
-            //BundleTable.EnableOptimizations = true;
+          BundleTable.EnableOptimizations = false;
         }
     }
 }

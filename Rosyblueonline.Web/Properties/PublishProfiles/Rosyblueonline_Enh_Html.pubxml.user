@@ -16,13 +16,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/10/2013 16:29:20</publishTime>
     </File>
     <File Include="bin/App_global.asax.compiled">
-      <publishTime>11/17/2020 15:05:43</publishTime>
+      <publishTime>11/23/2020 15:46:12</publishTime>
     </File>
     <File Include="bin/App_global.asax.dll">
-      <publishTime>11/17/2020 15:05:43</publishTime>
+      <publishTime>11/23/2020 15:46:12</publishTime>
     </File>
     <File Include="bin/App_global.asax.pdb">
-      <publishTime>11/17/2020 15:05:43</publishTime>
+      <publishTime>11/23/2020 15:46:12</publishTime>
     </File>
     <File Include="bin/Autofac.dll">
       <publishTime>03/21/2019 17:17:50</publishTime>
@@ -76,7 +76,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/06/2018 05:29:48</publishTime>
     </File>
     <File Include="bin/ja/Rosyblueonline.Web.resources.dll">
-      <publishTime>11/17/2020 15:05:24</publishTime>
+      <publishTime>11/23/2020 15:46:01</publishTime>
     </File>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
       <publishTime>05/24/2018 13:38:22</publishTime>
@@ -232,16 +232,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/24/2018 13:38:24</publishTime>
     </File>
     <File Include="bin/Rosyblueonline.Factory.dll">
-      <publishTime>11/17/2020 13:26:29</publishTime>
+      <publishTime>11/23/2020 15:11:23</publishTime>
     </File>
     <File Include="bin/Rosyblueonline.Factory.pdb">
-      <publishTime>11/17/2020 13:26:29</publishTime>
+      <publishTime>11/23/2020 15:11:23</publishTime>
     </File>
     <File Include="bin/Rosyblueonline.Framework.dll">
-      <publishTime>11/17/2020 15:05:20</publishTime>
+      <publishTime>11/23/2020 15:45:29</publishTime>
     </File>
     <File Include="bin/Rosyblueonline.Framework.pdb">
-      <publishTime>11/17/2020 15:05:20</publishTime>
+      <publishTime>11/23/2020 15:45:29</publishTime>
     </File>
     <File Include="bin/Rosyblueonline.Models.dll">
       <publishTime>11/13/2020 11:35:51</publishTime>
@@ -250,28 +250,28 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/13/2020 11:35:51</publishTime>
     </File>
     <File Include="bin/Rosyblueonline.Repository.dll">
-      <publishTime>11/17/2020 13:26:30</publishTime>
+      <publishTime>11/23/2020 15:11:24</publishTime>
     </File>
     <File Include="bin/Rosyblueonline.Repository.dll.config">
       <publishTime>09/07/2020 14:26:18</publishTime>
     </File>
     <File Include="bin/Rosyblueonline.Repository.pdb">
-      <publishTime>11/17/2020 13:26:30</publishTime>
+      <publishTime>11/23/2020 15:11:24</publishTime>
     </File>
     <File Include="bin/Rosyblueonline.ServiceProviders.dll">
-      <publishTime>11/17/2020 15:05:21</publishTime>
+      <publishTime>11/23/2020 15:45:30</publishTime>
     </File>
     <File Include="bin/Rosyblueonline.ServiceProviders.dll.config">
       <publishTime>09/07/2020 14:26:18</publishTime>
     </File>
     <File Include="bin/Rosyblueonline.ServiceProviders.pdb">
-      <publishTime>11/17/2020 15:05:21</publishTime>
+      <publishTime>11/23/2020 15:45:30</publishTime>
     </File>
     <File Include="bin/Rosyblueonline.Web.dll">
-      <publishTime>11/17/2020 15:05:24</publishTime>
+      <publishTime>11/23/2020 15:46:01</publishTime>
     </File>
     <File Include="bin/Rosyblueonline.Web.pdb">
-      <publishTime>11/17/2020 15:05:24</publishTime>
+      <publishTime>11/23/2020 15:46:01</publishTime>
     </File>
     <File Include="bin/SRVTextToImage.dll">
       <publishTime>09/07/2020 14:26:18</publishTime>
@@ -904,10 +904,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/07/2020 14:26:19</publishTime>
     </File>
     <File Include="Content/EmailTemplate/PlaceOrderMail-Admin.html">
-      <publishTime>09/07/2020 14:26:19</publishTime>
+      <publishTime>11/19/2020 12:24:48</publishTime>
     </File>
     <File Include="Content/EmailTemplate/PlaceOrderMail-Customer.html">
-      <publishTime>09/07/2020 14:26:19</publishTime>
+      <publishTime>11/19/2020 12:24:48</publishTime>
     </File>
     <File Include="Content/EmailTemplate/PlaceOrderMail.html">
       <publishTime>12/27/2019 12:04:10</publishTime>
@@ -1861,7 +1861,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/27/2019 13:48:37</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>11/17/2020 15:05:34</publishTime>
+      <publishTime>11/23/2020 15:46:05</publishTime>
     </File>
     <File Include="Scripts/bootbox.js">
       <publishTime>09/07/2020 14:26:27</publishTime>
@@ -1984,7 +1984,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/07/2020 14:26:28</publishTime>
     </File>
     <File Include="Scripts/custom/Controller/CtrlSpecificSearch.js">
-      <publishTime>11/12/2020 13:45:32</publishTime>
+      <publishTime>11/20/2020 15:53:54</publishTime>
     </File>
     <File Include="Scripts/custom/Controller/CtrlStoneStatus.js">
       <publishTime>09/07/2020 14:26:28</publishTime>
@@ -2818,7 +2818,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/09/2020 11:11:49</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>11/10/2020 14:46:53</publishTime>
+      <publishTime>11/19/2020 12:16:43</publishTime>
     </File>
     <File Include="Views/Home/Registration.cshtml">
       <publishTime>10/30/2020 10:50:34</publishTime>
@@ -2968,7 +2968,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/07/2020 14:26:29</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>11/13/2020 14:48:17</publishTime>
+      <publishTime>11/21/2020 15:13:52</publishTime>
     </File>
   </ItemGroup>
 </Project>
