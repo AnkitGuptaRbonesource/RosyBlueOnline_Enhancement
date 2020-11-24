@@ -6,7 +6,7 @@
  *           Please visit http://opensource.org/licenses/MIT for more information
 !*/html,body{height:100%}.layout-boxed html,
 .layout-boxed body{height:100%}
-body{font-family: 'Karla', sans-serif !important;font-weight:400;overflow-x:hidden;overflow-y:auto}
+body{font-family: 'Karla', sans-serif !important;font-weight:400;overflow-x:hidden;overflow-y:auto;}
 .wrapper{height:100%;position:relative;overflow-x:hidden;overflow-y:auto}.wrapper:before,.wrapper:after{content:" ";display:table}
 .wrapper:after{clear:both}
 .layout-boxed .wrapper{max-width:1250px;margin:0 auto;min-height:100%;box-shadow:0 0 8px rgba(0,0,0,0.5);position:relative}
