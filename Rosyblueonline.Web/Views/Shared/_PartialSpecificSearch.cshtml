@@ -20,9 +20,9 @@
                         <div class="dl-container clearfix">
                             <div class="diamond-box">
                                 @*<div class="diamond-selectbox">*@   @*Commmented by Ankit 12Oct2020 *@
-                                    <input class="all_shape" id="all_shapebt" name="shap" value="1,2,3,4,5,6,7,8,9,10,18" type="button" data-toggle="tooltip" data-placement="bottom" title="" data-original-title=""  >
-                                    @* <p>select All</p>*@
-                                 @*</div>*@
+                                <input class="all_shape" id="all_shapebt" name="shap" value="1,2,3,4,5,6,7,8,9,10,18" type="button" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="">
+                                @* <p>select All</p>*@
+                                @*</div>*@
                                 <div class="tooltip fade bottom in" role="tooltip" name="shap" id="all_shapebt_div">
                                     <div class="tooltip-arrow"></div>
                                     <div class="tooltip-inner">@Resource.All_Shape</div>
@@ -157,9 +157,10 @@
                                 </div>
                                 <div class="stone-reset">
                                     <label class="reset-btn" id='btnF_CaratSize'>
-                                    <span class="refresh">
-                                        <img src="~/Content/img/refresh.png" />
-                                    </span>@Resource.Reset1</label>
+                                        <span class="refresh">
+                                            <img src="~/Content/img/refresh.png" />
+                                        </span>@Resource.Reset1
+                                    </label>
                                 </div>
                             </div>
                             <div class="sizeboxes">
@@ -497,41 +498,63 @@
 
                     </div>
                 </div>
-
                 <div class="advance-searchflt">
                     <div class="stoe-describe-box">
                         <div class="stone-describe origin-stone">
                             <div class="form-inline">
-                                <a role="button" data-toggle="collapse" href="#collapse3" aria-expanded="false" aria-controls="collapse3">
-                                    @Resource.Stone_Origin
+                                <a class="" role="button" data-toggle="collapse" href="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                                    @Resource.Key_To_Symbols
                                 </a>
                             </div>
                         </div>
                         <div class="stone-reset">
                             <span><i class="fa fa-angle-down" aria-hidden="true"></i></span>
-                            @*<label class="reset-btn" id='btnF_Origin'>
-                        <span class="refresh"><img src="~/Content/img/refresh.png" />
-                            <i class="fa fa-angle-down" aria-hidden="true"></i>
-                        </span>@Resource.Reset1
-                    </label>*@
                         </div>
                     </div>
-                    <form class="collapse dyd-shape F_Origin" id="collapse3">
+
+                    <form class="collapse padding-top-10" id="collapse2">
                         <div class="advance-panel-box">
                             <div class="panel panel-default">
                                 <div class="panel-body">
-                                    @foreach (var StoneOrigin in Model.VMStoneOrigin)
-                                    {
-                                    <div class="originval">
-                                        <input type="checkbox" name="Origin" class="design-checkbox" value="@StoneOrigin.originID" id="Origin@(StoneOrigin.originID)" />
-                                        <label for="Origin@(StoneOrigin.originID)">@StoneOrigin.originName</label>
+                                    <div class="describe-line clearfix" style="border: 0 none;background: none;">
+                                        <div class="radio">
+                                            <label class="radio-inline">
+                                                <input type="radio" id="KTScontains" name="r1" value="" checked>
+                                                <b>@Resource.Contains</b>
+                                                <span class="checkmark"></span>
+                                            </label>
+                                            <label class="radio-inline">
+                                                <input type="radio" id="KTSNotcontains" name="r1" value="">
+                                                <b>@Resource.Does_not_Contains</b>
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </div>
+                                        <form class="dyd-shape" style="margin: 15px 0 0;">
+                                            <div class="key-symbcheckbox F_Keytosymbol">
+                                                @{
+                                                    int KTS = 1;
+                                                    foreach (var mstKeytosymbol in Model.VMkeyToSymbol)
+                                                    {
+                                                        var KTSval = "KTS" + KTS.ToString();
+                                                        <span class="key-rep">
+                                                            <input type="checkbox" name="KTS" class="design-checkbox" value="@mstKeytosymbol.keyToSymbolID" id="@KTSval" />
+                                                            <label for="@KTSval">@mstKeytosymbol.KeyToSymbol</label>
+                                                        </span>
+                                                        KTS = KTS + 1;
+                                                    }
+                                                }
+                                            </div>
+
+                                            <label class="reset-btn" id='btnF_Keytosymbol'><span class="refresh"><img src="~/Content/img/refresh.png" /></span>@Resource.Reset1</label>
+                                        </form>
                                     </div>
-                                    }
                                 </div>
                             </div>
                         </div>
                     </form>
                 </div>
+
+
 
                 <div class="advance-searchflt">
                     <div class="stoe-describe-box">
@@ -812,109 +835,85 @@
                         </div>
                     </form>
                 </div>
-
-
                 <div class="advance-searchflt">
                     <div class="stoe-describe-box">
                         <div class="stone-describe origin-stone">
                             <div class="form-inline">
-                                <a class="" role="button" data-toggle="collapse" href="#collapse2" aria-expanded="false" aria-controls="collapse2">
-                                    @Resource.Key_To_Symbols
+                                <a role="button" data-toggle="collapse" href="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                                    @Resource.Stone_Origin
                                 </a>
                             </div>
                         </div>
                         <div class="stone-reset">
                             <span><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+                            @*<label class="reset-btn" id='btnF_Origin'>
+                        <span class="refresh"><img src="~/Content/img/refresh.png" />
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                        </span>@Resource.Reset1
+                    </label>*@
                         </div>
                     </div>
-
-                    <form class="collapse padding-top-10" id="collapse2">
+                    <form class="collapse dyd-shape F_Origin" id="collapse3">
                         <div class="advance-panel-box">
                             <div class="panel panel-default">
                                 <div class="panel-body">
-                                    <div class="describe-line clearfix" style="border: 0 none;background: none;">
-                                        <div class="radio">
-                                            <label class="radio-inline">
-                                                <input type="radio" id="KTScontains" name="r1" value="" checked>
-                                                <b>@Resource.Contains</b>
-                                                <span class="checkmark"></span>
-                                            </label>
-                                            <label class="radio-inline">
-                                                <input type="radio" id="KTSNotcontains" name="r1" value="">
-                                                <b>@Resource.Does_not_Contains</b>
-                                                <span class="checkmark"></span>
-                                            </label>
+                                    @foreach (var StoneOrigin in Model.VMStoneOrigin)
+                                    {
+                                        <div class="originval">
+                                            <input type="checkbox" name="Origin" class="design-checkbox" value="@StoneOrigin.originID" id="Origin@(StoneOrigin.originID)" />
+                                            <label for="Origin@(StoneOrigin.originID)">@StoneOrigin.originName</label>
                                         </div>
-                                        <form class="dyd-shape" style="margin: 15px 0 0;">
-                                            <div class="key-symbcheckbox F_Keytosymbol">
-                                                @{
-                                                    int KTS = 1;
-                                                    foreach (var mstKeytosymbol in Model.VMkeyToSymbol)
-                                                    {
-                                                        var KTSval = "KTS" + KTS.ToString();
-                                                        <span class="key-rep">
-                                                            <input type="checkbox" name="KTS" class="design-checkbox" value="@mstKeytosymbol.keyToSymbolID" id="@KTSval" />
-                                                            <label for="@KTSval">@mstKeytosymbol.KeyToSymbol</label>
-                                                        </span>
-                                                        KTS = KTS + 1;
-                                                    }
-                                                }
-                                            </div>
-
-                                            <label class="reset-btn" id='btnF_Keytosymbol'><span class="refresh"><img src="~/Content/img/refresh.png" /></span>@Resource.Reset1</label>
-                                        </form>
-                                    </div>
+                                    }
                                 </div>
                             </div>
                         </div>
                     </form>
                 </div>
 
-
                 <div class="keysearch-box keysearch-box2">
                     @*<div class="keyselect-box">
-                        <div class="key-title">
-                            <h5>@Resource.Key_To_Symbols</h5>
-                            <div class="sourec-selected">
-                                <a href="" class="selected-btn">11 Selected</a>
-                                <span><i class="fa fa-angle-down" aria-hidden="true"></i></span>
-                            </div>
-                        </div>
-                    </div>*@
+                <div class="key-title">
+                    <h5>@Resource.Key_To_Symbols</h5>
+                    <div class="sourec-selected">
+                        <a href="" class="selected-btn">11 Selected</a>
+                        <span><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+                    </div>
+                </div>
+            </div>*@
                     <div class="key-input-box">
                         <div class="border-arrow"></div>
                         @*<div class="describe-line clearfix" style="border: 0 none;background: none;">
-                            <div class="radio">
-                                <label class="radio-inline">
-                                    <input type="radio" id="KTScontains" name="r1" value="" checked>
-                                    <b>@Resource.Contains</b>
-                                    <span class="checkmark"></span>
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" id="KTSNotcontains" name="r1" value="">
-                                    <b>@Resource.Does_not_Contains</b>
-                                    <span class="checkmark"></span>
-                                </label>
-                            </div>
-                            <form class="dyd-shape" style="margin: 15px 0 0;">
-                                <div class="key-symbcheckbox F_Keytosymbol">
-                                    @{
-                                        int KTS = 1;
-                                        foreach (var mstKeytosymbol in Model.VMkeyToSymbol)
-                                        {
-                                            var KTSval = "KTS" + KTS.ToString();
-                                            <span class="key-rep">
-                                                <input type="checkbox" name="KTS" class="design-checkbox" value="@mstKeytosymbol.keyToSymbolID" id="@KTSval" />
-                                                <label for="@KTSval">@mstKeytosymbol.KeyToSymbol</label>
-                                            </span>
-                                            KTS = KTS + 1;
-                                        }
-                                    }
-                                </div>
+                    <div class="radio">
+                        <label class="radio-inline">
+                            <input type="radio" id="KTScontains" name="r1" value="" checked>
+                            <b>@Resource.Contains</b>
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" id="KTSNotcontains" name="r1" value="">
+                            <b>@Resource.Does_not_Contains</b>
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <form class="dyd-shape" style="margin: 15px 0 0;">
+                        <div class="key-symbcheckbox F_Keytosymbol">
+                            @{
+                                int KTS = 1;
+                                foreach (var mstKeytosymbol in Model.VMkeyToSymbol)
+                                {
+                                    var KTSval = "KTS" + KTS.ToString();
+                                    <span class="key-rep">
+                                        <input type="checkbox" name="KTS" class="design-checkbox" value="@mstKeytosymbol.keyToSymbolID" id="@KTSval" />
+                                        <label for="@KTSval">@mstKeytosymbol.KeyToSymbol</label>
+                                    </span>
+                                    KTS = KTS + 1;
+                                }
+                            }
+                        </div>
 
-                                <label class="reset-btn" id='btnF_Keytosymbol'><span class="refresh"><img src="~/Content/img/refresh.png" /></span>@Resource.Reset1</label>
-                            </form>
-                        </div>*@
+                        <label class="reset-btn" id='btnF_Keytosymbol'><span class="refresh"><img src="~/Content/img/refresh.png" /></span>@Resource.Reset1</label>
+                    </form>
+                </div>*@
                     </div>
 
                     <div class="diamond-demand-box">

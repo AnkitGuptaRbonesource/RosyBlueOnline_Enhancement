@@ -13,10 +13,15 @@
     <link href="~/Content/dist/img/favicon.png" rel="shortcut icon" type="image/x-icon" />
     <link href="~/Content/css/bootstrap.min.css" rel="stylesheet">
     @*<link href="~/Content/css/style.css" rel="stylesheet"> *@
-    <link href="~/Content/css/Diamondstyle.css" rel="stylesheet"> 
+    <link href="~/Content/css/Diamondstyle.css" rel="stylesheet">
+    <style>
+        .td-hide {
+            display: none
+        }
+    </style>
 </head>
 <body>
-    <header>
+    <header style="display: none">
 
         <div class="mainhead">
             <div class="container-fluid">
@@ -47,7 +52,7 @@
 
     @if (Model != null)
     {
-        <section class="content" style="padding-top: 90px;">
+        <section class="content" style="padding-top: 0px;">
             <div id="openModal" class="">
                 <div>
                     <h4 style="font-weight: 700">
@@ -100,7 +105,7 @@
                         </div>
                         <div class="row">
 
-                            <div class="col-lg-3">
+                            <div class="col-lg-3 col-md-6">
 
                                 <div class="diamond-img-view">
                                     <div class="diamond-view-border">
@@ -141,7 +146,7 @@
 
                             </div>
 
-                            <div class="col-lg-6">
+                            <div class="col-lg-6 col-md-6 text-center">
                                     <iframe id="iframev360" src="@Model.v360url" width="380" height="480" style="margin-left:65px;" scrolling="no" frameborder="no" allowfullscreen></iframe>
                                 </div>
                             <div class="col-lg-3"  >
@@ -188,9 +193,9 @@
                                             </td>
                                         </tr>
                                         @*<tr>
-                                            <td class="tbnew">V360</td>
-                                            <td id="Shape" class="tbnew"> <a href="@Model.v360url" target="_blank"><i class="fa fa-video-camera" aria-hidden="true"></i>360 View</a></td>
-                                        </tr>*@
+            <td class="tbnew">V360</td>
+            <td id="Shape" class="tbnew"> <a href="@Model.v360url" target="_blank"><i class="fa fa-video-camera" aria-hidden="true"></i>360 View</a></td>
+        </tr>*@
                                         <tr>
                                             <td class="tbnew">@Resource.Shape</td>
                                             <td id="Shape" class="tbnew">@Model.Shape</td>
@@ -219,100 +224,107 @@
                                             <td class="tbnew">@Resource.Symmetry</td>
                                             <td id="SymmetryFull" class="tbnew">@Model.Symmetry</td>
                                         </tr>
-                                        <tr>
+                                        <tr class="td-hide">
                                             <td class="tbnew">@Resource.Fluor </td>
                                             <td id="Florescense" class="tbnew">@Model.Fluorescence</td>
                                         </tr>
-                                        <tr>
+                                        <tr class="td-hide">
 
                                             <td class="tbnew">@Resource.Shade</td>
                                             <td id="Shade" class="tbnew">@Model.Shade</td>
                                         </tr>
 
-                                        <tr>
+                                        <tr class="td-hide">
                                             <td class="tbnew">@Resource.Measurements</td>
                                             <td id="Measurement" class="tbnew">@Model.Measurement</td>
                                         </tr>
-                                        <tr>
+                                        <tr class="td-hide">
                                             <td class="tbnew">@Resource.EC</td>
                                             <td id="EC" class="tbnew">@Model.EyeClean</td>
                                         </tr>
-                                        <tr>
+                                        <tr class="td-hide">
                                             <td class="tbnew">@Resource.TableBlack</td>
                                             <td id="TableInc" class="tbnew">@Model.TableBlack</td>
                                         </tr>
-                                        <tr>
+                                        <tr class="td-hide">
                                             <td class="tbnew">@Resource.CrownBlack</td>
                                             <td id="BlackIncln" class="tbnew">@Model.SideBlack</td>
                                         </tr>
-                                        <tr>
+                                        <tr class="td-hide">
                                             <td class="tbnew">@Resource.Milky</td>
                                             <td id="Milky" class="tbnew">@Model.Milky</td>
                                         </tr>
-                                        <tr>
+                                        <tr class="td-hide">
                                             <td class="tbnew">@Resource.Depth</td>
                                             <td id="Depth" class="tbnew">@Model.DepthPerc</td>
                                         </tr>
-                                        <tr>
+                                        <tr class="td-hide">
                                             <td class="tbnew">@Resource.Table</td>
                                             <td id="TableP" class="tbnew">@Model.TablePerc</td>
                                         </tr>
-                                        <tr>
+                                        <tr class="td-hide">
                                             <td class="tbnew">@Resource.Crown_Angle</td>
                                             <td id="CrownAngle" class="tbnew">@Model.CrownAngle</td>
                                         </tr>
-                                        <tr>
+                                        <tr class="td-hide">
                                             <td class="tbnew">@Resource.Crown_Height</td>
                                             <td id="CrownHeight" class="tbnew">@Model.CrownHeight</td>
                                         </tr>
-                                        <tr>
+                                        <tr class="td-hide">
                                             <td class="tbnew">@Resource.Pavilion_Angle</td>
                                             <td id="PavilionAngle" class="tbnew">@Model.PavilionAngle</td>
                                         </tr>
-                                        <tr>
+                                        <tr class="td-hide">
                                             <td class="tbnew">@Resource.Pavilion_Depth</td>
                                             <td id="PD" class="tbnew">@Model.PavilionDepth</td>
                                         </tr>
-                                        <tr>
+                                        <tr class="td-hide">
                                             <td class="tbnew">@Resource.Star_Length</td>
                                             <td id="StarLength" class="tbnew">@Model.StarLength</td>
                                         </tr>
-                                        <tr>
+                                        <tr class="td-hide">
                                             <td class="tbnew">@Resource.HA</td>
                                             <td id="HA" class="tbnew">@Model.HeartAndArrow</td>
                                         </tr>
 
-                                        <tr>
+                                        <tr class="td-hide">
                                             <td class="tbnew">@Resource.Girdle</td>
                                             <td id="Girdle" class="tbnew">@Model.Girdle</td>
                                         </tr>
-                                        <tr>
+                                        <tr class="td-hide">
                                             <td class="tbnew">@Resource.Keytosymbol</td>
                                             <td id="Keytosymbol" class="tbnew">@Model.Keytosymbol</td>
                                         </tr>
-                                        <tr>
+                                        <tr class="td-hide">
                                             <td class="tbnew">@Resource.Gemex</td>
                                             <td id="Gemx" class="tbnew">@Model.Gemex</td>
                                         </tr>
-                                        <tr>
+                                        <tr class="td-hide">
                                             <td class="tbnew">@Resource.Laser</td>
                                             <td id="Laser" class="tbnew">@Model.Laserinscribe</td>
                                         </tr>
-                                        <tr>
+                                        <tr class="td-hide">
                                             <td class="tbnew">@Resource.Lower_Half</td>
                                             <td id="LowerHalf" class="tbnew">@Model.LowerHalf</td>
                                         </tr>
 
-                                        <tr>
+                                        <tr class="td-hide">
                                             <td class="tbnew">@Resource.Forever</td>
                                             <td id="ForeverMark" class="tbnew">@Model.ForeverMark</td>
                                         </tr>
-                                        <tr>
+                                        <tr class="td-hide">
                                             <td class="tbnew">@Resource.Girdle (%)</td>
                                             <td id="GirdlePerc" class="tbnew">@Model.GirdlePerc</td>
                                         </tr>
+                                        <tr>
+                                            <td colspan="2" style="padding: 10px 0 0;">
+                                                <button type="button" class="btn btn-block btn-primary" id="showmorebtn" onclick="$(this).hide();$('#showlessbtn').show();$('.td-hide').show();">See More</button>
+                                                <button type="button" class="btn btn-block btn-primary" style="display:none" id="showlessbtn" onclick="$(this).hide();$('#showmorebtn').show();$('.td-hide').hide();">See Less</button>
+                                            </td>
 
-                                </table>
+                                        </tr>
+
+</table>
 
                             </div>
 

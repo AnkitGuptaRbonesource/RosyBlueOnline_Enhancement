@@ -251,19 +251,17 @@
                     }
                     @if (objMenuAccess.Search == 1)
                     {
-                        <li>
-                            <a href="#">
-                                <div class="img-icon"><img src="/Content/img/search.png" /></div>
-                                <span>@Resource.Search</span>
-                                <span class="pull-right-container">
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </span>
-                            </a>
+                <li>
+                    <a href="/Inventory/SpecificSearch">
+                        <div class="img-icon"><img src="/Content/img/search.png" /></div>
+                        <span>@Resource.Search</span>
+                       
+                    </a>
 
-                            <ul class="treeview-menu">
-                                <li><a href="/Inventory/SpecificSearch"><div class="img-icon"><i class="fa fa-search"></i></div> @Resource.Specfic_search</a></li>
-                            </ul>
-                        </li>
+                    <!--<ul class="treeview-menu">
+                            <li><a href="/Inventory/SpecificSearch"><div class="img-icon"><i class="fa fa-search"></i></div> @Resource.Specfic_search</a></li>
+                        </ul>-->
+                </li>
                     }
                     @if (objMenuAccess.Inventory == 1)
                     {

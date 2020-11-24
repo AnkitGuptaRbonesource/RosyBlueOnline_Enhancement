@@ -1703,7 +1703,7 @@ input[type=checkbox].design-checkbox {
         color: #3A4276;
         background: #F8F9FE;
         border-radius: 6px;
-        padding: 10px 20px;
+        padding: 10px 16px;
         cursor: pointer;
         margin: 0;
         margin-right: 10px;
@@ -1716,7 +1716,7 @@ input[type=checkbox] + label.design-checkbox:hover {
   display: inline-block;
 }
 
-input[type=radio]:checked + label, input[type=checkbox].design-checkbox:checked + label, input[type=checkbox].design-checkbox + label.selected {
+input[type=radio]:checked + label, input[type=checkbox].design-checkbox:checked + label, input[type=checkbox].design-checkbox + label.selected, .stone-describe a.active {
     background-image: none;
     outline: 0;
     background: #FFFFFF;
@@ -1725,7 +1725,27 @@ input[type=radio]:checked + label, input[type=checkbox].design-checkbox:checked 
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3), 0px 4px 8px rgba(50, 50, 71, 0.006);
     border-radius: 5px;
 }
-
+.dyd-shape.F_CaratsSize label {
+    min-width:126px;
+}
+.dyd-shape.F_Color label {
+    min-width: 70px;
+}
+.dyd-shape.F_Clarity label {
+    min-width: 76px;
+}
+.dyd-shape.F_Certificate label {
+    min-width: 168px;
+}
+.dyd-shape.F_Fluorescence label {
+    min-width: 76px;
+}
+.dyd-shape .F_Cut label, .dyd-shape .F_Polished label, .dyd-shape .F_Symmerty label {
+    min-width: 116px;
+}
+.dyd-shape.F_SalesL label {
+    min-width: 118px;
+}
 .key-symbcheckbox .key-rep {
     width: 270px;
     display: inline-block;
@@ -2389,6 +2409,12 @@ a.sele-all {
     font-weight: 500;
     position: relative;
 }
+    .stone-describe a.sele-all {
+        color: #3A4276;
+        background: #F8F9FE;
+        border-radius: 6px;
+        padding: 5px 20px;
+    }
 .stone-describe a:after {
     position: absolute;
     display: block;
@@ -2935,7 +2961,10 @@ a.sele-all {
     width: 50%;
     justify-content: space-between;
 }
-.search-stone-box2 .stone-list .dl-container {
+.keysearch-box2 .diamond-demand-box {
+    width: 100%;
+}
+    .search-stone-box2 .stone-list .dl-container {
     position: relative;
     display: flex;
     align-items: center;
