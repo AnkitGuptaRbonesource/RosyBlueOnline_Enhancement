@@ -19,8 +19,8 @@
                 uiApp.BlockUI();
                 objSF.GetGIADataFromExcel(fd).then(function (data) {
                     if (data.IsSuccess) {
-                      //GetDataFromApi(data.Result);
-                         TestApi();
+                      GetDataFromApi(data.Result);
+                         
                     } else {
                         uiApp.Alert({ container: '#uiPanel1', message: data.Message, type: "warning" });
                         uiApp.UnBlockUI();
@@ -39,34 +39,7 @@
         //    }
         //});
     }
-
-    var TestApi = function () {
-
-
-        var url = "https://api.reportresults.gia.edu";
-
-        var xhr = new XMLHttpRequest();
-        xhr.open("POST", url);
-
-        xhr.setRequestHeader("Authorization", "68bd3cfb-f113-41e1-896b-fb98527f8742");
-        xhr.setRequestHeader("Content-Type", "application/json");
-
-        xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
-        xhr.setRequestHeader("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE,PATCH,OPTION");
-        xhr.setRequestHeader("Access-Control-Allow-Headers", "origin, x-requested-with, accept, x-api-key");
-         
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === 4) {
-                console.log(xhr.status);
-                console.log(xhr.responseText);
-            }
-        };
-
-        var data = ' {"query":" query ReportQuery($ReportNumber: String!) {     getReport(report_number: $ReportNumber){ report_number  report_date   report_type results { __typename  ... on DiamondGradingReportResults { shape_and_cutting_style  measurements  carat_weight  color_grade color_origin color_distribution  clarity_grade cut_grade  polish  symmetry  fluorescence  clarity_characteristics  inscriptions   report_comments      proportions {  depth_pct   table_pct  crown_angle  crown_height   pavilion_angle  pavilion_depth  star_length lower_half  girdle culet        }  }   }    quota {   remaining   }   } }","variables":{"ReportNumber":"2141438171"}}';
-
-        xhr.send(data);
-        uiApp.UnBlockUI();
-    }
+     
 
     var GetDataFromApi = function (pData) {
         var ListOfData = [];
@@ -79,26 +52,55 @@
                 //reportWeight: pData[i].Weight,
             });
 
-            objSF.GetDataFromGiaApi($('#hfIP').val(), data[i]).then(function (rData) {
+            objSF.NewGetDataFromGiaApi(pData[i].Certificate).then(function (rData) {
                 var idx = 0;
+                var FinalJson = JSON.parse(rData.Result); 
                 for (var k = 0; k < pData.length; k++) {
-                    if (pData[k].Certificate == rData.reportDtls.reportDtl[0]["reportNo"]) {
+                    if (pData[k].Certificate == FinalJson.data.getReport["report_number"]) {
                         idx = k;
                         break;
                     }
                 }
-                if (rData.status == "SUCCESS") {
-                    ListOfData.push(rData.reportDtls.reportDtl[0]);
-                    ListOfData[ListOfData.length - 1]["lotno"] = pData[idx].Lotnumber;
+
+
+                if (rData.IsSuccess == true) {
+                     ListOfData.push(FinalJson.data.getReport.results);
+                    //ListOfData[ListOfData.length - 1]["lotno"] = pData[idx].Lotnumber;
+                    //ListOfData[ListOfData.length - 1]["lotno"] = pData[idx].Lotnumber;
+                    //ListOfData[ListOfData.length - 1]["certificate"] = pData[idx].Certificate;
                     ListOfData[ListOfData.length - 1]["lotno"] = pData[idx].Lotnumber;
                     ListOfData[ListOfData.length - 1]["certificate"] = pData[idx].Certificate;
-                    //ListOfData[ListOfData.length - 1]["crnHt"] = (ListOfData[ListOfData.length - 1]["crnHt"] * 100) + '%';
-                    //ListOfData[ListOfData.length - 1]["pavDp"] = (ListOfData[ListOfData.length - 1]["pavDp"] * 100) + '%';
-                    //ListOfData[ListOfData.length - 1]["starLn"] = (ListOfData[ListOfData.length - 1]["starLn"] * 100) + '%';
-                    //ListOfData[ListOfData.length - 1]["lrHalf"] = (ListOfData[ListOfData.length - 1]["lrHalf"] * 100) + '%';
-                    //ListOfData[ListOfData.length - 1]["girdlePct"] = (ListOfData[ListOfData.length - 1]["girdlePct"] * 100) + '%';
-                    ListOfData[ListOfData.length - 1]["status"] = "Success";
+                    ListOfData[ListOfData.length - 1]["shape"] = FinalJson.data.getReport.results.data.shape.shape_group;
+                    ListOfData[ListOfData.length - 1]["weight"] = FinalJson.data.getReport.results.data.weight.weight;
+                    ListOfData[ListOfData.length - 1]["color"] = FinalJson.data.getReport.results.data.color.color_grade_code;
+                    ListOfData[ListOfData.length - 1]["clarity"] = FinalJson.data.getReport.results.clarity_grade;
+                    ListOfData[ListOfData.length - 1]["length"] = FinalJson.data.getReport.results.measurements;
+                    ListOfData[ListOfData.length - 1]["width"] = FinalJson.data.getReport.results.measurements;
+                    ListOfData[ListOfData.length - 1]["depth"] = FinalJson.data.getReport.results.measurements;
+                    ListOfData[ListOfData.length - 1]["finalCut"] = FinalJson.data.getReport.results.data.cut;
                     ListOfData[ListOfData.length - 1]["lab"] = "GIA";
+                    ListOfData[ListOfData.length - 1]["depthPct"] = FinalJson.data.getReport.results.proportions.depth_pct;
+                    ListOfData[ListOfData.length - 1]["tablePct"] = FinalJson.data.getReport.results.proportions.table_pct;
+                    ListOfData[ListOfData.length - 1]["girdle"] = FinalJson.data.getReport.results.data.girdle.girdle_size_code;
+                    ListOfData[ListOfData.length - 1]["polish"] = FinalJson.data.getReport.results.data.polish;
+                    ListOfData[ListOfData.length - 1]["symmetry"] = FinalJson.data.getReport.results.data.symmetry;
+                    ListOfData[ListOfData.length - 1]["fluorescenceIntensity"] = FinalJson.data.getReport.results.fluorescence;
+                    ListOfData[ListOfData.length - 1]["crnHt"] = FinalJson.data.getReport.results.proportions.crown_height;
+                    ListOfData[ListOfData.length - 1]["crnAg"] = FinalJson.data.getReport.results.proportions.crown_angle;
+                    ListOfData[ListOfData.length - 1]["pavDp"] = FinalJson.data.getReport.results.proportions.pavilion_depth;
+                    ListOfData[ListOfData.length - 1]["pavAg"] = FinalJson.data.getReport.results.proportions.pavilion_angle;
+                    ListOfData[ListOfData.length - 1]["starLn"] = FinalJson.data.getReport.results.proportions.star_length;
+                    ListOfData[ListOfData.length - 1]["lrHalf"] = FinalJson.data.getReport.results.proportions.lower_half;
+                    ListOfData[ListOfData.length - 1]["girdlePct"] = FinalJson.data.getReport.results.data.girdle.girdle_pct;
+                    ListOfData[ListOfData.length - 1]["reportDt"] = FinalJson.data.getReport.report_date_iso;
+                    ListOfData[ListOfData.length - 1]["culetSize"] = FinalJson.data.getReport.results.proportions.culet;
+                    ListOfData[ListOfData.length - 1]["inscription"] = FinalJson.data.getReport.results.inscriptions;
+                    ListOfData[ListOfData.length - 1]["keyToSymbols"] = FinalJson.data.getReport.results.clarity_characteristics;
+                    ListOfData[ListOfData.length - 1]["reportComments"] = FinalJson.data.getReport.results.report_comments;
+                    ListOfData[ListOfData.length - 1]["status"] = "Success"; 
+
+                    // ListOfData[ListOfData.length - 1]["status"] = "Success";
+                    //ListOfData[ListOfData.length - 1]["lab"] = "GIA";
                     idx++;
                 } else {
                     ListOfData[ListOfData.length - 1]["lotno"] = pData[idx].Lotnumber;
@@ -108,7 +110,7 @@
                     idx++;
                 }
                 console.log(ListOfData);
-                if (pData.length == ListOfData.length) {
+                if (pData.length == idx) {
                     renderData(ListOfData)
                 }
             }, function () {
@@ -204,7 +206,7 @@
                         {
                             targets: 'ReportDate',
                             render: function (data, type, row) {
-                                var val = moment(data, "MM/DD/YYYY").format("DD-MM-YYYY");
+                                var val = moment(data).format("DD-MM-YYYY");
                                 return val;
                             }
                         }

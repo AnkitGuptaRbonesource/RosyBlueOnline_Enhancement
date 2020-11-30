@@ -175,11 +175,14 @@
             e.preventDefault();
             var isSelected = $(this).data('select');
             if (isSelected == true) {
-                $('input[type=checkbox].exe').prop('checked', true);
+                $('input[type=checkbox].exe').prop('checked', true); 
                 $(this).data('select', false);
+                $(this).addClass("active");
             } else {
                 $('input[type=checkbox].exe').prop('checked', false);
                 $(this).data('select', true);
+                $(this).prop('checked', false);
+                $(this).removeClass("active");
             }
             ReadLotNos(true);
             //ReadForm(true);
@@ -192,10 +195,12 @@
                 $('input[type=checkbox].exe,.vGood').prop('checked', true);
                 $(this).data('select', false);
                 $('#ancEx').data('select', true);
+                $(this).addClass("active");
             } else {
                 $('input[type=checkbox].exe,.vGood').prop('checked', false);
                 $(this).data('select', true);
                 $('#ancEx').data('select', false);
+                $(this).removeClass("active");
             }
             ReadLotNos(true);
             //ReadForm(true);
@@ -927,6 +932,7 @@
     function GetCount(FinalQuery, newArrival, callback) {
         $('#dydEdit').attr('disable', true);
         $('.small-loader').show();
+        
         objSF.StockCount(FinalQuery, newArrival).then(function (data) {
             console.log(data);
             if (data.IsSuccess) {
@@ -943,7 +949,10 @@
                 $s('#dydEdit > span.badge .sscount').html("0");
             }
             $('#dydEdit').attr('disable', false);
-            $('.small-loader').hide();
+            setTimeout(
+                function () {
+                    $('.small-loader').hide(); 
+                }, 3000);
 
         }, function (error) {
                 $('#dydEdit').attr('disable', false);

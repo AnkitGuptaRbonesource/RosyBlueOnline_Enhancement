@@ -367,6 +367,18 @@ var SearchFilter = function () {
         });
     };
 
+
+    obj.NewGetDataFromGiaApi = function (ReportNumber) {
+        return myApp.http({
+            method: 'post',
+            url: '/Inventory/GIAapiCall',
+            data: {
+                ReportNumber: ReportNumber
+
+            }
+        });
+    };
+
     obj.ExportToExcelInventory = function (fText, newArrival, IsSpecialSearch, IsOnlyMemo) {
         return myApp.http({
             method: 'post',

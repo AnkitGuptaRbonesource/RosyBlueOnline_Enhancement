@@ -835,7 +835,9 @@
                         </div>
                     </form>
                 </div>
-                <div class="advance-searchflt">
+                @if (Model.VMStoneOrigin[0].originID!=0) 
+                {
+                    <div class="advance-searchflt">
                     <div class="stoe-describe-box">
                         <div class="stone-describe origin-stone">
                             <div class="form-inline">
@@ -869,6 +871,7 @@
                         </div>
                     </form>
                 </div>
+                }
 
                 <div class="keysearch-box keysearch-box2">
                     @*<div class="keyselect-box">

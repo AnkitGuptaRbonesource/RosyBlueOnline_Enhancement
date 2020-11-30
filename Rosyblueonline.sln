@@ -26,6 +26,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libs", "Libs", "{3987ABB1-F
 		Libs\SRVTextToImage.dll = Libs\SRVTextToImage.dll
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rosyblue_FTPInventoryUpload", "Rosyblue_FTPInventoryUpload\Rosyblue_FTPInventoryUpload.csproj", "{DD054D5B-D50F-48B6-9C02-D709DC3E5A76}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -68,6 +70,10 @@ Global
 		{D33C9A88-B8F5-46B8-9A59-64F2F6744F73}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D33C9A88-B8F5-46B8-9A59-64F2F6744F73}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D33C9A88-B8F5-46B8-9A59-64F2F6744F73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD054D5B-D50F-48B6-9C02-D709DC3E5A76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD054D5B-D50F-48B6-9C02-D709DC3E5A76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD054D5B-D50F-48B6-9C02-D709DC3E5A76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD054D5B-D50F-48B6-9C02-D709DC3E5A76}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

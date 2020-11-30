@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DD054D5B-D50F-48B6-9C02-D709DC3E5A76}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Rosyblue_FTPInventoryUpload</RootNamespace>
+    <AssemblyName>Rosyblue_FTPInventoryUpload</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InventoryFileUpload.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Rosyblueonline.Adapters\Rosyblueonline.Adapters.csproj">
+      <Project>{9025444f-f782-42bd-92f5-366645cfc6e9}</Project>
+      <Name>Rosyblueonline.Adapters</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Rosyblueonline.Factory\Rosyblueonline.Factory.csproj">
+      <Project>{b449a34a-65ab-4d48-9611-ca988b0d3d87}</Project>
+      <Name>Rosyblueonline.Factory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Rosyblueonline.Framework\Rosyblueonline.Framework.csproj">
+      <Project>{834a3d77-c381-4d40-afbd-c334109bf609}</Project>
+      <Name>Rosyblueonline.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Rosyblueonline.Models\Rosyblueonline.Models.csproj">
+      <Project>{c55048c0-250e-4b75-bef7-ddbf4abceea8}</Project>
+      <Name>Rosyblueonline.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Rosyblueonline.Repository\Rosyblueonline.Repository.csproj">
+      <Project>{3b25a0ba-9b1c-4420-9616-5643036fdcb2}</Project>
+      <Name>Rosyblueonline.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Rosyblueonline.ServiceProviders\Rosyblueonline.ServiceProviders.csproj">
+      <Project>{44440f91-a3ad-4f76-a34a-2b11ba5f790e}</Project>
+      <Name>Rosyblueonline.ServiceProviders</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

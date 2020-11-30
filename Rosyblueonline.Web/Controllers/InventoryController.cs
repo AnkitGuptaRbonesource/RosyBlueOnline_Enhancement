@@ -6,6 +6,9 @@ using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Net;
+using System.Text;
+using System.Text.Json;
 using System.Threading;
 using System.Web;
 using System.Web.Mvc;
@@ -1292,7 +1295,7 @@ namespace Rosyblueonline.Web.Controllers
                     {
                         objGiaLst.Add(new GIAUpload
                         {
-                            Certificate = dt.Rows[i]["Certificate"].ToString(),
+                            Certificate = dt.Rows[i]["Certificate"].ToString() ,
                             Lotnumber = dt.Rows[i]["Lotnumber"].ToString(),
                             Weight = dt.Rows[i]["Weight"].ToString(),
                         });
@@ -1306,6 +1309,53 @@ namespace Rosyblueonline.Web.Controllers
                 ErrorLog.Log("InventoryController", "GetGIADataFromExcel", ex);
                 return Json(new Response { IsSuccess = false, Message = "Error" });
             }
+
+        }
+
+        public ActionResult GIAapiCall(string ReportNumber)
+        {
+
+            try
+            {
+                string apiUrl = "https://api.reportresults.gia.edu";
+                string path11 = Server.MapPath(ConfigurationManager.AppSettings["INVUpload"].ToString());
+
+                string GRAPHQL_QUERY_FILE = path11 + "/Temp/report_results.txt";
+
+                string query = "";
+                query = string.Join(" ", System.IO.File.ReadAllLines(GRAPHQL_QUERY_FILE));
+
+                var query_variables = new Dictionary<string, string> {
+                    { "ReportNumber", ReportNumber}
+                        };
+                var payload = new Dictionary<string, object> {
+                    { "query", query },
+                    { "variables", query_variables }
+                      };
+
+                JsonSerializerOptions options = new JsonSerializerOptions
+                {
+                    WriteIndented = true
+                };
+                string json1 = System.Text.Json.JsonSerializer.Serialize(payload, options);
+
+                // string inputJson = (new JavaScriptSerializer()).Serialize(json1);
+                WebClient client = new WebClient();
+                client.Headers["Content-type"] = "application/json";
+                client.Headers["Authorization"] = "7f80c008-7003-472c-a5ea-d27ee44ac622";
+                client.Headers["user-agent"] = "Only a test!";
+                client.Encoding = Encoding.UTF8;
+                string json = client.UploadString(apiUrl, json1);
+
+                return Json(new Response { IsSuccess = true, Message = "", Result = json });
+
+            }
+            catch (Exception ex)
+            {
+                ErrorLog.Log("InventoryController", "GIAApiCall", ex);
+                return Json(new Response { IsSuccess = false, Message = "Error" });
+            }
+
 
         }
 
