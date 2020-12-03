@@ -14,6 +14,7 @@
     <link href="~/Content/css/bootstrap.min.css" rel="stylesheet">
     @*<link href="~/Content/css/style.css" rel="stylesheet"> *@
     <link href="~/Content/css/Diamondstyle.css" rel="stylesheet">
+    <link href="/content/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <style>
         .td-hide {
             display: none
@@ -48,6 +49,24 @@
             </div>
         </div>
 
+    </header>
+
+    <header>
+        <div class="topbar hidden">
+            <div class="container text-center">
+                <ul class="nav navbar-nav">
+                    <li><a href="tel:+912266650000"><i class="fa fa-phone" aria-hidden="true"></i> +91 22 66650000</a></li>
+                    <li><a href="mailto:shanay.mehta@rosyblue.com"><i class="fa fa-envelope" aria-hidden="true"></i> shanay.mehta@rosyblue.com</a></li>
+                </ul>
+            </div>
+        </div>
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header text-center">
+                    <a class="navbar-brand" href="#"><img src="/Content/img/newlogo.png"></a>
+                </div>
+            </div>
+        </nav>
     </header>
 
     @if (Model != null)
@@ -105,7 +124,7 @@
                         </div>
                         <div class="row">
 
-                            <div class="col-lg-3 col-md-6">
+                            <div class="col-lg-4 col-md-12">
 
                                 <div class="diamond-img-view">
                                     <div class="diamond-view-border">
@@ -127,7 +146,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="diamond-thub-div" style="margin-left: 125px">
+                                    <div class="diamond-thub-div">
                                         <ul class="thub-view">
                                             <li>
                                                 <img src="~/Content/img/dimoand01.gif" data-show="#diamondView1" id="frontviewimage" />
@@ -146,210 +165,214 @@
 
                             </div>
 
-                            <div class="col-lg-6 col-md-6 text-center">
-                                    <iframe id="iframev360" src="@Model.v360url" width="380" height="480" style="margin-left:65px;" scrolling="no" frameborder="no" allowfullscreen></iframe>
+                            <div class="col-lg-4 col-md-6 text-center">
+                                <div class="card-box card-box-pad">
+                                <iframe id="iframev360" src="@Model.v360url" width="380" height="480" scrolling="no" frameborder="no" allowfullscreen></iframe>
+                            
                                 </div>
-                            <div class="col-lg-3"  >
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="card-box card-box-pad">
+                                    <table class="table table-striped" style="width:100%">
+                                        <tbody>
+                                            <tr class="tbnew" style="text-align:center;background-color:#3a4176;color:#fff">
+                                                <td colspan="2">@Resource.Diamond_Detail</td>
+                                            </tr>
+                                            <tr>
+                                                <td width="50%" class="tbnew">@Resource.Lot_Number</td>
+                                                <td width="50%" id="LotNumber" class="tbnew">@Model.Stock</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tbnew">@Resource.Lab</td>
+                                                <td id="Certificate" class="tbnew">@Model.Certificate</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tbnew">@Resource.Report_No</td>
+                                                <td id="CertificateNo" class="tbnew">
+                                                    @{
+                                                        string Url = "";
+                                                        string CertificateNo = Model.CertificateNo;
+                                                        if (Model.Certificate == "GIA")
+                                                        {
+                                                            Url = "https://www.gia.edu/report-check?reportno=";
+                                                        }
+                                                        else if (Model.Certificate == "IGI")
+                                                        {
+                                                            Url = "www.igiworldwide.com/verify.php?r=";
+                                                        }
 
-                                <table class="table" style="width:100%">
-                                    <tbody>
-                                        <tr class="tbnew" style="text-align:center;background-color:#337ab7;color:#fff">
-                                            <td colspan="2">@Resource.Diamond_Detail</td>
-                                        </tr>
-                                        <tr>
-                                            <td width="50%" class="tbnew">@Resource.Lot_Number</td>
-                                            <td width="50%" id="LotNumber" class="tbnew">@Model.Stock</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="tbnew">@Resource.Lab</td>
-                                            <td id="Certificate" class="tbnew">@Model.Certificate</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="tbnew">@Resource.Report_No</td>
-                                            <td id="CertificateNo" class="tbnew">
-                                                @{
-                                                    string Url = "";
-                                                    string CertificateNo = Model.CertificateNo;
-                                                    if (Model.Certificate == "GIA")
-                                                    {
-                                                        Url = "https://www.gia.edu/report-check?reportno=";
+                                                        if (!string.IsNullOrEmpty(Url) && !string.IsNullOrEmpty(CertificateNo))
+                                                        {
+
+                                                            <a href="@(Url+CertificateNo)" target="_blank">@Model.CertificateNo</a>
+
+                                                            @*<iframe id="giareport" src="@(Url+CertificateNo)" width="940" height="675" style="margin-top:-1016px;margin-bottom:20px;margin-left:22px" scrolling="yes" frameborder="1px solid black" allowfullscreen></iframe>*@
+                                                        }
                                                     }
-                                                    else if (Model.Certificate == "IGI")
-                                                    {
-                                                        Url = "www.igiworldwide.com/verify.php?r=";
-                                                    }
 
-                                                    if (!string.IsNullOrEmpty(Url) && !string.IsNullOrEmpty(CertificateNo))
-                                                    {
+                                                    @*<td id="CertificateNo" class="tbnew">@Model.CertificateNo</td>*@
 
-                                                        <a href="@(Url+CertificateNo)" target="_blank">@Model.CertificateNo</a>
+                                                </td>
+                                            </tr>
+                                            @*<tr>
+                        <td class="tbnew">V360</td>
+                        <td id="Shape" class="tbnew"> <a href="@Model.v360url" target="_blank"><i class="fa fa-video-camera" aria-hidden="true"></i>360 View</a></td>
+                    </tr>*@
+                                            <tr>
+                                                <td class="tbnew">@Resource.Shape</td>
+                                                <td id="Shape" class="tbnew">@Model.Shape</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tbnew">@Resource.Size</td>
+                                                <td id="Carat" class="tbnew">@Model.Weight</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tbnew">@Resource.Color</td>
+                                                <td id="Color" class="tbnew">@Model.Color</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tbnew ">@Resource.Clarity</td>
+                                                <td id="Clarity" class="tbnew">@Model.Clarity</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tbnew">@Resource.Cut</td>
+                                                <td id="Cut" class="tbnew">@Model.Cut</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tbnew">@Resource.Polish</td>
+                                                <td id="PolishFull" class="tbnew">@Model.Polish</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tbnew">@Resource.Symmetry</td>
+                                                <td id="SymmetryFull" class="tbnew">@Model.Symmetry</td>
+                                            </tr>
+                                            <tr class="td-hide">
+                                                <td class="tbnew">@Resource.Fluor </td>
+                                                <td id="Florescense" class="tbnew">@Model.Fluorescence</td>
+                                            </tr>
+                                            <tr class="td-hide">
 
-                                                        @*<iframe id="giareport" src="@(Url+CertificateNo)" width="940" height="675" style="margin-top:-1016px;margin-bottom:20px;margin-left:22px" scrolling="yes" frameborder="1px solid black" allowfullscreen></iframe>*@
-                                                    }
-                                                }
+                                                <td class="tbnew">@Resource.Shade</td>
+                                                <td id="Shade" class="tbnew">@Model.Shade</td>
+                                            </tr>
 
-                                                @*<td id="CertificateNo" class="tbnew">@Model.CertificateNo</td>*@
+                                            <tr class="td-hide">
+                                                <td class="tbnew">@Resource.Measurements</td>
+                                                <td id="Measurement" class="tbnew">@Model.Measurement</td>
+                                            </tr>
+                                            <tr class="td-hide">
+                                                <td class="tbnew">@Resource.EC</td>
+                                                <td id="EC" class="tbnew">@Model.EyeClean</td>
+                                            </tr>
+                                            <tr class="td-hide">
+                                                <td class="tbnew">@Resource.TableBlack</td>
+                                                <td id="TableInc" class="tbnew">@Model.TableBlack</td>
+                                            </tr>
+                                            <tr class="td-hide">
+                                                <td class="tbnew">@Resource.CrownBlack</td>
+                                                <td id="BlackIncln" class="tbnew">@Model.SideBlack</td>
+                                            </tr>
+                                            <tr class="td-hide">
+                                                <td class="tbnew">@Resource.Milky</td>
+                                                <td id="Milky" class="tbnew">@Model.Milky</td>
+                                            </tr>
+                                            <tr class="td-hide">
+                                                <td class="tbnew">@Resource.Depth</td>
+                                                <td id="Depth" class="tbnew">@Model.DepthPerc</td>
+                                            </tr>
+                                            <tr class="td-hide">
+                                                <td class="tbnew">@Resource.Table</td>
+                                                <td id="TableP" class="tbnew">@Model.TablePerc</td>
+                                            </tr>
+                                            <tr class="td-hide">
+                                                <td class="tbnew">@Resource.Crown_Angle</td>
+                                                <td id="CrownAngle" class="tbnew">@Model.CrownAngle</td>
+                                            </tr>
+                                            <tr class="td-hide">
+                                                <td class="tbnew">@Resource.Crown_Height</td>
+                                                <td id="CrownHeight" class="tbnew">@Model.CrownHeight</td>
+                                            </tr>
+                                            <tr class="td-hide">
+                                                <td class="tbnew">@Resource.Pavilion_Angle</td>
+                                                <td id="PavilionAngle" class="tbnew">@Model.PavilionAngle</td>
+                                            </tr>
+                                            <tr class="td-hide">
+                                                <td class="tbnew">@Resource.Pavilion_Depth</td>
+                                                <td id="PD" class="tbnew">@Model.PavilionDepth</td>
+                                            </tr>
+                                            <tr class="td-hide">
+                                                <td class="tbnew">@Resource.Star_Length</td>
+                                                <td id="StarLength" class="tbnew">@Model.StarLength</td>
+                                            </tr>
+                                            <tr class="td-hide">
+                                                <td class="tbnew">@Resource.HA</td>
+                                                <td id="HA" class="tbnew">@Model.HeartAndArrow</td>
+                                            </tr>
 
-                                            </td>
-                                        </tr>
-                                        @*<tr>
-            <td class="tbnew">V360</td>
-            <td id="Shape" class="tbnew"> <a href="@Model.v360url" target="_blank"><i class="fa fa-video-camera" aria-hidden="true"></i>360 View</a></td>
-        </tr>*@
-                                        <tr>
-                                            <td class="tbnew">@Resource.Shape</td>
-                                            <td id="Shape" class="tbnew">@Model.Shape</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="tbnew">@Resource.Size</td>
-                                            <td id="Carat" class="tbnew">@Model.Weight</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="tbnew">@Resource.Color</td>
-                                            <td id="Color" class="tbnew">@Model.Color</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="tbnew ">@Resource.Clarity</td>
-                                            <td id="Clarity" class="tbnew">@Model.Clarity</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="tbnew">@Resource.Cut</td>
-                                            <td id="Cut" class="tbnew">@Model.Cut</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="tbnew">@Resource.Polish</td>
-                                            <td id="PolishFull" class="tbnew">@Model.Polish</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="tbnew">@Resource.Symmetry</td>
-                                            <td id="SymmetryFull" class="tbnew">@Model.Symmetry</td>
-                                        </tr>
-                                        <tr class="td-hide">
-                                            <td class="tbnew">@Resource.Fluor </td>
-                                            <td id="Florescense" class="tbnew">@Model.Fluorescence</td>
-                                        </tr>
-                                        <tr class="td-hide">
+                                            <tr class="td-hide">
+                                                <td class="tbnew">@Resource.Girdle</td>
+                                                <td id="Girdle" class="tbnew">@Model.Girdle</td>
+                                            </tr>
+                                            <tr class="td-hide">
+                                                <td class="tbnew">@Resource.Keytosymbol</td>
+                                                <td id="Keytosymbol" class="tbnew">@Model.Keytosymbol</td>
+                                            </tr>
+                                            <tr class="td-hide">
+                                                <td class="tbnew">@Resource.Gemex</td>
+                                                <td id="Gemx" class="tbnew">@Model.Gemex</td>
+                                            </tr>
+                                            <tr class="td-hide">
+                                                <td class="tbnew">@Resource.Laser</td>
+                                                <td id="Laser" class="tbnew">@Model.Laserinscribe</td>
+                                            </tr>
+                                            <tr class="td-hide">
+                                                <td class="tbnew">@Resource.Lower_Half</td>
+                                                <td id="LowerHalf" class="tbnew">@Model.LowerHalf</td>
+                                            </tr>
 
-                                            <td class="tbnew">@Resource.Shade</td>
-                                            <td id="Shade" class="tbnew">@Model.Shade</td>
-                                        </tr>
+                                            <tr class="td-hide">
+                                                <td class="tbnew">@Resource.Forever</td>
+                                                <td id="ForeverMark" class="tbnew">@Model.ForeverMark</td>
+                                            </tr>
+                                            <tr class="td-hide">
+                                                <td class="tbnew">@Resource.Girdle (%)</td>
+                                                <td id="GirdlePerc" class="tbnew">@Model.GirdlePerc</td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2" style="padding: 10px 0 0;">
+                                                    <button type="button" class="btn btn-block btn-primary" id="showmorebtn" onclick="$(this).hide();$('#showlessbtn').show();$('.td-hide').show();">See More</button>
+                                                    <button type="button" class="btn btn-block btn-primary" style="display:none" id="showlessbtn" onclick="$(this).hide();$('#showmorebtn').show();$('.td-hide').hide();">See Less</button>
+                                                </td>
 
-                                        <tr class="td-hide">
-                                            <td class="tbnew">@Resource.Measurements</td>
-                                            <td id="Measurement" class="tbnew">@Model.Measurement</td>
-                                        </tr>
-                                        <tr class="td-hide">
-                                            <td class="tbnew">@Resource.EC</td>
-                                            <td id="EC" class="tbnew">@Model.EyeClean</td>
-                                        </tr>
-                                        <tr class="td-hide">
-                                            <td class="tbnew">@Resource.TableBlack</td>
-                                            <td id="TableInc" class="tbnew">@Model.TableBlack</td>
-                                        </tr>
-                                        <tr class="td-hide">
-                                            <td class="tbnew">@Resource.CrownBlack</td>
-                                            <td id="BlackIncln" class="tbnew">@Model.SideBlack</td>
-                                        </tr>
-                                        <tr class="td-hide">
-                                            <td class="tbnew">@Resource.Milky</td>
-                                            <td id="Milky" class="tbnew">@Model.Milky</td>
-                                        </tr>
-                                        <tr class="td-hide">
-                                            <td class="tbnew">@Resource.Depth</td>
-                                            <td id="Depth" class="tbnew">@Model.DepthPerc</td>
-                                        </tr>
-                                        <tr class="td-hide">
-                                            <td class="tbnew">@Resource.Table</td>
-                                            <td id="TableP" class="tbnew">@Model.TablePerc</td>
-                                        </tr>
-                                        <tr class="td-hide">
-                                            <td class="tbnew">@Resource.Crown_Angle</td>
-                                            <td id="CrownAngle" class="tbnew">@Model.CrownAngle</td>
-                                        </tr>
-                                        <tr class="td-hide">
-                                            <td class="tbnew">@Resource.Crown_Height</td>
-                                            <td id="CrownHeight" class="tbnew">@Model.CrownHeight</td>
-                                        </tr>
-                                        <tr class="td-hide">
-                                            <td class="tbnew">@Resource.Pavilion_Angle</td>
-                                            <td id="PavilionAngle" class="tbnew">@Model.PavilionAngle</td>
-                                        </tr>
-                                        <tr class="td-hide">
-                                            <td class="tbnew">@Resource.Pavilion_Depth</td>
-                                            <td id="PD" class="tbnew">@Model.PavilionDepth</td>
-                                        </tr>
-                                        <tr class="td-hide">
-                                            <td class="tbnew">@Resource.Star_Length</td>
-                                            <td id="StarLength" class="tbnew">@Model.StarLength</td>
-                                        </tr>
-                                        <tr class="td-hide">
-                                            <td class="tbnew">@Resource.HA</td>
-                                            <td id="HA" class="tbnew">@Model.HeartAndArrow</td>
-                                        </tr>
+                                            </tr>
 
-                                        <tr class="td-hide">
-                                            <td class="tbnew">@Resource.Girdle</td>
-                                            <td id="Girdle" class="tbnew">@Model.Girdle</td>
-                                        </tr>
-                                        <tr class="td-hide">
-                                            <td class="tbnew">@Resource.Keytosymbol</td>
-                                            <td id="Keytosymbol" class="tbnew">@Model.Keytosymbol</td>
-                                        </tr>
-                                        <tr class="td-hide">
-                                            <td class="tbnew">@Resource.Gemex</td>
-                                            <td id="Gemx" class="tbnew">@Model.Gemex</td>
-                                        </tr>
-                                        <tr class="td-hide">
-                                            <td class="tbnew">@Resource.Laser</td>
-                                            <td id="Laser" class="tbnew">@Model.Laserinscribe</td>
-                                        </tr>
-                                        <tr class="td-hide">
-                                            <td class="tbnew">@Resource.Lower_Half</td>
-                                            <td id="LowerHalf" class="tbnew">@Model.LowerHalf</td>
-                                        </tr>
+                                    </table>
 
-                                        <tr class="td-hide">
-                                            <td class="tbnew">@Resource.Forever</td>
-                                            <td id="ForeverMark" class="tbnew">@Model.ForeverMark</td>
-                                        </tr>
-                                        <tr class="td-hide">
-                                            <td class="tbnew">@Resource.Girdle (%)</td>
-                                            <td id="GirdlePerc" class="tbnew">@Model.GirdlePerc</td>
-                                        </tr>
-                                        <tr>
-                                            <td colspan="2" style="padding: 10px 0 0;">
-                                                <button type="button" class="btn btn-block btn-primary" id="showmorebtn" onclick="$(this).hide();$('#showlessbtn').show();$('.td-hide').show();">See More</button>
-                                                <button type="button" class="btn btn-block btn-primary" style="display:none" id="showlessbtn" onclick="$(this).hide();$('#showmorebtn').show();$('.td-hide').hide();">See Less</button>
-                                            </td>
-
-                                        </tr>
-
-</table>
-
+                                </div>
                             </div>
 
-                            @*<div class="">
-                                    @{
-                                        string Url = "";
-                                        string CertificateNo = Model.CertificateNo;
-                                        if (Model.Certificate == "GIA")
-                                        {
-                                            Url = "https://www.gia.edu/report-check?reportno=";
-                                        }
-                                        else if (Model.Certificate == "IGI")
-                                        {
-                                            Url = "www.igiworldwide.com/verify.php?r=";
-                                        }
+                                @*<div class="">
+            @{
+                string Url = "";
+                string CertificateNo = Model.CertificateNo;
+                if (Model.Certificate == "GIA")
+                {
+                    Url = "https://www.gia.edu/report-check?reportno=";
+                }
+                else if (Model.Certificate == "IGI")
+                {
+                    Url = "www.igiworldwide.com/verify.php?r=";
+                }
 
-                                        if (!string.IsNullOrEmpty(Url) && !string.IsNullOrEmpty(CertificateNo))
-                                        {
-                                            <iframe id="giareport" src="@(Url+CertificateNo)" width="940" height="675" style="margin-top:-1016px;margin-bottom:20px;margin-left:22px" scrolling="yes" frameborder="1px solid black" allowfullscreen></iframe>
-                                        }
-                                    }
+                if (!string.IsNullOrEmpty(Url) && !string.IsNullOrEmpty(CertificateNo))
+                {
+                    <iframe id="giareport" src="@(Url+CertificateNo)" width="940" height="675" style="margin-top:-1016px;margin-bottom:20px;margin-left:22px" scrolling="yes" frameborder="1px solid black" allowfullscreen></iframe>
+                }
+            }
 
-                                </div>*@
+        </div>*@
 
-                        </div>
+                            </div>
 
                     </div>
                 </div>
