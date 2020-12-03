@@ -91,6 +91,7 @@
     <Compile Include="Abstraction\IChargeService.cs" />
     <Compile Include="Abstraction\IDownloadScriptService.cs" />
     <Compile Include="Abstraction\IDownloadTemplateService.cs" />
+    <Compile Include="Abstraction\IFTPInventoryFileUpload.cs" />
     <Compile Include="Abstraction\IHomeServiceProvider.cs" />
     <Compile Include="Abstraction\IMarketingService.cs" />
     <Compile Include="Abstraction\IMemoService.cs" />
@@ -104,6 +105,7 @@
     <Compile Include="Implementation\ChargeService.cs" />
     <Compile Include="Implementation\DownloadScriptService.cs" />
     <Compile Include="Implementation\DownloadTemplateService.cs" />
+    <Compile Include="Implementation\FTPInventoryFileUpload.cs" />
     <Compile Include="Implementation\HomeServiceProvider.cs" />
     <Compile Include="Implementation\MemoService.cs" />
     <Compile Include="Implementation\OrderService.cs" />

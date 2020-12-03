@@ -16,16 +16,17 @@ namespace Rosyblue_FTPInventoryUpload
 {
     public partial class Form1 : Form
     {
-
+       
 
         public Form1()
         {
             InitializeComponent();
+           
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-           
+            
             InventoryFileUpload IV = new InventoryFileUpload(null,null);
             IV.InventoryUpload(1);
 

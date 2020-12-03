@@ -643,6 +643,7 @@
     <Content Include="Content\img\watch-list2.png" />
     <Content Include="Content\img\Watchlist.png" />
     <Content Include="Content\img\whline.png" />
+    <Content Include="Content\INV\Temp\report_results.txt" />
     <Content Include="Content\slider\css\arrows.png" />
     <Content Include="Content\slider\css\bullets.png" />
     <Content Include="Content\slider\css\default.css" />

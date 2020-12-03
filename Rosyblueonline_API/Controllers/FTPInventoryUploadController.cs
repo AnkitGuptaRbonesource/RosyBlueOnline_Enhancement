@@ -1,30 +1,25 @@
-﻿using System;
+﻿using Rosyblueonline.Framework;
+using Rosyblueonline.Models;
+using Rosyblueonline.Models.ViewModel;
+using Rosyblueonline.ServiceProviders.Abstraction;
+using Rosyblueonline.ServiceProviders.Implementation;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Rosyblueonline.Framework;
-using Rosyblueonline.Models;
-using Rosyblueonline.Models.ViewModel;
-using Rosyblueonline.Repository.UnitOfWork;
-using Rosyblueonline.ServiceProviders.Abstraction;
-using Rosyblueonline.ServiceProviders.Implementation; 
+using System.Web.Http;
 
-namespace Rosyblue_FTPInventoryUpload
+namespace Rosyblueonline_API.Controllers
 {
-  public  class InventoryFileUpload   
+    [RoutePrefix("api/FTPInventoryUpload")]
+    public class FTPInventoryUploadController : ApiController
     {
+
         IStockDetailsService objStockDetailsService;
         IMemoService objMemoService;
-        CommonFunction commonFunction; 
-        string UserHostAddress = "1.1.1.1";
-        string Filepath = "";
-        string GetToken = "";
-
-
-        public InventoryFileUpload(IStockDetailsService objStockDetailsService, IMemoService objMemoService)
+        CommonFunction commonFunction;
+        public FTPInventoryUploadController(IStockDetailsService objStockDetailsService, IMemoService objMemoService)
         {
             this.objStockDetailsService = objStockDetailsService as StockDetailsService;
             this.objMemoService = objMemoService as MemoService;
@@ -32,11 +27,17 @@ namespace Rosyblue_FTPInventoryUpload
 
 
 
-        public void InventoryUpload(int uploadFormatId)
+        string UserHostAddress = "1.1.1.1";
+        string Filepath = @"D:\Ankit\UploadFormat.cleaned.xlsx";
+        string GetToken = "";
+
+        [HttpGet]
+        [Route("InventoryUpload")]
+        public void InventoryUpload()
         {
+            int uploadFormatId = 1;
 
-
-         string path = "";
+            string path = @"D:\Ankit\Inv\";
             string fileExtn = "";
             string FileName = Path.GetFileName(Filepath);
             int fileId = 0;
@@ -52,16 +53,19 @@ namespace Rosyblue_FTPInventoryUpload
 
                 fileExtn = Path.GetExtension(FileName);
                 string ip = UserHostAddress;
-                path = "INVUpload";
+                 
                 if (fileExtn == ".xls" || fileExtn == ".xlsx")
                 {
                     fileId = this.objStockDetailsService.InsertFileUploadLog(FileName.ToString(), FileName.ToString(), LoginID.ToString(), UserHostAddress, uploadFormatId.ToString(), InventoryuploadType);
                     // Request.Files[0].SaveAs(path + fileId.ToString() + fileExtn);
-                    System.IO.File.Move(path + fileId.ToString() + fileExtn, Filepath);
+                  //  System.IO.File.Move(path + fileId.ToString() + fileExtn, Filepath);
+
+                    File.Move(Filepath, path + fileId.ToString() + fileExtn);
+
                     List<InventoryUpload> objLst = UploadInventory(LoginID, InventoryuploadType, fileExtn, path, fileId);
                     if (objLst.Count > 0)
                     {
-                        path = "INVUpload";
+                         
                         List<InventoryUpload> objValidLst = objLst.Where(x => (x.LotStatus != null && x.LotStatus.ToLower() == "valid")).ToList();
                         List<InventoryUpload> objInValidLst = objLst.Where(x => (x.LotStatus != null && x.LotStatus.ToLower().Contains("invalid"))).ToList();
                         DataTable dtValid = ListtoDataTable.ToDataTable<InventoryUpload>(objValidLst);

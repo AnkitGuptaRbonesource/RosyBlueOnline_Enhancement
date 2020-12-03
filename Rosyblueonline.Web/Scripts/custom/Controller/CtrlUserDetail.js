@@ -375,6 +375,8 @@
                 dtOrder.init({
                     src: '#tblUserDetail',
                     searching: true,
+                    scrollY: "485px",
+                    scrollX: true,
                     dataTable: {
                         //deferLoading: 0,
 

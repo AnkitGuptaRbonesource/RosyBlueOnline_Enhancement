@@ -380,7 +380,7 @@ namespace Rosyblueonline.Framework
                 {
                     //if (dt.Columns[j].ColumnName != "_blank")
                     //{
-                    html += "<td align='center' style='border-right:solid 1px #365f91;border-top:solid 1px #365f91;padding:4px'><font face='Verdana' ,'sans-serif' size=2px color='#365f91'>" + dt.Rows[i][j].ToString() + "</font></td>";
+                    html += "<td align='center' style='border-left: solid 1px #365f91;border-right:solid 1px #365f91;border-top:solid 1px #365f91;'><font face='Verdana' ,'sans-serif' size=2px color='#365f91'>" + dt.Rows[i][j].ToString() + "</font></td>";
                     //}
                     //else
                     //{
