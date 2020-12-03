@@ -2985,12 +2985,12 @@ a.sele-all {
     line-height: 18px;
     letter-spacing: 0.2px;
     color: #BDBDBD;
-    padding: 5px 2px 14px 16px !important;
+    padding: 5px 10px 14px !important;
     border-radius: 10px;
     border: none;
 }
 #tblBodySummary .rsearchnew {
-    padding: 15px 0 5px 0;
+    padding: 15px 10px 5px;
 }
 .list-view .table .rsearchnew .rsearchnew {
     font-weight: 600;
