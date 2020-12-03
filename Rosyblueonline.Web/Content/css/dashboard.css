@@ -2987,7 +2987,7 @@ a.sele-all {
     color: #BDBDBD;
     padding: 5px 10px 14px !important;
     border-radius: 10px;
-    border: none;
+    border: 0 none;
 }
 #tblBodySummary .rsearchnew {
     padding: 15px 10px 5px;
