@@ -644,6 +644,7 @@
     <Content Include="Content\img\Watchlist.png" />
     <Content Include="Content\img\whline.png" />
     <Content Include="Content\INV\Temp\report_results.txt" />
+    <Content Include="Content\INV\Temp\UploadFormat.xlsx" />
     <Content Include="Content\slider\css\arrows.png" />
     <Content Include="Content\slider\css\bullets.png" />
     <Content Include="Content\slider\css\default.css" />
@@ -749,12 +750,12 @@
     <Content Include="Content\DataTables\css\mixins.scss" />
     <Content Include="Content\DataTables\css\common.scss" />
     <Content Include="Content\INV\Temp\GIA_UploadFormat.xlsx" />
-    <Content Include="Content\INV\Temp\UploadFormat.xlsx" />
     <Content Include="Content\INV\Temp\RFIDupdateFormat.xlsx" />
     <Content Include="Content\INV\Temp\RFIDMaster.xlsx" />
     <Content Include="Content\INV\Temp\BestDeal.xlsx" />
     <Content Include="Content\INV\Temp\AddRemoveLab.xlsx" />
     <Content Include="Content\INV\Temp\V360ViaCert.xlsx" />
+    <Content Include="Content\INV\Temp\UploadFormatFile.xlsx" />
     <None Include="Properties\PublishProfiles\Rosyblueonline_Enh_Html.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\BrowserVisibility.js" />

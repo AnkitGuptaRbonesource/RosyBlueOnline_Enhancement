@@ -358,6 +358,14 @@
                 $("#tblBodySummary").html('');
                 $('#tblBodySummaryForOrder').html('');
                 data.Result.TotalPcs = obj.length;
+
+                data.Result.AvgRapPerCT = data.Result.AvgRapPerCT.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+                data.Result.AvgRapoff = data.Result.AvgRapoff.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+                data.Result.PayableAmount = data.Result.PayableAmount.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+                data.Result.PricePerct = data.Result.PricePerct.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+                data.Result.TotalCarat = data.Result.TotalCarat.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+                data.Result.TotalRap = data.Result.TotalRap.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+
                 $.tmpl(SummeryTemp, data.Result).appendTo("#tblBodySummary");
                 $.tmpl(SummeryTempForOrder, data.Result).appendTo('#tblBodySummaryForOrder');
             }, function (error) {

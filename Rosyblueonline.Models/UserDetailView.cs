@@ -21,6 +21,7 @@ namespace Rosyblueonline.Models
         public string emailId { get; set; }
         public double? startSizePermitted { get; set; }
         public int? rowDownloadPermitted { get; set; }
+        public int? isOriginFilterPermitted { get; set; }
 
     }
 }
