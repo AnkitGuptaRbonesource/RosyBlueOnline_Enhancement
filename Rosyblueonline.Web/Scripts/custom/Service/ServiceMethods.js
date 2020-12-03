@@ -198,14 +198,15 @@
     };
 
 
-    obj.AddUpdateSearchPermission = function (startSizePermitted, rowDownloadPermitted, SPLoginId) {
+    obj.AddUpdateSearchPermission = function (startSizePermitted, rowDownloadPermitted, SPLoginId, OriginStatus) {
         return myApp.http({
             method: 'post',
             url: '/MenuPermissionMaster/AddUpdateSearchPermission',
             data: {
                 startSizePermitted: startSizePermitted,
                 rowDownloadPermitted: rowDownloadPermitted,
-                SPLoginId: SPLoginId
+                SPLoginId: SPLoginId,
+                OriginStatus: OriginStatus
 
             }
         });

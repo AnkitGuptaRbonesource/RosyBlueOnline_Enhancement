@@ -202,6 +202,7 @@
                     $('#tblCompare').html('');
                     $('#tblCompare').html(res); 
                     //$.tmpl(CompareTemp, data.Result).appendTo('#tblCompare');
+                 
                 } else {
                     uiApp.Alert({ container: '#uiPanel2', message: "Problem in fetching data.", type: "danger" });
                 }
@@ -617,8 +618,8 @@
                                     '<div class="flex space-between align-centered">'+
                                         '<div class="lab">'+item.Certificate+'</div>'+
                             '<div class="lab">' + item.Clarity + '</div>' +
-                            '<div class="lab add-link"><a href="#"  class="btnlistcart btn-link"  data-id="' + item.Stock + '" data-toggle="tooltip" data-placement="top" title="Cart" ><img src="/Content/img/panel-cart.svg"></a ></div > ' +
-                            '<div class="lab add-link"><a href="#"  class="btnlistWatchlist btn-link" data-id="' + item.Stock + '"  data-toggle="tooltip" data-placement="top" title="Watch-List"><img src="/Content/img/addwatchlist-img.svg"></a ></div > </div>' +
+                            '<div   class="lab add-link"><a href="#"  class="btnlistcart btn-link"  data-id="' + item.Stock + '" data-toggle="tooltip" data-placement="top" title="Cart" ><img src="/Content/img/panel-cart.svg"></a ></div > ' +
+                            '<div   class="lab add-link"><a href="#"  class="btnlistWatchlist btn-link" data-id="' + item.Stock + '"  data-toggle="tooltip" data-placement="top" title="Watch-List"><img src="/Content/img/addwatchlist-img.svg"></a ></div > </div>' +
 
 
                                     '<div class="flex align-centered space-between details"><div>'+item.Shape+'</div><div>'+item.Weight+'</div><div>'+item.Shade+'</div><div>'+item.Color+'</div></div>'+
@@ -646,8 +647,18 @@
                     setTimeout(function () {
                         $('.pagination12 .post:not(#page' + page + ')').hide();
                         $('.pagination12 .post#page' + page).show();
+ 
+
                     }, 3000);
                     
+
+                    if ($('#hfRoleID').val() != 3) {
+                        $('.btnlistcart').hide();
+                        $('.btnlistWatchlist').hide();
+                    } else {
+                        $('.btnlistcart').show();
+                        $('.btnlistWatchlist').show();
+                    }
 
                     uiApp.UnBlockUI();
                 } else {

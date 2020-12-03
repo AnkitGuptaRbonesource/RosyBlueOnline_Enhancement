@@ -52,7 +52,7 @@
                 <div class="col-md-12">
                     <div class="customers-list-table">
                         <div class="list-view">
-                            <div class="paneltable">
+                            <div class="panel-body paneltable">
                                 <table id="tblUserDetail" class="table table-fixed dataTable no-footer" role="grid">
                                     <thead class="bordertp">
                                         <tr role="row" class="table-head">
@@ -85,6 +85,9 @@
                                             <th class="tbnew">
                                                 <label>@Resource.DownloadPermitted</label>
                                             </th>
+                                            <th class="tbnew">
+                                                <label>Origin Filter Permitted</label>
+                                            </th> 
                                             <th class="tbnew tbl-actions">
                                                 <label>@Resource.Edit</label>
                                             </th>
@@ -349,7 +352,21 @@
                                         </label>
                                         <input class="form-control" name="rowDownloadPermitted" id="txtrowDownloadPermitted" value="0" />
                                     </div>
-                                </div>
+                                    <div class="col-md-12" style="margin-top: 20px;">
+                                          <div class="col-md-4" style="margin-top: 10px;">
+                                              <label for="OriginStatus">
+                                                  Origin Filter Permitted
+                                              </label>
+                                        </div>
+                                        <label class="radio-inline controll-radio">
+                                            <input type="radio" name="OriginStatus" id="rbtnosActive" value="1" checked><label for="rbtnActive" class="controll-label">@Resource.Active</label>
+                                        </label>
+                                        <label class="radio-inline controll-radio">
+                                            <input type="radio" name="OriginStatus" id="rbtnosInActive" value="0"><label for="rbtnInActive" class="controll-label">@Resource.In_Active</label>
+                                        </label>
+
+                                    </div>
+                                    </div>
                             </div>
                         </div>
                     </div>

@@ -20,6 +20,8 @@ namespace Rosyblueonline.Models
         public DateTime? createDate { get; set; }
         public int? createdBy { get; set; }
         public DateTime? UpdateDate { get; set; }
-        public int? updatedBy { get; set; } 
+        public int? updatedBy { get; set; }
+        public bool isOriginFilterPermitted { get; set; }
+        
     }
 }

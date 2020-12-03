@@ -195,12 +195,16 @@
             var id = $(this).data('id');
             var startsizepermitted = $(this).data('startsizepermitted');
             var rowdownloadpermitted = $(this).data('rowdownloadpermitted'); 
+            var isOriginFilterPermitted = $(this).data('isoriginfilterpermitted'); 
             if (startsizepermitted == null) { startsizepermitted = 0;}
             if (rowdownloadpermitted == null) { rowdownloadpermitted = 0 }
             
             $('#lblUserNameD').html($(this).data('lblusernamed'));
             $('#txtstartSizePermitted').val(startsizepermitted);
-            $('#txtrowDownloadPermitted').val(rowdownloadpermitted);
+            $('#txtrowDownloadPermitted').val(rowdownloadpermitted); 
+           $('input[name=OriginStatus][value=' + isOriginFilterPermitted + ']').prop('checked', true);
+
+
             $('#hfSPLoginId').val(0);
             $('#hfSPLoginId').val(id);
 
@@ -213,12 +217,15 @@
             e.preventDefault(); 
             var startSizePermitted=$('#txtstartSizePermitted').val().trim();
             var rowDownloadPermitted = $('#txtrowDownloadPermitted').val().trim();
+
+            var OriginStatus = $('input[type="radio"][name="OriginStatus"]:checked').val()
+
             var SPLoginId = $('#hfSPLoginId').val().trim();
             if (startSizePermitted == "" || rowDownloadPermitted == "") {
                 alert("Please enter details !");
 
             } else {
-                objLRS.AddUpdateSearchPermission(startSizePermitted, rowDownloadPermitted, SPLoginId).then(function (data) {
+                objLRS.AddUpdateSearchPermission(startSizePermitted, rowDownloadPermitted, SPLoginId, OriginStatus).then(function (data) {
                     console.log(data);
                     if (data.IsSuccess) {
                         LoadGrid();
@@ -373,13 +380,13 @@
             dtOrder.setAjaxParam('RoleID', $('#ddlRoleFilter').val());
             if (dtOrder.getDataTable() == null || dtOrder.getDataTable() == undefined) {
                 dtOrder.init({
-                    src: '#tblUserDetail',
+                    src: '#tblUserDetail', 
                     searching: true,
-                    scrollY: "485px",
-                    scrollX: true,
+                 
                     dataTable: {
                         //deferLoading: 0,
-
+                        scrollY: "485px",
+                        scrollX: true,
                         paging: true,
                         order: [[1, "desc"]],
                         ajax: {
@@ -401,9 +408,10 @@
                             { data: "countryName" },
                             { data: "startSizePermitted" },
                             { data: "rowDownloadPermitted" },
-                            { data: null },
-                            { data: null },                           
-                            { data: null },
+                            { data: "isOriginFilterPermitted", class: 'whspace' },
+                            { data: null, class: 'whspace'},
+                            { data: null, class: 'whspace'},                           
+                            { data: null, class: 'whspace'},
                         ],
 
                         columnDefs: [{
@@ -474,11 +482,19 @@
                                 targets: ["tbl-permission-actions"],
                                 render: function (data, type, row) {
                                     if (row.roleID == 3 || row.roleID == 8 || row.roleID == 9) { 
-                                        return "<a href='#' data-id='" + row.loginID + "'  data-startSizePermitted='" + row.startSizePermitted + "' data-lblusernamed='" + row.username + "'     data-rowDownloadPermitted='" + row.rowDownloadPermitted + "'  class='btn-permission btn-link'>Add permission</a>";
+                                        return "<a href='#' data-id='" + row.loginID + "'  data-startSizePermitted='" + row.startSizePermitted + "' data-lblusernamed='" + row.username + "'     data-rowDownloadPermitted='" + row.rowDownloadPermitted + "'  data-isOriginFilterPermitted='" + row.isOriginFilterPermitted + "'  class='btn-permission btn-link'>Add permission</a>";
                                     }
                                     return "";
                                 },
                                 orderable: true
+                            },
+                            {
+                                targets: [9],
+                                render: function (data, type, row) {
+                                    if (row.isOriginFilterPermitted == 0) {
+                                        return "In Active";
+                                    } else { return "Active";}
+                                }
                             }
 
                         ]
