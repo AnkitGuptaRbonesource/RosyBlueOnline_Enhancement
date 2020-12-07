@@ -42,7 +42,7 @@
                         </div>
                     </div>
                     <div class="summery-box">
-                        <div class="clorbox">
+                        <div class="clorbox" style="display:none;">
                             <div class="info-box-content">
                                 <span class="info-box-text">
                                     @Resource.Grid_Legends <span class="spngrid">
@@ -828,9 +828,8 @@
                                                 <th class="tbnew stock">
                                                     <label for="Stock">@Resource.Stock</label>
                                                 </th>
-
                                                 <th class="tbnew">
-                                                    <label for="Certificate_">@Resource.CertificateId</label>
+                                                    <label for="SalesLocation">@Resource.SalesLocation</label>
                                                 </th>
                                                 <th class="tbnew dt-V360">
                                                     <label for="V360">@Resource.V360</label>
@@ -847,18 +846,14 @@
                                                 <th class="tbnew">
                                                     <label for="Clarity">@Resource.Clarity</label>
                                                 </th>
-                                                <th class="tbnew">
-                                                    <label for="Diamentions">@Resource.Diamentions</label>
-                                                </th>
+
                                                 <th class="tbnew">
                                                     <label for="Table_">@Resource.Table</label>
                                                 </th>
                                                 <th class="tbnew">
                                                     <label for="Depth_">@Resource.Depth</label>
                                                 </th>
-                                                <th class="tbnew">
-                                                    <label for="Girdle">@Resource.Girdle</label>
-                                                </th>
+
                                                 <th class="tbnew">
                                                     <label for="Cut">@Resource.Cut</label>
                                                 </th>
@@ -875,19 +870,29 @@
                                                     <label for="Lab">@Resource.Lab</label>
                                                 </th>
                                                 <th class="tbnew">
-                                                    <label for="RapPrice">@Resource.RapPrice</label>
+                                                    <label for="RapPrice">List</label>
                                                 </th>
                                                 <th class="tbnew">
-                                                    <label for="RapDisc___">@Resource.RapDisc</label>
+                                                    <label for="RapDisc___">Discount</label>
                                                 </th>
                                                 <th class="tbnew" id="sl">
                                                     <label for="Price____ct">@Resource.Price_ct</label>
                                                 </th>
                                                 <th class="tbnew">
-                                                    <label for="Amount">@Resource.Amount</label>
+                                                    <label for="Amount">List Amount</label>
+                                                </th>
+
+                                                <th class="tbnew">
+                                                    <label for="Certificate_">@Resource.CertificateId</label>
                                                 </th>
                                                 <th class="tbnew">
                                                     <label for="D_R">@Resource.DR</label>
+                                                </th>
+                                                <th class="tbnew">
+                                                    <label for="Diamentions">@Resource.Diamentions</label>
+                                                </th>
+                                                <th class="tbnew">
+                                                    <label for="Girdle">@Resource.Girdle</label>
                                                 </th>
                                                 <th class="tbnew">
                                                     <label for="CrownHeight">@Resource.CrownHeight</label>
@@ -943,9 +948,7 @@
                                                 <th class="tbnew">
                                                     <label for="ReportDate">@Resource.ReportDate</label>
                                                 </th>
-                                                <th class="tbnew">
-                                                    <label for="SalesLocation">@Resource.SalesLocation</label>
-                                                </th>
+
                                                 <th class="tbnew Status">
                                                     <label for="Status">@Resource.Status</label>
                                                 </th>
@@ -987,6 +990,7 @@
                         <table class="table fixwtable">
                             <tbody id="tblCompare">
                                 <tr><td>@Resource.Stock</td></tr>
+                                <tr><td>@Resource.Lab</td></tr>
                                 <tr><td>@Resource.V360</td></tr>
                                 <tr><td>@Resource.Shape</td></tr>
                                 <tr><td>@Resource.Weight</td></tr>
@@ -999,8 +1003,7 @@
                                 <tr><td>@Resource.Cut</td></tr>
                                 <tr><td>@Resource.Polish</td></tr>
                                 <tr><td>@Resource.Symmetry</td></tr>
-                                <tr><td>@Resource.Flora</td></tr>
-                                <tr><td>@Resource.Lab</td></tr>
+                                <tr><td>@Resource.Flora</td></tr> 
                                 <tr><td>@Resource.RapPrice</td></tr>
                                 <tr><td>@Resource.RapDisc</td></tr>
                                 <tr><td>@Resource.Price_ct</td></tr>

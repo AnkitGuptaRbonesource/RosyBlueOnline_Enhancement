@@ -776,5 +776,33 @@ namespace Rosyblueonline.Repository
             }
         }
 
+
+        public TanishqStockDetailsValidate TanishqStockDetailsValidate(int LoginID, string LotNos, string RaiseEvent)
+        {
+            try
+            {
+                TanishqStockDetailsValidate objVM = new TanishqStockDetailsValidate();
+                var cmd = context.Database.Connection.CreateCommand();
+                cmd.CommandText = "proc_ValidateAPIInventory";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@loginID", LoginID));
+                cmd.Parameters.Add(new SqlParameter("@LotNos", LotNos));
+                cmd.Parameters.Add(new SqlParameter("@raisedEvent", RaiseEvent));
+                context.Database.Connection.Open();
+                var reader = cmd.ExecuteReader();
+                objVM.StockDetails = ((IObjectContextAdapter)context).ObjectContext.Translate<TanishqStockModel>(reader).ToList();
+                reader.NextResult();
+                reader.NextResult();
+                objVM.OrderDetails = ((IObjectContextAdapter)context).ObjectContext.Translate<TanishqPlaceOrder>(reader).ToList();
+
+                return objVM;
+
+            }
+            finally
+            {
+                context.Database.Connection.Close();
+            }
+        }
+
     }
 }

@@ -1145,28 +1145,24 @@
                     rowCallback: function (row, data, index) {
                         //console.log('test', row, data, index);
                         if (data.IsInBestDeal != "0") {
-                            $(row).find('td:eq(5)').css('background-color', '#61fa90');
+                            //$(row).find('td:eq(5)').css('background-color', '#61fa90');
                         }
                         if (data.labStatus == true) {
-                            $(row).find('td:eq(5)').css('background-color', '#fff700');
+                            //$(row).find('td:eq(5)').css('background-color', '#fff700');
                         }
                         if (data.HeartAndArrow != "" && data.HeartAndArrow != "NO") {
-                            $(row).find('td:eq(5)').css('background-color', '#e600c4');
-                            $(row).find('td:eq(5)').attr('title', data.HeartAndArrow);
+                            //$(row).find('td:eq(5)').css('background-color', '#e600c4');
+                            //$(row).find('td:eq(5)').attr('title', data.HeartAndArrow);
                         }
                         if (data.CreatedOn == moment().format("MMM DD YYYY")) {
-                            $(row).find('td:eq(5)').css('background-color', '#fba723');
+                            //$(row).find('td:eq(5)').css('background-color', '#fba723');
                         }
                         if (data.stockStatusID == 23) {
                             $(row).css('background-color', '#cccccc');
-                            $(row).find('td:eq(5)').css('background-color', '#fbd0ec');
-                            $(row).find('td:eq(5)').attr('title', data.refdata);
+                            //$(row).find('td:eq(5)').css('background-color', '#fbd0ec');
+                            //$(row).find('td:eq(5)').attr('title', data.refdata);
                         }
-                      //  $(row).find('td:eq(2)').css('display', 'none');
-
-                        //if (data[2].toUpperCase() == 'EE') {
-                        //    $(row).find('td:eq(2)').css('color', 'blue');
-                        //}
+                   
                     }
                 },
                 onCheckboxChange: function (obj, objInv) {

@@ -19,8 +19,8 @@
                 uiApp.BlockUI();
                 objSF.GetGIADataFromExcel(fd).then(function (data) {
                     if (data.IsSuccess) {
-                      GetDataFromApi(data.Result);
-                         
+                        GetDataFromApi(data.Result);
+
                     } else {
                         uiApp.Alert({ container: '#uiPanel1', message: data.Message, type: "warning" });
                         uiApp.UnBlockUI();
@@ -39,13 +39,13 @@
         //    }
         //});
     }
-     
+
 
     var GetDataFromApi = function (pData) {
         var ListOfData = [];
         var data = [];
         //var idx = 0;
-
+        var idx = 0;
         for (var i = 0; i < pData.length; i++) {
             data.push({
                 reportNo: pData[i].Certificate,
@@ -53,70 +53,89 @@
             });
 
             objSF.NewGetDataFromGiaApi(pData[i].Certificate).then(function (rData) {
-                var idx = 0;
-                var FinalJson = JSON.parse(rData.Result); 
-                for (var k = 0; k < pData.length; k++) {
-                    if (pData[k].Certificate == FinalJson.data.getReport["report_number"]) {
-                        idx = k;
-                        break;
-                    }
-                }
+               
+                var FinalJson = JSON.parse(rData.Result);
+                
+                    if (rData.IsSuccess == true && FinalJson.data.getReport != null) {
+                        ListOfData.push(FinalJson.data.getReport.results); 
+                        ListOfData[ListOfData.length - 1]["lotno"] = pData[idx].Lotnumber;
+                        ListOfData[ListOfData.length - 1]["certificate"] = pData[idx].Certificate;
+                        ListOfData[ListOfData.length - 1]["shape"] = FinalJson.data.getReport.results.data.shape.shape_group;
+                        ListOfData[ListOfData.length - 1]["weight"] = FinalJson.data.getReport.results.data.weight.weight;
+                        ListOfData[ListOfData.length - 1]["color"] = FinalJson.data.getReport.results.data.color.color_grade_code;
+                        ListOfData[ListOfData.length - 1]["clarity"] = FinalJson.data.getReport.results.clarity_grade;
+                        var width = FinalJson.data.getReport.results.measurements.split(" - ");
+                        var length = width[1].split(" x ");
+                        var depth = length[1].split(" mm");
+                        ListOfData[ListOfData.length - 1]["length"] = length[0];
+                        ListOfData[ListOfData.length - 1]["width"] = width[0];
+                        ListOfData[ListOfData.length - 1]["depth"] = depth[0];
+                        ListOfData[ListOfData.length - 1]["finalCut"] = FinalJson.data.getReport.results.data.cut;
+                        ListOfData[ListOfData.length - 1]["lab"] = "GIA";
+                        ListOfData[ListOfData.length - 1]["depthPct"] = FinalJson.data.getReport.results.proportions.depth_pct;
+                        ListOfData[ListOfData.length - 1]["tablePct"] = FinalJson.data.getReport.results.proportions.table_pct;
+                        ListOfData[ListOfData.length - 1]["girdle"] = FinalJson.data.getReport.results.data.girdle.girdle_size_code;
+                        ListOfData[ListOfData.length - 1]["polish"] = FinalJson.data.getReport.results.data.polish;
+                        ListOfData[ListOfData.length - 1]["symmetry"] = FinalJson.data.getReport.results.data.symmetry;
+                        ListOfData[ListOfData.length - 1]["fluorescenceIntensity"] = FinalJson.data.getReport.results.fluorescence;
+                        ListOfData[ListOfData.length - 1]["crnHt"] = FinalJson.data.getReport.results.proportions.crown_height + "%";
+                        ListOfData[ListOfData.length - 1]["crnAg"] = FinalJson.data.getReport.results.proportions.crown_angle;
+                        ListOfData[ListOfData.length - 1]["pavDp"] = FinalJson.data.getReport.results.proportions.pavilion_depth + "%";
+                        ListOfData[ListOfData.length - 1]["pavAg"] = FinalJson.data.getReport.results.proportions.pavilion_angle + "%";
+                        ListOfData[ListOfData.length - 1]["starLn"] = FinalJson.data.getReport.results.proportions.star_length + "%";
+                        ListOfData[ListOfData.length - 1]["lrHalf"] = FinalJson.data.getReport.results.proportions.lower_half + "%";
+                        ListOfData[ListOfData.length - 1]["girdlePct"] = FinalJson.data.getReport.results.data.girdle.girdle_pct + "%";
+                        ListOfData[ListOfData.length - 1]["reportDt"] = FinalJson.data.getReport.report_date_iso;
+                        ListOfData[ListOfData.length - 1]["culetSize"] = FinalJson.data.getReport.results.proportions.culet;
+                        ListOfData[ListOfData.length - 1]["inscription"] = FinalJson.data.getReport.results.inscriptions;
+                        ListOfData[ListOfData.length - 1]["keyToSymbols"] = FinalJson.data.getReport.results.clarity_characteristics;
+                        ListOfData[ListOfData.length - 1]["reportComments"] = FinalJson.data.getReport.results.report_comments;
+                        ListOfData[ListOfData.length - 1]["status"] = "Success";
+                         
+                       idx++;
+                    } else {
+                        ListOfData.push(FinalJson.errors[0]);
+                        ListOfData[ListOfData.length - 1]["lotno"] = pData[idx].Lotnumber;
+                        ListOfData[ListOfData.length - 1]["certificate"] = pData[idx].Certificate;
+                        ListOfData[ListOfData.length - 1]["shape"] = "";
+                        ListOfData[ListOfData.length - 1]["weight"] = "";
+                        ListOfData[ListOfData.length - 1]["color"] = "";
+                        ListOfData[ListOfData.length - 1]["clarity"] = ""; 
+                        ListOfData[ListOfData.length - 1]["length"] = "";
+                        ListOfData[ListOfData.length - 1]["width"] = "";
+                        ListOfData[ListOfData.length - 1]["depth"] = "";
+                        ListOfData[ListOfData.length - 1]["finalCut"] = "";
+                        ListOfData[ListOfData.length - 1]["lab"] = "";
+                        ListOfData[ListOfData.length - 1]["depthPct"] = "";
+                        ListOfData[ListOfData.length - 1]["tablePct"] = "";
+                        ListOfData[ListOfData.length - 1]["girdle"] = "";
+                        ListOfData[ListOfData.length - 1]["polish"] = "";
+                        ListOfData[ListOfData.length - 1]["symmetry"] = "";
+                        ListOfData[ListOfData.length - 1]["fluorescenceIntensity"] = "";
+                        ListOfData[ListOfData.length - 1]["crnHt"] = "";
+                        ListOfData[ListOfData.length - 1]["crnAg"] = "";
+                        ListOfData[ListOfData.length - 1]["pavDp"] = "";
+                        ListOfData[ListOfData.length - 1]["pavAg"] = "";
+                        ListOfData[ListOfData.length - 1]["starLn"] = "";
+                        ListOfData[ListOfData.length - 1]["lrHalf"] = "";
+                        ListOfData[ListOfData.length - 1]["girdlePct"] = "";
+                        ListOfData[ListOfData.length - 1]["reportDt"] = "";
+                        ListOfData[ListOfData.length - 1]["culetSize"] = "";
+                        ListOfData[ListOfData.length - 1]["inscription"] = "";
+                        ListOfData[ListOfData.length - 1]["keyToSymbols"] = "";
+                        ListOfData[ListOfData.length - 1]["reportComments"] = "";
+                        ListOfData[ListOfData.length - 1]["status"] = FinalJson.errors[0].errorType;
 
 
-                if (rData.IsSuccess == true && FinalJson.data.getReport != null) {
-                    ListOfData.push(FinalJson.data.getReport.results);
-                    //ListOfData[ListOfData.length - 1]["lotno"] = pData[idx].Lotnumber;
-                    //ListOfData[ListOfData.length - 1]["lotno"] = pData[idx].Lotnumber;
-                    //ListOfData[ListOfData.length - 1]["certificate"] = pData[idx].Certificate;
-                    ListOfData[ListOfData.length - 1]["lotno"] = pData[idx].Lotnumber;
-                    ListOfData[ListOfData.length - 1]["certificate"] = pData[idx].Certificate;
-                    ListOfData[ListOfData.length - 1]["shape"] = FinalJson.data.getReport.results.data.shape.shape_group;
-                    ListOfData[ListOfData.length - 1]["weight"] = FinalJson.data.getReport.results.data.weight.weight;
-                    ListOfData[ListOfData.length - 1]["color"] = FinalJson.data.getReport.results.data.color.color_grade_code;
-                    ListOfData[ListOfData.length - 1]["clarity"] = FinalJson.data.getReport.results.clarity_grade;
-                    var width = FinalJson.data.getReport.results.measurements.split(" - ");
-                    var length = width[1].split(" x ");
-                    var depth = length[1].split(" mm");
-                    ListOfData[ListOfData.length - 1]["length"] = length[0];
-                    ListOfData[ListOfData.length - 1]["width"] = width[0];
-                    ListOfData[ListOfData.length - 1]["depth"] = depth[0];
-                    ListOfData[ListOfData.length - 1]["finalCut"] = FinalJson.data.getReport.results.data.cut;
-                    ListOfData[ListOfData.length - 1]["lab"] = "GIA";
-                    ListOfData[ListOfData.length - 1]["depthPct"] = FinalJson.data.getReport.results.proportions.depth_pct;
-                    ListOfData[ListOfData.length - 1]["tablePct"] = FinalJson.data.getReport.results.proportions.table_pct;
-                    ListOfData[ListOfData.length - 1]["girdle"] = FinalJson.data.getReport.results.data.girdle.girdle_size_code;
-                    ListOfData[ListOfData.length - 1]["polish"] = FinalJson.data.getReport.results.data.polish;
-                    ListOfData[ListOfData.length - 1]["symmetry"] = FinalJson.data.getReport.results.data.symmetry;
-                    ListOfData[ListOfData.length - 1]["fluorescenceIntensity"] = FinalJson.data.getReport.results.fluorescence;
-                    ListOfData[ListOfData.length - 1]["crnHt"] = FinalJson.data.getReport.results.proportions.crown_height + "%";
-                    ListOfData[ListOfData.length - 1]["crnAg"] = FinalJson.data.getReport.results.proportions.crown_angle;
-                    ListOfData[ListOfData.length - 1]["pavDp"] = FinalJson.data.getReport.results.proportions.pavilion_depth + "%";
-                    ListOfData[ListOfData.length - 1]["pavAg"] = FinalJson.data.getReport.results.proportions.pavilion_angle + "%";
-                    ListOfData[ListOfData.length - 1]["starLn"] = FinalJson.data.getReport.results.proportions.star_length + "%";
-                    ListOfData[ListOfData.length - 1]["lrHalf"] = FinalJson.data.getReport.results.proportions.lower_half + "%";
-                    ListOfData[ListOfData.length - 1]["girdlePct"] = FinalJson.data.getReport.results.data.girdle.girdle_pct + "%";
-                    ListOfData[ListOfData.length - 1]["reportDt"] = FinalJson.data.getReport.report_date_iso;
-                    ListOfData[ListOfData.length - 1]["culetSize"] = FinalJson.data.getReport.results.proportions.culet;
-                    ListOfData[ListOfData.length - 1]["inscription"] = FinalJson.data.getReport.results.inscriptions;
-                    ListOfData[ListOfData.length - 1]["keyToSymbols"] = FinalJson.data.getReport.results.clarity_characteristics;
-                    ListOfData[ListOfData.length - 1]["reportComments"] = FinalJson.data.getReport.results.report_comments;
-                    ListOfData[ListOfData.length - 1]["status"] = "Success";
-
-                    // ListOfData[ListOfData.length - 1]["status"] = "Success";
-                    //ListOfData[ListOfData.length - 1]["lab"] = "GIA";
-                    idx++;
-                } else {
-                    ListOfData.push(FinalJson.data.getReport);
-                    ListOfData[ListOfData.length - 1]["lotno"] = pData[idx].Lotnumber;
-                    ListOfData[ListOfData.length - 1]["certificate"] = pData[idx].Certificate;
-                    ListOfData[ListOfData.length - 1]["lab"] = "";
-                    ListOfData[ListOfData.length - 1]["status"] = "Not Found";
-                    idx++;
-                }
+                        idx++;
+                    } 
                 console.log(ListOfData);
+                console.log(idx);
                 if (pData.length == idx) {
+                    console.log("Final");
                     renderData(ListOfData)
                 }
+
             }, function () {
                 uiApp.UnBlockUI();
             });
@@ -143,10 +162,10 @@
                         extension: '.xlsx',
                         header: true,
                         sheetName: 'GIA Export',
-                        text:'<i class="fa fa-download"></i> Download'
+                        text: '<i class="fa fa-download"></i> Download'
                     }],
                     paging: false,
-                    order: [[1, "desc"]],
+                    order: [[2, "desc"]],
                     processing: false,
                     serverSide: false,
                     data: data,
@@ -210,8 +229,12 @@
                         {
                             targets: 'ReportDate',
                             render: function (data, type, row) {
-                                var val = moment(data).format("DD-MM-YYYY");
-                                return val;
+                                if (data == "" || data == null) {
+                                    return "";
+                                } else {
+                                    var val = moment(data).format("DD-MM-YYYY");
+                                    return val;
+                                }
                             }
                         }
                     ],

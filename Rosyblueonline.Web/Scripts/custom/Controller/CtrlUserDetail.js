@@ -492,8 +492,8 @@
                                 targets: [9],
                                 render: function (data, type, row) {
                                     if (row.isOriginFilterPermitted == 0) {
-                                        return "In Active";
-                                    } else { return "Active";}
+                                        return "Not Allowed";
+                                    } else { return "Allowed";}
                                 }
                             }
 

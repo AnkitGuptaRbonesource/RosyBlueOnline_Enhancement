@@ -17,6 +17,9 @@ query ReportQuery($ReportNumber: String!) {
     links {
       ...LinkFields
     }
+     quota {
+            remaining
+        }
     
   }
 }

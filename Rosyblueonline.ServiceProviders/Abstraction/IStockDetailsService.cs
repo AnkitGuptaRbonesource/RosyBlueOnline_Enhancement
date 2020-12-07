@@ -72,6 +72,8 @@ namespace Rosyblueonline.ServiceProviders.Abstraction
 
         List<RemoveFromCartInventory> RemoveFromCart(params string[] Parameters);
 
+        TanishqStockDetailsValidate TanishqStockDetailsValidate(int LoginID, string LotNos, string RaiseEvent);
+
 
     }
 }

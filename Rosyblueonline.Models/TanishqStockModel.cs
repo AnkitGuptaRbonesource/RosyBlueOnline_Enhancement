@@ -10,7 +10,7 @@ namespace Rosyblueonline.Models
     {
         public string Stock { get; set; }
         public string Shape { get; set; }
-        public string Carat { get; set; }
+        public string Weight { get; set; }
         public string Color { get; set; }
         public string Clarity { get; set; }
         public string Length { get; set; }
@@ -21,7 +21,7 @@ namespace Rosyblueonline.Models
         public string Polish { get; set; }
         public string Symmetry { get; set; }
         public string Fluorescence { get; set; }
-        public string Lab { get; set; }
+        public string Certificate { get; set; }
         public string RapnetPrice { get; set; }
         public string RapAmount { get; set; }
         public string Discount { get; set; }
@@ -79,5 +79,14 @@ namespace Rosyblueonline.Models
         public string CancelStatus { get; set; }
     }
 
-    
+
+  
+
+    public class TanishqStockDetailsValidate
+    {
+        public List<TanishqStockModel> StockDetails { get; set; }
+        public List<TanishqPlaceOrder> OrderDetails { get; set; }
+
+    }
+
 }

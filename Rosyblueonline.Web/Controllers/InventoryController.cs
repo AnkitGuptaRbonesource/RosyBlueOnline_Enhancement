@@ -1293,6 +1293,7 @@ namespace Rosyblueonline.Web.Controllers
                     List<GIAUpload> objGiaLst = new List<GIAUpload>();
                     for (int i = 0; i < dt.Rows.Count; i++)
                     {
+
                         objGiaLst.Add(new GIAUpload
                         {
                             Certificate = dt.Rows[i]["Certificate"].ToString() ,

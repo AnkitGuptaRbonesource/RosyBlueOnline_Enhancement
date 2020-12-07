@@ -714,5 +714,11 @@ namespace Rosyblueonline.ServiceProviders.Implementation
             return this.uow.ExecuteQuery<RemoveFromCartInventory>("Exec proc_UnblockCartStone_API '{0}','{1}'", Parameters);
 
         }
+
+
+        public TanishqStockDetailsValidate TanishqStockDetailsValidate(int LoginID, string LotNos, string RaiseEvent)
+        {
+            return uow.Inventory.TanishqStockDetailsValidate(LoginID, LotNos, RaiseEvent);
+        }
     }
 }
