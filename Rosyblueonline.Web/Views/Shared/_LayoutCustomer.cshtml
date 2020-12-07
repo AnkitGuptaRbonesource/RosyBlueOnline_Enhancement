@@ -46,9 +46,9 @@
     <div class="wrapper">
 
         <header class="main-header">
-            <nav class="navbar navbar-static-top">  
+            <nav class="navbar navbar-static-top">
                 <div class="searchbar">
-                    <input id="LotCertSearchInput"  type="text" class="header-search" placeholder="Enter Lot/Cert. number to quick search ...." />
+                    <input id="LotCertSearchInput" type="text" class="header-search" placeholder="Enter Lot/Cert. number to quick search ...." />
                     <div class="inseach" id="SearchId">
                         <img src="/Content/img/search.png" />
                     </div>
@@ -243,58 +243,58 @@
                     </div>
                 </div>
                 <ul class="sidebar-menu">
-                    
-                        <li>
-                            <a href="/Dashboard/Customer">
-                                <div class="img-icon"><img src="/Content/img/dashboard.png" /></div>
-                                <span>@Resource.Dashboard</span>
-                            </a>
-                        </li>
-                   
-                  
-                        <li class="treeview">
-                            <a href="#">
-                                <div class="img-icon"><img src="/Content/img/subscriptions.png" /></div>
-                                <span>@Resource.My_Account</span>
-                                <span class="pull-right-container">
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </span>
-                            </a>
-                            <ul class="treeview-menu">
-                                
-                                    <li><a href="/Order/List"><div class="img-icon"><img src="/Content/img/myorder.png" /></div> @Resource.My_Order</a></li>
-                                 
-                                <li><a href="/Inventory/Cart"><div class="img-icon"><img src="/Content/img/shopping.png" /></div> @Resource.Shopping_Cart</a></li>
 
-                                <li><a href="/Inventory/Watch"><div class="img-icon"><img src="/Content/img/list.png" /></div> @Resource.Watch_List</a></li>
-                                @*<li><a href="/CustomerUpdate/UserActivityWatchList/3024"><i class="fa fa-list-alt"></i>Watch List</a></li>
-                    <li><a href="/Profile/AddSubUser"><i class="fa fa-clock-o"></i>Add SubUser</a></li>
-                    <li><a href="/OrderDetails/SubUserOrders"><i class="fa fa-clock-o"></i>SubUser Order</a></li>*@
-                            </ul>
-                        </li>
+                    <li>
+                        <a href="/Dashboard/Customer">
+                            <div class="img-icon"><img src="/Content/img/dashboard.png" /></div>
+                            <span>@Resource.Dashboard</span>
+                        </a>
+                    </li>
 
-                  
-                   
-                        <li class="treeview">
-                            <a href="/Inventory/SpecificSearch">
-                                <div class="img-icon"><img src="/Content/img/search.png" /></div>
-                                <span>@Resource.Search</span>
-                            </a>
-                        </li>
-                   
+
+                    <li class="treeview">
+                        <a href="#">
+                            <div class="img-icon"><img src="/Content/img/subscriptions.png" /></div>
+                            <span>@Resource.My_Account</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+
+                            <li><a href="/Order/List"><div class="img-icon"><img src="/Content/img/myorder.png" /></div> @Resource.My_Order</a></li>
+
+                            <li><a href="/Inventory/Cart"><div class="img-icon"><img src="/Content/img/shopping.png" /></div> @Resource.Shopping_Cart</a></li>
+
+                            <li><a href="/Inventory/Watch"><div class="img-icon"><img src="/Content/img/list.png" /></div> @Resource.Watch_List</a></li>
+                            @*<li><a href="/CustomerUpdate/UserActivityWatchList/3024"><i class="fa fa-list-alt"></i>Watch List</a></li>
+                                <li><a href="/Profile/AddSubUser"><i class="fa fa-clock-o"></i>Add SubUser</a></li>
+                                <li><a href="/OrderDetails/SubUserOrders"><i class="fa fa-clock-o"></i>SubUser Order</a></li>*@
+                        </ul>
+                    </li>
+
+
+
+                    <li class="treeview">
+                        <a href="/Inventory/SpecificSearch">
+                            <div class="img-icon"><img src="/Content/img/search.png" /></div>
+                            <span>@Resource.Search</span>
+                        </a>
+                    </li>
+
 
                     @*<li class="treeview">
-          <a href="/Inventory/SpecificSearch">
-            <i class="fa fa-search"></i>
-            <span></span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a><i class="fa fa-search"></i>@Resource.Specfic_search</a></li>
-          </ul>
-        </li>*@
+                          <a href="/Inventory/SpecificSearch">
+                            <i class="fa fa-search"></i>
+                            <span></span>
+                            <span class="pull-right-container">
+                              <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                          </a>
+                          <ul class="treeview-menu">
+                            <li><a><i class="fa fa-search"></i>@Resource.Specfic_search</a></li>
+                          </ul>
+                        </li>*@
                     <li class="treeview">
                         <a href="#">
                             <div class="img-icon"><img src="/Content/img/user.png" /></div>
@@ -308,8 +308,8 @@
                             <li><a href="/User/ChangePassword"><div class="img-icon"><i class="fa fa-lock"></i></div> @Resource.Change_Password</a></li>
                         </ul>
                     </li>
-                     
-                    </ul>
+
+                </ul>
                 <div class="sign-bottom">
                     <ul class="sidebar-menu">
                         <li class="signout">
@@ -437,6 +437,21 @@
             return obj;
         }
 
+    </script>
+    <script type="text/javascript">
+        // ===== Scroll to Top ====
+        $(window).scroll(function () {
+            if ($(this).scrollTop() >= 50) {        // If page is scrolled more than 50px
+                $('#return-to-top').fadeIn(200);    // Fade in the arrow
+            } else {
+                $('#return-to-top').fadeOut(200);   // Else fade out the arrow
+            }
+        });
+        $('#return-to-top').click(function () {      // When arrow is clicked
+            $('body,html').animate({
+                scrollTop: 0                       // Scroll to top of body
+            }, 500);
+        });
     </script>
 </body>
 </html>
