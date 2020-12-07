@@ -41,8 +41,8 @@ namespace Rosyblueonline.Web
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/css/bootstrap.min.css",
                       "~/content/font-awesome/css/font-awesome.min.css",
-                      "~/Content/css/style.css?ver=2.0",
-                      "~/Content/css/custom.css?ver=2.0",
+                      "~/Content/css/style.css",
+                      "~/Content/css/custom.css",
                        "~/Content/Datepicker/jquery.ui.datepicker.css",
                         "~/Content/Datepicker/jquery-ui.css",
                          "~/Content/Datepicker/jquery-ui.min.css",
@@ -51,12 +51,12 @@ namespace Rosyblueonline.Web
 
             bundles.Add(new StyleBundle("~/Content/Admin/Css").Include(
                       "~/Content/css/bootstrap.min.css",
-                      "~/Content/css/AdminLTE.css?ver=2.0",
-                      "~/Content/css/AdminLTE.min.css?ver=2.0",
-                      "~/Content/css/dashboard.css?ver=2.0",
+                      "~/Content/css/AdminLTE.css",
+                      "~/Content/css/AdminLTE.min.css",
+                      "~/Content/css/dashboard.css",
                       "~/Content/css/_all-skins.min.css",
-                      "~/Content/css/tablestyle.css?ver=2.0",
-                      "~/Content/css/custom.cs?ver=2.0s",
+                      "~/Content/css/tablestyle.css",
+                      "~/Content/css/custom.css",
                       "~/content/font-awesome/css/font-awesome.min.css"));
 
 
