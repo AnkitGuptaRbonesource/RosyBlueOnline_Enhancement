@@ -906,16 +906,17 @@ var DataTableColumnStruct = function (mode) {
     SpecificSearch.columns = [
         { data: "inventoryID" },
         { data: "Stock" }, 
-        { data: "CertificateNo" },
+        { data: "SalesLocation" },
+        //{ data: "CertificateNo" },
         { data: "v360url" },
         { data: "Shape" },
         { data: "Weight" },
         { data: "Color" },
         { data: "Clarity" },
-        { data: "Measurement" },
+        //{ data: "Measurement" },
         { data: "TablePerc" },
         { data: "DepthPerc" },
-        { data: "Girdle" },
+        //{ data: "Girdle" },
         { data: "Cut" },
         { data: "Polish" },
         { data: "Symmetry" },
@@ -924,8 +925,11 @@ var DataTableColumnStruct = function (mode) {
         { data: "RapnetPrice", render: $.fn.dataTable.render.number(',', '.', 2, '')   },
         { data: "Discount", render: $.fn.dataTable.render.number(',', '.', 2, '')   },
         { data: "Price", render: $.fn.dataTable.render.number(',', '.', 2, '')   },
-        { data: "Amount", render: $.fn.dataTable.render.number(',', '.', 2, '')  },
+        { data: "Amount", render: $.fn.dataTable.render.number(',', '.', 2, ''), class: 'whspace' },
+        { data: "CertificateNo" },
         { data: "D_R" },
+        { data: "Measurement" },
+        { data: "Girdle" },
         { data: "CrownHeight" },
         { data: "CrownAngle" },
         { data: "PavilionDepth" },
@@ -943,9 +947,9 @@ var DataTableColumnStruct = function (mode) {
         { data: "OpensName" },
         { data: "Keytosymbol" },
         { data: "giaComments", class: 'whspace' },
-        { data: "Reportdate" },
-        { data: "SalesLocation" },
-        { data: "refdata", class: 'whspace' }, /*Added by Ankit 24JUn2020*/
+        { data: "Reportdate", class: 'dt_col_hide'  },
+        //{ data: "SalesLocation" },
+        { data: "refdata", class: 'whspace', class: 'dt_col_hide'  }, /*Added by Ankit 24JUn2020*/
         { data: "refdata", class: 'whspace'}, /*Added by Ankit 24JUn2020*/
         { data: "Origin", class: 'whspace'}, /*Added by Ankit 20July2020*/
     ];
@@ -987,7 +991,8 @@ var DataTableColumnStruct = function (mode) {
                
                
             },
-            orderable: false 
+            orderable: false ,
+
             
         },
         {
@@ -1075,8 +1080,9 @@ var DataTableColumnStruct = function (mode) {
             orderable: false
         },
         
-        { className: "dt_col_hide", "targets": (RoleID == "3") ? [42] : null },
-           //{ className: "dt_col_hide", "targets": [2] },
+      //  { className: "dt_col_hide", "targets": (RoleID == "3") ? [42] : null },
+        //{ className: "dt_col_hide", "targets": [40] }, 
+       // { className: "dt_col_hide", "targets": [40] }, 
     ];
 
     SpecificSearch.printColumns = [
