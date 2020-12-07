@@ -208,11 +208,11 @@
 
                 <ul class="sidebar-menu sidebar-nav">
                     @*<li class="treeview">
-            <a href="/Dashboard/AdminSupport">
-                <i class="fa fa-dashboard"></i>
-                <span>Dashboard</span>
-            </a>
-        </li>*@
+                            <a href="/Dashboard/AdminSupport">
+                                <i class="fa fa-dashboard"></i>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>*@
                     @if (objMenuAccess.Dashboard == 1)
                     {
                         <li class="treeview">
@@ -245,12 +245,12 @@
                             <a href="/Inventory/SpecificSearch">
                                 <div class="img-icon"><img src="/Content/img/search.png" /></div>
                                 <span>@Resource.Search</span>
-                                
+
                             </a>
 
                             <!--<ul class="treeview-menu">
-                    <li><a href="/Inventory/SpecificSearch"><div class="img-icon"><i class="fa fa-search"></i></div> @Resource.Specfic_search</a></li>
-                </ul>-->
+                                <li><a href="/Inventory/SpecificSearch"><div class="img-icon"><i class="fa fa-search"></i></div> @Resource.Specfic_search</a></li>
+                            </ul>-->
                         </li>
                     }
                     @if (objMenuAccess.Inventory == 1)
@@ -480,6 +480,21 @@
 
             return obj;
         }
+    </script>
+    <script type="text/javascript">
+        // ===== Scroll to Top ====
+        $(window).scroll(function () {
+            if ($(this).scrollTop() >= 50) {        // If page is scrolled more than 50px
+                $('#return-to-top').fadeIn(200);    // Fade in the arrow
+            } else {
+                $('#return-to-top').fadeOut(200);   // Else fade out the arrow
+            }
+        });
+        $('#return-to-top').click(function () {      // When arrow is clicked
+            $('body,html').animate({
+                scrollTop: 0                       // Scroll to top of body
+            }, 500);
+        });
     </script>
 </body>
 </html>

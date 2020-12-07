@@ -86,6 +86,9 @@ a.view_btn {
 .content {
   padding: 20px;
 }
+.content#pnlSSResult {
+	padding: 10px 20px;
+}
 
 a:focus, a:hover {
   text-decoration: none;
@@ -1361,7 +1364,7 @@ ul.view-diam-pric {
 .table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td {
     font-weight: 500;
     font-size: 13px;
-    line-height: 24px;
+    line-height: 18px;
     letter-spacing: 0.5px;
     color: #4F4F4F;
     border-top: none;
@@ -2906,6 +2909,52 @@ a.sele-all {
     transform: rotateZ(180deg);
 }
 
+#return-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    right: 20px;
+    background: rgb(58, 65, 118);
+    background: rgba(58, 65, 118, 0.7);
+    width: 50px;
+    height: 50px;
+    display: block;
+    text-decoration: none;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    border-radius: 35px;
+    display: none;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+    #return-to-top i {
+        color: #fff;
+        margin: 0;
+        position: relative;
+        left: 16px;
+        top: 13px;
+        font-size: 19px;
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        -ms-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+    }
+
+    #return-to-top:hover {
+		background: #3a4176;
+        background: rgba(58, 65, 118, 0.9);
+    }
+
+        #return-to-top:hover i {
+            color: #fff;
+            top: 5px;
+        }
+
 /*search bar horizontal view*/
 
 .search-stone-box2 {
@@ -2985,12 +3034,12 @@ a.sele-all {
     line-height: 18px;
     letter-spacing: 0.2px;
     color: #BDBDBD;
-    padding: 5px 10px 14px !important;
+    padding: 5px 10px 10px !important;
     border-radius: 10px;
     border: 0 none;
 }
 #tblBodySummary .rsearchnew {
-    padding: 15px 10px 5px;
+    padding: 10px 10px 5px;
 }
 .list-view .table .rsearchnew .rsearchnew {
     font-weight: 600;
