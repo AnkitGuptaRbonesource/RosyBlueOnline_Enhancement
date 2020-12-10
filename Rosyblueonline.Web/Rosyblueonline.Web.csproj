@@ -1167,7 +1167,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resource\Resource.ja.resx" />
+    <EmbeddedResource Include="Resource\Resource.fr.resx" />
+    <EmbeddedResource Include="Resource\Resource.zh.resx" />
     <EmbeddedResource Include="Resource\Resource.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource.Designer.cs</LastGenOutput>

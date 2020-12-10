@@ -22,6 +22,7 @@ namespace Rosyblueonline.Models
         public DateTime? UpdateDate { get; set; }
         public int? updatedBy { get; set; }
         public bool isOriginFilterPermitted { get; set; }
-        
+        public int AddtocartPermitted { get; set; }
+
     }
 }

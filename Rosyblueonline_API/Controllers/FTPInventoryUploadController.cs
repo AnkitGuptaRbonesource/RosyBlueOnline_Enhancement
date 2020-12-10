@@ -5,6 +5,7 @@ using Rosyblueonline.ServiceProviders.Abstraction;
 using Rosyblueonline.ServiceProviders.Implementation;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.IO;
 using System.Linq;
@@ -19,33 +20,53 @@ namespace Rosyblueonline_API.Controllers
         IStockDetailsService objStockDetailsService;
         IMemoService objMemoService;
         CommonFunction commonFunction;
-        public FTPInventoryUploadController(IStockDetailsService objStockDetailsService, IMemoService objMemoService)
+        IUserDetailService objUDSvc = null;
+        IOrderService objOrderService;
+        public FTPInventoryUploadController(IStockDetailsService objStockDetailsService, IMemoService objMemoService, IUserDetailService objUDSvc, IOrderService objOrderService)
         {
             this.objStockDetailsService = objStockDetailsService as StockDetailsService;
             this.objMemoService = objMemoService as MemoService;
+            this.objUDSvc = objUDSvc as UserDetailService;
+            this.objOrderService = objOrderService as OrderService;
         }
 
 
 
-        string UserHostAddress = "1.1.1.1";
-        string Filepath = @"D:\Ankit\UploadFormat.cleaned.xlsx";
-        string GetToken = "";
+
+
+        // string UserHostAddress = "91.183.153.22";
+
+        string UserHostAddress = ConfigurationManager.AppSettings["AntwerpIpAddress"].ToString();
 
         [HttpGet]
         [Route("InventoryUpload")]
         public void InventoryUpload()
         {
-            int uploadFormatId = 1;
+            string Filepath = ConfigurationManager.AppSettings["InventoryUploadInput"].ToString();
 
-            string path = @"D:\Ankit\Inv\";
+            string[] filePaths = Directory.GetFiles(Filepath, "*.xlsx");
+            if (filePaths.Length>0)
+            {
+                if (filePaths[0] != null || filePaths[0] != "")
+                {
+                    InventoryFileUpload(filePaths[0]);
+                }
+            }
+        }
+
+
+        public void InventoryFileUpload(string Filepath)
+        {
+            int uploadFormatId = 1;
+            string path = ConfigurationManager.AppSettings["InventoryUploadOutput"].ToString();
+
             string fileExtn = "";
             string FileName = Path.GetFileName(Filepath);
             int fileId = 0;
-
+            int LoginID = Convert.ToInt32(ConfigurationManager.AppSettings["AntwerpLoginId"].ToString());
             try
             {
 
-                int LoginID = 111;
                 List<mstUploadFormatViewModel> objVM = new List<mstUploadFormatViewModel>();
                 objVM = objStockDetailsService.InventoryUploadTypes("Upload_Types");
                 string InventoryuploadType = objVM.Where(x => x.uploadFormatId == uploadFormatId).Select(x => x.uploadValue).FirstOrDefault();
@@ -53,50 +74,41 @@ namespace Rosyblueonline_API.Controllers
 
                 fileExtn = Path.GetExtension(FileName);
                 string ip = UserHostAddress;
-                 
+
                 if (fileExtn == ".xls" || fileExtn == ".xlsx")
                 {
                     fileId = this.objStockDetailsService.InsertFileUploadLog(FileName.ToString(), FileName.ToString(), LoginID.ToString(), UserHostAddress, uploadFormatId.ToString(), InventoryuploadType);
-                    // Request.Files[0].SaveAs(path + fileId.ToString() + fileExtn);
-                  //  System.IO.File.Move(path + fileId.ToString() + fileExtn, Filepath);
 
-                    File.Move(Filepath, path + fileId.ToString() + fileExtn);
+                   // File.Move(Filepath, path + fileId.ToString() + fileExtn);
+                    System.IO.File.Move(Filepath, path + fileId.ToString() + fileExtn);
 
                     List<InventoryUpload> objLst = UploadInventory(LoginID, InventoryuploadType, fileExtn, path, fileId);
+
                     if (objLst.Count > 0)
                     {
-                         
+
                         List<InventoryUpload> objValidLst = objLst.Where(x => (x.LotStatus != null && x.LotStatus.ToLower() == "valid")).ToList();
                         List<InventoryUpload> objInValidLst = objLst.Where(x => (x.LotStatus != null && x.LotStatus.ToLower().Contains("invalid"))).ToList();
                         DataTable dtValid = ListtoDataTable.ToDataTable<InventoryUpload>(objValidLst);
                         DataTable dtNotValid = ListtoDataTable.ToDataTable<InventoryUpload>(objInValidLst);
                         ExportToExcel.SaveExcel(path, fileId.ToString() + "_Valid", "Valid", dtValid);
                         ExportToExcel.SaveExcel(path, fileId.ToString() + "_InValid", "InValid", dtNotValid);
-                        if (InventoryuploadType == "MEMO_CANCEL" || InventoryuploadType == "INVENTORY_UPLOAD" || InventoryuploadType == "CHANGE_DISCOUNT" || InventoryuploadType == "MEMO_RETURN_SALE")
-                        {
-                            fileUploadLogModel objFile = this.objMemoService.GetFileByID(fileId);
-                            if (objFile != null)
-                            {
-                                objFile.validInv = dtValid.Rows.Count;
-                                objFile.invalidInv = dtNotValid.Rows.Count;
-                                this.objMemoService.UpdateFile(objFile);
-                            }
-                        }
-                        //SendMailOnUploadEvent(InventoryuploadType,
-                        //                      (path + fileId.ToString() + "_Valid" + ".xlsx"),
-                        //                      (path + fileId.ToString() + "_InValid" + ".xlsx"),
-                        //                      (path + fileId.ToString() + "_backup" + ".xlsx"),
-                        //                      dtValid.Rows.Count,
-                        //                      dtNotValid.Rows.Count,
-                        //                      fileId);
+
+                        SendMailOnUploadEvent(LoginID, InventoryuploadType,
+                                              (path + fileId.ToString() + "_Valid" + ".xlsx"),
+                                              (path + fileId.ToString() + "_InValid" + ".xlsx"),
+                                              (path + fileId.ToString() + "_backup" + ".xlsx"),
+                                              dtValid.Rows.Count,
+                                              dtNotValid.Rows.Count,
+                                              fileId);
                     }
 
-                    ErrorLog.Log("InventoryController", "File upload ", null);
+                    ErrorLog.TestLog("InventoryFileUpload", "File upload ");
 
                 }
                 else
                 {
-                    ErrorLog.Log("InventoryController", "File Extension ", null);
+                    ErrorLog.TestLog("InventoryFileUpload", "File Extension ");
 
                 }
 
@@ -104,7 +116,7 @@ namespace Rosyblueonline_API.Controllers
             }
             catch (Exception ex)
             {
-                ErrorLog.Log("InventoryController", path, ex);
+                ErrorLog.Log("InventoryFileUpload", path, ex);
             }
         }
 
@@ -113,210 +125,54 @@ namespace Rosyblueonline_API.Controllers
         {
             string procName = "";
             int RowCount = 0;
+            int AdminID = Convert.ToInt32(ConfigurationManager.AppSettings["AdminID"].ToString());
+            List<InventoryUpload> objinv = new List<InventoryUpload>();
+            CustomerListView objCD1 = this.objUDSvc.GetCustomerByLoginID(LoginID);
+
             this.commonFunction = new CommonFunction();
             if (fileId > 0)
             {
                 DataTable ds = commonFunction.GetDataFromExcel2(path + fileId.ToString() + fileExtn);
 
-                //DataTable ds1 = commonFunction.GetDataFromExcel2(path + fileId.ToString() + fileExtn);
-                if (InventoryuploadType == "INVENTORY_UPLOAD")
+                procName = "proc_InventoryUploadCheckOrder_Antwerp";
+                DataTable pds = ParseToString(ds);
+                List<FTPInventoryUpload> objftp = new List<FTPInventoryUpload>();
+                objftp = objStockDetailsService.FTPInventoryFileUpload(pds, procName, Convert.ToString(LoginID), Convert.ToString(fileId), UserHostAddress, InventoryuploadType);
+                if (objftp != null)
                 {
-                    procName = "proc_InventoryUpload";
-                    DataTable pds = ParseToString(ds);
-                    return objStockDetailsService.InventoryUpload(pds, procName, Convert.ToString(LoginID), Convert.ToString(fileId), UserHostAddress, InventoryuploadType);
-                }
-                else if (InventoryuploadType == "INVENTORY_MODIFY" || InventoryuploadType == "JA_BN")
-                {
-                    procName = "proc_QCModifyInventory";
-                    ds = RemoveBlankRows(ds);
-                    return objStockDetailsService.InventoryUpload(ds, procName, Convert.ToString(LoginID), Convert.ToString(fileId), UserHostAddress, InventoryuploadType);
-                }
-                else if (InventoryuploadType == "CHANGE_DISCOUNT")
-                {
-                    //NotAppicableConfMemo
-                    procName = "proc_DiscModifyInventory";
-                    List<InventoryUpload> objLst = GetLotNosFromDataTable(ds);
-                    string LotIDs = string.Join(",", objLst.Where(x => x.Stock != null && x.Stock != "").Select(x => x.Stock).ToArray<string>());
-                    List<inventoryDetailsViewModel> objInvLst = objStockDetailsService.GetInventoriesByLotID(LoginID, LotIDs);
-                    ExportToExcel.SaveExcel(path, fileId.ToString() + "_backup" + fileExtn, "Back", ListtoDataTable.ToDataTable<inventoryDetailsViewModel>(objInvLst));
-                    return objStockDetailsService.InventoryUpload(ds, procName, Convert.ToString(LoginID), Convert.ToString(fileId), UserHostAddress, InventoryuploadType);
-                }
-                else if (InventoryuploadType == "CHANGE_RAPP")
-                {
-                    procName = "proc_RapModifyInventory";
-                    List<InventoryUpload> objLst = GetLotNosFromDataTable(ds);
-                    string LotIDs = string.Join(",", objLst.Where(x => x.Stock != null && x.Stock != "").Select(x => x.Stock).ToArray<string>());
-                    List<inventoryDetailsViewModel> objInvLst = objStockDetailsService.GetInventoriesByLotID(LoginID, LotIDs);
-                    ExportToExcel.SaveExcel(path, fileId.ToString() + "_backup" + fileExtn, "Back", ListtoDataTable.ToDataTable<inventoryDetailsViewModel>(objInvLst));
-                    return objStockDetailsService.InventoryUpload(ds, procName, Convert.ToString(LoginID), Convert.ToString(fileId), UserHostAddress, InventoryuploadType);
-                }
-                else if (InventoryuploadType == "MEMO_UPLOAD")
-                {
-                    return GetLotNosFromDataTable(ds);
-                }
-
-                else if (InventoryuploadType == "MEMO_CANCEL")
-                {
-                    List<InventoryUpload> objLst = GetLotNosFromDataTable(ds);//
-                    List<string> LotNos = objLst.Select(x => x.Stock).ToList();
-                    int[] OrderID = objMemoService.GetOrderIDFromLotNos(string.Join(",", LotNos));
-                    if (OrderID.Length == 0)
+                    for (int i = 0; i < objftp.Count(); i++)
                     {
-                        throw new UserDefinedException("No memo created against these lot nos.");
-                    }
-                    else if (OrderID.Length > 1)
-                    {
-                        throw new UserDefinedException("Cannot cancel item from multiple memos");
-                    }
-                    else
-                    {
-
-                        MemoDetail objMd = objMemoService.CancelPartialMemo(OrderID[0], string.Join(",", LotNos), LoginID);
-
-                        objLst = objMd.Inv;
-                    }
-                    return objLst;
-                }
-                else if (InventoryuploadType == "SPLIT_MEMO")
-                {
-                    List<InventoryUpload> objLst = GetLotNosFromDataTable(ds);//
-                    List<string> LotNos = objLst.Select(x => x.Stock).ToList();
-                    int[] OrderID = objMemoService.GetOrderIDFromLotNos(string.Join(",", LotNos));
-
-                    if (OrderID.Length == 0)
-                    {
-                        throw new UserDefinedException("No memo created against these lot nos.");
-                    }
-                    else if (OrderID.Length > 1)
-                    {
-                        throw new UserDefinedException("Cannot split item from multiple memos");
-                    }
-                    for (int i = 0; i < objLst.Count; i++)
-                    {
-                        objLst[i].OrderID = OrderID[0];
-                    }
-                    return objLst;
-                }
-                else if (InventoryuploadType == "ENABLE_INV")
-                {
-                    procName = "proc_EnableDisableInventory";
-                    return objStockDetailsService.InventoryUpload(ds, procName, Convert.ToString(LoginID), Convert.ToString(fileId), UserHostAddress, "ENABLE");
-                }
-                else if (InventoryuploadType == "DISABLE_INV")
-                {
-                    procName = "proc_EnableDisableInventory";
-                    return objStockDetailsService.InventoryUpload(ds, procName, Convert.ToString(LoginID), Convert.ToString(fileId), UserHostAddress, "DISABLE");
-                }
-                else if (InventoryuploadType == "BD_ADD")
-                {
-                    for (int i = 0; i < ds.Rows.Count; i++)
-                    {
-                        if (ds.Rows[i]["inventoryID"].ToString().Trim() == "")
+                        if (objftp[i].OrderType.ToString() == "Order" && objftp[i].OrderNo.ToString() != null && objftp[i].OrderNo.ToString() != "")
                         {
-                            ds.Rows.RemoveAt(i);
-                            i--;
+                            OrderInfoViewModel objinfo = this.objOrderService.OrderInfo(Convert.ToInt32(objftp[i].OrderNo));
+                            int CustomerID = this.objOrderService.OrderListView().Where(x => x.orderDetailsId == Convert.ToInt32(objftp[i].OrderNo)).Select(x => x.loginID).FirstOrDefault();
+                            RowCount = this.objOrderService.OrderCancel(Convert.ToInt32(objftp[i].OrderNo), AdminID, CustomerID);
+                            if (RowCount > 0 && objinfo != null)
+                            {
+                                this.objOrderService.SendForOrder(objinfo, CustomerID, ConfigurationManager.AppSettings["EmailTemplate_CancelOrder"].ToString(), "", true);
+                            }
                         }
-                    }
-                    RowCount = objStockDetailsService.BestDeals(ds, "", 0, "Via File Upload", fileId, GetToken, LoginID, "Add_bestdeal_upload");
-                    if (RowCount > 0)
-                    {
-                        return new List<InventoryUpload>();
-                    }
-                    else
-                    {
-                        throw new UserDefinedException("Best deal not added");
-                    }
-                }
-                else if (InventoryuploadType == "BD_REMOVE")
-                {
-                    for (int i = 0; i < ds.Rows.Count; i++)
-                    {
-                        if (ds.Rows[i]["inventoryID"].ToString() == "")
+                        else if (objftp[i].OrderType.ToString() == "Memo" && objftp[i].OrderNo.ToString() != null && objftp[i].OrderNo.ToString() != "")
                         {
-                            ds.Rows.RemoveAt(i);
-                            i--;
-                        }
-                    }
-                    RowCount = objStockDetailsService.BestDeals(ds, "", 0, "", fileId, GetToken, LoginID, "Remove_bestdeal_upload");
-                    if (RowCount > 0)
-                    {
-                        return new List<InventoryUpload>();
-                    }
-                    else
-                    {
-                        throw new UserDefinedException("Best deal not removed");
-                    }
-                }
-                else if (InventoryuploadType == "ADD_LAB")
-                {
-                    for (int i = 0; i < ds.Rows.Count; i++)
-                    {
-                        if (ds.Rows[i][0].ToString().Trim() == "")
-                        {
-                            ds.Rows.RemoveAt(i);
-                            i--;
-                        }
-                    }
-                    for (int j = 1; j < ds.Columns.Count; j++)
-                    {
-                        ds.Columns.RemoveAt(j);
-                        j--;
-                    }
-                    RowCount = objStockDetailsService.AddRemoveLabStatus(ds, fileId, "add");
-                    if (RowCount > 0)
-                    {
-                        return new List<InventoryUpload>();
-                    }
-                    else
-                    {
-                        throw new UserDefinedException("Lab not set");
-                    }
-                }
-                else if (InventoryuploadType == "REMOVE_LAB")
-                {
-                    for (int i = 0; i < ds.Rows.Count; i++)
-                    {
-                        if (ds.Rows[i][0].ToString().Trim() == "")
-                        {
-                            ds.Rows.RemoveAt(i);
-                            i--;
-                        }
-                    }
-                    for (int j = 1; j < ds.Columns.Count; j++)
-                    {
-                        ds.Columns.RemoveAt(j);
-                        j--;
-                    }
-                    RowCount = objStockDetailsService.AddRemoveLabStatus(ds, fileId, "remove");
-                    if (RowCount > 0)
-                    {
-                        return new List<InventoryUpload>();
-                    }
-                    else
-                    {
-                        throw new UserDefinedException("Lab not set");
-                    }
-                }
-                else if (InventoryuploadType == "V360VIACERTNO")
-                {
-                    for (int i = 0; i < ds.Rows.Count; i++)
-                    {
-                        if (ds.Rows[i][1].ToString().Trim() == "")
-                        {
-                            ds.Rows.RemoveAt(i);
-                            i--;
-                        }
-                    }
-                    return objStockDetailsService.UpdateV360ViaCertNo(ds, fileId);
-                }
-                else if (InventoryuploadType == "MEMO_RETURN_SALE")
-                {
-                    List<InventoryUpload> objLst = GetLotNosFromDataTable(ds);//
-                    List<string> LotNos = objLst.Select(x => x.Stock).Where(x => !string.IsNullOrEmpty(x)).ToList();
 
-                    RowCount = objMemoService.MemoPartialReturnSale(string.Join(",", LotNos), LoginID);
-                    return objLst;
+                            int RowCount1 = 0;
+                            OrderInfoViewModel objInfo = this.objMemoService.MemoInfo(Convert.ToInt32(objftp[i].OrderNo));
+
+                            RowCount1 = this.objMemoService.CancelFullMemo(Convert.ToInt32(objftp[i].OrderNo), LoginID);
+                            if (objInfo != null && RowCount1 > 0)
+                            {
+                                this.objMemoService.SendMailMemo(Convert.ToInt32(objftp[i].OrderNo), objCD1.emailId, objCD1.firstName, objInfo.UserDetail.loginID, "List of inventory CancelMemo from memo-", "", ConfigurationManager.AppSettings["AntwerpEmailTemplate_CancelMemo"].ToString(), objInfo);
+                                bool log = this.objUDSvc.UserActivitylogs(LoginID, "Cancel full memo", objftp[i].OrderNo.ToString());
+                            }
+                        }
+
+                    }
+
+                    procName = "proc_InventoryUpload_Antwerp";
+                    objinv = objStockDetailsService.FTPInventoryUploadandModify(procName, Convert.ToString(LoginID), Convert.ToString(fileId), UserHostAddress, InventoryuploadType);
+
                 }
+                return objinv;
 
 
             }
@@ -396,6 +252,26 @@ namespace Rosyblueonline_API.Controllers
             }
             return lst;
         }
+
+
+        private void SendMailOnUploadEvent(int LoginID, string EventName, string ValidFileName, string InValidFileName, string BackUpFile, int ValidCount, int InValidCount, int FileID)
+        {
+            bool SentMail = true;
+            string Subject = string.Format("List of inventory \"{0}\" from - Rosyblueonline.com", EventName);
+            string Message = "<p>Please find the attached file to view stones updated with {0}.</p><p>No. of stones: {1}</p> ";
+
+            CustomerListView objCD = this.objUDSvc.GetCustomerByLoginID(LoginID);
+
+            Message = string.Format(Message, EventName, ValidCount);
+            if (SentMail)
+            {
+                objStockDetailsService.SendUploadEventMail(ConfigurationManager.AppSettings["AntwerpEmailTemplate_EventSendMail"], objCD.emailId, objCD.firstName, Subject, Message, ValidFileName, InValidFileName, ConfigurationManager.AppSettings["CCemail"].ToString());
+            }
+
+        }
+
+
+
 
     }
 }

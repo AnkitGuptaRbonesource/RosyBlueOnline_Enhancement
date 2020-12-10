@@ -804,5 +804,64 @@ namespace Rosyblueonline.Repository
             }
         }
 
+        public List<FTPInventoryUpload> FTPInventoryFileUpload(DataTable dt, params string[] parameters)
+        {
+            try
+            {
+                if (context.Database.Connection.State != ConnectionState.Open)
+                {
+                    context.Database.Connection.Open();
+                }
+                var cmd = context.Database.Connection.CreateCommand();
+                cmd.CommandText = parameters[0].ToString();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandTimeout = 900;
+                cmd.Parameters.Add(new SqlParameter("@inventoryUpload", dt));
+                cmd.Parameters.Add(new SqlParameter("@createdby", Convert.ToInt32(parameters[1])));
+                cmd.Parameters.Add(new SqlParameter("@FileID", Convert.ToInt32(parameters[2])));
+                cmd.Parameters.Add(new SqlParameter("@LastUpdateIP", parameters[3]));
+                cmd.Parameters.Add(new SqlParameter("@raiseEvent", parameters[4]));
+                var reader = cmd.ExecuteReader();
+                return ((IObjectContextAdapter)context)
+                    .ObjectContext
+                    .Translate<FTPInventoryUpload>(reader).ToList();
+
+
+            }
+            finally
+            {
+                context.Database.Connection.Close();
+            }
+        }
+
+        public List<InventoryUpload> FTPInventoryUploadandModify( params string[] parameters)
+        {
+            try
+            {
+                if (context.Database.Connection.State != ConnectionState.Open)
+                {
+                    context.Database.Connection.Open();
+                }
+                var cmd = context.Database.Connection.CreateCommand();
+                cmd.CommandText = parameters[0].ToString();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandTimeout = 900; 
+                cmd.Parameters.Add(new SqlParameter("@createdby", Convert.ToInt32(parameters[1])));
+                cmd.Parameters.Add(new SqlParameter("@FileID", Convert.ToInt32(parameters[2])));
+                cmd.Parameters.Add(new SqlParameter("@LastUpdateIP", parameters[3]));
+                cmd.Parameters.Add(new SqlParameter("@raiseEvent", parameters[4]));
+                var reader = cmd.ExecuteReader();
+                return ((IObjectContextAdapter)context)
+                    .ObjectContext
+                    .Translate<InventoryUpload>(reader).ToList();
+
+
+            }
+            finally
+            {
+                context.Database.Connection.Close();
+            }
+        }
+
     }
 }

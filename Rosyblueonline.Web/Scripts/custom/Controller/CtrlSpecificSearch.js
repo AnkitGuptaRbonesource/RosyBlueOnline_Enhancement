@@ -127,11 +127,25 @@
         });
 
         $('#btnCart').click(function (e) {
+            
             e.preventDefault();
             if (LstOfCheckItems.length == 0) {
                 uiApp.Alert({ container: '#uiPanel2', message: "No items selected", type: "warning" });
                 return;
             }
+
+            if ($('#hfAddToCartPermittedcount').val() == "" || $('#hfAddToCartPermittedcount').val() == null || $('#hfAddToCartPermittedcount').val() == undefined || $('#hfAddToCartPermittedcount').val() == 0)
+            {
+                $('#hfAddToCartPermittedcount').val(1000);
+            }
+            if (parseInt($('#spanCartCount').html()) + LstOfCheckItems.length  > $('#hfAddToCartPermittedcount').val())
+            {
+                uiApp.Alert({ container: '#uiPanel2', message: "You can add only " + $('#hfAddToCartPermittedcount').val() +" items on cart.", type: "warning" });
+                return;
+
+            }
+            
+
             uiApp.Confirm('Do you want to add the selected items to cart?', function (resp) {
                 if (resp) {
                     objCart.AddtoCart(LstOfCheckItems).then(function (data) {

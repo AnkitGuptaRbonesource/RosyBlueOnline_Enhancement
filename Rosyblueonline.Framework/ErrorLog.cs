@@ -75,7 +75,7 @@ namespace Rosyblueonline.Framework
                     {
                         var path = HttpContext.Current.Server.MapPath(ErrorPath);
                         var FileName = DateTime.Now.ToString("yyyy-MM-dd");
-                        var FilePath = path + FileName + "121.txt";
+                        var FilePath = path + FileName + "_test.txt";
                         if (!File.Exists(FilePath))
                         {
                             File.Create(FilePath);

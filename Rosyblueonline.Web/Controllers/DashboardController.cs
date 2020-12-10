@@ -251,6 +251,24 @@ namespace Rosyblueonline.Web.Controllers
                 return Json(new Response { IsSuccess = false, Message = ex.Message }, JsonRequestBehavior.AllowGet);
             }
         }
+        public ActionResult AddToCartPermitted()
+        {
+            try
+            {
+                int LoginID = GetLogin();
+                if (LoginID != 0)
+                {
+                    MstCustomerPermisionModel objCP = this.objHomeServiceProvider.AddToCartPermitted(LoginID);
+                    return Json(new Response { IsSuccess = true, Message = "", Result = objCP }, JsonRequestBehavior.AllowGet);
+                }
+                return Json(new Response { Code = 200, IsSuccess = false, Message = string.Format(StringResource.Invalid, "Session") }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                ErrorLog.Log("DashboardController", "AddToCartPermitted", ex);
+                return Json(new Response { IsSuccess = false, Message = ex.Message }, JsonRequestBehavior.AllowGet);
+            }
+        }
 
         [HttpPost]
         public JsonResult CustomerListingPendingApproval(DataTableViewModel objReq)

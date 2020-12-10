@@ -87,7 +87,10 @@
                                             </th>
                                             <th class="tbnew">
                                                 <label>Origin Filter Permitted</label>
-                                            </th> 
+                                            </th>
+                                            <th class="tbnew">
+                                                <label>Add To Cart Permitted</label>
+                                            </th>
                                             <th class="tbnew tbl-actions">
                                                 <label>@Resource.Edit</label>
                                             </th>
@@ -336,27 +339,33 @@
                            
                             <div class="form-group" id="pnlSearchPermission"  >
                                 <div class="row">
-                                    <div class="col-md-8" style="font-size: larger;padding: 10px;">
+                                    <div class="col-md-12" style="font-size: larger;padding: 10px;">
                                         <label> @Resource.User_Name :  </label>  <label id="lblUserNameD">   </label>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-4">
                                         <label for="startSizePermitted">
                                             @Resource.Start_Size_Permitted
                                         </label>
-                                        <input class="form-control" name="startSizePermitted" id="txtstartSizePermitted" value="0" />
+                                        <input type="number" class="form-control" name="startSizePermitted" id="txtstartSizePermitted" value="0" />
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-4">
                                         <input type="hidden" name="SPLoginId" id="hfSPLoginId" value="" />
                                         <label for="rowDownloadPermitted">
                                             @Resource.Row_Download_Permitted
                                         </label>
-                                        <input class="form-control" name="rowDownloadPermitted" id="txtrowDownloadPermitted" value="0" />
+                                        <input type="number" class="form-control" name="rowDownloadPermitted" id="txtrowDownloadPermitted" value="0" />
+                                    </div>
+                                    <div class="col-md-4"> 
+                                        <label for="AddtocartPermitted">
+                                            Add To Cart Permitted
+                                        </label>
+                                        <input type="number" class="form-control" name="AddtocartPermitted" id="txtAddtocartPermitted" value="0" />
                                     </div>
                                     <div class="col-md-12" style="margin-top: 20px;">
-                                          <div class="col-md-4" style="margin-top: 10px;">
-                                              <label for="OriginStatus">
-                                                  Origin Filter Permitted
-                                              </label>
+                                        <div class="col-md-4" style="margin-top: 10px;">
+                                            <label for="OriginStatus">
+                                                Origin Filter Permitted
+                                            </label>
                                         </div>
                                         <label class="radio-inline controll-radio">
                                             <input type="radio" name="OriginStatus" id="rbtnosActive" value="1" checked><label for="rbtnosActive" class="controll-label">Allowed</label>
@@ -366,7 +375,7 @@
                                         </label>
 
                                     </div>
-                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

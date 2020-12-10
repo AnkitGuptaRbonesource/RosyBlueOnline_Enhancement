@@ -27,6 +27,14 @@
         }, function (error) {
 
         });
+
+        objDS.AddToCartPermitted().then(function (data) {
+            if (data.IsSuccess) {
+                $('#hfAddToCartPermittedcount').val(data.Result.AddtocartPermitted);
+            }
+        }, function (error) {
+
+        });
     }
 
      

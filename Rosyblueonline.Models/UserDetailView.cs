@@ -22,6 +22,7 @@ namespace Rosyblueonline.Models
         public double? startSizePermitted { get; set; }
         public int? rowDownloadPermitted { get; set; }
         public int? isOriginFilterPermitted { get; set; }
+        public int? AddtocartPermitted { get; set; }
 
     }
 }

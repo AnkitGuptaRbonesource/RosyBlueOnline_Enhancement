@@ -44,7 +44,7 @@
     var GetDataFromApi = function (pData) {
         var ListOfData = [];
         var data = [];
-        //var idx = 0;
+        var idx2 = 0;
         var idx = 0;
         for (var i = 0; i < pData.length; i++) {
             data.push({
@@ -53,13 +53,25 @@
             });
 
             objSF.NewGetDataFromGiaApi(pData[i].Certificate).then(function (rData) {
-               
+                 
                 var FinalJson = JSON.parse(rData.Result);
+
+                //for (var k = 0; k < pData.length; k++) {
+                //    if (pData[k].Certificate == FinalJson.data.getReport.report_number) {
+                //        idx2 = k;
+                //        break;
+                //    }
+                //}
+
                 
                     if (rData.IsSuccess == true && FinalJson.data.getReport != null) {
                         ListOfData.push(FinalJson.data.getReport.results); 
-                        ListOfData[ListOfData.length - 1]["lotno"] = pData[idx].Lotnumber;
-                        ListOfData[ListOfData.length - 1]["certificate"] = pData[idx].Certificate;
+                        //ListOfData[ListOfData.length - 1]["lotno"] = pData[idx].Lotnumber;
+                        //ListOfData[ListOfData.length - 1]["certificate"] = pData[idx].Certificate;
+                         
+
+                        ListOfData[ListOfData.length - 1]["lotno"] = "";
+                        ListOfData[ListOfData.length - 1]["certificate"] = FinalJson.data.getReport.report_number;
                         ListOfData[ListOfData.length - 1]["shape"] = FinalJson.data.getReport.results.data.shape.shape_group;
                         ListOfData[ListOfData.length - 1]["weight"] = FinalJson.data.getReport.results.data.weight.weight;
                         ListOfData[ListOfData.length - 1]["color"] = FinalJson.data.getReport.results.data.color.color_grade_code;
@@ -95,8 +107,10 @@
                        idx++;
                     } else {
                         ListOfData.push(FinalJson.errors[0]);
-                        ListOfData[ListOfData.length - 1]["lotno"] = pData[idx].Lotnumber;
-                        ListOfData[ListOfData.length - 1]["certificate"] = pData[idx].Certificate;
+                         //ListOfData[ListOfData.length - 1]["lotno"] = pData[idx].Lotnumber;
+                        //ListOfData[ListOfData.length - 1]["certificate"] = pData[idx].Certificate;
+                        ListOfData[ListOfData.length - 1]["lotno"] = "";
+                        ListOfData[ListOfData.length - 1]["certificate"] = "";
                         ListOfData[ListOfData.length - 1]["shape"] = "";
                         ListOfData[ListOfData.length - 1]["weight"] = "";
                         ListOfData[ListOfData.length - 1]["color"] = "";

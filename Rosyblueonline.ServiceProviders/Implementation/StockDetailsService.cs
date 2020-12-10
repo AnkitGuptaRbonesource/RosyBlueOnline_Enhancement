@@ -720,5 +720,20 @@ namespace Rosyblueonline.ServiceProviders.Implementation
         {
             return uow.Inventory.TanishqStockDetailsValidate(LoginID, LotNos, RaiseEvent);
         }
+
+
+        public List<FTPInventoryUpload> FTPInventoryFileUpload(DataTable dt, params string[] parameters)
+        {
+            return this.uow.Inventory.FTPInventoryFileUpload(dt, parameters);
+        }
+        public List<InventoryUpload> FTPInventoryUploadandModify(params string[] parameters)
+        {
+            return this.uow.Inventory.FTPInventoryUploadandModify(parameters);
+        }
+
+
+
+        
+
     }
 }

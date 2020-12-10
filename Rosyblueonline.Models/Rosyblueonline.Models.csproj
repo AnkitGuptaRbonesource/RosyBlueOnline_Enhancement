@@ -73,6 +73,7 @@
     <Compile Include="DownloadRightView.cs" />
     <Compile Include="DownloadScriptsModel.cs" />
     <Compile Include="fileUploadLogModel.cs" />
+    <Compile Include="FTPInventoryUpload.cs" />
     <Compile Include="IAddressModel.cs" />
     <Compile Include="inventoryModel.cs" />
     <Compile Include="InventoryUpload.cs" />

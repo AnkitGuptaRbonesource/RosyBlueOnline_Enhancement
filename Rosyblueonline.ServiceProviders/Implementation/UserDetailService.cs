@@ -968,7 +968,7 @@ namespace Rosyblueonline.ServiceProviders.Implementation
             return objLDM;
         }
 
-        public int AddUpdateSearchPermission(string startSizePermitted, string rowDownloadPermitted,int SPLoginId,int LoginId,  int OriginStatus)
+        public int AddUpdateSearchPermission(string startSizePermitted, string rowDownloadPermitted,int SPLoginId,int LoginId,  int OriginStatus, int AddtocartPermitted)
         {
             MstCustomerPermisionModel objLDM = this.uow.mstCustomerPermision.Queryable().Where(x => x.customerId == SPLoginId).FirstOrDefault();
             if (objLDM != null)
@@ -979,6 +979,7 @@ namespace Rosyblueonline.ServiceProviders.Implementation
                 objLDM.updatedBy = LoginId;
                 objLDM.isActive = true;
                 objLDM.isOriginFilterPermitted =Convert.ToBoolean(OriginStatus);
+                objLDM.AddtocartPermitted = AddtocartPermitted;
                 this.uow.mstCustomerPermision.Edit(objLDM);
                 return this.uow.Save();
             }
@@ -995,6 +996,7 @@ namespace Rosyblueonline.ServiceProviders.Implementation
                 objBS.createDate = DateTime.Now;
                 objBS.createdBy = LoginId;
                 objBS.isOriginFilterPermitted = Convert.ToBoolean(OriginStatus);
+                objBS.AddtocartPermitted = AddtocartPermitted;
                 uow.mstCustomerPermision.Add(objBS);
                 return uow.Save();
 

@@ -21,5 +21,7 @@ namespace Rosyblueonline.ServiceProviders.Abstraction
 
         IEnumerable<SelectOptionsViewModel> GetRIdentityType();
 
+        MstCustomerPermisionModel AddToCartPermitted(int LoginID);
+
     }
 }

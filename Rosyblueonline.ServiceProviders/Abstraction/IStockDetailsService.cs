@@ -73,7 +73,10 @@ namespace Rosyblueonline.ServiceProviders.Abstraction
         List<RemoveFromCartInventory> RemoveFromCart(params string[] Parameters);
 
         TanishqStockDetailsValidate TanishqStockDetailsValidate(int LoginID, string LotNos, string RaiseEvent);
+         
+        List<FTPInventoryUpload> FTPInventoryFileUpload(DataTable dt, params string[] Parameters);
 
+        List<InventoryUpload> FTPInventoryUploadandModify(params string[] parameters);
 
     }
 }

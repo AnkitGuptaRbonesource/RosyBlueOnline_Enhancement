@@ -196,14 +196,18 @@
             var startsizepermitted = $(this).data('startsizepermitted');
             var rowdownloadpermitted = $(this).data('rowdownloadpermitted'); 
             var isOriginFilterPermitted = $(this).data('isoriginfilterpermitted'); 
+            var AddtocartPermitted = $(this).data('addtocartpermitted'); 
+             
             if (startsizepermitted == null) { startsizepermitted = 0;}
             if (rowdownloadpermitted == null) { rowdownloadpermitted = 0 }
+            if (AddtocartPermitted == null) { AddtocartPermitted = 0 }
             
             $('#lblUserNameD').html($(this).data('lblusernamed'));
             $('#txtstartSizePermitted').val(startsizepermitted);
             $('#txtrowDownloadPermitted').val(rowdownloadpermitted); 
            $('input[name=OriginStatus][value=' + isOriginFilterPermitted + ']').prop('checked', true);
 
+            $('#txtAddtocartPermitted').val(AddtocartPermitted); 
 
             $('#hfSPLoginId').val(0);
             $('#hfSPLoginId').val(id);
@@ -220,12 +224,14 @@
 
             var OriginStatus = $('input[type="radio"][name="OriginStatus"]:checked').val()
 
+            var AddtocartPermitted = $('#txtAddtocartPermitted').val().trim();
+
             var SPLoginId = $('#hfSPLoginId').val().trim();
             if (startSizePermitted == "" || rowDownloadPermitted == "") {
                 alert("Please enter details !");
 
             } else {
-                objLRS.AddUpdateSearchPermission(startSizePermitted, rowDownloadPermitted, SPLoginId, OriginStatus).then(function (data) {
+                objLRS.AddUpdateSearchPermission(startSizePermitted, rowDownloadPermitted, SPLoginId, OriginStatus, AddtocartPermitted).then(function (data) {
                     console.log(data);
                     if (data.IsSuccess) {
                         LoadGrid();
@@ -409,6 +415,7 @@
                             { data: "startSizePermitted" },
                             { data: "rowDownloadPermitted" },
                             { data: "isOriginFilterPermitted", class: 'whspace' },
+                            { data: "AddtocartPermitted", class: 'whspace' }, 
                             { data: null, class: 'whspace'},
                             { data: null, class: 'whspace'},                           
                             { data: null, class: 'whspace'},
@@ -482,7 +489,7 @@
                                 targets: ["tbl-permission-actions"],
                                 render: function (data, type, row) {
                                     if (row.roleID == 3 || row.roleID == 8 || row.roleID == 9) { 
-                                        return "<a href='#' data-id='" + row.loginID + "'  data-startSizePermitted='" + row.startSizePermitted + "' data-lblusernamed='" + row.username + "'     data-rowDownloadPermitted='" + row.rowDownloadPermitted + "'  data-isOriginFilterPermitted='" + row.isOriginFilterPermitted + "'  class='btn-permission btn-link'>Add permission</a>";
+                                        return "<a href='#' data-id='" + row.loginID + "'  data-startSizePermitted='" + row.startSizePermitted + "' data-lblusernamed='" + row.username + "'     data-rowDownloadPermitted='" + row.rowDownloadPermitted + "'  data-isOriginFilterPermitted='" + row.isOriginFilterPermitted + "' data-AddtocartPermitted='" + row.AddtocartPermitted + "'  class='btn-permission btn-link'>Add permission</a>";
                                     }
                                     return "";
                                 },

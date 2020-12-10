@@ -198,7 +198,7 @@
     };
 
 
-    obj.AddUpdateSearchPermission = function (startSizePermitted, rowDownloadPermitted, SPLoginId, OriginStatus) {
+    obj.AddUpdateSearchPermission = function (startSizePermitted, rowDownloadPermitted, SPLoginId, OriginStatus, AddtocartPermitted) {
         return myApp.http({
             method: 'post',
             url: '/MenuPermissionMaster/AddUpdateSearchPermission',
@@ -206,7 +206,8 @@
                 startSizePermitted: startSizePermitted,
                 rowDownloadPermitted: rowDownloadPermitted,
                 SPLoginId: SPLoginId,
-                OriginStatus: OriginStatus
+                OriginStatus: OriginStatus,
+                AddtocartPermitted: AddtocartPermitted
 
             }
         });
@@ -904,49 +905,49 @@ var DataTableColumnStruct = function (mode) {
     var RoleID = $('#hfRoleID').val();
 
     SpecificSearch.columns = [
-        { data: "inventoryID" },
-        { data: "Stock" }, 
-        { data: "SalesLocation" },
+        { data: "inventoryID", class: 'whspace'},
+        { data: "Stock", class: 'whspace'}, 
+        { data: "SalesLocation", class: 'whspace' },
         //{ data: "CertificateNo" },
-        { data: "v360url" },
-        { data: "Shape" },
-        { data: "Weight" },
-        { data: "Color" },
-        { data: "Clarity" },
+        { data: "v360url", class: 'whspace'},
+        { data: "Shape", class: 'whspace'},
+        { data: "Weight", class: 'whspace'},
+        { data: "Color", class: 'whspace' },
+        { data: "Clarity", class: 'whspace' },
         //{ data: "Measurement" },
-        { data: "TablePerc" },
-        { data: "DepthPerc" },
+        { data: "TablePerc", class: 'whspace' },
+        { data: "DepthPerc", class: 'whspace' },
         //{ data: "Girdle" },
-        { data: "Cut" },
-        { data: "Polish" },
-        { data: "Symmetry" },
-        { data: "Fluorescence" },
-        { data: "Certificate" },
-        { data: "RapnetPrice", render: $.fn.dataTable.render.number(',', '.', 2, '')   },
-        { data: "Discount", render: $.fn.dataTable.render.number(',', '.', 2, '')   },
-        { data: "Price", render: $.fn.dataTable.render.number(',', '.', 2, '')   },
+        { data: "Cut", class: 'whspace'},
+        { data: "Polish", class: 'whspace'},
+        { data: "Symmetry", class: 'whspace' },
+        { data: "Fluorescence", class: 'whspace' },
+        { data: "Certificate", class: 'whspace' },
+        { data: "RapnetPrice", render: $.fn.dataTable.render.number(',', '.', 2, ''), class: 'whspace'  },
+        { data: "Discount", render: $.fn.dataTable.render.number(',', '.', 2, ''), class: 'whspace'   },
+        { data: "Price", render: $.fn.dataTable.render.number(',', '.', 2, ''), class: 'whspace'  },
         { data: "Amount", render: $.fn.dataTable.render.number(',', '.', 2, ''), class: 'whspace' },
-        { data: "CertificateNo" },
-        { data: "D_R" },
-        { data: "Measurement" },
-        { data: "Girdle" },
-        { data: "CrownHeight" },
-        { data: "CrownAngle" },
-        { data: "PavilionDepth" },
-        { data: "PavilionAngle" },
-        { data: "StarLength" },
-        { data: "LowerHalf" },
-        { data: "GirdlePerc" },
-        { data: "Laserinscribe" },
-        { data: "EyeClean" },
-        { data: "Shade" },
-        { data: "Milky" },
-        { data: "TableBlack" },
-        { data: "SideBlack" },
-        { data: "HeartAndArrow" },
-        { data: "OpensName" },
-        { data: "Keytosymbol" },
-        { data: "giaComments", class: 'whspace' },
+        { data: "CertificateNo", class: 'whspace'},
+        { data: "D_R", class: 'whspace'},
+        { data: "Measurement", class: 'whspace'},
+        { data: "Girdle", class: 'whspace' },
+        { data: "CrownHeight", class: 'whspace' },
+        { data: "CrownAngle", class: 'whspace' },
+        { data: "PavilionDepth", class: 'whspace'},
+        { data: "PavilionAngle", class: 'whspace' },
+        { data: "StarLength", class: 'whspace'},
+        { data: "LowerHalf", class: 'whspace' },
+        { data: "GirdlePerc", class: 'whspace'},
+        { data: "Laserinscribe", class: 'whspace'},
+        { data: "EyeClean", class: 'whspace' },
+        { data: "Shade", class: 'whspace' },
+        { data: "Milky", class: 'whspace'},
+        { data: "TableBlack", class: 'whspace'},
+        { data: "SideBlack", class: 'whspace' },
+        { data: "HeartAndArrow", class: 'whspace'},
+        { data: "OpensName", class: 'whspace' },
+        { data: "Keytosymbol", class: 'dt_col_hide'  },
+        { data: "giaComments", class: 'whspace', class: 'dt_col_hide' },
         { data: "Reportdate", class: 'dt_col_hide'  },
         //{ data: "SalesLocation" },
         { data: "refdata", class: 'whspace', class: 'dt_col_hide'  }, /*Added by Ankit 24JUn2020*/
@@ -1151,6 +1152,14 @@ var DashboardService = function () {
             url: '/Dashboard/Count'
         });
     };
+
+    obj.AddToCartPermitted = function () {
+        return myApp.http({
+            method: 'get',
+            url: '/Dashboard/AddToCartPermitted'
+        });
+    };
+
 
     obj.GetStockSummary = function (Stone, LocationID) {
         return myApp.http({

@@ -43,6 +43,7 @@
         <input type="hidden" name="Query" id="hfQuery111" value="" />
     </form>
 
+    <input type="hidden" name="AddToCartPermittedcount" id="hfAddToCartPermittedcount" value="" />
     <div class="wrapper">
 
         <header class="main-header">
@@ -149,7 +150,9 @@
                         <li>
                             <select name="Language" id="ddlLanguage" class="form-control">
                                 <option value="en" @(@CurrentCulture == "en" ? "selected" : "")>English</option>
-                                <option value="ja" @(@CurrentCulture == "ja" ? "selected" : "")>Japanese</option>
+                                @*<option value="ja" @(@CurrentCulture == "ja" ? "selected" : "")>Japanese</option>*@
+                                <option value="fr" @(@CurrentCulture == "fr" ? "selected" : "")>French</option>
+                                <option value="zh" @(@CurrentCulture == "zh" ? "selected" : "")>Mandarin</option>
                                 @* <option value="hi" @(@CurrentCulture == "hi" ? "selected" : "")>Hindi</option>*@
                             </select>
                         </li>

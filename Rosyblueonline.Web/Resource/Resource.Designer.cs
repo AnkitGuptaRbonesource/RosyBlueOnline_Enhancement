@@ -79,7 +79,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Account_Number.
+        ///   Looks up a localized string similar to Account Number.
         /// </summary>
         public static string Account_Number {
             get {
@@ -106,7 +106,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ActionName.
+        ///   Looks up a localized string similar to Action Name.
         /// </summary>
         public static string ActionName {
             get {
@@ -169,7 +169,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Add_Best_Deal.
+        ///   Looks up a localized string similar to Add Best Deal.
         /// </summary>
         public static string Add_Best_Deal {
             get {
@@ -178,7 +178,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Add_Best_Deals.
+        ///   Looks up a localized string similar to Add Best Deals.
         /// </summary>
         public static string Add_Best_Deals {
             get {
@@ -412,7 +412,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Apply_Last_Changed_Discount.
+        ///   Looks up a localized string similar to Apply Last Changed Discount.
         /// </summary>
         public static string Apply_Last_Changed_Discount {
             get {
@@ -421,7 +421,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Apply_Previous_Discount.
+        ///   Looks up a localized string similar to Apply Previous Discount.
         /// </summary>
         public static string Apply_Previous_Discount {
             get {
@@ -565,7 +565,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Best_Deals_Discount.
+        ///   Looks up a localized string similar to Best Deals Discount.
         /// </summary>
         public static string Best_Deals_Discount {
             get {
@@ -574,7 +574,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Best_Deals_Remark.
+        ///   Looks up a localized string similar to Best Deals Remark.
         /// </summary>
         public static string Best_Deals_Remark {
             get {
@@ -583,7 +583,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Best_Deals_Text.
+        ///   Looks up a localized string similar to Best Deals Text.
         /// </summary>
         public static string Best_Deals_Text {
             get {
@@ -592,7 +592,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Billing_Address.
+        ///   Looks up a localized string similar to Billing Address.
         /// </summary>
         public static string Billing_Address {
             get {
@@ -655,7 +655,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Box_No.
+        ///   Looks up a localized string similar to Box No.
         /// </summary>
         public static string Box_No {
             get {
@@ -673,7 +673,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Branch_Address.
+        ///   Looks up a localized string similar to Branch Address.
         /// </summary>
         public static string Branch_Address {
             get {
@@ -682,7 +682,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Branch_Name.
+        ///   Looks up a localized string similar to Branch Name.
         /// </summary>
         public static string Branch_Name {
             get {
@@ -745,7 +745,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cancel_Order.
+        ///   Looks up a localized string similar to Cancel Order.
         /// </summary>
         public static string Cancel_Order {
             get {
@@ -934,7 +934,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Change_summary_Discounts.
+        ///   Looks up a localized string similar to Change Summary Discounts.
         /// </summary>
         public static string Change_summary_Discounts {
             get {
@@ -1087,7 +1087,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Confirm_Order.
+        ///   Looks up a localized string similar to Confirm Order.
         /// </summary>
         public static string Confirm_Order {
             get {
@@ -1123,7 +1123,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Continue_mode.
+        ///   Looks up a localized string similar to Continue mode.
         /// </summary>
         public static string Continue_mode {
             get {
@@ -1177,7 +1177,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Created Dae.
+        ///   Looks up a localized string similar to Created Date.
         /// </summary>
         public static string Created_Dae {
             get {
@@ -1231,7 +1231,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Crown_Angle.
+        ///   Looks up a localized string similar to Crown Angle.
         /// </summary>
         public static string Crown_Angle {
             get {
@@ -1240,7 +1240,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Crown_Height.
+        ///   Looks up a localized string similar to Crown Height.
         /// </summary>
         public static string Crown_Height {
             get {
@@ -1312,7 +1312,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Customer_Activity_Details.
+        ///   Looks up a localized string similar to Customer Activity Details.
         /// </summary>
         public static string Customer_Activity_Details {
             get {
@@ -1330,7 +1330,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Customer_Demand.
+        ///   Looks up a localized string similar to Customer Demand.
         /// </summary>
         public static string Customer_Demand {
             get {
@@ -1348,7 +1348,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Customer_Name.
+        ///   Looks up a localized string similar to Customer Name.
         /// </summary>
         public static string Customer_Name {
             get {
@@ -1420,7 +1420,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Date_Of_Establishment.
+        ///   Looks up a localized string similar to Date Of Establishment.
         /// </summary>
         public static string Date_Of_Establishment {
             get {
@@ -1447,7 +1447,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Demand_Search.
+        ///   Looks up a localized string similar to Demand Search.
         /// </summary>
         public static string Demand_Search {
             get {
@@ -1537,7 +1537,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Direct_Ship.
+        ///   Looks up a localized string similar to Direct Ship.
         /// </summary>
         public static string Direct_Ship {
             get {
@@ -1663,7 +1663,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Download_Excel.
+        ///   Looks up a localized string similar to Download Excel.
         /// </summary>
         public static string Download_Excel {
             get {
@@ -1753,7 +1753,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Email_Address.
+        ///   Looks up a localized string similar to Email Address.
         /// </summary>
         public static string Email_Address {
             get {
@@ -1762,7 +1762,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Email_ID.
+        ///   Looks up a localized string similar to Email ID.
         /// </summary>
         public static string Email_ID {
             get {
@@ -1861,7 +1861,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Export_Excel.
+        ///   Looks up a localized string similar to Export Excel.
         /// </summary>
         public static string Export_Excel {
             get {
@@ -1897,7 +1897,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Eye_Clean.
+        ///   Looks up a localized string similar to Eye Clean.
         /// </summary>
         public static string Eye_Clean {
             get {
@@ -2023,7 +2023,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Flora.
+        ///   Looks up a localized string similar to Fluor.
         /// </summary>
         public static string Flora {
             get {
@@ -2050,7 +2050,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fluorescence_Intensity.
+        ///   Looks up a localized string similar to Fluorescence Intensity.
         /// </summary>
         public static string Fluorescence_Intensity {
             get {
@@ -2149,7 +2149,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Grid_Legends.
+        ///   Looks up a localized string similar to Grid Legends.
         /// </summary>
         public static string Grid_Legends {
             get {
@@ -2167,7 +2167,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to GST_No.
+        ///   Looks up a localized string similar to GST No.
         /// </summary>
         public static string GST_No {
             get {
@@ -2266,7 +2266,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Image_Name.
+        ///   Looks up a localized string similar to Image Name.
         /// </summary>
         public static string Image_Name {
             get {
@@ -2311,7 +2311,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Inspection_Report.
+        ///   Looks up a localized string similar to Inspection Report.
         /// </summary>
         public static string Inspection_Report {
             get {
@@ -2320,7 +2320,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Inspection_Request.
+        ///   Looks up a localized string similar to Inspection Request.
         /// </summary>
         public static string Inspection_Request {
             get {
@@ -2365,7 +2365,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Inventory_Package.
+        ///   Looks up a localized string similar to Inventory Package.
         /// </summary>
         public static string Inventory_Package {
             get {
@@ -2527,7 +2527,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Last_Login.
+        ///   Looks up a localized string similar to Last Login.
         /// </summary>
         public static string Last_Login {
             get {
@@ -2617,7 +2617,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Lot_Cret_No.
+        ///   Looks up a localized string similar to Lot Cret No.
         /// </summary>
         public static string Lot_Cret_No {
             get {
@@ -2635,7 +2635,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Lot_Number.
+        ///   Looks up a localized string similar to LotNumber.
         /// </summary>
         public static string Lot_Number {
             get {
@@ -2662,7 +2662,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Lower_Half.
+        ///   Looks up a localized string similar to Lower Half.
         /// </summary>
         public static string Lower_Half {
             get {
@@ -2725,7 +2725,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Mail_BCC.
+        ///   Looks up a localized string similar to Mail BCC.
         /// </summary>
         public static string Mail_BCC {
             get {
@@ -2734,7 +2734,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Mail_CC.
+        ///   Looks up a localized string similar to Mail CC.
         /// </summary>
         public static string Mail_CC {
             get {
@@ -2743,7 +2743,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Mail_From.
+        ///   Looks up a localized string similar to Mail From.
         /// </summary>
         public static string Mail_From {
             get {
@@ -2752,7 +2752,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Mail_To.
+        ///   Looks up a localized string similar to Mail To.
         /// </summary>
         public static string Mail_To {
             get {
@@ -2869,7 +2869,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Memo_Status.
+        ///   Looks up a localized string similar to Memo Status.
         /// </summary>
         public static string Memo_Status {
             get {
@@ -2905,7 +2905,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Merge_Order.
+        ///   Looks up a localized string similar to Merge Order.
         /// </summary>
         public static string Merge_Order {
             get {
@@ -2986,7 +2986,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Multiple_Demand.
+        ///   Looks up a localized string similar to Multiple Demand.
         /// </summary>
         public static string Multiple_Demand {
             get {
@@ -3193,7 +3193,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Only_Memo.
+        ///   Looks up a localized string similar to Only Memo.
         /// </summary>
         public static string Only_Memo {
             get {
@@ -3310,7 +3310,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Other_Details.
+        ///   Looks up a localized string similar to Other Details.
         /// </summary>
         public static string Other_Details {
             get {
@@ -3328,7 +3328,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Other_Type.
+        ///   Looks up a localized string similar to Other Type.
         /// </summary>
         public static string Other_Type {
             get {
@@ -3364,7 +3364,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to PAN_No.
+        ///   Looks up a localized string similar to PAN No.
         /// </summary>
         public static string PAN_No {
             get {
@@ -3391,7 +3391,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Pavilion_Angle.
+        ///   Looks up a localized string similar to Pavilion Angle.
         /// </summary>
         public static string Pavilion_Angle {
             get {
@@ -3400,7 +3400,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Pavilion_Depth.
+        ///   Looks up a localized string similar to Pavilion Depth.
         /// </summary>
         public static string Pavilion_Depth {
             get {
@@ -3490,7 +3490,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Personal_Details.
+        ///   Looks up a localized string similar to Personal Details.
         /// </summary>
         public static string Personal_Details {
             get {
@@ -3508,7 +3508,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Phone_1.
+        ///   Looks up a localized string similar to Phone 1.
         /// </summary>
         public static string Phone_1 {
             get {
@@ -3517,7 +3517,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Phone_2.
+        ///   Looks up a localized string similar to Phone 2.
         /// </summary>
         public static string Phone_2 {
             get {
@@ -3607,7 +3607,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Previous_Discount.
+        ///   Looks up a localized string similar to Previous Discount.
         /// </summary>
         public static string Previous_Discount {
             get {
@@ -3616,7 +3616,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Previous_Rap_Price.
+        ///   Looks up a localized string similar to Previous Rap Price.
         /// </summary>
         public static string Previous_Rap_Price {
             get {
@@ -3670,7 +3670,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Price_Mark_Percent.
+        ///   Looks up a localized string similar to Price Mark Percent.
         /// </summary>
         public static string Price_Mark_Percent {
             get {
@@ -3895,7 +3895,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Reference_Name.
+        ///   Looks up a localized string similar to Reference Name.
         /// </summary>
         public static string Reference_Name {
             get {
@@ -3931,7 +3931,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Rejected_Customers.
+        ///   Looks up a localized string similar to Rejected Customers.
         /// </summary>
         public static string Rejected_Customers {
             get {
@@ -3958,7 +3958,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Remove_Best_Deal.
+        ///   Looks up a localized string similar to Remove Best Deal.
         /// </summary>
         public static string Remove_Best_Deal {
             get {
@@ -3967,7 +3967,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Remove_Best_Deals.
+        ///   Looks up a localized string similar to Remove Best Deals.
         /// </summary>
         public static string Remove_Best_Deals {
             get {
@@ -3985,7 +3985,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Remove_Cart.
+        ///   Looks up a localized string similar to Remove Cart.
         /// </summary>
         public static string Remove_Cart {
             get {
@@ -4021,7 +4021,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Report_Date.
+        ///   Looks up a localized string similar to Report Date.
         /// </summary>
         public static string Report_Date {
             get {
@@ -4192,7 +4192,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to RFID_StockTally.
+        ///   Looks up a localized string similar to RFID StockTally.
         /// </summary>
         public static string RFID_StockTally {
             get {
@@ -4291,7 +4291,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sale_Discount.
+        ///   Looks up a localized string similar to Sale Discount.
         /// </summary>
         public static string Sale_Discount {
             get {
@@ -4309,7 +4309,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sales_Mode.
+        ///   Looks up a localized string similar to Sales Mode.
         /// </summary>
         public static string Sales_Mode {
             get {
@@ -4363,7 +4363,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Saved_Search.
+        ///   Looks up a localized string similar to Saved Search.
         /// </summary>
         public static string Saved_Search {
             get {
@@ -4399,7 +4399,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Search_Result.
+        ///   Looks up a localized string similar to Search Result.
         /// </summary>
         public static string Search_Result {
             get {
@@ -4435,7 +4435,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Select_Billing_Address.
+        ///   Looks up a localized string similar to Select Billing Address.
         /// </summary>
         public static string Select_Billing_Address {
             get {
@@ -4489,7 +4489,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Select_Identity.
+        ///   Looks up a localized string similar to Select Identity.
         /// </summary>
         public static string Select_Identity {
             get {
@@ -4516,7 +4516,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Select_Shipping_Address.
+        ///   Looks up a localized string similar to Select Shipping Address.
         /// </summary>
         public static string Select_Shipping_Address {
             get {
@@ -4570,7 +4570,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Self_Pickup.
+        ///   Looks up a localized string similar to Self Pickup.
         /// </summary>
         public static string Self_Pickup {
             get {
@@ -4615,7 +4615,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Send_Mail.
+        ///   Looks up a localized string similar to Send Mail.
         /// </summary>
         public static string Send_Mail {
             get {
@@ -4660,7 +4660,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Shipping_Address.
+        ///   Looks up a localized string similar to Shipping Address.
         /// </summary>
         public static string Shipping_Address {
             get {
@@ -4687,7 +4687,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Shipping_Mode.
+        ///   Looks up a localized string similar to Shipping Mode.
         /// </summary>
         public static string Shipping_Mode {
             get {
@@ -4813,7 +4813,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to SOLD_IN.
+        ///   Looks up a localized string similar to SOLD IN.
         /// </summary>
         public static string SOLD_IN {
             get {
@@ -4858,7 +4858,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Star_Length.
+        ///   Looks up a localized string similar to Star Length.
         /// </summary>
         public static string Star_Length {
             get {
@@ -4930,7 +4930,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Stock_Status.
+        ///   Looks up a localized string similar to Stock Status.
         /// </summary>
         public static string Stock_Status {
             get {
@@ -4984,7 +4984,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Stone_Origin.
+        ///   Looks up a localized string similar to Stone Origin.
         /// </summary>
         public static string Stone_Origin {
             get {
@@ -5245,7 +5245,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Total_Amount.
+        ///   Looks up a localized string similar to Total Amount.
         /// </summary>
         public static string Total_Amount {
             get {
@@ -5272,7 +5272,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Total_Found.
+        ///   Looks up a localized string similar to Total Found.
         /// </summary>
         public static string Total_Found {
             get {
@@ -5326,7 +5326,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Total_Stones.
+        ///   Looks up a localized string similar to Total Stones.
         /// </summary>
         public static string Total_Stones {
             get {
@@ -5434,7 +5434,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Upload_Format_Common.
+        ///   Looks up a localized string similar to Upload Format Common.
         /// </summary>
         public static string Upload_Format_Common {
             get {
@@ -5506,7 +5506,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Uploaded_Discount.
+        ///   Looks up a localized string similar to Uploaded Discount.
         /// </summary>
         public static string Uploaded_Discount {
             get {
@@ -5515,7 +5515,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Uploaded_Rap_Price.
+        ///   Looks up a localized string similar to Uploaded Rap Price.
         /// </summary>
         public static string Uploaded_Rap_Price {
             get {
@@ -5551,7 +5551,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to User_Status.
+        ///   Looks up a localized string similar to User Status.
         /// </summary>
         public static string User_Status {
             get {
@@ -5614,7 +5614,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Verify_OTP.
+        ///   Looks up a localized string similar to Verify OTP.
         /// </summary>
         public static string Verify_OTP {
             get {
@@ -5650,7 +5650,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to View_Customer_Activity_Log.
+        ///   Looks up a localized string similar to View Customer Activity Log.
         /// </summary>
         public static string View_Customer_Activity_Log {
             get {
@@ -5659,7 +5659,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to View_Customer_Details.
+        ///   Looks up a localized string similar to View Customer Details.
         /// </summary>
         public static string View_Customer_Details {
             get {
@@ -5668,7 +5668,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to View_Customer_Recent_Searches.
+        ///   Looks up a localized string similar to View Customer Recent Searches.
         /// </summary>
         public static string View_Customer_Recent_Searches {
             get {
@@ -5704,7 +5704,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to View_Request.
+        ///   Looks up a localized string similar to View Request.
         /// </summary>
         public static string View_Request {
             get {

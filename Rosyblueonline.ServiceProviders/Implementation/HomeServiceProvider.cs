@@ -119,7 +119,12 @@ namespace Rosyblueonline.ServiceProviders.Implementation
             return objUC;
         }
 
-        
+        public MstCustomerPermisionModel AddToCartPermitted(int LoginID)
+        {
+            MstCustomerPermisionModel objCP = new MstCustomerPermisionModel();
+             objCP = uow.mstCustomerPermision.Queryable().Where(x => x.customerId == LoginID).FirstOrDefault();
+            return objCP;
+        }
 
         //public List<T> NewarrivalandRevised()
         //{

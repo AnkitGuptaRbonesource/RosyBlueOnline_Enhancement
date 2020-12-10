@@ -89,12 +89,12 @@ namespace Rosyblueonline.Web.Controllers
         }
 
 
-        public ActionResult AddUpdateSearchPermission(string startSizePermitted, string rowDownloadPermitted, int SPLoginId, int OriginStatus)
+        public ActionResult AddUpdateSearchPermission(string startSizePermitted, string rowDownloadPermitted, int SPLoginId, int OriginStatus, int AddtocartPermitted)
         {
 
             int LoginId = GetLogin();
 
-            int rowcount = this.objUDSvc.AddUpdateSearchPermission(startSizePermitted, rowDownloadPermitted, SPLoginId, LoginId, OriginStatus);
+            int rowcount = this.objUDSvc.AddUpdateSearchPermission(startSizePermitted, rowDownloadPermitted, SPLoginId, LoginId, OriginStatus, AddtocartPermitted);
             return Json(new Response { IsSuccess = true, Message = "", Result = rowcount });
 
 
