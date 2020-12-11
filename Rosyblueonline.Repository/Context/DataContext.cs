@@ -70,7 +70,9 @@ namespace Rosyblueonline.Repository.Context
             modelBuilder.Entity<MstCustomerPermisionModel>().ToTable("mstCustomerPermision"); 
             modelBuilder.Entity<MenuMasterModel>().ToTable("MenuMaster");
             modelBuilder.Entity<UserMenuPermissionModel>().ToTable("UserMenuPermission");
-            
+
+            modelBuilder.Entity<mstFAQBankModel>().ToTable("mstFAQBank");
+
 
             base.OnModelCreating(modelBuilder);
         }
@@ -127,7 +129,9 @@ namespace Rosyblueonline.Repository.Context
 
         public DbSet<MenuMasterModel> MenuMaster { get; set; }
         public DbSet<UserMenuPermissionModel> UserMenuPermission { get; set; }
-        
+
+        public DbSet<mstFAQBankModel> mstFAQBank { get; set; }
+
 
 
         // need to exclude the below

@@ -21,9 +21,10 @@
     var RegisterEvent = function () {
         $(document).on('click', '.btn-login', function (e) {
             e.preventDefault();
+            uiApp.BlockUI();
             if ($pnlLogin.valid()) {
                 objLogSvc.Login(ReadForm()).then(function (data) {
-                    if (data.IsSuccess == true) {
+                    if (data.IsSuccess == true) {  
                         myApp.token().set(data.Result.tokenID);
                         if (data.Result.RoleID == 3) {
                             if (data.Result.IsSiteBlocked == true) { 
@@ -40,13 +41,17 @@
                         }
                         if (data.Result.RoleID == 9) {
                             location.href = '/Dashboard';
-                        }
+                            } 
+                        
                     } else {
                         uiApp.Alert({ container: '#uiPanel', message: data.Message, type: "danger" });
+                        uiApp.UnBlockUI();
                     }
                 }, function (error) {
-                    uiApp.Alert({ container: '#uiPanel', message: "Some error occured", type: "danger" });
+                        uiApp.Alert({ container: '#uiPanel', message: "Some error occured", type: "danger" });
+                        uiApp.UnBlockUI();
                 });
+              
             }
         });
 

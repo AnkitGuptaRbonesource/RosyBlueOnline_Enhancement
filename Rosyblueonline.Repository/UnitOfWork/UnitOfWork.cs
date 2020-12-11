@@ -74,7 +74,8 @@ namespace Rosyblueonline.Repository.UnitOfWork
 
         private Repository<UserMenuPermissionModel> _UserMenuPermission = null;
 
-        
+        private Repository<mstFAQBankModel> _mstFAQBank = null;
+
 
 
         public Repository<LoginDeviceModel> LoginDevices {
@@ -150,7 +151,9 @@ namespace Rosyblueonline.Repository.UnitOfWork
 
         public Repository<UserMenuPermissionModel> UserMenuPermission { get => _UserMenuPermission == null ? new Repository<UserMenuPermissionModel>(db) : _UserMenuPermission; }
 
-        
+        public Repository<mstFAQBankModel> mstFAQBank { get => _mstFAQBank == null ? new Repository<mstFAQBankModel>(db) : _mstFAQBank; }
+
+
         public int Save()
         {
             return this.db.SaveChanges();

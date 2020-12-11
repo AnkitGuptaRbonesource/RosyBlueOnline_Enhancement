@@ -78,17 +78,26 @@
                 uiApp.Alert({ container: '#uiPanel1', message: "No items selected", type: "warning" });
                 return;
             }
+          
             uiApp.Confirm('Confirm Delete?', function (resp) {
                 if (resp) {
+                    uiApp.BlockUI();
                     objSvc.RemoveCart(LstOfCheckItems).then(function (data) {
                         if (data.IsSuccess == true) {
                             uiApp.Alert({ container: '#uiPanel1', message: data.Result.RecentCartCount + " Item(s) removed", type: "success" });
-                            LoadData();
+
+                            setTimeout(function () {
+                                location.reload();
+                            }, 1000);
+                            // LoadData();
+                            
                         } else {
                             uiApp.Alert({ container: '#uiPanel1', message: "Items not removed", type: "error" });
+                            uiApp.UnBlockUI();
                         }
                     }, function (error) {
-                        uiApp.Alert({ container: '#uiPanel1', message: "Problem in removing items", type: "error" });
+                            uiApp.Alert({ container: '#uiPanel1', message: "Problem in removing items", type: "error" });
+                            uiApp.UnBlockUI();
                     });
                 }
             });

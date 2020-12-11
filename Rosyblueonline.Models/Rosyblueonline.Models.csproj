@@ -93,6 +93,7 @@
     <Compile Include="MstBillingAddressModel.cs" />
     <Compile Include="mstColorModel.cs" />
     <Compile Include="MstCountryModel.cs" />
+    <Compile Include="mstFAQBankModel.cs" />
     <Compile Include="mstFluorescenceModel.cs" />
     <Compile Include="mstGirdleNamesModel.cs" />
     <Compile Include="mstH_AModel.cs" />

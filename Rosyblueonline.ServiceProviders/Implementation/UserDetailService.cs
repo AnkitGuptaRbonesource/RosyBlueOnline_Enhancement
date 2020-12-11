@@ -131,7 +131,7 @@ namespace Rosyblueonline.ServiceProviders.Implementation
                     // UserDetailModel ----Start----
                     this.uow.UserDetails.Add(objUD);
 
-                     
+
                 }
                 //UserKycDocDetailsModel obkKyc = this.uow.UserKycDocDetails.Queryable().Where(x => x.LoginId == obj.DocRandomID).FirstOrDefault();
                 //if (obkKyc != null)
@@ -140,7 +140,7 @@ namespace Rosyblueonline.ServiceProviders.Implementation
                 //    this.uow.UserKycDocDetails.Edit(obkKyc);
                 //    this.uow.Save();
                 //}
-                 
+
                 int RowCount = uow.Save();
 
                 DataContext entity = new DataContext();
@@ -436,37 +436,37 @@ namespace Rosyblueonline.ServiceProviders.Implementation
         public bool GeoLocation(LoginData obj)
         {
 
-            UserGeoLocationModel objU  = new UserGeoLocationModel
+            UserGeoLocationModel objU = new UserGeoLocationModel
             {
-                LoginID=obj.LoginID,
-                Username=obj.Username,
-                DeviceName =obj.DeviceName,
-                IpAddress =obj.IpAddress,
-                Latitude=obj.Latitude,
-                Longitude =obj.Longitude, 
+                LoginID = obj.LoginID,
+                Username = obj.Username,
+                DeviceName = obj.DeviceName,
+                IpAddress = obj.IpAddress,
+                Latitude = obj.Latitude,
+                Longitude = obj.Longitude,
                 Locality = obj.Locality,
                 City = obj.City,
                 State = obj.State,
                 Country = obj.Country,
-                CreatedOn =DateTime.Now
-                 
+                CreatedOn = DateTime.Now
+
             };
             uow.UserGeoLocationM.Add(objU);
-            uow.Save(); 
+            uow.Save();
             return obj == null ? true : false;
 
         }
         //Added by Ankit 18Jun2020
 
         public bool UserActivitylogs(int Loginid, string Actionname, string Actiondetail)
-        { 
-            return this.uow.Orders.UserActivityloginsert( Loginid,   Actionname,   Actiondetail);
+        {
+            return this.uow.Orders.UserActivityloginsert(Loginid, Actionname, Actiondetail);
         }
 
 
-        public  UserMenuAccessModel  UserMenuAccessModel(int Loginid, string MenuIdList, string CreatedBy, string QFlag)
+        public UserMenuAccessModel UserMenuAccessModel(int Loginid, string MenuIdList, string CreatedBy, string QFlag)
         {
-             UserMenuAccessModel  objAccess = uow.Orders.GetUserMenuAccessDetails(Loginid, MenuIdList, CreatedBy, QFlag);
+            UserMenuAccessModel objAccess = uow.Orders.GetUserMenuAccessDetails(Loginid, MenuIdList, CreatedBy, QFlag);
             return objAccess;
         }
         //public bool UserActivitylog(int Loginid, string Actionname, string Actiondetail)
@@ -496,20 +496,20 @@ namespace Rosyblueonline.ServiceProviders.Implementation
 
         public List<UserKycDocDetailsModel> UploadMultiDoc(UserKycDocDetailsModel obj)
         {
-            
-          MstDocIdentityModel objMstDoc = uow.MstDocIdentity.Queryable().Where(x => x.DocId.ToString() ==  obj.KycDocId ).FirstOrDefault();
+
+            MstDocIdentityModel objMstDoc = uow.MstDocIdentity.Queryable().Where(x => x.DocId.ToString() == obj.KycDocId).FirstOrDefault();
 
 
             UserKycDocDetailsModel objKyc = new UserKycDocDetailsModel
-            { 
+            {
                 LoginId = obj.LoginId,
                 KycDocId = obj.KycDocId,
-               KycDocName = objMstDoc.DocIdentityName,
+                KycDocName = objMstDoc.DocIdentityName,
                 kycDocNo = obj.kycDocNo,
                 kycDocFile = obj.kycDocFile,
                 KycDocExpiryDate = obj.KycDocExpiryDate,
                 CreatedDate = DateTime.Now,
-                OrgFileName =obj.OrgFileName
+                OrgFileName = obj.OrgFileName
 
             };
             uow.UserKycDocDetails.Add(objKyc);
@@ -522,10 +522,10 @@ namespace Rosyblueonline.ServiceProviders.Implementation
         //Added by Ankit 09July2020
         public List<UserKycDocDetailsModel> DeleteUserDoc(int UserDocId, string DocRandomID)
         {
-            
-            UserKycDocDetailsModel UserDoc = this.uow.UserKycDocDetails.Queryable().Where(val => val.UserDocId ==  UserDocId).Single<UserKycDocDetailsModel>();
+
+            UserKycDocDetailsModel UserDoc = this.uow.UserKycDocDetails.Queryable().Where(val => val.UserDocId == UserDocId).Single<UserKycDocDetailsModel>();
             this.uow.UserKycDocDetails.Delete(UserDoc);
-            this.uow.Save(); 
+            this.uow.Save();
 
             return this.uow.UserKycDocDetails.Queryable().Where(x => x.LoginId == DocRandomID).ToList();
 
@@ -543,12 +543,12 @@ namespace Rosyblueonline.ServiceProviders.Implementation
             return this.uow.Orders.UserGeoLoctionLog(LoginId);
         }
 
-        
+
         public List<UserActivityLogModel> GetCustomerLog(int LoginId)
         {
             return uow.Orders.GetCustomerLogData(LoginId);
         }
-         
+
 
 
 
@@ -956,19 +956,19 @@ namespace Rosyblueonline.ServiceProviders.Implementation
 
         public List<MenuMasterModel> MenuMasterDetails()
         {
-            List<MenuMasterModel> objLDM = this.uow.MenuMaster.Queryable().Where(x => x.IsActive == true && x.MenuId!=1 && x.MenuId!=2).ToList();
-            
+            List<MenuMasterModel> objLDM = this.uow.MenuMaster.Queryable().Where(x => x.IsActive == true && x.MenuId != 1 && x.MenuId != 2).ToList();
+
             return objLDM;
         }
 
         public List<UserMenuPermissionModel> GetMenuAccessdata(int LoginId)
         {
             List<UserMenuPermissionModel> objLDM = this.uow.UserMenuPermission.Queryable().Where(x => x.IsActive == true && x.LoginId == LoginId).ToList();
-              
+
             return objLDM;
         }
 
-        public int AddUpdateSearchPermission(string startSizePermitted, string rowDownloadPermitted,int SPLoginId,int LoginId,  int OriginStatus, int AddtocartPermitted)
+        public int AddUpdateSearchPermission(string startSizePermitted, string rowDownloadPermitted, int SPLoginId, int LoginId, int OriginStatus, int AddtocartPermitted)
         {
             MstCustomerPermisionModel objLDM = this.uow.mstCustomerPermision.Queryable().Where(x => x.customerId == SPLoginId).FirstOrDefault();
             if (objLDM != null)
@@ -978,16 +978,17 @@ namespace Rosyblueonline.ServiceProviders.Implementation
                 objLDM.UpdateDate = DateTime.Now;
                 objLDM.updatedBy = LoginId;
                 objLDM.isActive = true;
-                objLDM.isOriginFilterPermitted =Convert.ToBoolean(OriginStatus);
+                objLDM.isOriginFilterPermitted = Convert.ToBoolean(OriginStatus);
                 objLDM.AddtocartPermitted = AddtocartPermitted;
                 this.uow.mstCustomerPermision.Edit(objLDM);
                 return this.uow.Save();
             }
-            else {
+            else
+            {
 
                 LoginDetailModel objLDM1 = this.uow.LoginDetails.Queryable().Where(x => x.loginID == SPLoginId).FirstOrDefault();
 
-                MstCustomerPermisionModel objBS =new  MstCustomerPermisionModel();
+                MstCustomerPermisionModel objBS = new MstCustomerPermisionModel();
                 objBS.customerId = SPLoginId;
                 objBS.roleID = objLDM1.roleID;
                 objBS.startSizePermitted = Convert.ToDouble(startSizePermitted);
@@ -1002,6 +1003,19 @@ namespace Rosyblueonline.ServiceProviders.Implementation
 
             }
             return 0;
+        }
+
+
+
+        public List<mstFAQBankModel> GetFAQuestions(int QTypeId)
+        {
+            List<mstFAQBankModel> objLFAQ = new List<mstFAQBankModel>();
+            mstFAQBankModel objFAQ = new mstFAQBankModel();
+            objFAQ = this.uow.mstFAQBank.Queryable().Where(x => x.QuestionTypeId > QTypeId && x.QuestionTypeId != null).OrderBy(x => x.faqID).FirstOrDefault();
+
+            return objLFAQ = this.uow.mstFAQBank.Queryable().Where(x => x.faqID > objFAQ.faqID).OrderBy(x => x.faqID).ToList();
+             
+
         }
 
 

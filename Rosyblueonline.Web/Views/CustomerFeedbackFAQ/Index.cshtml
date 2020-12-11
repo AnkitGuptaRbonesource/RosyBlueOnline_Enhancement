@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "Customer Feedback FAQ";
+}
+@section header{
+    @Styles.Render("~/bundles/DataTable/Style")
+    <link href="~/Content/css/select2.min.css" rel="stylesheet" />
+
+}
+
+<div class="content-wrapper">
+    <section class="content">
+        <div id="uiPanel1"></div>
+        <section class="container-fluid">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-12">
+                    <div class="dash-box mt-10">
+                        <div class="dash-head">
+                            Customer Feedback FAQ
+                        </div>
+                        <div class="dash-inner"> 
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+</div>
+
+
+@section script{
+    @Scripts.Render("~/bundles/DataTable/Script")
+    <script type="text/javascript" src="~/Scripts/custom/rbDataTable.js"></script>
+    <script type="text/javascript" src="~/Scripts/select2.min.js"></script> 
+}
+

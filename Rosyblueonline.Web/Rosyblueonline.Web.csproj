@@ -213,6 +213,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Attribute\CheckSession.cs" />
     <Compile Include="Controllers\ChargesController.cs" />
+    <Compile Include="Controllers\CustomerFeedbackFAQController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\DiamondSearchController.cs" />
     <Compile Include="Controllers\DownloadController.cs" />
@@ -795,6 +796,7 @@
     <Content Include="Scripts\custom\Controller\CtrlWatchList.js" />
     <Content Include="Scripts\custom\Controller\CtrlInventoryUpload.js" />
     <Content Include="Scripts\custom\Controller\CtrlMarketingBlueNile.js" />
+    <Content Include="Scripts\custom\Controller\CustomerFeedbackFAQ.js" />
     <Content Include="Scripts\custom\Controller\ModuleStockSummary.js" />
     <Content Include="Scripts\custom\Controller\ModuleAddressManager.js" />
     <Content Include="Scripts\custom\Controller\ModuleSearchFilter.js" />
@@ -1126,6 +1128,7 @@
     <Content Include="Views\Dashboard\_DemandSearchView.cshtml" />
     <Content Include="Views\Dashboard\_RecentSearchView.cshtml" />
     <Content Include="Views\Inventory\SpecificSearch_FIX.cshtml" />
+    <Content Include="Views\CustomerFeedbackFAQ\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
