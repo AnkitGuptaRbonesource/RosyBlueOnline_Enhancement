@@ -142,7 +142,7 @@ span.multiplecarat {
 #uiPanel {
     margin-left: 16%;
     margin-right: 0.5%;
-    margin-top: 1.2%;
+    /*margin-top: 1.2%;*/
 }
 
     #uiPanel > div.custom-alerts {

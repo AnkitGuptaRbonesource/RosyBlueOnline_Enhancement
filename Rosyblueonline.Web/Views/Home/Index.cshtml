@@ -2,10 +2,10 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
- <div id="dialog" style="display: none"></div>
-        <div class="row" id="uiPanel"></div> 
+ <div id="dialog" style="display: none"></div>        
 <div class="banner-div">
     <div class="container">
+        <div class="row" id="uiPanel"></div>
         <div class="row">
             <div class="col-md-8 col-sm-7">
                 <div class="slider-box">
@@ -44,9 +44,9 @@
             <div class="col-md-4 col-sm-5">
                 @{Html.RenderPartial("~/Views/Shared/_PartialLogin.cshtml");}
             </div>
-          <div class="">
-                    @Html.Action("UpcomingShows")
-                </div> 
+            <div class="">
+                @Html.Action("UpcomingShows")
+            </div>
         </div>
     </div>
 </div>

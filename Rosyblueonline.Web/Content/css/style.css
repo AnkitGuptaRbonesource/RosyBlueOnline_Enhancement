@@ -676,6 +676,23 @@ tr > th {
     border: 1px solid #dadadad1 !important;
 }
 
+.blockUI.blockMsg.blockPage {
+    margin-left: -40px;
+    padding: 12px !important;
+    width: 80px !important;
+    height: 80px;
+    border-radius: 50%;
+    background: #fff;
+    -moz-box-shadow: 0 0 10px 2px #717171;
+    -webkit-box-shadow: 0 0 10px 2px #717171;
+    box-shadow: 0 0 10px 2px #717171;
+    overflow: hidden
+}
+
+    .blockUI.blockMsg.blockPage img {
+        max-width: 100%;
+    }
+
 @media (max-width: 767px) {
     .navbar-brand {
         padding-left: 15px;

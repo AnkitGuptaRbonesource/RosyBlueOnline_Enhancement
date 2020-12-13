@@ -235,15 +235,15 @@
 		position: absolute;
 		display: block;
 		width: fit-content;
-		top: 12px;
-		right: 75px;
+		top: 10px;
+		right: 50px;
 	}
 	.csv {
 		position: absolute;
 		display: block;
 		width: fit-content;
 		top: 8px;
-		right: 20px;
+		right: 8px;
 		cursor: pointer;
 	}
 	.navbar-custom-menu > .navbar-nav > li a {
