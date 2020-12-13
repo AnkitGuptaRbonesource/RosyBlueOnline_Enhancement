@@ -66,6 +66,7 @@
     <Compile Include="BlueNileDiscountModel.cs" />
     <Compile Include="CartDetailModel.cs" />
     <Compile Include="customerDemandModel.cs" />
+    <Compile Include="CustomerFAQAnswersModel.cs" />
     <Compile Include="CustomerListView.cs" />
     <Compile Include="CustomSelectModel.cs" />
     <Compile Include="DownloadList.cs" />

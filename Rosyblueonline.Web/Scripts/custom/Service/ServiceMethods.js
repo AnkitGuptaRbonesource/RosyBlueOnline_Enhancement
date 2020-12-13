@@ -221,6 +221,52 @@
     }
 
 
+    obj.GetFeedbackQuestion = function (QTypeId, Flag) {
+        return myApp.http({
+            method: 'post',
+            url: '/CustomerFeedbackFAQ/GetFeedbackQuestion',
+            data: {
+                QTypeId: QTypeId,
+                Flag: Flag
+            }
+        });
+    }
+
+    obj.SubmitFAQAnswers = function (FAQId, FAQTypeID, OptionId, TextAnswer) {
+        return myApp.http({
+            method: 'post',
+            url: '/CustomerFeedbackFAQ/SubmitFAQAnswers',
+            data: {
+                FAQId: FAQId,
+                FAQTypeID: FAQTypeID,
+                OptionId: OptionId,
+                TextAnswer: TextAnswer
+            }
+        });
+    }
+
+    obj.GetBindPreviousQuestions = function (QTypeId) {
+        return myApp.http({
+            method: 'post',
+            url: '/CustomerFeedbackFAQ/GetBindPreviousQuestions',
+            data: {
+                QTypeId: QTypeId 
+            }
+        });
+    }
+
+    obj.GetTotalFAQCount = function (QTypeId) {
+        return myApp.http({
+            method: 'post',
+            url: '/CustomerFeedbackFAQ/GetTotalFAQCount',
+            data: {
+                QTypeId: QTypeId
+            }
+        });
+    }
+
+    
+    
 
     return obj;
 };

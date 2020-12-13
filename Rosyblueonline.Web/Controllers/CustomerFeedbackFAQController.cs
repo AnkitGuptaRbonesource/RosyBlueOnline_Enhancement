@@ -39,7 +39,7 @@ namespace Rosyblueonline.Web.Controllers
         }
 
 
-        public ActionResult GetFAQuestion(int QTypeId)
+        public ActionResult GetFeedbackQuestion(int QTypeId, string Flag)
         {
             try
             {
@@ -47,7 +47,7 @@ namespace Rosyblueonline.Web.Controllers
                 if (LoginID > 0)
                 {
                     List<mstFAQBankModel> objLFAQ = new List<mstFAQBankModel>();
-                    objLFAQ = this.objUDSvc.GetFAQuestions(QTypeId);
+                    objLFAQ = this.objUDSvc.GetFAQuestions(QTypeId, Flag);
 
                     return Json(new Response { IsSuccess = true, Result = objLFAQ });
                 }
@@ -55,14 +55,90 @@ namespace Rosyblueonline.Web.Controllers
             }
             catch (Exception ex)
             {
+                ErrorLog.Log("CustomerFeedbackFAQController", "GetFAQuestion", ex);
                 return Json(new Response { IsSuccess = false, Code = 500, Result = "", Message = ex.Message });
 
-                ErrorLog.Log("CustomerFeedbackFAQController", "GetFAQuestion", ex);
-                throw ex;
             }
         }
 
 
+
+        public ActionResult SubmitFAQAnswers(string FAQId, string FAQTypeID, string OptionId, string TextAnswer)
+        {
+            try
+            {
+                int LoginID = GetLogin();
+                if (LoginID > 0)
+                {
+                    CustomerFAQAnswersModel objLFAQA = new CustomerFAQAnswersModel();
+                    int FAqId = this.objUDSvc.SubmitFAQAnswers(Convert.ToInt32(FAQId), Convert.ToInt32(FAQTypeID), OptionId, TextAnswer, LoginID);
+                    if (FAqId > 0)
+                    {
+                        return Json(new Response { IsSuccess = true, Result = FAqId });
+                    }
+                    else
+                    {
+                        return Json(new Response { IsSuccess = false, Result = 0 });
+
+                    }
+
+                }
+                return Json(new Response { IsSuccess = false, Message = string.Format(StringResource.Invalid, "Session") });
+            }
+            catch (Exception ex)
+            {
+                ErrorLog.Log("CustomerFeedbackFAQController", "GetFAQuestion", ex);
+
+                return Json(new Response { IsSuccess = false, Code = 500, Result = "", Message = ex.Message });
+
+
+            }
+        }
+
+
+        public ActionResult GetBindPreviousQuestions(int QTypeId)
+        {
+            try
+            {
+                int LoginID = GetLogin();
+                if (LoginID > 0)
+                {
+                    CustomerFAQAnswersModel objFAQAL = new CustomerFAQAnswersModel();
+                    objFAQAL = this.objUDSvc.GetBindPreviousQuestions(QTypeId, LoginID);
+
+                    return Json(new Response { IsSuccess = true, Result = objFAQAL });
+                }
+                return Json(new Response { IsSuccess = false, Message = string.Format(StringResource.Invalid, "Session") });
+            }
+            catch (Exception ex)
+            {
+                ErrorLog.Log("CustomerFeedbackFAQController", "GetBindPreviousQuestions", ex);
+                return Json(new Response { IsSuccess = false, Code = 500, Result = "", Message = ex.Message });
+
+            }
+        }
+
+
+        public ActionResult GetTotalFAQCount(int QTypeId)
+        {
+            try
+            {
+                int LoginID = GetLogin();
+                if (LoginID > 0)
+                {
+                    int RowCount = this.objUDSvc.GetTotalFAQCount();
+
+                    return Json(new Response { IsSuccess = true, Result = RowCount });
+                }
+                return Json(new Response { IsSuccess = false, Message = string.Format(StringResource.Invalid, "Session") });
+            }
+            catch (Exception ex)
+            {
+                ErrorLog.Log("CustomerFeedbackFAQController", "GetBindPreviousQuestions", ex);
+                return Json(new Response { IsSuccess = false, Code = 500, Result = "", Message = ex.Message });
+
+            }
+        }
 
     }
 }

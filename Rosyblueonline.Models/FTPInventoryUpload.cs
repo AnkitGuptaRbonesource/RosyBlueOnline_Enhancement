@@ -10,5 +10,8 @@ namespace Rosyblueonline.Models
     { 
         public string OrderNo { get; set; }
         public string OrderType { get; set; }
+        public string ActionName { get; set; } 
+        public string LotNOs { get; set; }
+
     }
 }

@@ -45,7 +45,7 @@ namespace Rosyblueonline_API.Controllers
             string Filepath = ConfigurationManager.AppSettings["InventoryUploadInput"].ToString();
 
             string[] filePaths = Directory.GetFiles(Filepath, "*.xlsx");
-            if (filePaths.Length>0)
+            if (filePaths.Length > 0)
             {
                 if (filePaths[0] != null || filePaths[0] != "")
                 {
@@ -79,7 +79,7 @@ namespace Rosyblueonline_API.Controllers
                 {
                     fileId = this.objStockDetailsService.InsertFileUploadLog(FileName.ToString(), FileName.ToString(), LoginID.ToString(), UserHostAddress, uploadFormatId.ToString(), InventoryuploadType);
 
-                   // File.Move(Filepath, path + fileId.ToString() + fileExtn);
+                    // File.Move(Filepath, path + fileId.ToString() + fileExtn);
                     System.IO.File.Move(Filepath, path + fileId.ToString() + fileExtn);
 
                     List<InventoryUpload> objLst = UploadInventory(LoginID, InventoryuploadType, fileExtn, path, fileId);
@@ -142,28 +142,72 @@ namespace Rosyblueonline_API.Controllers
                 {
                     for (int i = 0; i < objftp.Count(); i++)
                     {
-                        if (objftp[i].OrderType.ToString() == "Order" && objftp[i].OrderNo.ToString() != null && objftp[i].OrderNo.ToString() != "")
+                        if (objftp[i].ActionName.ToString() == "FullOrder" && objftp[i].OrderNo.ToString() != null && objftp[i].OrderNo.ToString() != "")
                         {
-                            OrderInfoViewModel objinfo = this.objOrderService.OrderInfo(Convert.ToInt32(objftp[i].OrderNo));
-                            int CustomerID = this.objOrderService.OrderListView().Where(x => x.orderDetailsId == Convert.ToInt32(objftp[i].OrderNo)).Select(x => x.loginID).FirstOrDefault();
-                            RowCount = this.objOrderService.OrderCancel(Convert.ToInt32(objftp[i].OrderNo), AdminID, CustomerID);
+                            int OrderID = Convert.ToInt32(objftp[i].OrderNo);
+                            OrderInfoViewModel objinfo = this.objOrderService.OrderInfo(OrderID);
+                            int CustomerID = this.objOrderService.OrderListView().Where(x => x.orderDetailsId == OrderID).Select(x => x.loginID).FirstOrDefault();
+                            RowCount = this.objOrderService.OrderCancel(OrderID, AdminID, CustomerID);
                             if (RowCount > 0 && objinfo != null)
                             {
-                                this.objOrderService.SendForOrder(objinfo, CustomerID, ConfigurationManager.AppSettings["EmailTemplate_CancelOrder"].ToString(), "", true);
+                                this.objOrderService.SendForOrder(objinfo, CustomerID, ConfigurationManager.AppSettings["AntwerpEmailTemplate_CancelOrder"].ToString(), "", true);
                             }
                         }
-                        else if (objftp[i].OrderType.ToString() == "Memo" && objftp[i].OrderNo.ToString() != null && objftp[i].OrderNo.ToString() != "")
+                        else if (objftp[i].ActionName.ToString() == "FullMemo" && objftp[i].OrderNo.ToString() != null && objftp[i].OrderNo.ToString() != "")
                         {
-
+                            int OrderID = Convert.ToInt32(objftp[i].OrderNo);
                             int RowCount1 = 0;
-                            OrderInfoViewModel objInfo = this.objMemoService.MemoInfo(Convert.ToInt32(objftp[i].OrderNo));
+                            OrderInfoViewModel objInfo = this.objMemoService.MemoInfo(OrderID);
 
-                            RowCount1 = this.objMemoService.CancelFullMemo(Convert.ToInt32(objftp[i].OrderNo), LoginID);
+                            RowCount1 = this.objMemoService.CancelFullMemo(OrderID, LoginID);
                             if (objInfo != null && RowCount1 > 0)
                             {
-                                this.objMemoService.SendMailMemo(Convert.ToInt32(objftp[i].OrderNo), objCD1.emailId, objCD1.firstName, objInfo.UserDetail.loginID, "List of inventory CancelMemo from memo-", "", ConfigurationManager.AppSettings["AntwerpEmailTemplate_CancelMemo"].ToString(), objInfo);
-                                bool log = this.objUDSvc.UserActivitylogs(LoginID, "Cancel full memo", objftp[i].OrderNo.ToString());
+                                this.objMemoService.SendMailMemo(OrderID, objCD1.emailId, objCD1.firstName, objInfo.UserDetail.loginID, "List of inventory CancelMemo from memo-", "", ConfigurationManager.AppSettings["AntwerpEmailTemplate_CancelMemo"].ToString(), objInfo);
+                                bool log = this.objUDSvc.UserActivitylogs(LoginID, "Cancel full memo", OrderID.ToString());
                             }
+                        }
+                        else if (objftp[i].ActionName.ToString() == "PartialOrder" && objftp[i].OrderNo.ToString() != null && objftp[i].OrderNo.ToString() != "")
+                        {
+                            int OrderID = Convert.ToInt32(objftp[i].OrderNo);
+                            string LotNos = objftp[i].LotNOs;
+                            int CustomerID = this.objOrderService.OrderListView().Where(x => x.orderDetailsId == OrderID).Select(x => x.loginID).FirstOrDefault();
+                            RowCount = this.objOrderService.OrderPartialCancel(OrderID, LotNos, AdminID, CustomerID);
+
+
+                        }
+                        else if (objftp[i].ActionName.ToString() == "PartialMemo" && objftp[i].OrderNo.ToString() != null && objftp[i].OrderNo.ToString() != "")
+                        {
+
+                            string LotNos = objftp[i].LotNOs;
+                            int FileNo = fileId;
+                            int OrderID = Convert.ToInt32(objftp[i].OrderNo);
+                            OrderInfoViewModel objInfo = this.objMemoService.MemoInfo(OrderID);
+                            MemoDetail obj = this.objMemoService.CancelPartialMemo(OrderID, LotNos, LoginID);
+                             
+                                fileUploadLogModel objFile = this.objMemoService.GetFileByID(FileNo);
+                                if (objFile != null)
+                                {
+                                    string path1 = ConfigurationManager.AppSettings["INVUpload"].ToString();
+                                    DataTable dtValid = ListtoDataTable.ToDataTable<InventoryUpload>(obj.Inv.Where(x => x.LotStatus == "Valid").ToList());
+                                    DataTable dtNotValid = ListtoDataTable.ToDataTable<InventoryUpload>(obj.Inv.Where(x => x.LotStatus == "InValid").ToList());
+                                    ExportToExcel.SaveExcel(path1, FileNo.ToString() + "_Valid", "Valid", dtValid);
+                                    ExportToExcel.SaveExcel(path1, FileNo.ToString() + "_InValid", "InValid", dtNotValid);
+                                    objFile.validInv = obj.Inv.Where(x => x.LotStatus == "Valid").Count();
+                                    objFile.invalidInv = obj.Inv.Where(x => x.LotStatus == "InValid").Count();
+                                    this.objMemoService.UpdateFile(objFile);
+                                    if (obj.Counts.OrderId > 0)
+                                    {
+                                        this.objMemoService.UpdateFile(obj.Counts.OrderId, FileNo);
+                                    }
+                                }
+                            
+                            if (objInfo != null && obj.Counts != null && obj.Counts.OrderId > 0)
+                            {
+                                this.objMemoService.SendMailMemo(obj.Counts.OrderId, objCD1.emailId, objCD1.firstName, objInfo.UserDetail.loginID, "List of inventory Partial Canceled Memo from memo-", "", ConfigurationManager.AppSettings["AntwerpEmailTemplate_CancelMemo"].ToString(), objInfo, LotNos);
+                                bool log = this.objUDSvc.UserActivitylogs(LoginID, "Partial canceled memo", LotNos);
+                            }
+
+
                         }
 
                     }

@@ -72,6 +72,7 @@ namespace Rosyblueonline.Repository.Context
             modelBuilder.Entity<UserMenuPermissionModel>().ToTable("UserMenuPermission");
 
             modelBuilder.Entity<mstFAQBankModel>().ToTable("mstFAQBank");
+            modelBuilder.Entity<CustomerFAQAnswersModel>().ToTable("CustomerFAQAnswers");
 
 
             base.OnModelCreating(modelBuilder);
@@ -132,6 +133,7 @@ namespace Rosyblueonline.Repository.Context
 
         public DbSet<mstFAQBankModel> mstFAQBank { get; set; }
 
+        public DbSet<CustomerFAQAnswersModel> CustomerFAQAnswers { get; set; }
 
 
         // need to exclude the below

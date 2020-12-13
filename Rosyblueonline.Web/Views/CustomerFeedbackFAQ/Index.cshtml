@@ -8,6 +8,10 @@
 }
 
 <div class="content-wrapper">
+    <div class="row" id="uiPanel"></div>
+    <input type="hidden" name="CurrentFAQID" id="hfCurrentFAQID" value="" />
+    <input type="hidden" name="FAQTypeID" id="hfFAQTypeID" value="" />
+    <input type="hidden" name="FAQTotalCount" id="hfFAQTotalCount" value="" />
     <section class="content">
         <div id="uiPanel1"></div>
         <section class="container-fluid">
@@ -17,8 +21,21 @@
                         <div class="dash-head">
                             Customer Feedback FAQ
                         </div>
-                        <div class="dash-inner"> 
-                           
+                        <div class="dash-inner">
+                            <div id="FAQCount">
+
+                            </div>
+                            <div id="FeedbackQuestions">
+
+                            </div>
+                            <div id="PreviousFAQ">
+                                <button class="btn btn-primary ml-15" id="btnFAQPrev" style="display:none;">Previous</button>
+                            </div>
+                            <div id="SubmitFAQ">
+                                <button class="btn btn-primary ml-15" id="btnFAQNext">Next</button>
+
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -32,6 +49,7 @@
 @section script{
     @Scripts.Render("~/bundles/DataTable/Script")
     <script type="text/javascript" src="~/Scripts/custom/rbDataTable.js"></script>
-    <script type="text/javascript" src="~/Scripts/select2.min.js"></script> 
+    <script type="text/javascript" src="~/Scripts/select2.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/custom/Controller/CustomerFeedbackFAQ.js"></script>
 }
 

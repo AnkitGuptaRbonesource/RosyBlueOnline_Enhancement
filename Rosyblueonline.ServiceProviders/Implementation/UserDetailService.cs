@@ -1007,16 +1007,77 @@ namespace Rosyblueonline.ServiceProviders.Implementation
 
 
 
-        public List<mstFAQBankModel> GetFAQuestions(int QTypeId)
+        public List<mstFAQBankModel> GetFAQuestions(int QTypeId, string Flag)
         {
             List<mstFAQBankModel> objLFAQ = new List<mstFAQBankModel>();
             mstFAQBankModel objFAQ = new mstFAQBankModel();
-            objFAQ = this.uow.mstFAQBank.Queryable().Where(x => x.QuestionTypeId > QTypeId && x.QuestionTypeId != null).OrderBy(x => x.faqID).FirstOrDefault();
+            if (Flag == "NEXT")
+            {
+                objFAQ = this.uow.mstFAQBank.Queryable().Where(x => x.ParentFaqID > QTypeId && x.isActive == true).OrderBy(x => x.faqID).FirstOrDefault();
+            }
+            else if (Flag == "PRE")
+            {
+                objFAQ = this.uow.mstFAQBank.Queryable().Where(x => x.ParentFaqID < QTypeId && x.isActive == true).OrderByDescending(x => x.faqID).FirstOrDefault();
 
-            return objLFAQ = this.uow.mstFAQBank.Queryable().Where(x => x.faqID > objFAQ.faqID).OrderBy(x => x.faqID).ToList();
-             
+            }
+            return objLFAQ = this.uow.mstFAQBank.Queryable().Where(x => x.ParentFaqID == objFAQ.ParentFaqID && x.isActive == true).OrderBy(x => x.faqID).ToList();
+
 
         }
+
+        public int SubmitFAQAnswers(int FAQId, int FAQTypeID, string OptionId, string TextAnswer, int LoginID)
+        {
+
+            CustomerFAQAnswersModel objLDM = this.uow.CustomerFAQAnswers.Queryable().Where(x => x.FAQId == FAQId && x.CreatedBy == LoginID).FirstOrDefault();
+            if (objLDM != null)
+            {
+                objLDM.QuestionTypeId = FAQTypeID;
+                objLDM.FAQOptionsAnswer = OptionId;
+                objLDM.FAQTextAnswer = TextAnswer;
+                objLDM.CreatedDate = DateTime.Now;
+                objLDM.CreatedBy = LoginID;
+                this.uow.CustomerFAQAnswers.Edit(objLDM);
+                this.uow.Save();
+                return objLDM.FAQId;
+            }
+            else
+            {
+
+                CustomerFAQAnswersModel objLFAQA = new CustomerFAQAnswersModel();
+                objLFAQA.FAQId = FAQId;
+                objLFAQA.QuestionTypeId = FAQTypeID;
+                objLFAQA.FAQOptionsAnswer = OptionId;
+                objLFAQA.FAQTextAnswer = TextAnswer;
+                objLFAQA.CreatedDate = DateTime.Now;
+                objLFAQA.CreatedBy = LoginID;
+                uow.CustomerFAQAnswers.Add(objLFAQA);
+                uow.Save();
+                return objLFAQA.FAQId;
+
+            }
+
+
+        }
+
+
+        public CustomerFAQAnswersModel GetBindPreviousQuestions(int QTypeId, int LoginID)
+        {
+            CustomerFAQAnswersModel objLFAQ = new CustomerFAQAnswersModel();
+
+            return objLFAQ = this.uow.CustomerFAQAnswers.Queryable().Where(x => x.FAQId == QTypeId && x.CreatedBy == LoginID).FirstOrDefault();
+
+
+        }
+
+
+        public int GetTotalFAQCount()
+        {
+            mstFAQBankModel objLFAQ = new mstFAQBankModel();
+            return this.uow.mstFAQBank.Queryable().Select(x => x.ParentFaqID).Distinct().Count();
+             
+        }
+        
+
 
 
         #endregion
