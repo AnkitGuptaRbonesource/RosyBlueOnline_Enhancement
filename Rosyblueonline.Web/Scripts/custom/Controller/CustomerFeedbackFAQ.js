@@ -74,6 +74,7 @@
     };
 
     function BindQuestions(QTypeId, Flag) {
+        uiApp.BlockUI();
         objLRS.GetFeedbackQuestion(QTypeId, Flag).then(function (data) {
             if (data.IsSuccess && data.Result) {
                 var FAQOptions = '';
@@ -144,7 +145,7 @@
                 } else {
                     $("#btnFAQNext").html('Next');
                 }
-
+                uiApp.UnBlockUI();
                // uiApp.Alert({ container: '#uiPanel', message: "success", type: "success" });
             } else {
                 if ($("#btnFAQNext").html() =="Finish") {
@@ -158,10 +159,13 @@
 
 
                 } else {
+                    uiApp.UnBlockUI();
                    uiApp.Alert({ container: '#uiPanel', message: data.Message, type: "danger" });
                 }
+                uiApp.UnBlockUI();
             }
         }, function (error) {
+                uiApp.UnBlockUI();
             uiApp.Alert({ container: '#uiPanel', message: "Record not updated", type: "danger" });
         });
     }

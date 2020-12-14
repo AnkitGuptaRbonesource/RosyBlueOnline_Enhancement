@@ -82,19 +82,24 @@
             e.preventDefault();
             uiApp.Confirm('Confirm Order?', function (resp) {
                 if (resp) {
+                    uiApp.BlockUI();
                     objOrdSvc.CompleteOrder(OrderID, $('#txtShippingCompany').val().trim(), $('#txtTrackingNumber').val().trim()).then(function (data) {
                         if (data.IsSuccess == true) {
                             if (data.Result > 0) {
                                 uiApp.AlertPopup('Order Confirmed Successfully', function () {
                                     location.href = '/Order/List'
                                 });
+                                uiApp.UnBlockUI();
                             } else {
+                                uiApp.UnBlockUI();
                                 uiApp.Alert({ container: '#uiPanel1', message: "Order not confirmed", type: "danger" });
                             }
                         } else {
+                            uiApp.UnBlockUI();
                             uiApp.Alert({ container: '#uiPanel1', message: data.Message, type: "danger" });
                         }
                     }, function (error) {
+                            uiApp.UnBlockUI();
                         uiApp.Alert({ container: '#uiPanel1', message: "Some error occured", type: "danger" });
                     });
                 }

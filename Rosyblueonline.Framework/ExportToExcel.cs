@@ -141,6 +141,9 @@ namespace Rosyblueonline.Framework
             {
                 var dsResult = ds;
                 dsResult.Columns.Remove("Certificate");
+                dsResult.Columns.Remove("Stockstatus");
+                dsResult.Columns.Remove("Reportdate");
+
                 if (RemoveLocation)
                 {
                     dsResult.Columns.Remove("SalesLocation");
