@@ -115,11 +115,9 @@
 
 
                 FAQTemplate = '<div id="Faqno"' + data.Result[0].ParentFaqID + '" class="form-group">' +
-                    '<div class="row">' +
-                    '<div class="col-sm-4">' +
-                    '<label class="control-label">' +
+                    '<label class="control-label mb-15">' +
                     '<label>' + data.Result[0].Question + '</label>' +
-                    '</label>' + FAQOptions + '</div></div></div>';
+                    '</label>' + FAQOptions + '</div>';
 
 
 
@@ -155,7 +153,7 @@
                     $("#btnFAQNext").hide();
                     $('#btnFAQPrev').hide();
                     $('#FAQCount').hide();
-                    var Final = "<h2>Your Feedback submitted successfully !</h2>";
+                    var Final = "<h2 class='text-center text-success mt-20 mb-20'>Your Feedback submitted successfully !</h2>";
                     $("#FeedbackQuestions").html(Final);
 
 

@@ -1,6 +1,15 @@
 ﻿.mt-10 {margin-top:10px}
 .mt-15 {margin-top:15px}
 .mt-20 {margin-top:20px}
+.mb-10 {
+    margin-bottom: 10px
+}
+.mb-15 {
+    margin-bottom: 15px
+}
+.mb-20 {
+    margin-bottom: 20px
+}
 .ml-10 {margin-left:10px}
 .ml-15 {margin-left:15px}
 .d-inline-block {display:inline-block}
@@ -287,4 +296,20 @@ div.dataTables_wrapper div#tblUserDetail_filter {
 }
 .switch-btn {
 	margin-top: 6px;
+}
+.custfeedback-box .inline-checkbox, .custfeedback-box .inline-checkbox label {
+    font-weight: normal
+}
+    .custfeedback-box .inline-checkbox label {
+        margin: 4px 0 12px 5px;
+        font-size: 14px;
+        line-height: 16px;
+    }
+.custfeedback-box input[type=radio] + label {
+    margin: 3px 6px 12px 6px;
+    padding: 0;
+    background: none;
+    border: 0 none;
+    box-shadow: none;
+    font-weight: normal;
 }
