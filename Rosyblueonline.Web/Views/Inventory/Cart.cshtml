@@ -184,7 +184,7 @@
                     <div class="dash-box">
                         <div class="dash-inner">
                             <div class="table-box">
-                                <table class="table">
+                                <table class="table table-fixed dataTable no-footer">
                                     <thead class="bordertp">
                                         <tr>
                                             <th class="tbnew">
@@ -212,20 +212,20 @@
                                     </tbody>
                                 </table>
                             </div>
-                            <div class="form-inline mt-15">
-                                <div class="form-group">
-                                    <label for="exampleInputName2">@Resource.Shipping_Mode</label>
-                                    <select class="form-control" id="ddlShippingMode" name="ddlShippingMode">
-                                        <option value="1" selected>@Resource.Direct_Ship</option>
-                                        <option value="0">@Resource.Self_Pickup</option>
-                                    </select>
+                                <div class="form-inline mt-15">
+                                    <div class="form-group">
+                                        <label for="exampleInputName2">@Resource.Shipping_Mode</label>
+                                        <select class="form-control" id="ddlShippingMode" name="ddlShippingMode">
+                                            <option value="1" selected>@Resource.Direct_Ship</option>
+                                            <option value="0">@Resource.Self_Pickup</option>
+                                        </select>
+                                    </div>
                                 </div>
+                                <br />
+                                <button class="btn btn-primary" id="btnConfirmOrder">@Resource.Confirm_Order</button>
+                                <button class="btn btn-default" id="btnCancelOrder">@Resource.Cancel_Order</button>
                             </div>
-                            <br />
-                            <button class="btn btn-primary" id="btnConfirmOrder">@Resource.Confirm_Order</button>
-                            <button class="btn btn-default" id="btnCancelOrder">@Resource.Cancel_Order</button>
                         </div>
-                    </div>
                 </div>
             </div>
             <div class="row">

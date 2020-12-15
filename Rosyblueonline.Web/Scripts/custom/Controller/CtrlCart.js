@@ -21,13 +21,13 @@
         <td class="rsearchnew"><b><span id="lblfinalamoutpayment">${PayableAmount}</span></b></td>\
         </tr>';
 
-    var SummeryTempForOrder = '<tr class="rsearchnew" style="height: 25px;">\
-        <td class="rsearchnew"><b><span>${TotalPcs}</span></b></td>\
-        <td class="rsearchnew"><b><span>${TotalCarat}</span></b></td>\
-        <td class="rsearchnew"><b><span>${TotalRap}</span></b></td>\
-        <td class="rsearchnew"><b><span>${AvgRapoff}</span></b></td>\
-        <td class="rsearchnew"><b><span>${PricePerct}</span></b></td>\
-        <td class="rsearchnew"><b><span>${PayableAmount}</span></b></td>\
+    var SummeryTempForOrder = '<tr style="height: 25px;">\
+        <td class="whspace"><b><span>${TotalPcs}</span></b></td>\
+        <td class="whspace"><b><span>${TotalCarat}</span></b></td>\
+        <td class="whspace"><b><span>${TotalRap}</span></b></td>\
+        <td class="whspace"><b><span>${AvgRapoff}</span></b></td>\
+        <td class="whspace"><b><span>${PricePerct}</span></b></td>\
+        <td class="whspace"><b><span>${PayableAmount}</span></b></td>\
         </tr>';
 
     var OnLoad = function () {
