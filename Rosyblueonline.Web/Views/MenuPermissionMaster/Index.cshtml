@@ -83,42 +83,38 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-6 col-md-offset-3">
-                        <div class="dash-box">
-                            <div class="dash-head">
-                                @Resource.Menu_Rights
-                            </div>
-                            <div class="dash-inner">
-                                <div class="row">
-                                    <div class="col-md-6" style="margin-left: 10px;">
-                                        <div class="form-group">
-                                            @if (Model != null)
+                <div class="dash-box" style="margin:0 auto;max-width:400px;">
+                    <div class="dash-head">
+                        @Resource.Menu_Rights
+                    </div>
+                    <div class="dash-inner">
+                        <div class="row">
+                            <div class="col-md-6" style="margin-left: 10px;">
+                                <div class="form-group">
+                                    @if (Model != null)
+                                    {
+                                        foreach (var Rights in Model)
+                                        {
+                                            if (@Rights.MainMenuId == 0)
                                             {
-                                                foreach (var Rights in Model)
-                                                {
-                                                    if (@Rights.MainMenuId == 0)
-                                                    {
 
-                                                        <input type="checkbox" name="Rights" class="design-checkbox" value="@Rights.MenuName" id="@Rights.MenuId" data-MainMenuId="@Rights.MainMenuId" />
-                                                        <label for="@Rights.MenuId">@Rights.MenuName  </label>
+                                                <input type="checkbox" name="Rights" class="design-checkbox" value="@Rights.MenuName" id="@Rights.MenuId" data-MainMenuId="@Rights.MainMenuId" />
+                                                <label for="@Rights.MenuId">@Rights.MenuName  </label>
 
-                                                    }
-                                                    else
-                                                    {
-                                                        <input style="margin-left: 60px;" type="checkbox" name="Rights" class="design-checkbox" value="@Rights.MenuName" id="@Rights.MenuId" data-MainMenuId="@Rights.MainMenuId" />
-                                                        <label style="margin-left: 60px;" for="@Rights.MenuId">@Rights.MenuName  </label>
-                                                    }
-                                                }
                                             }
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="text-center">
-                                    <button class="btn btn-default" id="btnCancel">@Resource.Cancel</button>
-                                    <button class="btn btn-primary" id="btnUpdate">@Resource.Save</button>
+                                            else
+                                            {
+                                                <input style="margin-left: 60px;" type="checkbox" name="Rights" class="design-checkbox" value="@Rights.MenuName" id="@Rights.MenuId" data-MainMenuId="@Rights.MainMenuId" />
+                                                <label style="margin-left: 60px;" for="@Rights.MenuId">@Rights.MenuName  </label>
+                                            }
+                                        }
+                                    }
                                 </div>
                             </div>
+                        </div>
+                        <div class="text-center">
+                            <button class="btn btn-default" id="btnCancel">@Resource.Cancel</button>
+                            <button class="btn btn-primary" id="btnUpdate">@Resource.Save</button>
                         </div>
                     </div>
                 </div>
