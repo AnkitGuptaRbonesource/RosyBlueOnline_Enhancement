@@ -124,16 +124,16 @@
     <value>À propos</value>
   </data>
   <data name="Account_Number" xml:space="preserve">
-    <value>Account Number</value>
+    <value>Numéro de compte</value>
   </data>
   <data name="Action" xml:space="preserve">
     <value>Action</value>
   </data>
   <data name="ActionDetails" xml:space="preserve">
-    <value>ActionDetails</value>
+    <value>DétailsAction</value>
   </data>
   <data name="ActionName" xml:space="preserve">
-    <value>Action Name</value>
+    <value>Nom de l’action</value>
   </data>
   <data name="Actions" xml:space="preserve">
     <value>Actions</value>
@@ -145,10 +145,10 @@
     <value>Stock actif</value>
   </data>
   <data name="Activity" xml:space="preserve">
-    <value>Activity</value>
+    <value>Activité</value>
   </data>
   <data name="Add" xml:space="preserve">
-    <value>Add</value>
+    <value>Ajouter</value>
   </data>
   <data name="Additional_Discount" xml:space="preserve">
     <value>moins : Remise supplémentaire</value>
@@ -163,19 +163,19 @@
     <value>Adresse, ligne 2</value>
   </data>
   <data name="Address_of_Registered_Office" xml:space="preserve">
-    <value>Address of Registered Office</value>
+    <value>Adresse du siège</value>
   </data>
   <data name="Add_Address" xml:space="preserve">
-    <value>Add Address</value>
+    <value>Ajouter adresse</value>
   </data>
   <data name="Add_Bestdeal" xml:space="preserve">
     <value>Ajouter Bestdeal</value>
   </data>
   <data name="Add_Best_Deal" xml:space="preserve">
-    <value>Add Best Deal</value>
+    <value>Ajouter Best Deal</value>
   </data>
   <data name="Add_Best_Deals" xml:space="preserve">
-    <value>Add Best Deals</value>
+    <value>Ajouter Best Deals</value>
   </data>
   <data name="Add_Customer" xml:space="preserve">
     <value>Ajouter client</value>
@@ -190,7 +190,7 @@
     <value>Ajouter Rôles et Droits</value>
   </data>
   <data name="Add_to_Memo" xml:space="preserve">
-    <value>Add to Memo</value>
+    <value>Ajouter au Mémo</value>
   </data>
   <data name="Add_User" xml:space="preserve">
     <value>Ajouter utilisateur</value>
@@ -199,7 +199,7 @@
     <value>RECHERCHE AVANCÉE</value>
   </data>
   <data name="All" xml:space="preserve">
-    <value>All</value>
+    <value>Tous</value>
   </data>
   <data name="All_Memo" xml:space="preserve">
     <value>Tous les mémos</value>
@@ -211,10 +211,10 @@
     <value>Note : Toutes les commandes sont en US$.</value>
   </data>
   <data name="ALL_ROLES" xml:space="preserve">
-    <value>ALL ROLES</value>
+    <value>TOUS LES RÔLES</value>
   </data>
   <data name="All_Shape" xml:space="preserve">
-    <value>All Shape</value>
+    <value>Toutes les formes</value>
   </data>
   <data name="Already_Assigned" xml:space="preserve">
     <value>Déjà assigné</value>
@@ -229,16 +229,16 @@
     <value>Montant (US$)</value>
   </data>
   <data name="Amount__US" xml:space="preserve">
-    <value>Amount (US$):</value>
+    <value>Montant (US$) :</value>
   </data>
   <data name="and" xml:space="preserve">
-    <value>and</value>
+    <value>et</value>
   </data>
   <data name="Apply_Last_Changed_Discount" xml:space="preserve">
-    <value>Apply Last Changed Discount</value>
+    <value>Appliquer la dernière remise modifiée</value>
   </data>
   <data name="Apply_Previous_Discount" xml:space="preserve">
-    <value>Apply Previous Discount</value>
+    <value>Appliquer la remise  précédente</value>
   </data>
   <data name="Approve" xml:space="preserve">
     <value>Accepter</value>
@@ -250,7 +250,7 @@
     <value>Disponible</value>
   </data>
   <data name="Avg" xml:space="preserve">
-    <value>Avg</value>
+    <value>Moyenne</value>
   </data>
   <data name="Avgct" xml:space="preserve">
     <value>Moyenne ($)/ct</value>
@@ -262,13 +262,13 @@
     <value>Moyenne Remise (%)</value>
   </data>
   <data name="Avg_Price_ct" xml:space="preserve">
-    <value>Avg.Price/ct($)</value>
+    <value>Moyenne Tarif/ct($)</value>
   </data>
   <data name="Avg_Rap_ct" xml:space="preserve">
-    <value>Avg.Rap/ct($)</value>
+    <value>Moyenne Rap /ct($)</value>
   </data>
   <data name="Avg_Rap_Off" xml:space="preserve">
-    <value>Avg.Rap.Off(%)</value>
+    <value>Moyenne.Rap.Off(%)</value>
   </data>
   <data name="Back" xml:space="preserve">
     <value>Retour</value>
@@ -280,61 +280,61 @@
     <value>Avant le changement</value>
   </data>
   <data name="Below_prices_amounts" xml:space="preserve">
-    <value>Below prices/amounts are exclusive of government levies &amp; taxes (VAT, OCTROI etc). These will be added on the final invoice wherever applicable.</value>
+    <value>Les prix/montants ci-dessous sont hors taxes et impôts (TVA, OCTROI, etc.). Ils seront ajoutés à la facture finale, le cas échéant.</value>
   </data>
   <data name="BEST_DEAL" xml:space="preserve">
     <value>BEST DEAL</value>
   </data>
   <data name="Best_Deals_Discount" xml:space="preserve">
-    <value>Best Deals Discount</value>
+    <value>Remise Best Deal</value>
   </data>
   <data name="Best_Deals_Remark" xml:space="preserve">
-    <value>Best Deals Remark</value>
+    <value>Remarque Best Deal</value>
   </data>
   <data name="Best_Deals_Text" xml:space="preserve">
-    <value>Best Deals Text</value>
+    <value>Texte Best Deal</value>
   </data>
   <data name="Billing_Address" xml:space="preserve">
-    <value>Billing Address</value>
+    <value>Adresse de facturation</value>
   </data>
   <data name="Blocked_Customers" xml:space="preserve">
-    <value>Blocked Customers</value>
+    <value>Clients bloqués</value>
   </data>
   <data name="Block_Site" xml:space="preserve">
     <value>Bloquer le site</value>
   </data>
   <data name="BlueNile_Disc" xml:space="preserve">
-    <value>% Disque BlueNile</value>
+    <value>% Remise BlueNile</value>
   </data>
   <data name="Blue_Nile" xml:space="preserve">
     <value>Blue Nile</value>
   </data>
   <data name="Blue_Nile_Disc" xml:space="preserve">
-    <value>% Disque Blue Nile </value>
+    <value>% Remise Blue Nile</value>
   </data>
   <data name="Box_Name" xml:space="preserve">
     <value>Nom de la boîte</value>
   </data>
   <data name="Box_No" xml:space="preserve">
-    <value>Box No</value>
+    <value>N° de boîte</value>
   </data>
   <data name="Branch" xml:space="preserve">
     <value>Agence</value>
   </data>
   <data name="Branch_Address" xml:space="preserve">
-    <value>Branch Address</value>
+    <value>Adresse de l’agence</value>
   </data>
   <data name="Branch_Name" xml:space="preserve">
-    <value>Branch Name</value>
+    <value>Nom de l’agence</value>
   </data>
   <data name="By" xml:space="preserve">
-    <value>By</value>
+    <value>Par</value>
   </data>
   <data name="By_no_of_stone" xml:space="preserve">
-    <value>By no of stone</value>
+    <value>Par n° de pierre</value>
   </data>
   <data name="By_Value" xml:space="preserve">
-    <value>By Value</value>
+    <value>Par valeur</value>
   </data>
   <data name="Cancel" xml:space="preserve">
     <value>Annuler</value>
@@ -346,16 +346,16 @@
     <value>Annuler mémo</value>
   </data>
   <data name="Cancel_Order" xml:space="preserve">
-    <value>Cancel Order</value>
+    <value>Annuler commande</value>
   </data>
   <data name="Carat" xml:space="preserve">
     <value>Carat</value>
   </data>
   <data name="Cart" xml:space="preserve">
-    <value>Cart</value>
+    <value>Panier</value>
   </data>
   <data name="Cash" xml:space="preserve">
-    <value>Cash</value>
+    <value>Espèces</value>
   </data>
   <data name="CB0" xml:space="preserve">
     <value>CB0</value>
@@ -373,7 +373,7 @@
     <value>CB4</value>
   </data>
   <data name="CB_Low" xml:space="preserve">
-    <value>CB: Low</value>
+    <value>CB : Faible</value>
   </data>
   <data name="CentreBlack" xml:space="preserve">
     <value>NoirCentre</value>
@@ -385,13 +385,13 @@
     <value>Numéro de certificat</value>
   </data>
   <data name="CertificateNo" xml:space="preserve">
-    <value>CertificateNo</value>
+    <value>N° de certificat</value>
   </data>
   <data name="Certificate_No" xml:space="preserve">
     <value>N° de certificat</value>
   </data>
   <data name="Certificate_upload" xml:space="preserve">
-    <value>Certificate upload</value>
+    <value>Envoi certificat</value>
   </data>
   <data name="Cert_No" xml:space="preserve">
     <value>Cert. N°</value>
@@ -409,7 +409,7 @@
     <value>Modifier Rap</value>
   </data>
   <data name="Change_summary_Discounts" xml:space="preserve">
-    <value>Change Summary Discounts</value>
+    <value>Modifier Résumé des remises</value>
   </data>
   <data name="City" xml:space="preserve">
     <value>Ville</value>
@@ -418,19 +418,19 @@
     <value>Pureté</value>
   </data>
   <data name="Clarity_comes" xml:space="preserve">
-    <value>Clarity comes accompanied by a diamond grading report from the</value>
+    <value>La pureté est accompagnée d’un rapport sur la classification des diamants de</value>
   </data>
   <data name="Close" xml:space="preserve">
-    <value>Close</value>
+    <value>Fermer</value>
   </data>
   <data name="Closing" xml:space="preserve">
     <value>Fermeture</value>
   </data>
   <data name="CNR_Disc" xml:space="preserve">
-    <value>Disque CNR</value>
+    <value>Remise CNR</value>
   </data>
   <data name="CNR_Disc_HA" xml:space="preserve">
-    <value>Disque CNR HA</value>
+    <value>Remise CNR HA</value>
   </data>
   <data name="Color" xml:space="preserve">
     <value>Couleur</value>
@@ -445,22 +445,22 @@
     <value>Société</value>
   </data>
   <data name="Compare" xml:space="preserve">
-    <value>Compare</value>
+    <value>Comparer</value>
   </data>
   <data name="Comparing" xml:space="preserve">
-    <value>Comparing</value>
+    <value>Comparaison</value>
   </data>
   <data name="Completed" xml:space="preserve">
-    <value>Completed</value>
+    <value>Terminé</value>
   </data>
   <data name="Confirm" xml:space="preserve">
-    <value>Confirm</value>
+    <value>Confirmer</value>
   </data>
   <data name="Confirm_Memo" xml:space="preserve">
-    <value>Confirm Memo</value>
+    <value>Confirmer mémo</value>
   </data>
   <data name="Confirm_Order" xml:space="preserve">
-    <value>Confirm Order</value>
+    <value>Confirmer commande</value>
   </data>
   <data name="Confirm_Password" xml:space="preserve">
     <value>Confirmer mot de passe</value>
@@ -472,28 +472,25 @@
     <value>Contient</value>
   </data>
   <data name="Continue_mode" xml:space="preserve">
-    <value>Continue mode</value>
+    <value>Continuer dans ce mode</value>
   </data>
   <data name="Count" xml:space="preserve">
-    <value>Count</value>
+    <value>Nombre</value>
   </data>
   <data name="Country" xml:space="preserve">
     <value>Pays</value>
   </data>
   <data name="Created" xml:space="preserve">
-    <value>Created</value>
+    <value>Créé</value>
   </data>
   <data name="CreatedOn" xml:space="preserve">
-    <value>CreatedOn</value>
+    <value>CrééLe</value>
   </data>
   <data name="Created_By" xml:space="preserve">
     <value>Créé par</value>
   </data>
   <data name="Created_Dae" xml:space="preserve">
     <value>Date de création</value>
-  </data>
-  <data name="Created_Date" xml:space="preserve">
-    <value>Created_Date</value>
   </data>
   <data name="Created_On" xml:space="preserve">
     <value>Créé le</value>
@@ -505,22 +502,22 @@
     <value>Critères</value>
   </data>
   <data name="Criteria_Matching_Pair" xml:space="preserve">
-    <value>Criteria Matching Pair</value>
+    <value>Critères paire jumelée</value>
   </data>
   <data name="CrownAngle" xml:space="preserve">
     <value>AngleCouronne</value>
   </data>
   <data name="CrownBlack" xml:space="preserve">
-    <value>CrownBlack</value>
+    <value>CouronneNoire</value>
   </data>
   <data name="CrownHeight" xml:space="preserve">
     <value>HauteurCouronne</value>
   </data>
   <data name="Crown_Angle" xml:space="preserve">
-    <value>Crown Angle</value>
+    <value>Angle de couronne</value>
   </data>
   <data name="Crown_Height" xml:space="preserve">
-    <value>Crown Height</value>
+    <value>Hauteur de couronne</value>
   </data>
   <data name="CT" xml:space="preserve">
     <value>CT</value>
@@ -529,28 +526,28 @@
     <value>Statut actuel</value>
   </data>
   <data name="Cushion" xml:space="preserve">
-    <value>Cushion</value>
+    <value>Coussin</value>
   </data>
   <data name="Customer" xml:space="preserve">
     <value>Client</value>
   </data>
   <data name="Customer_Activity_Details" xml:space="preserve">
-    <value>Customer Activity Details</value>
+    <value>Détails de l’activité du client</value>
   </data>
   <data name="Customer_Address" xml:space="preserve">
-    <value>Customer Address</value>
+    <value>Adresse du client</value>
   </data>
   <data name="Customer_Demand" xml:space="preserve">
-    <value>Customer Demand</value>
+    <value>Exigence du client</value>
   </data>
   <data name="Customer_Demands" xml:space="preserve">
     <value>Exigences du client</value>
   </data>
   <data name="Customer_Name" xml:space="preserve">
-    <value>Customer Name</value>
+    <value>Nom du client</value>
   </data>
   <data name="Customer_Order_Report" xml:space="preserve">
-    <value>Customer Order Report</value>
+    <value>Rapport sur la commande du client</value>
   </data>
   <data name="Customer_Recent_Search" xml:space="preserve">
     <value>Recherche récente du client</value>
@@ -571,7 +568,7 @@
     <value>Date</value>
   </data>
   <data name="Date_Of_Establishment" xml:space="preserve">
-    <value>Date Of Establishment</value>
+    <value>Date d’établissement</value>
   </data>
   <data name="Delete" xml:space="preserve">
     <value>Supprimer</value>
@@ -580,19 +577,19 @@
     <value>Exigences</value>
   </data>
   <data name="Demand_Name" xml:space="preserve">
-    <value>Exiger le nom</value>
+    <value>Nom de l’exigence</value>
   </data>
   <data name="Demand_Search" xml:space="preserve">
-    <value>Demand Search</value>
+    <value>Rechercher l’exigence</value>
   </data>
   <data name="Dept" xml:space="preserve">
-    <value>Dept</value>
+    <value>Profondeur</value>
   </data>
   <data name="Depth" xml:space="preserve">
     <value>Profondeur%</value>
   </data>
   <data name="Describe_your_Demands" xml:space="preserve">
-    <value>Describe your Demands</value>
+    <value>Décrivez vos exigences</value>
   </data>
   <data name="Detail" xml:space="preserve">
     <value>Détail</value>
@@ -601,31 +598,31 @@
     <value>Dimensions</value>
   </data>
   <data name="Diamond" xml:space="preserve">
-    <value>Diamond</value>
+    <value>Diamant</value>
   </data>
   <data name="Diamond_Detail" xml:space="preserve">
-    <value>Diamond Detail</value>
+    <value>Détails du diamant</value>
   </data>
   <data name="Diamond_Status" xml:space="preserve">
-    <value>Diamond Status:</value>
+    <value>Statut du diamant :</value>
   </data>
   <data name="Direct_Ship" xml:space="preserve">
-    <value>Direct Ship</value>
+    <value>Expédition directe</value>
   </data>
   <data name="Disable_Inventory" xml:space="preserve">
     <value>Désactiver l’inventaire</value>
   </data>
   <data name="Disc" xml:space="preserve">
-    <value>Disc</value>
+    <value>Remise</value>
   </data>
   <data name="Disclaimer" xml:space="preserve">
-    <value>Disclaimer:</value>
+    <value>Décharge de responsabilité :</value>
   </data>
   <data name="DisclaimerText" xml:space="preserve">
-    <value>Please note that the Rap ($) price list published every Friday evening (IST) is updated in our system over the weekend. In case of a situation where in you have placed an order and the Rap price is revised during the course of order processing, the revised Rap ($) rate will be applied to the order.</value>
+    <value>Veuillez noter que la liste de prix Rap ($) publiée chaque vendredi soir (IST) est mise à jour dans notre système au cours du week-end. Dans le cas où vous avez passé une commande et que le prix Rap est révisé au cours du traitement de la commande, le tarif Rap ($) révisé sera appliqué à la commande.</value>
   </data>
   <data name="Discount" xml:space="preserve">
-    <value>Discount(%)</value>
+    <value>Remise(%)</value>
   </data>
   <data name="Discount_for_BlueNile_upload_data" xml:space="preserve">
     <value>Fixer remise différentielle pour données d’envoi Blue Nile</value>
@@ -637,10 +634,10 @@
     <value>Fixer remise différentielle pour données d’envoi James Allen</value>
   </data>
   <data name="Discount_Per" xml:space="preserve">
-    <value>Discount (%):</value>
+    <value>Remise (%) :</value>
   </data>
   <data name="Doc_Expiry_Date" xml:space="preserve">
-    <value>Doc Expiry Date</value>
+    <value>Date d'expiration du document</value>
   </data>
   <data name="Does_not_Contains" xml:space="preserve">
     <value>Ne contient pas</value>
@@ -649,19 +646,19 @@
     <value>Télécharger</value>
   </data>
   <data name="DownloadPermitted" xml:space="preserve">
-    <value>DownloadPermitted</value>
+    <value>TéléchargementAutorisé</value>
   </data>
   <data name="Download_Excel" xml:space="preserve">
-    <value>Download Excel</value>
+    <value>Télécharger Excel</value>
   </data>
   <data name="Download_sample_file_for_upload" xml:space="preserve">
     <value>Télécharger fichier d’exemple à envoyer.</value>
   </data>
   <data name="Download_sample_file_for_upload1" xml:space="preserve">
-    <value>Download sample (.xlsx) file for upload</value>
+    <value>Télécharger fichier d’exemple (.xlsx) à envoyer</value>
   </data>
   <data name="Down_for_maintenance" xml:space="preserve">
-    <value>Down for maintenance</value>
+    <value>Maintenance en cours</value>
   </data>
   <data name="DR" xml:space="preserve">
     <value>D/R</value>
@@ -673,22 +670,22 @@
     <value>Modifier</value>
   </data>
   <data name="Edit_Memo" xml:space="preserve">
-    <value>Edit Memo</value>
+    <value>Modifier mémo</value>
   </data>
   <data name="Edit_Profile" xml:space="preserve">
-    <value>Edit Profile</value>
+    <value>Modifier profil</value>
   </data>
   <data name="Email" xml:space="preserve">
-    <value>Courrier électronique</value>
+    <value>Email</value>
   </data>
   <data name="Email_Address" xml:space="preserve">
-    <value>Email Address</value>
+    <value>Adresse électronique</value>
   </data>
   <data name="Email_ID" xml:space="preserve">
-    <value>Email ID</value>
+    <value>Identifiant Email</value>
   </data>
   <data name="Emerald" xml:space="preserve">
-    <value>Emerald</value>
+    <value>Émeraude</value>
   </data>
   <data name="Enable_Inventory" xml:space="preserve">
     <value>Activer l’inventaire</value>
@@ -700,7 +697,7 @@
     <value>Saisir numéro de lot</value>
   </data>
   <data name="Enter_the_code" xml:space="preserve">
-    <value>Enter the code</value>
+    <value>Saisir le code</value>
   </data>
   <data name="EX" xml:space="preserve">
     <value>3EX</value>
@@ -718,10 +715,10 @@
     <value>Exécuter</value>
   </data>
   <data name="ExportToExcel" xml:space="preserve">
-    <value>ExportToExcel</value>
+    <value>ExporterVersExcel</value>
   </data>
   <data name="Export_Excel" xml:space="preserve">
-    <value>Export Excel</value>
+    <value>Exporter Excel</value>
   </data>
   <data name="Export_to_Excel" xml:space="preserve">
     <value>Exporter vers Excel</value>
@@ -739,16 +736,16 @@
     <value>COULEUR FANTAISIE</value>
   </data>
   <data name="Fancy_Colorsm" xml:space="preserve">
-    <value>COULEUR FANTAISIE</value>
+    <value>Couleur fantaisie</value>
   </data>
   <data name="FANCY_SHAPE" xml:space="preserve">
     <value>FORME FANTAISIE</value>
   </data>
   <data name="Fancy_Shapesm" xml:space="preserve">
-    <value>Fancy Shape </value>
+    <value>Forme fantaisie </value>
   </data>
   <data name="Fast_Moving_Goods" xml:space="preserve">
-    <value>Fast Moving Goods</value>
+    <value>Biens à circulation rapide</value>
   </data>
   <data name="Fax" xml:space="preserve">
     <value>Fax</value>
@@ -775,7 +772,7 @@
     <value>Fluor</value>
   </data>
   <data name="Fluor" xml:space="preserve">
-    <value>Fluorescent</value>
+    <value>Fluor</value>
   </data>
   <data name="FLUORESCENCE" xml:space="preserve">
     <value>FLUORESCENCE</value>
@@ -784,10 +781,10 @@
     <value>Fluorescence </value>
   </data>
   <data name="Fluorescence_Intensity" xml:space="preserve">
-    <value>Fluorescence Intensity</value>
+    <value>Intensité de la fluorescence</value>
   </data>
   <data name="Forever" xml:space="preserve">
-    <value>Forever</value>
+    <value>Toujours</value>
   </data>
   <data name="Forget_Password" xml:space="preserve">
     <value>Mot de passe oublié ?</value>
@@ -811,52 +808,52 @@
     <value>%Rondiste</value>
   </data>
   <data name="Good" xml:space="preserve">
-    <value>Good</value>
+    <value>Bon</value>
   </data>
   <data name="Grid_Legends" xml:space="preserve">
-    <value>Grid Legends</value>
+    <value>Légende de la grille</value>
   </data>
   <data name="GST" xml:space="preserve">
-    <value>GST will be applied for Indian customers</value>
+    <value>La GST sera appliquée pour les clients indiens.</value>
   </data>
   <data name="GST_No" xml:space="preserve">
-    <value>GST No</value>
+    <value>N° de GST</value>
   </data>
   <data name="HA" xml:space="preserve">
     <value>H&amp;A</value>
   </data>
   <data name="HA-Ex_Disc" xml:space="preserve">
-    <value>Disque HA-Ex</value>
+    <value>Remise HA-Ex</value>
   </data>
   <data name="HA-VG_Disc" xml:space="preserve">
-    <value>Disque HA-VG</value>
+    <value>Remise HA-VG</value>
   </data>
   <data name="Heart" xml:space="preserve">
-    <value>Heart</value>
+    <value>Cœur</value>
   </data>
   <data name="Hearts__Arrows" xml:space="preserve">
     <value>Hearts &amp; Arrows</value>
   </data>
   <data name="High" xml:space="preserve">
-    <value>High</value>
+    <value>Élevé</value>
   </data>
   <data name="Home" xml:space="preserve">
     <value>Accueil</value>
   </data>
   <data name="HomePage_Para1" xml:space="preserve">
-    <value>Rosy Blue is one of the most renowned diamond and jewelry companies in the world. From rough to polished diamonds to fine jewelry, Rosy Blue's passion for excellence sparkles in everything we do. We operate in strict compliance with the Kimberley Process Certification Scheme and the World Diamond Council System of Warranties.</value>
+    <value>Rosy Blue est un diamantaire et bijoutier parmi les plus réputés au monde. Des diamants bruts aux diamants polis en passant par la joaillerie, la passion de Rosy Blue pour l’excellence brille dans tout ce que nous réalisons. Nous opérons dans le strict respect du  Système de Certification du Processus de Kimberley et des normes du Conseil Mondial du Diamant.</value>
   </data>
   <data name="Identity" xml:space="preserve">
-    <value>Identity</value>
+    <value>Identité</value>
   </data>
   <data name="If_you_have" xml:space="preserve">
-    <value>If you haven't recieved verfication Code, please Click</value>
+    <value>Si vous n’avez pas reçu le code de vérification, veuillez cliquer</value>
   </data>
   <data name="Image_Name" xml:space="preserve">
-    <value>Image Name</value>
+    <value>Nom de l’image</value>
   </data>
   <data name="InActive" xml:space="preserve">
-    <value>Inactif</value>
+    <value>InActif</value>
   </data>
   <data name="Inclusion" xml:space="preserve">
     <value>Inclusion ?</value>
@@ -865,10 +862,10 @@
     <value>Inscription</value>
   </data>
   <data name="Inspection_Report" xml:space="preserve">
-    <value>Inspection Report</value>
+    <value>Rapport d’inspection</value>
   </data>
   <data name="Inspection_Request" xml:space="preserve">
-    <value>Inspection Request</value>
+    <value>Demande d’inspection</value>
   </data>
   <data name="Invalid" xml:space="preserve">
     <value>Invalide</value>
@@ -883,43 +880,43 @@
     <value>Inventaire sur mémo</value>
   </data>
   <data name="Inventory_Package" xml:space="preserve">
-    <value>Inventory Package</value>
+    <value>Dossier d’inventaire</value>
   </data>
   <data name="Inventory_Summary_Report" xml:space="preserve">
-    <value>Inventory Summary Report</value>
+    <value>Rapport de synthèse de l’inventaire</value>
   </data>
   <data name="Inventory_Upload" xml:space="preserve">
     <value>Envoyer l’inventaire</value>
   </data>
   <data name="In_Active" xml:space="preserve">
-    <value>In-Active</value>
+    <value>In-Actif</value>
   </data>
   <data name="is_our_latest" xml:space="preserve">
-    <value>is our latest endeavor to enrich, enhance and widen partnership with our global clients.</value>
+    <value>est notre tout dernier effort visant à enrichir, améliorer et élargir notre partenariat avec nos clients mondiaux.</value>
   </data>
   <data name="Item" xml:space="preserve">
-    <value>Item</value>
+    <value>Article</value>
   </data>
   <data name="Item_Count" xml:space="preserve">
     <value>Nombre d’articles</value>
   </data>
   <data name="JamesAllen_Disc" xml:space="preserve">
-    <value>% Disque JamesAllen</value>
+    <value>% Remise JamesAllen</value>
   </data>
   <data name="JamesAllen_HK_Disc" xml:space="preserve">
-    <value>% Disque JamesAllen HK</value>
+    <value>% Remise JamesAllen HK</value>
   </data>
   <data name="James_Allen" xml:space="preserve">
     <value>James Allen</value>
   </data>
   <data name="James_Allen_Disc" xml:space="preserve">
-    <value>% Disque James Allen</value>
+    <value>% Remise James Allen</value>
   </data>
   <data name="James_Allen_HK" xml:space="preserve">
     <value>James Allen HK</value>
   </data>
   <data name="James_Allen_HK_Disc" xml:space="preserve">
-    <value>% Disque James Allen HK</value>
+    <value>% Remise James Allen HK</value>
   </data>
   <data name="JA_BN_Partition" xml:space="preserve">
     <value>Partition JA BN</value>
@@ -931,7 +928,7 @@
     <value>Légende des symboles</value>
   </data>
   <data name="Kyc_Doc_No" xml:space="preserve">
-    <value>Kyc Doc No</value>
+    <value>N° Doc Kyc</value>
   </data>
   <data name="Lab" xml:space="preserve">
     <value>Lab</value>
@@ -940,16 +937,16 @@
     <value>Laser</value>
   </data>
   <data name="LastUpdatedDate" xml:space="preserve">
-    <value>LastUpdatedDate</value>
+    <value>DateDernièreActualisation</value>
   </data>
   <data name="Last_Login" xml:space="preserve">
-    <value>Last Login</value>
+    <value>Dernière Connexion</value>
   </data>
   <data name="Last_Name" xml:space="preserve">
-    <value>Last Name</value>
+    <value>Nom</value>
   </data>
   <data name="Length" xml:space="preserve">
-    <value>Length</value>
+    <value>Longueur</value>
   </data>
   <data name="List_Name" xml:space="preserve">
     <value>Nom</value>
@@ -964,22 +961,22 @@
     <value>Charger résultat</value>
   </data>
   <data name="Location" xml:space="preserve">
-    <value>Location</value>
+    <value>Emplacement</value>
   </data>
   <data name="Login" xml:space="preserve">
     <value>Connexion</value>
   </data>
   <data name="LotCret_No" xml:space="preserve">
-    <value>Lot/Cert. N°</value>
+    <value>Lot/Cret. N°</value>
   </data>
   <data name="Lot_Cret_No" xml:space="preserve">
-    <value>Lot Cret No</value>
+    <value>N° Cret Lot</value>
   </data>
   <data name="Lot_No" xml:space="preserve">
     <value>N° de lot</value>
   </data>
   <data name="Lot_Number" xml:space="preserve">
-    <value>LotNumber</value>
+    <value>NuméroDeLot</value>
   </data>
   <data name="Lot_Number_to_Search" xml:space="preserve">
     <value>Numéro de lot à chercher</value>
@@ -988,7 +985,7 @@
     <value>HaléfiDeCulasse</value>
   </data>
   <data name="Lower_Half" xml:space="preserve">
-    <value>Lower Half</value>
+    <value>Haléfi de culasse</value>
   </data>
   <data name="M0" xml:space="preserve">
     <value>M0</value>
@@ -1006,22 +1003,22 @@
     <value>Machine</value>
   </data>
   <data name="Mail_BCC" xml:space="preserve">
-    <value>Mail BCC</value>
+    <value>Mail CCI</value>
   </data>
   <data name="Mail_CC" xml:space="preserve">
     <value>Mail CC</value>
   </data>
   <data name="Mail_From" xml:space="preserve">
-    <value>Mail From</value>
+    <value>Expéditeur</value>
   </data>
   <data name="Mail_To" xml:space="preserve">
-    <value>Mail To</value>
+    <value>Destinataire</value>
   </data>
   <data name="Manage_Rights" xml:space="preserve">
     <value>Gérer les droits</value>
   </data>
   <data name="Mandatory_fields" xml:space="preserve">
-    <value>Mandatory fields are marked with an asterisk (*)</value>
+    <value>Les champs obligatoires sont marqués d’un astérisque (*)</value>
   </data>
   <data name="Marketing" xml:space="preserve">
     <value>Marketing</value>
@@ -1030,22 +1027,22 @@
     <value>Marquise</value>
   </data>
   <data name="Maximum_3_Attempt" xml:space="preserve">
-    <value>Maximum 3 Attempt for Verification Code</value>
+    <value>Maximum de 3 tentatives pour le code de vérification</value>
   </data>
   <data name="Measurements" xml:space="preserve">
-    <value>Measurements</value>
+    <value>Mesures</value>
   </data>
   <data name="MEMO" xml:space="preserve">
     <value>MÉMO</value>
   </data>
   <data name="Memo_History" xml:space="preserve">
-    <value>Memo History</value>
+    <value>Historique mémo</value>
   </data>
   <data name="Memo_No" xml:space="preserve">
     <value>N° de mémo</value>
   </data>
   <data name="Memo_Order" xml:space="preserve">
-    <value>Memo/Order</value>
+    <value>Mémo/Commande</value>
   </data>
   <data name="Memo_Pending" xml:space="preserve">
     <value>Mémo en cours</value>
@@ -1054,19 +1051,19 @@
     <value>Mémo vendu</value>
   </data>
   <data name="Memo_Status" xml:space="preserve">
-    <value>Memo Status</value>
+    <value>Statut du mémo</value>
   </data>
   <data name="MENU" xml:space="preserve">
     <value>MENU</value>
   </data>
   <data name="Menu_Rights" xml:space="preserve">
-    <value>Menu Rights</value>
+    <value>Droits du menu</value>
   </data>
   <data name="Merge_Memo" xml:space="preserve">
-    <value>Merge Memo</value>
+    <value>Fusionner le mémo</value>
   </data>
   <data name="Merge_Order" xml:space="preserve">
-    <value>Merge Order</value>
+    <value>Fusionner la commande</value>
   </data>
   <data name="Message" xml:space="preserve">
     <value>Message</value>
@@ -1075,31 +1072,31 @@
     <value>Laiteux</value>
   </data>
   <data name="Milky_Low" xml:space="preserve">
-    <value>Milky: Low</value>
+    <value>Laiteux : Faible</value>
   </data>
   <data name="Mobile" xml:space="preserve">
-    <value>Téléphone mobile</value>
+    <value>Mobile</value>
   </data>
   <data name="Modify" xml:space="preserve">
-    <value>Modify</value>
+    <value>Modifier</value>
   </data>
   <data name="Modify_Inventory" xml:space="preserve">
     <value>Modifier inventaire</value>
   </data>
   <data name="Modify_Menu_Rights" xml:space="preserve">
-    <value>Modify Menu Rights</value>
+    <value>Modifier Droits du menu</value>
   </data>
   <data name="Monthly_Report" xml:space="preserve">
-    <value>Monthly Report</value>
+    <value>Rapport mensuel</value>
   </data>
   <data name="Multiple_Demand" xml:space="preserve">
-    <value>Multiple Demand</value>
+    <value>Exigence multiple</value>
   </data>
   <data name="Multiple_Demands" xml:space="preserve">
     <value>Exigences multiples</value>
   </data>
   <data name="Multiple_size" xml:space="preserve">
-    <value>Multiple size</value>
+    <value>Taille multiple</value>
   </data>
   <data name="My_Account" xml:space="preserve">
     <value>Mon compte</value>
@@ -1114,7 +1111,7 @@
     <value>Nom</value>
   </data>
   <data name="New_Arrivals" xml:space="preserve">
-    <value>New Arrivals</value>
+    <value>Nouveautés</value>
   </data>
   <data name="New_Customer" xml:space="preserve">
     <value>Nouveau client</value>
@@ -1126,16 +1123,16 @@
     <value>Nouvel envoi</value>
   </data>
   <data name="New_UserPlease_Register_Here" xml:space="preserve">
-    <value>New User? Please Register Here</value>
+    <value>Nouvel utilisateur ? Veuillez vous inscrire ici</value>
   </data>
   <data name="Next" xml:space="preserve">
     <value>Suiv.</value>
   </data>
   <data name="No" xml:space="preserve">
-    <value>No</value>
+    <value>Non</value>
   </data>
   <data name="Note" xml:space="preserve">
-    <value>Note:</value>
+    <value>Note :</value>
   </data>
   <data name="NO_BGM" xml:space="preserve">
     <value>NO BGM</value>
@@ -1144,7 +1141,7 @@
     <value>N° du fichier choisi</value>
   </data>
   <data name="No_upcoming_events_found" xml:space="preserve">
-    <value>No upcoming events found</value>
+    <value>Aucun événement à venir trouvé</value>
   </data>
   <data name="NV" xml:space="preserve">
     <value>NV</value>
@@ -1153,13 +1150,13 @@
     <value>Ancien mot de passe</value>
   </data>
   <data name="Online" xml:space="preserve">
-    <value>Online</value>
+    <value>En ligne</value>
   </data>
   <data name="Online_Discount" xml:space="preserve">
     <value>moins : Remise en ligne</value>
   </data>
   <data name="Only_Memo" xml:space="preserve">
-    <value>Only Memo</value>
+    <value>Mémo uniquement</value>
   </data>
   <data name="OnMemo" xml:space="preserve">
     <value>SurMémo</value>
@@ -1195,31 +1192,31 @@
     <value>Statut de la commande</value>
   </data>
   <data name="OrgFileName" xml:space="preserve">
-    <value>OrgFileName</value>
+    <value>NomFichierOrg</value>
   </data>
   <data name="Origin1" xml:space="preserve">
-    <value>Origin</value>
+    <value>Origine</value>
   </data>
   <data name="Other_Details" xml:space="preserve">
-    <value>Other Details</value>
+    <value>Autres détails</value>
   </data>
   <data name="Other_Shape" xml:space="preserve">
-    <value>Other Shape</value>
+    <value>Autre forme</value>
   </data>
   <data name="Other_Type" xml:space="preserve">
-    <value>Other Type</value>
+    <value>Autre type</value>
   </data>
   <data name="OTP" xml:space="preserve">
     <value>OTP</value>
   </data>
   <data name="Our_innovative" xml:space="preserve">
-    <value>Our innovative "Quick Search" feature of the site enables users view the entire stock, and select based on the 4C's in a single click. The site also enables the users to drill-down into an individual stone, and even view the image and certificate, where available. The entire user experience is backed up by the quality and service assurance of Rosy Blue, which has enabled us to become a global leader. Needless to say, all stocks are at competitive prices.</value>
+    <value>Notre fonctionnalité novatrice de Recherche rapide sur le site permet aux utilisateurs de visualiser l'ensemble du stock et d’effectuer une sélection basée sur les 4C en un simple clic. Le site permet également aux utilisateurs d’explorer une pierre spécifique , et même d’en visualiser l’image et le certificat, lorsqu’ils sont disponibles. Toute l’expérience utilisateur bénéficie de l’assurance de qualité et de service de Rosy Blue, qui a fait de nous un leader mondial. Il va sans dire que tous nos articles sont proposés à des prix compétitifs.</value>
   </data>
   <data name="Oval" xml:space="preserve">
-    <value>Oval</value>
+    <value>Ovale</value>
   </data>
   <data name="PAN_No" xml:space="preserve">
-    <value>PAN No</value>
+    <value>N° PAN</value>
   </data>
   <data name="Partial_memo_cancel" xml:space="preserve">
     <value>Annulation partielle du mémo</value>
@@ -1234,19 +1231,19 @@
     <value>ProfondeurCulasse</value>
   </data>
   <data name="Pavilion_Angle" xml:space="preserve">
-    <value>Pavilion Angle</value>
+    <value>Angle de culasse</value>
   </data>
   <data name="Pavilion_Depth" xml:space="preserve">
-    <value>Pavilion Depth</value>
+    <value>Profondeur de culasse</value>
   </data>
   <data name="Payable_Amount" xml:space="preserve">
-    <value>Payable Amount($)</value>
+    <value>Montant dû ($)</value>
   </data>
   <data name="Pear" xml:space="preserve">
-    <value>Pear</value>
+    <value>Poire</value>
   </data>
   <data name="Pending" xml:space="preserve">
-    <value>Pending</value>
+    <value>En cours</value>
   </data>
   <data name="Pending_Orders" xml:space="preserve">
     <value>Commandes en cours</value>
@@ -1261,73 +1258,73 @@
     <value>Permission</value>
   </data>
   <data name="Personal_Details" xml:space="preserve">
-    <value>Personal Details</value>
+    <value>Coordonnées</value>
   </data>
   <data name="Phone" xml:space="preserve">
-    <value>Téléphone fixe</value>
+    <value>Téléphone</value>
   </data>
   <data name="Phone_1" xml:space="preserve">
-    <value>Phone 1</value>
+    <value>Téléphone 1</value>
   </data>
   <data name="Phone_2" xml:space="preserve">
-    <value>Phone 2</value>
+    <value>Téléphone 2</value>
   </data>
   <data name="Physical_Stock" xml:space="preserve">
     <value>Stock physique</value>
   </data>
   <data name="Pivot_table" xml:space="preserve">
-    <value>Pivot table</value>
+    <value>Tableau croisé dynamique</value>
   </data>
   <data name="Please_enter_OTP" xml:space="preserve">
-    <value>(Please enter OTP as you have recived in yours mail) </value>
+    <value>(Veuillez saisir l’OTP reçu dans votre boîte de réception) </value>
   </data>
   <data name="Polish" xml:space="preserve">
     <value>Poli</value>
   </data>
   <data name="Polished" xml:space="preserve">
-    <value>Polished</value>
+    <value>Taillé</value>
   </data>
   <data name="Poor" xml:space="preserve">
-    <value>Poor</value>
+    <value>Mauvais</value>
   </data>
   <data name="Prev" xml:space="preserve">
     <value>Préc.</value>
   </data>
   <data name="Previous" xml:space="preserve">
-    <value>Previous</value>
+    <value>Précédent</value>
   </data>
   <data name="Previous_Discount" xml:space="preserve">
-    <value>Previous Discount</value>
+    <value>Remise  précédente</value>
   </data>
   <data name="Previous_Rap_Price" xml:space="preserve">
-    <value>Previous Rap Price</value>
+    <value>Tarif Rap précédent</value>
   </data>
   <data name="Pre_Registered_Users" xml:space="preserve">
-    <value>Pre-Registered Users</value>
+    <value>Utilisateurs préenregistrés</value>
   </data>
   <data name="Price" xml:space="preserve">
-    <value>Price($)</value>
+    <value>Tarif($)</value>
   </data>
   <data name="Pricect" xml:space="preserve">
     <value>Tarif($)/ct</value>
   </data>
   <data name="Price_carat" xml:space="preserve">
-    <value>Price$/carat</value>
+    <value>Tarif$/carat</value>
   </data>
   <data name="Price_ct" xml:space="preserve">
-    <value>Price/ct($)</value>
+    <value>Tarif/ct($)</value>
   </data>
   <data name="Price_ct1" xml:space="preserve">
-    <value>Price ($)/ct</value>
+    <value>Tarif ($)/ct</value>
   </data>
   <data name="Price_Mark_Percent" xml:space="preserve">
-    <value>Price Mark Percent</value>
+    <value>Pourcentage Marque Prix </value>
   </data>
   <data name="Price__Ct" xml:space="preserve">
-    <value>Price ($)/Ct.:</value>
+    <value>Tarif ($)/Ct. :</value>
   </data>
   <data name="Pricing_Policy" xml:space="preserve">
-    <value>Pricing Policy</value>
+    <value>Politique tarifaire</value>
   </data>
   <data name="Princess" xml:space="preserve">
     <value>Princess</value>
@@ -1336,10 +1333,10 @@
     <value>Imprimer</value>
   </data>
   <data name="Privacy_Policy" xml:space="preserve">
-    <value>Privacy Policy</value>
+    <value>Politique de confidentialité</value>
   </data>
   <data name="Proceed" xml:space="preserve">
-    <value>Proceed</value>
+    <value>Continuer</value>
   </data>
   <data name="Profile" xml:space="preserve">
     <value>Profil</value>
@@ -1348,40 +1345,40 @@
     <value>Mettre sur mémo/vendre directement</value>
   </data>
   <data name="Quick_Contact" xml:space="preserve">
-    <value>Quick Contact</value>
+    <value>Contact rapide</value>
   </data>
   <data name="Quick_Search" xml:space="preserve">
-    <value>Quick Search</value>
+    <value>Recherche rapide</value>
   </data>
   <data name="Quick_Size" xml:space="preserve">
-    <value>Quick Size</value>
+    <value>Taille rapide</value>
   </data>
   <data name="Radiant" xml:space="preserve">
     <value>Radiant</value>
   </data>
   <data name="Rap" xml:space="preserve">
-    <value>Rap ($):</value>
+    <value>Rap ($) :</value>
   </data>
   <data name="RapDisc" xml:space="preserve">
-    <value>DisqueRap(%)</value>
+    <value>RemiseRap(%)</value>
   </data>
   <data name="RapnetPrice" xml:space="preserve">
-    <value>RapnetPrice</value>
+    <value>TarifRapNet</value>
   </data>
   <data name="RapNet_Disc" xml:space="preserve">
-    <value>RapNet Disc (%)</value>
+    <value>Remise RapNet (%)</value>
   </data>
   <data name="RapPrice" xml:space="preserve">
     <value>TarifRap</value>
   </data>
   <data name="Rap_Off" xml:space="preserve">
-    <value>Rap Off(%)</value>
+    <value>Remise Rap (%)</value>
   </data>
   <data name="RB_Discount" xml:space="preserve">
     <value>moins : Remise RB</value>
   </data>
   <data name="RB_Discount1" xml:space="preserve">
-    <value>RB Discount</value>
+    <value>Remise RB</value>
   </data>
   <data name="Recent_RFID_Count" xml:space="preserve">
     <value>Nombre RFID récent</value>
@@ -1396,19 +1393,19 @@
     <value>Recycler RFID</value>
   </data>
   <data name="Reference_Name" xml:space="preserve">
-    <value>Reference Name</value>
+    <value>Nom de référence</value>
   </data>
   <data name="Register" xml:space="preserve">
     <value>Inscription</value>
   </data>
   <data name="Registration" xml:space="preserve">
-    <value>Registration</value>
+    <value>Inscription</value>
   </data>
   <data name="Reject" xml:space="preserve">
-    <value>Reject</value>
+    <value>Refuser</value>
   </data>
   <data name="Rejected Customers" xml:space="preserve">
-    <value>Rejected Customers</value>
+    <value>Clients refusés</value>
   </data>
   <data name="Remark" xml:space="preserve">
     <value>Remarque</value>
@@ -1420,13 +1417,13 @@
     <value>Supprimer Bestdeal</value>
   </data>
   <data name="Remove_Best_Deal" xml:space="preserve">
-    <value>Remove Best Deal</value>
+    <value>Supprimer Best Deal</value>
   </data>
   <data name="Remove_Best_Deals" xml:space="preserve">
-    <value>Remove Best Deals</value>
+    <value>Supprimer Best Deals</value>
   </data>
   <data name="Remove_Cart" xml:space="preserve">
-    <value>Remove Cart</value>
+    <value>Supprimer panier</value>
   </data>
   <data name="Remove_Lab" xml:space="preserve">
     <value>Supprimer Lab</value>
@@ -1435,37 +1432,37 @@
     <value>Supprimer article de la commande</value>
   </data>
   <data name="Report" xml:space="preserve">
-    <value>Report</value>
+    <value>Rapport</value>
   </data>
   <data name="ReportDate" xml:space="preserve">
     <value>DateRapport</value>
   </data>
   <data name="Report_Date" xml:space="preserve">
-    <value>Report Date</value>
+    <value>Date de rapport</value>
   </data>
   <data name="Report_No" xml:space="preserve">
-    <value>Report.No.</value>
+    <value>N°.De.Rapport</value>
   </data>
   <data name="Resend" xml:space="preserve">
-    <value>Resend</value>
+    <value>Renvoyer</value>
   </data>
   <data name="RESET" xml:space="preserve">
     <value>RÉINITIALISER</value>
   </data>
   <data name="Reset1" xml:space="preserve">
-    <value>Reset </value>
+    <value>Réinitialiser </value>
   </data>
   <data name="Reset_Password" xml:space="preserve">
     <value>Réinitialiser mot de passe</value>
   </data>
   <data name="Return_Partial_Sell" xml:space="preserve">
-    <value>Return Partial Sell</value>
+    <value>Retourner vente partielle</value>
   </data>
   <data name="RETURN_SALE" xml:space="preserve">
     <value>RETOUR VENTE</value>
   </data>
   <data name="Revised_Stones" xml:space="preserve">
-    <value>Revised Stones</value>
+    <value>Pierres révisées</value>
   </data>
   <data name="RFID" xml:space="preserve">
     <value>RFID</value>
@@ -1477,7 +1474,7 @@
     <value>Master RFID</value>
   </data>
   <data name="RFID_Memo_Stock_Tally" xml:space="preserve">
-    <value>RFID Memo Stock Tally</value>
+    <value>Comptage stock Mémo RFID</value>
   </data>
   <data name="RFID_Modify" xml:space="preserve">
     <value>Modifier RFID</value>
@@ -1492,7 +1489,7 @@
     <value>Recherche RFID</value>
   </data>
   <data name="RFID_StockTally" xml:space="preserve">
-    <value>RFID StockTally</value>
+    <value>ComptageStockRFID</value>
   </data>
   <data name="RFID_Stock_Tally" xml:space="preserve">
     <value>Comptage du stock RFID</value>
@@ -1504,28 +1501,28 @@
     <value>©RosyBlue, 2020</value>
   </data>
   <data name="Rosy_Blue_Online" xml:space="preserve">
-    <value>Rosy Blue Online</value>
+    <value>Rosy Blue en ligne</value>
   </data>
   <data name="Rosy_Blue_Online_Features" xml:space="preserve">
-    <value>Rosy Blue Online Features</value>
+    <value>Caractéristiques Rosy Blue en ligne </value>
   </data>
   <data name="Rough" xml:space="preserve">
-    <value>Rough</value>
+    <value>Brut</value>
   </data>
   <data name="Round" xml:space="preserve">
-    <value>Round</value>
+    <value>Rond</value>
   </data>
   <data name="ROUND_SHAPE" xml:space="preserve">
     <value>FORME RONDE</value>
   </data>
   <data name="Round_Shapesm" xml:space="preserve">
-    <value>Round Shape </value>
+    <value>Forme ronde </value>
   </data>
   <data name="Row_Download_Permitted" xml:space="preserve">
-    <value>Row Download Permitted</value>
+    <value>Téléchargement de rangée autorisé</value>
   </data>
   <data name="Sale" xml:space="preserve">
-    <value>Sale</value>
+    <value>Vente</value>
   </data>
   <data name="SalesLocation" xml:space="preserve">
     <value>LieuDeVente</value>
@@ -1534,22 +1531,22 @@
     <value>LIEU DE VENTE</value>
   </data>
   <data name="Sales_Mode" xml:space="preserve">
-    <value>Sales Mode</value>
+    <value>Mode de vente</value>
   </data>
   <data name="SALES_PERSON" xml:space="preserve">
-    <value>SALES PERSON</value>
+    <value>PERSONNE CHARGÉE DE LA VENTE</value>
   </data>
   <data name="Sales_Support" xml:space="preserve">
-    <value>Sales Support</value>
+    <value>Assistance commerciale</value>
   </data>
   <data name="Sale_Discount" xml:space="preserve">
-    <value>Sale Discount</value>
+    <value>Remise Vente</value>
   </data>
   <data name="Save" xml:space="preserve">
     <value>Sauvegarder</value>
   </data>
   <data name="Saved_Search" xml:space="preserve">
-    <value>Saved Search</value>
+    <value>Recherche sauvegardée</value>
   </data>
   <data name="Save_Search" xml:space="preserve">
     <value>Sauvegarder la recherche</value>
@@ -1561,13 +1558,13 @@
     <value>Envoyer courrier électronique</value>
   </data>
   <data name="Search" xml:space="preserve">
-    <value>Recherche</value>
+    <value>Rechercher</value>
   </data>
   <data name="Search_Result" xml:space="preserve">
-    <value>Search Result</value>
+    <value>Résultat de la recherche</value>
   </data>
   <data name="Selected" xml:space="preserve">
-    <value>Selected</value>
+    <value>Sélectionné</value>
   </data>
   <data name="Select_(xlxs)_file_to_Update_RFID" xml:space="preserve">
     <value>Sélectionner fichier (.xlxs) pour actualiser RFID</value>
@@ -1576,10 +1573,10 @@
     <value>Sélectionner tout</value>
   </data>
   <data name="Select_Billing_Address" xml:space="preserve">
-    <value>Select Billing Address</value>
+    <value>Sélectionner Adresse de facturation</value>
   </data>
   <data name="Select_Country" xml:space="preserve">
-    <value>Select Country</value>
+    <value>Sélectionner Pays</value>
   </data>
   <data name="Select_csv_file_to_upload" xml:space="preserve">
     <value>Sélectionner fichier csv à envoyer</value>
@@ -1594,25 +1591,25 @@
     <value>Sélectionner fichier à envoyer</value>
   </data>
   <data name="Select_Identity" xml:space="preserve">
-    <value>Select Identity</value>
+    <value>Sélectionner Identité</value>
   </data>
   <data name="Select_Sales_Location" xml:space="preserve">
-    <value>Sélectionner le lieu de vente</value>
+    <value>Sélectionner Lieu de vente</value>
   </data>
   <data name="Select_Shape" xml:space="preserve">
-    <value>Select Shape</value>
+    <value>Sélectionner Forme</value>
   </data>
   <data name="Select_Shipping_Address" xml:space="preserve">
-    <value>Select Shipping Address</value>
+    <value>Sélectionner Adresse d’expédition</value>
   </data>
   <data name="Select_State" xml:space="preserve">
-    <value>Select State</value>
+    <value>Sélectionner État</value>
   </data>
   <data name="Select_to_download_sample_file" xml:space="preserve">
     <value>Sélectionner pour télécharger le fichier d’exemple</value>
   </data>
   <data name="Select_Type" xml:space="preserve">
-    <value>Sélectionner le type</value>
+    <value>Sélectionner Type</value>
   </data>
   <data name="Select_your_choice" xml:space="preserve">
     <value>Sélectionner votre choix</value>
@@ -1621,25 +1618,25 @@
     <value>Sélectionner fichier (.xlsx) pour Master RFID</value>
   </data>
   <data name="Self_Pickup" xml:space="preserve">
-    <value>Self Pickup</value>
+    <value>Retrait en boutique</value>
   </data>
   <data name="Sell_Directly" xml:space="preserve">
-    <value>Sell Directly</value>
+    <value>Vente directe</value>
   </data>
   <data name="Sell_Full_Memo" xml:space="preserve">
-    <value>Envoyer mémo complet</value>
+    <value>Vendre mémo complet</value>
   </data>
   <data name="Sell_Partial" xml:space="preserve">
     <value>Vente partielle</value>
   </data>
   <data name="Send" xml:space="preserve">
-    <value>Send</value>
+    <value>Envoyer</value>
   </data>
   <data name="Send_Mail" xml:space="preserve">
-    <value>Send Mail</value>
+    <value>Envoyer courrier électronique</value>
   </data>
   <data name="Set_as_default_address" xml:space="preserve">
-    <value>Set as default address</value>
+    <value>Définir comme adresse par défaut</value>
   </data>
   <data name="Shade" xml:space="preserve">
     <value>Teinte</value>
@@ -1648,10 +1645,10 @@
     <value>Forme</value>
   </data>
   <data name="Shipping" xml:space="preserve">
-    <value>Shipping</value>
+    <value>Expédition</value>
   </data>
   <data name="Shipping_Address" xml:space="preserve">
-    <value>Shipping Address</value>
+    <value>Adresse d’expédition</value>
   </data>
   <data name="Shipping_Charges_Non_India" xml:space="preserve">
     <value>plus : Frais d’expédition hors Inde</value>
@@ -1660,25 +1657,25 @@
     <value>Expéditeur</value>
   </data>
   <data name="Shipping_Mode" xml:space="preserve">
-    <value>Shipping Mode</value>
+    <value>Mode de livraison</value>
   </data>
   <data name="Shipping_Mode_1" xml:space="preserve">
     <value>Mode de livraison 1</value>
   </data>
   <data name="Shopping_Cart" xml:space="preserve">
-    <value>Shopping Cart</value>
+    <value>Panier</value>
   </data>
   <data name="Show" xml:space="preserve">
     <value>Afficher</value>
   </data>
   <data name="SideBlack" xml:space="preserve">
-    <value>SideBlack</value>
+    <value>NoirCôté</value>
   </data>
   <data name="Sign_out" xml:space="preserve">
-    <value>Sign out</value>
+    <value>Se déconnecter</value>
   </data>
   <data name="Site_best_viewed" xml:space="preserve">
-    <value>Site best viewed in IE8+, Firefox 3.5+, Chrome 3+, Safari 5.0+ at 1024 x 768 pixels resolution.</value>
+    <value>Site optimisé pour IE8+, Firefox 3.5+, Chrome 3+, Safari 5.0+ à une résolution de 1024 x 768 pixels.</value>
   </data>
   <data name="Site_not_blocked" xml:space="preserve">
     <value>Site non bloqué</value>
@@ -1687,22 +1684,22 @@
     <value>Taille</value>
   </data>
   <data name="SizePermitted" xml:space="preserve">
-    <value>SizePermitted</value>
+    <value>TailleAutorisée</value>
   </data>
   <data name="Sizes" xml:space="preserve">
-    <value>Sizes</value>
+    <value>Tailles</value>
   </data>
   <data name="SIZE_CARATS" xml:space="preserve">
     <value>TAILLE (CARATS)</value>
   </data>
   <data name="Slow_Moving_Goods" xml:space="preserve">
-    <value>Slow Moving Goods</value>
+    <value>Biens à circulation Lente</value>
   </data>
   <data name="Sold" xml:space="preserve">
     <value>Vendu</value>
   </data>
   <data name="SOLD_IN" xml:space="preserve">
-    <value>SOLD IN</value>
+    <value>VENDU EN</value>
   </data>
   <data name="Specfic_search" xml:space="preserve">
     <value>Recherche spécifique</value>
@@ -1714,16 +1711,16 @@
     <value>Mémo partagé</value>
   </data>
   <data name="Sr_No" xml:space="preserve">
-    <value>Sr.No.</value>
+    <value>N° de série</value>
   </data>
   <data name="Starlength" xml:space="preserve">
     <value>LongueurÉtoile</value>
   </data>
   <data name="Start_Size_Permitted" xml:space="preserve">
-    <value>Start Size Permitted</value>
+    <value>Taille de départ autorisée</value>
   </data>
   <data name="Star_Length" xml:space="preserve">
-    <value>Star Length</value>
+    <value>Longueur étoile</value>
   </data>
   <data name="State" xml:space="preserve">
     <value>Région</value>
@@ -1738,7 +1735,7 @@
     <value>Détails du stock</value>
   </data>
   <data name="Stock_Status" xml:space="preserve">
-    <value>Stock Status</value>
+    <value>État du stock</value>
   </data>
   <data name="Stock_Summary" xml:space="preserve">
     <value>Résumé du stock</value>
@@ -1747,7 +1744,7 @@
     <value>Comptage du stock</value>
   </data>
   <data name="Stock_Turn_Report" xml:space="preserve">
-    <value>Stock Turn Report</value>
+    <value>Rapport sur la rotation du stock</value>
   </data>
   <data name="Stock__Summary" xml:space="preserve">
     <value>Stock et résumé</value>
@@ -1759,34 +1756,34 @@
     <value>Identifiants pierres</value>
   </data>
   <data name="Stone_Origin" xml:space="preserve">
-    <value>Stone Origin</value>
+    <value>Origine de la pierre</value>
   </data>
   <data name="Stone_Status" xml:space="preserve">
     <value>Statut de la pierre</value>
   </data>
   <data name="Subject" xml:space="preserve">
-    <value>Subject</value>
+    <value>Objet</value>
   </data>
   <data name="Submit" xml:space="preserve">
     <value>Envoyer</value>
   </data>
   <data name="Summary_Discount" xml:space="preserve">
-    <value>Summary Discount</value>
+    <value>Résumé remise</value>
   </data>
   <data name="SUPER_ADMIN" xml:space="preserve">
     <value>SUPER ADMIN</value>
   </data>
   <data name="Support" xml:space="preserve">
-    <value>Support</value>
+    <value>Assistance</value>
   </data>
   <data name="Support_Admin" xml:space="preserve">
-    <value>Support Admin</value>
+    <value>Admin assistance</value>
   </data>
   <data name="Symmetry" xml:space="preserve">
     <value>Symétrie</value>
   </data>
   <data name="System" xml:space="preserve">
-    <value>System</value>
+    <value>Système</value>
   </data>
   <data name="System_discount_K" xml:space="preserve">
     <value>moins : Remise système 0K-15K</value>
@@ -1795,7 +1792,7 @@
     <value>Table%</value>
   </data>
   <data name="TableBlack" xml:space="preserve">
-    <value>NoirTable</value>
+    <value>TableBlack</value>
   </data>
   <data name="TB0" xml:space="preserve">
     <value>TB0</value>
@@ -1813,25 +1810,25 @@
     <value>TB4</value>
   </data>
   <data name="TB_Low" xml:space="preserve">
-    <value>TB: Low</value>
+    <value>TB : Faible</value>
   </data>
   <data name="Terms_of_Use" xml:space="preserve">
-    <value>Terms of Use</value>
+    <value>Conditions générales d’utilisation</value>
   </data>
   <data name="The_site_allows_clients_to_browse" xml:space="preserve">
-    <value>The site allows clients to browse, select and order stones from our global inventory of certified stones for their needs and convenience. We want our partners to buy "just-in-time" and manage their inventory smartly by "Multiplying their inventory".</value>
+    <value>Le site permet aux clients de parcourir, sélectionner et commander des pierres provenant de notre stock mondial de pierres certifiées, en fonction de leurs besoins. Nous voulons que nos partenaires achètent « juste à temps » et gèrent leur stock de manière intelligente en « multipliant leur stock ».</value>
   </data>
   <data name="The_site_offers_stones_certified" xml:space="preserve">
-    <value>The site offers stones certified (from 25 points upwards) by reputed third party grading laboratories like GIA, HRD, AGS, IGI etc., to ensure that our clients can access stocks which are fully trusted by their customers. Thereby enables our clients to obtain all their requirements from a single source, reducing their time and effort.</value>
+    <value>Le site propose des pierres certifiées (à partir de 25 points) par des laboratoires de classement indépendants réputés, tels que GIA, HRD, AGS, IGI, etc., afin de garantir à nos clients l’accès à des stocks auxquels ils peuvent faire entièrement confiance. Ainsi, nos clients peuvent satisfaire tous leurs besoins à partir d’une source unique, ce qui leur permet d’économiser du temps et des efforts.</value>
   </data>
   <data name="This" xml:space="preserve">
-    <value>This</value>
+    <value>Ceci</value>
   </data>
   <data name="TIN" xml:space="preserve">
-    <value>TIN (Trade Identification Number)</value>
+    <value>TIN (Code article international)</value>
   </data>
   <data name="Toggle_navigation" xml:space="preserve">
-    <value>Toggle navigation</value>
+    <value>Basculer la navigation</value>
   </data>
   <data name="Total" xml:space="preserve">
     <value>Total</value>
@@ -1840,16 +1837,16 @@
     <value>TotalTrouvé</value>
   </data>
   <data name="Total_Amount" xml:space="preserve">
-    <value>Total Amount</value>
+    <value>Montant total</value>
   </data>
   <data name="Total_Amt" xml:space="preserve">
     <value>Montant total</value>
   </data>
   <data name="Total_CT" xml:space="preserve">
-    <value>Nombre total</value>
+    <value>CT total</value>
   </data>
   <data name="Total_Found" xml:space="preserve">
-    <value>Total Found</value>
+    <value>Total trouvé</value>
   </data>
   <data name="Total_Inventory" xml:space="preserve">
     <value>Inventaire total</value>
@@ -1858,7 +1855,7 @@
     <value>Montant total à payer :</value>
   </data>
   <data name="Total_pcs" xml:space="preserve">
-    <value>Total pcs</value>
+    <value>Total articles</value>
   </data>
   <data name="Total_Rap_Price" xml:space="preserve">
     <value>Prix Rap Total ($)</value>
@@ -1867,16 +1864,16 @@
     <value>Nombre RFID total</value>
   </data>
   <data name="Total_Stones" xml:space="preserve">
-    <value>Total Stones</value>
+    <value>Total pierres</value>
   </data>
   <data name="Tot_Amount" xml:space="preserve">
-    <value>Tot.Amount($)</value>
+    <value>Montant.Tot($)</value>
   </data>
   <data name="Tot_Carat" xml:space="preserve">
-    <value>Tot.Carat</value>
+    <value>Carat.Tot</value>
   </data>
   <data name="Tot_Rap" xml:space="preserve">
-    <value>Tot.Rap($)</value>
+    <value>Rap.Tot($)</value>
   </data>
   <data name="Tracking_Number" xml:space="preserve">
     <value>Numéro de suivi</value>
@@ -1891,7 +1888,7 @@
     <value>Événements à venir</value>
   </data>
   <data name="Update" xml:space="preserve">
-    <value>Update</value>
+    <value>Actualiser</value>
   </data>
   <data name="Uplaod_Format_Common" xml:space="preserve">
     <value>Envoyer Format Commun</value>
@@ -1906,10 +1903,10 @@
     <value>Date d’envoi</value>
   </data>
   <data name="Uploaded_Discount" xml:space="preserve">
-    <value>Uploaded Discount</value>
+    <value>Envoyer remise</value>
   </data>
   <data name="Uploaded_Rap_Price" xml:space="preserve">
-    <value>Uploaded Rap Price</value>
+    <value>Tarif Rap envoyé</value>
   </data>
   <data name="Upload_Add_Remove_Lab_Format" xml:space="preserve">
     <value>Envoyer Ajouter/Supprimer Format Lab</value>
@@ -1918,13 +1915,13 @@
     <value>Envoyer Format Best Deal</value>
   </data>
   <data name="Upload_Format_Common" xml:space="preserve">
-    <value>Upload Format Common</value>
+    <value>Envoyer Format Commun</value>
   </data>
   <data name="Upload_History" xml:space="preserve">
     <value>Historique des envois</value>
   </data>
   <data name="Upload_Id_Proof" xml:space="preserve">
-    <value>Upload Id-Proof</value>
+    <value>Envoyer preuve d’identité</value>
   </data>
   <data name="Upload_Inventory" xml:space="preserve">
     <value>Envoyer l’inventaire</value>
@@ -1939,19 +1936,19 @@
     <value>Envoyer identifiants pierres</value>
   </data>
   <data name="Users" xml:space="preserve">
-    <value>Users</value>
+    <value>Utilisateurs</value>
   </data>
   <data name="User_Detail" xml:space="preserve">
     <value>Coordonnées utilisateur</value>
   </data>
   <data name="User_Menu_Permission" xml:space="preserve">
-    <value>User Menu Permission</value>
+    <value>Autorisation du menu utilisateur</value>
   </data>
   <data name="User_Name" xml:space="preserve">
     <value>Nom d’utilisateur</value>
   </data>
   <data name="User_Status" xml:space="preserve">
-    <value>User Status</value>
+    <value>Statut utilisateur</value>
   </data>
   <data name="User_Vs_Rights" xml:space="preserve">
     <value>Utilisateur vs. Droits</value>
@@ -1969,10 +1966,10 @@
     <value>Valide</value>
   </data>
   <data name="Verify_OTP" xml:space="preserve">
-    <value>Verify OTP</value>
+    <value>Vérifier OTP</value>
   </data>
   <data name="Very_Good" xml:space="preserve">
-    <value>Very Good</value>
+    <value>Très bon</value>
   </data>
   <data name="VG" xml:space="preserve">
     <value>3VG+</value>
@@ -1981,43 +1978,43 @@
     <value>Afficher</value>
   </data>
   <data name="View_Customer_Activity_Log" xml:space="preserve">
-    <value>View Customer Activity Log</value>
+    <value>Afficher le journal des activités du client</value>
   </data>
   <data name="View_Customer_Details" xml:space="preserve">
-    <value>View Customer Details</value>
+    <value>Afficher les coordonnées du client</value>
   </data>
   <data name="View_Customer_Recent_Searches" xml:space="preserve">
-    <value>View Customer Recent Searches</value>
+    <value>Afficher Recherche récente du client</value>
   </data>
   <data name="View_Memo_Details" xml:space="preserve">
-    <value>Voir les détails du mémo</value>
+    <value>Afficher les détails du mémo</value>
   </data>
   <data name="View_Order_Details" xml:space="preserve">
-    <value>Voir les détails de la commande</value>
+    <value>Afficher les détails de la commande</value>
   </data>
   <data name="View_Pending_Orders" xml:space="preserve">
     <value>Afficher Commandes en cours</value>
   </data>
   <data name="View_Request" xml:space="preserve">
-    <value>View Request</value>
+    <value>Afficher Demande</value>
   </data>
   <data name="View_Sold_History" xml:space="preserve">
     <value>Afficher l’historique des ventes</value>
   </data>
   <data name="Watch_List" xml:space="preserve">
-    <value>Watch-List</value>
+    <value>Liste de surveillance</value>
   </data>
   <data name="Website" xml:space="preserve">
-    <value>Website</value>
+    <value>Site Web</value>
   </data>
   <data name="Website_Order_Pending" xml:space="preserve">
     <value>Commande en cours sur le site</value>
   </data>
   <data name="Web_Avg_Discount" xml:space="preserve">
-    <value>Web Avg. Discount</value>
+    <value>Moyenne Web Remise</value>
   </data>
   <data name="Web_Mode" xml:space="preserve">
-    <value>Web Mode</value>
+    <value>Mode Web</value>
   </data>
   <data name="Weight" xml:space="preserve">
     <value>Poids</value>
@@ -2029,12 +2026,12 @@
     <value>Bienvenue chez Rosy Blue</value>
   </data>
   <data name="Width" xml:space="preserve">
-    <value>Width</value>
+    <value>Largeur</value>
   </data>
   <data name="Zip_Code" xml:space="preserve">
     <value>Code postal</value>
   </data>
   <data name="ZIP_PIN" xml:space="preserve">
-    <value>ZIP/PIN</value>
+    <value>Code postal</value>
   </data>
 </root>

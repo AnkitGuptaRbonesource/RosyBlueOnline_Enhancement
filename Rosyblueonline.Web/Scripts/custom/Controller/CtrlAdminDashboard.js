@@ -211,29 +211,35 @@
                     data: data.SpecificSearch,
                     columns: [
                         { data: "Createdon" },
+                        { data: "Createdon" },
                         { data: "TotalFound" },
                         { data: "displayCriteria" },
                         { data: "searchCriteria" },
                         { data: "recentSearchID" }
                     ],
                     columnDefs: [{
-                        targets: [0, 1, 2, 3, 4],
-                        className: "rsearch"
-                    }, {
-                        targets: [0],
+                        targets: [0, 1, 2, 3, 4,5],
+                        className: "rsearch",
+
+                    },
+                        {
+                            "targets": [0],
+                            "visible": false
+                        },{
+                        targets: [1],
                         render: function (data, type, row) {
                            // return moment(row.Createdon).format(myApp.dateFormat.Client);
                             return moment(row.Createdon).fromNow(true) + ' ago';
                         },
                         orderable: false
                     }, {
-                        targets: [3],
+                        targets: [4],
                         render: function (data, type, row) {
                             return '<a class="loadData show-selink" data-Criteria="' + row.searchCriteria + '" href="#"><span class="se-bx" data-Criteria="' + row.searchCriteria + '"><i class="fa fa-search" aria-hidden="true" data-Criteria="' + row.searchCriteria + '"></i></span> Show Results</a>';
                         },
                         orderable: false
                     }, {
-                        targets: [4],
+                        targets: [5],
                         render: function (data, type, row) {
                             return '<a class="removeSearch" data-id="' + row.recentSearchID + '" href="#"><span class="se-bx de-bx"  data-id="' + row.recentSearchID + '"><i class="fa fa-trash" aria-hidden="true"  data-id="' + row.recentSearchID + '"></i></span></a>';
                         },
@@ -532,7 +538,7 @@
                     paging: true,
                     lengthChange: false,
                     pageLength: 10,
-                    order: [[1, "desc"]],
+                    order: [[0, "desc"]],
                     ajax: {
                         type: 'Post',
                         url: '/Dashboard/CustomerListingPendingApproval',
@@ -826,6 +832,8 @@
                     paging: true,
                     lengthChange: false,
                     pageLength: 10,
+                    scrollY: "270px",
+                    scrollX: true,
                     order: [[1, "desc"]],
                     ajax: {
                         type: 'Post',

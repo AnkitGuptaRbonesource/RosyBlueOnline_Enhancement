@@ -30,7 +30,13 @@
 
         objDS.AddToCartPermitted().then(function (data) {
             if (data.IsSuccess) {
-                $('#hfAddToCartPermittedcount').val(data.Result.AddtocartPermitted);
+                if (data.Result == "" || data.Result == null) {
+                    $('#hfAddToCartPermittedcount').val(0);
+
+                } else {
+                    $('#hfAddToCartPermittedcount').val(data.Result.AddtocartPermitted);
+
+                }
             }
         }, function (error) {
 

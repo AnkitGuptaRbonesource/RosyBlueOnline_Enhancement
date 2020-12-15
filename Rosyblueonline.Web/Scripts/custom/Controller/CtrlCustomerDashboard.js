@@ -161,11 +161,12 @@
                 src: '#tblRecentSearch',
                 dataTable: {
                     paging: false,
-                   // order: [[0, "desc"]],
+                     order: [[0, "desc"]],
                     processing: false,
                     serverSide: false,
                     data: data.SpecificSearch,
                     columns: [
+                        { data: "Createdon"  },
                         { data: "Createdon" },
                         { data: "TotalFound" },
                         { data: "displayCriteria" },
@@ -173,10 +174,14 @@
                         { data: "recentSearchID" }
                     ],
                     columnDefs: [{
-                        targets: [0, 1, 2, 3, 4],
+                        targets: [0, 1, 2, 3, 4,5],
                         className: "rsearch"
-                    }, {
-                        targets: [0],
+                    },
+                        {
+                            "targets": [0],
+                            "visible": false
+                        },{
+                        targets: [1],
                             render: function (data, type, row) {
                                // return row.Createdon;
                                 return moment(row.Createdon).fromNow(true) + ' ago';
@@ -184,13 +189,13 @@
                         },
                         orderable: false
                     }, {
-                        targets: [3],
+                        targets: [4],
                         render: function (data, type, row) {
                             return '<a class="loadData show-selink" data-Criteria="' + row.searchCriteria + '" href="#"><span class="se-bx" data-Criteria="' + row.searchCriteria + '"><i class="fa fa-search" data-Criteria="' + row.searchCriteria + '"  aria-hidden="true"></i></span> Show Results</a>';
                         },
                         orderable: false
                     }, {
-                        targets: [4],
+                        targets: [5],
                         render: function (data, type, row) {
                             return '<a class="removeSearch" data-id="' + row.recentSearchID + '" href="#"><span class="se-bx de-bx"><i class="fa fa-trash" aria-hidden="true"></i></span></a>';
                         },

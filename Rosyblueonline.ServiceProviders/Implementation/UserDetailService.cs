@@ -880,6 +880,7 @@ namespace Rosyblueonline.ServiceProviders.Implementation
                 objLD.isApproved = isApproved;
                 objLD.approvedBy = ApprovedBy;
                 objLD.approvedOn = DateTime.Now;
+                objLD.userStatus = 1;
                 this.uow.LoginDetails.Edit(objLD);
                 return this.uow.Save();
             }

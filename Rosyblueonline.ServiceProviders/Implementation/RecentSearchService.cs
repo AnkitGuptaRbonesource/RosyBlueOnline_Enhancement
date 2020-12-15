@@ -44,9 +44,9 @@ namespace Rosyblueonline.ServiceProviders.Implementation
             return this.uow.RecentSearches.Queryable().Where(x => x.recentSearchID == recentSearchID && x.createdBy == CreatedBy).FirstOrDefault();
         }
 
-        public List<SelectOptionsViewModel> GetForOptions(string SearchType)
+        public List<SelectOptionsViewModel> GetForOptions(string SearchType,int LoginID)
         {
-            return this.uow.RecentSearches.Queryable().Where(x => x.searchType == SearchType).AsEnumerable().Select(x => new SelectOptionsViewModel { Value = x.recentSearchID, Text = x.searchCriteriaName, Text2 = x.searchCriteria }).ToList();
+            return this.uow.RecentSearches.Queryable().Where(x => x.searchType == SearchType && x.createdBy== LoginID).AsEnumerable().Select(x => new SelectOptionsViewModel { Value = x.recentSearchID, Text = x.searchCriteriaName, Text2 = x.searchCriteria }).ToList();
         }
 
         public int Delete(int recentSearchID)

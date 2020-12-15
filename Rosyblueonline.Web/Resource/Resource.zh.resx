@@ -124,16 +124,16 @@
     <value>关于</value>
   </data>
   <data name="Account_Number" xml:space="preserve">
-    <value>Account Number</value>
+    <value>账号</value>
   </data>
   <data name="Action" xml:space="preserve">
     <value>行动</value>
   </data>
   <data name="ActionDetails" xml:space="preserve">
-    <value>ActionDetails</value>
+    <value>操作详情</value>
   </data>
   <data name="ActionName" xml:space="preserve">
-    <value>Action Name</value>
+    <value>操作名称</value>
   </data>
   <data name="Actions" xml:space="preserve">
     <value>动作</value>
@@ -145,10 +145,10 @@
     <value>有效库存</value>
   </data>
   <data name="Activity" xml:space="preserve">
-    <value>Activity</value>
+    <value>活动</value>
   </data>
   <data name="Add" xml:space="preserve">
-    <value>Add</value>
+    <value>添加</value>
   </data>
   <data name="Additional_Discount" xml:space="preserve">
     <value>减 ：其他折扣</value>
@@ -163,19 +163,19 @@
     <value>地址行 2</value>
   </data>
   <data name="Address_of_Registered_Office" xml:space="preserve">
-    <value>Address of Registered Office</value>
+    <value>注册办事处地址</value>
   </data>
   <data name="Add_Address" xml:space="preserve">
-    <value>Add Address</value>
+    <value>添加地址</value>
   </data>
   <data name="Add_Bestdeal" xml:space="preserve">
     <value>添加最惠交易</value>
   </data>
   <data name="Add_Best_Deal" xml:space="preserve">
-    <value>Add Best Deal</value>
+    <value>添加最优惠价格</value>
   </data>
   <data name="Add_Best_Deals" xml:space="preserve">
-    <value>Add Best Deals</value>
+    <value>添加最优惠价格</value>
   </data>
   <data name="Add_Customer" xml:space="preserve">
     <value>添加客户</value>
@@ -190,7 +190,7 @@
     <value>添加角色和权利</value>
   </data>
   <data name="Add_to_Memo" xml:space="preserve">
-    <value>Add to Memo</value>
+    <value>添加到备忘录</value>
   </data>
   <data name="Add_User" xml:space="preserve">
     <value>添加用户</value>
@@ -199,7 +199,7 @@
     <value>高级搜寻</value>
   </data>
   <data name="All" xml:space="preserve">
-    <value>All</value>
+    <value>全部</value>
   </data>
   <data name="All_Memo" xml:space="preserve">
     <value>所有备忘</value>
@@ -211,10 +211,10 @@
     <value>注释：所有订单均以美元为单位。</value>
   </data>
   <data name="ALL_ROLES" xml:space="preserve">
-    <value>ALL ROLES</value>
+    <value>全部角色</value>
   </data>
   <data name="All_Shape" xml:space="preserve">
-    <value>All Shape</value>
+    <value>全部外形</value>
   </data>
   <data name="Already_Assigned" xml:space="preserve">
     <value>已分配</value>
@@ -229,28 +229,28 @@
     <value>金额（美元）</value>
   </data>
   <data name="Amount__US" xml:space="preserve">
-    <value>Amount (US$):</value>
+    <value>金额（美元）：</value>
   </data>
   <data name="and" xml:space="preserve">
-    <value>and</value>
+    <value>和</value>
   </data>
   <data name="Apply_Last_Changed_Discount" xml:space="preserve">
-    <value>Apply Last Changed Discount</value>
+    <value>使用最后一次更改折扣</value>
   </data>
   <data name="Apply_Previous_Discount" xml:space="preserve">
-    <value>Apply Previous Discount</value>
+    <value>使用之前折扣</value>
   </data>
   <data name="Approve" xml:space="preserve">
     <value>批准</value>
   </data>
   <data name="Asscher" xml:space="preserve">
-    <value>Asscher</value>
+    <value>阿斯切</value>
   </data>
   <data name="Available" xml:space="preserve">
     <value>可用</value>
   </data>
   <data name="Avg" xml:space="preserve">
-    <value>Avg</value>
+    <value>平均</value>
   </data>
   <data name="Avgct" xml:space="preserve">
     <value>平均（美元）/克拉</value>
@@ -262,13 +262,13 @@
     <value>平均优惠（％）</value>
   </data>
   <data name="Avg_Price_ct" xml:space="preserve">
-    <value>Avg.Price/ct($)</value>
+    <value>均价/克拉（美元）</value>
   </data>
   <data name="Avg_Rap_ct" xml:space="preserve">
-    <value>Avg.Rap/ct($)</value>
+    <value>平均说唱/ ct（$）</value>
   </data>
   <data name="Avg_Rap_Off" xml:space="preserve">
-    <value>Avg.Rap.Off(%)</value>
+    <value>平均Rap.Off（％）</value>
   </data>
   <data name="Back" xml:space="preserve">
     <value>返回</value>
@@ -280,25 +280,25 @@
     <value>变更前</value>
   </data>
   <data name="Below_prices_amounts" xml:space="preserve">
-    <value>Below prices/amounts are exclusive of government levies &amp; taxes (VAT, OCTROI etc). These will be added on the final invoice wherever applicable.</value>
+    <value>以下价格/金额不含政府税（增值税，货物入市税等）。 这些项目会在适用时添加在最终发票上。</value>
   </data>
   <data name="BEST_DEAL" xml:space="preserve">
     <value>最优惠价格</value>
   </data>
   <data name="Best_Deals_Discount" xml:space="preserve">
-    <value>Best Deals Discount</value>
+    <value>最优惠折扣</value>
   </data>
   <data name="Best_Deals_Remark" xml:space="preserve">
-    <value>Best Deals Remark</value>
+    <value>最优惠价格备注</value>
   </data>
   <data name="Best_Deals_Text" xml:space="preserve">
-    <value>Best Deals Text</value>
+    <value>最优惠价格文字</value>
   </data>
   <data name="Billing_Address" xml:space="preserve">
-    <value>Billing Address</value>
+    <value>帐单地址</value>
   </data>
   <data name="Blocked_Customers" xml:space="preserve">
-    <value>Blocked Customers</value>
+    <value>限制客户</value>
   </data>
   <data name="Block_Site" xml:space="preserve">
     <value>屏蔽网站</value>
@@ -316,25 +316,25 @@
     <value>箱名</value>
   </data>
   <data name="Box_No" xml:space="preserve">
-    <value>Box No</value>
+    <value>箱号</value>
   </data>
   <data name="Branch" xml:space="preserve">
     <value>分行</value>
   </data>
   <data name="Branch_Address" xml:space="preserve">
-    <value>Branch Address</value>
+    <value>分行地址</value>
   </data>
   <data name="Branch_Name" xml:space="preserve">
-    <value>Branch Name</value>
+    <value>分店名称</value>
   </data>
   <data name="By" xml:space="preserve">
-    <value>By</value>
+    <value>通过</value>
   </data>
   <data name="By_no_of_stone" xml:space="preserve">
-    <value>By no of stone</value>
+    <value>按照宝石编号</value>
   </data>
   <data name="By_Value" xml:space="preserve">
-    <value>By Value</value>
+    <value>按价值</value>
   </data>
   <data name="Cancel" xml:space="preserve">
     <value>取消</value>
@@ -346,16 +346,16 @@
     <value>取消备忘录</value>
   </data>
   <data name="Cancel_Order" xml:space="preserve">
-    <value>Cancel Order</value>
+    <value>取消订单</value>
   </data>
   <data name="Carat" xml:space="preserve">
-    <value>Carat</value>
+    <value>克拉</value>
   </data>
   <data name="Cart" xml:space="preserve">
-    <value>Cart</value>
+    <value>购物车</value>
   </data>
   <data name="Cash" xml:space="preserve">
-    <value>Cash</value>
+    <value>现金</value>
   </data>
   <data name="CB0" xml:space="preserve">
     <value>CB0</value>
@@ -373,7 +373,7 @@
     <value>CB4</value>
   </data>
   <data name="CB_Low" xml:space="preserve">
-    <value>CB: Low</value>
+    <value>CB：低</value>
   </data>
   <data name="CentreBlack" xml:space="preserve">
     <value>中央黑色</value>
@@ -385,13 +385,13 @@
     <value>证书编号</value>
   </data>
   <data name="CertificateNo" xml:space="preserve">
-    <value>CertificateNo</value>
+    <value>证书编号</value>
   </data>
   <data name="Certificate_No" xml:space="preserve">
     <value>证书号码</value>
   </data>
   <data name="Certificate_upload" xml:space="preserve">
-    <value>Certificate upload</value>
+    <value>证书上传</value>
   </data>
   <data name="Cert_No" xml:space="preserve">
     <value>证书编号</value>
@@ -409,7 +409,7 @@
     <value>改变钻石报价</value>
   </data>
   <data name="Change_summary_Discounts" xml:space="preserve">
-    <value>Change Summary Discounts</value>
+    <value>更改摘要折扣</value>
   </data>
   <data name="City" xml:space="preserve">
     <value>城市</value>
@@ -418,10 +418,10 @@
     <value>净度</value>
   </data>
   <data name="Clarity_comes" xml:space="preserve">
-    <value>Clarity comes accompanied by a diamond grading report from the</value>
+    <value>净度随附钻石的分级报告，提供方为</value>
   </data>
   <data name="Close" xml:space="preserve">
-    <value>Close</value>
+    <value>关闭</value>
   </data>
   <data name="Closing" xml:space="preserve">
     <value>关闭</value>
@@ -445,22 +445,22 @@
     <value>公司名</value>
   </data>
   <data name="Compare" xml:space="preserve">
-    <value>Compare</value>
+    <value>相比</value>
   </data>
   <data name="Comparing" xml:space="preserve">
-    <value>Comparing</value>
+    <value>比较中</value>
   </data>
   <data name="Completed" xml:space="preserve">
-    <value>Completed</value>
+    <value>已完成</value>
   </data>
   <data name="Confirm" xml:space="preserve">
-    <value>Confirm</value>
+    <value>确认</value>
   </data>
   <data name="Confirm_Memo" xml:space="preserve">
-    <value>Confirm Memo</value>
+    <value>确认备忘录</value>
   </data>
   <data name="Confirm_Order" xml:space="preserve">
-    <value>Confirm Order</value>
+    <value>确认订单</value>
   </data>
   <data name="Confirm_Password" xml:space="preserve">
     <value>确认密码</value>
@@ -472,28 +472,25 @@
     <value>包含</value>
   </data>
   <data name="Continue_mode" xml:space="preserve">
-    <value>Continue mode</value>
+    <value>继续模式</value>
   </data>
   <data name="Count" xml:space="preserve">
-    <value>Count</value>
+    <value>计数</value>
   </data>
   <data name="Country" xml:space="preserve">
     <value>国家</value>
   </data>
   <data name="Created" xml:space="preserve">
-    <value>Created</value>
+    <value>已创建</value>
   </data>
   <data name="CreatedOn" xml:space="preserve">
-    <value>CreatedOn</value>
+    <value>创建于</value>
   </data>
   <data name="Created_By" xml:space="preserve">
     <value>制作方</value>
   </data>
   <data name="Created_Dae" xml:space="preserve">
     <value>创建日期</value>
-  </data>
-  <data name="Created_Date" xml:space="preserve">
-    <value>Created_Date</value>
   </data>
   <data name="Created_On" xml:space="preserve">
     <value>创建于</value>
@@ -505,22 +502,22 @@
     <value>标准</value>
   </data>
   <data name="Criteria_Matching_Pair" xml:space="preserve">
-    <value>Criteria Matching Pair</value>
+    <value>条件匹配对</value>
   </data>
   <data name="CrownAngle" xml:space="preserve">
     <value>冠角</value>
   </data>
   <data name="CrownBlack" xml:space="preserve">
-    <value>CrownBlack</value>
+    <value>冠黑色</value>
   </data>
   <data name="CrownHeight" xml:space="preserve">
     <value>冠高</value>
   </data>
   <data name="Crown_Angle" xml:space="preserve">
-    <value>Crown Angle</value>
+    <value>冠角</value>
   </data>
   <data name="Crown_Height" xml:space="preserve">
-    <value>Crown Height</value>
+    <value>冠高</value>
   </data>
   <data name="CT" xml:space="preserve">
     <value>CT</value>
@@ -529,28 +526,28 @@
     <value>当前状态</value>
   </data>
   <data name="Cushion" xml:space="preserve">
-    <value>Cushion</value>
+    <value>坐垫</value>
   </data>
   <data name="Customer" xml:space="preserve">
     <value>客户</value>
   </data>
   <data name="Customer_Activity_Details" xml:space="preserve">
-    <value>Customer Activity Details</value>
+    <value>客户活动详情</value>
   </data>
   <data name="Customer_Address" xml:space="preserve">
-    <value>Customer Address</value>
+    <value>客户地址</value>
   </data>
   <data name="Customer_Demand" xml:space="preserve">
-    <value>Customer Demand</value>
+    <value>客户需求</value>
   </data>
   <data name="Customer_Demands" xml:space="preserve">
     <value>客户需求</value>
   </data>
   <data name="Customer_Name" xml:space="preserve">
-    <value>Customer Name</value>
+    <value>顾客姓名</value>
   </data>
   <data name="Customer_Order_Report" xml:space="preserve">
-    <value>Customer Order Report</value>
+    <value>客户订单报告</value>
   </data>
   <data name="Customer_Recent_Search" xml:space="preserve">
     <value>客户最近搜索</value>
@@ -571,7 +568,7 @@
     <value>日期</value>
   </data>
   <data name="Date_Of_Establishment" xml:space="preserve">
-    <value>Date Of Establishment</value>
+    <value>确立时间</value>
   </data>
   <data name="Delete" xml:space="preserve">
     <value>删除</value>
@@ -583,16 +580,16 @@
     <value>需求名称</value>
   </data>
   <data name="Demand_Search" xml:space="preserve">
-    <value>Demand Search</value>
+    <value>需求搜索</value>
   </data>
   <data name="Dept" xml:space="preserve">
-    <value>Dept</value>
+    <value>部门</value>
   </data>
   <data name="Depth" xml:space="preserve">
     <value>深 ％</value>
   </data>
   <data name="Describe_your_Demands" xml:space="preserve">
-    <value>Describe your Demands</value>
+    <value>描述您的需求</value>
   </data>
   <data name="Detail" xml:space="preserve">
     <value>详情</value>
@@ -601,31 +598,31 @@
     <value>尺寸</value>
   </data>
   <data name="Diamond" xml:space="preserve">
-    <value>Diamond</value>
+    <value>钻石</value>
   </data>
   <data name="Diamond_Detail" xml:space="preserve">
-    <value>Diamond Detail</value>
+    <value>钻石详情</value>
   </data>
   <data name="Diamond_Status" xml:space="preserve">
-    <value>Diamond Status:</value>
+    <value>钻石状态：</value>
   </data>
   <data name="Direct_Ship" xml:space="preserve">
-    <value>Direct Ship</value>
+    <value>直接运输</value>
   </data>
   <data name="Disable_Inventory" xml:space="preserve">
     <value>禁用库存</value>
   </data>
   <data name="Disc" xml:space="preserve">
-    <value>Disc</value>
+    <value>盘</value>
   </data>
   <data name="Disclaimer" xml:space="preserve">
-    <value>Disclaimer:</value>
+    <value>免责声明：</value>
   </data>
   <data name="DisclaimerText" xml:space="preserve">
-    <value>Please note that the Rap ($) price list published every Friday evening (IST) is updated in our system over the weekend. In case of a situation where in you have placed an order and the Rap price is revised during the course of order processing, the revised Rap ($) rate will be applied to the order.</value>
+    <value>请注意，系统会在周末对每周五晚（IST）发布的报价表（美元）进行更新。如果您已下订单，但报价表在订单处理过程中出现修改，将对订单采用修改后的报价表价格（美元）。</value>
   </data>
   <data name="Discount" xml:space="preserve">
-    <value>Discount(%)</value>
+    <value>折扣（％）</value>
   </data>
   <data name="Discount_for_BlueNile_upload_data" xml:space="preserve">
     <value>为 Blue-Nile 上传数据设置差异折扣</value>
@@ -637,10 +634,10 @@
     <value>为 James Allen 上传数据设置差异折扣</value>
   </data>
   <data name="Discount_Per" xml:space="preserve">
-    <value>Discount (%):</value>
+    <value>折扣（％）：</value>
   </data>
   <data name="Doc_Expiry_Date" xml:space="preserve">
-    <value>Doc Expiry Date</value>
+    <value>文件到期日</value>
   </data>
   <data name="Does_not_Contains" xml:space="preserve">
     <value>不包含</value>
@@ -649,19 +646,19 @@
     <value>下载</value>
   </data>
   <data name="DownloadPermitted" xml:space="preserve">
-    <value>DownloadPermitted</value>
+    <value>下载许可</value>
   </data>
   <data name="Download_Excel" xml:space="preserve">
-    <value>Download Excel</value>
+    <value>下载 Excel</value>
   </data>
   <data name="Download_sample_file_for_upload" xml:space="preserve">
     <value>下载样本文件进行上传。</value>
   </data>
   <data name="Download_sample_file_for_upload1" xml:space="preserve">
-    <value>Download sample (.xlsx) file for upload</value>
+    <value>下载需上传的样品（.xlsx）文件</value>
   </data>
   <data name="Down_for_maintenance" xml:space="preserve">
-    <value>Down for maintenance</value>
+    <value>由于维护原因而关闭</value>
   </data>
   <data name="DR" xml:space="preserve">
     <value>D/R</value>
@@ -673,22 +670,22 @@
     <value>编辑</value>
   </data>
   <data name="Edit_Memo" xml:space="preserve">
-    <value>Edit Memo</value>
+    <value>编辑备忘录</value>
   </data>
   <data name="Edit_Profile" xml:space="preserve">
-    <value>Edit Profile</value>
+    <value>编辑个人资料</value>
   </data>
   <data name="Email" xml:space="preserve">
     <value>电子邮件</value>
   </data>
   <data name="Email_Address" xml:space="preserve">
-    <value>Email Address</value>
+    <value>电子邮件地址</value>
   </data>
   <data name="Email_ID" xml:space="preserve">
-    <value>Email ID</value>
+    <value>电子邮件 ID</value>
   </data>
   <data name="Emerald" xml:space="preserve">
-    <value>Emerald</value>
+    <value>翡翠</value>
   </data>
   <data name="Enable_Inventory" xml:space="preserve">
     <value>启用库存</value>
@@ -700,7 +697,7 @@
     <value>输入批次编号</value>
   </data>
   <data name="Enter_the_code" xml:space="preserve">
-    <value>Enter the code</value>
+    <value>输入验证码</value>
   </data>
   <data name="EX" xml:space="preserve">
     <value>3EX</value>
@@ -709,7 +706,7 @@
     <value>Excel</value>
   </data>
   <data name="Excellent" xml:space="preserve">
-    <value>Excellent</value>
+    <value>优秀</value>
   </data>
   <data name="Excel_Download" xml:space="preserve">
     <value>Excel 下载</value>
@@ -718,10 +715,10 @@
     <value>执行</value>
   </data>
   <data name="ExportToExcel" xml:space="preserve">
-    <value>ExportToExcel</value>
+    <value>导出到 Excel</value>
   </data>
   <data name="Export_Excel" xml:space="preserve">
-    <value>Export Excel</value>
+    <value>导出 Excel</value>
   </data>
   <data name="Export_to_Excel" xml:space="preserve">
     <value>导出到 Excel</value>
@@ -730,10 +727,10 @@
     <value>加：额外费用（订单金额小于 10,000 美元将收取 100 美元费用）</value>
   </data>
   <data name="Eye_Clean" xml:space="preserve">
-    <value>Eye Clean</value>
+    <value>目测洁净</value>
   </data>
   <data name="Fair" xml:space="preserve">
-    <value>Fair</value>
+    <value>公平</value>
   </data>
   <data name="FANCY_COLOR" xml:space="preserve">
     <value>淡彩</value>
@@ -745,10 +742,10 @@
     <value>淡彩颜色</value>
   </data>
   <data name="Fancy_Shapesm" xml:space="preserve">
-    <value>Fancy Shape </value>
+    <value>花式造型</value>
   </data>
   <data name="Fast_Moving_Goods" xml:space="preserve">
-    <value>Fast Moving Goods</value>
+    <value>快速运输商品</value>
   </data>
   <data name="Fax" xml:space="preserve">
     <value>传真</value>
@@ -772,7 +769,7 @@
     <value>名字</value>
   </data>
   <data name="Flora" xml:space="preserve">
-    <value>Fluor</value>
+    <value>荧光</value>
   </data>
   <data name="Fluor" xml:space="preserve">
     <value>花草</value>
@@ -781,13 +778,13 @@
     <value>荧光</value>
   </data>
   <data name="Fluorescencesm" xml:space="preserve">
-    <value>Fluorescence </value>
+    <value>荧光性</value>
   </data>
   <data name="Fluorescence_Intensity" xml:space="preserve">
-    <value>Fluorescence Intensity</value>
+    <value>荧光强度</value>
   </data>
   <data name="Forever" xml:space="preserve">
-    <value>Forever</value>
+    <value>永远</value>
   </data>
   <data name="Forget_Password" xml:space="preserve">
     <value>忘记密码？</value>
@@ -811,16 +808,16 @@
     <value>腰棱 %</value>
   </data>
   <data name="Good" xml:space="preserve">
-    <value>Good</value>
+    <value>好</value>
   </data>
   <data name="Grid_Legends" xml:space="preserve">
-    <value>Grid Legends</value>
+    <value>网格图例</value>
   </data>
   <data name="GST" xml:space="preserve">
-    <value>GST will be applied for Indian customers</value>
+    <value>消费税适用于印度客户</value>
   </data>
   <data name="GST_No" xml:space="preserve">
-    <value>GST No</value>
+    <value>消费税编号</value>
   </data>
   <data name="HA" xml:space="preserve">
     <value>八心八箭</value>
@@ -832,43 +829,43 @@
     <value>HA-VG Disc</value>
   </data>
   <data name="Heart" xml:space="preserve">
-    <value>Heart</value>
+    <value>心形</value>
   </data>
   <data name="Hearts__Arrows" xml:space="preserve">
     <value>心与箭</value>
   </data>
   <data name="High" xml:space="preserve">
-    <value>High</value>
+    <value>高</value>
   </data>
   <data name="Home" xml:space="preserve">
     <value>主页</value>
   </data>
   <data name="HomePage_Para1" xml:space="preserve">
-    <value>Rosy Blue is one of the most renowned diamond and jewelry companies in the world. From rough to polished diamonds to fine jewelry, Rosy Blue's passion for excellence sparkles in everything we do. We operate in strict compliance with the Kimberley Process Certification Scheme and the World Diamond Council System of Warranties.</value>
+    <value>Rosy Blue 是世界上最著名的钻石和珠宝公司之一，经营毛坯钻石、抛光钻石和精美高级珠宝，品牌在每一项工作中均贯彻追求卓越的原则，严格遵守金伯利进程认证计划和世界钻石理事会的保修制度。</value>
   </data>
   <data name="Identity" xml:space="preserve">
-    <value>Identity</value>
+    <value>身份</value>
   </data>
   <data name="If_you_have" xml:space="preserve">
-    <value>If you haven't recieved verfication Code, please Click</value>
+    <value>如果您尚未收到验证码，请点击</value>
   </data>
   <data name="Image_Name" xml:space="preserve">
-    <value>Image Name</value>
+    <value>图片名称</value>
   </data>
   <data name="InActive" xml:space="preserve">
     <value>无效</value>
   </data>
   <data name="Inclusion" xml:space="preserve">
-    <value>Inclusion ?</value>
+    <value>包含在内？</value>
   </data>
   <data name="Inscription" xml:space="preserve">
-    <value>Inscription</value>
+    <value>刻字</value>
   </data>
   <data name="Inspection_Report" xml:space="preserve">
-    <value>Inspection Report</value>
+    <value>检验报告</value>
   </data>
   <data name="Inspection_Request" xml:space="preserve">
-    <value>Inspection Request</value>
+    <value>检验申请</value>
   </data>
   <data name="Invalid" xml:space="preserve">
     <value>无效</value>
@@ -883,22 +880,22 @@
     <value>备忘目录</value>
   </data>
   <data name="Inventory_Package" xml:space="preserve">
-    <value>Inventory Package</value>
+    <value>库存包</value>
   </data>
   <data name="Inventory_Summary_Report" xml:space="preserve">
-    <value>Inventory Summary Report</value>
+    <value>库存汇总报告</value>
   </data>
   <data name="Inventory_Upload" xml:space="preserve">
     <value>库存上传</value>
   </data>
   <data name="In_Active" xml:space="preserve">
-    <value>In-Active</value>
+    <value>活跃中</value>
   </data>
   <data name="is_our_latest" xml:space="preserve">
-    <value>is our latest endeavor to enrich, enhance and widen partnership with our global clients.</value>
+    <value>是我们推出的一项新举措，致力于丰富、增强和扩大与全球客户合作伙伴之间的密切关系。</value>
   </data>
   <data name="Item" xml:space="preserve">
-    <value>Item</value>
+    <value>项目</value>
   </data>
   <data name="Item_Count" xml:space="preserve">
     <value>项目数量</value>
@@ -931,7 +928,7 @@
     <value>图例说明</value>
   </data>
   <data name="Kyc_Doc_No" xml:space="preserve">
-    <value>Kyc Doc No</value>
+    <value>Kyc 文件编号</value>
   </data>
   <data name="Lab" xml:space="preserve">
     <value>实验室</value>
@@ -940,16 +937,16 @@
     <value>激光</value>
   </data>
   <data name="LastUpdatedDate" xml:space="preserve">
-    <value>LastUpdatedDate</value>
+    <value>上次更新日期</value>
   </data>
   <data name="Last_Login" xml:space="preserve">
-    <value>Last Login</value>
+    <value>上次登录</value>
   </data>
   <data name="Last_Name" xml:space="preserve">
-    <value>Last Name</value>
+    <value>形式</value>
   </data>
   <data name="Length" xml:space="preserve">
-    <value>Length</value>
+    <value>长度</value>
   </data>
   <data name="List_Name" xml:space="preserve">
     <value>列表名称</value>
@@ -964,7 +961,7 @@
     <value>加载结果</value>
   </data>
   <data name="Location" xml:space="preserve">
-    <value>Location</value>
+    <value>位置</value>
   </data>
   <data name="Login" xml:space="preserve">
     <value>登录</value>
@@ -973,13 +970,13 @@
     <value>批/单否</value>
   </data>
   <data name="Lot_Cret_No" xml:space="preserve">
-    <value>Lot Cret No</value>
+    <value>批号许可编号</value>
   </data>
   <data name="Lot_No" xml:space="preserve">
     <value>批号</value>
   </data>
   <data name="Lot_Number" xml:space="preserve">
-    <value>LotNumber</value>
+    <value>批号</value>
   </data>
   <data name="Lot_Number_to_Search" xml:space="preserve">
     <value>要搜索的批号</value>
@@ -988,7 +985,7 @@
     <value>下半部</value>
   </data>
   <data name="Lower_Half" xml:space="preserve">
-    <value>Lower Half</value>
+    <value>下半部</value>
   </data>
   <data name="M0" xml:space="preserve">
     <value>M0</value>
@@ -1006,46 +1003,46 @@
     <value>机器</value>
   </data>
   <data name="Mail_BCC" xml:space="preserve">
-    <value>Mail BCC</value>
+    <value>邮件密件抄送</value>
   </data>
   <data name="Mail_CC" xml:space="preserve">
-    <value>Mail CC</value>
+    <value>邮件抄送</value>
   </data>
   <data name="Mail_From" xml:space="preserve">
-    <value>Mail From</value>
+    <value>邮件来自</value>
   </data>
   <data name="Mail_To" xml:space="preserve">
-    <value>Mail To</value>
+    <value>收件人</value>
   </data>
   <data name="Manage_Rights" xml:space="preserve">
     <value>管理权利</value>
   </data>
   <data name="Mandatory_fields" xml:space="preserve">
-    <value>Mandatory fields are marked with an asterisk (*)</value>
+    <value>星号（*）为必填字段</value>
   </data>
   <data name="Marketing" xml:space="preserve">
     <value>营销</value>
   </data>
   <data name="Marquise" xml:space="preserve">
-    <value>Marquise</value>
+    <value>侯爵夫人</value>
   </data>
   <data name="Maximum_3_Attempt" xml:space="preserve">
-    <value>Maximum 3 Attempt for Verification Code</value>
+    <value>验证码最多使用使用 3 次</value>
   </data>
   <data name="Measurements" xml:space="preserve">
-    <value>Measurements</value>
+    <value>测量</value>
   </data>
   <data name="MEMO" xml:space="preserve">
     <value>备忘录</value>
   </data>
   <data name="Memo_History" xml:space="preserve">
-    <value>Memo History</value>
+    <value>备注历史</value>
   </data>
   <data name="Memo_No" xml:space="preserve">
     <value>备忘编号</value>
   </data>
   <data name="Memo_Order" xml:space="preserve">
-    <value>Memo/Order</value>
+    <value>备忘录/订单</value>
   </data>
   <data name="Memo_Pending" xml:space="preserve">
     <value>待处理备忘录</value>
@@ -1054,52 +1051,52 @@
     <value>已售备忘录</value>
   </data>
   <data name="Memo_Status" xml:space="preserve">
-    <value>Memo Status</value>
+    <value>备忘状态</value>
   </data>
   <data name="MENU" xml:space="preserve">
-    <value>MENU</value>
+    <value>菜单</value>
   </data>
   <data name="Menu_Rights" xml:space="preserve">
-    <value>Menu Rights</value>
+    <value>菜单权限</value>
   </data>
   <data name="Merge_Memo" xml:space="preserve">
-    <value>Merge Memo</value>
+    <value>合并备忘录</value>
   </data>
   <data name="Merge_Order" xml:space="preserve">
-    <value>Merge Order</value>
+    <value>合并顺序</value>
   </data>
   <data name="Message" xml:space="preserve">
-    <value>Message</value>
+    <value>信息</value>
   </data>
   <data name="Milky" xml:space="preserve">
     <value>乳白</value>
   </data>
   <data name="Milky_Low" xml:space="preserve">
-    <value>Milky: Low</value>
+    <value>白雾：低</value>
   </data>
   <data name="Mobile" xml:space="preserve">
     <value>手机端</value>
   </data>
   <data name="Modify" xml:space="preserve">
-    <value>Modify</value>
+    <value>修改</value>
   </data>
   <data name="Modify_Inventory" xml:space="preserve">
     <value>修改库存</value>
   </data>
   <data name="Modify_Menu_Rights" xml:space="preserve">
-    <value>Modify Menu Rights</value>
+    <value>修改菜单权限</value>
   </data>
   <data name="Monthly_Report" xml:space="preserve">
-    <value>Monthly Report</value>
+    <value>月度报告</value>
   </data>
   <data name="Multiple_Demand" xml:space="preserve">
-    <value>Multiple Demand</value>
+    <value>多项要求</value>
   </data>
   <data name="Multiple_Demands" xml:space="preserve">
     <value>多重需求</value>
   </data>
   <data name="Multiple_size" xml:space="preserve">
-    <value>Multiple size</value>
+    <value>多种尺寸</value>
   </data>
   <data name="My_Account" xml:space="preserve">
     <value>我的帐户</value>
@@ -1108,13 +1105,13 @@
     <value>我的订单</value>
   </data>
   <data name="NA" xml:space="preserve">
-    <value>NA</value>
+    <value>不适用</value>
   </data>
   <data name="Name" xml:space="preserve">
     <value>姓名</value>
   </data>
   <data name="New_Arrivals" xml:space="preserve">
-    <value>New Arrivals</value>
+    <value>新品</value>
   </data>
   <data name="New_Customer" xml:space="preserve">
     <value>新客户</value>
@@ -1126,16 +1123,16 @@
     <value>新上传</value>
   </data>
   <data name="New_UserPlease_Register_Here" xml:space="preserve">
-    <value>New User? Please Register Here</value>
+    <value>新用户？请在这里注册</value>
   </data>
   <data name="Next" xml:space="preserve">
     <value>下一个</value>
   </data>
   <data name="No" xml:space="preserve">
-    <value>No</value>
+    <value>无</value>
   </data>
   <data name="Note" xml:space="preserve">
-    <value>Note:</value>
+    <value>注意：</value>
   </data>
   <data name="NO_BGM" xml:space="preserve">
     <value>无背景音乐</value>
@@ -1144,7 +1141,7 @@
     <value>选择的文件数</value>
   </data>
   <data name="No_upcoming_events_found" xml:space="preserve">
-    <value>No upcoming events found</value>
+    <value>未找到即将进行的事件</value>
   </data>
   <data name="NV" xml:space="preserve">
     <value>NV</value>
@@ -1153,13 +1150,13 @@
     <value>旧密码</value>
   </data>
   <data name="Online" xml:space="preserve">
-    <value>Online</value>
+    <value>线上</value>
   </data>
   <data name="Online_Discount" xml:space="preserve">
     <value>减 ：网络折扣</value>
   </data>
   <data name="Only_Memo" xml:space="preserve">
-    <value>Only Memo</value>
+    <value>仅限备忘录</value>
   </data>
   <data name="OnMemo" xml:space="preserve">
     <value>备忘录中</value>
@@ -1195,31 +1192,31 @@
     <value>订单状态</value>
   </data>
   <data name="OrgFileName" xml:space="preserve">
-    <value>OrgFileName</value>
+    <value>组织名称</value>
   </data>
   <data name="Origin1" xml:space="preserve">
-    <value>Origin</value>
+    <value>原产地</value>
   </data>
   <data name="Other_Details" xml:space="preserve">
-    <value>Other Details</value>
+    <value>其他详情</value>
   </data>
   <data name="Other_Shape" xml:space="preserve">
-    <value>Other Shape</value>
+    <value>其他形状</value>
   </data>
   <data name="Other_Type" xml:space="preserve">
-    <value>Other Type</value>
+    <value>其他类型</value>
   </data>
   <data name="OTP" xml:space="preserve">
     <value>OTP</value>
   </data>
   <data name="Our_innovative" xml:space="preserve">
-    <value>Our innovative "Quick Search" feature of the site enables users view the entire stock, and select based on the 4C's in a single click. The site also enables the users to drill-down into an individual stone, and even view the image and certificate, where available. The entire user experience is backed up by the quality and service assurance of Rosy Blue, which has enabled us to become a global leader. Needless to say, all stocks are at competitive prices.</value>
+    <value>我们网站退出创新的“快速搜索”功能，用户可通过它查看整个库存，秩序点击一下即可根据 4C 标准进行选择。用户还可以深入探索每颗钻石的详细信息，查看相应的图片和证书。 Rosy Blue 的质量和服务保证确保用户获得最满意的体验，也是我们成为全球领军者的重要原因。当然，我们的优质产品具有极富竞争力的价格，也吸引了大量客户的眼光。</value>
   </data>
   <data name="Oval" xml:space="preserve">
-    <value>Oval</value>
+    <value>椭圆型</value>
   </data>
   <data name="PAN_No" xml:space="preserve">
-    <value>PAN No</value>
+    <value>PAN号</value>
   </data>
   <data name="Partial_memo_cancel" xml:space="preserve">
     <value>取消部分备忘录</value>
@@ -1234,19 +1231,19 @@
     <value>亭部深度</value>
   </data>
   <data name="Pavilion_Angle" xml:space="preserve">
-    <value>Pavilion Angle</value>
+    <value>底角</value>
   </data>
   <data name="Pavilion_Depth" xml:space="preserve">
-    <value>Pavilion Depth</value>
+    <value>底部高度</value>
   </data>
   <data name="Payable_Amount" xml:space="preserve">
-    <value>Payable Amount($)</value>
+    <value>应付金额（元）</value>
   </data>
   <data name="Pear" xml:space="preserve">
-    <value>Pear</value>
+    <value>梨形</value>
   </data>
   <data name="Pending" xml:space="preserve">
-    <value>Pending</value>
+    <value>待定</value>
   </data>
   <data name="Pending_Orders" xml:space="preserve">
     <value>待处理订单</value>
@@ -1258,88 +1255,88 @@
     <value>待处理订单报告</value>
   </data>
   <data name="Permission" xml:space="preserve">
-    <value>Permission</value>
+    <value>许可</value>
   </data>
   <data name="Personal_Details" xml:space="preserve">
-    <value>Personal Details</value>
+    <value>个人资料</value>
   </data>
   <data name="Phone" xml:space="preserve">
     <value>手机</value>
   </data>
   <data name="Phone_1" xml:space="preserve">
-    <value>Phone 1</value>
+    <value>电话 1</value>
   </data>
   <data name="Phone_2" xml:space="preserve">
-    <value>Phone 2</value>
+    <value>电话 2</value>
   </data>
   <data name="Physical_Stock" xml:space="preserve">
     <value>实物库存</value>
   </data>
   <data name="Pivot_table" xml:space="preserve">
-    <value>Pivot table</value>
+    <value>分析表</value>
   </data>
   <data name="Please_enter_OTP" xml:space="preserve">
-    <value>(Please enter OTP as you have recived in yours mail) </value>
+    <value>（请按照在邮件中输入的内容输入 OTP）</value>
   </data>
   <data name="Polish" xml:space="preserve">
     <value>波兰语</value>
   </data>
   <data name="Polished" xml:space="preserve">
-    <value>Polished</value>
+    <value>抛光</value>
   </data>
   <data name="Poor" xml:space="preserve">
-    <value>Poor</value>
+    <value>较差</value>
   </data>
   <data name="Prev" xml:space="preserve">
     <value>上一页</value>
   </data>
   <data name="Previous" xml:space="preserve">
-    <value>Previous</value>
+    <value>历史</value>
   </data>
   <data name="Previous_Discount" xml:space="preserve">
-    <value>Previous Discount</value>
+    <value>历史折扣</value>
   </data>
   <data name="Previous_Rap_Price" xml:space="preserve">
-    <value>Previous Rap Price</value>
+    <value>历史报价表</value>
   </data>
   <data name="Pre_Registered_Users" xml:space="preserve">
-    <value>Pre-Registered Users</value>
+    <value>提前注册用户</value>
   </data>
   <data name="Price" xml:space="preserve">
-    <value>Price($)</value>
+    <value>价格（美元）</value>
   </data>
   <data name="Pricect" xml:space="preserve">
     <value>价格（美元）/克拉</value>
   </data>
   <data name="Price_carat" xml:space="preserve">
-    <value>Price$/carat</value>
+    <value>价格 美元/克拉</value>
   </data>
   <data name="Price_ct" xml:space="preserve">
-    <value>Price/ct($)</value>
+    <value>价格/克拉（美元）</value>
   </data>
   <data name="Price_ct1" xml:space="preserve">
-    <value>Price ($)/ct</value>
+    <value>价格（美元）/ 克拉</value>
   </data>
   <data name="Price_Mark_Percent" xml:space="preserve">
-    <value>Price Mark Percent</value>
+    <value>价格标记百分比</value>
   </data>
   <data name="Price__Ct" xml:space="preserve">
-    <value>Price ($)/Ct.:</value>
+    <value>价格（美元）/克拉：</value>
   </data>
   <data name="Pricing_Policy" xml:space="preserve">
-    <value>Pricing Policy</value>
+    <value>定价政策</value>
   </data>
   <data name="Princess" xml:space="preserve">
-    <value>Princess</value>
+    <value>公主</value>
   </data>
   <data name="Print" xml:space="preserve">
     <value>打印</value>
   </data>
   <data name="Privacy_Policy" xml:space="preserve">
-    <value>Privacy Policy</value>
+    <value>隐私政策</value>
   </data>
   <data name="Proceed" xml:space="preserve">
-    <value>Proceed</value>
+    <value>继续</value>
   </data>
   <data name="Profile" xml:space="preserve">
     <value>个人资料</value>
@@ -1348,40 +1345,40 @@
     <value>直接放入备忘录/销售</value>
   </data>
   <data name="Quick_Contact" xml:space="preserve">
-    <value>Quick Contact</value>
+    <value>快速联络</value>
   </data>
   <data name="Quick_Search" xml:space="preserve">
-    <value>Quick Search</value>
+    <value>快速搜索</value>
   </data>
   <data name="Quick_Size" xml:space="preserve">
-    <value>Quick Size</value>
+    <value>快速尺寸</value>
   </data>
   <data name="Radiant" xml:space="preserve">
-    <value>Radiant</value>
+    <value>雷德恩</value>
   </data>
   <data name="Rap" xml:space="preserve">
-    <value>Rap ($):</value>
+    <value>报价表（$）：</value>
   </data>
   <data name="RapDisc" xml:space="preserve">
     <value>钻石折扣(%)</value>
   </data>
   <data name="RapnetPrice" xml:space="preserve">
-    <value>RapnetPrice</value>
+    <value>报价竞价</value>
   </data>
   <data name="RapNet_Disc" xml:space="preserve">
-    <value>RapNet Disc (%)</value>
+    <value>报价净数值（％）</value>
   </data>
   <data name="RapPrice" xml:space="preserve">
     <value>钻石报价表</value>
   </data>
   <data name="Rap_Off" xml:space="preserve">
-    <value>Rap Off(%)</value>
+    <value>报价表折扣（％）</value>
   </data>
   <data name="RB_Discount" xml:space="preserve">
     <value>减 ：RB 折扣</value>
   </data>
   <data name="RB_Discount1" xml:space="preserve">
-    <value>RB Discount</value>
+    <value>RB 折扣</value>
   </data>
   <data name="Recent_RFID_Count" xml:space="preserve">
     <value>最近的 RFID 数量</value>
@@ -1396,19 +1393,19 @@
     <value>回收 RFID</value>
   </data>
   <data name="Reference_Name" xml:space="preserve">
-    <value>Reference Name</value>
+    <value>参考名称</value>
   </data>
   <data name="Register" xml:space="preserve">
     <value>注册</value>
   </data>
   <data name="Registration" xml:space="preserve">
-    <value>Registration</value>
+    <value>注册</value>
   </data>
   <data name="Reject" xml:space="preserve">
-    <value>Reject</value>
+    <value>拒绝</value>
   </data>
   <data name="Rejected Customers" xml:space="preserve">
-    <value>Rejected Customers</value>
+    <value>拒绝客户</value>
   </data>
   <data name="Remark" xml:space="preserve">
     <value>备注</value>
@@ -1420,13 +1417,13 @@
     <value>删除最惠交易</value>
   </data>
   <data name="Remove_Best_Deal" xml:space="preserve">
-    <value>Remove Best Deal</value>
+    <value>删除最佳交易</value>
   </data>
   <data name="Remove_Best_Deals" xml:space="preserve">
-    <value>Remove Best Deals</value>
+    <value>删除最优惠的价格</value>
   </data>
   <data name="Remove_Cart" xml:space="preserve">
-    <value>Remove Cart</value>
+    <value>移除购物车</value>
   </data>
   <data name="Remove_Lab" xml:space="preserve">
     <value>删除实验室</value>
@@ -1435,37 +1432,37 @@
     <value>删除订单项</value>
   </data>
   <data name="Report" xml:space="preserve">
-    <value>Report</value>
+    <value>报告</value>
   </data>
   <data name="ReportDate" xml:space="preserve">
     <value>报告日期</value>
   </data>
   <data name="Report_Date" xml:space="preserve">
-    <value>Report Date</value>
+    <value>报告日期</value>
   </data>
   <data name="Report_No" xml:space="preserve">
-    <value>Report.No.</value>
+    <value>报告编号</value>
   </data>
   <data name="Resend" xml:space="preserve">
-    <value>Resend</value>
+    <value>重发</value>
   </data>
   <data name="RESET" xml:space="preserve">
     <value>重置</value>
   </data>
   <data name="Reset1" xml:space="preserve">
-    <value>Reset </value>
+    <value>重启</value>
   </data>
   <data name="Reset_Password" xml:space="preserve">
     <value>重设密码</value>
   </data>
   <data name="Return_Partial_Sell" xml:space="preserve">
-    <value>Return Partial Sell</value>
+    <value>部分退货</value>
   </data>
   <data name="RETURN_SALE" xml:space="preserve">
     <value>退货</value>
   </data>
   <data name="Revised_Stones" xml:space="preserve">
-    <value>Revised Stones</value>
+    <value>修改宝石</value>
   </data>
   <data name="RFID" xml:space="preserve">
     <value>RFID</value>
@@ -1477,7 +1474,7 @@
     <value>RFID 主文件 </value>
   </data>
   <data name="RFID_Memo_Stock_Tally" xml:space="preserve">
-    <value>RFID Memo Stock Tally</value>
+    <value>RFID 备忘录库存提示</value>
   </data>
   <data name="RFID_Modify" xml:space="preserve">
     <value>RFID 修改</value>
@@ -1504,28 +1501,28 @@
     <value>©RosyBlue，2020 年版权所有 </value>
   </data>
   <data name="Rosy_Blue_Online" xml:space="preserve">
-    <value>Rosy Blue Online</value>
+    <value>Rosy Blue 网店</value>
   </data>
   <data name="Rosy_Blue_Online_Features" xml:space="preserve">
-    <value>Rosy Blue Online Features</value>
+    <value>Rosy Blue 网店功能</value>
   </data>
   <data name="Rough" xml:space="preserve">
-    <value>Rough</value>
+    <value>未加工</value>
   </data>
   <data name="Round" xml:space="preserve">
-    <value>Round</value>
+    <value>圆形</value>
   </data>
   <data name="ROUND_SHAPE" xml:space="preserve">
     <value>圆形</value>
   </data>
   <data name="Round_Shapesm" xml:space="preserve">
-    <value>Round Shape </value>
+    <value>圆形轮廓</value>
   </data>
   <data name="Row_Download_Permitted" xml:space="preserve">
-    <value>Row Download Permitted</value>
+    <value>允许行下载</value>
   </data>
   <data name="Sale" xml:space="preserve">
-    <value>Sale</value>
+    <value>销售</value>
   </data>
   <data name="SalesLocation" xml:space="preserve">
     <value>销售地点</value>
@@ -1534,22 +1531,22 @@
     <value>销售地点</value>
   </data>
   <data name="Sales_Mode" xml:space="preserve">
-    <value>Sales Mode</value>
+    <value>销售模式</value>
   </data>
   <data name="SALES_PERSON" xml:space="preserve">
-    <value>SALES PERSON</value>
+    <value>销售人员</value>
   </data>
   <data name="Sales_Support" xml:space="preserve">
-    <value>Sales Support</value>
+    <value>销售支援</value>
   </data>
   <data name="Sale_Discount" xml:space="preserve">
-    <value>Sale Discount</value>
+    <value>销售折扣</value>
   </data>
   <data name="Save" xml:space="preserve">
     <value>保存</value>
   </data>
   <data name="Saved_Search" xml:space="preserve">
-    <value>Saved Search</value>
+    <value>已保存搜索</value>
   </data>
   <data name="Save_Search" xml:space="preserve">
     <value>保存搜索</value>
@@ -1564,10 +1561,10 @@
     <value>搜索</value>
   </data>
   <data name="Search_Result" xml:space="preserve">
-    <value>Search Result</value>
+    <value>搜索结果</value>
   </data>
   <data name="Selected" xml:space="preserve">
-    <value>Selected</value>
+    <value>已选</value>
   </data>
   <data name="Select_(xlxs)_file_to_Update_RFID" xml:space="preserve">
     <value>选择（.xlxs）文件更新 RFID</value>
@@ -1576,10 +1573,10 @@
     <value>全选</value>
   </data>
   <data name="Select_Billing_Address" xml:space="preserve">
-    <value>Select Billing Address</value>
+    <value>选择帐单地址</value>
   </data>
   <data name="Select_Country" xml:space="preserve">
-    <value>Select Country</value>
+    <value>选择国家</value>
   </data>
   <data name="Select_csv_file_to_upload" xml:space="preserve">
     <value>选择要上传的 CSV 文件</value>
@@ -1594,19 +1591,19 @@
     <value>选择要上传的文件</value>
   </data>
   <data name="Select_Identity" xml:space="preserve">
-    <value>Select Identity</value>
+    <value>选择身份</value>
   </data>
   <data name="Select_Sales_Location" xml:space="preserve">
     <value>选择销售地点</value>
   </data>
   <data name="Select_Shape" xml:space="preserve">
-    <value>Select Shape</value>
+    <value>选择形状</value>
   </data>
   <data name="Select_Shipping_Address" xml:space="preserve">
-    <value>Select Shipping Address</value>
+    <value>选择送货地址</value>
   </data>
   <data name="Select_State" xml:space="preserve">
-    <value>Select State</value>
+    <value>选择州</value>
   </data>
   <data name="Select_to_download_sample_file" xml:space="preserve">
     <value>选择下载样品文件</value>
@@ -1621,10 +1618,10 @@
     <value>选择（.xlsx）文件作为 RFID 主文件</value>
   </data>
   <data name="Self_Pickup" xml:space="preserve">
-    <value>Self Pickup</value>
+    <value>自取</value>
   </data>
   <data name="Sell_Directly" xml:space="preserve">
-    <value>Sell Directly</value>
+    <value>直接销售</value>
   </data>
   <data name="Sell_Full_Memo" xml:space="preserve">
     <value>完整销售备忘录</value>
@@ -1633,13 +1630,13 @@
     <value>部分出售</value>
   </data>
   <data name="Send" xml:space="preserve">
-    <value>Send</value>
+    <value>发送</value>
   </data>
   <data name="Send_Mail" xml:space="preserve">
-    <value>Send Mail</value>
+    <value>发邮件</value>
   </data>
   <data name="Set_as_default_address" xml:space="preserve">
-    <value>Set as default address</value>
+    <value>设置为默认地址</value>
   </data>
   <data name="Shade" xml:space="preserve">
     <value>颜色</value>
@@ -1648,10 +1645,10 @@
     <value>形状</value>
   </data>
   <data name="Shipping" xml:space="preserve">
-    <value>Shipping</value>
+    <value>运输</value>
   </data>
   <data name="Shipping_Address" xml:space="preserve">
-    <value>Shipping Address</value>
+    <value>送货地址</value>
   </data>
   <data name="Shipping_Charges_Non_India" xml:space="preserve">
     <value>加：非印度地区运费</value>
@@ -1660,25 +1657,25 @@
     <value>航运公司</value>
   </data>
   <data name="Shipping_Mode" xml:space="preserve">
-    <value>Shipping Mode</value>
+    <value>运输方式</value>
   </data>
   <data name="Shipping_Mode_1" xml:space="preserve">
     <value>运输方式 1</value>
   </data>
   <data name="Shopping_Cart" xml:space="preserve">
-    <value>Shopping Cart</value>
+    <value>购物车</value>
   </data>
   <data name="Show" xml:space="preserve">
     <value>显示</value>
   </data>
   <data name="SideBlack" xml:space="preserve">
-    <value>SideBlack</value>
+    <value>侧边黑色</value>
   </data>
   <data name="Sign_out" xml:space="preserve">
-    <value>Sign out</value>
+    <value>退出</value>
   </data>
   <data name="Site_best_viewed" xml:space="preserve">
-    <value>Site best viewed in IE8+, Firefox 3.5+, Chrome 3+, Safari 5.0+ at 1024 x 768 pixels resolution.</value>
+    <value>建议使用 IE8 +、Firefox 3.5 +、Chrome 3 +、Safari 5.0+ 和 1024 x 768 像素分辨率浏览本网站。</value>
   </data>
   <data name="Site_not_blocked" xml:space="preserve">
     <value>未屏蔽网站</value>
@@ -1687,22 +1684,22 @@
     <value>尺寸</value>
   </data>
   <data name="SizePermitted" xml:space="preserve">
-    <value>SizePermitted</value>
+    <value>允许尺寸</value>
   </data>
   <data name="Sizes" xml:space="preserve">
-    <value>Sizes</value>
+    <value>尺寸</value>
   </data>
   <data name="SIZE_CARATS" xml:space="preserve">
     <value>尺寸（克拉）</value>
   </data>
   <data name="Slow_Moving_Goods" xml:space="preserve">
-    <value>Slow Moving Goods</value>
+    <value>出货缓慢商品</value>
   </data>
   <data name="Sold" xml:space="preserve">
     <value>已售</value>
   </data>
   <data name="SOLD_IN" xml:space="preserve">
-    <value>SOLD IN</value>
+    <value>卖出</value>
   </data>
   <data name="Specfic_search" xml:space="preserve">
     <value>具体搜索</value>
@@ -1714,16 +1711,16 @@
     <value>拆分备忘录</value>
   </data>
   <data name="Sr_No" xml:space="preserve">
-    <value>Sr.No.</value>
+    <value>序号</value>
   </data>
   <data name="Starlength" xml:space="preserve">
     <value>星形刻面</value>
   </data>
   <data name="Start_Size_Permitted" xml:space="preserve">
-    <value>Start Size Permitted</value>
+    <value>允许起始尺寸</value>
   </data>
   <data name="Star_Length" xml:space="preserve">
-    <value>Star Length</value>
+    <value>星长</value>
   </data>
   <data name="State" xml:space="preserve">
     <value>州</value>
@@ -1738,7 +1735,7 @@
     <value>库存明细</value>
   </data>
   <data name="Stock_Status" xml:space="preserve">
-    <value>Stock Status</value>
+    <value>库存状况</value>
   </data>
   <data name="Stock_Summary" xml:space="preserve">
     <value>库存概述</value>
@@ -1747,7 +1744,7 @@
     <value>库存统计</value>
   </data>
   <data name="Stock_Turn_Report" xml:space="preserve">
-    <value>Stock Turn Report</value>
+    <value>库存周转报告</value>
   </data>
   <data name="Stock__Summary" xml:space="preserve">
     <value>库存和摘要</value>
@@ -1759,34 +1756,34 @@
     <value>钻石编号</value>
   </data>
   <data name="Stone_Origin" xml:space="preserve">
-    <value>Stone Origin</value>
+    <value>钻石原产地</value>
   </data>
   <data name="Stone_Status" xml:space="preserve">
     <value>钻石状态</value>
   </data>
   <data name="Subject" xml:space="preserve">
-    <value>Subject</value>
+    <value>主题</value>
   </data>
   <data name="Submit" xml:space="preserve">
     <value>提交</value>
   </data>
   <data name="Summary_Discount" xml:space="preserve">
-    <value>Summary Discount</value>
+    <value>折扣摘要</value>
   </data>
   <data name="SUPER_ADMIN" xml:space="preserve">
-    <value>SUPER ADMIN</value>
+    <value>超级管理员</value>
   </data>
   <data name="Support" xml:space="preserve">
-    <value>Support</value>
+    <value>支持</value>
   </data>
   <data name="Support_Admin" xml:space="preserve">
-    <value>Support Admin</value>
+    <value>支持管理员</value>
   </data>
   <data name="Symmetry" xml:space="preserve">
     <value>对称</value>
   </data>
   <data name="System" xml:space="preserve">
-    <value>System</value>
+    <value>系统</value>
   </data>
   <data name="System_discount_K" xml:space="preserve">
     <value>减 ：系统折扣 0-15000</value>
@@ -1813,34 +1810,34 @@
     <value>TB4</value>
   </data>
   <data name="TB_Low" xml:space="preserve">
-    <value>TB: Low</value>
+    <value>TB：低</value>
   </data>
   <data name="Terms_of_Use" xml:space="preserve">
-    <value>Terms of Use</value>
+    <value>使用条款</value>
   </data>
   <data name="The_site_allows_clients_to_browse" xml:space="preserve">
-    <value>The site allows clients to browse, select and order stones from our global inventory of certified stones for their needs and convenience. We want our partners to buy "just-in-time" and manage their inventory smartly by "Multiplying their inventory".</value>
+    <value>本网站允许客户浏览我们的全球认证钻石库存，更轻松地选择和订购钻石。希望合作伙伴可以“按时购买”并通过“提高库存”的方式更好地管理库存。</value>
   </data>
   <data name="The_site_offers_stones_certified" xml:space="preserve">
-    <value>The site offers stones certified (from 25 points upwards) by reputed third party grading laboratories like GIA, HRD, AGS, IGI etc., to ensure that our clients can access stocks which are fully trusted by their customers. Thereby enables our clients to obtain all their requirements from a single source, reducing their time and effort.</value>
+    <value>该网站提供了由 GIA、HRD、AGS、IGI 等知名第三方检测实验室认证的钻石（25 分以上），确保我们客户的库存能够获得终端客户的充分信赖，让客户能够从单一来源满足所有要求，减少他们投入的时间和精力。</value>
   </data>
   <data name="This" xml:space="preserve">
-    <value>This</value>
+    <value>这个</value>
   </data>
   <data name="TIN" xml:space="preserve">
-    <value>TIN (Trade Identification Number)</value>
+    <value>TIN（商品识别码）</value>
   </data>
   <data name="Toggle_navigation" xml:space="preserve">
-    <value>Toggle navigation</value>
+    <value>切换导航</value>
   </data>
   <data name="Total" xml:space="preserve">
-    <value>Total</value>
+    <value>总</value>
   </data>
   <data name="TotalFound" xml:space="preserve">
     <value>已找到总数</value>
   </data>
   <data name="Total_Amount" xml:space="preserve">
-    <value>Total Amount</value>
+    <value>总金额</value>
   </data>
   <data name="Total_Amt" xml:space="preserve">
     <value>总金额</value>
@@ -1849,7 +1846,7 @@
     <value>总 CT</value>
   </data>
   <data name="Total_Found" xml:space="preserve">
-    <value>Total Found</value>
+    <value>发现总数</value>
   </data>
   <data name="Total_Inventory" xml:space="preserve">
     <value>总库存</value>
@@ -1858,7 +1855,7 @@
     <value>总应付金额：</value>
   </data>
   <data name="Total_pcs" xml:space="preserve">
-    <value>Total pcs</value>
+    <value>总件数</value>
   </data>
   <data name="Total_Rap_Price" xml:space="preserve">
     <value>总钻石报价（$）</value>
@@ -1867,22 +1864,22 @@
     <value>RFID 总数</value>
   </data>
   <data name="Total_Stones" xml:space="preserve">
-    <value>Total Stones</value>
+    <value>总宝石</value>
   </data>
   <data name="Tot_Amount" xml:space="preserve">
-    <value>Tot.Amount($)</value>
+    <value>总金额（美元）</value>
   </data>
   <data name="Tot_Carat" xml:space="preserve">
-    <value>Tot.Carat</value>
+    <value>克拉总重量</value>
   </data>
   <data name="Tot_Rap" xml:space="preserve">
-    <value>Tot.Rap($)</value>
+    <value>总报价表（美元）</value>
   </data>
   <data name="Tracking_Number" xml:space="preserve">
     <value>追踪号码</value>
   </data>
   <data name="Type" xml:space="preserve">
-    <value>Type</value>
+    <value>类型</value>
   </data>
   <data name="UnReferenced" xml:space="preserve">
     <value>未引用</value>
@@ -1891,7 +1888,7 @@
     <value>接下来的活动</value>
   </data>
   <data name="Update" xml:space="preserve">
-    <value>Update</value>
+    <value>更新</value>
   </data>
   <data name="Uplaod_Format_Common" xml:space="preserve">
     <value>上传通用格式</value>
@@ -1906,10 +1903,10 @@
     <value>上传日期</value>
   </data>
   <data name="Uploaded_Discount" xml:space="preserve">
-    <value>Uploaded Discount</value>
+    <value>上传折扣</value>
   </data>
   <data name="Uploaded_Rap_Price" xml:space="preserve">
-    <value>Uploaded Rap Price</value>
+    <value>上传报价单价格</value>
   </data>
   <data name="Upload_Add_Remove_Lab_Format" xml:space="preserve">
     <value>上载添加/删除实验室格式</value>
@@ -1918,13 +1915,13 @@
     <value>上传最惠交易格式</value>
   </data>
   <data name="Upload_Format_Common" xml:space="preserve">
-    <value>Upload Format Common</value>
+    <value>上载格式通用</value>
   </data>
   <data name="Upload_History" xml:space="preserve">
     <value>上传记录</value>
   </data>
   <data name="Upload_Id_Proof" xml:space="preserve">
-    <value>Upload Id-Proof</value>
+    <value>上传身份证明</value>
   </data>
   <data name="Upload_Inventory" xml:space="preserve">
     <value>上传库存</value>
@@ -1939,19 +1936,19 @@
     <value>上传钻石编号</value>
   </data>
   <data name="Users" xml:space="preserve">
-    <value>Users</value>
+    <value>用户数</value>
   </data>
   <data name="User_Detail" xml:space="preserve">
     <value>用户详情</value>
   </data>
   <data name="User_Menu_Permission" xml:space="preserve">
-    <value>User Menu Permission</value>
+    <value>用户菜单权限</value>
   </data>
   <data name="User_Name" xml:space="preserve">
     <value>用户名</value>
   </data>
   <data name="User_Status" xml:space="preserve">
-    <value>User Status</value>
+    <value>用户状态</value>
   </data>
   <data name="User_Vs_Rights" xml:space="preserve">
     <value>用户与权利</value>
@@ -1969,25 +1966,25 @@
     <value>有效</value>
   </data>
   <data name="Verify_OTP" xml:space="preserve">
-    <value>Verify OTP</value>
+    <value>验证 OTP</value>
   </data>
   <data name="Very_Good" xml:space="preserve">
-    <value>Very Good</value>
+    <value>非常好</value>
   </data>
   <data name="VG" xml:space="preserve">
-    <value>3VG+</value>
+    <value>3VG +</value>
   </data>
   <data name="View" xml:space="preserve">
     <value>视图</value>
   </data>
   <data name="View_Customer_Activity_Log" xml:space="preserve">
-    <value>View Customer Activity Log</value>
+    <value>查看客户活动日志</value>
   </data>
   <data name="View_Customer_Details" xml:space="preserve">
-    <value>View Customer Details</value>
+    <value>查看客户详细信息</value>
   </data>
   <data name="View_Customer_Recent_Searches" xml:space="preserve">
-    <value>View Customer Recent Searches</value>
+    <value>查看客户最近的搜索</value>
   </data>
   <data name="View_Memo_Details" xml:space="preserve">
     <value>查看备忘录详细信息</value>
@@ -1999,25 +1996,25 @@
     <value>查看待办订单</value>
   </data>
   <data name="View_Request" xml:space="preserve">
-    <value>View Request</value>
+    <value>查看要求</value>
   </data>
   <data name="View_Sold_History" xml:space="preserve">
     <value>查看已售历史</value>
   </data>
   <data name="Watch_List" xml:space="preserve">
-    <value>Watch-List</value>
+    <value>监控名单</value>
   </data>
   <data name="Website" xml:space="preserve">
-    <value>Website</value>
+    <value>网站</value>
   </data>
   <data name="Website_Order_Pending" xml:space="preserve">
     <value>网站待处理订单</value>
   </data>
   <data name="Web_Avg_Discount" xml:space="preserve">
-    <value>Web Avg. Discount</value>
+    <value>网络平均折扣</value>
   </data>
   <data name="Web_Mode" xml:space="preserve">
-    <value>Web Mode</value>
+    <value>网络模式</value>
   </data>
   <data name="Weight" xml:space="preserve">
     <value>重量</value>
@@ -2029,12 +2026,12 @@
     <value>欢迎光临 Rosy Blue</value>
   </data>
   <data name="Width" xml:space="preserve">
-    <value>Width</value>
+    <value>宽度</value>
   </data>
   <data name="Zip_Code" xml:space="preserve">
     <value>邮编</value>
   </data>
   <data name="ZIP_PIN" xml:space="preserve">
-    <value>ZIP/PIN</value>
+    <value>邮编/密码</value>
   </data>
 </root>

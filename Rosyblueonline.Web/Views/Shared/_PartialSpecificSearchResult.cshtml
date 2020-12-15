@@ -1,14 +1,13 @@
 ﻿@model string
 @{
     Rosyblueonline.Models.TokenLogModel objToken = Session["Token"] as Rosyblueonline.Models.TokenLogModel;
-} 
+}
 <input type="hidden" name="RoleID" id="hfRoleID" value="@objToken.RoleID" />
 
 <style type="text/css">
     .dt_col_hide {
         display: none;
     }
-     
 </style>
 @*<form style="display:none" id="frmMomoPage" method="post" action="/Memo">
         <input type="hidden" name="MemoQuery" id="hfMemoQuery" value="" />
@@ -84,39 +83,7 @@
                                         @Resource.SOLD_IN
                                         <span class="caret"></span>
                                     </button>
-                                    <ul class="dropdown-menu" aria-labelledby="about-us">
-                                        <li>
-                                            <a href="#">
-                                                <span class="summerydays">
-                                                    <span class="inday">In 30 Days </span>
-                                                    <span class="sold"><span style="color:#E9978C;">04</span> Sold</span>
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <span class="summerydays">
-                                                    <span class="inday">In 60 Days </span>
-                                                    <span class="sold"><span style="color:#E9978C;">20</span> Sold</span>
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <span class="summerydays">
-                                                    <span class="inday">In 90 Days </span>
-                                                    <span class="sold"><span style="color:#E9978C;">36</span> Sold</span>
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <span class="summerydays">
-                                                    <span class="inday">In 180 Days </span>
-                                                    <span class="sold"><span style="color:#E9978C;">102</span> Sold</span>
-                                                </span>
-                                            </a>
-                                        </li>
+                                    <ul id="tmpSoldInDays121" class="dropdown-menu" aria-labelledby="about-us">
                                     </ul>
                                 </div>
                             </div>
@@ -1002,7 +969,7 @@
                                 <tr><td>@Resource.Cut</td></tr>
                                 <tr><td>@Resource.Polish</td></tr>
                                 <tr><td>@Resource.Symmetry</td></tr>
-                                <tr><td>@Resource.Flora</td></tr> 
+                                <tr><td>@Resource.Flora</td></tr>
                                 <tr><td>@Resource.RapPrice</td></tr>
                                 <tr><td>@Resource.RapDisc</td></tr>
                                 <tr><td>@Resource.Price_ct</td></tr>
@@ -1023,7 +990,7 @@
                                 <tr><td>@Resource.CentreBlack</td></tr>
                                 <tr><td>@Resource.HA</td></tr>
                                 <tr><td style="word-break: break-word;">@Resource.Keytosymbol</td></tr>
-                                <tr><td>@Resource.GIAcomments</td></tr> 
+                                <tr><td>@Resource.GIAcomments</td></tr>
                                 <tr><td>@Resource.Rough</td></tr>
                                 <tr><td>@Resource.SalesLocation</td></tr>
                             </tbody>
@@ -1333,20 +1300,20 @@
 
 @*TODO: Summary is not working properly*@
 @*<script id="tmpSoldInDays" type="text/x-jquery-tmpl">
-    <tr class="rsearchnew">
-        <td clospan="">
-            @Resource.SOLD_IN
-        </td>
-        {{each count}}
-        {{if $index >= 5}}
-        <td>
-            ${countName}-${ResultCount}
-        </td>
-        {{/if}}
-        {{/each}}
-        <td></td>
-    </tr>
-</script>*@
+        <tr class="rsearchnew">
+            <td clospan="">
+                @Resource.SOLD_IN
+            </td>
+            {{each count}}
+            {{if $index >= 5}}
+            <td>
+                ${countName}-${ResultCount}
+            </td>
+            {{/if}}
+            {{/each}}
+            <td></td>
+        </tr>
+    </script>*@
 <script id="tmpCompare" type="text/x-jquery-tmpl">
     {{each(prop, val) Items}}
     <tr>
@@ -1458,9 +1425,9 @@
 
 
 @*<script>
-    $(document).ready(function () { 
-    $('#txtTableSearch').on('keyup', function () {
-        table.search(this.value).draw();
-    });
-    });
-</script>*@
+        $(document).ready(function () {
+        $('#txtTableSearch').on('keyup', function () {
+            table.search(this.value).draw();
+        });
+        });
+    </script>*@

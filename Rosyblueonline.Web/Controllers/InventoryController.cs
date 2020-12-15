@@ -130,7 +130,7 @@ namespace Rosyblueonline.Web.Controllers
                         OrderBy = obj.columns[obj.order[0].column].data;
                         OrderDirection = obj.order[0].dir;
                     }
-                    bool log = this.objUDSvc.UserActivitylogs(LoginID, "Specific Search", obj.filterText);
+                    bool log = this.objUDSvc.UserActivitylogs(LoginID, "Specific Search", obj.displayCriteria);
                     if (AddToRecentSearch == true)
                     {//isactive = true,searchWhere = ""
                         this.objRecentSearchService.Add(new RecentSearchModel { createdBy = LoginID, Createdon = DateTime.Now, searchCriteria = obj.filterText, displayCriteria = obj.displayCriteria, searchType = "SpecificSearch", searchCriteriaName = "" });
@@ -480,7 +480,8 @@ namespace Rosyblueonline.Web.Controllers
         {
             try
             {
-                var lstData = objRecentSearchService.GetForOptions(SearchType);
+                int LoginID = GetLogin();
+                var lstData = objRecentSearchService.GetForOptions(SearchType, LoginID);
                 return Json(new Response { IsSuccess = true, Message = "200", Result = lstData });
             }
             catch (Exception ex)
