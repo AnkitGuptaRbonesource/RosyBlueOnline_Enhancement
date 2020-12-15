@@ -112,6 +112,8 @@
                 dataTable: {
                     paging: true,
                     order: [[1, "desc"]],
+                    scrollY: "485px",
+                    scrollX: true,
                     ajax: {
                         type: 'Post',
                         url: '/Inventory/GetStoneStatus',

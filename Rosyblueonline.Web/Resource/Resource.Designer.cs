@@ -1186,7 +1186,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Created_Date.
+        ///   Looks up a localized string similar to Created Date.
         /// </summary>
         public static string Created_Date {
             get {

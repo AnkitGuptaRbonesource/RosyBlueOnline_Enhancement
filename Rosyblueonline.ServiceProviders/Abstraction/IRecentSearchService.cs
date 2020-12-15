@@ -13,7 +13,7 @@ namespace Rosyblueonline.ServiceProviders.Abstraction
         int Add(RecentSearchModel obj);
         int Edit(RecentSearchModel obj);
         RecentSearchModel Get(int recentSearchID, int CreatedBy);
-        List<SelectOptionsViewModel> GetForOptions(string SearchType);
+        List<SelectOptionsViewModel> GetForOptions(string SearchType,int LoginID);
         int Delete(int recentSearchID);
     }
 }
