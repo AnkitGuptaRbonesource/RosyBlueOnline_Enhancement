@@ -3,14 +3,14 @@
     var dtWL = null;
     var watchListData = null;
     var LstOfCheckItems = [];
-    var SummeryTemp = '<tr class="rsearchnew" style="height: 25px;">\
-        <td class="rsearchnew"><b><span id="lblcountsel">${TotalPcs}</span></b></td>\
-        <td class="rsearchnew"><b><span id="lblTCt1">${TotalCarat}</span></b></td>\
-        <td class="rsearchnew"><b><span id="lblNetORapValue">${AvgRapPerCT}</span></b></td>\
-        <td class="rsearchnew"><b><span id="lbltotRap">${TotalRap}</span></b></td>\
-        <td class="rsearchnew"><b><span id="lblNetRapPer">${AvgRapoff}</span></b></td>\
-        <td class="rsearchnew"><b><span id="lblavgpriceafterdis">${PricePerct}</span></b></td>\
-        <td class="rsearchnew"><b><span id="lblfinalamoutpayment">${PayableAmount}</span></b></td>\
+    var SummeryTemp = '<tr style="height: 25px;">\
+        <td class="whspace"><b><span id="lblcountsel">${TotalPcs}</span></b></td>\
+        <td class="whspace"><b><span id="lblTCt1">${TotalCarat}</span></b></td>\
+        <td class="whspace"><b><span id="lblNetORapValue">${AvgRapPerCT}</span></b></td>\
+        <td class="whspace"><b><span id="lbltotRap">${TotalRap}</span></b></td>\
+        <td class="whspace"><b><span id="lblNetRapPer">${AvgRapoff}</span></b></td>\
+        <td class="whspace"><b><span id="lblavgpriceafterdis">${PricePerct}</span></b></td>\
+        <td class="whspace"><b><span id="lblfinalamoutpayment">${PayableAmount}</span></b></td>\
         </tr>';
 
     var OnLoad = function () {
