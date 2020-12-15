@@ -102,10 +102,7 @@
         $(document).on('click', '#btnNext', function (e) {
             e.preventDefault();
             if ($pnlRegistration.valid()) {
-                //$('#pnlPersonalDetail').collapse('toggle');  //Changed by ankit 04July2020
-                $('#MainPersonalDetail').show();
-
-                
+                $('#MainPersonalDetail').show(); 
                 $('#pnlRegistration').collapse('toggle');
             }
         });
@@ -276,8 +273,7 @@
                 ZIP: {
                     required: true,
                     number: true,
-                    maxlength: 10,
-                    minlength: 6
+                    maxlength: 10 
                 },
                 emailId: {
                     required: true,

@@ -155,9 +155,11 @@
             e.preventDefault();
             uiApp.Confirm('Re-Confirm Order?', function (confirmResp) {
                 if (confirmResp) {
+                   
                     if (LstOfCheckItems.length == 0) {
                         uiApp.Alert({ container: '#uiPanel2', message: "No items selected", type: "warning" });
                         return;
+
                     }
                     if (OrderDetail.BillingID == 0) {
                         uiApp.Alert({ container: '#uiPanel2', message: "Please select any billing address", type: "warning" });
@@ -167,6 +169,7 @@
                         uiApp.Alert({ container: '#uiPanel2', message: "Please select any shipping address", type: "warning" });
                         return;
                     }
+                    uiApp.BlockUI();
                     OrderDetail.LotNos = LstOfCheckItems.join(',');
                     OrderDetail.ShippingMode = $('#ddlShippingMode').val();
                     objOrdSvc.BookOrder(OrderDetail).then(function (response) {
@@ -178,11 +181,17 @@
                             //var Message = 'Order created with order # ' + response.Result.OrderId + '.<br/> Valid Count: ' + response.Result.validCount + " Invalid count: " + response.Result.InvalidCount;
                             var Message = 'Order placed successfully. You will get an email shortly';
                             uiApp.Alert({ container: '#uiPanel1', message: Message, type: "success" });
+                            uiApp.UnBlockUI();
+                            setTimeout(function () {
+                                location.reload();
+                            }, 1000);
                         }
                         else {
+                            uiApp.UnBlockUI();
                             uiApp.Alert({ container: '#uiPanel1', message: "Order not created", type: "error" });
                         }
                     }, function myfunction() {
+                            uiApp.UnBlockUI();
                         uiApp.Alert({ container: '#uiPanel1', message: "Some error occured", type: "error" });
                     });
                 }
