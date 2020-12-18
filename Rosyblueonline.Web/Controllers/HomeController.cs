@@ -541,6 +541,18 @@ namespace Rosyblueonline.Web.Controllers
         {
             return View();
         }
+        public ActionResult PrivacyPolicy()
+        {
+            return View();
+        }
+        public ActionResult TermsOfUse()
+        {
+            return View();
+        }
+        public ActionResult PricingDiscountPolicy()
+        {
+            return View();
+        }
 
         //Added BY Ankit 01JUly2020
 

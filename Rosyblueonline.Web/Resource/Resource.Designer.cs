@@ -232,6 +232,24 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to add : Shipping Charges India.
+        /// </summary>
+        public static string add_Shipping_Charges_India {
+            get {
+                return ResourceManager.GetString("add_Shipping_Charges_India", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add To Cart Permitted.
+        /// </summary>
+        public static string Add_To_Cart_Permitted {
+            get {
+                return ResourceManager.GetString("Add_To_Cart_Permitted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Add to Memo.
         /// </summary>
         public static string Add_to_Memo {
@@ -250,11 +268,20 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to less : Additional Discount.
+        ///   Looks up a localized string similar to Additional Details.
         /// </summary>
-        public static string Additional_Discount {
+        public static string Additional_Details {
             get {
-                return ResourceManager.GetString("Additional_Discount", resourceCulture);
+                return ResourceManager.GetString("Additional_Details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Additional Discount.
+        /// </summary>
+        public static string Additional_Discount1 {
+            get {
+                return ResourceManager.GetString("Additional_Discount1", resourceCulture);
             }
         }
         
@@ -358,6 +385,33 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to AllMemo.
+        /// </summary>
+        public static string AllMemo {
+            get {
+                return ResourceManager.GetString("AllMemo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to AllOrder.
+        /// </summary>
+        public static string AllOrder {
+            get {
+                return ResourceManager.GetString("AllOrder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Allowed.
+        /// </summary>
+        public static string Allowed {
+            get {
+                return ResourceManager.GetString("Allowed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Already Assigned.
         /// </summary>
         public static string Already_Assigned {
@@ -408,6 +462,15 @@ namespace Rosyblueonline.Web.Resource {
         public static string and {
             get {
                 return ResourceManager.GetString("and", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to APPLIED ON.
+        /// </summary>
+        public static string APPLIED_ON {
+            get {
+                return ResourceManager.GetString("APPLIED_ON", resourceCulture);
             }
         }
         
@@ -691,6 +754,15 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Browse.
+        /// </summary>
+        public static string Browse {
+            get {
+                return ResourceManager.GetString("Browse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to By.
         /// </summary>
         public static string By {
@@ -943,6 +1015,15 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Choose File.
+        /// </summary>
+        public static string Choose_File {
+            get {
+                return ResourceManager.GetString("Choose_File", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to City.
         /// </summary>
         public static string City {
@@ -1179,15 +1260,6 @@ namespace Rosyblueonline.Web.Resource {
         /// <summary>
         ///   Looks up a localized string similar to Created Date.
         /// </summary>
-        public static string Created_Dae {
-            get {
-                return ResourceManager.GetString("Created_Dae", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Created Date.
-        /// </summary>
         public static string Created_Date {
             get {
                 return ResourceManager.GetString("Created_Date", resourceCulture);
@@ -1348,6 +1420,24 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Customer Details.
+        /// </summary>
+        public static string Customer_Details {
+            get {
+                return ResourceManager.GetString("Customer_Details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Customer Feedback.
+        /// </summary>
+        public static string Customer_Feedback {
+            get {
+                return ResourceManager.GetString("Customer_Feedback", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Customer Name.
         /// </summary>
         public static string Customer_Name {
@@ -1429,6 +1519,15 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dd-Mm-Yyyy.
+        /// </summary>
+        public static string Dd_Mm_Yyyy {
+            get {
+                return ResourceManager.GetString("Dd_Mm_Yyyy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Delete.
         /// </summary>
         public static string Delete {
@@ -1501,6 +1600,15 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Details.
+        /// </summary>
+        public static string Details {
+            get {
+                return ResourceManager.GetString("Details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Diamentions.
         /// </summary>
         public static string Diamentions {
@@ -1533,6 +1641,15 @@ namespace Rosyblueonline.Web.Resource {
         public static string Diamond_Status {
             get {
                 return ResourceManager.GetString("Diamond_Status", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DIMENSIONS.
+        /// </summary>
+        public static string DIMENSIONS {
+            get {
+                return ResourceManager.GetString("DIMENSIONS", resourceCulture);
             }
         }
         
@@ -1627,6 +1744,15 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to DISCOUNT.
+        /// </summary>
+        public static string DISCOUNT1 {
+            get {
+                return ResourceManager.GetString("DISCOUNT1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Doc Expiry Date.
         /// </summary>
         public static string Doc_Expiry_Date {
@@ -1704,6 +1830,15 @@ namespace Rosyblueonline.Web.Resource {
         public static string DR {
             get {
                 return ResourceManager.GetString("DR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Drag your Excel file, or.
+        /// </summary>
+        public static string DragyourExcelfile_or {
+            get {
+                return ResourceManager.GetString("DragyourExcelfile_or", resourceCulture);
             }
         }
         
@@ -1798,11 +1933,29 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Enter Lot/Cert. number to quick search .....
+        /// </summary>
+        public static string Enter_Lot_Cert_No {
+            get {
+                return ResourceManager.GetString("Enter_Lot_Cert_No", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Enter Lot Numaber.
         /// </summary>
         public static string Enter_Lot_Numaber {
             get {
                 return ResourceManager.GetString("Enter_Lot_Numaber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter Size.
+        /// </summary>
+        public static string Enter_Size {
+            get {
+                return ResourceManager.GetString("Enter_Size", resourceCulture);
             }
         }
         
@@ -1893,6 +2046,15 @@ namespace Rosyblueonline.Web.Resource {
         public static string Extra_Charges {
             get {
                 return ResourceManager.GetString("Extra_Charges", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Extra Charges (100$ will be charged because the order is below $ 10,000 ).
+        /// </summary>
+        public static string Extra_Charges1 {
+            get {
+                return ResourceManager.GetString("Extra_Charges1", resourceCulture);
             }
         }
         
@@ -2032,15 +2194,6 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fluor.
-        /// </summary>
-        public static string Fluor {
-            get {
-                return ResourceManager.GetString("Fluor", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to FLUORESCENCE.
         /// </summary>
         public static string FLUORESCENCE {
@@ -2095,6 +2248,15 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to From.
+        /// </summary>
+        public static string From {
+            get {
+                return ResourceManager.GetString("From", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Gemex.
         /// </summary>
         public static string Gemex {
@@ -2109,6 +2271,15 @@ namespace Rosyblueonline.Web.Resource {
         public static string GIA_Reports {
             get {
                 return ResourceManager.GetString("GIA_Reports", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to GIA Upload.
+        /// </summary>
+        public static string GIA_Upload {
+            get {
+                return ResourceManager.GetString("GIA_Upload", resourceCulture);
             }
         }
         
@@ -2189,7 +2360,7 @@ namespace Rosyblueonline.Web.Resource {
         /// </summary>
         public static string HA_Ex_Disc {
             get {
-                return ResourceManager.GetString("HA-Ex_Disc", resourceCulture);
+                return ResourceManager.GetString("HA_Ex_Disc", resourceCulture);
             }
         }
         
@@ -2198,7 +2369,7 @@ namespace Rosyblueonline.Web.Resource {
         /// </summary>
         public static string HA_VG_Disc {
             get {
-                return ResourceManager.GetString("HA-VG_Disc", resourceCulture);
+                return ResourceManager.GetString("HA_VG_Disc", resourceCulture);
             }
         }
         
@@ -2563,6 +2734,33 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to less : Additional Discount.
+        /// </summary>
+        public static string less_Additional_Discount {
+            get {
+                return ResourceManager.GetString("less_Additional_Discount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to LIST.
+        /// </summary>
+        public static string LIST {
+            get {
+                return ResourceManager.GetString("LIST", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to LIST AMOUNT.
+        /// </summary>
+        public static string LIST_AMOUNT {
+            get {
+                return ResourceManager.GetString("LIST_AMOUNT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to List Name.
         /// </summary>
         public static string List_Name {
@@ -2887,6 +3085,15 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Menu Master.
+        /// </summary>
+        public static string Menu_Master {
+            get {
+                return ResourceManager.GetString("Menu_Master", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Menu Rights.
         /// </summary>
         public static string Menu_Rights {
@@ -2986,6 +3193,15 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to months ago.
+        /// </summary>
+        public static string months_ago {
+            get {
+                return ResourceManager.GetString("months_ago", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Multiple Demand.
         /// </summary>
         public static string Multiple_Demand {
@@ -3027,6 +3243,15 @@ namespace Rosyblueonline.Web.Resource {
         public static string My_Order {
             get {
                 return ResourceManager.GetString("My_Order", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to MyAccount.
+        /// </summary>
+        public static string MyAccount {
+            get {
+                return ResourceManager.GetString("MyAccount", resourceCulture);
             }
         }
         
@@ -3121,6 +3346,24 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No File Chosen.
+        /// </summary>
+        public static string No_File_Chosen {
+            get {
+                return ResourceManager.GetString("No_File_Chosen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No matching records found.
+        /// </summary>
+        public static string No_matching_records_found {
+            get {
+                return ResourceManager.GetString("No_matching_records_found", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to No of file Chosen.
         /// </summary>
         public static string No_of_file_Chosen {
@@ -3139,11 +3382,29 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Not Allowed.
+        /// </summary>
+        public static string Not_Allowed {
+            get {
+                return ResourceManager.GetString("Not_Allowed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Note:.
         /// </summary>
         public static string Note {
             get {
                 return ResourceManager.GetString("Note", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Note: All Orders are in USD.
+        /// </summary>
+        public static string Note_All_Ordersarein_USD {
+            get {
+                return ResourceManager.GetString("Note_All_Ordersarein_USD", resourceCulture);
             }
         }
         
@@ -3189,6 +3450,15 @@ namespace Rosyblueonline.Web.Resource {
         public static string Online_Discount {
             get {
                 return ResourceManager.GetString("Online_Discount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Online Discount.
+        /// </summary>
+        public static string Online_Discount1 {
+            get {
+                return ResourceManager.GetString("Online_Discount1", resourceCulture);
             }
         }
         
@@ -3297,6 +3567,15 @@ namespace Rosyblueonline.Web.Resource {
         public static string OrgFileName {
             get {
                 return ResourceManager.GetString("OrgFileName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Origin Filter Permitted.
+        /// </summary>
+        public static string Origin_Filter_Permitted {
+            get {
+                return ResourceManager.GetString("Origin_Filter_Permitted", resourceCulture);
             }
         }
         
@@ -3688,6 +3967,15 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Pricing &amp; Discount Policy.
+        /// </summary>
+        public static string Pricing_Discount_Policy {
+            get {
+                return ResourceManager.GetString("Pricing_Discount_Policy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Pricing Policy.
         /// </summary>
         public static string Pricing_Policy {
@@ -3909,6 +4197,15 @@ namespace Rosyblueonline.Web.Resource {
         public static string Register {
             get {
                 return ResourceManager.GetString("Register", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Registered Email ID.
+        /// </summary>
+        public static string Registered_EmailID {
+            get {
+                return ResourceManager.GetString("Registered_EmailID", resourceCulture);
             }
         }
         
@@ -4201,6 +4498,15 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Rights.
+        /// </summary>
+        public static string Rights {
+            get {
+                return ResourceManager.GetString("Rights", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Role.
         /// </summary>
         public static string Role {
@@ -4399,11 +4705,29 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Search Memo no/ Customer/ Remark.
+        /// </summary>
+        public static string Search_Memo_no_Customer_Remark {
+            get {
+                return ResourceManager.GetString("Search_Memo_no_Customer_Remark", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Search Result.
         /// </summary>
         public static string Search_Result {
             get {
                 return ResourceManager.GetString("Search_Result", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Search Stones.
+        /// </summary>
+        public static string Search_Stones {
+            get {
+                return ResourceManager.GetString("Search_Stones", resourceCulture);
             }
         }
         
@@ -4498,11 +4822,29 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Select Language.
+        /// </summary>
+        public static string Select_Language {
+            get {
+                return ResourceManager.GetString("Select_Language", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Select Sales Location.
         /// </summary>
         public static string Select_Sales_Location {
             get {
                 return ResourceManager.GetString("Select_Sales_Location", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select Search.
+        /// </summary>
+        public static string Select_Search {
+            get {
+                return ResourceManager.GetString("Select_Search", resourceCulture);
             }
         }
         
@@ -4548,6 +4890,15 @@ namespace Rosyblueonline.Web.Resource {
         public static string Select_Type {
             get {
                 return ResourceManager.GetString("Select_Type", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select User.
+        /// </summary>
+        public static string Select_User {
+            get {
+                return ResourceManager.GetString("Select_User", resourceCulture);
             }
         }
         
@@ -4669,11 +5020,29 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Shipping Charges India.
+        /// </summary>
+        public static string Shipping_Charges_India {
+            get {
+                return ResourceManager.GetString("Shipping_Charges_India", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to add : Shipping Charges Non India.
         /// </summary>
         public static string Shipping_Charges_Non_India {
             get {
                 return ResourceManager.GetString("Shipping_Charges_Non_India", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Shipping Charges Non India.
+        /// </summary>
+        public static string Shipping_Charges_Non_India1 {
+            get {
+                return ResourceManager.GetString("Shipping_Charges_Non_India1", resourceCulture);
             }
         }
         
@@ -4723,6 +5092,24 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Show Results.
+        /// </summary>
+        public static string Show_Results {
+            get {
+                return ResourceManager.GetString("Show_Results", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show up to Record.
+        /// </summary>
+        public static string Show_up_to_Record {
+            get {
+                return ResourceManager.GetString("Show_up_to_Record", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to SideBlack.
         /// </summary>
         public static string SideBlack {
@@ -4746,6 +5133,15 @@ namespace Rosyblueonline.Web.Resource {
         public static string Site_best_viewed {
             get {
                 return ResourceManager.GetString("Site_best_viewed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Site blocked.
+        /// </summary>
+        public static string Site_blocked {
+            get {
+                return ResourceManager.GetString("Site_blocked", resourceCulture);
             }
         }
         
@@ -5074,6 +5470,51 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to System discount 0K-15K.
+        /// </summary>
+        public static string System_discount_0K_15K {
+            get {
+                return ResourceManager.GetString("System_discount_0K_15K", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to System discount 100K-200k.
+        /// </summary>
+        public static string System_discount_100K_200k {
+            get {
+                return ResourceManager.GetString("System_discount_100K_200k", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to System discount 15K-25K.
+        /// </summary>
+        public static string System_discount_15K_25K {
+            get {
+                return ResourceManager.GetString("System_discount_15K_25K", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to System discount 25K-50K.
+        /// </summary>
+        public static string System_discount_25K_50K {
+            get {
+                return ResourceManager.GetString("System_discount_25K_50K", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to System discount 50K-100K.
+        /// </summary>
+        public static string System_discount_50K_100K {
+            get {
+                return ResourceManager.GetString("System_discount_50K_100K", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to less : System discount 0K-15K.
         /// </summary>
         public static string System_discount_K {
@@ -5196,6 +5637,15 @@ namespace Rosyblueonline.Web.Resource {
         public static string TIN {
             get {
                 return ResourceManager.GetString("TIN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To.
+        /// </summary>
+        public static string To {
+            get {
+                return ResourceManager.GetString("To", resourceCulture);
             }
         }
         
@@ -5362,6 +5812,15 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to UnBlock Site.
+        /// </summary>
+        public static string UnBlock_Site {
+            get {
+                return ResourceManager.GetString("UnBlock_Site", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to UnReferenced.
         /// </summary>
         public static string UnReferenced {
@@ -5385,6 +5844,15 @@ namespace Rosyblueonline.Web.Resource {
         public static string Update {
             get {
                 return ResourceManager.GetString("Update", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to UPDATED ON.
+        /// </summary>
+        public static string UPDATED_ON {
+            get {
+                return ResourceManager.GetString("UPDATED_ON", resourceCulture);
             }
         }
         
@@ -5695,6 +6163,15 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to View orders.
+        /// </summary>
+        public static string View_orders {
+            get {
+                return ResourceManager.GetString("View_orders", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to View Pending Orders.
         /// </summary>
         public static string View_Pending_Orders {
@@ -5727,6 +6204,15 @@ namespace Rosyblueonline.Web.Resource {
         public static string Watch_List {
             get {
                 return ResourceManager.GetString("Watch_List", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Watchlist.
+        /// </summary>
+        public static string Watchlist {
+            get {
+                return ResourceManager.GetString("Watchlist", resourceCulture);
             }
         }
         
@@ -5799,6 +6285,15 @@ namespace Rosyblueonline.Web.Resource {
         public static string Width {
             get {
                 return ResourceManager.GetString("Width", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Write Name Here.
+        /// </summary>
+        public static string Write_Name_Here {
+            get {
+                return ResourceManager.GetString("Write_Name_Here", resourceCulture);
             }
         }
         

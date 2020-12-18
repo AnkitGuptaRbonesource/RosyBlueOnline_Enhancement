@@ -49,7 +49,7 @@
         <header class="main-header">
             <nav class="navbar navbar-static-top">
                 <div class="searchbar">
-                    <input id="LotCertSearchInput" type="text" class="header-search" placeholder="Enter Lot/Cert. number to quick search ...." />
+                    <input id="LotCertSearchInput" type="text" class="header-search" placeholder=@Resource.Enter_Lot_Cert_No  />
                     <div class="inseach" id="SearchId">
                         <img src="/Content/img/search.png" />
                     </div>
@@ -60,7 +60,7 @@
                         <input id="searchfile" type="file" class="drop-file" />
                         <div class="drop-cont">
                             <img src="/Content/img/dropfile.png" />
-                            <h5>Drag your Excel file, or <span>Browse</span></h5>
+                            <h5>@Resource.DragyourExcelfile_or <span>@Resource.Browse</span></h5>
                         </div>
                     </div>
                 </div>
@@ -78,7 +78,7 @@
                                         <path fill-rule="evenodd" clip-rule="evenodd" d="M22.125 0.75H1.875C1.25 0.75 0.75 1.25 0.75 1.875V22.125C0.75 22.625 1.25 23.25 1.875 23.25H22.125C22.625 23.25 23.25 22.625 23.25 22.125V1.875C23.25 1.25 22.625 0.75 22.125 0.75ZM8.25 5.74988H5.75V8.24988H8.25V5.74988ZM18.25 5.74988H10.75V8.24988H18.25V5.74988ZM18.25 10.7501H10.75V13.2501H18.25V10.7501ZM10.75 15.75H18.25V18.25H10.75V15.75ZM5.75 10.7501H8.25V13.2501H5.75V10.7501ZM8.25 15.75H5.75V18.25H8.25V15.75ZM3.25 20.7501H20.75V3.25012H3.25V20.7501Z" />
                                     </svg>
                                 </span>
-                                <span class="menuname">Watchlist</span>
+                                <span class="menuname">@Resource.Watchlist</span>
                                 <span class="label label-danger" id="spanWatchlistCount">0</span>
                             </a>
                         </li>
@@ -89,24 +89,24 @@
                                         <path fill-rule="evenodd" clip-rule="evenodd" d="M22.8711 14.9625C22.4461 15.7375 21.6211 16.25 20.6836 16.25H11.3711L9.99609 18.75H24.9961V21.25H9.99609C8.09609 21.25 6.89609 19.2125 7.80859 17.5375L9.49609 14.4875L4.99609 5H2.49609V2.5H6.58359L7.75859 5H26.2586C27.2086 5 27.8086 6.025 27.3461 6.85L22.8711 14.9625ZM24.134 7.49996H8.94646L11.909 13.75H20.684L24.134 7.49996ZM9.9949 22.5C8.6199 22.5 7.5074 23.625 7.5074 25C7.5074 26.375 8.6199 27.5 9.9949 27.5C11.3699 27.5 12.4949 26.375 12.4949 25C12.4949 23.625 11.3699 22.5 9.9949 22.5ZM20.0087 25C20.0087 23.625 21.1212 22.5 22.4962 22.5C23.8712 22.5 24.9962 23.625 24.9962 25C24.9962 26.375 23.8712 27.5 22.4962 27.5C21.1212 27.5 20.0087 26.375 20.0087 25Z" />
                                     </svg>
                                 </span>
-                                <span class="menuname">Cart</span>
+                                <span class="menuname">@Resource.Cart</span>
                                 <span class="label label-success" id="spanCartCount">0</span>
                             </a>
                         </li>
                         <li class="dropdown notifications-menu">
                             <a href="/Order/List" class="dropdown-toggle userorder" data-toggle="dropdown">
                                 <img class="car-icon" data-toggle="tooltip" data-placement="bottom" title="Order" src="/Content/img/order.png">
-                                <span style="color:#E9978C !important" class="menuname">Order <img src="/Content/img/orderarrow.png" /></span>
+                                <span style="color:#E9978C !important" class="menuname">@Resource.Order <img src="/Content/img/orderarrow.png" /></span>
                                 @*<span class="label label-warning" id="spanOrderCount">0</span>*@
                             </a>
                             <ul class="dropdown-menu orderdropmenu">
                                 <li class="order-box">
                                     <ul class="nav nav-pills">
                                         <li class="nav-item active">
-                                            <a class="nav-link" id="pending-order" href="#home">Pending orders</a>
+                                            <a class="nav-link" id="pending-order" href="#home">@Resource.Pending_Orders</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" id="view-order" href="#menu1">View orders</a>
+                                            <a class="nav-link" id="view-order" href="#menu1">@Resource.View_orders</a>
                                         </li>
                                     </ul>
                                     <div class="tab-content">
@@ -176,7 +176,7 @@
                                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M24 5H20.25V0H2.75C1.375 0 0.25 1.125 0.25 2.5V16.25H2.75C2.75 18.325 4.425 20 6.5 20C8.575 20 10.25 18.325 10.25 16.25H17.75C17.75 18.325 19.425 20 21.5 20C23.575 20 25.25 18.325 25.25 16.25H27.75V10L24 5ZM23.375 6.875L25.825 10H20.25V6.875H23.375ZM5.25 16.25C5.25 16.9375 5.8125 17.5 6.5 17.5C7.1875 17.5 7.75 16.9375 7.75 16.25C7.75 15.5625 7.1875 15 6.5 15C5.8125 15 5.25 15.5625 5.25 16.25ZM9.275 13.75C8.5875 12.9875 7.6125 12.5 6.5 12.5C5.3875 12.5 4.4125 12.9875 3.725 13.75H2.75V2.5H17.75V13.75H9.275ZM20.25 16.25C20.25 16.9375 20.8125 17.5 21.5 17.5C22.1875 17.5 22.75 16.9375 22.75 16.25C22.75 15.5625 22.1875 15 21.5 15C20.8125 15 20.25 15.5625 20.25 16.25Z" />
                                                 </svg>
                                             </span>
-                                            Shipping
+                                            @Resource.Shipping
                                         </a>
                                     </div>
                                 </li>
@@ -188,7 +188,7 @@
                                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M23 0H3C1.6125 0 0.5125 1.1125 0.5125 2.5L0.5 17.5C0.5 18.8875 1.6125 20 3 20H23C24.3875 20 25.5 18.8875 25.5 17.5V2.5C25.5 1.1125 24.3875 0 23 0ZM11.75 16.25H14.25V15H15.5C16.1875 15 16.75 14.4375 16.75 13.75V10C16.75 9.3125 16.1875 8.75 15.5 8.75H11.75V7.5H16.75V5H14.25V3.75H11.75V5H10.5C9.8125 5 9.25 5.5625 9.25 6.25V10C9.25 10.6875 9.8125 11.25 10.5 11.25H14.25V12.5H9.25V15H11.75V16.25ZM3 17.5H23V2.5H3V17.5Z" />
                                                 </svg>
                                             </span>
-                                            Pricing Policy
+                                            @Resource.Pricing_Policy
                                         </a>
                                     </div>
                                 </li>
@@ -200,7 +200,7 @@
                                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M15.525 3H20.75C22.125 3 23.25 4.125 23.25 5.5V23C23.25 24.375 22.125 25.5 20.75 25.5H3.25C3.075 25.5 2.9125 25.4875 2.75 25.4625C2.2625 25.3625 1.825 25.1125 1.4875 24.775C1.2625 24.5375 1.075 24.275 0.95 23.975C0.825 23.675 0.75 23.3375 0.75 23V5.5C0.75 5.15 0.825 4.825 0.95 4.5375C1.075 4.2375 1.2625 3.9625 1.4875 3.7375C1.825 3.4 2.2625 3.15 2.75 3.05C2.9125 3.0125 3.075 3 3.25 3H8.475C9 1.55 10.375 0.5 12 0.5C13.625 0.5 15 1.55 15.525 3ZM10.75 15.5V8H13.25V15.5H10.75ZM10.75 20.5V18H13.25V20.5H10.75ZM12 2.6875C12.5125 2.6875 12.9375 3.1125 12.9375 3.625C12.9375 4.1375 12.5125 4.5625 12 4.5625C11.4875 4.5625 11.0625 4.1375 11.0625 3.625C11.0625 3.1125 11.4875 2.6875 12 2.6875ZM3.25 23H20.75V5.5H3.25V23Z" />
                                                 </svg>
                                             </span>
-                                            Terms of Use
+                                            @Resource.Terms_of_Use
                                         </a>
                                     </div>
                                 </li>
@@ -212,7 +212,7 @@
                                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M16.25 9.625H17.5C18.875 9.625 20 10.75 20 12.125V24.625C20 26 18.875 27.125 17.5 27.125H2.5C1.125 27.125 0 26 0 24.625V12.125C0 10.75 1.125 9.625 2.5 9.625H3.75V7.125C3.75 3.675 6.55 0.875 10 0.875C13.45 0.875 16.25 3.675 16.25 7.125V9.625ZM10 3.375C7.925 3.375 6.25 5.05 6.25 7.125V9.625H13.75V7.125C13.75 5.05 12.075 3.375 10 3.375ZM2.5 24.625V12.125H17.5V24.625H2.5ZM12.5 18.375C12.5 19.75 11.375 20.875 10 20.875C8.625 20.875 7.5 19.75 7.5 18.375C7.5 17 8.625 15.875 10 15.875C11.375 15.875 12.5 17 12.5 18.375Z" />
                                                 </svg>
                                             </span>
-                                            Privacy Policy
+                                            @Resource.Privacy_Policy
                                         </a>
                                     </div>
                                 </li>
@@ -313,7 +313,7 @@
                     <li class="treeview">
                         <a href="/CustomerFeedbackFAQ/Index">
                             <div class="img-icon"><i class="fa fa-pencil-square-o fa-fw" aria-hidden="true"></i></div>
-                            <span>Customer Feedback</span>
+                            <span>@Resource.Customer_Feedback</span>
                         </a>
                     </li>
                 </ul>
@@ -322,7 +322,7 @@
                         <li class="signout">
                             <a href="/Home/LogOut">
                                 <div class="img-icon"><img src="/Content/img/signout.png" /></div>
-                                <span>Sign out</span>
+                                <span>@Resource.Sign_out</span>
                             </a>
                         </li>
                     </ul>

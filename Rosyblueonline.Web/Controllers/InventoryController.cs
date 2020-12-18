@@ -74,7 +74,7 @@ namespace Rosyblueonline.Web.Controllers
             
             bool log = this.objUDSvc.UserActivitylogs(LoginID, "Dashboard Search", Query);
             List<inventoryDetailsViewModel> objInvVM = new List<inventoryDetailsViewModel>();
-            objInvVM = objStockDetailsService.InventoryAction(LoginID.ToString(), Query, "0", "10", "", "", "SpecificSearch");
+            objInvVM = objStockDetailsService.InventoryAction(LoginID.ToString(), Query, "0", "10000000", "", "", "SpecificSearch");
 
             // ViewBag.SearchResultList = objInvVM.Take(10);  
             return View("SpecificSearch", objVM);
@@ -130,7 +130,10 @@ namespace Rosyblueonline.Web.Controllers
                         OrderBy = obj.columns[obj.order[0].column].data;
                         OrderDirection = obj.order[0].dir;
                     }
-                    bool log = this.objUDSvc.UserActivitylogs(LoginID, "Specific Search", obj.displayCriteria);
+                    if (obj.displayCriteria != null)
+                    {
+                        bool log = this.objUDSvc.UserActivitylogs(LoginID, "Specific Search", obj.displayCriteria);
+                    }
                     if (AddToRecentSearch == true)
                     {//isactive = true,searchWhere = ""
                         this.objRecentSearchService.Add(new RecentSearchModel { createdBy = LoginID, Createdon = DateTime.Now, searchCriteria = obj.filterText, displayCriteria = obj.displayCriteria, searchType = "SpecificSearch", searchCriteriaName = "" });

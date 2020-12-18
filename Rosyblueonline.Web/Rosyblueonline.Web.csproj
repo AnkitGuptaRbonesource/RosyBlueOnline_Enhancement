@@ -1129,6 +1129,9 @@
     <Content Include="Views\Dashboard\_RecentSearchView.cshtml" />
     <Content Include="Views\Inventory\SpecificSearch_FIX.cshtml" />
     <Content Include="Views\CustomerFeedbackFAQ\Index.cshtml" />
+    <Content Include="Views\Home\PrivacyPolicy.cshtml" />
+    <Content Include="Views\Home\TermsOfUse.cshtml" />
+    <Content Include="Views\Home\PricingDiscountPolicy.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

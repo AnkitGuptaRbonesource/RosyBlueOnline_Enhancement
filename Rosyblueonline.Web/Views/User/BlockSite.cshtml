@@ -13,14 +13,14 @@
                 <div class="col-md-6  col-md-offset-3 ">
                     <div class="dash-box mt-10">
                         <div class="dash-head">
-                            @(Model == true ? "UnBlock Site" : "Block Site")
+                            @(Model == true ? @Resource.UnBlock_Site : @Resource.Block_Site)
                         </div>
                         <div class="dash-inner">
                             <form id="frmBlockSite" class="customers-info">
                                 <div class="form-horizontal">
                                     <div class="form-group">
                                         <div class="col-lg-4"><label class="control-label">@Resource.Current_Status :</label></div>
-                                        <div class="col-lg-8"><label class="control-label"><u><b>@(Model == true ? "Site blocked" : " Site not blocked")</b></u></label></div>
+                                        <div class="col-lg-8"><label class="control-label"><u><b>@(Model == true ? @Resource.Site_blocked : @Resource.Site_not_blocked)</b></u></label></div>
                                     </div>
                                     <div class="form-group">
                                         <div class="col-lg-4"><label class="control-label">@Resource.Password :</label></div>
@@ -28,7 +28,7 @@
                                     </div>
                                 </div>
                                 <div class="text-center">
-                                    <button type="button" class="btn btn-primary" id="btnUpdate">@(Model == true ? "UnBlock Site" : "Block Site")</button>
+                                    <button type="button" class="btn btn-primary" id="btnUpdate">@(Model == true ? @Resource.UnBlock_Site : @Resource.Block_Site)</button>
                                 </div>
                             </form>
                         </div>

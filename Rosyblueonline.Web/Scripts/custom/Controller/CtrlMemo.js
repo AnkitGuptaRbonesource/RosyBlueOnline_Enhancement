@@ -515,22 +515,22 @@
                         }
                     },
                     columns: [
-                        { data: null },
-                        { data: "orderDetailsId" },
-                        { data: "orderCreatedOn" },
-                        { data: "companyName" },
-                        { data: "remark" },
-                        { data: "OrdCount" },
-                        { data: "orderTotalCarat" },
-                        { data: "orderAvgRapPerCT" },
-                        { data: "orderTotalRap" },
+                        { data: null, class: 'whspace'},
+                        { data: "orderDetailsId", class: 'whspace' },
+                        { data: "orderCreatedOn", class: 'whspace' },
+                        { data: "companyName", class: 'whspace' },
+                        { data: "remark", class: 'whspace'},
+                        { data: "OrdCount", class: 'whspace' },
+                        { data: "orderTotalCarat", class: 'whspace'},
+                        { data: "orderAvgRapPerCT", class: 'whspace' },
+                        { data: "orderTotalRap", class: 'whspace' },
                         //{ data: "orderAvgDiscount" },
-                        { data: "orderAvgRapOff" },
-                        { data: "orderPricePerCT" },
-                        { data: "orderAmount" },
-                        { data: "CreatedName" },
+                        { data: "orderAvgRapOff", class: 'whspace' },
+                        { data: "orderPricePerCT", class: 'whspace' },
+                        { data: "orderAmount", class: 'whspace' },
+                        { data: "CreatedName", class: 'whspace' },
                         //{ data: "ModifierName" },
-                        { data: null }
+                        { data: null, class: 'whspace'}
                     ],
                     columnDefs: [{
                         targets: [0],
@@ -821,7 +821,8 @@
             dtOrderItemForPopup.init({
                 src: '#MemoTable',
                 dataTable: {
-                    scrollY: "250px",
+                    scrollY: "270px",
+                    scrollX: true,
                     paging: false,
                     order: [[1, "desc"]],
                     processing: false,

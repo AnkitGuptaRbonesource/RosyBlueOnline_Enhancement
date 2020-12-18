@@ -15,12 +15,12 @@
                 <div class="col-md-12">
                     <div class="dash-box">
                         <div class="dash-head">
-                            Manage Rights
+                            @Resource.Manage_Rights
                         </div>
                         <div class="dash-inner">
                             <div class="form-inline">
                                 <div class="form-group">
-                                    <label class="control-label">Select User</label>
+                                    <label class="control-label">@Resource.Select_User</label>
                                     <select class="form-control" id="ddlUser">
                                         <option value="">Select User</option>
                                         @for (int i = 0; i < Model.Users.Count; i++)
@@ -41,7 +41,7 @@
                                 </div>       
                             
                             <div class="mt-10">
-                                <button class="btn btn-primary" id="btnUpdate">Update</button>
+                                <button class="btn btn-primary" id="btnUpdate">@Resource.Update</button>
                             </div>
                         </div>
                     </div>
@@ -49,15 +49,15 @@
                 <div class="col-md-12">
                     <div class="dash-box">
                         <div class="dash-head">
-                            User Vs Rights
+                            @Resource.User_Vs_Rights
                         </div>
                         <div class="table-box list-view" id="divOtherDetails">
                             <div class="customers-list-table">
                                 <table class="table customers-table">
                                     <thead>
                                         <tr class="table-head">
-                                            <td class="tbnew">User</td>
-                                            <td class="tbnew">Rights</td>
+                                            <td class="tbnew">@Resource.Users</td>
+                                            <td class="tbnew">@Resource.Rights</td>
                                         </tr>
                                     </thead>
                                     <tbody>
