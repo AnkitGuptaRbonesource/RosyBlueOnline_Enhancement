@@ -43,7 +43,7 @@ namespace Rosyblueonline.ServiceProviders.Implementation
         {
             return this.uow.Orders.OrderListView();
         }
-       
+
         public OrderInfoViewModel OrderInfo(int OrderID)
         {
             return this.uow.Orders.OrderInfo(OrderID);
@@ -124,14 +124,38 @@ namespace Rosyblueonline.ServiceProviders.Implementation
             }
             else
             {
-                lstOfEmailIDs.Add(ConfigurationManager.AppSettings["Email_ID"].ToString());
-                lstOfEmailIDs.Add(ConfigurationManager.AppSettings["CCemail"].ToString());
+                int CountLocation = 0;
+                for (int i = 0; i < objOInfo.OrderItemDetail.Count; i++)
+                {
+                    if (objOInfo.OrderItemDetail[i].SalesLocation.ToLower().Trim() == "belgium")
+                    {
+                        CountLocation = CountLocation + 1;
+                    }
+                }
+                if (CountLocation == 0)
+                {
+                    lstOfEmailIDs.Add(ConfigurationManager.AppSettings["Email_ID"].ToString());
+                    lstOfEmailIDs.Add(ConfigurationManager.AppSettings["CCemail"].ToString());
+                }
+                else if (CountLocation == objOInfo.OrderItemDetail.Count)
+                {
+                    lstOfEmailIDs.Add(ConfigurationManager.AppSettings["AntwerpEmail_ID"].ToString());
+
+                }
+                else
+                {
+                    lstOfEmailIDs.Add(ConfigurationManager.AppSettings["AntwerpEmail_ID"].ToString());
+                    lstOfEmailIDs.Add(ConfigurationManager.AppSettings["Email_ID"].ToString());
+                    lstOfEmailIDs.Add(ConfigurationManager.AppSettings["CCemail"].ToString());
+
+                }
+
             }
             if (objOInfo != null && objOInfo.BillingAddress != null)
             {
                 List<string> objLst = objOInfo.OrderItemDetail.Select(x => x.Stock).ToList();
                 string LotNos = "LOTNO~" + string.Join(",", objLst);
-                DataTable dt = this.objStockDetailsService.GetDataForExcelExport(LotNos, false, CustomerId);
+                DataTable dt = this.objStockDetailsService.GetDataForExcelExportEmail(LotNos, false, CustomerId);
                 if (dt.Columns.Count > 0)
                 { 
                     dt.Columns.Remove("Sizes");
@@ -153,6 +177,8 @@ namespace Rosyblueonline.ServiceProviders.Implementation
                     {
                         dt.Columns.Remove("SalesLocation");
                     }
+
+                   
                 }
                 DataTable dtOrderCharges = objOInfo.ConvertOrderChangesInDatetable();
                 string htmlTableForOrderDetail = CommonFunction.ConvertDataTableToHTML(dt, false, true);

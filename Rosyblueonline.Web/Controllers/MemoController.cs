@@ -73,7 +73,7 @@ namespace Rosyblueonline.Web.Controllers
                     if (obj != null && obj.Counts.OrderId != 0)
                     {
                         this.objMemoService.SendMailMemo(obj.Counts.OrderId, GetEmailID(), GetFullName(), CustomerID, "List of inventory put on memo to", "", Server.MapPath(System.Configuration.ConfigurationManager.AppSettings["EmailTemplate_PutOnMemo"]));
-                        bool log = this.objUDSvc.UserActivitylogs(LoginID,  "Put on memo", LotNos);
+                        bool log = this.objUDSvc.UserActivitylogs(LoginID, "Put on memo", LotNos);
 
 
                     }
@@ -120,7 +120,7 @@ namespace Rosyblueonline.Web.Controllers
                     if (objInfo != null && obj.Counts != null && obj.Counts.OrderId > 0)
                     {
                         this.objMemoService.SendMailMemo(obj.Counts.OrderId, GetEmailID(), GetFullName(), objInfo.UserDetail.loginID, "List of inventory Partial Canceled Memo from memo-", "", Server.MapPath(System.Configuration.ConfigurationManager.AppSettings["EmailTemplate_CancelMemo"]), objInfo, LotNos);
-                        bool log = this.objUDSvc.UserActivitylogs(LoginID,  "Partial canceled memo", LotNos);
+                        bool log = this.objUDSvc.UserActivitylogs(LoginID, "Partial canceled memo", LotNos);
                     }
                     return Json(new Response { Code = 200, IsSuccess = true, Message = "", Result = obj.Counts.validCount });
                 }
@@ -153,7 +153,7 @@ namespace Rosyblueonline.Web.Controllers
                     if (objInfo != null && RowCount > 0)
                     {
                         this.objMemoService.SendMailMemo(RowCount, GetEmailID(), GetFullName(), objInfo.UserDetail.loginID, "List of inventory SplitMemo from memo-", "", Server.MapPath(System.Configuration.ConfigurationManager.AppSettings["EmailTemplate_SplitMemo"]));
-                        bool log = this.objUDSvc.UserActivitylogs(LoginID,  "Split memo", LotNos);
+                        bool log = this.objUDSvc.UserActivitylogs(LoginID, "Split memo", LotNos);
 
                     }
                     return Json(new Response { Code = 200, IsSuccess = true, Message = "", Result = RowCount });
@@ -193,7 +193,9 @@ namespace Rosyblueonline.Web.Controllers
                             if (newOrderID > 0)
                             {
                                 RowCount = this.objMemoService.SellFullMemo(newOrderID, LoginID, MemoMode, salesAvgDiscount);
+                                OrderID = newOrderID;
                             }
+
                         }
 
                         if (objOVM != null && RowCount > 0) //Added By Ankit 08Jun2020--Suggested By LK
@@ -202,7 +204,7 @@ namespace Rosyblueonline.Web.Controllers
                             bool log = this.objUDSvc.UserActivitylogs(LoginID, "partial sell memo", LotNos);
                         }
                     }
-                     
+
                     return Json(new Response { Code = 200, IsSuccess = true, Message = "", Result = RowCount });
                 }
                 return Json(new Response { IsSuccess = false, Message = string.Format(StringResource.Invalid, "Session") });
@@ -223,10 +225,10 @@ namespace Rosyblueonline.Web.Controllers
                 if (LoginID > 0)
                 {
                     int RowCount = this.objMemoService.SellFullMemo(OrderID, LoginID, MemoMode, salesAvgDiscount);
-                    if ( RowCount > 0) //Added By Ankit 08Jun2020--Suggested By LK
+                    if (RowCount > 0) //Added By Ankit 08Jun2020--Suggested By LK
                     {
-                        this.objMemoService.SendMailMemo(OrderID, GetEmailID(), GetFullName(), LoginID, "List of inventory sell full memo to", "", Server.MapPath(System.Configuration.ConfigurationManager.AppSettings["EmailTemplate_SellMemo"]),null,null, MemoMode, salesAvgDiscount);
-                        bool log = this.objUDSvc.UserActivitylogs(LoginID,  "Sell full memo",OrderID.ToString());
+                        this.objMemoService.SendMailMemo(OrderID, GetEmailID(), GetFullName(), LoginID, "List of inventory sell full memo to", "", Server.MapPath(System.Configuration.ConfigurationManager.AppSettings["EmailTemplate_SellMemo"]), null, null, MemoMode, salesAvgDiscount);
+                        bool log = this.objUDSvc.UserActivitylogs(LoginID, "Sell full memo", OrderID.ToString());
 
                     }
                     return Json(new Response { Code = 200, IsSuccess = true, Message = "", Result = RowCount });

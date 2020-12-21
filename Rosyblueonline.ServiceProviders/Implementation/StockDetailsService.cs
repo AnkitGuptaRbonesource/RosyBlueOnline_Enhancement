@@ -325,6 +325,32 @@ namespace Rosyblueonline.ServiceProviders.Implementation
             return dt;
         }
 
+        public DataTable GetDataForExcelExportEmail(string filterText, bool NewArrival, int LoginID, bool IsSpecialSearch = true, bool IsOnlyMemo = false)
+        {
+            //string path = Server.MapPath(ConfigurationManager.AppSettings["INVUpload"].ToString());
+            List<InventoryDownloadEmailViewModel> objInvVM = new List<InventoryDownloadEmailViewModel>();
+
+
+
+            objInvVM = NewArrival == false ? InventoryDownload<InventoryDownloadEmailViewModel>(LoginID.ToString(), filterText, "0", "500000", "LotNumber", "asc", "EmailSearch", (IsSpecialSearch ? "SpecialSearch" : "NormalSearch")) :
+                                                   InventoryDownload<InventoryDownloadEmailViewModel>(LoginID.ToString(), filterText, "0", "500000", "LotNumber", "asc", "EmailSearch", "NewArrival");
+
+            DataTable dt = Rosyblueonline.Framework.ListtoDataTable.ToDataTable<InventoryDownloadEmailViewModel>(objInvVM);
+          
+            dt.Columns["Cut"].ColumnName = "Cut Grade";  
+            dt.Columns["Discount"].ColumnName = "Rapnet Discount %";
+            dt.Columns["Price"].ColumnName = "Pricect"; 
+            dt.Columns["DepthPerc"].ColumnName = "Depth %";
+            dt.Columns["TablePerc"].ColumnName = "Table %"; 
+            dt.Columns["CrownHeight"].ColumnName = "Crown Height";
+            dt.Columns["CrownAngle"].ColumnName = "Crown Angle";
+            dt.Columns["PavilionDepth"].ColumnName = "Pavilion Depth";
+            dt.Columns["PavilionAngle"].ColumnName = "Pavilion Angle";
+            dt.Columns["StarLength"].ColumnName = "StarLength";
+            dt.Columns["GirdlePerc"].ColumnName = "Girdle %";
+            dt.Columns["Keytosymbol"].ColumnName = "Keytosymbol"; 
+            return dt;
+        }
         public DataTable GetDataForExcelExport2(string filterText, bool NewArrival, int LoginID)
         {
             ////proc_CustomSiteSearch 11,'LOTNO~D167321138938,D167321148813,D167321271739,D167321320951,D167321423459,D167322002845,D167322035924,D167322068033,D167322201548,D167322613648,D167322705023,D167322864231,D167323068035,D167323175661,D167323190899,D167323271446,D167323271611,D167323271760,D167323864563,D167326023881,D167326065073,D167326201207,D167326705026,D167326772230,D167326811583,D167326811588,D167328148666,D167328148702,D167328614088,D167328705021,D167328811571,D16M3E58210,D16M3E58211,D16M3E58215,D16M3E58216,D16M3E58218',0,500000,'LotNumber','asc','MailBody','SpecialSearch'

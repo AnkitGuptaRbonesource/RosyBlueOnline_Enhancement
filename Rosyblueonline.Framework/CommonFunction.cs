@@ -380,7 +380,15 @@ namespace Rosyblueonline.Framework
                 {
                     //if (dt.Columns[j].ColumnName != "_blank")
                     //{
-                    html += "<td align='center' style='border-left: solid 1px #365f91;border-right:solid 1px #365f91;border-top:solid 1px #365f91;'><font face='Verdana' ,'sans-serif' size=2px color='#365f91'>" + dt.Rows[i][j].ToString() + "</font></td>";
+                    if (dt.Rows[i][j].ToString().Contains("HYPERLINK"))
+                    {
+                        html += "<td align='center' style='border-left: solid 1px #365f91;border-right:solid 1px #365f91;border-top:solid 1px #365f91;'><font face='Verdana' ,'sans-serif' size=2px color='#365f91'><a target = '_blank' href ="+ dt.Rows[i][j].ToString().Replace("=HYPERLINK(","").ToString().Replace("GIA","").ToString()+" >" + dt.Rows[i]["Certificate"].ToString()+" </a></font></td>";
+ 
+                    }
+                    else
+                    {
+                        html += "<td align='center' style='border-left: solid 1px #365f91;border-right:solid 1px #365f91;border-top:solid 1px #365f91;'><font face='Verdana' ,'sans-serif' size=2px color='#365f91'>" + dt.Rows[i][j].ToString() + "</font></td>";
+                    }
                     //}
                     //else
                     //{

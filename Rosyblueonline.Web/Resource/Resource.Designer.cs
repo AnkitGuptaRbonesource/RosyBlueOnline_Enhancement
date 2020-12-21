@@ -1609,7 +1609,7 @@ namespace Rosyblueonline.Web.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Diamentions.
+        ///   Looks up a localized string similar to Dimension.
         /// </summary>
         public static string Diamentions {
             get {
