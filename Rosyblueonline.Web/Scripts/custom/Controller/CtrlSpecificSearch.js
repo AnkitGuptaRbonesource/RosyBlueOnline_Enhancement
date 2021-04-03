@@ -635,7 +635,7 @@
 
 
                             '<div class="flex align-centered space-between details"><div>' + item.Shape + '</div><div>' + item.Weight + '</div><div>' + item.Shade + '</div><div>' + item.Color + '</div></div>' +
-                            ' <div class="flex space-between align-centered reserve"><div class="flex align-centered price"><div class=""> $ ' + item.Amount.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") + '</div></div></div>' +
+                            ' <div class="flex space-between align-centered reserve"><div class="flex align-centered price"><div class=""> $ ' + Number(item.Amount).toFixed(2) + '</div></div></div>' +
                             ' </div>' +
                             '</div ></div > ';
 
@@ -930,6 +930,31 @@
         //    }
 
         //});
+        $('#SearchTablePost').on('draw.dt', function () {
+            if ($("#checkAll").prop('checked') == true) {
+                $('#checkAll').prop("checked", false);
+                dtSearchPanel.clearSelection();
+                dtSearchPanel.getDataTable().draw();
+
+            }
+        });
+
+
+
+        $(document).on('click', '#checkAll', function (e) {
+
+            if ($(this).is(":checked")) {
+                dtSearchPanel.clearSelection();
+                dtSearchPanel.getDataTable().draw();
+            } else {
+                dtSearchPanel.clearSelection();
+                dtSearchPanel.getDataTable().draw();
+            }
+
+        });
+
+
+
 
     }
 
@@ -1118,7 +1143,7 @@
                     //deferLoading: 0,
                     scrollY: "485px",
                     scrollX: true,
-                    //scrollCollapse: true,
+                    scrollCollapse: true,
                     paging: true,
                     pageLength: 200,
                     // pageLength: (RoleID == "1" || RoleID == "2" || RoleID == "9" || RoleID == "2") ? 500000 : 100,
@@ -1133,6 +1158,9 @@
                     },
                     lengthMenu: [[50, 100, 200, 500000], [50, 100, 200, "All"]],
                     order: [[1, "desc"]],
+                    fixedColumns: {
+                        leftColumns: 2
+                    },
                     ajax: {
                         type: 'Post',
                         url: '/Inventory/StockList2',
@@ -1298,7 +1326,7 @@
     function BindSoldIn(data11) {
         $('#tmpSoldInDays121').html('');
         var Finalsold = "";
-        for (i = 5; i <= data11.count.length-1; i++) {
+        for (i = 5; i <= data11.count.length - 1; i++) {
             Finalsold = '<li>' +
                 '<a href="#">' +
                 '<span class="summerydays">' +

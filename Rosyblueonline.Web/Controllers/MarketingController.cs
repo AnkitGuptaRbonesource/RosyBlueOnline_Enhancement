@@ -1,4 +1,5 @@
-﻿using Rosyblueonline.Framework;
+﻿using Newtonsoft.Json;
+using Rosyblueonline.Framework;
 using Rosyblueonline.Models;
 using Rosyblueonline.Models.ViewModel;
 using Rosyblueonline.ServiceProviders.Abstraction;
@@ -18,9 +19,12 @@ namespace Rosyblueonline.Web.Controllers
     public class MarketingController : _BaseController
     {
         readonly MarketingService objSvc;
-        public MarketingController(IMarketingService objSvc)
+        IStockDetailsService objStockDetailsService;
+        public MarketingController(IMarketingService objSvc, IStockDetailsService objStockDetailsService)
         {
             this.objSvc = objSvc as MarketingService;
+            this.objStockDetailsService = objStockDetailsService as StockDetailsService;
+
         }
         // GET: Marketing
 
@@ -967,6 +971,91 @@ namespace Rosyblueonline.Web.Controllers
         #endregion
 
 
+        #region MarketingStockSummary
+
+        public ActionResult MarketingStockSummary()
+        {
+            int LoginId = GetLogin();
+            MarketingStockSummaryModel objVm = new MarketingStockSummaryModel();
+            objVm = this.objSvc.StockSummaryFilters(LoginId);
+            return View(objVm);
+
+
+        }
+
+        //[HttpGet]
+        //public ActionResult GetListOfCustomer(string search)
+        //{
+        //    int LoginId = GetLogin();
+        //    var objLst = this.objSvc.StockSummaryFilters(LoginId);
+        //   var objCustList = objLst.SaleS .Where(x => x.Name.Contains(search)).ToList();
+        //    return Json(objCustList, JsonRequestBehavior.AllowGet);
+
+
+        //}
+
+
+        [HttpPost]
+        public ActionResult MarketingStockSummaryDetails(string CustomerIDs, string FilterYear, string FilterMonth, string salesLocationIDs)
+        {
+            try
+            {
+                int CustomerID = GetLogin();
+                int RoleID = GetRole();
+                {
+                    List<MarketingStockSummaryDetailsModel> objVM = objSvc.MarketingStockSummaryDetails(CustomerIDs,FilterYear,FilterMonth,salesLocationIDs);
+
+                    return Json(objVM, JsonRequestBehavior.AllowGet);
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrorLog.Log("MarketingController", "GridJamesAllenHK", ex);
+                throw;
+            }
+        }
+
+
+
+        [HttpPost]
+        public ActionResult StockList2(string LotNos)
+        {
+            try
+            {
+                int LoginID = GetLogin();
+                string OrderBy = "", OrderDirection = "";
+                if (LoginID > 0)
+                {
+                    //if (obj.order.Count > 0)
+                    //{
+                    //    OrderBy = obj.columns[obj.order[0].column].data;
+                    //    OrderDirection = obj.order[0].dir;
+                    //} 
+                    //decimal idx = Math.Ceiling((decimal)(obj.start / obj.length));
+                    List<inventoryDetailsViewModel> objInvVM = new List<inventoryDetailsViewModel>();
+                    string raisedEvent = "SpecificSearch";
+                    string filterText = "LOTNO~"+ LotNos;
+                    //objInvVM = objStockDetailsService.InventoryAction(LoginID.ToString(),filterText, idx.ToString(), obj.length.ToString(), OrderBy, OrderDirection, raisedEvent, "SpecialSearch");
+                    objInvVM = objStockDetailsService.InventoryAction(LoginID.ToString(), filterText, "0","500000", OrderBy, OrderDirection, raisedEvent, "SpecialSearch");
+
+
+                    return Json(objInvVM, JsonRequestBehavior.AllowGet);
+
+                    //string json = JsonConvert.SerializeObject(new { draw = obj.draw, recordsTotal = obj.Total.HasValue ? obj.Total.Value : 0, recordsFiltered = obj.Total.HasValue ? obj.Total.Value : 0, data = objInvVM }, Formatting.Indented);
+ 
+                    //return Content(json, "application/json");
+                }
+               
+                 return Json(new Response { IsSuccess = false, Message = string.Format(StringResource.Invalid, "Session") });
+            }
+            catch (Exception ex)
+            {
+                ErrorLog.Log("InventoryController", "StockList2", ex);
+                return Json(new Response { IsSuccess = false, Message = ex.Message });
+            }
+        }
+
+        #endregion
 
         protected override void Initialize(System.Web.Routing.RequestContext requestContext)
         {

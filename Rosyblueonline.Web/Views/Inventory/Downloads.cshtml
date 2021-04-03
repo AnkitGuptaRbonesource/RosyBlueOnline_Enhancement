@@ -9,6 +9,9 @@
     <section class="content">
         <div id="uiPanel1"></div>
         <section class="content" id="secGrid">
+            <div style="display:none;">
+                <a id="ancInventoryDownload1" href="/Inventory/RapnetExportToExcelInventoryDownload"></a>
+            </div>
             <div class="customers-list-table">
                 <div class="customers-list-table">
                     <div class="col-md-12">
@@ -20,9 +23,19 @@
                                 <div class="row">
                                     @for (int i = 0; i < Model.Count; i++)
                                     {
-                                        <div class="col-lg-3 col-sm-6 col-xs-12">
-                                            <div class="inv-dowwn-link"><a href="/Inventory/DownloadDynamicDownload?IDs=@(Model[i].BindedDownloadID)&FileName=@(Model[i].Name)?&SheetName=@(Model[i].SheetNames)" data-href="@(Model[i].BindedDownloadID)">@(Model[i].Name)</a></div>
-                                        </div>
+                                        if (Model[i].BindedDownloadID == "14" || Model[i].BindedDownloadID == "30" || Model[i].BindedDownloadID == "35" || Model[i].BindedDownloadID == "49" || Model[i].BindedDownloadID == "50")
+                                        {
+                                            <div class="col-lg-4 col-sm-6 col-xs-12">
+                                                <div class="inv-dowwn-link"><a href="" class="rapnetdownload" data-id="@(Model[i].BindedDownloadID)" data-Name="@(Model[i].Name)">@(Model[i].Name)</a></div>
+                                            </div>
+                                        }
+                                        else
+                                        {
+
+                                            <div class="col-lg-4 col-sm-6 col-xs-12">
+                                                <div class="inv-dowwn-link"><a href="" class="inventorydownload" data-id="@(Model[i].BindedDownloadID)" data-Name="@(Model[i].Name)" data-SheetName="@(Model[i].SheetNames)">@(Model[i].Name)</a></div>
+                                            </div>
+                                        }
                                     }
                                 </div>
                             </div>

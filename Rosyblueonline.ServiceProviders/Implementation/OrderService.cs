@@ -157,7 +157,7 @@ namespace Rosyblueonline.ServiceProviders.Implementation
                 string LotNos = "LOTNO~" + string.Join(",", objLst);
                 DataTable dt = this.objStockDetailsService.GetDataForExcelExportEmail(LotNos, false, CustomerId);
                 if (dt.Columns.Count > 0)
-                { 
+                {
                     dt.Columns.Remove("Sizes");
                     dt.Columns.Remove("CertificateNo");
                     dt.Columns.Remove("Reportdate");
@@ -178,7 +178,7 @@ namespace Rosyblueonline.ServiceProviders.Implementation
                         dt.Columns.Remove("SalesLocation");
                     }
 
-                   
+
                 }
                 DataTable dtOrderCharges = objOInfo.ConvertOrderChangesInDatetable();
                 string htmlTableForOrderDetail = CommonFunction.ConvertDataTableToHTML(dt, false, true);
@@ -372,6 +372,48 @@ namespace Rosyblueonline.ServiceProviders.Implementation
                     this.objMU = new MailUtility();
                 }
                 objMU.SendMail(lstOfEmailIDs, Subject, true, sbMailTemplate.ToString(), null, CCEmail, BCCEmail);
+            }
+
+        }
+
+        public void CartItemReminderEmail(int LoginId, string EmailID, string LotNos, string Subject)
+        {
+            StringBuilder sbMailTemplate = new StringBuilder();
+            sbMailTemplate.Append(System.IO.File.ReadAllText(ConfigurationManager.AppSettings["CartItemReminderEmail"].ToString()));
+            List<string> lstOfEmailIDs = new List<string>();
+            lstOfEmailIDs.Add(EmailID);
+            if (LotNos != null && LotNos != "")
+            {
+                LotNos = "LOTNO~" + LotNos;
+                DataTable dt = this.objStockDetailsService.GetDataForExcelExportEmail(LotNos, false, LoginId);
+                if (dt.Columns.Count > 0)
+                {
+                    dt.Columns.Remove("Sizes");
+                    dt.Columns.Remove("CertificateNo");
+                    dt.Columns.Remove("Reportdate");
+                    dt.Columns.Remove("EyeClean");
+                    dt.Columns.Remove("Shade");
+                    dt.Columns.Remove("TableBlack");
+                    dt.Columns.Remove("SideBlack");
+                    dt.Columns.Remove("Milky");
+                    dt.Columns.Remove("CuletSize");
+                    dt.Columns.Remove("OpensName");
+                    dt.Columns.Remove("GroupName");
+                    dt.Columns.Remove("MemberComments");
+                    dt.Columns.Remove("refdata");
+                    dt.Columns.Remove("V360");
+                    dt.Columns.Remove("Video");
+                    dt.Columns.Remove("SalesLocation");
+
+                }
+                string htmlTableForOrderDetail = CommonFunction.ConvertDataTableToHTML(dt, false, true);
+                sbMailTemplate = sbMailTemplate.Replace("${TABLEDATA}", htmlTableForOrderDetail);
+
+                if (this.objMU == null)
+                {
+                    this.objMU = new MailUtility();
+                }
+                objMU.SendMail(lstOfEmailIDs, Subject, true, sbMailTemplate.ToString());
             }
 
         }

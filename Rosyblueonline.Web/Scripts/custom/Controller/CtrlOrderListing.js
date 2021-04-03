@@ -58,7 +58,17 @@
                             return data == 10 ? "Pending" : "Approved";
                         },
                         orderable: true
-                    }, {
+                        },
+                        {
+                            targets: [4],
+                            render: function (data, type, row) { 
+                                return data.toFixed(2).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+
+                            },
+                            orderable: true
+                        },
+
+                        {
                         targets: [5],
                         orderable: false,
                         render: function (data, type, row) {

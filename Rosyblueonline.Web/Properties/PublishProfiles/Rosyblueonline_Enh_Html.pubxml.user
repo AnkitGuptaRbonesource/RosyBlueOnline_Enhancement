@@ -16,13 +16,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/10/2013 16:29:20</publishTime>
     </File>
     <File Include="bin/App_global.asax.compiled">
-      <publishTime>12/21/2020 14:43:21</publishTime>
+      <publishTime>04/02/2021 20:54:22</publishTime>
     </File>
     <File Include="bin/App_global.asax.dll">
-      <publishTime>12/21/2020 14:43:21</publishTime>
+      <publishTime>04/02/2021 20:54:22</publishTime>
     </File>
     <File Include="bin/App_global.asax.pdb">
-      <publishTime>12/21/2020 14:43:21</publishTime>
+      <publishTime>04/02/2021 20:54:22</publishTime>
     </File>
     <File Include="bin/Autofac.dll">
       <publishTime>03/21/2019 17:17:50</publishTime>
@@ -76,7 +76,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/06/2018 05:29:48</publishTime>
     </File>
     <File Include="bin/fr/Rosyblueonline.Web.resources.dll">
-      <publishTime>12/21/2020 14:42:57</publishTime>
+      <publishTime>04/02/2021 20:54:03</publishTime>
     </File>
     <File Include="bin/ja/Rosyblueonline.Web.resources.dll">
       <publishTime>12/08/2020 16:13:08</publishTime>
@@ -238,46 +238,46 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/24/2018 13:38:24</publishTime>
     </File>
     <File Include="bin/Rosyblueonline.Factory.dll">
-      <publishTime>12/21/2020 14:42:50</publishTime>
+      <publishTime>04/02/2021 20:10:48</publishTime>
     </File>
     <File Include="bin/Rosyblueonline.Factory.pdb">
-      <publishTime>12/21/2020 14:42:50</publishTime>
+      <publishTime>04/02/2021 20:10:48</publishTime>
     </File>
     <File Include="bin/Rosyblueonline.Framework.dll">
-      <publishTime>12/21/2020 14:42:50</publishTime>
+      <publishTime>04/02/2021 20:10:49</publishTime>
     </File>
     <File Include="bin/Rosyblueonline.Framework.pdb">
-      <publishTime>12/21/2020 14:42:50</publishTime>
+      <publishTime>04/02/2021 20:10:49</publishTime>
     </File>
     <File Include="bin/Rosyblueonline.Models.dll">
-      <publishTime>12/21/2020 14:42:50</publishTime>
+      <publishTime>03/31/2021 20:10:39</publishTime>
     </File>
     <File Include="bin/Rosyblueonline.Models.pdb">
-      <publishTime>12/21/2020 14:42:50</publishTime>
+      <publishTime>03/31/2021 20:10:39</publishTime>
     </File>
     <File Include="bin/Rosyblueonline.Repository.dll">
-      <publishTime>12/21/2020 14:42:52</publishTime>
+      <publishTime>04/02/2021 20:10:49</publishTime>
     </File>
     <File Include="bin/Rosyblueonline.Repository.dll.config">
       <publishTime>09/07/2020 14:26:18</publishTime>
     </File>
     <File Include="bin/Rosyblueonline.Repository.pdb">
-      <publishTime>12/21/2020 14:42:52</publishTime>
+      <publishTime>04/02/2021 20:10:49</publishTime>
     </File>
     <File Include="bin/Rosyblueonline.ServiceProviders.dll">
-      <publishTime>12/21/2020 14:42:53</publishTime>
+      <publishTime>04/02/2021 20:10:51</publishTime>
     </File>
     <File Include="bin/Rosyblueonline.ServiceProviders.dll.config">
       <publishTime>09/07/2020 14:26:18</publishTime>
     </File>
     <File Include="bin/Rosyblueonline.ServiceProviders.pdb">
-      <publishTime>12/21/2020 14:42:53</publishTime>
+      <publishTime>04/02/2021 20:10:51</publishTime>
     </File>
     <File Include="bin/Rosyblueonline.Web.dll">
-      <publishTime>12/21/2020 14:42:57</publishTime>
+      <publishTime>04/02/2021 20:54:03</publishTime>
     </File>
     <File Include="bin/Rosyblueonline.Web.pdb">
-      <publishTime>12/21/2020 14:42:57</publishTime>
+      <publishTime>04/02/2021 20:54:03</publishTime>
     </File>
     <File Include="bin/SRVTextToImage.dll">
       <publishTime>09/07/2020 14:26:18</publishTime>
@@ -334,13 +334,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/23/2014 13:57:34</publishTime>
     </File>
     <File Include="bin/zh/Rosyblueonline.Web.resources.dll">
-      <publishTime>12/21/2020 14:42:57</publishTime>
+      <publishTime>04/02/2021 20:54:04</publishTime>
     </File>
     <File Include="Content/css/AdminLTE.css">
       <publishTime>11/02/2020 14:27:54</publishTime>
     </File>
     <File Include="Content/css/AdminLTE.min.css">
-      <publishTime>12/15/2020 12:54:46</publishTime>
+      <publishTime>02/11/2021 13:21:13</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap-multiselect.css">
+      <publishTime>03/03/2021 15:26:28</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap-multiselect.min.css">
+      <publishTime>03/03/2021 15:26:28</publishTime>
     </File>
     <File Include="Content/css/bootstrap-theme.css">
       <publishTime>09/07/2020 14:26:21</publishTime>
@@ -385,7 +391,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/14/2020 16:11:47</publishTime>
     </File>
     <File Include="Content/css/tablestyle.css">
-      <publishTime>11/09/2020 12:24:07</publishTime>
+      <publishTime>01/04/2021 19:09:08</publishTime>
     </File>
     <File Include="Content/css/typography.css">
       <publishTime>09/07/2020 14:26:21</publishTime>
@@ -937,10 +943,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/30/2020 20:51:28</publishTime>
     </File>
     <File Include="Content/EmailTemplate/PlaceOrderMail-Admin.html">
-      <publishTime>12/21/2020 12:54:35</publishTime>
+      <publishTime>12/21/2020 15:11:26</publishTime>
     </File>
     <File Include="Content/EmailTemplate/PlaceOrderMail-Customer.html">
-      <publishTime>12/21/2020 12:56:00</publishTime>
+      <publishTime>12/21/2020 15:11:56</publishTime>
     </File>
     <File Include="Content/EmailTemplate/PlaceOrderMail.html">
       <publishTime>12/27/2019 12:04:10</publishTime>
@@ -1243,6 +1249,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/07/2020 14:26:21</publishTime>
     </File>
     <File Include="Content/img/excel_logo.png">
+      <publishTime>01/08/2021 11:00:06</publishTime>
+    </File>
+    <File Include="Content/img/excel_logo_old.png">
       <publishTime>09/07/2020 14:26:21</publishTime>
     </File>
     <File Include="Content/img/export-icon.svg">
@@ -1699,7 +1708,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/07/2020 14:26:21</publishTime>
     </File>
     <File Include="Content/INV/Temp/report_results.txt">
-      <publishTime>12/04/2020 10:41:01</publishTime>
+      <publishTime>12/30/2020 12:30:39</publishTime>
     </File>
     <File Include="Content/INV/Temp/RFIDMaster.xlsx">
       <publishTime>09/07/2020 14:26:21</publishTime>
@@ -1900,7 +1909,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/27/2019 13:48:37</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>12/21/2020 14:43:09</publishTime>
+      <publishTime>04/02/2021 20:54:09</publishTime>
     </File>
     <File Include="Scripts/bootbox.js">
       <publishTime>09/07/2020 14:26:27</publishTime>
@@ -1913,6 +1922,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Scripts/bootstrap-datepicker.min.js">
       <publishTime>09/07/2020 14:26:28</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap-multiselect.js">
+      <publishTime>03/03/2021 15:26:28</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap-multiselect.min.js">
+      <publishTime>03/03/2021 15:26:28</publishTime>
     </File>
     <File Include="Scripts/bootstrap.js">
       <publishTime>09/07/2020 14:26:28</publishTime>
@@ -1954,7 +1969,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/07/2020 14:26:28</publishTime>
     </File>
     <File Include="Scripts/custom/Controller/CtrlGIAUpload.js">
-      <publishTime>12/09/2020 14:26:34</publishTime>
+      <publishTime>12/30/2020 12:49:50</publishTime>
     </File>
     <File Include="Scripts/custom/Controller/CtrlInventoryUpload.js">
       <publishTime>09/07/2020 14:26:28</publishTime>
@@ -1969,7 +1984,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/11/2020 14:29:46</publishTime>
     </File>
     <File Include="Scripts/custom/Controller/CtrlMarketingBlueNile.js">
-      <publishTime>11/09/2020 13:15:00</publishTime>
+      <publishTime>04/02/2021 16:36:37</publishTime>
     </File>
     <File Include="Scripts/custom/Controller/CtrlMarketingJamesAllen.js">
       <publishTime>11/09/2020 13:15:16</publishTime>
@@ -1978,10 +1993,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/09/2020 14:52:04</publishTime>
     </File>
     <File Include="Scripts/custom/Controller/CtrlMasterLayout.js">
-      <publishTime>12/15/2020 11:27:38</publishTime>
+      <publishTime>01/19/2021 16:48:35</publishTime>
     </File>
     <File Include="Scripts/custom/Controller/CtrlMemo.js">
-      <publishTime>12/17/2020 15:36:18</publishTime>
+      <publishTime>03/26/2021 21:13:41</publishTime>
     </File>
     <File Include="Scripts/custom/Controller/CtrlMemoDetails.js">
       <publishTime>09/07/2020 14:26:28</publishTime>
@@ -1993,10 +2008,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/14/2020 16:47:54</publishTime>
     </File>
     <File Include="Scripts/custom/Controller/CtrlOrderListing.js">
-      <publishTime>10/13/2020 17:06:17</publishTime>
+      <publishTime>12/24/2020 19:44:30</publishTime>
     </File>
     <File Include="Scripts/custom/Controller/CtrlRegistration.js">
-      <publishTime>12/14/2020 16:24:42</publishTime>
+      <publishTime>01/25/2021 20:43:33</publishTime>
     </File>
     <File Include="Scripts/custom/Controller/CtrlResetPassword.js">
       <publishTime>11/05/2020 16:12:41</publishTime>
@@ -2011,7 +2026,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/07/2020 14:26:28</publishTime>
     </File>
     <File Include="Scripts/custom/Controller/CtrlRFIDStockTally.js">
-      <publishTime>11/12/2020 13:48:57</publishTime>
+      <publishTime>01/12/2021 12:03:49</publishTime>
     </File>
     <File Include="Scripts/custom/Controller/CtrlRFIDStockTallyMemo.js">
       <publishTime>09/07/2020 14:26:28</publishTime>
@@ -2023,16 +2038,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/07/2020 14:26:28</publishTime>
     </File>
     <File Include="Scripts/custom/Controller/CtrlSpecificSearch.js">
-      <publishTime>12/15/2020 11:56:52</publishTime>
+      <publishTime>03/12/2021 20:01:21</publishTime>
     </File>
     <File Include="Scripts/custom/Controller/CtrlStoneStatus.js">
       <publishTime>12/15/2020 12:54:13</publishTime>
     </File>
     <File Include="Scripts/custom/Controller/CtrlUserDetail.js">
-      <publishTime>12/17/2020 14:59:40</publishTime>
+      <publishTime>01/11/2021 19:50:08</publishTime>
     </File>
     <File Include="Scripts/custom/Controller/CtrlWatchList.js">
-      <publishTime>12/15/2020 12:54:46</publishTime>
+      <publishTime>12/29/2020 20:10:24</publishTime>
     </File>
     <File Include="Scripts/custom/Controller/CustomerFeedbackFAQ.js">
       <publishTime>12/14/2020 16:31:54</publishTime>
@@ -2041,22 +2056,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/15/2020 11:06:52</publishTime>
     </File>
     <File Include="Scripts/custom/Controller/ModuleSearchFilter.js">
-      <publishTime>12/09/2020 17:40:34</publishTime>
+      <publishTime>01/15/2021 18:10:12</publishTime>
     </File>
     <File Include="Scripts/custom/Controller/ModuleStockSummary.js">
-      <publishTime>10/17/2020 11:31:18</publishTime>
+      <publishTime>03/30/2021 15:32:14</publishTime>
     </File>
     <File Include="Scripts/custom/jquery.validate.additionalMethods.js">
       <publishTime>09/07/2020 14:26:28</publishTime>
     </File>
     <File Include="Scripts/custom/myApp.js">
-      <publishTime>09/07/2020 14:26:28</publishTime>
+      <publishTime>01/11/2021 20:17:00</publishTime>
     </File>
     <File Include="Scripts/custom/rbDataTable.js">
       <publishTime>10/09/2020 17:01:58</publishTime>
     </File>
     <File Include="Scripts/custom/Service/ServiceMethods.js">
-      <publishTime>12/13/2020 15:27:06</publishTime>
+      <publishTime>03/30/2021 17:34:37</publishTime>
     </File>
     <File Include="Scripts/custom/themeApp.js">
       <publishTime>09/07/2020 14:26:28</publishTime>
@@ -2800,7 +2815,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/07/2020 14:26:29</publishTime>
     </File>
     <File Include="Scripts/spacecode.js">
-      <publishTime>09/07/2020 14:26:29</publishTime>
+      <publishTime>12/30/2020 16:06:47</publishTime>
     </File>
     <File Include="Scripts/tableexport.min.js">
       <publishTime>09/07/2020 14:26:29</publishTime>
@@ -2821,7 +2836,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/17/2020 17:00:36</publishTime>
     </File>
     <File Include="Views/Dashboard/Index.cshtml">
-      <publishTime>10/16/2020 10:54:11</publishTime>
+      <publishTime>01/12/2021 16:19:31</publishTime>
     </File>
     <File Include="Views/Dashboard/StockSummary.cshtml">
       <publishTime>09/07/2020 14:26:29</publishTime>
@@ -2836,7 +2851,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/09/2020 11:11:49</publishTime>
     </File>
     <File Include="Views/DiamondSearch/DiamondView.cshtml">
-      <publishTime>12/03/2020 15:53:10</publishTime>
+      <publishTime>12/28/2020 15:24:56</publishTime>
     </File>
     <File Include="Views/Download/Index.cshtml">
       <publishTime>09/07/2020 14:26:29</publishTime>
@@ -2866,16 +2881,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/14/2020 16:11:47</publishTime>
     </File>
     <File Include="Views/Home/PricingDiscountPolicy.cshtml">
-      <publishTime>12/18/2020 16:07:34</publishTime>
+      <publishTime>12/23/2020 16:45:39</publishTime>
     </File>
     <File Include="Views/Home/PrivacyPolicy.cshtml">
-      <publishTime>12/18/2020 16:06:16</publishTime>
+      <publishTime>12/23/2020 16:45:34</publishTime>
     </File>
     <File Include="Views/Home/Registration.cshtml">
-      <publishTime>12/14/2020 16:28:23</publishTime>
+      <publishTime>01/22/2021 16:21:30</publishTime>
     </File>
     <File Include="Views/Home/TermsOfUse.cshtml">
-      <publishTime>12/18/2020 16:07:02</publishTime>
+      <publishTime>12/23/2020 16:45:29</publishTime>
     </File>
     <File Include="Views/Home/_UpcomingShows.cshtml">
       <publishTime>10/09/2020 11:11:49</publishTime>
@@ -2884,7 +2899,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/21/2020 12:16:24</publishTime>
     </File>
     <File Include="Views/Inventory/Downloads.cshtml">
-      <publishTime>12/17/2020 15:43:21</publishTime>
+      <publishTime>01/19/2021 16:00:36</publishTime>
     </File>
     <File Include="Views/Inventory/GIA.cshtml">
       <publishTime>12/17/2020 15:46:02</publishTime>
@@ -2925,8 +2940,11 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Views/Marketing/JamesAllenHK.cshtml">
       <publishTime>12/19/2020 20:47:36</publishTime>
     </File>
+    <File Include="Views/Marketing/MarketingStockSummary.cshtml">
+      <publishTime>04/02/2021 16:27:04</publishTime>
+    </File>
     <File Include="Views/Memo/Index.cshtml">
-      <publishTime>11/09/2020 12:24:07</publishTime>
+      <publishTime>01/06/2021 11:56:17</publishTime>
     </File>
     <File Include="Views/MenuPermissionMaster/Index.cshtml">
       <publishTime>12/15/2020 18:59:30</publishTime>
@@ -2962,22 +2980,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/07/2020 14:26:29</publishTime>
     </File>
     <File Include="Views/Shared/_Footer.cshtml">
-      <publishTime>12/17/2020 14:35:27</publishTime>
+      <publishTime>12/23/2020 16:27:54</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>12/17/2020 14:33:26</publishTime>
+      <publishTime>12/23/2020 16:25:33</publishTime>
     </File>
     <File Include="Views/Shared/_LayoutAdmin.cshtml">
-      <publishTime>12/19/2020 20:54:18</publishTime>
+      <publishTime>04/01/2021 10:31:47</publishTime>
     </File>
     <File Include="Views/Shared/_LayoutAdminSupport.cshtml">
-      <publishTime>12/19/2020 20:54:29</publishTime>
+      <publishTime>02/01/2021 12:04:26</publishTime>
     </File>
     <File Include="Views/Shared/_LayoutCustomer.cshtml">
-      <publishTime>12/19/2020 20:54:48</publishTime>
+      <publishTime>02/01/2021 12:04:24</publishTime>
     </File>
     <File Include="Views/Shared/_LayoutDashboard.cshtml">
-      <publishTime>12/17/2020 17:06:00</publishTime>
+      <publishTime>12/23/2020 16:00:40</publishTime>
     </File>
     <File Include="Views/Shared/_MemoPopupPartial.cshtml">
       <publishTime>12/15/2020 22:26:32</publishTime>
@@ -2989,13 +3007,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/10/2020 15:04:19</publishTime>
     </File>
     <File Include="Views/Shared/_PartialSpecificSearch.cshtml">
-      <publishTime>12/17/2020 17:13:10</publishTime>
+      <publishTime>03/12/2021 20:02:43</publishTime>
     </File>
     <File Include="Views/Shared/_PartialSpecificSearchResult.cshtml">
-      <publishTime>12/17/2020 17:18:58</publishTime>
+      <publishTime>02/01/2021 20:12:16</publishTime>
     </File>
     <File Include="Views/Shared/_PartialStockSummary.cshtml">
-      <publishTime>10/17/2020 11:31:18</publishTime>
+      <publishTime>03/30/2021 15:34:32</publishTime>
     </File>
     <File Include="Views/User/BlockSite.cshtml">
       <publishTime>12/17/2020 16:23:46</publishTime>
@@ -3007,7 +3025,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/17/2020 17:13:47</publishTime>
     </File>
     <File Include="Views/User/Index.cshtml">
-      <publishTime>12/17/2020 15:03:46</publishTime>
+      <publishTime>02/11/2021 18:10:35</publishTime>
     </File>
     <File Include="Views/User/ManageRights.cshtml">
       <publishTime>12/17/2020 16:27:24</publishTime>
@@ -3022,7 +3040,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/07/2020 14:26:29</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>12/19/2020 13:16:06</publishTime>
+      <publishTime>03/31/2021 20:10:48</publishTime>
     </File>
   </ItemGroup>
 </Project>

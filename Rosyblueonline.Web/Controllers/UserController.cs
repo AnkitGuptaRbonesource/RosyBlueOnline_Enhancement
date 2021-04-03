@@ -34,6 +34,8 @@ namespace Rosyblueonline.Web.Controllers
             objVm.Country = this.objHSSvc.GetCountry().ToList();
             objVm.State = this.objHSSvc.GetState(0).ToList();
             objVm.OnlyAddCustomer = OnlyAddCustomer;
+            objVm.RRoles = this.objHSSvc.GetMstRoles().ToList();
+            
             return View(objVm);
         }
         protected override void Initialize(System.Web.Routing.RequestContext requestContext)
@@ -51,13 +53,13 @@ namespace Rosyblueonline.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult Registration(UserRegistrationViewModel obj, Roles roles)
+        public ActionResult Registration(UserRegistrationViewModel obj)
         {
             try
             {
                 if (ModelState.IsValid == true)
                 {
-                    bool status = this.objUDSvc.RegisterUser(obj, roles);
+                    bool status = this.objUDSvc.RegisterUser(obj);
                     if (status == true)
                     {
                         return Json(new Response { IsSuccess = true, Code = 200, Result = status });
@@ -130,14 +132,14 @@ namespace Rosyblueonline.Web.Controllers
         //}
 
         [HttpPost]
-        public ActionResult UpdateRegistration(UserRegistrationViewModel obj, Roles roles)
+        public ActionResult UpdateRegistration(UserRegistrationViewModel obj)
         {
             try
             {
                 int LoginID = GetLogin();
                 if (LoginID > 0)
                 {
-                    bool status = this.objUDSvc.UpdateRegisterUser(obj, roles, LoginID);
+                    bool status = this.objUDSvc.UpdateRegisterUser(obj, LoginID);
                     if (status == true)
                     {
                         bool log = this.objUDSvc.UserActivitylogs(LoginID, "Update Profile", "Update Successfully.");

@@ -200,7 +200,9 @@ namespace Rosyblueonline.Web.Controllers
 
                         if (objOVM != null && RowCount > 0) //Added By Ankit 08Jun2020--Suggested By LK
                         {
-                            this.objMemoService.SendMailMemo(OrderID, GetEmailID(), GetFullName(), LoginID, "List of inventory sell partial memo to", "", Server.MapPath(System.Configuration.ConfigurationManager.AppSettings["EmailTemplate_SellMemo"]));
+                            this.objMemoService.SendMailMemo(OrderID, GetEmailID(), GetFullName(), LoginID, "List of inventory sell partial memo to", "", Server.MapPath(System.Configuration.ConfigurationManager.AppSettings["EmailTemplate_SellMemo"]), null, null, MemoMode, salesAvgDiscount);
+
+                           // this.objMemoService.SendMailMemo(OrderID, GetEmailID(), GetFullName(), LoginID, "List of inventory sell partial memo to", "", Server.MapPath(System.Configuration.ConfigurationManager.AppSettings["EmailTemplate_SellMemo"]));
                             bool log = this.objUDSvc.UserActivitylogs(LoginID, "partial sell memo", LotNos);
                         }
                     }

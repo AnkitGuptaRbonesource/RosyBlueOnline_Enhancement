@@ -90,6 +90,7 @@ namespace Rosyblueonline.Models.ViewModel
         public int? userStatus { get; set; }
 
         public string  DocRandomID { get; set; }
+        public int Role { get; set; }
     }
 
     public class UserRegistrationViewModel
@@ -137,7 +138,11 @@ namespace Rosyblueonline.Models.ViewModel
         public List<SelectOptionsViewModel> State { get; set; }
 
         public List<SelectOptionsViewModel> RTypes { get; set; }
-        public bool OnlyAddCustomer { get; set; } 
+        public bool OnlyAddCustomer { get; set; }
+
+        public List<SelectOptionsViewModel> RRoles { get; set; }
+        public int Role { get; set; }
+
 
     }
 
@@ -181,6 +186,7 @@ namespace Rosyblueonline.Models.ViewModel
 
         public List<SelectOptionsViewModel> RTypes { get; set; }
         public bool OnlyAddCustomer { get; set; }
+        public int Role { get; set; }
 
     }
 

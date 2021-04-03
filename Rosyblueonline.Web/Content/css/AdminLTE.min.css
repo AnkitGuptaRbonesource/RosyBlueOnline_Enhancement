@@ -233,9 +233,10 @@
 	}
 	.inseach {
 		position: absolute;
+		cursor: pointer;
 		display: block;
 		width: fit-content;
-		top: 10px;
+		top: 12px;
 		right: 50px;
 	}
 	.csv {
@@ -1657,9 +1658,27 @@ input[type='checkbox']:after {
 		}
 		@media only screen and (max-width: 767px) {
 			.searchbar {
-				display: none;
+				position: absolute;
+				display: block;
+				left: 50px;
+				margin: 0;
+				width: auto;
+				z-index: 999;
+				overflow: hidden;
 			}
-	
+			.header-search {
+				width: 100px;
+				padding: 10px 35px 10px 10px;
+			}
+			.header-search:focus {
+				width: 260px;
+			}
+			.searchbar .inseach {
+				right: 9px;
+			}
+			.searchbar .csv {
+				display: none
+			}
 			.content-wrapper, .right-side, .main-footer {
 				margin-left: 0;
 			}

@@ -12,9 +12,9 @@ namespace Rosyblueonline.ServiceProviders.Abstraction
     public interface IUserDetailService
     {
         bool CheckEmailID(string EmailID, int userDetailId = 0);
-        bool RegisterUser(RegistrationViewModel obj, Roles roles, bool SelfRegistration = true);
-        bool RegisterUser(UserRegistrationViewModel obj, Roles roles);
-        bool UpdateRegisterUser(RegistrationViewModel obj, Roles roles, int UserID);
+        bool RegisterUser(RegistrationViewModel obj, bool SelfRegistration = true);
+        bool RegisterUser(UserRegistrationViewModel obj);
+        bool UpdateRegisterUser(RegistrationViewModel obj,  int UserID);
         void GenerateOTP(string EmailID);
         bool SendForgetPassword(string EmailID, string Url);
         bool ResetForgetPassword(int ID, string Code, string Password, int ValidTimeout);

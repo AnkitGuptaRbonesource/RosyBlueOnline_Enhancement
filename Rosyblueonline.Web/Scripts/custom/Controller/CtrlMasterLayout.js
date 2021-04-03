@@ -58,7 +58,7 @@
                             '<div class="order-nmbr">' +
                             '<p>' + moment(item.orderCreatedOn).format("DD-MM-YY") + '</p>' +
                             '<h5></h5>' +
-                            '<h5>' + item.orderPayableAmount.toLocaleString('en')  + '</h5>' +
+                            '<h5>' +  item.orderPayableAmount.toFixed(2)   + '</h5>' +
                             '</div></a></div>';
 
 
@@ -175,7 +175,51 @@
         Comma($(this).val(), this); 
     });
 
+    $(document).on('click', '.rapnetdownload', function (e) {
+        e.preventDefault();
+        uiApp.BlockUI();
+        var id = $(e.target).data('id');
+        var FileName = $(e.target).data('name');
+        objSF.RapnetdownloadForExcel(id, FileName).then(function (data) {
+            if (data.IsSuccess) {
+                $('#ancInventoryDownload1').get(0).click();
+                uiApp.UnBlockUI();
+            } else {
+                uiApp.UnBlockUI();
+                uiApp.Alert({ container: '#uiPanel1', message: "No data found", type: "danger" });
+            }
+            
+        }, function (error) {
+                uiApp.UnBlockUI();
+        });
 
+    });
+
+    $(document).on('click', '.inventorydownload', function (e) {
+        e.preventDefault();
+        uiApp.BlockUI();
+        var id = $(e.target).data('id');
+        var FileName = $(e.target).data('name');
+        var SheetName = $(e.target).data('sheetname');
+        objSF.DownloadDynamicDownload(id, FileName, SheetName).then(function (data) {
+            if (data.IsSuccess) {
+                window.location.href = "/Inventory/DownloadDynamicDownload?IDs=" + id + "&FileName=" + FileName + "&SheetName=" + SheetName;
+              //href="/Inventory/DownloadDynamicDownload?IDs=43&amp;FileName=Own Location Active Inventory ?&amp;SheetName=Own Location Active Inventory "
+              
+                setTimeout(
+                    function () {
+                        uiApp.UnBlockUI();
+                    }, 5000);
+            } else {
+                uiApp.Alert({ container: '#uiPanel1', message: "No data found", type: "danger" });
+                uiApp.UnBlockUI();
+            }
+
+        }, function (error) {
+                uiApp.UnBlockUI();
+        });
+
+    });
    
 
     return {

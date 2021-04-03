@@ -24,7 +24,7 @@ namespace Rosyblueonline.ServiceProviders.Implementation
             this.uow = uow as UnitOfWork;
         }
 
-        public bool RegisterUser(RegistrationViewModel obj, Roles roles, bool SelfRegistration = true)
+        public bool RegisterUser(RegistrationViewModel obj, bool SelfRegistration = true)
         {
             if (CheckEmailID(obj.emailId) == false)
             {
@@ -49,21 +49,24 @@ namespace Rosyblueonline.ServiceProviders.Implementation
             this.uow.BeginTransaction();
             try
             {
-                int RoleID = 0;
-                Array enumValueArray = Enum.GetValues(typeof(Roles));
-                foreach (int enumValue in enumValueArray)
-                {
-                    if (roles.ToString() == Enum.GetName(typeof(Roles), enumValue))
-                    {
-                        RoleID = enumValue;
-                    }
-                }
-                // LoginDetailModel ----Start----
+                int RoleID = obj.Role;
+
+                //int RoleID = obj.Role == 0 ? 3 : obj.Role;
+
+                //Array enumValueArray = Enum.GetValues(typeof(Roles));
+                //foreach (int enumValue in enumValueArray)
+                //{
+                //    if (roles.ToString() == Enum.GetName(typeof(Roles), enumValue))
+                //    {
+                //        RoleID = enumValue;
+                //    }
+                //}
+                // LoginDetailModel ----Start---- 
                 objLD.username = obj.username;
                 objLD.password = obj.password;
                 objLD.roleID = RoleID;
                 objLD.parentLoginID = 0;
-                objLD.userStatus = obj.userStatus.HasValue ? obj.userStatus.Value : 0;
+                objLD.userStatus = SelfRegistration == true ? 0 : 1;
                 objLD.locationIDs = "";
                 objLD.loggedInStatus = false;
                 objLD.loginAttempted = 0;
@@ -162,7 +165,7 @@ namespace Rosyblueonline.ServiceProviders.Implementation
             return false;
         }
 
-        public bool UpdateRegisterUser(RegistrationViewModel obj, Roles roles, int UserID)
+        public bool UpdateRegisterUser(RegistrationViewModel obj, int UserID)
         {
             if (obj.LoginID == 0)
             {
@@ -189,15 +192,16 @@ namespace Rosyblueonline.ServiceProviders.Implementation
 
                 try
                 {
-                    int RoleID = 0;
-                    Array enumValueArray = Enum.GetValues(typeof(Roles));
-                    foreach (int enumValue in enumValueArray)
-                    {
-                        if (roles.ToString() == Enum.GetName(typeof(Roles), enumValue))
-                        {
-                            RoleID = enumValue;
-                        }
-                    }
+                    int RoleID = obj.Role;
+
+                    //Array enumValueArray = Enum.GetValues(typeof(Roles));
+                    //foreach (int enumValue in enumValueArray)
+                    //{
+                    //    if (roles.ToString() == Enum.GetName(typeof(Roles), enumValue))
+                    //    {
+                    //        RoleID = enumValue;
+                    //    }
+                    //}
                     // LoginDetailModel ----Start----
                     objLD.username = obj.username;
                     if (obj.password != "" && obj.password != null)
@@ -272,7 +276,7 @@ namespace Rosyblueonline.ServiceProviders.Implementation
             return false;
         }
 
-        public bool RegisterUser(UserRegistrationViewModel obj, Roles roles)
+        public bool RegisterUser(UserRegistrationViewModel obj)
         {
             var config = new MapperConfiguration(cfg =>
             {
@@ -280,7 +284,7 @@ namespace Rosyblueonline.ServiceProviders.Implementation
             });
             IMapper mapper = config.CreateMapper();
             var newObj = mapper.Map<UserRegistrationViewModel, RegistrationViewModel>(obj);
-            return RegisterUser(newObj, roles, false);
+            return RegisterUser(newObj, false);
         }
 
         public bool RegisterUser(UserRegistrationViewModelViaMemo obj)
@@ -292,10 +296,10 @@ namespace Rosyblueonline.ServiceProviders.Implementation
             IMapper mapper = config.CreateMapper();
             var newObj = mapper.Map<UserRegistrationViewModelViaMemo, RegistrationViewModel>(obj);
             newObj.userStatus = 1;
-            return RegisterUser(newObj, Roles.CUSTOMER, false);
+            return RegisterUser(newObj, false);
         }
 
-        public bool UpdateRegisterUser(UserRegistrationViewModel obj, Roles roles, int UserID)
+        public bool UpdateRegisterUser(UserRegistrationViewModel obj, int UserID)
         {
             var config = new MapperConfiguration(cfg =>
             {
@@ -304,7 +308,7 @@ namespace Rosyblueonline.ServiceProviders.Implementation
             IMapper mapper = config.CreateMapper();
             var newObj = mapper.Map<UserRegistrationViewModel, RegistrationViewModel>(obj);
             newObj.userStatus = 1;
-            return UpdateRegisterUser(newObj, roles, UserID);
+            return UpdateRegisterUser(newObj, UserID);
         }
 
         public void GenerateOTP(string EmailID)
@@ -1075,10 +1079,23 @@ namespace Rosyblueonline.ServiceProviders.Implementation
         {
             mstFAQBankModel objLFAQ = new mstFAQBankModel();
             return this.uow.mstFAQBank.Queryable().Select(x => x.ParentFaqID).Distinct().Count();
-             
-        }
-        
 
+        }
+
+        public List<Select2Option> GetListOfMarketingCustomer(string Filter)
+        {
+            return (from bill in uow.MstBillingAddresses.Queryable()
+                    join ll in uow.LoginDetails.Queryable() on bill.loginID equals ll.loginID
+                    join od in uow.orderDetail.Queryable() on ll.loginID equals od.customerId
+                    where ll.roleID == 3  
+                    select new Select2Option
+                    {
+                        text = bill.companyName,
+                        id = ll.loginID
+                    }).Where(x => x.text.Contains(Filter)).Distinct().ToList();
+              
+
+        }
 
 
         #endregion

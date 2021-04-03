@@ -80,12 +80,12 @@
                                             </div>
                                             <div class="col-sm-4">
                                                 @*<label class="control-label">
-                                                <label>Type<span class="font-color-red">*</span></label>
-                                            </label><br>
-                                            <input type="checkbox" name="isManufacturer" value="" id="chkManufacturer" />Is Manufacturer
-                                            <input type="checkbox" name="isWholeSaler" value="" id="chkWholeSaler" /> Is WholeSaler
-                                            <input type="checkbox" name="isRetailer" value="" id="chkRetailer" />Is Retailer
-                                            <input type="checkbox" name="isOther" value="" id="chkOther" />Other*@
+                                                        <label>Type<span class="font-color-red">*</span></label>
+                                                    </label><br>
+                                                    <input type="checkbox" name="isManufacturer" value="" id="chkManufacturer" />Is Manufacturer
+                                                    <input type="checkbox" name="isWholeSaler" value="" id="chkWholeSaler" /> Is WholeSaler
+                                                    <input type="checkbox" name="isRetailer" value="" id="chkRetailer" />Is Retailer
+                                                    <input type="checkbox" name="isOther" value="" id="chkOther" />Other*@
 
                                                 <label class="control-label">
                                                     <label for="Country">@Resource.Type</label><span class="font-color-red">*</span>
@@ -309,16 +309,16 @@
                                             <input type="hidden" name="DocRandomID" id="hrRandomID" value="" />
                                             <div class="col-sm-4">
                                                 @*<label class="control-label">
-                                <label for="kycDocName">Select Identity<span class="font-color-red">*</span></label>
-                            </label>
-                            <select class="form-control" name="kycDocName" id="ddlKycDocName">
-                                <option value=""><- Select Identity -></option>
-                                <option value="PAN">PAN Card</option>
-                                <option value="Aadhar">Aadhar Card</option>
-                                <option value="Voter Id">Voter Id</option>
-                                <option value="Passport">Passport</option>
-                                <option value="Driving License">Driving License</option>
-                            </select>*@
+                                                        <label for="kycDocName">Select Identity<span class="font-color-red">*</span></label>
+                                                    </label>
+                                                    <select class="form-control" name="kycDocName" id="ddlKycDocName">
+                                                        <option value=""><- Select Identity -></option>
+                                                        <option value="PAN">PAN Card</option>
+                                                        <option value="Aadhar">Aadhar Card</option>
+                                                        <option value="Voter Id">Voter Id</option>
+                                                        <option value="Passport">Passport</option>
+                                                        <option value="Driving License">Driving License</option>
+                                                    </select>*@
 
                                                 <label class="control-label">
                                                     <label for="kycDocName">@Resource.Select_Identity</label><span class="font-color-red">*</span>
@@ -341,7 +341,7 @@
                                                 <input type="text" class="form-control" name="DocNo" value="" id="txtKycDocNo" />
                                             </div>
 
-                                            <div class="col-sm-4">
+                                            <div class="col-sm-4" id="idKycDocExpiryDate">
                                                 <label class="control-label">
                                                     <label>@Resource.Doc_Expiry_Date</label>
                                                 </label>
@@ -351,6 +351,8 @@
 
 
                                             </div>
+                                        </div>
+                                        <div class="row">
                                             <div class="col-sm-4">
                                                 <label class="control-label">
                                                     <label for="uploadFile">@Resource.Upload_Id_Proof<span class="font-color-red">*</span></label>
@@ -455,7 +457,7 @@
                         </h3>
                         <span>@Resource.Mandatory_fields</span>
                     </div>
-                    <form id="pnlRegistration"  class="panel-collapse collapse in" >
+                    <form id="pnlRegistration" class="panel-collapse collapse in">
                         <div class="reg-box">
                             <div class="company-info">
                                 <div class="form-horizontal">
@@ -513,12 +515,12 @@
                                             </div>
                                             <div class="col-sm-4">
                                                 @*<label class="control-label">
-                                        <label>Type<span class="font-color-red">*</span></label>
-                                    </label><br>
-                                    <input type="checkbox" name="isManufacturer" value="" id="chkManufacturer" />Is Manufacturer
-                                    <input type="checkbox" name="isWholeSaler" value="" id="chkWholeSaler" /> Is WholeSaler
-                                    <input type="checkbox" name="isRetailer" value="" id="chkRetailer" />Is Retailer
-                                    <input type="checkbox" name="isOther" value="" id="chkOther" />Other*@
+                                                        <label>Type<span class="font-color-red">*</span></label>
+                                                    </label><br>
+                                                    <input type="checkbox" name="isManufacturer" value="" id="chkManufacturer" />Is Manufacturer
+                                                    <input type="checkbox" name="isWholeSaler" value="" id="chkWholeSaler" /> Is WholeSaler
+                                                    <input type="checkbox" name="isRetailer" value="" id="chkRetailer" />Is Retailer
+                                                    <input type="checkbox" name="isOther" value="" id="chkOther" />Other*@
 
 
                                                 <label class="control-label">
@@ -631,8 +633,8 @@
                                     </div>
 
                                     @*<div class="form-group">
-                            <button id="btnNext" name="submit" type="button" value="Next" class="btn btn-success pull-right">Next</button>
-                        </div>*@
+                                            <button id="btnNext" name="submit" type="button" value="Next" class="btn btn-success pull-right">Next</button>
+                                        </div>*@
                                 </div>
                             </div>
                         </div>
@@ -736,16 +738,16 @@
                                             <input type="hidden" name="DocRandomID" id="hrRandomID" value="" />
                                             <div class="col-sm-4">
                                                 @*<label class="control-label">
-                                <label for="kycDocName">Select Identity<span class="font-color-red">*</span></label>
-                            </label>
-                            <select class="form-control" name="kycDocName" id="ddlKycDocName">
-                                <option value=""><- Select Identity -></option>
-                                <option value="PAN">PAN Card</option>
-                                <option value="Aadhar">Aadhar Card</option>
-                                <option value="Voter Id">Voter Id</option>
-                                <option value="Passport">Passport</option>
-                                <option value="Driving License">Driving License</option>
-                            </select>*@
+                                                        <label for="kycDocName">Select Identity<span class="font-color-red">*</span></label>
+                                                    </label>
+                                                    <select class="form-control" name="kycDocName" id="ddlKycDocName">
+                                                        <option value=""><- Select Identity -></option>
+                                                        <option value="PAN">PAN Card</option>
+                                                        <option value="Aadhar">Aadhar Card</option>
+                                                        <option value="Voter Id">Voter Id</option>
+                                                        <option value="Passport">Passport</option>
+                                                        <option value="Driving License">Driving License</option>
+                                                    </select>*@
 
 
                                                 <label class="control-label">
@@ -771,7 +773,7 @@
                                                 <input type="text" class="form-control" name="kycDocNo" value="" id="txtKycDocNo" />
                                             </div>
 
-                                            <div class="col-sm-4">
+                                            <div class="col-sm-4" id="idKycDocExpiryDate">
                                                 <label class="control-label">
                                                     <label>@Resource.Doc_Expiry_Date</label>
                                                 </label>
@@ -779,7 +781,9 @@
                                                     <input type="text" name="KycDocExpiryDate" class="form-control  datepicker" id="txtDateOfDocExpiry" placeholder="dd-mm-yyyy" />
                                                 </div>
                                             </div>
+                                        </div>
 
+                                        <div class="row">
 
                                             <div class="col-sm-4">
                                                 <label class="control-label">

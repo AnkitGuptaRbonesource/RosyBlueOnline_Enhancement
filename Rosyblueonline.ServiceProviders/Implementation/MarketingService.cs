@@ -230,5 +230,18 @@ namespace Rosyblueonline.ServiceProviders.Implementation
             }
             return 0;
         }
+        public MarketingStockSummaryModel StockSummaryFilters(int LoginID)
+        {
+            MarketingStockSummaryModel objStockSummaryModel = new MarketingStockSummaryModel();
+            return this.uow.Inventory.StockSummaryFilters(LoginID);
+        }
+
+
+        public List<MarketingStockSummaryDetailsModel> MarketingStockSummaryDetails(string CustomerIDs, string FilterYear, string FilterMonth, string salesLocationIDs)
+        {
+            return this.uow.Inventory.MarketingStockSummaryDetails(CustomerIDs,FilterYear,FilterMonth,salesLocationIDs);
+        }
+
+
     }
 }

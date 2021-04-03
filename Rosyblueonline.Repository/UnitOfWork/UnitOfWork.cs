@@ -79,6 +79,10 @@ namespace Rosyblueonline.Repository.UnitOfWork
         private Repository<CustomerFAQAnswersModel> _CustomerFAQAnswers = null;
 
 
+        private Repository<MstRolesModel> _MstRoles = null;
+
+        
+
         public Repository<LoginDeviceModel> LoginDevices {
             get => _LoginDevices == null ? new Repository<LoginDeviceModel>(db) : _LoginDevices; }
         public Repository<LoginDetailModel> LoginDetails { 
@@ -156,6 +160,9 @@ namespace Rosyblueonline.Repository.UnitOfWork
 
 
         public Repository<CustomerFAQAnswersModel> CustomerFAQAnswers { get => _CustomerFAQAnswers == null ? new Repository<CustomerFAQAnswersModel>(db) : _CustomerFAQAnswers; }
+
+
+        public Repository<MstRolesModel> MstRoles { get => _MstRoles == null ? new Repository<MstRolesModel>(db) : _MstRoles; }
 
         public int Save()
         {

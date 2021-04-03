@@ -219,6 +219,8 @@
                             render: function (data, type, row) {
 
                                 return row.Sizes;
+
+                               // return data.toFixed(2).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
                               //  return ' <a class="loadData" data-criteria="SLOCATION~' + $ddlSalesLocation.val().trim() + '|MULTISIZE~' + row.Sizes + '|" href="#">' + row.Sizes + '</a>';
 
                             }

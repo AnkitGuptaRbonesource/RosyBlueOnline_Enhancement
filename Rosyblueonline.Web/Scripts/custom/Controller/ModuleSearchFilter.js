@@ -3,8 +3,10 @@
     var fQuery = "";
     var selShapesCount = 1;
     var ValFrmSize = null, ValAdvSearch = null,
-        $s = null, objSF = null; 
-
+        $s = null, objSF = null;
+    var MultiSearchQuery = "";
+    var MultiSearchDisplayQuery = "";
+    var ddlmultiseries = [];
     var OnLoad = function () {
         objSF = new SearchFilter();
         $s = myApp.defScope($(options.parentID));
@@ -58,7 +60,7 @@
             checkButton();
         });
 
-        $s('.diamond-box > input.all_shape[type="button"]').click(function (e) { 
+        $s('.diamond-box > input.all_shape[type="button"]').click(function (e) {
             e.preventDefault();
             var IsActive = $s(this).hasClass('active');
             $s('.diamond-box > input[class!="all_shape"][type="button"]').each(function (idx, ele) {
@@ -175,7 +177,7 @@
             e.preventDefault();
             var isSelected = $(this).data('select');
             if (isSelected == true) {
-                $('input[type=checkbox].exe').prop('checked', true); 
+                $('input[type=checkbox].exe').prop('checked', true);
                 $(this).data('select', false);
                 $(this).addClass("active");
             } else {
@@ -210,6 +212,82 @@
             ReadLotNos(true);
             //ReadForm(true);
         });
+        $s('#dydAddMulti').click(function (e) {
+          
+            //objSF.MultiSearch("test").then(function (data) {
+
+            //}, function (error) {
+            //});
+            query = ReadLotNos(false);
+            if (query.query == "" || query.query == null) {
+                return;
+            }
+            uiApp.BlockUI();
+            MultiSearchQuery = MultiSearchQuery == "" ? query.query : MultiSearchQuery + "@" + query.query;
+            MultiSearchDisplayQuery = MultiSearchDisplayQuery == "" ? query.displayQuery : MultiSearchDisplayQuery + "@" + query.displayQuery;
+            console.log(MultiSearchQuery);
+
+
+
+
+            //alert(MultiSearchQuery); 
+            $s('.diamond-box > input[class!="all_shape"][type="button"]').each(function (idx, ele) {
+                $s(ele).removeClass('active');
+                selShapesCount = 0;
+            });
+
+            $('#btnF_CaratSize').click();
+            $('#btnF_Color').click();
+            $('#btnF_Clarity').click();
+            $('#btnF_Certificate').click();
+            $('#btnF_Fluorescence').click();
+            $('#btnNo_BGM').click();
+            $('#btnF_SalesL').click();
+            $('#btnF_Hearts').click();
+            $('#btnF_SalesL').click();
+            //  MultiSearchGetCount(MultiSearchQuery);
+
+            FinalQuery = MultiSearchQuery;
+            fQuery = MultiSearchQuery;
+
+            ddlmultiseries = [];
+            var splitstring = MultiSearchDisplayQuery.split('@');
+            var Searchsplitstring = MultiSearchQuery.split('@');
+            for (var k = 0; k < splitstring.length; k++) {
+
+                ddlmultiseries.push({ 'id': k, 'name': splitstring[k], 'search': Searchsplitstring[k] });
+            }
+            MultisearchDDl();
+
+           
+            setTimeout(function () {
+                uiApp.UnBlockUI();
+            }, 3000);
+            $("#return-to-top").click();
+
+        });
+
+        $s('#dydSearchMulti').click(function (e) {
+            e.preventDefault();
+            var query = '';
+            var ss = $('#collapse5').attr('aria-expanded');
+            var ln = $('#collapse3').attr('aria-expanded');
+            query = ReadLotNos(false);
+            query.query = MultiSearchQuery;
+            query.displayQuery = MultiSearchDisplayQuery;
+            if (options.getRequestString) {
+                options.onSearched(query);
+            } else {
+                objSF.StockList(query).then(function (data) {
+                    options.onSearched(data);
+                }, function (error) {
+                });
+            }
+
+            $("#SearchTablePost_filter label input").attr("placeholder", "Enter Lot/cert no. to quick search");
+
+        });
+
 
         $s('#dydEdit').click(function (e) {
             e.preventDefault();
@@ -429,6 +507,19 @@
             ReadLotNos(true);
         });
 
+        $('#btnNo_BGM').click(function (e) {
+            e.preventDefault();
+            $('#btnF_Cut').click();
+            $('#btnF_Polished').click();
+            $('#btnF_Symmerty').click();
+            $('#NOBGM').prop("checked", false);
+
+            $('#ancEx').removeClass('active');
+            $('#ancVEx').removeClass('active');
+
+        });
+
+
 
         $('#btnF_Hearts').click(function (e) {
             e.preventDefault();
@@ -516,13 +607,13 @@
             if (e.currentTarget.name == "CaratSize") {
                 $s('#txtSizefrom').val('');
                 $s('#txtSizeto').val('');
-              //  alert(e.currentTarget.name);
+                //  alert(e.currentTarget.name);
 
                 ReadLotNos(true);
             }
         });
-      
-   
+
+
 
         $('#txtSizefrom').keyup(function (e) {
             e.preventDefault();
@@ -533,7 +624,7 @@
                 $('#' + fieldId).prop("checked", false);
 
             }
-              
+
             ReadLotNos(true);
         });
 
@@ -547,18 +638,18 @@
                 $('#' + fieldId).prop("checked", false);
 
             }
-           //// alert($('#hfCaratsizepermission').val());
-           // var val1 = parseFloat($s('#txtSizefrom').val());
-           // var val2 = 100;
-           // if ($('#hfCaratsizepermission').val()!= "") {
-           //     val2 = parseFloat($('#hfCaratsizepermission').val()); 
-           // }
-           //// alert(val2);
-           // if(val1 > val2) {
-           //     alert("From unit should not be greater than " + val2 + " unit");
-           //     $s('#txtSizefrom').val('');
-           // }
- 
+            //// alert($('#hfCaratsizepermission').val());
+            // var val1 = parseFloat($s('#txtSizefrom').val());
+            // var val2 = 100;
+            // if ($('#hfCaratsizepermission').val()!= "") {
+            //     val2 = parseFloat($('#hfCaratsizepermission').val()); 
+            // }
+            //// alert(val2);
+            // if(val1 > val2) {
+            //     alert("From unit should not be greater than " + val2 + " unit");
+            //     $s('#txtSizefrom').val('');
+            // }
+
 
             ReadLotNos(true);
         });
@@ -571,9 +662,58 @@
 
         $('#FCertificateMore').click(function (e) {
             e.preventDefault();
-            ToggleFCertificateMore(); 
+            ToggleFCertificateMore();
             ReadLotNos(true);
         });
+
+
+        $("input[name='SearchOption']").change(function () {
+            FinalQuery = "";
+            MultiSearchQuery = "";
+            fQuery = "";
+            MultiSearchDisplayQuery = "";
+            ddlmultiseries = [];
+            MultisearchDDl();
+            var SearchOptions = $('input[type="radio"][name="SearchOption"]:checked').val()
+            if (SearchOptions == 0) {
+                $("#dydEdit").show();
+                $("#dydMulti").hide();
+                $("#multiseresult").hide();
+
+            } else {
+                $("#dydEdit").hide();
+                $("#dydMulti").show();
+                $("#multiseresult").hide();
+            }
+
+        });
+
+
+
+        $(document).on('click', '.removemultisearch', function (e) {
+            var criteria = e.target.dataset.details;
+            //  delete ddlmultiseries[criteria];
+
+            for (var i = 0; i < ddlmultiseries.length; i++) {
+
+                if (ddlmultiseries[i].id.toString() === criteria) {
+                    ddlmultiseries.splice(i, 1);
+                }
+
+            }
+            MultiSearchDisplayQuery = "";
+            MultiSearchQuery = "";
+            for (var l = 0; l < ddlmultiseries.length; l++) {
+                MultiSearchQuery = MultiSearchQuery == "" ? ddlmultiseries[l].search : MultiSearchQuery + "@" + ddlmultiseries[l].search;
+                MultiSearchDisplayQuery = MultiSearchDisplayQuery == "" ? ddlmultiseries[l].name : MultiSearchDisplayQuery + "@" + ddlmultiseries[l].name;
+
+            }
+            MultisearchDDl();
+            FinalQuery = MultiSearchQuery;
+            fQuery = MultiSearchQuery;
+
+        });
+
     };
 
     var SetValidation = function () {
@@ -589,8 +729,8 @@
                 },
                 Sizeto: {
                     required: true,
-                    notGreaterThan: true, 
-                    number: true 
+                    notGreaterThan: true,
+                    number: true
                 }
             },
             messages: {
@@ -749,39 +889,39 @@
             return true;
         }, "To date should be greater than From date");
 
-       // var msg = "From unit should be greater than " + $s('#txtSizefrom').val();
-       // var msg = "From unit should be greater ";
+        // var msg = "From unit should be greater than " + $s('#txtSizefrom').val();
+        // var msg = "From unit should be greater ";
 
         $.validator.addMethod('accesssize', function (value, ele) {
-           
+
             var FromSize = parseFloat($s('#txtSizefrom').val());
-             
+
             var ToSize = 0;
-            if ($('#hfCaratsizepermission').val()!= "") {
-                ToSize = parseFloat($('#hfCaratsizepermission').val()); 
+            if ($('#hfCaratsizepermission').val() != "") {
+                ToSize = parseFloat($('#hfCaratsizepermission').val());
             }
-            
+
             if (FromSize >= ToSize) {
                 $('#SizeMsg').text("");
-               // $('#btnSubmit').removeAttr("disabled");
-                $('#dydEdit').attr("disabled", false); 
+                // $('#btnSubmit').removeAttr("disabled");
+                $('#dydEdit').attr("disabled", false);
 
 
             } else {
                 $('#SizeMsg').text("From unit should be Equal or greater than " + $('#hfCaratsizepermission').val());
                 $('#dydEdit').attr("disabled", true);
             }
-           // $('#SizeMsg').val("From unit should be Equal or greater than " + $('#hfCaratsizepermission').val());
-               // alert("From unit should be greater than " + val2 + " unit"); 
+            // $('#SizeMsg').val("From unit should be Equal or greater than " + $('#hfCaratsizepermission').val());
+            // alert("From unit should be greater than " + val2 + " unit"); 
             return FromSize >= ToSize;
-        },"");
+        }, "");
     };
-    
+
     var ReadForm = function (getCount) {
-         //Added By Ankit 30JUn2020 --CaratSize
+        //Added By Ankit 30JUn2020 --CaratSize
         var SelectedShapes = $s('#hfSelectedShape').val();
-        var ArrayID = ["color", "fancy", "clarity", "fluor", "lab", "girdle", "mlky", "cb", "tb", "ec", "HA", "OPN", "SHADE", "KTS", "cut", "Polished", "Symmerty", "SLocation", "CaratSize","Origin"];
-        var KeyID = ["CLR", "FNC", "CTY", "FLORA", "CERT", "GRDL", "MILKY", "CB", "TB", "EYECLN", "HA", "OPN", "SHADE", "KTS", "CUT", "POL", "SYMT", "SLOCATION", "MULTISIZE","ORGN"];
+        var ArrayID = ["color", "fancy", "clarity", "fluor", "lab", "girdle", "mlky", "cb", "tb", "ec", "HA", "OPN", "SHADE", "KTS", "cut", "Polished", "Symmerty", "SLocation", "CaratSize", "Origin"];
+        var KeyID = ["CLR", "FNC", "CTY", "FLORA", "CERT", "GRDL", "MILKY", "CB", "TB", "EYECLN", "HA", "OPN", "SHADE", "KTS", "CUT", "POL", "SYMT", "SLOCATION", "MULTISIZE", "ORGN"];
 
 
         var CheckBox = "";
@@ -826,7 +966,7 @@
                 Size = "CRTFRM~" + $s('#txtSizefrom').val().trim() + "|CRTTO~" + $s('#txtSizeto').val().trim();
                 displaySize = $s('#txtSizefrom').val().trim() + '-' + $s('#txtSizeto').val().trim()
             }
-        } else if (SelectedSize == "MultipleSize")  {
+        } else if (SelectedSize == "MultipleSize") {
             var listOfCarats = $s('#divMultipleSizes > span.multiplecarat').get();
             for (var i = 0; i < listOfCarats.length; i++) {
                 Size = (Size == "" ?
@@ -842,12 +982,12 @@
             }
         }
         //New added by Ankit 08July2020
-       // if (!$s('#txtSizefrom').val() == undefined) {
-            if ($s('#txtSizefrom').val().trim() != "" && $s('#txtSizeto').val().trim() != "") {
-                Size = "CRTFRM~" + $s('#txtSizefrom').val().trim() + "|CRTTO~" + $s('#txtSizeto').val().trim();
-                displaySize = $s('#txtSizefrom').val().trim() + '-' + $s('#txtSizeto').val().trim()
-            }
-       // }
+        // if (!$s('#txtSizefrom').val() == undefined) {
+        if ($s('#txtSizefrom').val().trim() != "" && $s('#txtSizeto').val().trim() != "") {
+            Size = "CRTFRM~" + $s('#txtSizefrom').val().trim() + "|CRTTO~" + $s('#txtSizeto').val().trim();
+            displaySize = $s('#txtSizefrom').val().trim() + '-' + $s('#txtSizeto').val().trim()
+        }
+        // }
 
 
         // Read Carat for filter --------End---------------
@@ -912,7 +1052,7 @@
         //if ($s('#LotCertSearchInput').val() != "") {
         //    FinalQuery = FinalQuery == "" ? 'LOTNO~' + $s("#LotCertSearchInput").val() + '|CERTNO~' + $s("#LotCertSearchInput").val() : FinalQuery + '|LOTNO~' + $s("#LotCertSearchInput").val() + '|CERTNO~' + $s("#LotCertSearchInput").val();
         //}
-         
+
 
         if (getCount == true) {
             GetCount(FinalQuery);
@@ -930,9 +1070,14 @@
     }
 
     function GetCount(FinalQuery, newArrival, callback) {
+
         $('#dydEdit').attr('disable', true);
         $('.small-loader').show();
-        
+        var SearchOptions11 = $('input[type="radio"][name="SearchOption"]:checked').val()
+        if (SearchOptions11 == 1) {
+            FinalQuery = MultiSearchQuery;
+        }
+
         objSF.StockCount(FinalQuery, newArrival).then(function (data) {
             console.log(data);
             if (data.IsSuccess) {
@@ -951,15 +1096,39 @@
             $('#dydEdit').attr('disable', false);
             setTimeout(
                 function () {
-                    $('.small-loader').hide(); 
+                    $('.small-loader').hide();
                 }, 3000);
 
         }, function (error) {
-                $('#dydEdit').attr('disable', false);
-                $('.small-loader').hide();
+            $('#dydEdit').attr('disable', false);
+            $('.small-loader').hide();
 
         });
     };
+
+
+    //function MultiSearchGetCount(FinalQuery) {
+    //    objSF.MultiSearchStocks(FinalQuery).then(function (data) {
+
+    //        if (data.IsSuccess) {
+
+    //            return data.Result;
+    //           // GetCount(data.Result);
+    //            console.log(data.Result);
+
+    //        } else {
+
+    //            $s('#dydEdit > span.badge .sscount').html("0");
+    //            return '';
+    //        }
+
+
+    //    }, function (error) {
+    //        $('#dydEdit').attr('disable', false);
+    //        $('.small-loader').hide();
+
+    //    });
+    //};
 
     function Comma(Num, ele) { //function to add commas to textboxes
         var x1 = Num.split(' ').join(',');
@@ -1053,22 +1222,41 @@
 
     }
     function GetSizePermisiondDetails() {
-        objSF.GetSizePermision().then(function (data) { 
+        objSF.GetSizePermision().then(function (data) {
             $('#hfCaratsizepermission').val(data.startSizePermitted);
-               
+
         }, function (error) {
         });
     }
 
 
+    function MultisearchDDl() {
+
+        //    var options = '<option value=""><strong>Search Criteria List</strong></option>';
+        //    $(ddlmultiseries).each(function (index, value) {
+        //        options += '<option value="' + value.id + '">' + value.name + '</option>';
+
+        //    });
+        //$('.ddlmulti').html(options);
+
+
+        $(".ddlmulti").empty();
+        $(ddlmultiseries).each(function (index, value) {
+            $(".ddlmulti").append("<li style='border-bottom: 1px solid #e8e8ec;padding: 2px 0;'>" + value.name + "<a class='removemultisearch glyphicon glyphicon-remove-circle' data-details='" + value.id + "' ></a></li>");
+        });
+        if (ddlmultiseries.length > 0) { $("#multiseresult").show(); } else { $("#multiseresult").hide();}
+        
+
+    }
+
 
     //var ReadLotNos121 = function (getCount) {
     //    var FinalQuery = '';
-         
+
     //    if ($s('#LotCertSearchInput').val() != "") {
     //        FinalQuery = FinalQuery == "" ? 'LOTNO~' + $("#LotCertSearchInput").val() + '|CERTNO~' + $("#LotCertSearchInput").val() : FinalQuery + '|LOTNO~' + $("#LotCertSearchInput").val() + '|CERTNO~' + $("#LotCertSearchInput").val();
     //    }
-         
+
     //    console.log(FinalQuery);
 
     //    fQuery = FinalQuery;
@@ -1093,7 +1281,7 @@
 
     //        //options.onSearched(query);
     //        //$("#SearchTablePost_filter label input").attr("placeholder", "Enter Lot/cert no. to quick search");
-              
+
     //        if (ss == "true") { 
     //            query = ReadLotNos(false); 
     //        }
@@ -1110,7 +1298,7 @@
     //            });
     //        } 
     //        $("#SearchTablePost_filter label input").attr("placeholder", "Enter Lot/cert no. to quick search");
-            
+
 
     //    }
     //});

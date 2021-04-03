@@ -214,6 +214,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\CartItemReminderEmailController.cs" />
     <Compile Include="Controllers\FTPInventoryUploadController.cs" />
     <Compile Include="Controllers\Home12Controller.cs" />
     <Compile Include="Controllers\StockController.cs" />
@@ -233,6 +234,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\EmailTemplate\CancelMemo.html" />
     <Content Include="Content\EmailTemplate\CancelOrder.html" />
+    <Content Include="Content\EmailTemplate\CartItemReminderEmail.html" />
     <Content Include="Content\EmailTemplate\ConfirmOrderMail.html" />
     <Content Include="Content\EmailTemplate\CustomerRegistration.html" />
     <Content Include="Content\EmailTemplate\EventInventoryChangeSendMail.html" />

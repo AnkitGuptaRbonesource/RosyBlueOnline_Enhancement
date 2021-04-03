@@ -71,7 +71,7 @@ namespace Rosyblueonline.Web.Controllers
             _SearchFilterViewModel objVM = new _SearchFilterViewModel();
             objVM = objStockDetailsService.SearchFilter(LoginID);
             objVM.Query = Query;
-            
+
             bool log = this.objUDSvc.UserActivitylogs(LoginID, "Dashboard Search", Query);
             List<inventoryDetailsViewModel> objInvVM = new List<inventoryDetailsViewModel>();
             objInvVM = objStockDetailsService.InventoryAction(LoginID.ToString(), Query, "0", "10000000", "", "", "SpecificSearch");
@@ -86,7 +86,7 @@ namespace Rosyblueonline.Web.Controllers
             int LoginID = GetLogin();
             List<inventoryDetailsViewModel> objInvVM = new List<inventoryDetailsViewModel>();
             objInvVM = objStockDetailsService.InventoryAction(LoginID.ToString(), Query, "0", "10000000", "Stock", "desc", "SpecificSearch");
-             
+
 
             // ViewBag.SearchResultList = objInvVM.Take(10); 
             //  return View("SpecificSearch", objVM);
@@ -141,12 +141,26 @@ namespace Rosyblueonline.Web.Controllers
                     }
                     decimal idx = Math.Ceiling((decimal)(obj.start / obj.length));
                     List<inventoryDetailsViewModel> objInvVM = new List<inventoryDetailsViewModel>();
-                    objInvVM = NewArrival == false ? objStockDetailsService.InventoryAction(LoginID.ToString(), obj.filterText, idx.ToString(), obj.length.ToString(), OrderBy, OrderDirection, "SpecificSearch") :
-                                                     objStockDetailsService.InventoryAction(LoginID.ToString(), obj.filterText, idx.ToString(), obj.length.ToString(), OrderBy, OrderDirection, "SpecificSearch", "NewArrival");
+                    string raisedEvent = "SpecificSearch";
+                    if (obj.filterText != null)
+                    {
+                        if (obj.filterText.Contains("@"))
+                        {
+                            raisedEvent = "MultiSpecificSearch";
+                        }
+                        else
+                        {
+                            raisedEvent = "SpecificSearch";
+                        }
+
+                    }
+                    objInvVM = NewArrival == false ? objStockDetailsService.InventoryAction(LoginID.ToString(), obj.filterText, idx.ToString(), obj.length.ToString(), OrderBy, OrderDirection, raisedEvent) :
+                                                     objStockDetailsService.InventoryAction(LoginID.ToString(), obj.filterText, idx.ToString(), obj.length.ToString(), OrderBy, OrderDirection, raisedEvent, "NewArrival");
+
 
 
                     string json = JsonConvert.SerializeObject(new { draw = obj.draw, recordsTotal = obj.Total.HasValue ? obj.Total.Value : 0, recordsFiltered = obj.Total.HasValue ? obj.Total.Value : 0, data = objInvVM }, Formatting.Indented);
-                 //ViewBag.SearchResultList = objInvVM.Take(5);
+                    //ViewBag.SearchResultList = objInvVM.Take(5);
                     return Content(json, "application/json");
                 }
                 return Json(new Response { IsSuccess = false, Message = string.Format(StringResource.Invalid, "Session") });
@@ -187,6 +201,12 @@ namespace Rosyblueonline.Web.Controllers
                 int LoginID = GetLogin();
                 if (LoginID > 0)
                 {
+
+                    if (filterText.Contains("@"))
+                    {
+                        filterText = MultiSearchStocks(filterText);
+                    }
+
                     List<InventoryCountViewModel> StockCount = NewArrival == false ?
                         objStockDetailsService.InventoryCount(LoginID.ToString(), filterText, "0", "500000", "", "", "SpecificSearchCount") :
                         objStockDetailsService.InventoryCount(LoginID.ToString(), filterText, "0", "500000", "", "", "SpecificSearchCount", "NewArrival");
@@ -1300,7 +1320,7 @@ namespace Rosyblueonline.Web.Controllers
 
                         objGiaLst.Add(new GIAUpload
                         {
-                            Certificate = dt.Rows[i]["Certificate"].ToString() ,
+                            Certificate = dt.Rows[i]["Certificate"].ToString(),
                             Lotnumber = dt.Rows[i]["Lotnumber"].ToString(),
                             Weight = dt.Rows[i]["Weight"].ToString(),
                         });
@@ -1380,14 +1400,14 @@ namespace Rosyblueonline.Web.Controllers
                     }
 
                     CommonFunction objCom = new CommonFunction();
-                    DataTable dt = objStockDetailsService.SpecificSearchDownloadExcelExport(filterText, NewArrival, LoginID, IsSpecialSearch, IsOnlyMemo,PermissibleDownload);
+                    DataTable dt = objStockDetailsService.SpecificSearchDownloadExcelExport(filterText, NewArrival, LoginID, IsSpecialSearch, IsOnlyMemo, PermissibleDownload);
                     if (dt.Rows.Count > 0)
                     {
                         dt.Columns.Remove("RowNum");
                         //Guid fname = Guid.NewGuid();
                         string imgPath = Server.MapPath(System.Configuration.ConfigurationManager.AppSettings["ExcelMailImage"]);
                         int Role = GetRole();
-                        byte[] st = ExportToExcel.InventoryExportToExcel(dt, imgPath, Role == 3 ? true : false,"", Role == 3 ? true : false);
+                        byte[] st = ExportToExcel.InventoryExportToExcel(dt, imgPath, Role == 3 ? true : false, "", Role == 3 ? true : false);
                         TempData["SpecificSearchExport"] = st;
                         string bs64 = Convert.ToBase64String(st);
                         string json = JsonConvert.SerializeObject(new Response { IsSuccess = true, Result = bs64, Message = "InventoryExport.xlsx" }, Formatting.Indented);
@@ -1607,6 +1627,91 @@ namespace Rosyblueonline.Web.Controllers
         //    }
 
         //}
+
+        [HttpPost]
+        public JsonResult RapnetdownloadForExcel(string id, string FileName)
+        {
+            try
+            {
+                int LoginID = GetLogin();
+                int Role = GetRole();
+                if (LoginID > 0)
+                {
+
+                    DataTable dt = objStockDetailsService.RapnetDownloadExcelExport(id);
+
+
+                    if (dt.Rows.Count > 0)
+                    {
+                        TempData["RapnetFileName"] = FileName;
+                        //Guid fname = Guid.NewGuid();
+                        string imgPath = Server.MapPath(System.Configuration.ConfigurationManager.AppSettings["ExcelMailImage"]);
+                        byte[] st = ExportToExcel.InventoryExportToExcel(dt, imgPath, Role == 3 ? true : false, "AT", false);
+                        TempData["RapnetDataExport"] = st;
+                        //return File(st, System.Net.Mime.MediaTypeNames.Application.Octet, "SpecificSearchExport.xlsx");
+                        return Json(new Response { IsSuccess = true, Result = "" });
+                    }
+                    else
+                    {
+                        return Json(new Response { IsSuccess = false, Message = "No rows found" });
+                    }
+                }
+                return Json(new Response { IsSuccess = false, Message = string.Format(StringResource.Invalid, "Session") }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                ErrorLog.Log("OrderController", "GetOrderItemsByOrderID", ex);
+                return Json(new Response { IsSuccess = false, Message = ex.Message }, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        public ActionResult RapnetExportToExcelInventoryDownload()
+        {
+            try
+            {
+                string filename = TempData["RapnetFileName"].ToString();
+                byte[] st = (byte[])TempData["RapnetDataExport"];
+                return File(st, System.Net.Mime.MediaTypeNames.Application.Octet, filename + ".xlsx");
+            }
+            catch (Exception ex)
+            {
+                ErrorLog.Log("InventoryController", "RapnetExportToExcelInventoryDownload", ex);
+                return new EmptyResult();
+            }
+        }
+
+        [HttpPost]
+        public JsonResult InventorydownloadForExcel(string id, string FileName,string SheetName)
+        {
+            try
+            {
+                int LoginID = GetLogin();
+                int Role = GetRole();
+                DataSet ds = new DataSet();
+
+                if (LoginID > 0)
+                {
+                    ds = this.objDownloadService.ExecuteDownload(id);
+                    if (ds.Tables[0].Rows.Count > 0)
+                    {
+                        return Json(new Response { IsSuccess = true, Message = "data found" });
+
+                    }
+                    else
+                    {
+                        return Json(new Response { IsSuccess = false, Message = "No data found" });
+                    }
+                }
+                return Json(new Response { IsSuccess = false, Message = string.Format(StringResource.Invalid, "Session") }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                ErrorLog.Log("OrderController", "InventorydownloadForExcel", ex);
+                return Json(new Response { IsSuccess = false, Message = ex.Message }, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+
         public ActionResult DownloadDynamicDownload(string IDs, string FileName, string SheetName)
         {
             int LoginID = GetLogin();
@@ -1615,6 +1720,7 @@ namespace Rosyblueonline.Web.Controllers
             ds = this.objDownloadService.ExecuteDownload(IDs);
             if (ds.Tables.Count > 0)
             {
+
                 ds.Tables[0].TableName = SheetName;
                 System.IO.StringWriter tw = new System.IO.StringWriter();
                 System.Web.UI.HtmlTextWriter hw = new System.Web.UI.HtmlTextWriter(tw);
@@ -1632,6 +1738,7 @@ namespace Rosyblueonline.Web.Controllers
                 Response.Write(tw.ToString());
                 Response.End();
                 return RedirectToAction("Downloads");
+
                 //return Content(tw.ToString(), "application/vnd.ms-excel");
             }
             else
@@ -1768,7 +1875,7 @@ namespace Rosyblueonline.Web.Controllers
             orderDetailModel objO = new orderDetailModel();
 
 
-          //  objO = this.objMemoService.orderItemDetailsfrominvintory(inventoryID);
+            //  objO = this.objMemoService.orderItemDetailsfrominvintory(inventoryID);
             return RedirectToAction("MemoDetails", new RouteValueDictionary(new { Controller = "Memo", action = "MemoDetails", OrderID = objO.customerId }));
 
             //orderItemDetailModel objO = new orderItemDetailModel();
@@ -1800,7 +1907,7 @@ namespace Rosyblueonline.Web.Controllers
                 int LoginID = GetLogin();
                 if (LoginID > 0)
                 {
-                      objLst = this.objStockDetailsService.GetSizePermision(LoginID);
+                    objLst = this.objStockDetailsService.GetSizePermision(LoginID);
                 }
                 return Json(objLst, JsonRequestBehavior.AllowGet);
             }
@@ -1838,6 +1945,32 @@ namespace Rosyblueonline.Web.Controllers
         //    }
 
         //}
+
+
+        public string MultiSearchStocks(string filterText)
+        {
+            try
+            {
+                int LoginID = GetLogin();
+                if (LoginID > 0)
+
+                {
+                    List<inventoryDetailsViewModel> objInvVM = new List<inventoryDetailsViewModel>();
+
+                    objInvVM = objStockDetailsService.InventoryAction(LoginID.ToString(), filterText, "0", "10000000", "Stock", "desc", "MultiSpecificSearch");
+
+                    return objInvVM[0].BGN.ToString();
+
+                }
+                return "";
+
+            }
+            catch (Exception ex)
+            {
+                ErrorLog.Log("InventoryController", "MultiSearchCount", ex);
+                return "";
+            }
+        }
 
 
     }

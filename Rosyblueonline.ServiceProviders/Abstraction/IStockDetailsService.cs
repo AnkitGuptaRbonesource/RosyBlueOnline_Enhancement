@@ -78,5 +78,9 @@ namespace Rosyblueonline.ServiceProviders.Abstraction
 
         List<InventoryUpload> FTPInventoryUploadandModify(params string[] parameters);
 
+        List<CartItemReminderEmailListModel> CartItemReminderEmails(params string[] parameters);
+
+        DataTable RapnetDownloadExcelExport(string id);
+
     }
 }

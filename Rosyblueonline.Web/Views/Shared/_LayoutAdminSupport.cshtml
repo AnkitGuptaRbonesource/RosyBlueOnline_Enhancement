@@ -41,7 +41,7 @@
                         <span class="sr-only"> Toggle navigation</span>
                     </a>*@
                 <div class="searchbar">
-                    <input id="LotCertSearchInput" type="text" class="header-search" placeholder=@Resource.Enter_Lot_Cert_No />
+                    <input id="LotCertSearchInput" type="text" class="header-search" placeholder="@Resource.Enter_Lot_Cert_No" />
                     <div class="inseach" id="SearchId" style="cursor: pointer;">
                         <img src="/Content/img/search.png" />
                     </div>
@@ -68,39 +68,42 @@
                             </li>
                         </ul>*@
                     <ul class="nav navbar-nav">
-                        <li class="dropdown notifications-menu">
-                            <a href="/Order/List" class="dropdown-toggle userorder" data-toggle="dropdown">
-                                <img class="car-icon" data-toggle="tooltip" data-placement="bottom" title="Order" src="/Content/img/order.png">
-                                <span style="color:#E9978C !important" class="menuname">@Resource.Order <img src="/Content/img/orderarrow.png" /></span>
-                                @*<span class="label label-warning" id="spanOrderCount">0</span>*@
-                            </a>
-                            <ul class="dropdown-menu orderdropmenu">
-                                <li class="order-box">
-                                    <ul class="nav nav-pills">
-                                        <li class="nav-item active">
-                                            <a class="nav-link" id="pending-order" href="#home">@Resource.Pending_Orders</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" id="view-order" href="#menu1">@Resource.View_orders</a>
-                                        </li>
-                                    </ul>
-                                    <div class="tab-content">
-                                        <div id="home" class="tab-pane fade in active">
-                                            <div id="PendingOrderList" style="overflow-y:auto;height:400px;"> </div>
+                        @if (objMenuAccess.AllOrder == 1)
+                        {
+                            <li class="dropdown notifications-menu">
+                                <a href="/Order/List" class="dropdown-toggle userorder" data-toggle="dropdown">
+                                    <img class="car-icon" data-toggle="tooltip" data-placement="bottom" title="Order" src="/Content/img/order.png">
+                                    <span style="color:#E9978C !important" class="menuname">@Resource.Order <img src="/Content/img/orderarrow.png" /></span>
+                                    @*<span class="label label-warning" id="spanOrderCount">0</span>*@
+                                </a>
+                                <ul class="dropdown-menu orderdropmenu">
+                                    <li class="order-box">
+                                        <ul class="nav nav-pills">
+                                            <li class="nav-item active">
+                                                <a class="nav-link" id="pending-order" href="#home">@Resource.Pending_Orders</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="view-order" href="#menu1">View All Orders</a>
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content">
+                                            <div id="home" class="tab-pane fade in active">
+                                                <div id="PendingOrderList" style="overflow-y:auto;height:400px;"> </div>
 
 
+                                            </div>
+                                            <div id="menu1" class="tab-pane fade">
+
+                                                <div id="CompleteOrderList" style="overflow-y:auto;height:400px;"> </div>
+
+
+                                            </div>
                                         </div>
-                                        <div id="menu1" class="tab-pane fade">
-
-                                            <div id="CompleteOrderList" style="overflow-y:auto;height:400px;"> </div>
-
-
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="language">
+                                    </li>
+                                </ul>
+                            </li>
+                        }
+                        <li class="language" style="display:none;">
                             <select name="Language" id="ddlLanguage" class="form-control">
                                 <option value="en" @(@CurrentCulture == "en" ? "selected" : "")>English</option>
                                 @*<option value="ja" @(@CurrentCulture == "ja" ? "selected" : "")>Japanese</option>*@
@@ -121,7 +124,7 @@
                                         @objToken.FullName
                                     </span>
                                 </li>
-                                <li class="user-footer">
+                                <li class="user-footer" style="display:none;">
                                     <div class="right-cont">
                                         <a href="/Home/PricingDiscountPolicy" target="_blank">
                                             <span>
@@ -133,7 +136,7 @@
                                         </a>
                                     </div>
                                 </li>
-                                <li class="user-footer">
+                                <li class="user-footer" style="display:none;">
                                     <div class="right-cont">
                                         <a href="/Home/PricingDiscountPolicy" target="_blank">
                                             <span>
@@ -210,11 +213,11 @@
 
                 <ul class="sidebar-menu sidebar-nav">
                     @*<li class="treeview">
-                            <a href="/Dashboard/AdminSupport">
-                                <i class="fa fa-dashboard"></i>
-                                <span>Dashboard</span>
-                            </a>
-                        </li>*@
+            <a href="/Dashboard/AdminSupport">
+                <i class="fa fa-dashboard"></i>
+                <span>Dashboard</span>
+            </a>
+        </li>*@
                     @if (objMenuAccess.Dashboard == 1)
                     {
                         <li class="treeview">
@@ -235,8 +238,15 @@
                                 </span>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="/Order/List"><div class="img-icon"><img src="/Content/img/myorder.png" /></div> @Resource.All_Orders</a></li>
-                                <li><a href="/Memo"><div class="img-icon"><img src="/Content/img/list.png" /></div> @Resource.All_Memo</a></li>
+                                @if (objMenuAccess.AllOrder == 1)
+                                {
+                                    <li><a href="/Order/List"><div class="img-icon"><img src="/Content/img/myorder.png" /></div> @Resource.All_Orders</a></li>
+                                }
+                                @if (objMenuAccess.AllMenu == 1)
+                                {
+                                    <li><a href="/Memo"><div class="img-icon"><img src="/Content/img/list.png" /></div> @Resource.All_Memo</a></li>
+
+                                }
 
                             </ul>
                         </li>
@@ -251,8 +261,8 @@
                             </a>
 
                             <!--<ul class="treeview-menu">
-                                <li><a href="/Inventory/SpecificSearch"><div class="img-icon"><i class="fa fa-search"></i></div> @Resource.Specfic_search</a></li>
-                            </ul>-->
+                <li><a href="/Inventory/SpecificSearch"><div class="img-icon"><i class="fa fa-search"></i></div> @Resource.Specfic_search</a></li>
+            </ul>-->
                         </li>
                     }
                     @if (objMenuAccess.Inventory == 1)
@@ -345,20 +355,29 @@
                             </ul>
                         </li>
                     }
-                    <li class="treeview">
-                        <a href="#">
-                            <div class="img-icon"><img src="/Content/img/user.png" /></div>
-                            <span>@Resource.Profile</span>
-                            <span class="pull-right-container">
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </span>
-                        </a>
-                        <ul class="treeview-menu">
-                            <li><a href="/User/ChangePassword"><div class="img-icon"><i class="fa fa-lock"></i></div> @Resource.Change_Password</a></li>
-                            <li><a href="/User"><div class="img-icon"><i class="fa fa-user-plus"></i></div> @Resource.Add_Customer</a></li>
-                        </ul>
-                    </li>
-                </ul>
+                    @if (objMenuAccess.Profile == 1)
+                    {
+                        <li class="treeview">
+                            <a href="#">
+                                <div class="img-icon"><img src="/Content/img/user.png" /></div>
+                                <span>@Resource.Profile</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                @if (objMenuAccess.Changepassword == 1)
+                                {
+                                    <li><a href="/User/ChangePassword"><div class="img-icon"><i class="fa fa-lock"></i></div> @Resource.Change_Password</a></li>
+                                }
+                                @if (objMenuAccess.AddCustomer == 1)
+                                {
+                                    <li><a href="/User"><div class="img-icon"><i class="fa fa-user-plus"></i></div> @Resource.Add_Customer</a></li>
+                                }
+                            </ul>
+                        </li>
+                    }
+                    </ul>
                 <div class="sign-bottom">
                     <ul class="sidebar-menu">
                         <li class="signout">
@@ -443,8 +462,8 @@
                 });
             });
             $("#pending-order").click(function () {
-                $(".tab-content").find("#menu1").toggleClass("active in");
-                $(".tab-content").find("#home").toggleClass("active in");
+                //$(".tab-content").find("#menu1").toggleClass("active in");
+                //$(".tab-content").find("#home").toggleClass("active in");
                 $(".notifications-menu").addClass("open");
                 $(this).parent("li").addClass("active");
                 $("#view-order").parent("li").removeClass("active");
@@ -453,11 +472,12 @@
             });
 
             $("#view-order").click(function () {
-                $(".tab-content").find("#menu1").toggleClass("active in");
-                $(".tab-content").find("#home").toggleClass("active in");
-                $(".notifications-menu").addClass("open");
-                $(this).parent("li").addClass("active");
-                $("#pending-order").parent("li").removeClass("active");
+                window.location.href = "/Order/List";
+                //$(".tab-content").find("#menu1").toggleClass("active in");
+                //$(".tab-content").find("#home").toggleClass("active in");
+                //$(".notifications-menu").addClass("open");
+                //$(this).parent("li").addClass("active");
+                //$("#pending-order").parent("li").removeClass("active");
                 return false;
             });
         });

@@ -23,5 +23,9 @@ namespace Rosyblueonline.ServiceProviders.Abstraction
 
         MstCustomerPermisionModel AddToCartPermitted(int LoginID);
 
+
+        IEnumerable<SelectOptionsViewModel> GetMstRoles();
+        
+
     }
 }

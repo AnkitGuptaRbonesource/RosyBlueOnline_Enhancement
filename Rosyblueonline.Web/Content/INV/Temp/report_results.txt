@@ -37,6 +37,10 @@ fragment DiamondGradingResultFields on DiamondGradingReportResults {
   symmetry
   fluorescence
   clarity_characteristics
+  key_to_symbols { 
+        order
+        characteristic  
+      }
   inscriptions
   country_of_origin
   diamond_type

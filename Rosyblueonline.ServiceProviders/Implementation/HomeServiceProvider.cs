@@ -102,6 +102,17 @@ namespace Rosyblueonline.ServiceProviders.Implementation
             return RIdentityType;
         }
 
+        public IEnumerable<SelectOptionsViewModel> GetMstRoles()
+        {
+            List<SelectOptionsViewModel> RRoles = this.uow.MstRoles.Queryable()
+                .Where(x => x.Isactive == true)
+                .OrderBy(n => n.roleID)
+                .AsEnumerable()
+                .Select(x => new SelectOptionsViewModel { Value = (object)x.roleID, Text = x.RoleName }).ToList();
+
+            return RRoles;
+        }
+
 
         public List<UpcomingShowModel> GetUpcomingShow()
         {
@@ -112,6 +123,8 @@ namespace Rosyblueonline.ServiceProviders.Implementation
         {
             UserCountViewModel objUC = new UserCountViewModel();
             objUC.Cart = uow.CartDetails.Queryable().Where(x => x.loginID == LoginID && x.isBlocked == false).Count();
+
+
             objUC.Orders = uow.Orders.Queryable().Where(x => x.createdBy == LoginID && x.orderType == 14).Count();
             objUC.OrdersPending = uow.Orders.Queryable().Where(x => x.createdBy == LoginID && x.orderType == 14 && x.orderStatus == 10).Count();
             objUC.OrdersCompleted = uow.Orders.Queryable().Where(x => x.createdBy == LoginID && x.orderType == 14 && x.orderStatus == 11).Count();

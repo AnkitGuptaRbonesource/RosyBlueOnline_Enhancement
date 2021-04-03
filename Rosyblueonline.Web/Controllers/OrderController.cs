@@ -1,4 +1,5 @@
 ﻿using ClosedXML.Excel;
+using Newtonsoft.Json;
 using Rosyblueonline.Framework;
 using Rosyblueonline.Models;
 using Rosyblueonline.Models.ViewModel;
@@ -125,12 +126,54 @@ namespace Rosyblueonline.Web.Controllers
             }
         }
 
+
+
+
+        [HttpPost]
+        public ActionResult GetOrderItemsByOrderID2(DataTableViewModel obj, string OrderID)
+        {
+            try
+            {
+                int LoginID = GetLogin();
+                string OrderBy = "", OrderDirection = "";
+                if (LoginID > 0)
+                {
+                    if (obj.order.Count > 0)
+                    {
+                        OrderBy = obj.columns[obj.order[0].column].data;
+                        OrderDirection = obj.order[0].dir;
+                    }
+
+                    decimal idx = Math.Ceiling((decimal)(obj.start / obj.length));
+                    List<inventoryDetailsViewModel> objInvVM = new List<inventoryDetailsViewModel>();
+
+
+                    objInvVM = objOrderService.GetOrderItemsByOrderID(OrderID, LoginID);
+
+
+                    string json = JsonConvert.SerializeObject(new { draw = obj.draw, recordsTotal = obj.Total.HasValue ? obj.Total.Value : 0, recordsFiltered = obj.Total.HasValue ? obj.Total.Value : 0, data = objInvVM }, Formatting.Indented);
+
+                    return Content(json, "application/json");
+                }
+                return Json(new Response { IsSuccess = false, Message = string.Format(StringResource.Invalid, "Session") });
+            }
+            catch (Exception ex)
+            {
+                ErrorLog.Log("InventoryController", "GetOrderItemsByOrderID2", ex);
+                return Json(new Response { IsSuccess = false, Message = ex.Message });
+            }
+        }
+
+
+
+
+
         [HttpPost]
         public JsonResult OrderListing(DataTableViewModel objReq, string OType = "Order", string OStatus = "Pending", int FilterCustomerID = 0)
         {
             try
             {
- 
+
                 int CustomerID = GetLogin();
                 int RoleID = GetRole();
                 if (objReq != null)
@@ -140,7 +183,7 @@ namespace Rosyblueonline.Web.Controllers
                     query = OType == "Order" ? query.Where(x => x.orderType == 14) : query.Where(x => x.orderType == 15 || x.orderType == 155);
                     //query = OType == "Order" ? query.Where(x => x.orderType == 14) : query.Where(x => x.orderType == 15);
                     query = OStatus == "Pending" ? query.Where(x => x.orderStatus == 10) : query.Where(x => x.orderStatus == 11);
- 
+
 
                     //Role ID 3 for admin
                     if (RoleID == 3)
@@ -156,7 +199,7 @@ namespace Rosyblueonline.Web.Controllers
                         query = query.Where(x => (x.orderDetailsId.ToString()).Contains(objReq.search.value) ||
                                                  x.remark.Contains(objReq.search.value) ||
                                                  x.CreatedName.Contains(objReq.search.value) ||
-                                                 x.companyName.Contains(objReq.search.value) );
+                                                 x.companyName.Contains(objReq.search.value));
                     }
                     //if (OrderId != 0)  //Added BY ANkit 03JUly2020
                     //{
@@ -496,6 +539,43 @@ namespace Rosyblueonline.Web.Controllers
             }
         }
 
+        [HttpPost]
+        public JsonResult GetOrderSummaryItemForExcel(string LOTNOs)
+        {
+            try
+            {
+                int LoginID = GetLogin();
+                int Role = GetRole();
+                if (LoginID > 0)
+                {
+                    string filterText = "LOTNO~" + string.Join(",", LOTNOs);
+                    DataTable dt = new DataTable();
+
+                    dt = this.objStockDetailsService.GetDataForExcelExport(filterText, false, LoginID);
+
+
+                    if (dt.Rows.Count > 0)
+                    {
+                        //Guid fname = Guid.NewGuid();
+                        string imgPath = Server.MapPath(System.Configuration.ConfigurationManager.AppSettings["ExcelMailImage"]);
+                        byte[] st = ExportToExcel.InventoryExportToExcel(dt, imgPath, Role == 3 ? true : false, "AT", false);
+                        TempData["SpecificSearchExport"] = st;
+                        //return File(st, System.Net.Mime.MediaTypeNames.Application.Octet, "SpecificSearchExport.xlsx");
+                        return Json(new Response { IsSuccess = true, Result = "" });
+                    }
+                    else
+                    {
+                        return Json(new Response { IsSuccess = false, Message = "No rows found" });
+                    }
+                }
+                return Json(new Response { IsSuccess = false, Message = string.Format(StringResource.Invalid, "Session") }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                ErrorLog.Log("OrderController", "GetOrderItemsByOrderID", ex);
+                return Json(new Response { IsSuccess = false, Message = ex.Message }, JsonRequestBehavior.AllowGet);
+            }
+        }
 
         [HttpPost]
         public ActionResult GetOrderDetails(string OType)
@@ -505,29 +585,57 @@ namespace Rosyblueonline.Web.Controllers
 
             List<OrderListView> objResp = new List<OrderListView>();
             IQueryable<OrderListView> query = this.objOrderService.OrderListView();
- 
+
             if (OType == "Pending")
             {
-                query = query.Where(x => x.orderType == 14 && x.orderStatus == 10 );
+                query = query.Where(x => x.orderType == 14 && x.orderStatus == 10);
             }
             else
             {
-                query = query.Where(x => x.orderType == 14 && x.orderStatus == 11 );
+                query = query.Where(x => x.orderType == 14 && x.orderStatus == 11);
             }
-              
+
             if (RoleID == 3)
             {
                 query = query.Where(x => x.loginID == LoginID);
             }
 
 
-            objResp = query.Take(10).ToList(); 
+            objResp = query.Take(10).ToList();
 
             // ViewBag.SearchResultList = objInvVM.Take(10);  
             return Json(new Response { IsSuccess = true, Message = "200", Result = objResp });
 
         }
 
+        [HttpPost]
+        public ActionResult MemoCount(string OType, string OStatus)
+        {
+
+
+            int CustomerID = GetLogin();
+            int RoleID = GetRole();
+
+            List<OrderListView> objResp = new List<OrderListView>();
+            IQueryable<OrderListView> query = this.objOrderService.OrderListView();
+            query = OType == "Order" ? query.Where(x => x.orderType == 14) : query.Where(x => x.orderType == 15 || x.orderType == 155);
+            //query = OType == "Order" ? query.Where(x => x.orderType == 14) : query.Where(x => x.orderType == 15);
+            query = OStatus == "Pending" ? query.Where(x => x.orderStatus == 10) : query.Where(x => x.orderStatus == 11);
+
+
+            //Role ID 3 for admin
+            if (RoleID == 3)
+            {
+                query = query.Where(x => x.loginID == CustomerID);
+            }
+
+            objResp = query.ToList();
+
+
+            return Json(new Response { IsSuccess = true, Message = "200", Result = objResp.Count() });
+
+
+        }
 
     }
 }

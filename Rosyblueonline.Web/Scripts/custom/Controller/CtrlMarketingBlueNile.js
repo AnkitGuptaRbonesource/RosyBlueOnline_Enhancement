@@ -1,13 +1,40 @@
 ﻿var CtrlMarketingBlueNile = function () {
-    var objSvc = null; $frmBlueNile = null, dtMarketing = null;
+    var objSvc = null; $frmBlueNile = null, dtMarketing = null, dtMarketingsummary = null;
     var valBlueNile = null;
+    var dtSearchPanel = null;
+    var objOSvc = null;
 
     var OnLoad = function () {
         objSvc = new MarketingService();
         dtMarketing = new Datatable();
+        dtMarketingsummary = new Datatable();
+        dtSearchPanel = new Datatable();
+        objOSvc = new OrderService();
+
         SetValidation();
         LoadGrid();
-    }
+
+        $('#ddlCustlist').select2({
+            ajax: {
+                delay: 500,
+                url: '/Home/GetListOfMarketingCustomer',
+                data: function (params) {
+                    var query = {
+                        search: params.term,
+                    }
+                    return query;
+                },
+                processResults: function (data) {
+                    return {
+                        results: data
+                    };
+                },
+            },
+            dropdownParent: $('#Modal-FormMemo'),
+            width: 'resolve'
+        });
+        LoadFilterData();
+    };
 
     var RegisterEvent = function () {
         $(document).on('click', '#btnSave', function (e) {
@@ -126,8 +153,220 @@
 
         });
 
-    };
 
+        $(document).on('click', '#btnFilter', function (e) {
+            e.preventDefault();
+           
+            LoadFilterData();
+        });
+
+        $(document).on('click', 'a.btnSearch', function (e) {
+            e.preventDefault();
+            uiApp.BlockUI();
+            var LotNos = $(e.target).attr('data-id');
+
+            //LoadOrdersDetails(LotNos);
+            objSvc.LoadOrdersSummaryDetails(LotNos).then(function (data) {
+                if (data != null) {
+                    LoadOrdersDetails(data);
+                    var table = $('#SearchTablePost1').DataTable();
+                    table.column(0).visible(false);  
+                    uiApp.UnBlockUI();
+                } else {
+                    uiApp.Alert({ container: '#uiPanel1', message: "Details not found", type: "danger" });
+                    uiApp.UnBlockUI();
+                }
+            }, function (error) {
+                    uiApp.Alert({ container: '#uiPanel1', message: "Try again later !", type: "danger" });
+                    uiApp.UnBlockUI();
+            });
+        });
+
+
+
+        $(document).on('click', 'a.btnExportMemo', function (e) {
+            e.preventDefault();
+            uiApp.BlockUI();
+            var LotNos = $(e.target).attr('data-id'); 
+            objOSvc.GetOrderSummaryItemForExcel(LotNos).then(function (data) {
+                if (data.IsSuccess) {
+                    $('#ancInventoryDownload').get(0).click();
+                    uiApp.UnBlockUI();
+                } else {
+                    uiApp.Alert({ container: '#uiPanel1', message: "No data found", type: "danger" });
+                }
+                uiApp.UnBlockUI();
+            }, function (error) {
+                uiApp.UnBlockUI();
+            });
+
+        });
+
+        $('#SMonth0').click(function (e) {
+            var isSelected = $(this).prop("checked");
+            if (isSelected == true) {
+                $('input[type=checkbox].SMonth').prop('checked', true); 
+            } else {
+                $('input[type=checkbox].SMonth').prop('checked', false); 
+            } 
+        });
+        $('.SMonth').click(function (e) { 
+            var NameID = "input[type=checkbox][name=SMonth]";
+            var countchk = $(NameID).length; 
+            var checkedcount = 0;
+            for (var ele of $(NameID)) { 
+                if ($(ele).prop('checked')) {
+                    checkedcount = checkedcount + 1;
+                }
+            }
+            if (countchk == checkedcount) {
+                $('input[type=checkbox]#SMonth0').prop('checked', true); 
+            } else {
+                $('input[type=checkbox]#SMonth0').prop('checked', false); 
+            }
+        });
+
+
+
+
+
+        $(function () {
+            $('#myMonths').multiselect({
+                includeSelectAllOption: true,
+                selectAllValue: 'multiselect-all',
+                enableFiltering: true,
+                enableCaseInsensitiveFiltering: true,
+                maxHeight: '300',
+                buttonWidth: '235',
+               
+            });
+        });
+
+
+
+        $(function () {
+            $('#mySLocation').multiselect({
+                includeSelectAllOption: true,
+                selectAllValue: 'multiselect-all',
+                enableFiltering: true,
+                enableCaseInsensitiveFiltering: true,
+                maxHeight: '300',
+                buttonWidth: '235',
+            });
+        });
+
+      
+
+
+    };
+    function LoadOrdersDetails(data) {
+
+        var colStruct = new DataTableColumnStruct('SpecificSearch');
+        dtSearchPanel = new Datatable();
+        if (dtSearchPanel.getDataTable() == null || dtSearchPanel.getDataTable() == undefined) {
+            dtSearchPanel.init({
+                src: '#SearchTablePost1',
+                dataTable: {
+                    scrollY: "485px",
+                    scrollX: true,
+                    scrollCollapse: true,
+                    paging: true,
+                    destroy: true,
+                    serverSide: false,
+                    pageLength: 200,
+                    data: data,
+                    createdRow: function (row, data, dataIndex) {
+
+                    },
+                    lengthMenu: [[50, 100, 200, 500000], [50, 100, 200, "All"]],
+                    order: [[1, "desc"]],
+                    fixedColumns: {
+                        leftColumns: 2
+                    },
+                    //ajax: {
+                    //    type: 'Post',
+                    //    url: '/Marketing/StockList2?LotNos=' + LotNos,
+                    //    beforeSend: function (request) {
+                    //        var TokenID = myApp.token().get();
+                    //        request.setRequestHeader("TokenID", TokenID);
+                    //        uiApp.BlockUI();
+                    //        return request;
+                    //    },
+                    //    dataFilter: function (data) {
+                    //        uiApp.UnBlockUI();
+                    //        return data;
+                    //    }
+                    //    , dataSrc: function (json) {
+                    //        console.log(json);
+                    //        return json.data;
+                    //    }
+                    //},
+                    columns: colStruct.SpecificSearch.columns,
+                    columnDefs: colStruct.SpecificSearch.columnDefs,
+                    rowCallback: function (row, data, index) {
+
+
+                    }
+                },
+                onCheckboxChange: function (obj, objInv) {
+
+                }
+            });
+            // console.log(dtSearchPanel.getDataTable());
+        } else {
+            dtSearchPanel.clearSelection();
+            dtSearchPanel.getDataTable().draw();
+        }
+
+
+    }
+
+    var LoadFilterData = function () {
+        uiApp.BlockUI();
+        var ddlSYear = $('#ddlSYear').val();
+        var SaleValues = $('#ddlCustlist').val() == null ? 0 : $('#ddlCustlist').val();
+        var MonthValues = ReadFormFilter('SMonth');
+        var LocationValues = ReadFormFilter('SLocation');
+
+        objSvc.GetStockSummaryDetails(SaleValues, ddlSYear, MonthValues, LocationValues).then(function (data) {
+            if (data != null) {
+                LoadStockSummary(data);
+                uiApp.UnBlockUI();
+            } else {
+                uiApp.Alert({ container: '#uiPanel1', message: "Details not found", type: "danger" });
+                uiApp.UnBlockUI();
+            }
+        }, function (error) {
+                uiApp.Alert({ container: '#uiPanel1', message: "Try again later !", type: "danger" });
+                uiApp.UnBlockUI();
+        });
+    }
+
+    var ReadFormFilter = function (FilterName) {
+        //var innerStr = "";
+        //var labelCheckBox = "";
+        //NameID = "input[type=checkbox][name=" + FilterName + "]";
+        //var countchk = $(NameID).length;
+        //for (var ele of $(NameID)) {
+        //    var forLabel = ele.id;
+        //    if ($(ele).prop('checked')) {
+        //        innerStr = (innerStr == "" ? $(ele).val() : innerStr + "," + $(ele).val());
+        //        labelCheckBox = (labelCheckBox == "" ? $('label[for=' + forLabel + ']').html() : labelCheckBox + "," + $('label[for=' + forLabel + ']').html());
+        //    }
+        //}
+        //return innerStr;
+
+         
+        var selected = $("#" + FilterName+" option:selected");
+        var labelCheckBox = "";
+            var arrSelected = [];
+            selected.each(function () {
+                arrSelected.push($(this).val());
+                labelCheckBox += $(this).val() == '' ? $(this).val() : $(this).val()+',';
+            });
+        
+        return labelCheckBox;
+    }
     var ClearForm = function () {
         $('#frmBlueNile').find("input[type=text], textarea").val("");
     }
@@ -199,7 +438,7 @@
         }
     };
     var LoadGrid = function () {
-        
+
         if (dtMarketing.getDataTable() == null || dtMarketing.getDataTable() == undefined) {
             dtMarketing.init({
                 src: '#tblMarketing',
@@ -220,38 +459,38 @@
                     },
                     columns: [
                         { data: "SrNo", class: 'whspace' },
-                        { data: "caratRange1Disc", class: 'whspace'},
-                        { data: "caratRange2Disc", class: 'whspace'},
-                        { data: "caratRange3Disc", class: 'whspace'},
-                        { data: "caratRange4Disc", class: 'whspace'},
-                        { data: "caratRange5Disc", class: 'whspace'},
-                        { data: "caratRange6Disc", class: 'whspace'},
-                        { data: "caratRange7Disc", class: 'whspace'},
-                        { data: "caratRange8Disc", class: 'whspace'},
-                        { data: "caratRange9Disc", class: 'whspace'},
-                        { data: "caratRange10Disc", class: 'whspace'},
-                        { data: "caratRange11Disc", class: 'whspace'},
-                        { data: "caratRange12Disc", class: 'whspace'},
-                        { data: "caratRange13Disc", class: 'whspace'},
-                        { data: "caratRange14Disc", class: 'whspace'},
-                        { data: "caratRange15Disc", class: 'whspace'},
-                        { data: "caratRange16Disc", class: 'whspace'},
-                        { data: "caratRange17Disc", class: 'whspace'},
-                        { data: "caratRange18Disc", class: 'whspace'},
-                        { data: "caratRange19Disc", class: 'whspace'},
-                        { data: "caratRange20Disc", class: 'whspace'},
-                        { data: "caratRange21Disc", class: 'whspace'},
-                        { data: "caratRange22Disc", class: 'whspace'},
-                        { data: "caratRange23Disc", class: 'whspace'},
-                        { data: "caratRange24Disc", class: 'whspace'},
-                        { data: "caratRange25Disc", class: 'whspace'},
-                        { data: "haExDisc", class: 'whspace'},
-                        { data: "haVgDisc", class: 'whspace'},
-                        { data: "Isactive", class: 'whspace'},
-                        { data: "createdOn", class: 'whspace'},
-                        { data: "UpdatedOn", class: 'whspace'},
+                        { data: "caratRange1Disc", class: 'whspace' },
+                        { data: "caratRange2Disc", class: 'whspace' },
+                        { data: "caratRange3Disc", class: 'whspace' },
+                        { data: "caratRange4Disc", class: 'whspace' },
+                        { data: "caratRange5Disc", class: 'whspace' },
+                        { data: "caratRange6Disc", class: 'whspace' },
+                        { data: "caratRange7Disc", class: 'whspace' },
+                        { data: "caratRange8Disc", class: 'whspace' },
+                        { data: "caratRange9Disc", class: 'whspace' },
+                        { data: "caratRange10Disc", class: 'whspace' },
+                        { data: "caratRange11Disc", class: 'whspace' },
+                        { data: "caratRange12Disc", class: 'whspace' },
+                        { data: "caratRange13Disc", class: 'whspace' },
+                        { data: "caratRange14Disc", class: 'whspace' },
+                        { data: "caratRange15Disc", class: 'whspace' },
+                        { data: "caratRange16Disc", class: 'whspace' },
+                        { data: "caratRange17Disc", class: 'whspace' },
+                        { data: "caratRange18Disc", class: 'whspace' },
+                        { data: "caratRange19Disc", class: 'whspace' },
+                        { data: "caratRange20Disc", class: 'whspace' },
+                        { data: "caratRange21Disc", class: 'whspace' },
+                        { data: "caratRange22Disc", class: 'whspace' },
+                        { data: "caratRange23Disc", class: 'whspace' },
+                        { data: "caratRange24Disc", class: 'whspace' },
+                        { data: "caratRange25Disc", class: 'whspace' },
+                        { data: "haExDisc", class: 'whspace' },
+                        { data: "haVgDisc", class: 'whspace' },
+                        { data: "Isactive", class: 'whspace' },
+                        { data: "createdOn", class: 'whspace' },
+                        { data: "UpdatedOn", class: 'whspace' },
                         { data: null, class: 'whspace' },
-                        { data: null, class: 'whspace'}
+                        { data: null, class: 'whspace' }
                     ],
                     columnDefs: [
                         {
@@ -419,6 +658,89 @@
             }
         });
     };
+
+
+
+
+
+    var LoadStockSummary = function (data) {
+        dtMarketingsummary = new Datatable();
+        if (dtMarketingsummary.getDataTable() == null || dtMarketingsummary.getDataTable() == undefined) {
+            dtMarketingsummary.init({
+                src: '#tblMarketingSummary',
+                dataTable: {
+                    //deferLoading: 0,
+                    scrollX: "300px",
+                    scrollY: true,
+                    paging: true,
+                    destroy: true,
+                    processing: false,
+                    serverSide: false,
+                    order: [[0, "desc"]],
+                    data: data,
+                    columns: [
+                        { data: "companyName", class: 'whspace' },
+                        { data: "sellMonth", class: 'whspace' },
+                        { data: "NoOfStone", class: 'whspace' },
+                        { data: "TotalWeight", class: 'whspace' },
+                        { data: "TotalValue", class: 'whspace' },
+                        { data: "LotNoList", class: 'whspace' },
+                        { data: "LotNoList", class: 'whspace' }
+
+                    ],
+                    columnDefs: [
+                        {
+                            targets: [5],
+                            render: function (data, type, row) {
+                                if (row.NoOfStone > 0) {
+                                    return '<a class="btnSearch" data-id="' + row.LotNoList + '"    href="#">Search</a>';
+                                } else { return '';}
+                            },
+                            orderable: true
+                        },
+                        {
+                            targets: [6],
+                            render: function (data, type, row) {
+                                if (row.NoOfStone > 0) {
+                                return '<a class="btnExportMemo" data-id="' + row.LotNoList + '"    href="#">Download</a>';
+                                } else { return ''; }
+                            },
+                            orderable: true
+                        }
+                    ],
+                    footerCallback: function (row, data, start, end, display) {
+                        var TotNoofstone = 0, TotWeight = 0, TotValue = 0, TotLotnos = 0;
+                        for (var i = 0; i < data.length; i++) {
+                            TotNoofstone += data[i].NoOfStone;
+                            TotWeight += data[i].TotalWeight;
+                            TotValue += data[i].TotalValue;
+                            TotLotnos += data[i].LotNoList;
+
+                        }
+
+                        $(row).find('th:eq(2)').html(TotNoofstone);
+                        $(row).find('th:eq(3)').html(TotWeight.toFixed(2));
+                        $(row).find('th:eq(4)').html(TotValue.toFixed(2));
+                        if (TotNoofstone > 0) {
+                        $(row).find('th:eq(5)').html('<a class="btnSearch" data-id="' + TotLotnos+ '"    href="#">Search</a>');
+                        } else { $(row).find('th:eq(5)').html(''); }
+                        if (TotNoofstone > 0) {
+
+                        $(row).find('th:eq(6)').html('<a class="btnExportMemo" data-id="' + TotLotnos + '"    href="#">Download</a>');
+                        } else { $(row).find('th:eq(6)').html(''); }
+
+
+                    }
+                }
+            });
+        } else {
+            dtMarketingsummary.getDataTable().draw();
+        }
+
+    };
+
+
+
 
     return {
         init: function () {

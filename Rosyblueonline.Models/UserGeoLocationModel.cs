@@ -47,20 +47,20 @@ namespace Rosyblueonline.Models
         public int? JamesAllenHK { get; set; }
         public int? Utility { get; set; }
         public int? SummaryDiscount { get; set; }
-        public int? BlockSite { get; set; }
+        public int? BlockSite { get; set; } 
+        public int? RFID { get; set; }
+        public int? RFIDSearch { get; set; }
+        public int? RFIModify { get; set; }
+        public int? RFIDUploadHistory { get; set; }
+        public int? RFIDStockTally { get; set; }
+        public int? RFIDMaster { get; set; }
+        public int? RFIDHistory { get; set; }
+        public int? Profile { get; set; }
+        public int? Changepassword { get; set; }
+        public int? AddCustomer { get; set; }
+        public int? AddRoleRights { get; set; }
 
-
-
-
-
-
-
-
-
-
-
-
-
+         
 
     }
 }

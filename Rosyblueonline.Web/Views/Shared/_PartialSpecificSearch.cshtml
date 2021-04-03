@@ -12,6 +12,23 @@
                     </div>
                 </a>
             </div>
+           
+            <div class="col-md-12" >
+                <label class="radio-inline controll-radio">
+                    <input type="radio" name="SearchOption" id="rbtnosSingle" value="0" checked><label for="rbtnosSingle" class="controll-label">Single</label>
+                </label>
+                <label class="radio-inline controll-radio">
+                    <input type="radio" name="SearchOption" id="rbtnosMulti" value="1"><label for="rbtnosMulti" class="controll-label">Multi Search</label>
+                </label>
+
+                <div id="multiseresult" class="radio-inline controll-radio" style="overflow: auto; padding: 5px 10px; height: 70px; text-align: left; width: 70%; background: #FFFFFF; border-radius: 10px; border: 1px solid #ece9f1; margin-bottom: 15px; display: none; ">
+                    
+                    <ul data-role="listview" data-inset="true" class="ddlmulti" style="margin:0;padding:0;">
+                    </ul>
+                </div>
+
+            </div>
+
         </div>
         <div class="col-lg-12 col-sm-12 col-xs-12 paddding-box">
             <div class="search-stone-box search-stone-box2">
@@ -363,7 +380,7 @@
                                     </label>
                                 </div>
                                 <div class="stone-reset">
-                                    <label class="reset-btn" id='btnF_Cut'><span class="refresh"><img src="~/Content/img/refresh.png" /></span>@Resource.Reset1</label>
+                                    <label class="reset-btn" id='btnNo_BGM'><span class="refresh"><img src="~/Content/img/refresh.png" /></span>@Resource.Reset1</label>
                                 </div>
                             </div>
 
@@ -371,6 +388,9 @@
                                 <div class="cut-box">
                                     <div class="cut-box-title">
                                         <label for="cut1" style="font-size: 15px;">@Resource.Cut</label>
+                                       
+                                            <label  style=" margin-left: 50%;" class="reset-btn" id='btnF_Cut'><span class="refresh"><img src="~/Content/img/refresh.png" /></span>@Resource.Reset1</label>
+                                
                                     </div>
                                     <div class="F_Cut">
                                         <input type="checkbox" name="cut" class="design-checkbox exe" value="18" id="cut1">
@@ -390,13 +410,15 @@
 
                                     </div>
                                     @*<div class="symetric-btn">
-                                <label class="reset-btn" id='btnF_Cut'><span class="refresh"><img src="~/Content/img/refresh.png" /></span>@Resource.Reset1</label>
-                            </div>*@
+                                            <label class="reset-btn" id='btnF_Cut'><span class="refresh"><img src="~/Content/img/refresh.png" /></span>@Resource.Reset1</label>
+                                        </div>*@
                                 </div>
 
                                 <div class="cut-box">
                                     <div class="cut-box-title">
                                         <label for="cut1" style="font-size: 15px;">@Resource.Polished</label>
+                                    
+                                        <label style=" margin-left: 50%;" class="reset-btn" id='btnF_Polished'><span class="refresh"><img src="~/Content/img/refresh.png" /></span>@Resource.Reset1</label>
                                     </div>
                                     <div class="F_Polished">
                                         <input type="checkbox" name="Polished" class="design-checkbox exe" value="9" id="Polished1">
@@ -415,14 +437,16 @@
                                         <label for="Polished5">@Resource.Poor</label>
 
                                     </div>
-                                    @*<div class="symetric-btn">
-                                <label class="reset-btn" id='btnF_Polished'><span class="refresh"><img src="~/Content/img/refresh.png" /></span>@Resource.Reset1</label>
-                            </div>*@
+
                                 </div>
 
                                 <div class="cut-box">
                                     <div class="cut-box-title">
                                         <label for="cut1" style="font-size: 15px;">@Resource.Symmetry</label>
+                                        
+                                          <label  style=" margin-left: 50%;" class="reset-btn" id='btnF_Symmerty'><span class="refresh"><img src="~/Content/img/refresh.png" /></span>@Resource.Reset1</label>
+         
+
                                     </div>
                                     <div class="F_Symmerty">
                                         <input type="checkbox" name="Symmerty" class="design-checkbox exe" value="8" id="Symmerty1">
@@ -441,9 +465,7 @@
                                         <label for="Symmerty5">@Resource.Poor</label>
 
                                     </div>
-                                    @*<div class="symetric-btn">
-                                <label class="reset-btn" id='btnF_Symmerty'><span class="refresh"><img src="~/Content/img/refresh.png" /></span>@Resource.Reset1</label>
-                            </div>*@
+                                 
                                 </div>
 
                             </form>
@@ -731,6 +753,22 @@
                                                 }
                                             </div>
                                         </div>
+                                        <div class="form-group girdle-box">
+                                            <div class="girdle-title">
+                                                <h5>@Resource.Opens</h5>
+                                            </div>
+                                            <div>
+                                                @{ int opn = 1;
+                                                    foreach (var OPN in Model.VMOpens)
+                                                    {
+                                                        var idopn = "OPN" + opn.ToString();
+                                                        <input type="checkbox" name="OPN" class="design-checkbox" value="@OPN.opensId" id="@idopn" />
+                                                        <label for="@idopn">@OPN.opensName</label>
+                                                        opn = opn + 1;
+                                                    }
+                                                }
+                                            </div>
+                                        </div>
 
                                         <div class="girdle-parameter-box">
                                             <div class="girle-para">
@@ -753,7 +791,7 @@
                                             </div>
                                             <div class="girle-para">
                                                 <div class="para-title">
-                                                    <h5>@Resource.Depth</h5>
+                                                    <h5>Depth</h5>
                                                 </div>
                                                 <div class="girdle-input">
                                                     <input type="text" maxlength="6" class="form-control" name="DPTHFROM" id="txtdepfrom" placeholder="from" />
@@ -835,88 +873,88 @@
                         </div>
                     </form>
                 </div>
-                @if (Model.VMStoneOrigin[0].originID!=0) 
+                @if (Model.VMStoneOrigin[0].originID != 0)
                 {
                     <div class="advance-searchflt">
-                    <div class="stoe-describe-box">
-                        <div class="stone-describe origin-stone">
-                            <div class="form-inline">
-                                <a role="button" data-toggle="collapse" href="#collapse3" aria-expanded="false" aria-controls="collapse3">
-                                    @Resource.Stone_Origin
-                                </a>
-                            </div>
-                        </div>
-                        <div class="stone-reset">
-                            <span><i class="fa fa-angle-down" aria-hidden="true"></i></span>
-                            @*<label class="reset-btn" id='btnF_Origin'>
-                        <span class="refresh"><img src="~/Content/img/refresh.png" />
-                            <i class="fa fa-angle-down" aria-hidden="true"></i>
-                        </span>@Resource.Reset1
-                    </label>*@
-                        </div>
-                    </div>
-                    <form class="collapse dyd-shape F_Origin" id="collapse3">
-                        <div class="advance-panel-box">
-                            <div class="panel panel-default">
-                                <div class="panel-body">
-                                    @foreach (var StoneOrigin in Model.VMStoneOrigin)
-                                    {
-                                        <div class="originval">
-                                            <input type="checkbox" name="Origin" class="design-checkbox" value="@StoneOrigin.originID" id="Origin@(StoneOrigin.originID)" />
-                                            <label for="Origin@(StoneOrigin.originID)">@StoneOrigin.originName</label>
-                                        </div>
-                                    }
+                        <div class="stoe-describe-box">
+                            <div class="stone-describe origin-stone">
+                                <div class="form-inline">
+                                    <a role="button" data-toggle="collapse" href="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                                        @Resource.Stone_Origin
+                                    </a>
                                 </div>
                             </div>
+                            <div class="stone-reset">
+                                <span><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+                                @*<label class="reset-btn" id='btnF_Origin'>
+                                        <span class="refresh"><img src="~/Content/img/refresh.png" />
+                                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                        </span>@Resource.Reset1
+                                    </label>*@
+                            </div>
                         </div>
-                    </form>
-                </div>
+                        <form class="collapse dyd-shape F_Origin" id="collapse3">
+                            <div class="advance-panel-box">
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
+                                        @foreach (var StoneOrigin in Model.VMStoneOrigin)
+                                        {
+                                            <div class="originval">
+                                                <input type="checkbox" name="Origin" class="design-checkbox" value="@StoneOrigin.originID" id="Origin@(StoneOrigin.originID)" />
+                                                <label for="Origin@(StoneOrigin.originID)">@StoneOrigin.originName</label>
+                                            </div>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 }
 
                 <div class="keysearch-box keysearch-box2">
                     @*<div class="keyselect-box">
-                <div class="key-title">
-                    <h5>@Resource.Key_To_Symbols</h5>
-                    <div class="sourec-selected">
-                        <a href="" class="selected-btn">11 Selected</a>
-                        <span><i class="fa fa-angle-down" aria-hidden="true"></i></span>
-                    </div>
-                </div>
-            </div>*@
+                            <div class="key-title">
+                                <h5>@Resource.Key_To_Symbols</h5>
+                                <div class="sourec-selected">
+                                    <a href="" class="selected-btn">11 Selected</a>
+                                    <span><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+                                </div>
+                            </div>
+                        </div>*@
                     <div class="key-input-box">
                         <div class="border-arrow"></div>
                         @*<div class="describe-line clearfix" style="border: 0 none;background: none;">
-                    <div class="radio">
-                        <label class="radio-inline">
-                            <input type="radio" id="KTScontains" name="r1" value="" checked>
-                            <b>@Resource.Contains</b>
-                            <span class="checkmark"></span>
-                        </label>
-                        <label class="radio-inline">
-                            <input type="radio" id="KTSNotcontains" name="r1" value="">
-                            <b>@Resource.Does_not_Contains</b>
-                            <span class="checkmark"></span>
-                        </label>
-                    </div>
-                    <form class="dyd-shape" style="margin: 15px 0 0;">
-                        <div class="key-symbcheckbox F_Keytosymbol">
-                            @{
-                                int KTS = 1;
-                                foreach (var mstKeytosymbol in Model.VMkeyToSymbol)
-                                {
-                                    var KTSval = "KTS" + KTS.ToString();
-                                    <span class="key-rep">
-                                        <input type="checkbox" name="KTS" class="design-checkbox" value="@mstKeytosymbol.keyToSymbolID" id="@KTSval" />
-                                        <label for="@KTSval">@mstKeytosymbol.KeyToSymbol</label>
-                                    </span>
-                                    KTS = KTS + 1;
-                                }
-                            }
-                        </div>
+                                <div class="radio">
+                                    <label class="radio-inline">
+                                        <input type="radio" id="KTScontains" name="r1" value="" checked>
+                                        <b>@Resource.Contains</b>
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" id="KTSNotcontains" name="r1" value="">
+                                        <b>@Resource.Does_not_Contains</b>
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <form class="dyd-shape" style="margin: 15px 0 0;">
+                                    <div class="key-symbcheckbox F_Keytosymbol">
+                                        @{
+                                            int KTS = 1;
+                                            foreach (var mstKeytosymbol in Model.VMkeyToSymbol)
+                                            {
+                                                var KTSval = "KTS" + KTS.ToString();
+                                                <span class="key-rep">
+                                                    <input type="checkbox" name="KTS" class="design-checkbox" value="@mstKeytosymbol.keyToSymbolID" id="@KTSval" />
+                                                    <label for="@KTSval">@mstKeytosymbol.KeyToSymbol</label>
+                                                </span>
+                                                KTS = KTS + 1;
+                                            }
+                                        }
+                                    </div>
 
-                        <label class="reset-btn" id='btnF_Keytosymbol'><span class="refresh"><img src="~/Content/img/refresh.png" /></span>@Resource.Reset1</label>
-                    </form>
-                </div>*@
+                                    <label class="reset-btn" id='btnF_Keytosymbol'><span class="refresh"><img src="~/Content/img/refresh.png" /></span>@Resource.Reset1</label>
+                                </form>
+                            </div>*@
                     </div>
 
                     <div class="diamond-demand-box">
@@ -973,8 +1011,8 @@
                                             <button type="button" name="command" id="btnLoadSavedDemand" value="">@Resource.Load </button>
                                         </div>
                                         @*<div class="stone-demand">
-                                    <span class="upload-filter">@Resource.Multiple_Demand</span>
-                                </div>*@
+                                                <span class="upload-filter">@Resource.Multiple_Demand</span>
+                                            </div>*@
                                     </div>
                                 </form>
                             </div>
@@ -982,38 +1020,38 @@
                     </div>
 
                     @*<div class="key-box">
-                <div class="panel">
-                    <div class="key-panel-heading">
-                        <a id="ancLNCollapse" data-toggle="collapse" href="#collapse3"><div class="panel-heading">@Resource.UPLOAD_LOTCERT_NUMBER_TO_SEARCH<span class="glyphicon glyphicon-plus pull-right"> </span></div></a>
-                    </div>
-                    <div id="collapse3" class="panel-collapse collapse" aria-expanded="false">
-                        <div class="panel-body">
-                            <div class="load-boxes">
-                                <div class="key-stone-input">
-                                    <span class="upload-filter">@Resource.Lot_Number_to_Search</span>
-                                    <input type="text" id="lotnumber" name="lotnumber" class="form-control" placeholder="Enter Lot Number">
+                            <div class="panel">
+                                <div class="key-panel-heading">
+                                    <a id="ancLNCollapse" data-toggle="collapse" href="#collapse3"><div class="panel-heading">@Resource.UPLOAD_LOTCERT_NUMBER_TO_SEARCH<span class="glyphicon glyphicon-plus pull-right"> </span></div></a>
                                 </div>
-                                <div class="key-stone-input">
-                                    <span class="upload-filter">@Resource.Select_csv_file_to_upload</span>
-                                    <input type="file" accept=".csv" id="fileUpload" class="form-control" name="fileUpload">
-                                </div>
-                                <div class="key-stone-input">
-                                    <span class="upload-filter">@Resource.Cert_Number_to_Search</span>
-                                    <input type="text" id="certNo" name="certNo" class="form-control" placeholder="Enter cert Number" onkeyup="javascript:Comma(this.value,this.id);">
-                                </div>
-                                <div class="key-stone-input">
-                                    <span class="upload-filter">@Resource.Select_csv_file_to_upload</span>
-                                    <input type="file" accept=".csv" id="fileUploadCert" class="form-control" name="fileUploadCert">
-                                </div>
-                            </div>
+                                <div id="collapse3" class="panel-collapse collapse" aria-expanded="false">
+                                    <div class="panel-body">
+                                        <div class="load-boxes">
+                                            <div class="key-stone-input">
+                                                <span class="upload-filter">@Resource.Lot_Number_to_Search</span>
+                                                <input type="text" id="lotnumber" name="lotnumber" class="form-control" placeholder="Enter Lot Number">
+                                            </div>
+                                            <div class="key-stone-input">
+                                                <span class="upload-filter">@Resource.Select_csv_file_to_upload</span>
+                                                <input type="file" accept=".csv" id="fileUpload" class="form-control" name="fileUpload">
+                                            </div>
+                                            <div class="key-stone-input">
+                                                <span class="upload-filter">@Resource.Cert_Number_to_Search</span>
+                                                <input type="text" id="certNo" name="certNo" class="form-control" placeholder="Enter cert Number" onkeyup="javascript:Comma(this.value,this.id);">
+                                            </div>
+                                            <div class="key-stone-input">
+                                                <span class="upload-filter">@Resource.Select_csv_file_to_upload</span>
+                                                <input type="file" accept=".csv" id="fileUploadCert" class="form-control" name="fileUploadCert">
+                                            </div>
+                                        </div>
 
-                            <div class="refresh-btn">
-                                <button id="dydReset" type="reset" value="reset">@Resource.RESET <i class="fa fa-refresh" aria-hidden="true"></i></button>
+                                        <div class="refresh-btn">
+                                            <button id="dydReset" type="reset" value="reset">@Resource.RESET <i class="fa fa-refresh" aria-hidden="true"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>*@
+                        </div>*@
 
                 </div>
 
@@ -1024,12 +1062,20 @@
     </div>
 
 
-    <div class="fix-search" id="dydEdit" name="command" >
-      <span class="glyphicon glyphicon-search fix-search-icon" aria-hidden="true"></span>
-        <span class="badge fix-search-text" ><div class="small-loader"><div></div><div></div><div></div><div></div></div> <span class="sscount">•••</span></span> 
-      @*<button id="dydEdit" name="command" type="button" value="search"  role="button">
-        <span style="display:none;" class="badge">0</span> @Resource.Search
-      </button>*@
+    <div class="fix-search" id="dydEdit" name="command">
+        <span class="glyphicon glyphicon-search fix-search-icon" aria-hidden="true"></span>
+        <span class="badge fix-search-text"><div class="small-loader"><div></div><div></div><div></div><div></div></div> <span class="sscount">•••</span></span>
+        @*<button id="dydEdit" name="command" type="button" value="search"  role="button">
+              <span style="display:none;" class="badge">0</span> @Resource.Search
+            </button>*@ 
+    </div>
+
+    <div class="fix-search" id="dydMulti" name="command" style="display:none;">
+        <span id="dydAddMulti" class="glyphicon glyphicon-plus fix-search-icon" aria-hidden="true"></span>
+        <span class="badge fix-search-text">Multi Search</span>
+        <span id="dydSearchMulti" class="glyphicon glyphicon-search fix-search-icon" aria-hidden="true"></span>
+
+
     </div>
 
 </div>

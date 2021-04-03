@@ -32,5 +32,8 @@ namespace Rosyblueonline.Models.ViewModel
 
         public List<MstStoneOriginViewModel> VMStoneOrigin { get; set; }
 
+        public List<MstOpensViewModel> VMOpens { get; set; }
+
+
     }
 }

@@ -73,7 +73,10 @@ namespace Rosyblueonline.Repository.Context
 
             modelBuilder.Entity<mstFAQBankModel>().ToTable("mstFAQBank");
             modelBuilder.Entity<CustomerFAQAnswersModel>().ToTable("CustomerFAQAnswers");
+            modelBuilder.Entity<MstRolesModel>().ToTable("mstrole");
 
+
+            
 
             base.OnModelCreating(modelBuilder);
         }
@@ -135,6 +138,8 @@ namespace Rosyblueonline.Repository.Context
 
         public DbSet<CustomerFAQAnswersModel> CustomerFAQAnswers { get; set; }
 
+        public DbSet<MstRolesModel> mstrole { get; set; }
+         
 
         // need to exclude the below
         public DbSet<mstColorModel> Color { get; set; }

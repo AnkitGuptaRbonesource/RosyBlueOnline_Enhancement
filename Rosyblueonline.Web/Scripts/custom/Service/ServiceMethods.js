@@ -537,6 +537,51 @@ var SearchFilter = function () {
         });
     };
 
+    obj.MultiSearch = function (data) {
+        return myApp.http({
+            method: 'post',
+            url: '/Inventory/MultiSearch',
+            data: {
+                filterText: data
+            }
+        });
+    };
+
+    obj.MultiSearchStocks = function (data) {
+        return myApp.http({
+            method: 'post',
+            url: '/Inventory/MultiSearchStocks',
+            data: {
+                filterText: data 
+            }
+        });
+    };
+
+    obj.RapnetdownloadForExcel = function (id, FileName) {
+        return myApp.http({
+            method: 'post',
+            url: '/Inventory/RapnetdownloadForExcel',
+            data: {
+                id: id,
+                FileName: FileName
+            }
+        });
+    };
+
+    obj.DownloadDynamicDownload = function (id, FileName, SheetName) {
+        return myApp.http({
+            method: 'post',
+            url: '/Inventory/InventorydownloadForExcel',
+            data: {
+                id: id,
+                FileName: FileName,
+                SheetName: SheetName
+            }
+        });
+    };
+    
+
+
     return obj;
 };
 
@@ -569,6 +614,11 @@ var CartService = function () {
             }
         });
     };
+
+
+
+
+  
 
     return obj;
 };
@@ -717,6 +767,20 @@ var OrderService = function () {
             }
         });
     };
+
+    obj.GetOrderSummaryItemForExcel = function (LOTNOs) {
+        return myApp.http({
+            method: 'post',
+            url: '/Order/GetOrderSummaryItemForExcel',
+            data: {
+                LOTNOs: LOTNOs 
+            }
+        });
+    };
+
+    
+
+
 
     obj.GetMultipleInfo = function (OrderIDs) {
         return myApp.http({
@@ -939,7 +1003,16 @@ var MemoService = function () {
         });
     }
 
-    
+    obj.MemoCount = function (OType, OStatus) {
+        return myApp.http({
+            method: 'post',
+            url: '/Order/MemoCount',
+            data: {
+                OType: OType,
+                OStatus: OStatus
+            }
+        });
+    }
 
 
   
@@ -949,7 +1022,7 @@ var MemoService = function () {
 var DataTableColumnStruct = function (mode) {
     var SpecificSearch = {};
     var RoleID = $('#hfRoleID').val();
-
+   
     SpecificSearch.columns = [
         { data: "inventoryID", class: 'whspace'},
         { data: "Stock", class: 'whspace'}, 
@@ -996,7 +1069,7 @@ var DataTableColumnStruct = function (mode) {
         { data: "OpensName", class: 'whspace' },
         { data: "Keytosymbol", class: 'dt_col_hide'  },
         { data: "giaComments", class: 'whspace', class: 'dt_col_hide' },
-        { data: "Reportdate", class: 'dt_col_hide'  },
+        { data: "Reportdate"   },
         //{ data: "SalesLocation" },
         { data: "refdata", class: 'whspace', class: 'dt_col_hide'  }, /*Added by Ankit 24JUn2020*/
         { data: "refdata", class: 'whspace'}, /*Added by Ankit 24JUn2020*/
@@ -1129,7 +1202,7 @@ var DataTableColumnStruct = function (mode) {
             orderable: false
         },
         
-      //  { className: "dt_col_hide", "targets": (RoleID == "3") ? [42] : null },
+       { className: "dt_col_hide", "targets": (RoleID == 3) ? [40] : null },
         //{ className: "dt_col_hide", "targets": [40] }, 
        // { className: "dt_col_hide", "targets": [40] }, 
     ];
@@ -1268,6 +1341,8 @@ var DashboardService = function () {
             }
         });
     }
+
+   
       
     return obj;
 }
@@ -1374,6 +1449,30 @@ var MarketingService = function () {
             url: '/Marketing/DeleteJamesAllenHK?id=' + id
         });
     };
+
+
+    obj.GetStockSummaryDetails = function (CustomerIDs, FilterYear, FilterMonth, salesLocationIDs) {
+        return myApp.http({
+            method: 'post',
+            url: '/Marketing/MarketingStockSummaryDetails',
+            data: {
+                'CustomerIDs': CustomerIDs,
+                'FilterYear': FilterYear,
+                'FilterMonth': FilterMonth,
+                'salesLocationIDs': salesLocationIDs
+            }
+        });
+    }
+
+    obj.LoadOrdersSummaryDetails = function (LotNos) {
+        return myApp.http({
+            method: 'post',
+            url: '/Marketing/StockList2',
+            data: {
+                'LotNos': LotNos 
+            }
+        });
+    }
 
     return obj;
 }

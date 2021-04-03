@@ -143,7 +143,7 @@ namespace Rosyblueonline.Framework
                 var find = 0;
                 dsResult.Columns.Remove("Certificate");
              //   dsResult.Columns.Remove("Stockstatus");
-                dsResult.Columns.Remove("Reportdate");
+          
                 foreach (DataColumn column in dsResult.Columns)
                 {
                     if (column.ColumnName.Contains("Stockstatus"))
@@ -157,6 +157,7 @@ namespace Rosyblueonline.Framework
                 if (RemoveLocation)
                 {
                     dsResult.Columns.Remove("SalesLocation");
+                    dsResult.Columns.Remove("Reportdate");
                 }
                 if (RemoveRefdata)
                 {

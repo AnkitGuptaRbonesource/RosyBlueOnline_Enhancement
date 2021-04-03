@@ -23,7 +23,8 @@
             }, function (error) {
                 if (error.status == 440) {
                     //uiApp.Alert({ container: '#uiPanel1', message: "Session Timeout", type: "error" })
-                    alert('Session Timeout');
+                    alert('Session Timeout'); 
+                    location.href = '/Home/LogOut';
                 } else {
                     reject(error);
                 }

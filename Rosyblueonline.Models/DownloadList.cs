@@ -14,5 +14,7 @@ namespace Rosyblueonline.Models
         public string Name { get; set; }
         public string BindedDownloadID { get; set; }
         public string SheetNames { get; set; }
+        public int? DisplayOrder { get; set; }
+        public bool IsActive { get; set; }
     }
 }

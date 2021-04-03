@@ -40,10 +40,10 @@ namespace Rosyblueonline.ServiceProviders.Implementation
             if (RoleID != 1 && RoleID != 2)
                 return (from dl in uow.DownloadList.Queryable()
                         join dr in uow.DownloadRights.Queryable() on dl.RowID equals dr.DownloadID
-                        where dr.LoginID == LoginID
-                        select dl).ToList();
+                        where dr.LoginID == LoginID  && dl.IsActive == true
+                        select dl).OrderBy(n => n.DisplayOrder).ToList();
             else
-                return uow.DownloadList.Queryable().ToList();
+                return uow.DownloadList.Queryable().Where(x => x.IsActive == true).OrderBy(x => x.DisplayOrder).ToList();
         }
 
         public List<DownloadRightModel> GetByLoginID(int LoginID)

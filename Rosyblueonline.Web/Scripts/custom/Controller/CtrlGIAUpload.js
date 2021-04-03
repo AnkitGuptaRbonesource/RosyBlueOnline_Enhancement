@@ -68,7 +68,11 @@
                         ListOfData.push(FinalJson.data.getReport.results); 
                         //ListOfData[ListOfData.length - 1]["lotno"] = pData[idx].Lotnumber;
                         //ListOfData[ListOfData.length - 1]["certificate"] = pData[idx].Certificate;
-                         
+                        var key_to_symbols = '';
+                        for (var a = 0; a < FinalJson.data.getReport.results.key_to_symbols.length; a++) {
+                            key_to_symbols = key_to_symbols == '' ? FinalJson.data.getReport.results.key_to_symbols[a].characteristic : key_to_symbols+',' + FinalJson.data.getReport.results.key_to_symbols[a].characteristic;
+
+                        }
 
                         ListOfData[ListOfData.length - 1]["lotno"] = "";
                         ListOfData[ListOfData.length - 1]["certificate"] = FinalJson.data.getReport.report_number;
@@ -100,7 +104,7 @@
                         ListOfData[ListOfData.length - 1]["reportDt"] = FinalJson.data.getReport.report_date_iso;
                         ListOfData[ListOfData.length - 1]["culetSize"] = FinalJson.data.getReport.results.proportions.culet;
                         ListOfData[ListOfData.length - 1]["inscription"] = FinalJson.data.getReport.results.inscriptions;
-                        ListOfData[ListOfData.length - 1]["keyToSymbols"] = FinalJson.data.getReport.results.clarity_characteristics;
+                        ListOfData[ListOfData.length - 1]["keyToSymbols"] = key_to_symbols;//FinalJson.data.getReport.results.clarity_characteristics;
                         ListOfData[ListOfData.length - 1]["reportComments"] = FinalJson.data.getReport.results.report_comments;
                         ListOfData[ListOfData.length - 1]["status"] = "Success";
                          

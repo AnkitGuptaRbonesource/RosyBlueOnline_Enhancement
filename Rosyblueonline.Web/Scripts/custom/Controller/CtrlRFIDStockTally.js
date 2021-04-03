@@ -173,7 +173,8 @@
             $('#tblStockCountDetail').html('');
             BindStockCount([]);
             renderData([]);
-            BindTotalStockCount();
+            BindTotalStockCount(); 
+            location.href = '/RFID/StockTally';
         });
 
         $('#btnexport').click(function (e) {

@@ -167,9 +167,9 @@ namespace Rosyblueonline.Web.Controllers
                     {
                         return Json(new Response { IsSuccess = false, Code = 100, Message = "Invalid captcha." });
                     }
-                     
-                    int KycCount = this.objUDSvc.CountUploadMultiDoc(obj.DocRandomID); 
-                    if (KycCount ==0 )
+
+                    int KycCount = this.objUDSvc.CountUploadMultiDoc(obj.DocRandomID);
+                    if (KycCount == 0)
                     {
                         return Json(new Response { IsSuccess = false, Code = 100, Message = "KYC doc not attached." });
                     }
@@ -189,7 +189,7 @@ namespace Rosyblueonline.Web.Controllers
                     //    obj.kycDocFile = FileName;
                     //}
                     obj.createdBy = LoginID;
-                    bool status = this.objUDSvc.RegisterUser(obj, Constant.Roles.CUSTOMER);
+                    bool status = this.objUDSvc.RegisterUser(obj);
                     if (status == true)
                     {
                         return Json(new Response { IsSuccess = true, Code = 200, Result = status });
@@ -295,7 +295,7 @@ namespace Rosyblueonline.Web.Controllers
 
 
                 TokenLogModel objToken = this.objUDSvc.Login(obj);
-              //  Session["Token"] = objToken;
+                //  Session["Token"] = objToken;
                 if (objToken != null)
                 {
                     objd.LoginID = objToken.loginID;
@@ -306,17 +306,18 @@ namespace Rosyblueonline.Web.Controllers
                         bool log = this.objUDSvc.UserActivitylogs(objToken.loginID, "User Login", "Login Successfully.");
                     }
                     BlockSiteHistoryModel objBS = this.objUDSvc.GetLastBlockSiteHistory();
-                    objToken.IsSiteBlocked= objBS == null ? false : objBS.Isblocked;
+                    objToken.IsSiteBlocked = objBS == null ? false : objBS.Isblocked;
                     if (objToken.IsSiteBlocked == true && objToken.RoleID == 3)
                     {
                         Session["Token"] = null;
 
                     }
-                    else {
+                    else
+                    {
                         Session["Token"] = objToken;
 
-                        UserMenuAccessModel  objAccess = new UserMenuAccessModel();
-                        objAccess = this.objUDSvc.UserMenuAccessModel(objToken.loginID,"","", "MenuAccessDetails"); 
+                        UserMenuAccessModel objAccess = new UserMenuAccessModel();
+                        objAccess = this.objUDSvc.UserMenuAccessModel(objToken.loginID, "", "", "MenuAccessDetails");
                         Session["MenuAccess"] = objAccess;
 
 
@@ -587,7 +588,7 @@ namespace Rosyblueonline.Web.Controllers
                 Kycobj.kycDocNo = obj.DocNo;
                 //Kycobj.KycDocExpiryDate = DateTime.Parse(obj.DocExpiryDate);
                 //Kycobj.KycDocExpiryDate= Convert.ToDateTime(obj.DocExpiryDate, System.Globalization.CultureInfo.GetCultureInfo("ur-PK").DateTimeFormat);
-                Kycobj.KycDocExpiryDate= DateTime.ParseExact(obj.DocExpiryDate, "dd-MM-yyyy", null); 
+                Kycobj.KycDocExpiryDate = obj.DocExpiryDate == null ? Kycobj.KycDocExpiryDate : DateTime.ParseExact(obj.DocExpiryDate, "dd-MM-yyyy", null);
                 Kycobj.LoginId = obj.DocRandomID;
                 Kycobj.OrgFileName = OrgFileName;
 
@@ -597,13 +598,13 @@ namespace Rosyblueonline.Web.Controllers
 
                 return Json(objLstDoc.AsEnumerable().Select(r => new
                 {
-                    UserDocId= r.UserDocId,
-                    LoginId= r.LoginId,
-                    KycDocId= r.KycDocId,
-                    KycDocName= r.KycDocName,
-                    kycDocNo= r.kycDocNo,
-                    kycDocFile= r.kycDocFile,
-                    KycDocExpiryDate= r.KycDocExpiryDate.GetValueOrDefault().ToString("dd-MM-yyyy"),
+                    UserDocId = r.UserDocId,
+                    LoginId = r.LoginId,
+                    KycDocId = r.KycDocId,
+                    KycDocName = r.KycDocName,
+                    kycDocNo = r.kycDocNo,
+                    kycDocFile = r.kycDocFile,
+                    KycDocExpiryDate = r.KycDocExpiryDate == null ? "" : r.KycDocExpiryDate.GetValueOrDefault().ToString("dd-MM-yyyy"),
                     OrgFileName = r.OrgFileName,
 
                 }), JsonRequestBehavior.AllowGet);
@@ -624,12 +625,12 @@ namespace Rosyblueonline.Web.Controllers
             return Json(new Response { IsSuccess = true, Message = "", Result = ID });
 
         }
-         
-        public ActionResult DeleteUserDoc(int UserDocId,string DocRandomID)
+
+        public ActionResult DeleteUserDoc(int UserDocId, string DocRandomID)
         {
             try
-            { 
- 
+            {
+
                 List<UserKycDocDetailsModel> objLstDoc = this.objUDSvc.DeleteUserDoc(UserDocId, DocRandomID);
                 if (objLstDoc.Count > 0)
                 {
@@ -641,7 +642,7 @@ namespace Rosyblueonline.Web.Controllers
                         KycDocName = r.KycDocName,
                         kycDocNo = r.kycDocNo,
                         kycDocFile = r.kycDocFile,
-                        KycDocExpiryDate = r.KycDocExpiryDate.GetValueOrDefault().ToString("dd-MM-yyyy"),
+                        KycDocExpiryDate = r.KycDocExpiryDate == null ? "" : r.KycDocExpiryDate.GetValueOrDefault().ToString("dd-MM-yyyy"),
                         OrgFileName = r.OrgFileName,
 
                     }), JsonRequestBehavior.AllowGet);
@@ -655,6 +656,16 @@ namespace Rosyblueonline.Web.Controllers
                 ErrorLog.Log("HomeController", "GetUserDocDetails", ex);
                 return Json(new Response { IsSuccess = false, Message = ex.Message });
             }
+        }
+
+        [HttpGet]
+        public ActionResult GetListOfMarketingCustomer(string search)
+        {
+            int LoginId = GetLogin();
+            var objLst = this.objUDSvc.GetListOfMarketingCustomer(search); 
+            return Json(objLst, JsonRequestBehavior.AllowGet);
+
+
         }
     }
 }

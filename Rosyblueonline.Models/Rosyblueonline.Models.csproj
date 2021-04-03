@@ -65,6 +65,7 @@
     <Compile Include="BlockSiteHistoryModel.cs" />
     <Compile Include="BlueNileDiscountModel.cs" />
     <Compile Include="CartDetailModel.cs" />
+    <Compile Include="CartItemReminderEmailListModel.cs" />
     <Compile Include="customerDemandModel.cs" />
     <Compile Include="CustomerFAQAnswersModel.cs" />
     <Compile Include="CustomerListView.cs" />
@@ -81,6 +82,7 @@
     <Compile Include="JamesAllenDiscountModel.cs" />
     <Compile Include="JamesAllenDiscountModelHK.cs" />
     <Compile Include="LoginDeviceModel.cs" />
+    <Compile Include="MarketingStockSummaryModel.cs" />
     <Compile Include="MemoDetailModel.cs" />
     <Compile Include="MemoFileIDDetailModel.cs" />
     <Compile Include="MenuMasterModel.cs" />
@@ -102,6 +104,7 @@
     <Compile Include="mstLabModel.cs" />
     <Compile Include="mstMilkyInclusionModel.cs" />
     <Compile Include="mstRFIDModel.cs" />
+    <Compile Include="MstRolesModel.cs" />
     <Compile Include="MstSalesLocationModel.cs" />
     <Compile Include="mstShadeModel.cs" />
     <Compile Include="MstShippingAddressModel.cs" />
@@ -161,6 +164,7 @@
     <Compile Include="ViewModel\mstKeyToSymbolViewModel.cs" />
     <Compile Include="ViewModel\mstLabViewModel.cs" />
     <Compile Include="ViewModel\mstMilkyInclusionViewModel.cs" />
+    <Compile Include="ViewModel\MstOpensViewModel.cs" />
     <Compile Include="ViewModel\mstShadeViewModel.cs" />
     <Compile Include="ViewModel\mstSideBlackInclusionViewModel.cs" />
     <Compile Include="ViewModel\MstStoneOriginViewModel.cs" />

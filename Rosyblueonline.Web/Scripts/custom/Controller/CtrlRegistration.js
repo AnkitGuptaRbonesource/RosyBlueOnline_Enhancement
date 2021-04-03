@@ -16,13 +16,13 @@
          <td class="rsearchnew"><b><span id="lblUserDocId" class=${UserDocId} value=${UserDocId} style="cursor: pointer;"><i class="fa fa-trash fontsz"></i></span></b></td>\
         </tr>';
 
-     
+
 
     var OnLoad = function () {
         objLogSvc = new LoginRegistrationService();
-        SetValidation(); 
-       
-       // dtDocFiles = new Datatable();
+        SetValidation();
+
+        // dtDocFiles = new Datatable();
 
 
         //$('.datePicker').datepicker({
@@ -43,9 +43,9 @@
 
         //dtDocFiles = new Datatable();
 
-        
-            GenerateRandomId();
-        
+
+        GenerateRandomId();
+
     };
 
     var RegisterEvent = function () {
@@ -102,12 +102,12 @@
         $(document).on('click', '#btnNext', function (e) {
             e.preventDefault();
             if ($pnlRegistration.valid()) {
-                $('#MainPersonalDetail').show(); 
+                $('#MainPersonalDetail').show();
                 $('#pnlRegistration').collapse('toggle');
             }
         });
 
-        
+
 
         $(document).on('click', '#lblUserDocId', function (e) {
             e.preventDefault();
@@ -136,7 +136,7 @@
         $(document).on('click', '#btnPrevious', function (e) {
             e.preventDefault();
             //if ($pnlRegistration.valid()) {
-           //$('#pnlPersonalDetail').collapse('toggle');
+            //$('#pnlPersonalDetail').collapse('toggle');
             $('#MainPersonalDetail').hide();
 
             $('#pnlRegistration').collapse('toggle');
@@ -189,33 +189,38 @@
         });
 
         $(document).on('click', '#btnDocUpload', function (e) {
-           // if ($DocUploadFormVal.valid() ) {
+            // if ($DocUploadFormVal.valid() ) {
             var DocUploadFormValidation = true;
 
             var KycDocName = $('#ddlKycDocName').val().trim();
             var KycDocNo = $('#txtKycDocNo').val().trim();
-            var DateOfDocExpiry = $('#txtDateOfDocExpiry').val().trim(); 
+            var DateOfDocExpiry = $('#txtDateOfDocExpiry').val().trim();
 
             if (KycDocName == undefined || KycDocName == "") {
                 alert("Select Identity");
                 DocUploadFormValidation = false;
-            } else if (KycDocNo == undefined || KycDocNo== "") {
+            } else if (KycDocNo == undefined || KycDocNo == "") {
                 alert("Kyc Doc No");
                 DocUploadFormValidation = false;
             } else if (DateOfDocExpiry == undefined || DateOfDocExpiry == "") {
-              //  alert("Doc Expiry Date");
-              //  DocUploadFormValidation= false;
+                
+                if ($('#ddlKycDocName').val() == 4) {
+                    alert("Doc Expiry Date");
+                    DocUploadFormValidation = false;
+                } else { DocUploadFormValidation = true; }
+                //  alert("Doc Expiry Date");
+                //  DocUploadFormValidation= false; 
             } else
                 if ($('#fuUploadFile').get(0).files.length === 0) {
                     alert("Upload Id-Proof");
                     DocUploadFormValidation = false;
                 }
-             
-            if (DocUploadFormValidation==true) {
-                
+
+            if (DocUploadFormValidation == true) {
+
                 var Dfd = ReadDocForm();
-                objLogSvc.UploadMultiDoc(Dfd).then(function (data) { 
-                    if (data.length> 0) { 
+                objLogSvc.UploadMultiDoc(Dfd).then(function (data) {
+                    if (data.length > 0) {
                         NewBindDocFiles(data);
                         DocclearForm();
                         // if (regType == 'Self') {
@@ -231,6 +236,18 @@
                 });
             }
             // }
+        });
+
+
+
+        $(document).on('change', '#ddlKycDocName', function (e) {
+            e.preventDefault();
+            
+            $('#txtDateOfDocExpiry').val("");
+            var SelectVal = $('#ddlKycDocName').val();
+            if (SelectVal == 4) {
+                $('#idKycDocExpiryDate').show();
+            } else { $('#idKycDocExpiryDate').hide(); }
         });
 
     }
@@ -273,7 +290,7 @@
                 ZIP: {
                     required: true,
                     number: true,
-                    maxlength: 10 
+                    maxlength: 10
                 },
                 emailId: {
                     required: true,
@@ -454,12 +471,14 @@
 
         fd.append('Captchacode', $('#txtCaptchacode').val().trim());
 
-        fd.append('TypeId', $('#ddlRTypes').val());  /*Added By Ankit 26Jun2020*/ 
+        fd.append('TypeId', $('#ddlRTypes').val());  /*Added By Ankit 26Jun2020*/
         //fd.append('dateOfDocExpiry', $('#txtDateOfDocExpiry').val().trim()); //commented by Ankit 02July2020
         fd.append('DocRandomID', $("#hrRandomID").val().trim());
 
+        fd.append('Role', "3");
         
-        
+
+
 
 
         //if ($('#fuUploadFile').get(0).files.length === 0) {
@@ -512,19 +531,19 @@
     //            kycDocFile: {
     //                required: true
     //            }
-                
-                
+
+
     //        }
     //    });
     //};
 
     var ReadDocForm = function () {
-        var Docfd = new FormData(); 
+        var Docfd = new FormData();
         Docfd.append('DocId', $('#ddlKycDocName').val().trim());
-        Docfd.append('DocNo', $('#txtKycDocNo').val().trim());  
+        Docfd.append('DocNo', $('#txtKycDocNo').val().trim());
         //Docfd.append('DocExpiryDate', $('#txtDateOfDocExpiry').val().trim());
         Docfd.append('DocRandomID', $("#hrRandomID").val().trim());
-       
+
         if ($('#fuUploadFile').get(0).files.length === 0) {
             //alert('File not attached');
             console.log('File not attached');
@@ -541,11 +560,11 @@
         $('#ddlKycDocName').val('');
         $('#txtKycDocNo').val('');
         $('#txtDateOfDocExpiry').val('');
-        $('#fuUploadFile').val(''); 
+        $('#fuUploadFile').val('');
     }
 
     //var BindDocFiles = function (data) {
-        
+
     //    if (dtDocFiles.getDataTable() == null || dtDocFiles.getDataTable() == undefined) {
     //        dtDocFiles.init({
     //            src: '#DocFIleInfoTable',
@@ -609,24 +628,24 @@
     //            }
     //        });
     //    } else {
-            
+
     //        dtDocFiles.getDataTable().draw();
     //    }
     //}
 
     var NewBindDocFiles = function (data) {
-           
+
         if (data.length > 0) {
-            
+
             $("#DocFileData").show();
-            $("#tblBodySDocFiles").html(''); 
-            $.tmpl(SummeryTemp, data).appendTo("#tblBodySDocFiles");
-                 
-            } else {
             $("#tblBodySDocFiles").html('');
-                 
-            }
-        
+            $.tmpl(SummeryTemp, data).appendTo("#tblBodySDocFiles");
+
+        } else {
+            $("#tblBodySDocFiles").html('');
+
+        }
+
     }
 
     var GenerateRandomId = function () {

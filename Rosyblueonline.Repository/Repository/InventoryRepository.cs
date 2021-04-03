@@ -171,6 +171,16 @@ namespace Rosyblueonline.Repository
                 // Move to second result set and read Posts
                 reader.NextResult();
 
+                // Opens --added by ankit 15jan 2021 
+
+                objSF.VMOpens = ((IObjectContextAdapter)context)
+                             .ObjectContext
+                             .Translate<MstOpensViewModel>(reader).ToList();
+
+
+                // Move to second result set and read Posts
+                reader.NextResult();
+
             }
             finally
             {
@@ -862,6 +872,118 @@ namespace Rosyblueonline.Repository
                 context.Database.Connection.Close();
             }
         }
+
+        public List<CartItemReminderEmailListModel> CartItemReminderEmails(params string[] parameters)
+        {
+            try
+            {
+                if (context.Database.Connection.State != ConnectionState.Open)
+                {
+                    context.Database.Connection.Open();
+                }
+                var cmd = context.Database.Connection.CreateCommand();
+                cmd.CommandText = parameters[0].ToString();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandTimeout = 900; 
+                var reader = cmd.ExecuteReader();
+                return ((IObjectContextAdapter)context)
+                    .ObjectContext
+                    .Translate<CartItemReminderEmailListModel>(reader).ToList();
+
+
+            }
+            finally
+            {
+                context.Database.Connection.Close();
+            }
+        }
+
+        public MarketingStockSummaryModel StockSummaryFilters(int LoginID)
+        {
+            MarketingStockSummaryModel objSF = new MarketingStockSummaryModel();
+            var cmd = context.Database.Connection.CreateCommand(); 
+            cmd.CommandText = "proc_StockSummary_Marketing_Filters";
+            cmd.CommandType = CommandType.StoredProcedure; 
+            cmd.Parameters.Add(new SqlParameter("@LoginID", LoginID));
+            try
+            {
+
+                context.Database.Connection.Open();
+                // Run the sproc
+                var reader = cmd.ExecuteReader();
+
+                // Read Color from the first result set
+                objSF.SaleS = ((IObjectContextAdapter)context)
+                    .ObjectContext
+                    .Translate<SaleSViewModel>(reader).ToList();
+                 ;
+
+
+                // Move to second result set and read Posts
+                reader.NextResult();
+
+                objSF.SYear = ((IObjectContextAdapter)context)
+                                    .ObjectContext
+                                    .Translate<SYearViewModel>(reader).ToList();
+
+
+                // Move to second result set and read Posts
+                reader.NextResult();
+
+                // Read Color from the first result set
+                objSF.SMonth = ((IObjectContextAdapter)context)
+                    .ObjectContext
+                    .Translate<SMonthViewModel>(reader).ToList();
+
+
+                // Move to second result set and read Posts
+                reader.NextResult();
+
+                objSF.SLocation = ((IObjectContextAdapter)context)
+                                    .ObjectContext
+                                    .Translate<SLocationViewModel>(reader).ToList();
+
+
+                // Move to second result set and read Posts
+                reader.NextResult();
+                             
+
+            }
+            finally
+            {
+                context.Database.Connection.Close();
+            }
+
+            return objSF;
+        }
+
+        public List<MarketingStockSummaryDetailsModel> MarketingStockSummaryDetails(string CustomerIDs,string FilterYear,string FilterMonth,string salesLocationIDs)
+        {
+            try
+            {
+                var cmd = context.Database.Connection.CreateCommand();
+                cmd.CommandText = "proc_StockSummary_Marketing_New";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandTimeout = 180;
+                cmd.Parameters.Add(new SqlParameter("@CustomerIDs", CustomerIDs));
+                cmd.Parameters.Add(new SqlParameter("@FilterYear", FilterYear));
+                cmd.Parameters.Add(new SqlParameter("@FilterMonth", FilterMonth));
+                cmd.Parameters.Add(new SqlParameter("@salesLocationIDs", salesLocationIDs)); 
+                context.Database.Connection.Open();
+                var reader = cmd.ExecuteReader();
+                var resultDetails =
+                ((IObjectContextAdapter)context)
+                .ObjectContext
+                .Translate<MarketingStockSummaryDetailsModel>(reader)
+                .ToList(); 
+                return resultDetails;
+            }
+            finally
+            {
+                context.Database.Connection.Close();
+            }
+        }
+
 
     }
 }

@@ -240,6 +240,8 @@
   <ItemGroup>
     <Content Include="Content\css\AdminLTE.css" />
     <Content Include="Content\css\AdminLTE.min.css" />
+    <Content Include="Content\css\bootstrap-multiselect.css" />
+    <Content Include="Content\css\bootstrap-multiselect.min.css" />
     <Content Include="Content\css\bootstrap-theme.css" />
     <Content Include="Content\css\bootstrap-theme.min.css" />
     <Content Include="Content\css\bootstrap.css" />
@@ -498,6 +500,7 @@
     <Content Include="Content\img\emerald_shape.png" />
     <Content Include="Content\img\excel.png" />
     <Content Include="Content\img\excel_logo.png" />
+    <Content Include="Content\img\excel_logo_old.png" />
     <Content Include="Content\img\export-icon.svg" />
     <Content Include="Content\img\fancycoloursh.png" />
     <Content Include="Content\img\fancysh.png" />
@@ -708,6 +711,8 @@
     <Content Include="Scripts\bootbox.min.js" />
     <Content Include="Scripts\bootstrap-datepicker.js" />
     <Content Include="Scripts\bootstrap-datepicker.min.js" />
+    <Content Include="Scripts\bootstrap-multiselect.js" />
+    <Content Include="Scripts\bootstrap-multiselect.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\css\bootstrap-theme.css.map" />
@@ -1132,6 +1137,7 @@
     <Content Include="Views\Home\PrivacyPolicy.cshtml" />
     <Content Include="Views\Home\TermsOfUse.cshtml" />
     <Content Include="Views\Home\PricingDiscountPolicy.cshtml" />
+    <Content Include="Views\Marketing\MarketingStockSummary.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1173,7 +1179,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resource\Resource.fr.resx" />
+    <EmbeddedResource Include="Resource\Resource.fr.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resource\Resource.zh.resx" />
     <EmbeddedResource Include="Resource\Resource.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

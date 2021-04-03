@@ -67,6 +67,7 @@
         RegisterEvent();
         SetValidation();
        // GetMemoOrderID();
+        MemoCount("Memo", "Pending");
     };
 
     var RegisterEvent = function () {
@@ -132,9 +133,11 @@
             }
             uiApp.Confirm('Confirm split of ' + ListMemo.length + ' items ?', function (resp) {
                 if (resp) {
+                    uiApp.BlockUI();
                     GetOrderItemsForSplit();
-                    $('#MemoInfoOperation').html('Memo split from following order');
+                    $('#MemoInfoOperation').html('Memo split from following order  (Total ' + ListMemo.length + ' items.)');
                     GetMultipleInfo(OrderID);
+                    uiApp.UnBlockUI();
                 }
             });
         });
@@ -147,7 +150,7 @@
             var isConfirmed = $('#chkConfirmMemo').prop('checked') ? 1 : 0;
             var isSellDirect = $('#chkSellDirectly').prop('checked') ? 1 : 0;
             var actionType = $('#btnSaveMemo').data('Action');
-
+            uiApp.BlockUI();
             switch (actionType) {
                 case "SplitMemo":
                     objMSvc.SplitMemo(OrderID, ListMemo, CustomerID, isConfirmed, isSellDirect, Remark).then(function (data) {
@@ -157,12 +160,16 @@
                             dtOrder.getDataTable().draw();
                             clearOnBack();
                             $('#Modal-FormMemo').modal('hide');
+                            uiApp.UnBlockUI();
                         } else {
                             uiApp.Alert({ container: '#uiPanel1', message: "Memo not split", type: "error" });
+                            uiApp.UnBlockUI();
                         }
                         clearOrderInfo();
+                        uiApp.UnBlockUI();
                     }, function (error) {
                         uiApp.Alert({ container: '#uiPanel1', message: "Some error occured", type: "error" });
+                            uiApp.UnBlockUI();
                     });
                     break;
                 case "MergeMemo":
@@ -171,12 +178,16 @@
                             uiApp.Alert({ container: '#uiPanel1', message: "Memo merged successfully", type: "success" });
                             dtOrder.getDataTable().draw();
                             $('#Modal-FormMemo').modal('hide');
+                            uiApp.UnBlockUI();
                         } else {
                             uiApp.Alert({ container: '#uiPanel1', message: "Memo not merged", type: "error" });
+                            uiApp.UnBlockUI();
                         }
                         clearOrderInfo();
+                        uiApp.UnBlockUI();
                     }, function (error) {
                         uiApp.Alert({ container: '#uiPanel1', message: "Some error occured", type: "error" });
+                            uiApp.UnBlockUI();
                     });
                     break;
                 default:
@@ -193,8 +204,8 @@
                 $('#btnSaveMemo').data('Action', 'MergeMemo');
                 $('#Modal-FormMemo').one('shown.bs.modal', function (e) {
                     if (data.IsSuccess == true) {
-                        RenderOrderItemsInPopup(data.Result);
-                        $('#MemoInfoOperation').html('Memo merged from following order');
+                        RenderOrderItemsInPopup(data.Result); 
+                        $('#MemoInfoOperation').html('Memo merged from following order  (Total ' + data.Result.length+' items.)');
                         GetMultipleInfo(ListOrders.join(','));
                     } else {
                         uiApp.Alert({ container: '#uiPanel2', message: "Problem in fetching data.", type: "danger" });
@@ -248,15 +259,19 @@
 
             uiApp.Confirm(('Confirm cancel memo of  <b>' + cName + '</b>?'), function (resp) {
                 if (resp) {
+                    uiApp.BlockUI();
                     objMSvc.CancelFullMemo(id).then(function (data) {
                         if (data.IsSuccess && data.Result > 0) {
                             dtOrder.getDataTable().draw();
                             uiApp.Alert({ container: '#uiPanel1', message: "Memo cancelled successfully", type: "success" });
+                            uiApp.UnBlockUI();
                         } else {
                             uiApp.Alert({ container: '#uiPanel1', message: "Memo not cancelled", type: "error" });
+                            uiApp.UnBlockUI();
                         }
                     }, function (error) {
                         uiApp.Alert({ container: '#uiPanel1', message: "Some error occured", type: "error" });
+                            uiApp.UnBlockUI();
                     });
                 }
             });
@@ -321,6 +336,7 @@
 
             uiApp.Confirm(('Confirm Sale for <b>' + Refname + '</b>?'), function (resp) {
                 if (resp) {
+                    uiApp.BlockUI();
                     if ($('#hfIsSellPartial').val() == "false") {
                         objMSvc.SellFullMemo(OrderID, MemoMode, SaleDiscount).then(function (data) {
                             if (data.IsSuccess && data.Result > 0) {
@@ -329,11 +345,14 @@
                                 clearSaleMemo();
                                 $('#Modal-SellFullMemo').modal('hide');
                                 clearOnBack();
+                                uiApp.UnBlockUI();
                             } else {
                                 uiApp.Alert({ container: '#uiPanel1', message: "Memo not sold", type: "error" });
+                                uiApp.UnBlockUI();
                             }
                         }, function (error) {
                             uiApp.Alert({ container: '#uiPanel1', message: "Some error occured", type: "error" });
+                                uiApp.UnBlockUI();
                         });
                     } else {
                         objMSvc.PartialSellMemo(OrderID, ListMemo, MemoMode, SaleDiscount).then(function (data) {
@@ -344,11 +363,14 @@
                                 clearSaleMemo();
                                 $('#Modal-SellFullMemo').modal('hide');
                                 clearOnBack();
+                                uiApp.UnBlockUI();
                             } else {
                                 uiApp.Alert({ container: '#uiPanel1', message: "Memo not sold", type: "error" });
+                                uiApp.UnBlockUI();
                             }
                         }, function (error) {
                             uiApp.Alert({ container: '#uiPanel1', message: "Some error occured", type: "error" });
+                                uiApp.UnBlockUI();
                         });
                     }
                 }
@@ -429,15 +451,17 @@
 
         $('#btnSellPartialMemo').click(function (e) {
             e.preventDefault();
+            uiApp.BlockUI();
             $('#hfIsSellPartial').val('true');
             objSFSvc.SummaryData(ListMemo).then(function (data) {
                 if (data.IsSuccess) {
                     $('#txtMemoAvgDiscount').val(data.Result.AvgRapoff);
                     $('#Modal-SellFullMemo').modal('show');
-
+                    uiApp.UnBlockUI();
                 }
             }, function (error) {
-                uiApp.Alert({ container: '#uiPanel1', message: "Some error occured", type: "error" });
+                    uiApp.Alert({ container: '#uiPanel1', message: "Some error occured", type: "error" });
+                    uiApp.UnBlockUI();
             });
         });
 
@@ -445,23 +469,48 @@
             e.preventDefault();
             uiApp.Confirm('Confirm Partial Return Sell Update?', function (resp) {
                 if (ListMemo.length > 0) {
+                    uiApp.BlockUI();
                     objMSvc.ReturnPartailMemo(ListMemo).then(function (data) {
                         if (data.IsSuccess) {
                             uiApp.Alert({ container: '#uiPanel1', message: "Partial Return Sell Successfully", type: "success" });
                             dtOrder.getDataTable().draw();
                             var OrderID = $('#hfOrderID').val();
                             LoadOrderItems(OrderID);
+                            uiApp.UnBlockUI();
                         } else {
                             uiApp.Alert({ container: '#uiPanel1', message: data.Message, type: "error" });
+                            uiApp.UnBlockUI();
                         }
                     }, function (error) {
+                            uiApp.UnBlockUI();
                     });
                 } else {
                     uiApp.Alert({ container: '#uiPanel1', message: "No memos selected", type: "error" });
+                    uiApp.UnBlockUI();
                 }
             });
         });
 
+        //$('#SearchTablePost').on('draw.dt', function () {
+        //    if ($("#checkAll").prop('checked') == true) {
+        //        $('#checkAll').prop("checked", false);
+        //        dtOrderItem.clearSelection();
+        //        dtOrderItem.getDataTable().draw();
+
+        //    }
+        //});
+
+        $(document).on('click', '#checkAll', function (e) {
+
+            if ($(this).is(":checked")) {
+                dtOrderItem.clearSelection();
+                dtOrderItem.getDataTable().draw();
+            } else {
+                dtOrderItem.clearSelection();
+                dtOrderItem.getDataTable().draw();
+            }
+
+        });
         //$(document).on('click', '.loadData123', function (e) {
         //    var criteria = e.target.dataset.criteria;
         //    $('#hfMemoQuery').val(criteria);
@@ -502,9 +551,13 @@
                     scrollY: "485px",
                     scrollX: true,
                     paging: true,
+                    scrollCollapse: true,
                     pageLength: 200,
                     lengthMenu: [[10, 25, 50, 100, 200, 500000], [10,25,50, 100, 200, "All"]],
                     order: [[1, "desc"]],
+                    fixedColumns: {
+                        leftColumns: 4
+                    },
                     ajax: {
                         type: 'Post',
                         url: '/Order/OrderListing?OType=memo&FilterCustomerID=' + CustID,
@@ -567,8 +620,9 @@
                         orderable: false,
                         render: function (data, type, row) {
                           //  return data.toFixed(2);
-                            return data.toFixed(2).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
-
+                          
+                                return data.toFixed(2).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+                       
                         }
                     },
                     {
@@ -628,7 +682,7 @@
                                             <li><a href="#" data-index="'+ meta.row + '" data-id="' + row.orderDetailsId + '" class="btnExportMemo"><i class="fa fa-file-excel-o" aria-hidden="true"></i>Export to Excel</a></li>\
                                             <li><a href="#" data-index="'+ meta.row + '" data-id="' + row.orderDetailsId + '" class="btnSendMailMemo"><i class="fa fa-envelope-o"></i>Send a Mail</a></li>\
                                             <li><a href="#" data-index="'+ meta.row + '" data-id="' + row.orderDetailsId + '" class="btnPrintMemoItems"><i class="fa fa-print"></i>Print</a></li>\
-                                            <li><a href="/RFID/TallyMemo/'+ row.orderDetailsId + '" target="_blank" class="btnRFIDMatching"><i class="fa fa-file-excel-o"></i>RFID Matching</a></li>\
+                                            <li><a href="http://213.42.17.149:91" target="_blank" class="btnRFIDMatching"><i class="fa fa-file-excel-o"></i>RFID Matching</a></li>\
                                         </ul>';
                             } else {
                                 return '<button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown"><i class="fa fa-plus fa-lg"></i></button>\
@@ -739,15 +793,16 @@
             dtOrderItem.init({
                 src: '#SearchTablePost',
                 dataTable: {
-                    paging: false,
+                    paging: true, 
                     order: [[1, "desc"]],
                     processing: false,
                     serverSide: false,
-                    scrollY: "270px",
-                    scrollX: true,
-                    data: data,
+                    scrollY: "485px",
+                    scrollX: true,  
+                    data: data, 
                     columns: colStruct.SpecificSearch.columns,
                     columnDefs: colStruct.SpecificSearch.columnDefs,
+                   
                     rowCallback: function (row, data, index) {
                         if (data.inventoryID == $('#hfIntIID').val()) {
                             $(row).css('background-color', '#d6d5d5');
@@ -770,10 +825,92 @@
         }
     }
 
+     //================================================================
+    var RenderOrderItems_New = function (data, OrderIdss) { 
+        uiApp.BlockUI();
+        intTotalRowCount = data.length; 
+       // alert(OrderIdss);
+        //var table = $('#SearchTablePost').DataTable(); 
+        //table.clear().draw();
+        //var dtOrderItem = null;
+        dtOrderItem = new Datatable();
+        var colStruct = new DataTableColumnStruct();
+        if (dtOrderItem.getDataTable() == null || dtOrderItem.getDataTable() == undefined) {
+
+       
+          ///  alert(intTotalRowCount);
+            dtOrderItem.init({
+                src: '#SearchTablePost',
+                searching: false,
+                dataTable: {
+                    //deferLoading: 0,
+                    //scrollY: "500px",
+                    scrollY: "485px",
+                    scrollX: true,
+                    paging: false,
+                    destroy: true,
+                    scrollCollapse: true,
+                    pageLength: 200,
+                    lengthMenu: [[10, 25, 50, 100, 200, 500000], [10, 25, 50, 100, 200, "All"]],
+                    order: [[1, "desc"]],
+                    fixedColumns: {
+                        leftColumns: 2
+                    },
+                    ajax: {
+                        type: 'Post',
+                        url: '/Order/GetOrderItemsByOrderID2?OrderID=' + OrderIdss,
+                        beforeSend: function (request) {
+                            var TokenID = myApp.token().get();
+                            request.setRequestHeader("TokenID", TokenID);
+                            return request;
+                        }
+                    },
+                    columns: colStruct.SpecificSearch.columns,
+                    columnDefs: colStruct.SpecificSearch.columnDefs,
+                    rowCallback: function (row, data, index) {
+                        if (data.inventoryID == $('#hfIntIID').val()) {
+                            $(row).css('background-color', '#d6d5d5');
+                        }
+
+                    }
+                },
+                onCheckboxChange: function (obj) {
+
+                    ListMemo = obj;
+                },
+                onLoadDataCompleted: function () {
+                }
+            });
+            uiApp.UnBlockUI();
+        } else {
+            dtOrderItem.clearSelection();
+            dtOrderItem.getDataTable().draw();
+
+            //dtOrderItem.clearSelection();
+            //var table = dtOrderItem.getDataTable();
+            //table.clear().draw();
+            //for (var i = 0; i < data.length; i++) {
+            //    table.row.add(data[i]);
+            //}
+            //table.draw(false);
+            uiApp.UnBlockUI();
+        }
+        uiApp.UnBlockUI();
+
+    }
+
+
+    //================================================================
+
+
+
     var LoadOrderItems = function (OrderID) {
+        uiApp.BlockUI();
         objOSvc.GetOrderItemsByOrderID(OrderID).then(function (data) {
+            var NewOrderID = OrderID;
             if (data.IsSuccess == true) {
-                RenderOrderItems(data.Result);
+            // RenderOrderItems(data.Result);
+                 RenderOrderItems_New(data.Result, NewOrderID)
                 $('#secMemoItems').show();
                 $('#secGrid').hide();
                 if ($('#hfOStatus').val() == "Pending") {
@@ -787,10 +924,13 @@
                     $('#btnSellPartialMemo').hide();
                     $('#btnReturnPartialSellMemo').show();
                 }
+                uiApp.UnBlockUI();
             } else {
+                uiApp.UnBlockUI();
                 uiApp.Alert({ container: '#uiPanel1', message: "Memo not fetched", type: "error" });
             }
         }, function (error) {
+                uiApp.UnBlockUI();
             uiApp.Alert({ container: '#uiPanel1', message: "Some error occured", type: "error" });
         });
     }
@@ -924,6 +1064,28 @@
         });
 
     };
+
+    function MemoCount(OType, OStatus) {
+        objMSvc.MemoCount(OType, OStatus).then(function (data) {
+            if (data.IsSuccess == true) {
+                if (data.Result!=null) {
+                    $("#memoCounts").html("("+data.Result+")");
+
+                } else {
+                    $("#memoCounts").html();  
+                }
+
+            }
+
+            else {
+                uiApp.Alert({ container: '#uiPanel1', message: "No Record Found.", type: "danger" });
+            }
+        }, function (error) {
+            uiApp.Alert({ container: '#uiPanel1', message: "Some error occured.", type: "danger" });
+        });
+
+    } 
+
 
 
 

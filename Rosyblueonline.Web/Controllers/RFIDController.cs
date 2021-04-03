@@ -17,8 +17,7 @@ using System.Web;
 using System.Web.Mvc;
 
 namespace Rosyblueonline.Web.Controllers
-{
-    [CheckSession]
+{  
     public class RFIDController : _BaseController
     {
         RFIDService objSvc;

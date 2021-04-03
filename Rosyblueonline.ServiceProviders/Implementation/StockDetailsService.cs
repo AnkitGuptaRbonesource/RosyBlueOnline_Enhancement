@@ -76,6 +76,13 @@ namespace Rosyblueonline.ServiceProviders.Implementation
         }
 
 
+        public List<T> RapnetDownload<T>(params string[] Parameters) where T : class
+        {
+            
+             return this.uow.ExecuteQuery<T>("Exec proc_DownloadResult '{0}'", Parameters);
+
+             
+        }
 
         public List<InventoryDownloadMemoViewModel> InventoryDownloadMemo(params string[] Parameters)
         {
@@ -269,7 +276,7 @@ namespace Rosyblueonline.ServiceProviders.Implementation
             dt.Columns["RapAmount"].ColumnName = "Rap Amount";
             dt.Columns["Discount"].ColumnName = "Rapnet Discount %";
             dt.Columns["Price"].ColumnName = "Pricect";
-            dt.Columns["CertificateNo"].ColumnName = "Certificate_#";
+            dt.Columns["CertificateNo"].ColumnName = "Certificate No";
             dt.Columns["DepthPerc"].ColumnName = "Depth %";
             dt.Columns["TablePerc"].ColumnName = "Table %";
             //dt.Columns["Girdle"].ColumnName = "Girdle Thin";
@@ -281,6 +288,34 @@ namespace Rosyblueonline.ServiceProviders.Implementation
             dt.Columns["GirdlePerc"].ColumnName = "Girdle %";
             dt.Columns["Keytosymbol"].ColumnName = "Keytosymbol";
             //dt.Columns["SalesLocation"].ColumnName = "SalesLocation";
+            return dt;
+        }
+
+
+        public DataTable RapnetDownloadExcelExport(string id)
+        {
+            //string path = Server.MapPath(ConfigurationManager.AppSettings["INVUpload"].ToString());
+            List<RapnetDownloadViewModel> objInvVM = new List<RapnetDownloadViewModel>();
+ 
+            objInvVM = RapnetDownload<RapnetDownloadViewModel>(id);
+            
+            DataTable dt = Rosyblueonline.Framework.ListtoDataTable.ToDataTable<RapnetDownloadViewModel>(objInvVM);
+             
+            dt.Columns["Cut"].ColumnName = "Cut Grade"; 
+            dt.Columns["RapAmount"].ColumnName = "Rap Amount";
+            dt.Columns["Discount"].ColumnName = "Rapnet Discount %";
+            dt.Columns["Price"].ColumnName = "Pricect";
+            dt.Columns["CertificateNo"].ColumnName = "Certificate No";
+            dt.Columns["DepthPerc"].ColumnName = "Depth %";
+            dt.Columns["TablePerc"].ColumnName = "Table %";
+            //dt.Columns["Girdle"].ColumnName = "Girdle Thin";
+            dt.Columns["CrownHeight"].ColumnName = "Crown Height";
+            dt.Columns["CrownAngle"].ColumnName = "Crown Angle";
+            dt.Columns["PavilionDepth"].ColumnName = "Pavilion Depth";
+            dt.Columns["PavilionAngle"].ColumnName = "Pavilion Angle";
+            dt.Columns["StarLength"].ColumnName = "StarLength";
+            dt.Columns["GirdlePerc"].ColumnName = "Girdle %";
+            dt.Columns["Keytosymbol"].ColumnName = "Keytosymbol"; 
             return dt;
         }
 
@@ -310,7 +345,7 @@ namespace Rosyblueonline.ServiceProviders.Implementation
             dt.Columns["RapAmount"].ColumnName = "Rap Amount";
             dt.Columns["Discount"].ColumnName = "Rapnet Discount %";
             dt.Columns["Price"].ColumnName = "Pricect";
-            //dt.Columns["CertificateNo"].ColumnName = "Certificate_#";
+            dt.Columns["CertificateNo"].ColumnName = "Certificate No";
             dt.Columns["DepthPerc"].ColumnName = "Depth %";
             dt.Columns["TablePerc"].ColumnName = "Table %";
             //dt.Columns["Girdle"].ColumnName = "Girdle Thin";
@@ -538,7 +573,7 @@ namespace Rosyblueonline.ServiceProviders.Implementation
             dt.Columns["RapAmount"].ColumnName = "Rap Amount";
             dt.Columns["Discount"].ColumnName = "Rapnet Discount %";
             dt.Columns["Price"].ColumnName = "Pricect";
-            dt.Columns["CertificateNo"].ColumnName = "Certificate_#";
+             dt.Columns["CertificateNo"].ColumnName = "Certificate No";
             dt.Columns["DepthPerc"].ColumnName = "Depth %";
             dt.Columns["TablePerc"].ColumnName = "Table %";
             //dt.Columns["Girdle"].ColumnName = "Girdle Thin";
@@ -757,9 +792,12 @@ namespace Rosyblueonline.ServiceProviders.Implementation
             return this.uow.Inventory.FTPInventoryUploadandModify(parameters);
         }
 
+        public List<CartItemReminderEmailListModel> CartItemReminderEmails(params string[] parameters)
+        {
+            return this.uow.Inventory.CartItemReminderEmails(parameters);
+        }
 
 
-        
 
     }
 }

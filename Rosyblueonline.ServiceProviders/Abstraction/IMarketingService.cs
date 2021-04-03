@@ -15,5 +15,6 @@ namespace Rosyblueonline.ServiceProviders.Abstraction
         int AddJamesAllenDiscount(JamesAllenDiscountModel obj);
         IQueryable<JamesAllenDiscountHKModel> GetJamesAllenDiscountHKQueryable();
         int AddJamesAllenDiscountHK(JamesAllenDiscountHKModel obj);
+
     }
 }

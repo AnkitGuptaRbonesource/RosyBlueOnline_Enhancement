@@ -54,9 +54,12 @@
                         accNumber: $('#txtAccountNumber').val().trim(),
                         bankName: $('#txtBankName').val().trim(),
                         branchName: $('#txtBranchName').val().trim(),
-                        branchAddress: $('#txtBranchAddress').val().trim()
+                        branchAddress: $('#txtBranchAddress').val().trim(),
+                        Role: $('#ddlRoles').val()
                     },
-                    roles: $('input[type="radio"][name="optradio"]:checked').val()
+                    //roles: $('input[type="radio"][name="optradio"]:checked').val()
+                     
+                   
                 }
 
                 if (OnlyAddCustomer == "false") {
@@ -115,9 +118,11 @@
                         accNumber: $('#txtAccountNumber').val().trim(),
                         bankName: $('#txtBankName').val().trim(),
                         branchName: $('#txtBranchName').val().trim(),
-                        branchAddress: $('#txtBranchAddress').val().trim()
+                        branchAddress: $('#txtBranchAddress').val().trim(),
+                        Role: $('#ddlRoles').val()
                     },
-                    roles: $('input[type="radio"][name="optradio"]:checked').val()
+                    //roles: $('input[type="radio"][name="optradio"]:checked').val()
+                    
                 }
                 objLRS.UpdateRegisterUser(pData).then(function (data) {
                     console.log(data);
@@ -335,7 +340,10 @@
                 },
                 BranchAddress: {
                     required: true
-                }
+                },
+                Role: {
+                    required: true
+                },
             },
             messages: {
                 ZIP: {
@@ -540,7 +548,8 @@
             $('#ddlState').val();
             BindState(data.Address.countryID, data.Address.stateID)
             $('#txtCity').val(data.Address.cityName);
-            $('#txtZip').val(data.Address.zipCode);
+            $('#txtZip').val(data.Address.zipCode); 
+            $('#ddlRoles').val(data.Login.roleID);
         }
 
         $('#txtEmailID').val(data.UserDetail.emailId);
@@ -580,6 +589,8 @@
         $('#rbtnSupportAdmin').prop('checked', false);
         $('#rbtnCustomer').prop('checked', true);
         $('#LoginID').val(0);
+        $('#ddlRoles').val('');
+        
     }
 
     return {

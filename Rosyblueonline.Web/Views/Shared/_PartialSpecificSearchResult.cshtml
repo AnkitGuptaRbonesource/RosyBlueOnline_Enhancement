@@ -579,7 +579,11 @@
                                 <ul class="dropdown-menu dropdown-menu-right">
                                     <li><a href="#" id="btnExcel">@Resource.Selected</a></li>
                                     <li><a href="#" id="btnAllExcel">@Resource.All</a></li>
-                                    <li><a href="#" id="btnMemoExcel">@Resource.Only_Memo</a></li>
+                                    @if (objToken.RoleID != 3)
+                                    {
+                                        <li><a href="#" id="btnMemoExcel">@Resource.Only_Memo</a></li>
+                                    }
+
                                 </ul>
                             </div>
                         </div>
@@ -657,7 +661,7 @@
     @if (Model != "OrderInfo" && Model != "Memo" && !string.IsNullOrEmpty(Model) && Model != "SS")
     {
         <div class="list-view">
-            <table class="table">
+            <table class="table listvalue">
 
                 <thead id="tblBodySummary">
                     <tr class="rsearchnew" style="height: 25px;">
@@ -843,7 +847,7 @@
                                                 </th>
 
                                                 <th class="tbnew">
-                                                    <label for="Certificate_">@Resource.CertificateId</label>
+                                                    <label for="Certificate_">@Resource.CertificateNo</label>
                                                 </th>
                                                 <th class="tbnew">
                                                     <label for="D_R">@Resource.DR</label>
@@ -1430,4 +1434,4 @@
             table.search(this.value).draw();
         });
         });
-    </script>*@
+    </script>*@ 
