@@ -1,7 +1,7 @@
 ﻿@model Rosyblueonline.Models.MarketingStockSummaryModel
 
 @{
-    ViewBag.Title = "Sold Stock Summary";
+    ViewBag.Title = "Sell Summary";
     TokenLogModel objToken = Session["Token"] as TokenLogModel;
 }
 @section header{
@@ -9,371 +9,367 @@
     <link href="~/Content/css/select2.min.css" rel="stylesheet" />
     <link href="~/Content/css/bootstrap-multiselect.css" rel="stylesheet" />
 }
+<html>
+<head>
+</head>
+<body class="sidebar-mini skin-black-light sidebar-collapse">
+    <div class="content-wrapper">
+        <section class="content">
+            <div id="uiPanel1"> </div>
+            <input type="hidden" name="MktSummary" id="hfMktSummaryId" value="" />
+            <div style="display:none;">
+                <a id="ancInventoryDownload" href="/Inventory/ExportToExcelInventoryDownload"> </a>
+            </div>
+            <div class="row">
+                <div id="Modal-FormMemo" class="col-lg-12">
+                    <section class="container-fluid">
+                        <div class="dash-box">
+                            <div class="dash-head">
+                                Sell Summary
+                            </div>
+                            <div class="dash-inner">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-inline memopopup">
+                                            <div class="row">
+                                                <div class="col-lg-2 col-md-3 col-sm-6">
+                                                    <div id="SYear" class="form-group">
+                                                        <label class="control-label">
+                                                            <label for="SYear"> Year</label>
+                                                        </label>
 
-
-<div class="content-wrapper">
-    <section class="content">
-        <div id="uiPanel1"></div>
-        <input type="hidden" name="MktSummary" id="hfMktSummaryId" value="" />
-        <div style="display:none;">
-            <a id="ancInventoryDownload" href="/Inventory/ExportToExcelInventoryDownload"></a>
-        </div>
-        <div class="row">
-            <div id="Modal-FormMemo" class="col-lg-12">
-                <section class="container-fluid">
-                    <div class="dash-box">
-                        <div class="dash-head">
-                            Sold Stock Summary
-                        </div>
-                        <div class="dash-inner">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-inline memopopup">
-                                        <div class="row">
-                                            <div class="col-lg-2 col-md-3 col-sm-6">
-                                                <div id="SYear" class="form-group">
-                                                    <label class="control-label">
-                                                        <label for="SYear">Year</label>
-                                                    </label>
-
-                                                    <select class="form-control" id="ddlSYear" name="SYear" style="width:130px;">
-
-                                                        @{
-                                                            for (int i = 0; i < @Model.SYear.Count; i++)
-                                                            {
-                                                                <option data-SYearCode="@Model.SYear[i].Name" value="@Model.SYear[i].ID">@Model.SYear[i].Name</option>
-                                                            }
-                                                        }
-
-                                                    </select>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-3 col-xs-12">
-                                                <div class="form-group">
-                                                    <label class="control-label">
-                                                        <label for="Custlist">Customer List</label>
-                                                    </label>
-                                                    <select class="form-control" name="Custlist" id="ddlCustlist"></select>
-
-
-                                                </div>
-                                            </div>
-                                        
-                                            <div class="col-md-3 col-xs-12">
-                                                <div id="SMonth" class="form-group">
-                                                    <label class="control-label">
-                                                        <label for="SMonth">Months</label>
-                                                    </label>
-
-                                                    @*<div class="fancy-btnbox">
-                                                        <form class="dyd-shape">
-                                                            <input type="checkbox" name="Month" class="design-checkbox" value="0" id="SMonth0" />
-                                                            <label for="SMonth0">All</label>
-                                                            @foreach (var SMonth in Model.SMonth)
-                                                            {
-                                                                var Month = "SMonth" + @SMonth.ID.ToString();
-
-                                                                <input type="checkbox" name="SMonth" class="design-checkbox SMonth" value="@SMonth.ID" id="@Month" />
-                                                                <label for="@Month">@SMonth.Name</label>
-                                                            }
-                                                        </form>
-
-                                                    </div>*@
-                                                     
-                                                    <div  class="fancy-btnbox">
-                                                        <select id="myMonths" multiple="multiple" required=required name="myMonths">
-                                                            @if (Model.SMonth != null)
-                                                            {
-                                                                foreach (var item in Model.SMonth)
+                                                        <select class="form-control" id="ddlSYear" name="SYear" style="width:130px;">
+                                                            @{
+                                                                for (int i = 0; i < @Model.SYear.Count; i++)
                                                                 {
-                                                                    if (item.Name != null)
-                                                                    {
-                                                                        <option value="@item.ID">
-                                                                            @item.Name
-                                                                        </option>
-
-                                                                    }
-                                                                }
-                                                            }
-                                                        </select>
-                                                    </div>
-                                                   
-                                                </div>
-                                            </div>
-                                         
-                                            <div class="col-md-3 col-xs-12">
-                                                <div id="SLocation" class="form-group">
-                                                    <label class="control-label">
-                                                        <label for="SLocation">Sale Location</label>
-                                                    </label>
-
-                                                    @*<div class="fancy-btnbox">
-                                                        <form class="dyd-shape SLocation">
-
-                                                            @foreach (var SLocation in Model.SLocation)
-                                                            {
-                                                                var Location = "SLocation" + @SLocation.ID.ToString();
-                                                                <input type="checkbox" name="SLocation" class="design-checkbox" value="@SLocation.ID" id="@Location" />
-                                                                <label for="@Location">@SLocation.Name</label>
-                                                            }
-                                                        </form>
-                                                    </div>*@
-
-                                                       <div  class="fancy-btnbox">
-                                                        <select id="mySLocation" multiple="multiple" required=required name="mySLocation">
-                                                            @if (Model.SLocation != null)
-                                                            {
-                                                                foreach (var item in Model.SLocation)
-                                                                {
-                                                                    if (item.Name != null)
-                                                                    {
-                                                                        <option value="@item.ID">
-                                                                            @item.Name
-                                                                        </option>
-
-                                                                    }
+                                                                    <option data-SYearCode="@Model.SYear[i].Name" value="@Model.SYear[i].ID">@Model.SYear[i].Name </option>
                                                                 }
                                                             }
                                                         </select>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-lg-2 col-md-3 col-sm-6">
 
-                                                <div class="text-center">
-                                                    <button type="button" class="btn btn-primary" id="btnFilter">Submit</button>
+                                                <div class="col-md-3 col-xs-12">
+                                                    <div class="form-group">
+                                                        <label class="control-label">
+                                                            <label for="Custlist"> Customer List</label>
+                                                        </label>
+                                                        <select class="form-control" name="Custlist" id="ddlCustlist"> </select>
 
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-3 col-xs-12">
+                                                    <div id="SMonth" class="form-group">
+                                                        <label class="control-label">
+                                                            <label for="SMonth"> Months</label>
+                                                        </label>
+                                                        @*<div class="fancy-btnbox">
+                                                                <form class="dyd-shape">
+                                                                    <input type="checkbox" name="Month" class="design-checkbox" value="0" id="SMonth0" />
+                                                                    <label for="SMonth0">All</label>
+                                                                    @foreach (var SMonth in Model.SMonth)
+                                                                    {
+                                                                        var Month = "SMonth" + @SMonth.ID.ToString();
+
+                                                                        <input type="checkbox" name="SMonth" class="design-checkbox SMonth" value="@SMonth.ID" id="@Month" />
+                                                                        <label for="@Month">@SMonth.Name</label>
+                                                                    }
+                                                                </form>
+
+                                                            </div>*@
+                                                        <div class="fancy-btnbox">
+                                                            <select id="myMonths" multiple="multiple" required=required name="myMonths">
+                                                                @if (Model.SMonth != null)
+                                                                {
+                                                                    foreach (var item in Model.SMonth)
+                                                                    {
+                                                                        if (item.Name != null)
+                                                                        {
+                                                                            <option value="@item.ID">
+                                                                                @item.Name
+                                                                            </option>
+
+                                                                        }
+                                                                    }
+                                                                }
+                                                            </select>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-3 col-xs-12">
+                                                    <div id="SLocation" class="form-group">
+                                                        <label class="control-label">
+                                                            <label for="SLocation"> Sale Location</label>
+                                                        </label>
+                                                        @*<div class="fancy-btnbox">
+                                                                <form class="dyd-shape SLocation">
+
+                                                                    @foreach (var SLocation in Model.SLocation)
+                                                                    {
+                                                                        var Location = "SLocation" + @SLocation.ID.ToString();
+                                                                        <input type="checkbox" name="SLocation" class="design-checkbox" value="@SLocation.ID" id="@Location" />
+                                                                        <label for="@Location">@SLocation.Name</label>
+                                                                    }
+                                                                </form>
+                                                            </div>*@
+                                                        <div class="fancy-btnbox">
+                                                            <select id="mySLocation" multiple="multiple" required=required name="mySLocation">
+                                                                @if (Model.SLocation != null)
+                                                                {
+                                                                    foreach (var item in Model.SLocation)
+                                                                    {
+                                                                        if (item.Name != null)
+                                                                        {
+                                                                            <option value="@item.ID">
+                                                                                @item.Name
+                                                                            </option>
+
+                                                                        }
+                                                                    }
+                                                                }
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-2 col-md-3 col-sm-6">
+
+                                                    <div class="text-center">
+                                                        <button type="button" class="btn btn-primary" id="btnFilter"> Submit</button>
+
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
 
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="dash-box list-view">
-                        <div class="table-box">
-                            <div class="row">
-                                <div class="stock_scrollBody">
-                                    <table id="tblMarketingSummary" class="table table-fixed dataTable no-footer">
-                                        <thead class="bordertp">
-                                            <tr role="row" class="table-head">
-                                                <th class="tbnew">
-                                                    Company Name
-                                                </th>
-                                                <th class="tbnew">
-                                                    Sell Month
-                                                </th>
-                                                <th class="tbnew">
-                                                    No of Stone
-                                                </th>
-                                                <th class="tbnew">
-                                                    Total Weight
-                                                </th>
-                                                <th class="tbnew">
-                                                    Total Value
-                                                </th>
-                                                <th class="tbnew">
-                                                    Search
-                                                </th>
-                                                <th class="tbnew">
-                                                    Download
-                                                </th>
+                        <div class="dash-box list-view">
+                            <div class="table-box">
+                                <div class="row">
+                                    <div class="stock_scrollBody">
+                                        <table id="tblMarketingSummary" class="table table-fixed dataTable no-footer">
+                                            <thead class="bordertp">
+                                                <tr role="row" class="table-head">
+                                                    <th class="tbnew">
+                                                        Company Name
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        Sell Month
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        No of Stone
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        Total Weight
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        Total Value
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        Search
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        Download
+                                                    </th>
 
 
-                                            </tr>
-                                        </thead>
-                                        <tfoot>
-                                            <tr>
-                                                <th class="tbnew" style="background-color: #d6d5d5;">
-                                                    <label> @Resource.Total</label>
+                                                </tr>
+                                            </thead>
+                                            <tfoot>
+                                                <tr>
+                                                    <th class="tbnew" style="background-color: #d6d5d5;">
+                                                        <label> @Resource.Total </label>
 
-                                                </th>
-                                                <th class="tbnew" style="background-color: #d6d5d5;">
-                                                </th>
-                                                <th class="tbnew" style="background-color: #d6d5d5;">
+                                                    </th>
+                                                    <th class="tbnew" style="background-color: #d6d5d5;">
+                                                    </th>
+                                                    <th class="tbnew" style="background-color: #d6d5d5;">
 
-                                                </th>
-                                                <th class="tbnew" style="background-color: #d6d5d5;">
+                                                    </th>
+                                                    <th class="tbnew" style="background-color: #d6d5d5;">
 
-                                                </th>
-                                                <th class="tbnew" style="background-color: #d6d5d5;">
+                                                    </th>
+                                                    <th class="tbnew" style="background-color: #d6d5d5;">
 
-                                                </th>
-                                                <th class="tbnew" style="background-color: #d6d5d5;">
+                                                    </th>
+                                                    <th class="tbnew" style="background-color: #d6d5d5;">
 
-                                                </th>
-                                                <th class="tbnew" style="background-color: #d6d5d5;">
+                                                    </th>
+                                                    <th class="tbnew" style="background-color: #d6d5d5;">
 
-                                                </th>
-                                            </tr>
-                                        </tfoot>
-                                    </table>
+                                                    </th>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </section>
+                    </section>
+                </div>
             </div>
-        </div>
 
-        <div class="export-table">
-            <div class="row list-view">
-                <div class="customers-list-table">
-                    <div class="table-panel-box">
-                        <div class="customers-list-table">
-                            <div class="col-lg-12 col-sm-12 col-xs-12">
-                                <div class="table-panel">
-                                    <div class="panel-body paneltable">
+            <div class="export-table">
+                <div class="row list-view">
+                    <div class="customers-list-table">
+                        <div class="table-panel-box">
+                            <div class="customers-list-table">
+                                <div class="col-lg-12 col-sm-12 col-xs-12">
+                                    <div class="table-panel">
+                                        <div class="panel-body paneltable">
 
-                                        <table id="SearchTablePost1" class="table table-fixed dataTable no-footer" role="grid" aria-describedby="SearchTablePost_info">
-                                            <thead class="bordertp">
-                                                <tr role="row" class="table-head">
-                                                    <th class="tbnew dt-checkbox">
-                                                        <div class="btn-group">
-                                                            <input type="checkbox" id="checkAll" name="checkAll" class="group-checkable" value="checkAll">
-                                                        </div>
-                                                    </th>
-                                                    <th class="tbnew stock">
-                                                        <label for="Stock">@Resource.Stock</label>
-                                                    </th>
-                                                    <th class="tbnew">
-                                                        <label for="SalesLocation">@Resource.Location</label>
-                                                    </th>
-                                                    <th class="tbnew dt-V360">
-                                                        <slabel for="V360">@Resource.V360</slabel>
-                                                    </th>
-                                                    <th class="tbnew">
-                                                        <label for="Shape">@Resource.Shape</label>
-                                                    </th>
-                                                    <th class="tbnew dt-weight">
-                                                        <label for="Weight">@Resource.Weight</label>
-                                                    </th>
-                                                    <th class="tbnew">
-                                                        <label for="Color">@Resource.Color</label>
-                                                    </th>
-                                                    <th class="tbnew">
-                                                        <label for="Clarity">@Resource.Clarity</label>
-                                                    </th>
+                                            <table id="SearchTablePost1" class="table table-fixed dataTable no-footer" role="grid" aria-describedby="SearchTablePost_info">
+                                                <thead class="bordertp">
+                                                    <tr role="row" class="table-head">
+                                                        <th class="tbnew dt-checkbox">
+                                                            <div class="btn-group">
+                                                                <input type="checkbox" id="checkAll" name="checkAll" class="group-checkable" value="checkAll">
+                                                            </div>
+                                                        </th>
+                                                        <th class="tbnew stock">
+                                                            <label for="Stock">@Resource.Stock </label>
+                                                        </th>
+                                                        <th class="tbnew">
+                                                            <label for="SalesLocation">@Resource.Location </label>
+                                                        </th>
+                                                        <th class="tbnew dt-V360">
+                                                            <slabel for="V360">@Resource.V360 </slabel>
+                                                        </th>
+                                                        <th class="tbnew">
+                                                            <label for="Shape">@Resource.Shape </label>
+                                                        </th>
+                                                        <th class="tbnew dt-weight">
+                                                            <label for="Weight">@Resource.Weight </label>
+                                                        </th>
+                                                        <th class="tbnew">
+                                                            <label for="Color">@Resource.Color </label>
+                                                        </th>
+                                                        <th class="tbnew">
+                                                            <label for="Clarity">@Resource.Clarity </label>
+                                                        </th>
 
-                                                    <th class="tbnew">
-                                                        <label for="Cut">@Resource.Cut</label>
-                                                    </th>
-                                                    <th class="tbnew">
-                                                        <label for="Polish">@Resource.Polish</label>
-                                                    </th>
-                                                    <th class="tbnew">
-                                                        <label for="Symmetry">@Resource.Symmetry</label>
-                                                    </th>
-                                                    <th class="tbnew">
-                                                        <label for="Flora">@Resource.Flora</label>
-                                                    </th>
-                                                    <th class="tbnew lab">
-                                                        <label for="Lab">@Resource.Lab</label>
-                                                    </th>
-                                                    <th class="tbnew">
-                                                        <label for="RapPrice">@Resource.LIST</label>
-                                                    </th>
-                                                    <th class="tbnew">
-                                                        <label for="RapDisc___">@Resource.Discount</label>
-                                                    </th>
-                                                    <th class="tbnew" id="sl">
-                                                        <label for="Price____ct">@Resource.Price_ct</label>
-                                                    </th>
-                                                    <th class="tbnew">
-                                                        <label for="Amount">@Resource.LIST_AMOUNT</label>
-                                                    </th>
+                                                        <th class="tbnew">
+                                                            <label for="Cut">@Resource.Cut </label>
+                                                        </th>
+                                                        <th class="tbnew">
+                                                            <label for="Polish">@Resource.Polish </label>
+                                                        </th>
+                                                        <th class="tbnew">
+                                                            <label for="Symmetry">@Resource.Symmetry </label>
+                                                        </th>
+                                                        <th class="tbnew">
+                                                            <label for="Flora">@Resource.Flora </label>
+                                                        </th>
+                                                        <th class="tbnew lab">
+                                                            <label for="Lab">@Resource.Lab </label>
+                                                        </th>
+                                                        <th class="tbnew">
+                                                            <label for="RapPrice">@Resource.LIST </label>
+                                                        </th>
+                                                        <th class="tbnew">
+                                                            <label for="RapDisc___">@Resource.Discount </label>
+                                                        </th>
+                                                        <th class="tbnew" id="sl">
+                                                            <label for="Price____ct">@Resource.Price_ct </label>
+                                                        </th>
+                                                        <th class="tbnew">
+                                                            <label for="Amount">@Resource.LIST_AMOUNT </label>
+                                                        </th>
 
-                                                    <th class="tbnew">
-                                                        <label for="Certificate_">@Resource.CertificateNo</label>
-                                                    </th>
-                                                    <th class="tbnew">
-                                                        <label for="D_R">@Resource.DR</label>
-                                                    </th>
-                                                    <th class="tbnew">
-                                                        <label for="Table_">@Resource.Table</label>
-                                                    </th>
-                                                    <th class="tbnew">
-                                                        <label for="Depth_">@Resource.Depth</label>
-                                                    </th>
-                                                    <th class="tbnew">
-                                                        <label for="Diamentions">@Resource.Diamentions</label>
-                                                    </th>
-                                                    <th class="tbnew">
-                                                        <label for="Girdle">@Resource.Girdle</label>
-                                                    </th>
-                                                    <th class="tbnew">
-                                                        <label for="CrownHeight">@Resource.CrownHeight</label>
-                                                    </th>
-                                                    <th class="tbnew">
-                                                        <label for="CrownAngle">@Resource.CrownAngle</label>
-                                                    </th>
-                                                    <th class="tbnew">
-                                                        <label for="PavilionDepth">@Resource.PavilionDepth</label>
-                                                    </th>
-                                                    <th class="tbnew">
-                                                        <label for="PavilionAngle">@Resource.PavilionAngle</label>
-                                                    </th>
-                                                    <th class="tbnew">
-                                                        <label for="Starlength">@Resource.Starlength</label>
-                                                    </th>
-                                                    <th class="tbnew">
-                                                        <label for="LowerHalf">@Resource.LowerHalf</label>
-                                                    </th>
-                                                    <th class="tbnew">
-                                                        <label for="Girdle_">@Resource.Girdle_Per</label>
-                                                    </th>
-                                                    <th class="tbnew laser">
-                                                        <label for="Laser">@Resource.Laser</label>
-                                                    </th>
-                                                    <th class="tbnew">
-                                                        <label for="EC">@Resource.EC</label>
-                                                    </th>
-                                                    <th class="tbnew">
-                                                        <label for="Shade">@Resource.Shade</label>
-                                                    </th>
-                                                    <th class="tbnew">
-                                                        <label for="Milky">@Resource.Milky</label>
-                                                    </th>
-                                                    <th class="tbnew">
-                                                        <label for="TableBlack">@Resource.TableBlack</label>
-                                                    </th>
-                                                    <th class="tbnew">
-                                                        <label for="CentreBlack">@Resource.CentreBlack</label>
-                                                    </th>
-                                                    <th class="tbnew ha">
-                                                        <label for="H_A">@Resource.HA</label>
-                                                    </th>
-                                                    <th class="tbnew">
-                                                        <label for="Opens">@Resource.Opens</label>
-                                                    </th>
-                                                    <th class="tbnew">
-                                                        <label for="Keytosymbol">@Resource.Keytosymbol</label>
-                                                    </th>
-                                                    <th class="tbnew">
-                                                        <label for="GIAcomments">@Resource.GIAcomments</label>
-                                                    </th>
-                                                    <th class="tbnew">
-                                                        <label for="ReportDate">@Resource.ReportDate</label>
-                                                    </th>
+                                                        <th class="tbnew">
+                                                            <label for="Certificate_">@Resource.CertificateNo </label>
+                                                        </th>
+                                                        <th class="tbnew">
+                                                            <label for="D_R">@Resource.DR </label>
+                                                        </th>
+                                                        <th class="tbnew">
+                                                            <label for="Table_">@Resource.Table </label>
+                                                        </th>
+                                                        <th class="tbnew">
+                                                            <label for="Depth_">@Resource.Depth </label>
+                                                        </th>
+                                                        <th class="tbnew">
+                                                            <label for="Diamentions">@Resource.Diamentions </label>
+                                                        </th>
+                                                        <th class="tbnew">
+                                                            <label for="Girdle">@Resource.Girdle </label>
+                                                        </th>
+                                                        <th class="tbnew">
+                                                            <label for="CrownHeight">@Resource.CrownHeight </label>
+                                                        </th>
+                                                        <th class="tbnew">
+                                                            <label for="CrownAngle">@Resource.CrownAngle </label>
+                                                        </th>
+                                                        <th class="tbnew">
+                                                            <label for="PavilionDepth">@Resource.PavilionDepth </label>
+                                                        </th>
+                                                        <th class="tbnew">
+                                                            <label for="PavilionAngle">@Resource.PavilionAngle </label>
+                                                        </th>
+                                                        <th class="tbnew">
+                                                            <label for="Starlength">@Resource.Starlength </label>
+                                                        </th>
+                                                        <th class="tbnew">
+                                                            <label for="LowerHalf">@Resource.LowerHalf </label>
+                                                        </th>
+                                                        <th class="tbnew">
+                                                            <label for="Girdle_">@Resource.Girdle_Per </label>
+                                                        </th>
+                                                        <th class="tbnew laser">
+                                                            <label for="Laser">@Resource.Laser </label>
+                                                        </th>
+                                                        <th class="tbnew">
+                                                            <label for="EC">@Resource.EC </label>
+                                                        </th>
+                                                        <th class="tbnew">
+                                                            <label for="Shade">@Resource.Shade </label>
+                                                        </th>
+                                                        <th class="tbnew">
+                                                            <label for="Milky">@Resource.Milky </label>
+                                                        </th>
+                                                        <th class="tbnew">
+                                                            <label for="TableBlack">@Resource.TableBlack </label>
+                                                        </th>
+                                                        <th class="tbnew">
+                                                            <label for="CentreBlack">@Resource.CentreBlack </label>
+                                                        </th>
+                                                        <th class="tbnew ha">
+                                                            <label for="H_A">@Resource.HA </label>
+                                                        </th>
+                                                        <th class="tbnew">
+                                                            <label for="Opens">@Resource.Opens </label>
+                                                        </th>
+                                                        <th class="tbnew">
+                                                            <label for="Keytosymbol">@Resource.Keytosymbol </label>
+                                                        </th>
+                                                        <th class="tbnew">
+                                                            <label for="GIAcomments">@Resource.GIAcomments </label>
+                                                        </th>
+                                                        <th class="tbnew">
+                                                            <label for="ReportDate">@Resource.ReportDate </label>
+                                                        </th>
 
-                                                    <th class="tbnew Status">
-                                                        <label for="Status">@Resource.Status</label>
-                                                    </th>
-                                                    <th class="tbnew CompanyName">
-                                                        <label for="CompanyName">@Resource.Company_Name</label>
-                                                    </th>
-                                                    <th class="tbnew StoneOrigin">
-                                                        <label for="StoneOrigin">@Resource.Origin1</label>
-                                                    </th>
-                                                </tr>
-                                            </thead>
+                                                        <th class="tbnew Status">
+                                                            <label for="Status">@Resource.Status </label>
+                                                        </th>
+                                                        <th class="tbnew CompanyName">
+                                                            <label for="CompanyName">@Resource.Company_Name </label>
+                                                        </th>
+                                                        <th class="tbnew StoneOrigin">
+                                                            <label for="StoneOrigin">@Resource.Origin1 </label>
+                                                        </th>
+                                                    </tr>
+                                                </thead>
 
-                                        </table>
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -381,15 +377,15 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-</div>
+        </section>
+    </div>
+    @section script{
+        @Scripts.Render("~/bundles/DataTable/Script")
+        <script type="text/javascript" src="~/Scripts/custom/rbDataTable.js"></script>
+        <script type="text/javascript" src="~/Scripts/select2.min.js"></script>
+        <script type="text/javascript" src="~/Scripts/custom/Controller/CtrlMarketingBlueNile.js"></script>
 
-@section script{
-    @Scripts.Render("~/bundles/DataTable/Script")
-    <script type="text/javascript" src="~/Scripts/custom/rbDataTable.js"></script>
-    <script type="text/javascript" src="~/Scripts/select2.min.js"></script>
-    <script type="text/javascript" src="~/Scripts/custom/Controller/CtrlMarketingBlueNile.js"></script>
-
-    <script src="~/Scripts/bootstrap-multiselect.js"></script>
-}
+        <script src="~/Scripts/bootstrap-multiselect.js"></script>
+    }
+</body>
+</html>

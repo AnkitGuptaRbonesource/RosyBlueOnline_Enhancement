@@ -158,6 +158,8 @@
             e.preventDefault();
            
             LoadFilterData();
+           
+
         });
 
         $(document).on('click', 'a.btnSearch', function (e) {
@@ -172,6 +174,10 @@
                     var table = $('#SearchTablePost1').DataTable();
                     table.column(0).visible(false);  
                     uiApp.UnBlockUI();
+                    $('body,html').animate({
+                        scrollTop: $(document).height()             
+                    }, 500);
+
                 } else {
                     uiApp.Alert({ container: '#uiPanel1', message: "Details not found", type: "danger" });
                     uiApp.UnBlockUI();
@@ -669,14 +675,14 @@
             dtMarketingsummary.init({
                 src: '#tblMarketingSummary',
                 dataTable: {
-                    //deferLoading: 0,
-                    scrollX: "300px",
-                    scrollY: true,
+                    
+                    scrollY: "305px",
+                    scrollX: true,
+                    scrollCollapse: true,
                     paging: true,
                     destroy: true,
-                    processing: false,
                     serverSide: false,
-                    order: [[0, "desc"]],
+                    pageLength: 500, 
                     data: data,
                     columns: [
                         { data: "companyName", class: 'whspace' },
