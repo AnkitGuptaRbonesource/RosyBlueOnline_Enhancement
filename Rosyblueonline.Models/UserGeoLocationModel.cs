@@ -60,7 +60,8 @@ namespace Rosyblueonline.Models
         public int? AddCustomer { get; set; }
         public int? AddRoleRights { get; set; }
 
-         
+        public int? SellSummary { get; set; }
+
 
     }
 }

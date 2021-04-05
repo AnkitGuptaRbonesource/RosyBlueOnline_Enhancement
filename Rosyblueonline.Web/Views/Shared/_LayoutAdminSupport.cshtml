@@ -280,6 +280,10 @@
                                 {
                                     <li><a href="/Dashboard/StockSummary"><div class="img-icon"><i class="fa fa-diamond"></i></div> @Resource.Stock_Summary</a></li>
                                 }
+                                @if (objMenuAccess.SellSummary == 1)
+                                {
+                                    <li><a href="/Marketing/MarketingStockSummary"><div class="img-icon"><i class="fa fa-diamond"></i></div>Sell Summary</a></li>
+                                }
                                 @if (objMenuAccess.InventoryUpload == 1)
                                 {
                                     <li><a href="/Inventory/upload"><div class="img-icon"><i class="fa fa-eject"></i></div> @Resource.Inventory_Upload</a></li>

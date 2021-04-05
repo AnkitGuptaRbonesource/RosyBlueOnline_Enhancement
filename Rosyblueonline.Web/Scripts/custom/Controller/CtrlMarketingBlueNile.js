@@ -720,7 +720,7 @@
                             TotNoofstone += data[i].NoOfStone;
                             TotWeight += data[i].TotalWeight;
                             TotValue += data[i].TotalValue;
-                            TotLotnos += data[i].LotNoList;
+                            TotLotnos += data[i].LotNoList + ',';
 
                         }
 

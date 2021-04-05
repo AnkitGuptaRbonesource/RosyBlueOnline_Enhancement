@@ -961,7 +961,7 @@ namespace Rosyblueonline.ServiceProviders.Implementation
 
         public List<MenuMasterModel> MenuMasterDetails()
         {
-            List<MenuMasterModel> objLDM = this.uow.MenuMaster.Queryable().Where(x => x.IsActive == true && x.MenuId != 1 && x.MenuId != 2).ToList();
+            List<MenuMasterModel> objLDM = this.uow.MenuMaster.Queryable().Where(x => x.IsActive == true && x.MenuId != 1 && x.MenuId != 2).OrderBy(x=>x.Orderlist).ToList();
 
             return objLDM;
         }

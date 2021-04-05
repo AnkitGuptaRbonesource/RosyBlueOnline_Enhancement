@@ -15,13 +15,19 @@
             renderGrid(response.Result.OrderItemDetail);
             bindForm(response.Result.BillingAddress, response.Result.UserDetail, response.Result.OrderDetail, response.Result.Charges);
             if (response.Result.OrderDetail.orderStatus == 11 || response.Result.OrderDetail.orderStatus == 23) {
-                $('#btnRemoveItem').prop('disabled', 'disabled');
-                $('#btnCancel').prop('disabled', 'disabled');
-                $('#btnExecute').prop('disabled', 'disabled');
+                //$('#btnRemoveItem').prop('disabled', 'disabled');
+                //$('#btnCancel').prop('disabled', 'disabled');
+                //$('#btnExecute').prop('disabled', 'disabled');
+                $('#btnRemoveItem').hide();
+                $('#btnCancel').hide();
+                $('#btnExecute').hide();
             } else {
-                $('#btnRemoveItem').prop('disabled', '');
-                $('#btnCancel').prop('disabled', '');
-                $('#btnExecute').prop('disabled', '');
+                //$('#btnRemoveItem').prop('disabled', '');
+                //$('#btnCancel').prop('disabled', '');
+                //$('#btnExecute').prop('disabled', '');
+                $('#btnRemoveItem').show();
+                $('#btnCancel').show();
+                $('#btnExecute').show();
             }
         }, function (error) {
         });

@@ -13,6 +13,8 @@ namespace Rosyblueonline.Models
         public int MenuId { get; set; }
         public string MenuName { get; set; }
         public int MainMenuId { get; set; }
-        public bool IsActive { get; set; } 
+        public bool IsActive { get; set; }
+        public int Orderlist { get; set; }
+        
     }
 }

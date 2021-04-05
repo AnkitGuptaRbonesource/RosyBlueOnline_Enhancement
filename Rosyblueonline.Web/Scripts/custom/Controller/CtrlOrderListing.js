@@ -171,9 +171,9 @@
     function ListOfChecks(SelectedItems) {
         ListOrders = SelectedItems;
         if (SelectedItems.length > 1) {
-            $('#btnMergerOrder').show();
+          //  $('#btnMergerOrder').show();
         } else {
-            $('#btnMergerOrder').hide();
+           // $('#btnMergerOrder').hide();
         }
     }
 
