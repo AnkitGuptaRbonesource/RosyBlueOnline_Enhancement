@@ -715,7 +715,7 @@
                         }
                     ],
                     footerCallback: function (row, data, start, end, display) {
-                        var TotNoofstone = 0, TotWeight = 0, TotValue = 0, TotLotnos = 0;
+                        var TotNoofstone = 0, TotWeight = 0, TotValue = 0, TotLotnos = '';
                         for (var i = 0; i < data.length; i++) {
                             TotNoofstone += data[i].NoOfStone;
                             TotWeight += data[i].TotalWeight;

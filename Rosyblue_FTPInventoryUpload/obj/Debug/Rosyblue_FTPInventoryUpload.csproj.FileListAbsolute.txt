@@ -1,8 +1,3 @@
-D:\Ankit\REPO\HtmlDesign\RosyBlueOnline_Enhancement\Rosyblue_FTPInventoryUpload\obj\Debug\Rosyblue_FTPInventoryUpload.csprojAssemblyReference.cache
-D:\Ankit\REPO\HtmlDesign\RosyBlueOnline_Enhancement\Rosyblue_FTPInventoryUpload\obj\Debug\Rosyblue_FTPInventoryUpload.Form1.resources
-D:\Ankit\REPO\HtmlDesign\RosyBlueOnline_Enhancement\Rosyblue_FTPInventoryUpload\obj\Debug\Rosyblue_FTPInventoryUpload.Properties.Resources.resources
-D:\Ankit\REPO\HtmlDesign\RosyBlueOnline_Enhancement\Rosyblue_FTPInventoryUpload\obj\Debug\Rosyblue_FTPInventoryUpload.csproj.GenerateResource.cache
-D:\Ankit\REPO\HtmlDesign\RosyBlueOnline_Enhancement\Rosyblue_FTPInventoryUpload\obj\Debug\Rosyblue_FTPInventoryUpload.csproj.CoreCompileInputs.cache
 D:\Ankit\REPO\HtmlDesign\RosyBlueOnline_Enhancement\Rosyblue_FTPInventoryUpload\bin\Debug\Rosyblue_FTPInventoryUpload.exe.config
 D:\Ankit\REPO\HtmlDesign\RosyBlueOnline_Enhancement\Rosyblue_FTPInventoryUpload\bin\Debug\Rosyblue_FTPInventoryUpload.exe
 D:\Ankit\REPO\HtmlDesign\RosyBlueOnline_Enhancement\Rosyblue_FTPInventoryUpload\bin\Debug\Rosyblue_FTPInventoryUpload.pdb
@@ -27,6 +22,11 @@ D:\Ankit\REPO\HtmlDesign\RosyBlueOnline_Enhancement\Rosyblue_FTPInventoryUpload\
 D:\Ankit\REPO\HtmlDesign\RosyBlueOnline_Enhancement\Rosyblue_FTPInventoryUpload\bin\Debug\AutoMapper.xml
 D:\Ankit\REPO\HtmlDesign\RosyBlueOnline_Enhancement\Rosyblue_FTPInventoryUpload\bin\Debug\EPPlus.xml
 D:\Ankit\REPO\HtmlDesign\RosyBlueOnline_Enhancement\Rosyblue_FTPInventoryUpload\bin\Debug\EntityFramework.xml
+D:\Ankit\REPO\HtmlDesign\RosyBlueOnline_Enhancement\Rosyblue_FTPInventoryUpload\obj\Debug\Rosyblue_FTPInventoryUpload.csprojAssemblyReference.cache
+D:\Ankit\REPO\HtmlDesign\RosyBlueOnline_Enhancement\Rosyblue_FTPInventoryUpload\obj\Debug\Rosyblue_FTPInventoryUpload.Form1.resources
+D:\Ankit\REPO\HtmlDesign\RosyBlueOnline_Enhancement\Rosyblue_FTPInventoryUpload\obj\Debug\Rosyblue_FTPInventoryUpload.Properties.Resources.resources
+D:\Ankit\REPO\HtmlDesign\RosyBlueOnline_Enhancement\Rosyblue_FTPInventoryUpload\obj\Debug\Rosyblue_FTPInventoryUpload.csproj.GenerateResource.cache
+D:\Ankit\REPO\HtmlDesign\RosyBlueOnline_Enhancement\Rosyblue_FTPInventoryUpload\obj\Debug\Rosyblue_FTPInventoryUpload.csproj.CoreCompileInputs.cache
 D:\Ankit\REPO\HtmlDesign\RosyBlueOnline_Enhancement\Rosyblue_FTPInventoryUpload\obj\Debug\Rosyblue_FTPInventoryUpload.csproj.CopyComplete
 D:\Ankit\REPO\HtmlDesign\RosyBlueOnline_Enhancement\Rosyblue_FTPInventoryUpload\obj\Debug\Rosyblue_FTPInventoryUpload.exe
 D:\Ankit\REPO\HtmlDesign\RosyBlueOnline_Enhancement\Rosyblue_FTPInventoryUpload\obj\Debug\Rosyblue_FTPInventoryUpload.pdb

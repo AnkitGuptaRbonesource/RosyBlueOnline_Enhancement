@@ -52,18 +52,22 @@
     var RegisterEvent = function () {
         $('#btnSubmit').click(function (e) {
             e.preventDefault();
+            uiApp.BlockUI();
             var objFD = new FormData();
             if ($('#fuName').get(0).files.length != 0) {
                 objFD.append('file', $('#fuName').get(0).files[0]);
                 objSF.UploadStoneStatus(objFD).then(function (data) {
                     if (data.IsSuccess == true) {
                         LoadGrid(data.Result, "", $('input[name=optradio]:checked').val());
+                        uiApp.UnBlockUI();
                     }
                 }, function (error) {
-                    console.log(error);
+                        console.log(error);
+                        uiApp.UnBlockUI();
                 });
             } else {
                 LoadGrid("", $('#txtLotNo').val().trim(), $('input[name=optradio]:checked').val());
+                uiApp.UnBlockUI();
             }
         });
 
@@ -121,6 +125,12 @@
                             var TokenID = myApp.token().get();
                             request.setRequestHeader("TokenID", TokenID);
                             return request;
+                        },
+                        dataSrc: function (json) {
+                            //json = JSON.parse(json); 
+                           
+                            $("#StoneCounts").text("(" + json.data.length+")");
+                            return json.data;
                         }
                     },
                     columns: objColumns,
@@ -129,10 +139,12 @@
                 onCheckboxChange: function (obj) {
                 }
             });
+            uiApp.UnBlockUI();
         } else {
             dtSearchPanel.clearSelection();
             dtSearchPanel.getDataTable().draw();
-        }
+            uiApp.UnBlockUI();
+        } 
     }
 
     var ExcelDownload = function (FileName, LotNos, Type) {

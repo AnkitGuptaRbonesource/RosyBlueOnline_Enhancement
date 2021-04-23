@@ -118,6 +118,8 @@
         $('#btnBackMemo').click(function (e) {
             e.preventDefault();
             clearOnBack();
+          
+            
         });
 
         $('#btnSplitMemo').click(function (e) {
@@ -265,6 +267,7 @@
                             dtOrder.getDataTable().draw();
                             uiApp.Alert({ container: '#uiPanel1', message: "Memo cancelled successfully", type: "success" });
                             uiApp.UnBlockUI();
+                            clearOnBack();
                         } else {
                             uiApp.Alert({ container: '#uiPanel1', message: "Memo not cancelled", type: "error" });
                             uiApp.UnBlockUI();
@@ -717,7 +720,7 @@
 
 
     var ReadUrl = function () {
-
+        uiApp.BlockUI();
       //  alert($('#hfMemoQuery').val());
         var sPageURL = window.location.href;
 
@@ -736,14 +739,16 @@
 
                     //alert($('#hfIntIID').val());
                     //alert($('#hfOrdID').val());
-
+                    uiApp.UnBlockUI();
                 }
             }, function (error) {
+                    uiApp.UnBlockUI();
             });
 
         }
         else {
             BindMainTable(0);
+            uiApp.UnBlockUI();
         }
 
     }
@@ -769,6 +774,8 @@
         $('#secMemoItems').hide();
         $('#secGrid').show();
         $('#hfOrderID').val('');
+        location.reload();
+
     }
 
     var clearOrderInfo = function () {
@@ -834,6 +841,7 @@
         //table.clear().draw();
         //var dtOrderItem = null;
         dtOrderItem = new Datatable();
+
         var colStruct = new DataTableColumnStruct();
         if (dtOrderItem.getDataTable() == null || dtOrderItem.getDataTable() == undefined) {
 
@@ -844,17 +852,16 @@
                 searching: false,
                 dataTable: {
                     //deferLoading: 0,
-                    //scrollY: "500px",
-                    scrollY: "485px",
+                    scrollY: "400px",
                     scrollX: true,
-                    paging: false,
-                    destroy: true,
                     scrollCollapse: true,
+                    paging: false,
+                    destroy: true, 
                     pageLength: 200,
                     lengthMenu: [[10, 25, 50, 100, 200, 500000], [10, 25, 50, 100, 200, "All"]],
-                    order: [[1, "desc"]],
+                    order: [[2, "desc"]],
                     fixedColumns: {
-                        leftColumns: 2
+                        leftColumns: 2 
                     },
                     ajax: {
                         type: 'Post',
@@ -881,7 +888,15 @@
                 onLoadDataCompleted: function () {
                 }
             });
+           
+            //setTimeout(function () {
+            //  //  alert("Hello");
+                 
+            //    $('#SearchTablePost').DataTable().order([4, 'asc']).draw();
+            //}, 2000);
+
             uiApp.UnBlockUI();
+
         } else {
             dtOrderItem.clearSelection();
             dtOrderItem.getDataTable().draw();
@@ -910,7 +925,15 @@
             var NewOrderID = OrderID;
             if (data.IsSuccess == true) {
             // RenderOrderItems(data.Result);
-                 RenderOrderItems_New(data.Result, NewOrderID)
+                RenderOrderItems_New(data.Result, NewOrderID) 
+
+                //setTimeout(function () {
+                //    alert("Hello");
+                //  //  uiApp.BlockUI();
+                //    $('#SearchTablePost').DataTable().order([4, 'asc']).draw();
+                //}, 3000);
+
+
                 $('#secMemoItems').show();
                 $('#secGrid').hide();
                 if ($('#hfOStatus').val() == "Pending") {

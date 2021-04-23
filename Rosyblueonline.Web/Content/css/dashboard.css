@@ -1968,10 +1968,10 @@ a.sele-all {
 }
 
 #SearchTablePost_wrapper .table > tbody > tr > td, #SearchTablePost_wrapper .table > thead > tr > th {
-    text-align: center !important;
+    text-align: center !important; 
 }
 #SearchTablePost.table > tbody > tr > td {
-    padding: 6px;
+    padding: 6px; 
 }
 #SearchTablePost_wrapper .table > tbody > tr > td input[type=checkbox], #SearchTablePost_wrapper .table > thead > tr > th input[type=checkbox] {
     margin: 0 2px 0 5px !important
@@ -3387,3 +3387,12 @@ a.sele-all {
         display: block;
     }
 }
+/*
+.DTFC_LeftBodyLiner {  
+    height: 130% !important;
+}
+.DTFC_LeftBodyWrapper {
+    height: 130% !important;
+}*/
+
+
