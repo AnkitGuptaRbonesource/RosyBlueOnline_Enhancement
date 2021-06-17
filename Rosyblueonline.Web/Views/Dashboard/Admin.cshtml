@@ -1,88 +1,309 @@
 ﻿@{
     ViewBag.Title = "Admin";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
-        
+
 }
 @section header{
     @Styles.Render("~/bundles/DataTable/Style")
 }
-    <html  >
+<html>
 
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    </head>
-    <body>
-        <form style="display:none" id="frmPostSearch" method="post" action="/Inventory/SpecificSearchPost">
-            <input type="hidden" name="Query" id="hfQuery" value="" />
-        </form>
-        <div class="content-wrapper">
-            <section class="content">
-                <div class="dashtop-box">
-                    <div class="row r10">
-                        <div class="cl col-md-2 col-sm-6 col-xs-12">
-                            <div class="inbx inbx-one">
-                                <a href="#" class="info-boxtxt" id="ancMemoCount">
-                                    <span class="info-box-number">0</span>
-                                    <div class="info-box-text">@Resource.MEMO</div>
-                                    <span class="info-box-img"><img class="" src="../Content/img/dashboard-img7.svg"></span>
-                                </a>
-                            </div>
+</head>
+<body>
+    <form style="display:none" id="frmPostSearch" method="post" action="/Inventory/SpecificSearchPost">
+        <input type="hidden" name="Query" id="hfQuery" value="" />
+    </form>
+    <div class="content-wrapper">
+        <section class="content">
+            <div class="dashtop-box">
+                <div class="row r10">
+                    <div class="cl col-md-2 col-sm-6 col-xs-12">
+                        <div class="inbx inbx-one">
+                            <a href="#" class="info-boxtxt" id="ancMemoCount">
+                                <span class="info-box-number">0</span>
+                                <div class="info-box-text">@Resource.MEMO</div>
+                                <span class="info-box-img"><img class="" src="../Content/img/dashboard-img7.svg"></span>
+                            </a>
                         </div>
-                        <div class="cl col-md-2 col-sm-6 col-xs-12">
-                            <div class="inbx inbx-two">
-                                <a href="#" class="info-boxtxt" id="ancRoundCount">
-                                    <span class="info-box-number">0</span>
-                                    <span class="info-box-text">@Resource.ROUND_SHAPE</span>
-                                    <span class="info-box-img"><img class="" src="../Content/img/dashboard-img1.svg"></span>
-                                </a>
-                            </div>
+                    </div>
+                    <div class="cl col-md-2 col-sm-6 col-xs-12">
+                        <div class="inbx inbx-two">
+                            <a href="#" class="info-boxtxt" id="ancRoundCount">
+                                <span class="info-box-number">0</span>
+                                <span class="info-box-text">@Resource.ROUND_SHAPE</span>
+                                <span class="info-box-img"><img class="" src="../Content/img/dashboard-img1.svg"></span>
+                            </a>
                         </div>
-                        <div class="cl col-md-2 col-sm-6 col-xs-12">
-                            <div class="inbx inbx-three">
-                                <a href="#" class="info-boxtxt" id="ancFancyShapeCount">
-                                    <span class="info-box-number">0</span>
-                                    <div class="info-box-text">@Resource.FANCY_SHAPE</div>
-                                    <span class="info-box-img"><img class="" src="../Content/img/dashboard-img2.svg"></span>
-                                </a>
-                            </div>
+                    </div>
+                    <div class="cl col-md-2 col-sm-6 col-xs-12">
+                        <div class="inbx inbx-three">
+                            <a href="#" class="info-boxtxt" id="ancFancyShapeCount">
+                                <span class="info-box-number">0</span>
+                                <div class="info-box-text">@Resource.FANCY_SHAPE</div>
+                                <span class="info-box-img"><img class="" src="../Content/img/dashboard-img2.svg"></span>
+                            </a>
                         </div>
-                        <div class="cl col-md-2 col-sm-6 col-xs-12">
-                            <div class="inbx inbx-four">
-                                <a href="#" class="info-boxtxt" id="ancFancyColorCount">
-                                    <span class="info-box-number">0</span>
-                                    <span class="info-box-text">@Resource.FANCY_COLOR</span>
-                                    <span class="info-box-img"><img class="" src="../Content/img/dashboard-img3.svg"></span>
-                                </a>
-                            </div>
+                    </div>
+                    <div class="cl col-md-2 col-sm-6 col-xs-12">
+                        <div class="inbx inbx-four">
+                            <a href="#" class="info-boxtxt" id="ancFancyColorCount">
+                                <span class="info-box-number">0</span>
+                                <span class="info-box-text">@Resource.FANCY_COLOR</span>
+                                <span class="info-box-img"><img class="" src="../Content/img/dashboard-img3.svg"></span>
+                            </a>
                         </div>
-                        <div class="cl col-md-2 col-sm-6 col-xs-12">
-                            <div class="inbx inbx-five">
-                                <a href="#" class="info-boxtxt" id="ancBestDealCount">
-                                    <span class="info-box-number">0</span>
-                                    <div class="info-box-text">@Resource.BEST_DEAL</div>
-                                    <span class="info-box-img"><img class="" src="../Content/img/dashboard-img6.svg"></span>
-                                </a>
+                    </div>
+                    <div class="cl col-md-2 col-sm-6 col-xs-12">
+                        <div class="inbx inbx-five">
+                            <a href="#" class="info-boxtxt" id="ancBestDealCount">
+                                <span class="info-box-number">0</span>
+                                <div class="info-box-text">@Resource.BEST_DEAL</div>
+                                <span class="info-box-img"><img class="" src="../Content/img/dashboard-img6.svg"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="container col-lg-12">
+                        <div class="dash-box">
+                            <div class="dash-head">@Resource.Stock_Details</div>
+                            <div class="table-box">
+                                <table class="table table-striped table-fixed dataTable no-footer tabledash" id="tblStockDetails">
+                                    <thead>
+                                        <tr class="rserachrow">
+                                            <th>@Resource.Date</th>
+                                            <th>@Resource.Opening</th>
+                                            <th>@Resource.New_Upload</th>
+                                            <th>@Resource.MEMO</th>
+                                            <th>@Resource.Order_Pending</th>
+                                            <th>@Resource.Sold</th>
+                                            <th>@Resource.Closing</th>
+                                        </tr>
+                                    </thead>
+                                </table>
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="container col-lg-12">
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="dash-box list-view">
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a data-toggle="tab" href="#r_search">@Resource.Recent_Search</a></li>
+                                <li><a data-toggle="tab" href="#p_orderpending">@Resource.Pending_Order_Details</a></li>
+                                <li><a data-toggle="tab" href="#o_orderdetail">@Resource.View_Memo_Details</a></li>
+                                <li><a data-toggle="tab" href="#o_customerDemandDetail">@Resource.Customer_Demand</a></li>
+                                <li><a data-toggle="tab" href="#o_customerRecentdetail">@Resource.Customer_Recent_Search</a></li>
+                                <li><a data-toggle="tab" href="#o_customerActivityDetails">@Resource.Customer_Activity_Details</a></li>
+                            </ul>
+                            <div class="table-box">
+                                <div class="tab-content">
+                                    <div id="r_search" class="tab-pane fade in active">
+                                        <table class="table table-striped table-fixed dataTable no-footer tabledash" id="tblRecentSearch">
+                                            <thead>
+                                                <tr class="rserachrow">
+                                                    <th>@Resource.Date</th>
+                                                    <th>@Resource.Date</th>
+                                                    <th>@Resource.Total_Found</th>
+                                                    <th>@Resource.Criteria</th>
+                                                    <th>@Resource.Load_Result</th>
+                                                    <th>@Resource.Delete</th>
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                    <div id="s_search" class="tab-pane fade">
+                                        <table class="table table-striped table-panel tabledash" id="tblSavedSearch">
+                                            <thead>
+                                                <tr class="rserachrow">
+                                                    <th>@Resource.Date</th>
+                                                    <th>@Resource.Total Found</th>
+                                                    <th>@Resource.Criteria</th>
+                                                    <th>@Resource.Load Result</th>
+                                                    <th>@Resource.Delete</th>
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                    <div id="d_search" class="tab-pane fade">
+                                        <table class="table table-striped table-panel tabledash" id="tblDemandSearch">
+                                            <thead>
+                                                <tr class="rserachrow">
+                                                    <th>@Resource.Date</th>
+                                                    <th>@Resource.Total Found</th>
+                                                    <th>@Resource.Criteria</th>
+                                                    <th>@Resource.Load Result</th>
+                                                    <th>@Resource.Delete</th>
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                    <div id="p_orderpending" class="tab-pane fade">
+                                        <table id="tblPendingOrders" class="table table-striped">
+                                            <thead class="bordertp">
+                                                <tr role="row" class="table-head">
+                                                    <th class="tbnew">
+                                                        <label>#</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label>@Resource.Order_ID</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label>@Resource.Created_Date</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label>@Resource.Amount</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label>@Resource.Customer</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label>@Resource.Company</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label>@Resource.Actions</label>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                    <div id="o_orderdetail" class="tab-pane fade">
+                                        <table id="tblCompletedOrders" class="table table-striped">
+                                            <thead class="bordertp">
+                                                <tr role="row" class="table-head">
+                                                    <th class="tbnew">
+                                                        <label>#</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label>@Resource.Order_ID</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label>@Resource.Created_Date</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label>@Resource.Amount</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label>@Resource.Customer</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label>@Resource.Company</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label>@Resource.Actions</label>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                    <div id="o_customerDemandDetail" class="tab-pane fade">
+                                        <table id="tblCustomerDemandDetail" class="table table-striped">
+                                            <thead class="bordertp">
+                                                <tr role="row" class="table-head">
+                                                    <th class="tbnew">
+                                                        <label>@Resource.Name</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label>@Resource.Date</label>
+                                                    </th>
+                                                    @*<th class="tbnew">
+                                                            <label>@Resource.Total_Found</label>
+                                                        </th>*@
+                                                    <th class="tbnew">
+                                                        <label>@Resource.Demand_Name</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label>@Resource.Criteria</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label>@Resource.Load_Result</label>
+                                                    </th>
+
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                    <div id="o_customerRecentdetail" class="tab-pane fade">
+                                        <table id="tblCustomerRecentdetail" class="table table-striped">
+                                            <thead class="bordertp">
+                                                <tr role="row" class="table-head">
+                                                    <th class="tbnew">
+                                                        <label>@Resource.Customer_Name</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label>@Resource.Date</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label>@Resource.View</label>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                    <div id="o_customerActivityDetails" class="tab-pane fade">
+                                        <table id="tblCustomerActivityDetails" class="table table-striped">
+                                            <thead class="bordertp">
+                                                <tr role="row" class="table-head">
+                                                    <th class="tbnew">
+                                                        <label>@Resource.Customer_Name</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label>@Resource.Location</label>
+                                                    </th>
+
+                                                    <th class="tbnew">
+                                                        <label>@Resource.Last_Login</label>
+                                                    </th>
+
+                                                    <th class="tbnew">
+                                                        <label>@Resource.View</label>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="customers-list-table list-view">
                             <div class="dash-box">
-                                <div class="dash-head">@Resource.Stock_Details</div>
-                                <div class="table-box">
-                                    <table class="table table-striped table-fixed dataTable no-footer tabledash" id="tblStockDetails">
-                                        <thead>
-                                            <tr class="rserachrow">
-                                                <th>@Resource.Date</th>
-                                                <th>@Resource.Opening</th>
-                                                <th>@Resource.New_Upload</th>
-                                                <th>@Resource.MEMO</th>
-                                                <th>@Resource.Order_Pending</th>
-                                                <th>@Resource.Sold</th>
-                                                <th>@Resource.Closing</th>
+                                <div class="dash-head">@Resource.New_Customer</div>
+                                <div class="table-box paneltable">
+                                    <table id="tblNewCustomers" class="table table-striped table-fixed dataTable no-footer">
+                                        <thead class="bordertp">
+                                            <tr role="row" class="table-head">
+                                                <th class="tbnew">
+                                                    <label>@Resource.Date</label>
+                                                </th>
+                                                <th class="tbnew">
+                                                    <label>@Resource.Name</label>
+                                                </th>
+                                                <th class="tbnew">
+                                                    <label>@Resource.Company</label>
+                                                </th>
+                                                <th class="tbnew">
+                                                    <label>@Resource.Email</label>
+                                                </th>
+                                                <th class="tbnew text-center">
+                                                    <label>@Resource.View</label>
+                                                </th>
+                                                <th class="tbnew text-center">
+                                                    <label>@Resource.Approve</label>
+                                                </th>
+                                                <th class="tbnew text-center">
+                                                    <label>@Resource.Remove</label>
+                                                </th>
                                             </tr>
                                         </thead>
                                     </table>
@@ -90,516 +311,352 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="dash-box list-view">
-                                <ul class="nav nav-tabs">
-                                    <li class="active"><a data-toggle="tab" href="#r_search">@Resource.Recent_Search</a></li>
-                                    <li><a data-toggle="tab" href="#p_orderpending">@Resource.Pending_Order_Details</a></li>
-                                    <li><a data-toggle="tab" href="#o_orderdetail">@Resource.View_Memo_Details</a></li>
-                                    <li><a data-toggle="tab" href="#o_customerDemandDetail">@Resource.Customer_Demand</a></li>
-                                    <li><a data-toggle="tab" href="#o_customerRecentdetail">@Resource.Customer_Recent_Search</a></li>
-                                    <li><a data-toggle="tab" href="#o_customerActivityDetails">@Resource.Customer_Activity_Details</a></li>
-                                </ul>
-                                <div class="table-box">
-                                    <div class="tab-content">
-                                        <div id="r_search" class="tab-pane fade in active">
-                                            <table class="table table-striped table-fixed dataTable no-footer tabledash" id="tblRecentSearch">
-                                                <thead>
-                                                    <tr class="rserachrow">
-                                                        <th>@Resource.Date</th>
-                                                        <th>@Resource.Date</th>
-                                                        <th>@Resource.Total_Found</th>
-                                                        <th>@Resource.Criteria</th>
-                                                        <th>@Resource.Load_Result</th>
-                                                        <th>@Resource.Delete</th>
-                                                    </tr>
-                                                </thead>
-                                            </table>
-                                        </div>
-                                        <div id="s_search" class="tab-pane fade">
-                                            <table class="table table-striped table-panel tabledash" id="tblSavedSearch">
-                                                <thead>
-                                                    <tr class="rserachrow">
-                                                        <th>@Resource.Date</th>
-                                                        <th>@Resource.Total Found</th>
-                                                        <th>@Resource.Criteria</th>
-                                                        <th>@Resource.Load Result</th>
-                                                        <th>@Resource.Delete</th>
-                                                    </tr>
-                                                </thead>
-                                            </table>
-                                        </div>
-                                        <div id="d_search" class="tab-pane fade">
-                                            <table class="table table-striped table-panel tabledash" id="tblDemandSearch">
-                                                <thead>
-                                                    <tr class="rserachrow">
-                                                        <th>@Resource.Date</th>
-                                                        <th>@Resource.Total Found</th>
-                                                        <th>@Resource.Criteria</th>
-                                                        <th>@Resource.Load Result</th>
-                                                        <th>@Resource.Delete</th>
-                                                    </tr>
-                                                </thead>
-                                            </table>
-                                        </div>
-                                        <div id="p_orderpending" class="tab-pane fade">
-                                            <table id="tblPendingOrders" class="table table-striped">
-                                                <thead class="bordertp">
-                                                    <tr role="row" class="table-head">
-                                                        <th class="tbnew">
-                                                            <label>#</label>
-                                                        </th>
-                                                        <th class="tbnew">
-                                                            <label>@Resource.Order_ID</label>
-                                                        </th>
-                                                        <th class="tbnew">
-                                                            <label>@Resource.Created_Date</label>
-                                                        </th>
-                                                        <th class="tbnew">
-                                                            <label>@Resource.Amount</label>
-                                                        </th>
-                                                        <th class="tbnew">
-                                                            <label>@Resource.Customer</label>
-                                                        </th>
-                                                        <th class="tbnew">
-                                                            <label>@Resource.Company</label>
-                                                        </th>
-                                                        <th class="tbnew">
-                                                            <label>@Resource.Actions</label>
-                                                        </th>
-                                                    </tr>
-                                                </thead>
-                                            </table>
-                                        </div>
-                                        <div id="o_orderdetail" class="tab-pane fade">
-                                            <table id="tblCompletedOrders" class="table table-striped">
-                                                <thead class="bordertp">
-                                                    <tr role="row" class="table-head">
-                                                        <th class="tbnew">
-                                                            <label>#</label>
-                                                        </th>
-                                                        <th class="tbnew">
-                                                            <label>@Resource.Order_ID</label>
-                                                        </th>
-                                                        <th class="tbnew">
-                                                            <label>@Resource.Created_Date</label>
-                                                        </th>
-                                                        <th class="tbnew">
-                                                            <label>@Resource.Amount</label>
-                                                        </th>
-                                                        <th class="tbnew">
-                                                            <label>@Resource.Customer</label>
-                                                        </th>
-                                                        <th class="tbnew">
-                                                            <label>@Resource.Company</label>
-                                                        </th>
-                                                        <th class="tbnew">
-                                                            <label>@Resource.Actions</label>
-                                                        </th>
-                                                    </tr>
-                                                </thead>
-                                            </table>
-                                        </div>
-                                        <div id="o_customerDemandDetail" class="tab-pane fade">
-                                            <table id="tblCustomerDemandDetail" class="table table-striped">
-                                                <thead class="bordertp">
-                                                    <tr role="row" class="table-head">
-                                                        <th class="tbnew">
-                                                            <label>@Resource.Name</label>
-                                                        </th>
-                                                        <th class="tbnew">
-                                                            <label>@Resource.Date</label>
-                                                        </th>
-                                                        @*<th class="tbnew">
-                                <label>@Resource.Total_Found</label>
-                            </th>*@
-                                                        <th class="tbnew">
-                                                            <label>@Resource.Demand_Name</label>
-                                                        </th>
-                                                        <th class="tbnew">
-                                                            <label>@Resource.Criteria</label>
-                                                        </th>
-                                                        <th class="tbnew">
-                                                            <label>@Resource.Load_Result</label>
-                                                        </th>
-
-                                                    </tr>
-                                                </thead>
-                                            </table>
-                                        </div>
-                                        <div id="o_customerRecentdetail" class="tab-pane fade">
-                                            <table id="tblCustomerRecentdetail" class="table table-striped">
-                                                <thead class="bordertp">
-                                                    <tr role="row" class="table-head">
-                                                        <th class="tbnew">
-                                                            <label>@Resource.Customer_Name</label>
-                                                        </th>
-                                                        <th class="tbnew">
-                                                            <label>@Resource.Date</label>
-                                                        </th>
-                                                        <th class="tbnew">
-                                                            <label>@Resource.View</label>
-                                                        </th>
-                                                    </tr>
-                                                </thead>
-                                            </table>
-                                        </div>
-                                        <div id="o_customerActivityDetails" class="tab-pane fade">
-                                            <table id="tblCustomerActivityDetails" class="table table-striped">
-                                                <thead class="bordertp">
-                                                    <tr role="row" class="table-head">
-                                                        <th class="tbnew">
-                                                            <label>@Resource.Customer_Name</label>
-                                                        </th>
-                                                        <th class="tbnew">
-                                                            <label>@Resource.Location</label>
-                                                        </th>
-
-                                                        <th class="tbnew">
-                                                            <label>@Resource.Last_Login</label>
-                                                        </th>
-
-                                                        <th class="tbnew">
-                                                            <label>@Resource.View</label>
-                                                        </th>
-                                                    </tr>
-                                                </thead>
-                                            </table>
-                                        </div>
-
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="customers-list-table list-view">
-                                <div class="dash-box">
-                                    <div class="dash-head">@Resource.New_Customer</div>
-                                    <div class="table-box paneltable">
-                                        <table id="tblNewCustomers" class="table table-striped table-fixed dataTable no-footer">
-                                            <thead class="bordertp">
-                                                <tr role="row" class="table-head">
-                                                    <th class="tbnew">
-                                                        <label>@Resource.Date</label>
-                                                    </th>
-                                                    <th class="tbnew">
-                                                        <label>@Resource.Name</label>
-                                                    </th>
-                                                    <th class="tbnew">
-                                                        <label>@Resource.Company</label>
-                                                    </th>
-                                                    <th class="tbnew">
-                                                        <label>@Resource.Email</label>
-                                                    </th>
-                                                    <th class="tbnew text-center">
-                                                        <label>@Resource.View</label>
-                                                    </th>
-                                                    <th class="tbnew text-center">
-                                                        <label>@Resource.Approve</label>
-                                                    </th>
-                                                    <th class="tbnew text-center">
-                                                        <label>@Resource.Remove</label>
-                                                    </th>
-                                                </tr>
-                                            </thead>
-                                        </table>
-                                    </div>
-                                </div>
-                        </div>
-                        </div>
-                    </div>
                 </div>
-                    @*@Html.Partial("~/Views/Shared/_PartialStockSummary.cshtml", model: 1)*@
-</section>
-
-
-        </div>
-
-
-
-        <div id="Modal-UserActivityLog" class="modal fade" role="dialog">
-            <div class="modal-dialog modal-lg">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <a href="#" class="close" data-dismiss="modal"> &times;</a>
-                        <h4 class="modal-title">@Resource.View_Customer_Activity_Log</h4>
-                    </div>
-                    <div class="modal-body">
-                        <table class="table table-striped table-fixed dataTable no-footer tabledash" id="tblCustomerLogData">
-                            <thead>
-                                <tr class="rserachrow">
-                                    <th>@Resource.ActionName</th>
-                                    <th>@Resource.ActionDetails</th>
-                                    <th>@Resource.CreatedOn</th>
-
-                                </tr>
-                            </thead>
-                        </table>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">@Resource.Close</button>
-                    </div>
-                </div>
-
             </div>
-        </div>
+            @*@Html.Partial("~/Views/Shared/_PartialStockSummary.cshtml", model: 1)*@
+        </section>
+
+
+    </div>
 
 
 
-        <div id="dashboard-ViewCustomer" class="modal fade" role="dialog">
-            <div class="modal-dialog modal-lg">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <a href="#" class="close" data-dismiss="modal"> &times;</a>
-                        <h4 class="modal-title">@Resource.View_Customer_Details</h4>
-                    </div>
-                    <div class="modal-body" id="pnlViewCustomer">
-
-                    </div>
-                    <div class="modal-footer">
-                        <input type="hidden" name="" id="hfCustomerID" value="" />
-                        <button type="button" class="btn btn-info" id="btnPopUpApprove">@Resource.Approve</button>
-                        <button type="button" class="btn btn-danger" id="btnPopUpReject">@Resource.Reject</button>
-                        <button type="button" class="btn btn-default" data-dismiss="modal">@Resource.Close</button>
-                    </div>
+    <div id="Modal-UserActivityLog" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <a href="#" class="close" data-dismiss="modal"> &times;</a>
+                    <h4 class="modal-title">@Resource.View_Customer_Activity_Log</h4>
                 </div>
+                <div class="modal-body">
+                    <table class="table table-striped table-fixed dataTable no-footer tabledash" id="tblCustomerLogData">
+                        <thead>
+                            <tr class="rserachrow">
+                                <th>@Resource.ActionName</th>
+                                <th>@Resource.ActionDetails</th>
+                                <th>@Resource.CreatedOn</th>
 
-            </div>
-        </div>
-
-        <div id="dashboard-ViewRecentSearch" class="modal fade" role="dialog">
-            <div class="modal-dialog modal-lg">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <a href="#" class="close" data-dismiss="modal"> &times;</a>
-                        <h4 class="modal-title">@Resource.View_Customer_Recent_Searches</h4>
-                    </div>
-                    <div class="modal-body">
-                        <table class="table table-striped table-fixed dataTable no-footer tabledash" id="tblCustomerRecentSearchResult">
-                            <thead>
-                                <tr class="rserachrow">
-                                    <th>@Resource.Date</th>
-                                    <th>@Resource.Total Found</th>
-                                    <th>@Resource.Criteria</th>
-                                    <th>@Resource.Load Result</th>
-                                    <th>@Resource.Delete</th>
-                                </tr>
-                            </thead>
-                        </table>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">@Resource.Close</button>
-                    </div>
+                            </tr>
+                        </thead>
+                    </table>
                 </div>
-
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">@Resource.Close</button>
+                </div>
             </div>
+
         </div>
-
-    </body>
-
-    </html>
-    @section script{
-        @Scripts.Render("~/bundles/DataTable/Script")
-        <script id="tmpCustomer" type="text/x-jquery-tmpl">
-            <table class="table table-striped">
-                <tbody>
-                    <tr class="recentSearch">
-                        <td>
-                            <label class="control-label"><label for="Email_Address">@Resource.Email_Address</label></label>
-                        </td>
-                        <td>
-                            <label class="control-label no-bold ng-binding">
-                                ${emailId}
-                            </label>
-                        </td>
-                        <td>
-                            <label class="control-label"><label for="Address_Line_2">@Resource.Address_Line_2</label></label>
-                        </td>
-                        <td>
-                            <label class="control-label no-bold ng-binding"> ${address01}</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label class="control-label"><label for="Customer_Name_">@Resource.Customer_Name </label></label>
-                        </td>
-                        <td>
-                            <label class="control-label no-bold ng-binding">
-                                ${firstName} ${lastName}
-                            </label>
-                        </td>
-                        <td>
-                            <label class="control-label"><label for="City">@Resource.City</label></label>
-                        </td>
-                        <td>
-                            <label class="control-label no-bold ng-binding">${cityName}</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label class="control-label"><label for="Company_Name">@Resource.Company_Name</label></label>
-                        </td>
-                        <td>
-                            <label class="control-label no-bold ng-binding">
-                                ${companyName}
-                            </label>
-                        </td>
-                        <td>
-                            <label class="control-label"><label for="Zip_Code">@Resource.Zip_Code</label></label>
-                        </td>
-                        <td>
-                            <label class="control-label no-bold ng-binding">${zipCode}</label>
-                        </td>
-
-                    </tr>
-                    <tr>
-                        <td>
-                            <label class="control-label"><label for="Type">@Resource.Type</label></label>
-                        </td>
-                        <td>
-                            <label class="control-label no-bold">
-                                {{if isManufacturer == true}}
-                                Manufacturer
-                                {{/if}}
-                                {{if isWholeSaler == true}}
-                                WholeSaler
-                                {{/if}}
-                                {{if isRetailer == true}}
-                                Retailer
-                                {{/if}}
-                                {{if isOther == true}}
-                                ${otherType}
-                                {{/if}}
-                            </label>
-                        </td>
-                        <td>
-                            <label class="control-label"><label for="Phone_1">@Resource.Phone_1</label></label>
-                        </td>
-                        <td>
-                            <label class="control-label no-bold ng-binding"> ${phoneCode01} - ${phone01} </label>
-                        </td>
-
-                    </tr>
-                    <tr>
-                        <td>
-                            <label class="control-label"><label for="Bank_Name">@Resource.Bank_Name</label></label>
-                        </td>
-                        <td>
-                            <label class="control-label no-bold ng-binding">
-                                ${bankName}
-                            </label>
-                        </td>
-                        <td>
-                            <label class="control-label"><label for="Phone_2">@Resource.Phone_2</label></label>
-                        </td>
-                        <td>
-                            <label class="control-label no-bold ng-binding"> ${phoneCode02} - ${phone02}</label>
-                        </td>
-
-                    </tr>
-                    <tr>
-                        <td>
-                            <label class="control-label"><label for="Mobile">@Resource.Mobile</label></label>
-                        </td>
-                        <td>
-                            <label class="control-label no-bold ng-binding">${mobile}</label>
-                        </td>
-                        <td>
-                            <label class="control-label"><label for="Branch_Name">@Resource.Branch_Name</label></label>
-                        </td>
-                        <td>
-                            <label class="control-label no-bold ng-binding">
-                                ${branchName}
-                            </label>
-                        </td>
-
-                    </tr>
-                    <tr>
-                        <td>
-                            <label class="control-label"><label for="Branch_Address">@Resource.Branch_Address</label></label>
-                        </td>
-                        <td>
-                            <label class="control-label no-bold ng-binding">
-                                ${branchAddress}
-                            </label>
-                        </td>
-                        <td>
-                            <label class="control-label"><label for="Fax">@Resource.Fax</label></label>
-                        </td>
-                        <td>
-                            <label class="control-label no-bold ng-binding">
-                                ${fax01}
-                            </label>
-                        </td>
-
-                    </tr>
-                    <tr>
-
-                        <td>
-                            <label class="control-label"><label for="Account_Number">@Resource.Account_Number</label></label>
-                        </td>
-                        <td>
-                            <label class="control-label no-bold ng-binding">
-                                ${accNumber}
-                            </label>
-                        </td>
-                        <td>
-                            <label class="control-label"><label for="Website">@Resource.Website</label></label>
-                        </td>
-                        <td>
-                            <label class="control-label no-bold ng-binding"> ${website}</label>
-                        </td>
-
-                    </tr>
-                    <tr>
-                        <td>
-                            <label class="control-label"><label for="Address_Line_1">@Resource.Address_Line_1</label></label>
-                        </td>
-                        <td>
-                            <label class="control-label no-bold ng-binding">
-                                ${address01}
-                            </label>
-                        </td>
-                        <td>
-                            <label class="control-label"><label for="Reference_Name">@Resource.Reference_Name</label></label>
-                        </td>
-                        <td>
-                            <label class="control-label no-bold ng-binding">@Resource.NA</label>
-                        </td>
+    </div>
 
 
-                    </tr>
-                    <tr>
 
-                        <td>
-                            <label class="control-label"><label for="Country">@Resource.Country</label></label>
-                        </td>
-                        <td>
-                            <label class="control-label no-bold ng-binding">${countryName}</label>
-                        </td>
-                        <td>
-                            <label class="control-label"><label for="State">@Resource.State</label></label>
-                        </td>
-                        <td>
-                            <label class="control-label no-bold ng-binding">${stateName}</label>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </script>
-        <script type="text/javascript" src="~/Scripts/custom/rbDataTable.js"></script>
-        <script type="text/javascript" src="~/Scripts/custom/Service/ServiceMethods.js"></script>
-        @*<script type="text/javascript" src="~/Scripts/custom/Controller/ModuleStockSummary.js"></script>*@
-        <script type="text/javascript" src="~/Scripts/custom/Controller/CtrlAdminDashboard.js"></script>
+    <div id="dashboard-ViewCustomer" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <a href="#" class="close" data-dismiss="modal"> &times;</a>
+                    <h4 class="modal-title">@Resource.View_Customer_Details</h4>
+                </div>
+                <div class="modal-body" id="pnlViewCustomer">
 
-          
-    }
+                </div>
+                <div class="modal-footer">
+                    <input type="hidden" name="" id="hfCustomerID" value="" />
+                    <button type="button" class="btn btn-info" id="btnPopUpApprove">@Resource.Approve</button>
+                    <button type="button" class="btn btn-danger" id="btnPopUpReject">@Resource.Reject</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">@Resource.Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="dashboard-ViewRecentSearch" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <a href="#" class="close" data-dismiss="modal"> &times;</a>
+                    <h4 class="modal-title">@Resource.View_Customer_Recent_Searches</h4>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-striped table-fixed dataTable no-footer tabledash" id="tblCustomerRecentSearchResult">
+                        <thead>
+                            <tr class="rserachrow">
+                                <th>@Resource.Date</th>
+                                <th>@Resource.Total Found</th>
+                                <th>@Resource.Criteria</th>
+                                <th>@Resource.Load Result</th>
+                                <th>@Resource.Delete</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">@Resource.Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
+@section script{
+    @Scripts.Render("~/bundles/DataTable/Script")
+    <script id="tmpCustomer" type="text/x-jquery-tmpl">
+        <table class="table table-striped">
+            <tbody>
+                <tr class="recentSearch">
+                    <td>
+                        <label class="control-label"><label for="Email_Address">@Resource.Email_Address</label></label>
+                    </td>
+                    <td>
+                        <label class="control-label no-bold ng-binding">
+                            ${emailId}
+                        </label>
+                    </td>
+                    <td>
+                        <label class="control-label"><label for="Address_Line_2">@Resource.Address_Line_2</label></label>
+                    </td>
+                    <td>
+                        <label class="control-label no-bold ng-binding"> ${address01}</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="control-label"><label for="Customer_Name_">@Resource.Customer_Name </label></label>
+                    </td>
+                    <td>
+                        <label class="control-label no-bold ng-binding">
+                            ${firstName} ${lastName}
+                        </label>
+                    </td>
+                    <td>
+                        <label class="control-label"><label for="City">@Resource.City</label></label>
+                    </td>
+                    <td>
+                        <label class="control-label no-bold ng-binding">${cityName}</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="control-label"><label for="Company_Name">@Resource.Company_Name</label></label>
+                    </td>
+                    <td>
+                        <label class="control-label no-bold ng-binding">
+                            ${companyName}
+                        </label>
+                    </td>
+                    <td>
+                        <label class="control-label"><label for="Zip_Code">@Resource.Zip_Code</label></label>
+                    </td>
+                    <td>
+                        <label class="control-label no-bold ng-binding">${zipCode}</label>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <label class="control-label"><label for="Type">@Resource.Type</label></label>
+                    </td>
+                    <td>
+                        <label class="control-label no-bold">
+                            {{if isManufacturer == true}}
+                            Manufacturer
+                            {{/if}}
+                            {{if isWholeSaler == true}}
+                            WholeSaler
+                            {{/if}}
+                            {{if isRetailer == true}}
+                            Retailer
+                            {{/if}}
+                            {{if isOther == true}}
+                            ${otherType}
+                            {{/if}}
+                        </label>
+                    </td>
+                    <td>
+                        <label class="control-label"><label for="Phone_1">@Resource.Phone_1</label></label>
+                    </td>
+                    <td>
+                        <label class="control-label no-bold ng-binding"> ${phoneCode01} - ${phone01} </label>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <label class="control-label"><label for="Bank_Name">@Resource.Bank_Name</label></label>
+                    </td>
+                    <td>
+                        <label class="control-label no-bold ng-binding">
+                            ${bankName}
+                        </label>
+                    </td>
+                    <td>
+                        <label class="control-label"><label for="Phone_2">@Resource.Phone_2</label></label>
+                    </td>
+                    <td>
+                        <label class="control-label no-bold ng-binding"> ${phoneCode02} - ${phone02}</label>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <label class="control-label"><label for="Mobile">@Resource.Mobile</label></label>
+                    </td>
+                    <td>
+                        <label class="control-label no-bold ng-binding">${mobile}</label>
+                    </td>
+                    <td>
+                        <label class="control-label"><label for="Branch_Name">@Resource.Branch_Name</label></label>
+                    </td>
+                    <td>
+                        <label class="control-label no-bold ng-binding">
+                            ${branchName}
+                        </label>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <label class="control-label"><label for="Branch_Address">@Resource.Branch_Address</label></label>
+                    </td>
+                    <td>
+                        <label class="control-label no-bold ng-binding">
+                            ${branchAddress}
+                        </label>
+                    </td>
+                    <td>
+                        <label class="control-label"><label for="Fax">@Resource.Fax</label></label>
+                    </td>
+                    <td>
+                        <label class="control-label no-bold ng-binding">
+                            ${fax01}
+                        </label>
+                    </td>
+
+                </tr>
+                <tr>
+
+                    <td>
+                        <label class="control-label"><label for="Account_Number">@Resource.Account_Number</label></label>
+                    </td>
+                    <td>
+                        <label class="control-label no-bold ng-binding">
+                            ${accNumber}
+                        </label>
+                    </td>
+                    <td>
+                        <label class="control-label"><label for="Website">@Resource.Website</label></label>
+                    </td>
+                    <td>
+                        <label class="control-label no-bold ng-binding"> ${website}</label>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <label class="control-label"><label for="Address_Line_1">@Resource.Address_Line_1</label></label>
+                    </td>
+                    <td>
+                        <label class="control-label no-bold ng-binding">
+                            ${address01}
+                        </label>
+                    </td>
+                    <td>
+                        <label class="control-label"><label for="Reference_Name">@Resource.Reference_Name</label></label>
+                    </td>
+                    <td>
+                        <label class="control-label no-bold ng-binding">@Resource.NA</label>
+                    </td>
+
+
+                </tr>
+                <tr>
+
+                    <td>
+                        <label class="control-label"><label for="Country">@Resource.Country</label></label>
+                    </td>
+                    <td>
+                        <label class="control-label no-bold ng-binding">${countryName}</label>
+                    </td>
+                    <td>
+                        <label class="control-label"><label for="State">@Resource.State</label></label>
+                    </td>
+                    <td>
+                        <label class="control-label no-bold ng-binding">${stateName}</label>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </script>
+    <script type="text/javascript" src="~/Scripts/custom/rbDataTable.js"></script>
+    @*<script type="text/javascript" src="~/Scripts/custom/Service/ServiceMethods.js"></script>*@
+    @*<script type="text/javascript" src="~/Scripts/custom/Controller/ModuleStockSummary.js"></script>*@
+    @*<script type="text/javascript" src="~/Scripts/custom/Controller/CtrlAdminDashboard.js"></script>*@
+
+    <script type="text/javascript" language="javascript">
+        var versionUpdate = (new Date()).getDate();
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = "/Scripts/custom/Service/ServiceMethods.js?v=" + versionUpdate;
+        document.body.appendChild(script);
+    </script>
+
+    <script type="text/javascript" language="javascript">
+        var versionUpdate = (new Date()).getDate();
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = "/Scripts/custom/Controller/CtrlAdminDashboard.js?v=" + versionUpdate;
+        document.body.appendChild(script);
+    </script>
+    <script>
+
+        var appSetting = '@(System.Configuration.ConfigurationManager.AppSettings["WebsiteInspectAccess"].ToString())';
+    //    alert(appSetting);
+        var InspectBlock = true;
+        var array = appSetting.split(",");
+        $.each(array, function (i) {
+            if (array[i] == $("#hfUserIds").val()) {
+                InspectBlock = false;
+            }
+
+        });
+
+        //alert($("#hfUserIds").val());
+        if (InspectBlock == true) {
+            document.addEventListener('contextmenu', event => event.preventDefault());
+            document.onkeydown = function (e) {
+                if (event.keyCode == 123) {
+                    return false;
+                }
+
+                if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+                    return false;
+                }
+                if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+                    return false;
+                }
+                if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+                    return false;
+                }
+                if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+                    return false;
+                }
+                if (e.ctrlKey && e.keyCode == 'S'.charCodeAt(0)) {
+                    return false;
+                }
+
+            }
+        }
+
+
+    </script>
+
+}
 
 

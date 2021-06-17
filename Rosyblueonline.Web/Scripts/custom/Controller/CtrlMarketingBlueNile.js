@@ -13,6 +13,7 @@
 
         SetValidation();
         LoadGrid();
+        
 
         $('#ddlCustlist').select2({
             ajax: {
@@ -746,7 +747,22 @@
     };
 
 
+    var CheckPageAccess = function (MenuName) {
+        objOSvc.PageAccessCheck(MenuName).then(function (data) {
+            if (data.IsSuccess == true) {
 
+            } else {  
+                $('#Modal-AccessDenied').modal('show');
+                uiApp.Alert({ container: '#uiPanel1', message: "You don't have a access of this page", type: "danger" });
+                setTimeout(function () {
+                    location.href = '/Home/Index';
+                }, 1000);
+            }
+        }, function (error) {
+            uiApp.Alert({ container: '#uiPanel1', message: "Some error occured", type: "danger" });
+        });
+
+    }
 
     return {
         init: function () {

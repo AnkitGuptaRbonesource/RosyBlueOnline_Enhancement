@@ -9,92 +9,92 @@
 <div class="content-wrapper">
     <section class="content">
         <div id="uiPanel1"></div>
-            <div class="row">
-                <div class="col-lg-12 col-sm-12 col-xs-12 header-padding">
-                    <div class="heading-panel">
-                        <div class="panel-stonebox">
-                            <div class="heading-title">
-                                <h2>@Resource.My_Order</h2>
-                            </div>
+        <div class="row">
+            <div class="col-lg-12 col-sm-12 col-xs-12 header-padding">
+                <div class="heading-panel">
+                    <div class="panel-stonebox">
+                        <div class="heading-title">
+                            <h2>@Resource.My_Order</h2>
                         </div>
-                        <div class="form-inline top-select">
-                            @if (objToken != null && (objToken.RoleID == 8 || objToken.RoleID == 9 || objToken.RoleID == 2))
-                            {
+                    </div>
+                    <div class="form-inline top-select">
+                        @if (objToken != null && (objToken.RoleID == 8 || objToken.RoleID == 9 || objToken.RoleID == 2))
+                        {
 
-                                @*<button class="order-btn" id="btnMergerOrder" style="display:none;">@Resource.Merge_Order</button>*@
+                            @*<button class="order-btn" id="btnMergerOrder" style="display:none;">@Resource.Merge_Order</button>*@
+                        }
+                        @{
+                            if (objToken != null && (objToken.RoleID == 8 || objToken.RoleID == 9 || objToken.RoleID == 2))
+                            {
+                                <div class="form-group">
+                                    <label>
+                                        @Resource.Customer
+                                    </label>
+                                    <select id="ddlCustomer" name="CustomerID" class="form-control"></select>
+                                    <button class="btn btn-primary btn-sm" id="btnClearCustomer"><i class="fa fa-times"></i></button>
+                                </div>
                             }
-                            @{
-                                if (objToken != null && (objToken.RoleID == 8 || objToken.RoleID == 9 || objToken.RoleID == 2))
-                                {
-                                    <div class="form-group">
-                                        <label>
-                                            @Resource.Customer
-                                        </label>
-                                        <select id="ddlCustomer" name="CustomerID" class="form-control"></select>
-                                        <button class="btn btn-primary btn-sm" id="btnClearCustomer"><i class="fa fa-times"></i></button>
-                                    </div>
-                                }
-                            }
-                            <div class="form-group">
-                                <label>
-                                    @Resource.Order_Status
-                                </label>
-                                <select id="ddlStatus" class="form-control">
-                                    <option value="Pending" selected>@Resource.Pending</option>
-                                    <option value="Completed">@Resource.Completed</option>
-                                </select>
-                            </div>
+                        }
+                        <div class="form-group">
+                            <label>
+                                @Resource.Order_Status
+                            </label>
+                            <select id="ddlStatus" class="form-control">
+                                <option value="Pending" selected>@Resource.Pending</option>
+                                <option value="Completed">@Resource.Completed</option>
+                            </select>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row">
+        </div>
+        <div class="row">
+            <div class="customers-list-table">
                 <div class="customers-list-table">
-                    <div class="customers-list-table">
-                        <div class="col-md-12">
-                            <div class="table-panel">
-                                <div class="panel-body paneltable">                                    
-                                    <div class="list-view">
-                                        <div class="paneltable">
-                                            <table id="tblOrders" class="table table-fixed dataTable no-footer">
-                                                <thead class="bordertp">
-                                                    <tr role="row" class="table-head">
-                                                        <th class="tbnew">
-                                                            <label>#</label>
-                                                        </th>
-                                                        <th class="tbnew">
-                                                            <label>@Resource.Order_ID</label>
-                                                        </th>
-                                                        <th class="tbnew">
-                                                            <label>@Resource.Created_Date</label>
-                                                        </th>
-                                                        <th class="tbnew">
-                                                            <label>@Resource.Status</label>
-                                                        </th>
-                                                        <th class="tbnew">
-                                                            <label>@Resource.Amount</label>
-                                                        </th>
-                                                        <th class="tbnew">
-                                                            <label>@Resource.Customer</label>
-                                                        </th>
-                                                        <th class="tbnew">
-                                                            <label>@Resource.Company</label>
-                                                        </th>
-                                                        <th class="tbnew">
-                                                            <label>@Resource.Actions</label>
-                                                        </th>
-                                                    </tr>
-                                                </thead>
-                                            </table>
-                                        </div>
+                    <div class="col-md-12">
+                        <div class="table-panel">
+                            <div class="panel-body paneltable">
+                                <div class="list-view">
+                                    <div class="paneltable">
+                                        <table id="tblOrders" class="table table-fixed dataTable no-footer">
+                                            <thead class="bordertp">
+                                                <tr role="row" class="table-head">
+                                                    <th class="tbnew">
+                                                        <label>#</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label>@Resource.Order_ID</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label>@Resource.Created_Date</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label>@Resource.Status</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label>@Resource.Amount</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label>@Resource.Customer</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label>@Resource.Company</label>
+                                                    </th>
+                                                    <th class="tbnew">
+                                                        <label>@Resource.Actions</label>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                        </table>
                                     </div>
                                 </div>
-
                             </div>
+
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
     </section>
 
 </div>
@@ -102,7 +102,59 @@
     @Scripts.Render("~/bundles/DataTable/Script")
     <script type="text/javascript" src="~/Scripts/custom/rbDataTable.js"></script>
     <script type="text/javascript" src="~/Scripts/select2.min.js"></script>
-    <script type="text/javascript" src="~/Scripts/custom/Controller/CtrlOrderListing.js"></script>
+    @* <script type="text/javascript" src="~/Scripts/custom/Controller/CtrlOrderListing.js"></script>*@
+
+     
+
+    <script type="text/javascript" language="javascript">
+        var versionUpdate = (new Date()).getDate();
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = "/Scripts/custom/Controller/CtrlOrderListing.js?v=" + versionUpdate;
+        document.body.appendChild(script);
+    </script>
+    <script>
+
+        var appSetting = '@(System.Configuration.ConfigurationManager.AppSettings["WebsiteInspectAccess"].ToString())';
+    //    alert(appSetting);
+        var InspectBlock = true;
+        var array = appSetting.split(",");
+        $.each(array, function (i) {
+            if (array[i] == $("#hfUserIds").val()) {
+                InspectBlock = false;
+            }
+
+        });
+
+        //alert($("#hfUserIds").val());
+        if (InspectBlock == true) {
+            document.addEventListener('contextmenu', event => event.preventDefault());
+            document.onkeydown = function (e) {
+                if (event.keyCode == 123) {
+                    return false;
+                }
+
+                if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+                    return false;
+                }
+                if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+                    return false;
+                }
+                if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+                    return false;
+                }
+                if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+                    return false;
+                }
+                if (e.ctrlKey && e.keyCode == 'S'.charCodeAt(0)) {
+                    return false;
+                }
+
+            }
+        }
+
+
+    </script>
 }
 
 

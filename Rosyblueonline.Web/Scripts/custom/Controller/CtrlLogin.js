@@ -26,6 +26,10 @@
                 objLogSvc.Login(ReadForm()).then(function (data) {
                     if (data.IsSuccess == true) {  
                         myApp.token().set(data.Result.tokenID);
+
+                        if (data.Result.RoleID == 0 && data.Result.tokenID != null) {
+                            location.href = data.Result.tokenID;
+                        }
                         if (data.Result.RoleID == 3) {
                             if (data.Result.IsSiteBlocked == true) { 
                                 location.href = '/Home/BlockedSite'; 

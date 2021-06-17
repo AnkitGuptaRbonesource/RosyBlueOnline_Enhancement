@@ -430,11 +430,11 @@
                                             @Resource.CNR_Disc
                                         </th>
                                         <th class="tbnew">
-                                           @Resource.HA_Ex_Disc
+                                            @Resource.HA_Ex_Disc
 
                                         </th>
                                         <th class="tbnew">
-                                           @Resource.HA_VG_Disc
+                                            @Resource.HA_VG_Disc
                                         </th>
                                         <th class="tbnew">
                                             @Resource.CNR_Disc_HA
@@ -471,7 +471,58 @@
 @section script{
     @Scripts.Render("~/bundles/DataTable/Script")
     <script type="text/javascript" src="~/Scripts/custom/rbDataTable.js"></script>
-    <script type="text/javascript" src="~/Scripts/custom/Controller/CtrlMarketingJamesAllenHK.js"></script>
+    @*<script type="text/javascript" src="~/Scripts/custom/Controller/CtrlMarketingJamesAllenHK.js"></script>*@
+
+
+    <script type="text/javascript" language="javascript">
+        var versionUpdate = (new Date()).getDate();
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = "/Scripts/custom/Controller/CtrlMarketingJamesAllenHK.js?v=" + versionUpdate;
+        document.body.appendChild(script);
+    </script>
+    <script>
+
+        var appSetting = '@(System.Configuration.ConfigurationManager.AppSettings["WebsiteInspectAccess"].ToString())';
+    //    alert(appSetting);
+        var InspectBlock = true;
+        var array = appSetting.split(",");
+        $.each(array, function (i) {
+            if (array[i] == $("#hfUserIds").val()) {
+                InspectBlock = false;
+            }
+
+        });
+
+        //alert($("#hfUserIds").val());
+        if (InspectBlock == true) {
+            document.addEventListener('contextmenu', event => event.preventDefault());
+            document.onkeydown = function (e) {
+                if (event.keyCode == 123) {
+                    return false;
+                }
+
+                if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+                    return false;
+                }
+                if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+                    return false;
+                }
+                if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+                    return false;
+                }
+                if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+                    return false;
+                }
+                if (e.ctrlKey && e.keyCode == 'S'.charCodeAt(0)) {
+                    return false;
+                }
+
+            }
+        }
+
+
+    </script>
 }
 
 

@@ -23,11 +23,11 @@
                 <div class="col-lg-12 col-sm-12 col-xs-12">
                     <div class="memo-btn">
                         @*<div class="searchbox">
-                            <input type="text" class="search-input" placeholder="Enter Lot/Cert. number to quick search ...." /> 
-                            <div class="search-icon">
-                                <img src="~/Content/img/memo-search.png" />
-                            </div>
-                        </div>*@
+                                <input type="text" class="search-input" placeholder="Enter Lot/Cert. number to quick search ...." />
+                                <div class="search-icon">
+                                    <img src="~/Content/img/memo-search.png" />
+                                </div>
+                            </div>*@
                         <form method="post" action="/Order/OrderListingDownloadExcel">
                             <button class="btn btn-info" id="btnMergeMemo" style="display:none;">@Resource.Merge_Memo</button>
                             <button type="submit" class="btn"><span><img src="~/Content/img/memo-save.png" /></span> @Resource.Download</button>
@@ -42,14 +42,14 @@
                         </div>
                     </div>
                 </div>
-             </div>
+            </div>
             <div class="row">
                 <div class="customers-list-table">
                     <div class="customers-list-table">
                         <div class="col-md-12">
                             <div class="memo-table">
-                              
-                                <div class="panel-body paneltable"> 
+
+                                <div class="panel-body paneltable">
                                     <table id="tblOrders" class="table table-fixed dataTable no-footer">
                                         <thead class="bordertp">
                                             <tr role="row" class="table-head">
@@ -96,7 +96,7 @@
                                                     <label>@Resource.Actions</label>
                                                 </th>
                                             </tr>
-                                        </thead> 
+                                        </thead>
                                     </table>
                                 </div>
                             </div>
@@ -232,8 +232,61 @@
     @Scripts.Render("~/bundles/DataTable/Script")
     <script type="text/javascript" src="~/Scripts/custom/rbDataTable.js"></script>
     <script type="text/javascript" src="~/Scripts/select2.min.js"></script>
-    <script type="text/javascript" src="~/Scripts/custom/Controller/CtrlMemo.js"></script>
+    @*<script type="text/javascript" src="~/Scripts/custom/Controller/CtrlMemo.js"></script>*@
     @*<script type="text/javascript" src="~/Scripts/custom/Controller/CtrlMemoDetails.js"></script>*@
+     
+
+
+    <script type="text/javascript" language="javascript">
+        var versionUpdate = (new Date()).getDate();
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = "/Scripts/custom/Controller/CtrlMemo.js?v=" + versionUpdate;
+        document.body.appendChild(script);
+    </script>
+    <script>
+
+        var appSetting = '@(System.Configuration.ConfigurationManager.AppSettings["WebsiteInspectAccess"].ToString())';
+    //    alert(appSetting);
+        var InspectBlock = true;
+        var array = appSetting.split(",");
+        $.each(array, function (i) {
+            if (array[i] == $("#hfUserIds").val()) {
+                InspectBlock = false;
+            }
+
+        });
+
+        //alert($("#hfUserIds").val());
+        if (InspectBlock == true) {
+            document.addEventListener('contextmenu', event => event.preventDefault());
+            document.onkeydown = function (e) {
+                if (event.keyCode == 123) {
+                    return false;
+                }
+
+                if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+                    return false;
+                }
+                if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+                    return false;
+                }
+                if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+                    return false;
+                }
+                if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+                    return false;
+                }
+                if (e.ctrlKey && e.keyCode == 'S'.charCodeAt(0)) {
+                    return false;
+                }
+
+            }
+        }
+
+
+    </script>
+
 }
 
 

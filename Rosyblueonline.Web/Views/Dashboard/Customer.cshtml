@@ -102,36 +102,36 @@
                             <div id="d_search" class="dash-inner">
                                 <ul id="tblSavedSearch" class="table-ul"></ul>
                                 @*<ul class="table-ul">
-                        <li class="table-li">
-                            <div class="se-info">
-                                <div class="seinfo-l1"><span class="sespce sefound">30,558</span><span class="sespce sedate">1 hr ago</span><span class="sespce sename">Mayur P.</span></div>
-                                <div class="seinfo-l2">GIA-Origin | HA-yes | Good | Good</div>
-                            </div>
-                            <div class="se-info-action">
-                                <a class="act-link al1" href="#"><span class="se-bx"><i class="fa fa-search" aria-hidden="true"></i></span></a>
-                                <a class="act-link al2" href="#"><span class="se-bx de-bx"><i class="fa fa-trash" aria-hidden="true"></i></span></a>
-                            </div>
-                        </li>
-                    </ul>
-                    <div class="table-no-results text-center">
-                        <div class="table-nrimg-box"><img src="../Content/img/no_data_icon.svg" alt="" /></div>
-                        <div class="table-nr-text">You’ve not saved any search yet!</div>
-                        <div class="table-btn-box">
-                            <a href="/Inventory/SpecificSearch" class="btn btn-primary"><i class="fa fa-search" aria-hidden="true"></i> Search Now</a>
-                        </div>
-                    </div>*@
+                                        <li class="table-li">
+                                            <div class="se-info">
+                                                <div class="seinfo-l1"><span class="sespce sefound">30,558</span><span class="sespce sedate">1 hr ago</span><span class="sespce sename">Mayur P.</span></div>
+                                                <div class="seinfo-l2">GIA-Origin | HA-yes | Good | Good</div>
+                                            </div>
+                                            <div class="se-info-action">
+                                                <a class="act-link al1" href="#"><span class="se-bx"><i class="fa fa-search" aria-hidden="true"></i></span></a>
+                                                <a class="act-link al2" href="#"><span class="se-bx de-bx"><i class="fa fa-trash" aria-hidden="true"></i></span></a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="table-no-results text-center">
+                                        <div class="table-nrimg-box"><img src="../Content/img/no_data_icon.svg" alt="" /></div>
+                                        <div class="table-nr-text">You’ve not saved any search yet!</div>
+                                        <div class="table-btn-box">
+                                            <a href="/Inventory/SpecificSearch" class="btn btn-primary"><i class="fa fa-search" aria-hidden="true"></i> Search Now</a>
+                                        </div>
+                                    </div>*@
 
                                 <!--<table class="table table-fixed dataTable tabledash" id="tblSavedSearch">
-                    <thead>
-                        <tr class="rserachrow">
-                            <th>@Resource.Date</th>
-                            <th>@Resource.Total_Found</th>
-                            <th>@Resource.Criteria</th>
-                            <th>@Resource.Load_Result</th>
-                            <th>@Resource.Delete</th>
-                        </tr>
-                    </thead>
-                </table>-->
+                                    <thead>
+                                        <tr class="rserachrow">
+                                            <th>@Resource.Date</th>
+                                            <th>@Resource.Total_Found</th>
+                                            <th>@Resource.Criteria</th>
+                                            <th>@Resource.Load_Result</th>
+                                            <th>@Resource.Delete</th>
+                                        </tr>
+                                    </thead>
+                                </table>-->
                             </div>
                         </div>
                     </div>
@@ -146,16 +146,16 @@
                                 <ul id="tblDemandSearch" class="table-ul"></ul>
 
                                 <!--<table class="table table-fixed dataTable tabledash" id="tblDemandSearch">
-                    <thead>
-                        <tr class="rserachrow">
-                           <th>@Resource.Date</th>
-                       <th>@Resource.Total_Found</th>
-                       <th>@Resource.Criteria</th>
-                       <th>@Resource.Load_Result</th>
-                       <th>@Resource.Delete</th>
-                        </tr>
-                    </thead>
-                </table>-->
+                                    <thead>
+                                        <tr class="rserachrow">
+                                           <th>@Resource.Date</th>
+                                       <th>@Resource.Total_Found</th>
+                                       <th>@Resource.Criteria</th>
+                                       <th>@Resource.Load_Result</th>
+                                       <th>@Resource.Delete</th>
+                                        </tr>
+                                    </thead>
+                                </table>-->
 
                             </div>
                         </div>
@@ -229,10 +229,66 @@
 
 @section script{
     @Scripts.Render("~/bundles/DataTable/Script")
-    <script type="text/javascript" src="~/Scripts/custom/rbDataTable.js"></script> 
-    <script type="text/javascript" src="~/Scripts/custom/Service/ServiceMethods.js"></script>
-    <script type="text/javascript" src="~/Scripts/custom/Controller/CtrlCustomerDashboard.js"></script>
+    <script type="text/javascript" src="~/Scripts/custom/rbDataTable.js"></script>
+    @*<script type="text/javascript" src="~/Scripts/custom/Service/ServiceMethods.js"></script>*@
+    @*<script type="text/javascript" src="~/Scripts/custom/Controller/CtrlCustomerDashboard.js"></script>*@
+    <script type="text/javascript" language="javascript">
+        var versionUpdate = (new Date()).getDate();
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = "/Scripts/custom/Service/ServiceMethods.js?v=" + versionUpdate;
+        document.body.appendChild(script);
+    </script>
 
+    <script type="text/javascript" language="javascript">
+        var versionUpdate = (new Date()).getDate();
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = "/Scripts/custom/Controller/CtrlCustomerDashboard.js?v=" + versionUpdate;
+        document.body.appendChild(script);
+    </script>
+    <script>
+
+        var appSetting = '@(System.Configuration.ConfigurationManager.AppSettings["WebsiteInspectAccess"].ToString())';
+    //    alert(appSetting);
+        var InspectBlock = true;
+        var array = appSetting.split(",");
+        $.each(array, function (i) {
+            if (array[i] == $("#hfUserIds").val()) {
+                InspectBlock = false;
+            }
+
+        });
+
+        //alert($("#hfUserIds").val());
+        if (InspectBlock == true) {
+            document.addEventListener('contextmenu', event => event.preventDefault());
+            document.onkeydown = function (e) {
+                if (event.keyCode == 123) {
+                    return false;
+                }
+
+                if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+                    return false;
+                }
+                if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+                    return false;
+                }
+                if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+                    return false;
+                }
+                if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+                    return false;
+                }
+                if (e.ctrlKey && e.keyCode == 'S'.charCodeAt(0)) {
+                    return false;
+                }
+
+            }
+        }
+
+
+    </script>
 
 }
 

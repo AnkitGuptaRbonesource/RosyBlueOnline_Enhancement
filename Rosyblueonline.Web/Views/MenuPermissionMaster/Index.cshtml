@@ -1,4 +1,4 @@
-﻿ 
+﻿
 @model IEnumerable<MenuMasterModel>
 @{
     ViewBag.Title = "User Menu Permission";
@@ -8,145 +8,172 @@
 @section header{
     @Styles.Render("~/bundles/DataTable/Style")
 }
-    <div class="content-wrapper">
-        <input type="hidden" name="UserId" id="hfUserId" value="" />
-        <section class="content">
-            <div id="uiPanel"></div>
-            <div id="frmUserDetailGrid">
-                <div class="row">
-                    <div class="col-lg-12 col-sm-12 col-xs-12 header-padding">
-                        <div class="heading-panel">
-                            <div class="panel-stonebox">
-                                <div class="heading-title">
-                                    <h2>@Resource.User_Menu_Permission</h2>
-                                </div>
+<div class="content-wrapper">
+    <input type="hidden" name="UserId" id="hfUserId" value="" />
+    <section class="content">
+        <div id="uiPanel"></div>
+        <div id="frmUserDetailGrid">
+            <div class="row">
+                <div class="col-lg-12 col-sm-12 col-xs-12 header-padding">
+                    <div class="heading-panel">
+                        <div class="panel-stonebox">
+                            <div class="heading-title">
+                                <h2>@Resource.User_Menu_Permission</h2>
                             </div>
-                            <div class="form-inline top-select">
-                                <div class="form-group">
-                                    <label class="control-label">
-                                        <label>@Resource.Filter_By_Role</label>
-                                    </label>
-                                    <select class="form-control" id="ddlRoleFilter">
-                                        <option value="" selected>@Resource.ALL_ROLES</option>
-                                        <option value="1">@Resource.SUPER_ADMIN</option>
-                                        <option value="8">@Resource.SALES_PERSON</option>
-                                    </select>
-                                </div>
+                        </div>
+                        <div class="form-inline top-select">
+                            <div class="form-group">
+                                <label class="control-label">
+                                    <label>@Resource.Filter_By_Role</label>
+                                </label>
+                                <select class="form-control" id="ddlRoleFilter">
+                                    <option value="" selected>@Resource.ALL_ROLES</option>
+                                    <option value="1">@Resource.SUPER_ADMIN</option>
+                                    <option value="8">@Resource.SALES_PERSON</option>
+                                </select>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="list-view">
-                                <table id="tblUserDetail" class="table table-fixed dataTable no-footer" role="grid">
-                                    <thead class="bordertp">
-                                        <tr role="row" class="table-head">
-                                            <th class="tbnew">
-                                                <label>@Resource.Name</label>
-                                            </th>
-                                            <th class="tbnew">
-                                                <label>@Resource.Company_Name</label>
-                                            </th>
-                                            <th class="tbnew">
-                                                <label>@Resource.Role</label>
-                                            </th>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="list-view">
+                        <table id="tblUserDetail" class="table table-fixed dataTable no-footer" role="grid">
+                            <thead class="bordertp">
+                                <tr role="row" class="table-head">
+                                    <th class="tbnew">
+                                        <label>@Resource.Name</label>
+                                    </th>
+                                    <th class="tbnew">
+                                        <label>@Resource.Company_Name</label>
+                                    </th>
+                                    <th class="tbnew">
+                                        <label>@Resource.Role</label>
+                                    </th>
 
-                                            <th class="tbnew">
-                                                <label>@Resource.User_Name</label>
-                                            </th>
-                                            <th class="tbnew">
-                                                <label>@Resource.Country</label>
-                                            </th>
-                                            <th class="tbnew tbl-actions">
-                                                <label>@Resource.Modify_Menu_Rights</label>
-                                            </th>
+                                    <th class="tbnew">
+                                        <label>@Resource.User_Name</label>
+                                    </th>
+                                    <th class="tbnew">
+                                        <label>@Resource.Country</label>
+                                    </th>
+                                    <th class="tbnew tbl-actions">
+                                        <label>@Resource.Modify_Menu_Rights</label>
+                                    </th>
 
-                                        </tr>
-                                    </thead>
+                                </tr>
+                            </thead>
 
-                                </table>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <form id="frmUserMenuAccess" style="display:none">
+            <div class="row">
+                <div class="col-lg-12 col-sm-12 col-xs-12 header-padding">
+                    <div class="heading-panel">
+                        <div class="panel-stonebox">
+                            <div class="heading-title">
+                                <h2>@Resource.User_Menu_Permission</h2>
                             </div>
                         </div>
                     </div>
                 </div>
-
-            <form id="frmUserMenuAccess" style="display:none">
-                <div class="row">
-                    <div class="col-lg-12 col-sm-12 col-xs-12 header-padding">
-                        <div class="heading-panel">
-                            <div class="panel-stonebox">
-                                <div class="heading-title">
-                                    <h2>@Resource.User_Menu_Permission</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            </div>
+            <div class="dash-box" style="margin:0 auto;max-width:400px;">
+                <div class="dash-head">
+                    @Resource.Menu_Rights
                 </div>
-                <div class="dash-box" style="margin:0 auto;max-width:400px;">
-                    <div class="dash-head">
-                        @Resource.Menu_Rights
-                    </div>
-                    <div class="dash-inner">
-                        <div class="row">
-                            <div class="col-md-6" style="margin-left: 10px;">
-                                <div class="form-group">
-                                    @if (Model != null)
+                <div class="dash-inner">
+                    <div class="row">
+                        <div class="col-md-6" style="margin-left: 10px;">
+                            <div class="form-group">
+                                @if (Model != null)
+                                {
+                                    foreach (var Rights in Model)
                                     {
-                                        foreach (var Rights in Model)
+                                        if (@Rights.MainMenuId == 0)
                                         {
-                                            if (@Rights.MainMenuId == 0)
-                                            {
 
-                                                <input type="checkbox" name="Rights" class="design-checkbox" value="@Rights.MenuName" id="@Rights.MenuId" data-MainMenuId="@Rights.MainMenuId" />
-                                                <label for="@Rights.MenuId">@Rights.MenuName  </label>
+                                            <input type="checkbox" name="Rights" class="design-checkbox" value="@Rights.MenuName" id="@Rights.MenuId" data-MainMenuId="@Rights.MainMenuId" />
+                                            <label for="@Rights.MenuId">@Rights.MenuName  </label>
 
-                                            }
-                                            else
-                                            {
-                                                <input style="margin-left: 60px;" type="checkbox" name="Rights" class="design-checkbox" value="@Rights.MenuName" id="@Rights.MenuId" data-MainMenuId="@Rights.MainMenuId" />
-                                                <label style="margin-left: 60px;" for="@Rights.MenuId">@Rights.MenuName  </label>
-                                            }
+                                        }
+                                        else
+                                        {
+                                            <input style="margin-left: 60px;" type="checkbox" name="Rights" class="design-checkbox" value="@Rights.MenuName" id="@Rights.MenuId" data-MainMenuId="@Rights.MainMenuId" />
+                                            <label style="margin-left: 60px;" for="@Rights.MenuId">@Rights.MenuName  </label>
                                         }
                                     }
-                                </div>
+                                }
                             </div>
                         </div>
-                        <div class="text-center">
-                            <button class="btn btn-default" id="btnCancel">@Resource.Cancel</button>
-                            <button class="btn btn-primary" id="btnUpdate">@Resource.Save</button>
-                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button class="btn btn-default" id="btnCancel">@Resource.Cancel</button>
+                        <button class="btn btn-primary" id="btnUpdate">@Resource.Save</button>
                     </div>
                 </div>
+            </div>
 
-            </form>
-</section>
-    </div>
-    @section script{
-        @Scripts.Render("~/bundles/DataTable/Script")
-        <script type="text/javascript" src="~/Scripts/custom/rbDataTable.js"></script>
-        <script type="text/javascript" src="~/Scripts/custom/Controller/CtrlMenuMaster.js"></script>
-    }
+        </form>
+    </section>
+</div>
+@section script{
+    @Scripts.Render("~/bundles/DataTable/Script")
+    <script type="text/javascript" src="~/Scripts/custom/rbDataTable.js"></script>
+    @*<script type="text/javascript" src="~/Scripts/custom/Controller/CtrlMenuMaster.js"></script>*@
+
+    <script type="text/javascript" language="javascript">
+        var versionUpdate = (new Date()).getDate();
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = "/Scripts/custom/Controller/CtrlMenuMaster.js?v=" + versionUpdate;
+        document.body.appendChild(script);
+    </script>
+    <script>
+
+        var appSetting = '@(System.Configuration.ConfigurationManager.AppSettings["WebsiteInspectAccess"].ToString())';
+    //    alert(appSetting);
+        var InspectBlock = true;
+        var array = appSetting.split(",");
+        $.each(array, function (i) {
+            if (array[i] == $("#hfUserIds").val()) {
+                InspectBlock = false;
+            }
+
+        });
+
+        //alert($("#hfUserIds").val());
+        if (InspectBlock == true) {
+            document.addEventListener('contextmenu', event => event.preventDefault());
+            document.onkeydown = function (e) {
+                if (event.keyCode == 123) {
+                    return false;
+                }
+
+                if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+                    return false;
+                }
+                if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+                    return false;
+                }
+                if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+                    return false;
+                }
+                if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+                    return false;
+                }
+                if (e.ctrlKey && e.keyCode == 'S'.charCodeAt(0)) {
+                    return false;
+                }
+
+            }
+        }
 
 
-    @*<ul>
-            <li>Home</li>
-            <li>Dashboard</li>
-            <li>
-                My Account
-                <ul>
-                    <li>All Order</li>
-                    <li>All Memo</li>
-                </ul>
-            </li>
-            <li>
-                Inventory
-                <ul>
-                    <li>Stock Summery</li>
-                    <li>All Memo</li>
-                </ul>
-            </li>
-            <li>Marketing</li>
-            <li>Utility</li>
-            <li>Profile</li>
-        </ul>*@
+    </script>
+}

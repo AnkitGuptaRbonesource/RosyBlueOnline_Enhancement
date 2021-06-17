@@ -250,6 +250,10 @@ namespace Rosyblueonline.Web.Controllers
             {
                 int ValidTimeout = Convert.ToInt32(ConfigurationManager.AppSettings["ForgetPassword_ValidTimeout"].ToString());
                 bool result = this.objUDSvc.ResetForgetPassword(ID, Code, Password, ValidTimeout);
+                if (result == true)
+                {
+                    bool log = this.objUDSvc.UserActivitylogs(ID, "PasswordReset", "Reset Forget Password");
+                }
                 return Json(new Response { IsSuccess = true, Message = result == true ? "" : "Password not reset", Result = result });
             }
             catch (Exception ex)
@@ -314,12 +318,28 @@ namespace Rosyblueonline.Web.Controllers
                     }
                     else
                     {
-                        Session["Token"] = objToken;
+                        bool ResetPas = this.objUDSvc.LastPasswordReset(objToken.loginID);
+                        if (ResetPas == true)
+                        {
+                            Session["Token"] = null;
+                            string Domain = ConfigurationManager.AppSettings["Domain"].ToString();
+                            string ResetUrl = this.objUDSvc.PasswordResetBySystem(objToken.EmailID);
 
-                        UserMenuAccessModel objAccess = new UserMenuAccessModel();
-                        objAccess = this.objUDSvc.UserMenuAccessModel(objToken.loginID, "", "", "MenuAccessDetails");
-                        Session["MenuAccess"] = objAccess;
+                            //return RedirectToAction("ForgetPasswordReset", "Home" );
 
+                            string url = string.Format("/Home/ForgetPasswordReset" + ResetUrl);
+                            //return Redirect(url); 
+                            objToken.tokenID = url;
+                            objToken.RoleID = 0;
+                        }
+                        else
+                        {
+                            Session["Token"] = objToken;
+
+                            UserMenuAccessModel objAccess = new UserMenuAccessModel();
+                            objAccess = this.objUDSvc.UserMenuAccessModel(objToken.loginID, "", "", "MenuAccessDetails");
+                            Session["MenuAccess"] = objAccess;
+                        }
 
                     }
                     return Json(new Response { IsSuccess = true, Message = "", Result = objToken });
@@ -554,7 +574,10 @@ namespace Rosyblueonline.Web.Controllers
         {
             return View();
         }
-
+        public ActionResult UnAuthorized()
+        {
+            return View();
+        }
         //Added BY Ankit 01JUly2020
 
         public ActionResult MultipleDocUpload(UserDocDetailsModel obj)
@@ -662,10 +685,28 @@ namespace Rosyblueonline.Web.Controllers
         public ActionResult GetListOfMarketingCustomer(string search)
         {
             int LoginId = GetLogin();
-            var objLst = this.objUDSvc.GetListOfMarketingCustomer(search); 
+            var objLst = this.objUDSvc.GetListOfMarketingCustomer(search);
             return Json(objLst, JsonRequestBehavior.AllowGet);
 
 
         }
+
+        [HttpPost]
+        public ActionResult PageAccessCheck(string MenuName)
+        {
+            try
+            {
+                int LoginId = GetLogin();
+                bool PageAccessCheckStatus = objUDSvc.PageAccessCheck(MenuName, LoginId);
+
+                return Json(new Response { IsSuccess = PageAccessCheckStatus, Message = "PageAccessCheck", Result = PageAccessCheckStatus });
+            }
+            catch (Exception ex)
+            {
+                ErrorLog.Log("HomeController", "PageAccessCheck", ex);
+                return Json(new Response { IsSuccess = false, Message = ex.Message });
+            }
+        }
+
     }
 }

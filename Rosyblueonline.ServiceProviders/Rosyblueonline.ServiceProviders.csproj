@@ -86,6 +86,9 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="TripleDESAtlNet">
+      <HintPath>..\Rosyblueonline.Web\bin\TripleDESAtlNet.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstraction\IChargeService.cs" />

@@ -31,7 +31,7 @@ namespace Rosyblueonline.Models
         public int? Dashboard { get; set; }
         public int? MyAccount { get; set; }
         public int? AllOrder { get; set; }
-        public int? AllMenu { get; set; }
+        public int? AllMemo { get; set; }
         public int? Search { get; set; }
         public int? Inventory { get; set; }
         public int? StockSummary { get; set; }
@@ -60,7 +60,10 @@ namespace Rosyblueonline.Models
         public int? AddCustomer { get; set; }
         public int? AddRoleRights { get; set; }
 
-        public int? SellSummary { get; set; }
+        public int? SellSummary { get; set; } 
+        public int? MarketingInventory { get; set; }
+        public int? MarketInventoryUpload { get; set; }
+        public int? MarketInventoryDownload { get; set; }
 
 
     }

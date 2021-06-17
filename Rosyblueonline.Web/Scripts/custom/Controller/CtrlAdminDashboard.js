@@ -29,7 +29,7 @@
         //    instanceID: 1
         //});
       //  objModuleStockSummary.init();
-        BindUserActivityDetails();
+        BindUserActivityDetails(); 
     };
 
     var RegisterEvent = function () {
@@ -941,6 +941,7 @@
         }
 
     }
+   
 
     //$(document).on('click', 'a.btnViewDetails', function (e) {
     //    e.preventDefault();

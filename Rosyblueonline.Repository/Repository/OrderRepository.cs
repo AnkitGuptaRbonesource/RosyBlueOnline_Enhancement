@@ -123,12 +123,12 @@ namespace Rosyblueonline.Repository
                 cmd.Parameters.Add(new SqlParameter("@LoginId", Loginid));
                 cmd.Parameters.Add(new SqlParameter("@Flag", "Insert"));
                 cmd.Parameters.Add(new SqlParameter("@ActionName", Actionname));
-                cmd.Parameters.Add(new SqlParameter("@ActionDetails", Actiondetail)); 
+                cmd.Parameters.Add(new SqlParameter("@ActionDetails", Actiondetail));
                 context.Database.Connection.Open();
                 // var reader = cmd.ExecuteReader();
                 var reader = cmd.ExecuteNonQuery();
 
-               // objLst = ((IObjectContextAdapter)context).ObjectContext.Translate<UserActivityLogModel>(reader).ToList();
+                // objLst = ((IObjectContextAdapter)context).ObjectContext.Translate<UserActivityLogModel>(reader).ToList();
                 return objLst != null ? true : false;
             }
             finally
@@ -184,13 +184,59 @@ namespace Rosyblueonline.Repository
             }
         }
 
-
-
-        public  UserMenuAccessModel  GetUserMenuAccessDetails(int Loginid,string MenuIdList,string CreatedBy,string QFlag)
+        public UserActivityLogModel GetPasswordResetLogData(int LoginId)
         {
             try
             {
-                UserMenuAccessModel objLst =  new UserMenuAccessModel();
+                 UserActivityLogModel  objLsts = new  UserActivityLogModel();
+                DashboardViewModel objVM = new DashboardViewModel();
+                var cmd = context.Database.Connection.CreateCommand();
+                cmd.CommandText = "Proc_UserActivityLog";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@LoginId", LoginId));
+                cmd.Parameters.Add(new SqlParameter("@Flag", "PasswordResetLog"));
+                cmd.Parameters.Add(new SqlParameter("@ActionName", ""));
+                cmd.Parameters.Add(new SqlParameter("@ActionDetails", ""));
+                context.Database.Connection.Open();
+                var reader = cmd.ExecuteReader();
+                objLsts = ((IObjectContextAdapter)context).ObjectContext.Translate<UserActivityLogModel>(reader).FirstOrDefault();
+                return objLsts;
+            }
+            finally
+            {
+                context.Database.Connection.Close();
+            }
+        }
+
+        public UserActivityLogModel GetPasswordLogCheck(int LoginId)
+        {
+            try
+            {
+                UserActivityLogModel objLsts = new UserActivityLogModel();
+                DashboardViewModel objVM = new DashboardViewModel();
+                var cmd = context.Database.Connection.CreateCommand();
+                cmd.CommandText = "Proc_UserActivityLog";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@LoginId", LoginId));
+                cmd.Parameters.Add(new SqlParameter("@Flag", "PasswordLogCheck"));
+                cmd.Parameters.Add(new SqlParameter("@ActionName", ""));
+                cmd.Parameters.Add(new SqlParameter("@ActionDetails", ""));
+                context.Database.Connection.Open();
+                var reader = cmd.ExecuteReader();
+                objLsts = ((IObjectContextAdapter)context).ObjectContext.Translate<UserActivityLogModel>(reader).FirstOrDefault();
+                return objLsts;
+            }
+            finally
+            {
+                context.Database.Connection.Close();
+            }
+        }
+
+        public UserMenuAccessModel GetUserMenuAccessDetails(int Loginid, string MenuIdList, string CreatedBy, string QFlag)
+        {
+            try
+            {
+                UserMenuAccessModel objLst = new UserMenuAccessModel();
                 DashboardViewModel objVM = new DashboardViewModel();
                 var cmd = context.Database.Connection.CreateCommand();
                 cmd.CommandText = "Pro_GetMenuAccessDetails";

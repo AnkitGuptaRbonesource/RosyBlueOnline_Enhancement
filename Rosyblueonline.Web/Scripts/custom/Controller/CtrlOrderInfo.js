@@ -7,6 +7,7 @@
         OrderID = $('#hfOrderID').val();
         dtOrderItems = new Datatable();
         LoadForm();
+ 
     }
 
     var LoadForm = function () {
@@ -191,6 +192,23 @@
         $("#tblOrder").append('<tr>\
             <td colspan = "3" align="center" style="text-align: center !important;"> Note: All Orders are in USD.</td>\
         </tr>');
+    }
+
+    var CheckPageAccess = function (MenuName) {
+        objOrdSvc.PageAccessCheck(MenuName).then(function (data) {
+            if (data.IsSuccess == true) {
+
+            } else {
+                $('#Modal-AccessDenied').modal('show');
+                uiApp.Alert({ container: '#uiPanel1', message: "You don't have a access of this page", type: "danger" });
+                setTimeout(function () {
+                    location.href = '/Home/Index';
+                }, 1000);
+            }
+        }, function (error) {
+            uiApp.Alert({ container: '#uiPanel1', message: "Some error occured", type: "danger" });
+        });
+
     }
 
     return {

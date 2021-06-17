@@ -31,6 +31,26 @@
     <form style="display:none" id="frmPostSearch111" method="post" action="/Inventory/SpecificSearchPost">
         <input type="hidden" name="Query" id="hfQuery111" value="" />
     </form>
+
+    <input type="hidden" name="UserIds" id="hfUserIds" value=@objToken.loginID />
+    <div id="Modal-AccessDenied" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <a href="#" class="close" data-dismiss="modal">&times;</a>
+                    <h4 class="modal-title">Access Denied</h4>
+                </div>
+                <div class="modal-body">
+                    <h2>You don't have a access of this page</h2>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">@Resource.Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="wrapper">
         <header class="main-header">
             <nav class="navbar navbar-static-top">
@@ -246,7 +266,7 @@
                                 {
                                     <li><a href="/Order/List"><div class="img-icon"><img src="/Content/img/myorder.png" /></div> @Resource.All_Orders</a></li>
                                 }
-                                @if (objMenuAccess.AllMenu == 1)
+                                @if (objMenuAccess.AllMemo == 1)
                                 {
                                     <li><a href="/Memo"><div class="img-icon"><img src="/Content/img/list.png" /></div> @Resource.All_Memo</a></li>
 
@@ -341,6 +361,31 @@
                             </ul>
                         </li>
                     }
+
+                    @if (objMenuAccess.MarketingInventory == 1)
+                    {
+                        <li>
+                            <a href="#">
+                                <div class="img-icon"><img src="/Content/img/Marketing.png" /></div>
+                                <span>Market Inventory </span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                @if (objMenuAccess.MarketInventoryUpload == 1)
+                                {
+                                    <li><a href="/Marketing/MarketInventoryUpload"><div class="img-icon"><i class="fa fa-diamond"></i></div>Inventory Upload</a></li>
+                                }
+                                @if (objMenuAccess.MarketInventoryDownload == 1)
+                                {
+                                    <li><a href="/Marketing/MarketInventoryDownload"><div class="img-icon"><i class="fa fa-diamond"></i></div>Inventory Download</a></li>
+                                }
+
+                            </ul>
+                        </li>
+                    }
+
                     @if (objMenuAccess.Utility == 1)
                     {
                         <li>
@@ -485,8 +530,24 @@
     @Scripts.Render("~/bundles/modernizr", "~/bundles/jquery", "~/bundles/jqueryval", "~/bundles/bootstrap", "~/bundles/Admin/Script")
     <script type="text/javascript" src="/Scripts/custom/myApp.js"></script>
     <script type="text/javascript" src="/Scripts/custom/uiApp.js"></script>
-    <script type="text/javascript" src="/Scripts/custom/Service/ServiceMethods.js"></script>
-    <script type="text/javascript" src="/Scripts/custom/Controller/CtrlMasterLayout.js"></script>
+    @*<script type="text/javascript" src="/Scripts/custom/Service/ServiceMethods.js"></script>*@
+    @*<script type="text/javascript" src="/Scripts/custom/Controller/CtrlMasterLayout.js"></script>*@
+
+    <script type="text/javascript" language="javascript">
+        var versionUpdate = (new Date()).getDate();
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = "/Scripts/custom/Service/ServiceMethods.js?v=" + versionUpdate;
+        document.body.appendChild(script);
+    </script>
+
+    <script type="text/javascript" language="javascript">
+        var versionUpdate = (new Date()).getDate();
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = "/Scripts/custom/Controller/CtrlMasterLayout.js?v=" + versionUpdate;
+        document.body.appendChild(script);
+    </script>
     <script>
         $(".main-sidebar").hover(
             function () {
@@ -571,6 +632,11 @@
                 //$("#pending-order").parent("li").removeClass("active");
                 return false;
             });
+
+
+
+
+
         });
 
         var LanguageService = function () {

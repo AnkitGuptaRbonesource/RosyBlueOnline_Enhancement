@@ -7,7 +7,10 @@ using Rosyblueonline.ServiceProviders.Implementation;
 using Rosyblueonline.Web.Attribute;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Web;
@@ -20,15 +23,18 @@ namespace Rosyblueonline.Web.Controllers
     {
         readonly MarketingService objSvc;
         IStockDetailsService objStockDetailsService;
-        public MarketingController(IMarketingService objSvc, IStockDetailsService objStockDetailsService)
+        IDownloadScriptService objDownloadService = null;
+        public MarketingController(IMarketingService objSvc, IStockDetailsService objStockDetailsService, IDownloadScriptService objDownloadService)
         {
             this.objSvc = objSvc as MarketingService;
             this.objStockDetailsService = objStockDetailsService as StockDetailsService;
+            this.objDownloadService = objDownloadService as DownloadScriptService;
 
         }
         // GET: Marketing
 
         #region BlueNile
+        [CustomAuthorize("BlueNile")]
         public ActionResult BlueNile()
         {
             return View();
@@ -334,6 +340,7 @@ namespace Rosyblueonline.Web.Controllers
         #endregion
 
         #region JamesAllen
+        [CustomAuthorize("JamesAllen")]
         public ActionResult JamesAllen()
         {
             return View();
@@ -652,6 +659,7 @@ namespace Rosyblueonline.Web.Controllers
         #endregion
 
         #region JamesAllen HK
+        [CustomAuthorize("JamesAllenHK")]
         public ActionResult JamesAllenHK()
         {
             return View();
@@ -972,7 +980,7 @@ namespace Rosyblueonline.Web.Controllers
 
 
         #region MarketingStockSummary
-
+        [CustomAuthorize("SellSummary")]
         public ActionResult MarketingStockSummary()
         {
             int LoginId = GetLogin();
@@ -1003,7 +1011,7 @@ namespace Rosyblueonline.Web.Controllers
                 int CustomerID = GetLogin();
                 int RoleID = GetRole();
                 {
-                    List<MarketingStockSummaryDetailsModel> objVM = objSvc.MarketingStockSummaryDetails(CustomerIDs,FilterYear,FilterMonth,salesLocationIDs);
+                    List<MarketingStockSummaryDetailsModel> objVM = objSvc.MarketingStockSummaryDetails(CustomerIDs, FilterYear, FilterMonth, salesLocationIDs);
 
                     return Json(objVM, JsonRequestBehavior.AllowGet);
                 }
@@ -1034,19 +1042,19 @@ namespace Rosyblueonline.Web.Controllers
                     //decimal idx = Math.Ceiling((decimal)(obj.start / obj.length));
                     List<inventoryDetailsViewModel> objInvVM = new List<inventoryDetailsViewModel>();
                     string raisedEvent = "SpecificSearch";
-                    string filterText = "LOTNO~"+ LotNos;
+                    string filterText = "LOTNO~" + LotNos;
                     //objInvVM = objStockDetailsService.InventoryAction(LoginID.ToString(),filterText, idx.ToString(), obj.length.ToString(), OrderBy, OrderDirection, raisedEvent, "SpecialSearch");
-                    objInvVM = objStockDetailsService.InventoryAction(LoginID.ToString(), filterText, "0","500000", OrderBy, OrderDirection, raisedEvent, "SpecialSearch");
+                    objInvVM = objStockDetailsService.InventoryAction(LoginID.ToString(), filterText, "0", "500000", OrderBy, OrderDirection, raisedEvent, "SpecialSearch");
 
 
                     return Json(objInvVM, JsonRequestBehavior.AllowGet);
 
                     //string json = JsonConvert.SerializeObject(new { draw = obj.draw, recordsTotal = obj.Total.HasValue ? obj.Total.Value : 0, recordsFiltered = obj.Total.HasValue ? obj.Total.Value : 0, data = objInvVM }, Formatting.Indented);
- 
+
                     //return Content(json, "application/json");
                 }
-               
-                 return Json(new Response { IsSuccess = false, Message = string.Format(StringResource.Invalid, "Session") });
+
+                return Json(new Response { IsSuccess = false, Message = string.Format(StringResource.Invalid, "Session") });
             }
             catch (Exception ex)
             {
@@ -1056,6 +1064,219 @@ namespace Rosyblueonline.Web.Controllers
         }
 
         #endregion
+
+
+
+        #region MarketInventory
+        [CustomAuthorize("MarketInventoryUpload")]
+        public ActionResult MarketInventoryUpload()
+        {
+            return View();
+        }
+
+
+
+        [HttpPost]
+        public ActionResult MarketUploadInventory()
+        {
+
+            string path = "";
+            string fileExtn = "";
+            string fileId = "";
+
+            string procName = "";
+            int RowCount = 0;
+            CommonFunction commonFunction = new CommonFunction();
+            try
+            {
+                int LoginID = GetLogin();
+                if (LoginID > 0)
+                {
+                    string InventoryuploadType = "";
+                    if (Request.Files.Count > 0)
+                    {
+                        fileExtn = Path.GetExtension(Request.Files[0].FileName);
+                        string ip = Request.UserHostAddress;
+                        path = Server.MapPath(ConfigurationManager.AppSettings["INVUpload"].ToString());
+                        if (fileExtn == ".xls" || fileExtn == ".xlsx")
+                        {
+                            fileId = "MarketInventoryUpload_File_" + DateTime.Now.ToString("MMddyyyyHHmm");
+                            Request.Files[0].SaveAs(path + fileId.ToString() + fileExtn);
+                            DataTable ds = commonFunction.GetDataFromExcel2(path + fileId.ToString() + fileExtn);
+
+                            procName = "proc_MarketInventoryUpload";
+                            DataTable pds = ParseToString(ds);
+                            List<InventoryUpload> objLst = objStockDetailsService.InventoryUpload(pds, procName, Convert.ToString(LoginID), Convert.ToString(1000), Request.UserHostAddress, InventoryuploadType);
+
+
+                            string json = JsonConvert.SerializeObject(new Response
+                            {
+                                Code = 200,
+                                IsSuccess = true,
+                                Message = InventoryuploadType,
+                                Result = new
+                                {
+                                    List = objLst,
+                                    FileID = fileId
+                                }
+                            }, Formatting.Indented);
+                            return Content(json, "application/json");
+
+                        }
+                        else
+                        {
+                            return RedirectToAction("Marketing", "MarketInventoryUpload");
+                        }
+                    }
+                    else
+                    {
+                        return Json(new Response { Code = 500, IsSuccess = false, Message = "File not attached", Result = null });
+                    }
+
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+
+
+
+            }
+            catch (Exception ex)
+            {
+                return Json(new Response
+                {
+                    Code = 500,
+                    IsSuccess = false,
+                    Message = ex.Message,
+                    Result = null
+                });
+            }
+        }
+
+
+        private DataTable ParseToString(DataTable oldDT)
+        {
+            DataTable dt = new DataTable();
+            for (int i = 0; i < oldDT.Columns.Count; i++)
+            {
+
+                dt.Columns.Add(new DataColumn(oldDT.Columns[i].ColumnName, typeof(string)));
+
+            }
+
+            for (int i = 0; i < oldDT.Rows.Count; i++)
+            {
+
+                DataRow dr = dt.NewRow();
+                for (int j = 0; j < oldDT.Columns.Count; j++)
+                {
+                    if (Convert.ToString(oldDT.Rows[i][j]).Trim() != "")
+                    {
+
+                        dr[j] = oldDT.Rows[i][j];
+
+                    }
+                }
+                dt.Rows.Add(dr);
+            }
+            return dt;
+        }
+
+        [CustomAuthorize("MarketInventoryDownload")]
+        public ActionResult MarketInventoryDownload()
+        {
+            int LoginID = GetLogin();
+            int RoleID = GetRole();
+            List<DownloadList> objLst = this.objDownloadService.GetMarketDownloadForMenu(LoginID);
+            return View(objLst);
+        }
+
+        [HttpPost]
+        public JsonResult MarketdownloadForExcel(string id, string FileName)
+        {
+            try
+            {
+                int LoginID = GetLogin();
+                int Role = GetRole();
+                if (LoginID > 0)
+                {
+
+                    DataTable dt = this.objDownloadService.MarketInventoryDownloadExcelExport(LoginID.ToString(), id);
+                    if (dt.Rows.Count > 0)
+                    {
+                        TempData["MarketFileName"] = FileName;
+                        string imgPath = Server.MapPath(System.Configuration.ConfigurationManager.AppSettings["ExcelMailImage"]);
+                        // byte[] st = ExportToExcel.InventoryExportToExcel(dt, imgPath, Role == 3 ? true : false, "AT", false);
+                        byte[] st = ExportToExcel.DownloadExcel(FileName, dt);
+
+                        TempData["MarketDataExport"] = st;
+                        return Json(new Response { IsSuccess = true, Result = "" });
+                    }
+                    else
+                    {
+                        return Json(new Response { IsSuccess = false, Message = "No rows found" });
+                    }
+                }
+                return Json(new Response { IsSuccess = false, Message = string.Format(StringResource.Invalid, "Session") }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                ErrorLog.Log("MarketingController", "MarketdownloadForExcel", ex);
+                return Json(new Response { IsSuccess = false, Message = ex.Message }, JsonRequestBehavior.AllowGet);
+            }
+        }
+        public ActionResult MarketExportToExcelInventoryDownload()
+        {
+            try
+            {
+                string filename = TempData["MarketFileName"].ToString();
+                byte[] st = (byte[])TempData["MarketDataExport"];
+                return File(st, System.Net.Mime.MediaTypeNames.Application.Octet, filename + ".xlsx");
+            }
+            catch (Exception ex)
+            {
+                ErrorLog.Log("MarketingController", "MarketExportToExcelInventoryDownload", ex);
+                return new EmptyResult();
+            }
+        }
+
+
+        [HttpPost]
+        public JsonResult DeleteMarketInventory(string id)
+        {
+            try
+            {
+                int LoginID = GetLogin();
+                int Role = GetRole();
+                if (LoginID > 0)
+                {
+
+                    DataTable dt = this.objDownloadService.MarketInventoryDownloadExcelExport(LoginID.ToString(), "DeleteData");
+                    if (dt.Rows.Count > 0)
+                    { 
+                        return Json(new Response { IsSuccess = true, Result = "" });
+                    }
+                    else
+                    {
+                        return Json(new Response { IsSuccess = false, Message = "No rows found" });
+                    }
+                }
+                return Json(new Response { IsSuccess = false, Message = string.Format(StringResource.Invalid, "Session") }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                ErrorLog.Log("MarketingController", "DeleteMarketInventory", ex);
+                return Json(new Response { IsSuccess = false, Message = ex.Message }, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+
+
+
+
+        #endregion
+
 
         protected override void Initialize(System.Web.Routing.RequestContext requestContext)
         {

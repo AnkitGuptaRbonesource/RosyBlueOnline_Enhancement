@@ -12,8 +12,8 @@
                     </div>
                 </a>
             </div>
-           
-            <div class="col-md-12" >
+
+            <div class="col-md-12">
                 <label class="radio-inline controll-radio">
                     <input type="radio" name="SearchOption" id="rbtnosSingle" value="0" checked><label for="rbtnosSingle" class="controll-label">Single</label>
                 </label>
@@ -22,7 +22,7 @@
                 </label>
 
                 <div id="multiseresult" class="radio-inline controll-radio" style="overflow: auto; padding: 5px 10px; height: 70px; text-align: left; width: 70%; background: #FFFFFF; border-radius: 10px; border: 1px solid #ece9f1; margin-bottom: 15px; display: none; ">
-                    
+
                     <ul data-role="listview" data-inset="true" class="ddlmulti" style="margin:0;padding:0;">
                     </ul>
                 </div>
@@ -388,9 +388,9 @@
                                 <div class="cut-box">
                                     <div class="cut-box-title">
                                         <label for="cut1" style="font-size: 15px;">@Resource.Cut</label>
-                                       
-                                            <label  style=" margin-left: 50%;" class="reset-btn" id='btnF_Cut'><span class="refresh"><img src="~/Content/img/refresh.png" /></span>@Resource.Reset1</label>
-                                
+
+                                        <label style=" margin-left: 50%;" class="reset-btn" id='btnF_Cut'><span class="refresh"><img src="~/Content/img/refresh.png" /></span>@Resource.Reset1</label>
+
                                     </div>
                                     <div class="F_Cut">
                                         <input type="checkbox" name="cut" class="design-checkbox exe" value="18" id="cut1">
@@ -417,7 +417,7 @@
                                 <div class="cut-box">
                                     <div class="cut-box-title">
                                         <label for="cut1" style="font-size: 15px;">@Resource.Polished</label>
-                                    
+
                                         <label style=" margin-left: 50%;" class="reset-btn" id='btnF_Polished'><span class="refresh"><img src="~/Content/img/refresh.png" /></span>@Resource.Reset1</label>
                                     </div>
                                     <div class="F_Polished">
@@ -443,9 +443,9 @@
                                 <div class="cut-box">
                                     <div class="cut-box-title">
                                         <label for="cut1" style="font-size: 15px;">@Resource.Symmetry</label>
-                                        
-                                          <label  style=" margin-left: 50%;" class="reset-btn" id='btnF_Symmerty'><span class="refresh"><img src="~/Content/img/refresh.png" /></span>@Resource.Reset1</label>
-         
+
+                                        <label style=" margin-left: 50%;" class="reset-btn" id='btnF_Symmerty'><span class="refresh"><img src="~/Content/img/refresh.png" /></span>@Resource.Reset1</label>
+
 
                                     </div>
                                     <div class="F_Symmerty">
@@ -465,7 +465,7 @@
                                         <label for="Symmerty5">@Resource.Poor</label>
 
                                     </div>
-                                 
+
                                 </div>
 
                             </form>
@@ -1067,7 +1067,7 @@
         <span class="badge fix-search-text"><div class="small-loader"><div></div><div></div><div></div><div></div></div> <span class="sscount">•••</span></span>
         @*<button id="dydEdit" name="command" type="button" value="search"  role="button">
               <span style="display:none;" class="badge">0</span> @Resource.Search
-            </button>*@ 
+            </button>*@
     </div>
 
     <div class="fix-search" id="dydMulti" name="command" style="display:none;">
@@ -1080,3 +1080,48 @@
 
 </div>
 <!-- Sample -->
+@section script{
+    <script type="text/javascript" language="javascript">
+
+        var appSetting = '@(System.Configuration.ConfigurationManager.AppSettings["WebsiteInspectAccess"].ToString())';
+    //    alert(appSetting);
+        var InspectBlock = true;
+        var array = appSetting.split(",");
+        $.each(array, function (i) {
+            if (array[i] == $("#hfUserIds").val()) {
+                InspectBlock = false;
+            }
+
+        });
+
+        //alert($("#hfUserIds").val());
+        if (InspectBlock == true) {
+            document.addEventListener('contextmenu', event => event.preventDefault());
+            document.onkeydown = function (e) {
+                if (event.keyCode == 123) {
+                    return false;
+                }
+
+                if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+                    return false;
+                }
+                if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+                    return false;
+                }
+                if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+                    return false;
+                }
+                if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+                    return false;
+                }
+                if (e.ctrlKey && e.keyCode == 'S'.charCodeAt(0)) {
+                    return false;
+                }
+
+            }
+        }
+
+
+    </script>
+
+}

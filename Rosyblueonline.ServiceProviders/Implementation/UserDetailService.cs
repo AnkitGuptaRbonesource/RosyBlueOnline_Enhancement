@@ -11,6 +11,7 @@ using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TRIPLEDESATLLibNet;
 using static Rosyblueonline.Framework.Constant;
 
 namespace Rosyblueonline.ServiceProviders.Implementation
@@ -26,6 +27,8 @@ namespace Rosyblueonline.ServiceProviders.Implementation
 
         public bool RegisterUser(RegistrationViewModel obj, bool SelfRegistration = true)
         {
+            string EncryptedPassword = new Encryption().EncryptQueryString(obj.password);
+
             if (CheckEmailID(obj.emailId) == false)
             {
                 throw new UserDefinedException(string.Format(StringResource.AlreadyTaken, "email"));
@@ -62,8 +65,10 @@ namespace Rosyblueonline.ServiceProviders.Implementation
                 //    }
                 //}
                 // LoginDetailModel ----Start---- 
+
+
                 objLD.username = obj.username;
-                objLD.password = obj.password;
+                objLD.password = EncryptedPassword;
                 objLD.roleID = RoleID;
                 objLD.parentLoginID = 0;
                 objLD.userStatus = SelfRegistration == true ? 0 : 1;
@@ -206,7 +211,9 @@ namespace Rosyblueonline.ServiceProviders.Implementation
                     objLD.username = obj.username;
                     if (obj.password != "" && obj.password != null)
                     {
-                        objLD.password = obj.password;
+
+                        string EncryptedPassword = new Encryption().EncryptQueryString(obj.password);
+                        objLD.password = EncryptedPassword;
                     }
                     objLD.roleID = RoleID;
                     objLD.modifiedDate = DateTime.Now;
@@ -306,8 +313,8 @@ namespace Rosyblueonline.ServiceProviders.Implementation
                 cfg.CreateMap<UserRegistrationViewModel, RegistrationViewModel>();
             });
             IMapper mapper = config.CreateMapper();
-            var newObj = mapper.Map<UserRegistrationViewModel, RegistrationViewModel>(obj);
-            newObj.userStatus = 1;
+             var newObj = mapper.Map<UserRegistrationViewModel, RegistrationViewModel>(obj);
+            //newObj.userStatus = 1;
             return UpdateRegisterUser(newObj, UserID);
         }
 
@@ -357,8 +364,16 @@ namespace Rosyblueonline.ServiceProviders.Implementation
                         uow.LoginDetails.Edit(objUD);
                         if (uow.Save() > 0)
                         {
+                            string DecryptedPassword = "";
+                            if (objUD.password.Contains("="))
+                            {
+                                DecryptedPassword = new Encryption().DecryptQueryString(objUD.password);
 
-                            string Body = "<html><body><p>Dear User,</p><br><p>Your current user name : <b>" + objUD.username + "</b> and Password : <b>" + objUD.password + "</b></p> <p><a href='" + Url + "?v=" + VerificationCode + "&l=" + LoginID.ToString() + "'>Click here to reset your password.</a></p></body></html>";
+                            }
+                            else { DecryptedPassword = objUD.password; }
+
+
+                            string Body = "<html><body><p>Dear User,</p><br><p>Your current user name : <b>" + objUD.username + "</b> and Password : <b>" + DecryptedPassword + "</b></p> <p><a href='" + Url + "?v=" + VerificationCode + "&l=" + LoginID.ToString() + "'>Click here to reset your password.</a></p></body></html>";
                             objMu.SendMail(EmailID, "Reset Password", true, Body);
                             return true;
                         }
@@ -375,12 +390,17 @@ namespace Rosyblueonline.ServiceProviders.Implementation
 
         public bool ResetForgetPassword(int ID, string Code, string Password, int ValidTimeout)
         {
+
+            string EncryptedPassword = new Encryption().EncryptQueryString(Password);
+            //string EncryptedPassword = GenerateHashWithSalt(Password);
+
             LoginDetailModel objUD = uow.LoginDetails.GetAll().Where(x => x.loginID == ID && x.verificationCode == Code).FirstOrDefault();
             if (objUD != null && objUD.modifiedDate.HasValue == true)
             {
                 if (objUD.modifiedDate.Value.AddMinutes(ValidTimeout) >= DateTime.Now)
                 {
-                    objUD.password = Password;
+                    //objUD.password = Password;
+                    objUD.password = EncryptedPassword;
                     objUD.verificationCode = null;
                     uow.LoginDetails.Edit(objUD);
                     uow.Save();
@@ -473,6 +493,54 @@ namespace Rosyblueonline.ServiceProviders.Implementation
             UserMenuAccessModel objAccess = uow.Orders.GetUserMenuAccessDetails(Loginid, MenuIdList, CreatedBy, QFlag);
             return objAccess;
         }
+
+
+        public bool LastPasswordReset(int Loginid)
+        {
+
+            UserActivityLogModel objlogs = uow.Orders.GetPasswordResetLogData(Loginid);
+            //UserActivityLogModel objUD = uow.UserActivityLogM.GetAll().Where(x => x.ActionName == "PasswordReset" && x.LoginId == Loginid).OrderByDescending(x => x.ActivityId).FirstOrDefault();
+
+            return objlogs == null ? true : false;
+
+        }
+
+
+
+
+        public string PasswordResetBySystem(string EmailID)
+        {
+            int LoginID = 0;
+            if (!CheckEmailID(EmailID, out LoginID, 0))
+            {
+                if (LoginID != 0)
+                {
+                    MailUtility objMu = new MailUtility();
+                    string VerificationCode = RandomHelpers.Instance.RandomString(5, true);
+                    LoginDetailModel objUD = uow.LoginDetails.GetAll().Where(x => x.loginID == LoginID).FirstOrDefault();
+                    if (objUD != null)
+                    {
+                        objUD.verificationCode = VerificationCode;
+                        objUD.modifiedDate = DateTime.Now;
+                        uow.LoginDetails.Edit(objUD);
+                        if (uow.Save() > 0)
+                        {
+
+                            string ResetURL = "?v=" + VerificationCode + "&l=" + LoginID.ToString();
+
+                            return ResetURL;
+                        }
+                        return "";
+                    }
+                }
+            }
+            else
+            {
+                throw new UserDefinedException(string.Format(StringResource.Invalid, "Email id"));
+            }
+            return "";
+        }
+
         //public bool UserActivitylog(int Loginid, string Actionname, string Actiondetail)
         //{
 
@@ -558,15 +626,42 @@ namespace Rosyblueonline.ServiceProviders.Implementation
 
         public TokenLogModel Login(LoginViewModel obj)
         {
+            string EncryptedPassword = new Encryption().EncryptQueryString(obj.Password);
+            // string EncryptedPassword = GenerateHashWithSalt(obj.Password);
+
             LoginDeviceModel objLDevice = new LoginDeviceModel();
             objLDevice.ipAddress = obj.IpAddress;
             objLDevice.deviceName = obj.DeviceName;
             objLDevice.createdOn = DateTime.Now;
+
             if (GetLoginAttempts(obj.IpAddress))
             {
                 throw new UserDefinedException(StringResource.ReachedMaxAttempts);
             }
-            LoginDetailModel objLDetails = uow.LoginDetails.Queryable().Where(x => x.username.ToLower() == obj.Username.ToLower() && x.password == obj.Password).FirstOrDefault();
+            LoginDetailModel objLDetails12 = new LoginDetailModel();
+
+            objLDetails12 = uow.LoginDetails.Queryable().Where(x => x.username.ToLower() == obj.Username.ToLower()).FirstOrDefault();
+
+            if (objLDetails12 == null)
+            {
+                uow.LoginDevices.Add(objLDevice);
+                uow.Save();
+                return null;
+            }
+            //  UserActivityLogModel objUD = uow.UserActivityLogM.GetAll().Where(x => x.ActionName == "PasswordReset" && x.LoginId == objLDetails12.loginID).OrderByDescending(x => x.ActivityId).FirstOrDefault();
+
+            UserActivityLogModel objUD = uow.Orders.GetPasswordLogCheck(objLDetails12.loginID);
+            LoginDetailModel objLDetails = new LoginDetailModel();
+            if (objUD == null)
+            {
+                objLDetails = uow.LoginDetails.Queryable().Where(x => x.username.ToLower() == obj.Username.ToLower() && x.password == obj.Password).FirstOrDefault();
+
+            }
+            else
+            {
+                objLDetails = uow.LoginDetails.Queryable().Where(x => x.username.ToLower() == obj.Username.ToLower() && x.password == EncryptedPassword).FirstOrDefault();
+
+            }
             if (objLDetails == null)
             {
                 uow.LoginDevices.Add(objLDevice);
@@ -608,6 +703,9 @@ namespace Rosyblueonline.ServiceProviders.Implementation
 
         public bool Login(string TokenID, string Password)
         {
+            string EncryptedPassword = new Encryption().EncryptQueryString(Password);
+            // string EncryptedPassword = GenerateHashWithSalt(Password);
+
             LoginDeviceModel objLDevice = new LoginDeviceModel();
             TokenLogModel objToken = uow.TokenLogs.GetAll().Where(x => x.tokenID == TokenID).FirstOrDefault();
             if (objToken != null)
@@ -616,7 +714,7 @@ namespace Rosyblueonline.ServiceProviders.Implementation
                 LoginDetailModel objLD = uow.LoginDetails.GetAll().Where(x => x.loginID == LoginID).FirstOrDefault();
                 if (objLD != null)
                 {
-                    if (objLD.password == Password)
+                    if (objLD.password == EncryptedPassword)
                     {
                         return true;
                     }
@@ -919,14 +1017,17 @@ namespace Rosyblueonline.ServiceProviders.Implementation
 
         public int ResetPassword(int LoginID, string OldPassword, string NewPassword)
         {
+            string EncryptedPassword = new Encryption().EncryptQueryString(OldPassword);
+            string NewEncryptedPassword = new Encryption().EncryptQueryString(NewPassword);
+
             LoginDetailModel objLDM = this.uow.LoginDetails.Queryable().Where(x => x.loginID == LoginID).FirstOrDefault();
             if (objLDM != null)
             {
-                if (objLDM.password != OldPassword)
+                if (objLDM.password != EncryptedPassword)
                 {
                     throw new UserDefinedException("Invalid old password");
                 }
-                objLDM.password = NewPassword;
+                objLDM.password = NewEncryptedPassword;
                 objLDM.modifiedBy = LoginID;
                 objLDM.modifiedDate = DateTime.Now;
                 this.uow.LoginDetails.Edit(objLDM);
@@ -961,7 +1062,7 @@ namespace Rosyblueonline.ServiceProviders.Implementation
 
         public List<MenuMasterModel> MenuMasterDetails()
         {
-            List<MenuMasterModel> objLDM = this.uow.MenuMaster.Queryable().Where(x => x.IsActive == true && x.MenuId != 1 && x.MenuId != 2).OrderBy(x=>x.Orderlist).ToList();
+            List<MenuMasterModel> objLDM = this.uow.MenuMaster.Queryable().Where(x => x.IsActive == true && x.MenuId != 1 && x.MenuId != 2).OrderBy(x => x.Orderlist).ToList();
 
             return objLDM;
         }
@@ -1087,14 +1188,42 @@ namespace Rosyblueonline.ServiceProviders.Implementation
             return (from bill in uow.MstBillingAddresses.Queryable()
                     join ll in uow.LoginDetails.Queryable() on bill.loginID equals ll.loginID
                     join od in uow.orderDetail.Queryable() on ll.loginID equals od.customerId
-                    where ll.roleID == 3  
+                    where ll.roleID == 3
                     select new Select2Option
                     {
                         text = bill.companyName,
                         id = ll.loginID
                     }).Where(x => x.text.Contains(Filter)).Distinct().ToList();
-              
 
+
+        }
+
+
+        public static string GenerateHashWithSalt(string Text)
+        {
+            string Salt = "RosyBlue2021Secretkeyadded";
+            // merge password and salt together
+            var sHashWithSalt = Text + Salt;
+            // convert this merged value to a byte array
+            var saltedHashBytes = Encoding.UTF8.GetBytes(sHashWithSalt);
+            // use hash algorithm to compute the hash
+            System.Security.Cryptography.HashAlgorithm algorithm = new System.Security.Cryptography.SHA256Managed();
+            // convert merged bytes to a hash as byte array
+            var hash = algorithm.ComputeHash(saltedHashBytes);
+            // return the has as a base 64 encoded string
+            return Convert.ToBase64String(hash);
+        }
+
+
+
+        public bool PageAccessCheck(string MenuName, int Loginid)
+        {
+            MenuMasterModel objUD = uow.MenuMaster.GetAll().Where(x => x.MenuName == MenuName).FirstOrDefault();
+
+            UserMenuPermissionModel objMP = uow.UserMenuPermission.GetAll().Where(x => x.MenuId == objUD.MenuId && x.LoginId == Loginid && x.IsActive == true).FirstOrDefault();
+
+
+            return objMP == null ? false : true;
         }
 
 

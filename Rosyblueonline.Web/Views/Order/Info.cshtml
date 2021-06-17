@@ -40,33 +40,33 @@
             <div class="col-lg-12">
                 <section class="">
                     @*@if (objToken.RoleID == 8 || objToken.RoleID == 9 || objToken.RoleID == 2)
-                    {
-                        <div class="panel-body">
+                        {
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="c ol-lg-6">
+                                        <button class="btn-primary btn-qu dropdown-toggle" id="btnRemoveItem">@Resource.Remove_Order_Item</button>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <a class="btn-primary btn-qu dropdown-toggle pull-right" href="/Order/List">@Resource.View_Pending_Orders</a>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        <div class="panel-body no-top-bottom-padding no-top-bottom-margin">
                             <div class="row">
-                                <div class="c ol-lg-6">
-                                    <button class="btn-primary btn-qu dropdown-toggle" id="btnRemoveItem">@Resource.Remove_Order_Item</button>
-                                </div>
                                 <div class="col-lg-6">
-                                    <a class="btn-primary btn-qu dropdown-toggle pull-right" href="/Order/List">@Resource.View_Pending_Orders</a>
+                                    <button class="btn-qu dropdown-toggle" id="btnExcelDownload">@Resource.Excel_Download</button>
                                 </div>
                             </div>
                         </div>
-                    }
-                    <div class="panel-body no-top-bottom-padding no-top-bottom-margin">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <button class="btn-qu dropdown-toggle" id="btnExcelDownload">@Resource.Excel_Download</button>
+                        <div class="panel-body no-top-bottom-padding no-top-bottom-margin">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <h4 class="no-top-bottom-padding no-top-bottom-margin">@Resource.Order : @Model | @Resource.Order @Resource.Date :  <span id="spnOrderDate"></span></h4>
+                                    <input type="hidden" name="OrderID" id="hfOrderID" value="@Model" />
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="panel-body no-top-bottom-padding no-top-bottom-margin">
-                        <div class="row">
-                            <div class="col-md-5">
-                                <h4 class="no-top-bottom-padding no-top-bottom-margin">@Resource.Order : @Model | @Resource.Order @Resource.Date :  <span id="spnOrderDate"></span></h4>
-                                <input type="hidden" name="OrderID" id="hfOrderID" value="@Model" />
-                            </div>
-                        </div>
-                    </div>*@
+                        </div>*@
 
                     @Html.Partial("~/Views/Shared/_PartialSpecificSearchResult.cshtml", "OrderInfo")
                     <div class="panel-body">
@@ -188,10 +188,10 @@
                             <div class="col-md-5">
                                 @if (objToken.RoleID == 8 || objToken.RoleID == 9 || objToken.RoleID == 2)
                                 {
-                                <button class="btn btn-primary" id="btnExecute">@Resource.Execute</button>
-                                <button class="btn btn-primary" id="btnCancel">@Resource.Cancel</button>
+                                    <button class="btn btn-primary" id="btnExecute">@Resource.Execute</button>
+                                    <button class="btn btn-primary" id="btnCancel">@Resource.Cancel</button>
                                 }
-                            <a class="btn btn-primary" href="/Order/List">@Resource.Back</a>
+                                <a class="btn btn-primary" href="/Order/List">@Resource.Back</a>
                                 @*<button  onclick="javascript:history.go(-1)"></button>*@
                             </div>
                         </div>
@@ -224,5 +224,57 @@
         </tr>
     </script>
     <script type="text/javascript" src="~/Scripts/custom/rbDataTable.js"></script>
-    <script type="text/javascript" src="~/Scripts/custom/Controller/CtrlOrderInfo.js"></script>
+    @* <script type="text/javascript" src="~/Scripts/custom/Controller/CtrlOrderInfo.js"></script>*@
+      
+
+    <script type="text/javascript" language="javascript">
+        var versionUpdate = (new Date()).getDate();
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = "/Scripts/custom/Controller/CtrlOrderInfo.js?v=" + versionUpdate;
+        document.body.appendChild(script);
+    </script>
+    <script>
+
+        var appSetting = '@(System.Configuration.ConfigurationManager.AppSettings["WebsiteInspectAccess"].ToString())';
+    //    alert(appSetting);
+        var InspectBlock = true;
+        var array = appSetting.split(",");
+        $.each(array, function (i) {
+            if (array[i] == $("#hfUserIds").val()) {
+                InspectBlock = false;
+            }
+
+        });
+
+        //alert($("#hfUserIds").val());
+        if (InspectBlock == true) {
+            document.addEventListener('contextmenu', event => event.preventDefault());
+            document.onkeydown = function (e) {
+                if (event.keyCode == 123) {
+                    return false;
+                }
+
+                if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+                    return false;
+                }
+                if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+                    return false;
+                }
+                if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+                    return false;
+                }
+                if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+                    return false;
+                }
+                if (e.ctrlKey && e.keyCode == 'S'.charCodeAt(0)) {
+                    return false;
+                }
+
+            }
+        }
+
+
+    </script>
+
 }

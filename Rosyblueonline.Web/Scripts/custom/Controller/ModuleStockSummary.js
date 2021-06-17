@@ -17,8 +17,7 @@
         objDasSvc = new DashboardService();
         dtStockSummary = new Datatable();
         registerEvents();
-
-
+        
         objDasSvc.GetSalesLocation().then(function (data) {
             var AllOpt = '', Options = '';
             for (var i = 0; i < data.length; i++) {
@@ -378,6 +377,8 @@
  
 
     };
+
+   
 
     //var Bindhtml = function (data,thisval) {
 

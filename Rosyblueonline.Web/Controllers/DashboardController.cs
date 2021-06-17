@@ -153,7 +153,7 @@ namespace Rosyblueonline.Web.Controllers
                 throw ex;
             }
         }
-
+        [CustomAuthorize("StockSummary")]
         public ActionResult StockSummary()
         {
             return View();

@@ -30,6 +30,7 @@
     var ClearForm = function () {
         $('#txtNewPassword').val('');
         $('#txtConfirmPassword').val('');
+        location.href = '/Home/Index'; 
     }
 
     var SetValidation = function () {

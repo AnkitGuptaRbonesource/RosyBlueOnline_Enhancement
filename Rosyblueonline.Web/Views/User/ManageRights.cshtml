@@ -31,15 +31,15 @@
                                 </div>
                             </div>
                             <div class="form-inline mt-15">
-                                    <div class="form-group">
-                                        @for (int i = 0; i < Model.Menus.Count; i++)
-                                        {
-                                            <input type="checkbox" name="Rights" class="design-checkbox" value="@(Model.Menus[i].RowID)" id="chkRight@(Model.Menus[i].RowID)" />
-                                            <label for="chkRight@(Model.Menus[i].RowID)">@Model.Menus[i].Name</label>
-                                        }
-                                    </div>
-                                </div>       
-                            
+                                <div class="form-group">
+                                    @for (int i = 0; i < Model.Menus.Count; i++)
+                                    {
+                                        <input type="checkbox" name="Rights" class="design-checkbox" value="@(Model.Menus[i].RowID)" id="chkRight@(Model.Menus[i].RowID)" />
+                                        <label for="chkRight@(Model.Menus[i].RowID)">@Model.Menus[i].Name</label>
+                                    }
+                                </div>
+                            </div>
+
                             <div class="mt-10">
                                 <button class="btn btn-primary" id="btnUpdate">@Resource.Update</button>
                             </div>
@@ -80,8 +80,24 @@
 </div>
 
 @section script{
-    <script src="~/Scripts/custom/Service/ServiceMethods.js"></script>
-    <script src="~/Scripts/custom/Controller/CtrlDownloadRightManage.js"></script>
+    @*<script src="~/Scripts/custom/Service/ServiceMethods.js"></script>*@
+    @*<script src="~/Scripts/custom/Controller/CtrlDownloadRightManage.js"></script>*@
+
+    <script type="text/javascript" language="javascript">
+        var versionUpdate = (new Date()).getDate();
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = "/Scripts/custom/Service/ServiceMethods.js?v=" + versionUpdate;
+        document.body.appendChild(script);
+    </script>
+
+    <script type="text/javascript" language="javascript">
+        var versionUpdate = (new Date()).getDate();
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = "/Scripts/custom/Controller/CtrlDownloadRightManage.js?v=" + versionUpdate;
+        document.body.appendChild(script);
+    </script>
 }
 
 

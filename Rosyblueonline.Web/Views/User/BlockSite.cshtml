@@ -36,9 +36,26 @@
                 </div>
             </div>
         </div>
-</section>
+    </section>
 </div>
 @section script{
-    <script type="text/javascript" src="~/Scripts/custom/Service/ServiceMethods.js"></script>
-    <script type="text/javascript" src="~/Scripts/custom/Controller/CtrlBlockSite.js"></script>
+    @*<script type="text/javascript" src="~/Scripts/custom/Service/ServiceMethods.js"></script>*@
+    @*<script type="text/javascript" src="~/Scripts/custom/Controller/CtrlBlockSite.js"></script>*@
+
+
+    <script type="text/javascript" language="javascript">
+        var versionUpdate = (new Date()).getDate();
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = "/Scripts/custom/Service/ServiceMethods.js?v=" + versionUpdate;
+        document.body.appendChild(script);
+    </script>
+
+    <script type="text/javascript" language="javascript">
+        var versionUpdate = (new Date()).getDate();
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = "/Scripts/custom/Controller/CtrlBlockSite.js?v=" + versionUpdate;
+        document.body.appendChild(script);
+    </script>
 }

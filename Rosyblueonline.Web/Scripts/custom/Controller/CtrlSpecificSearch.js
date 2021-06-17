@@ -110,6 +110,7 @@
         $('[data-tooltip="#foo"]').tooltip();
 
         //ToggleFColor(); //Added by Ankit 23JUn2020
+        
     }
 
     var RegisterEvent = function () {
@@ -1340,6 +1341,23 @@
         }
 
 
+
+    }
+
+    var CheckPageAccess = function (MenuName) {
+        objSF.PageAccessCheck(MenuName).then(function (data) {
+            if (data.IsSuccess == true) {
+
+            } else {
+                $('#Modal-AccessDenied').modal('show');
+                uiApp.Alert({ container: '#uiPanel1', message: "You don't have a access of this page", type: "danger" });
+                setTimeout(function () {
+                    location.href = '/Home/Index';
+                }, 1000);
+            }
+        }, function (error) {
+            uiApp.Alert({ container: '#uiPanel1', message: "Some error occured", type: "danger" });
+        });
 
     }
 

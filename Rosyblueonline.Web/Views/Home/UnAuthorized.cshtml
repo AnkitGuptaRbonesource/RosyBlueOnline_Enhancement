@@ -1,0 +1,40 @@
+﻿
+@section header{
+
+}
+<h1>UnAuthorized</h1>
+<div id="Modal-AccessDenied" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <a href="#" class="close" data-dismiss="modal">&times;</a>
+                <h4 class="modal-title">Access Denied</h4>
+            </div>
+            <div class="modal-body">
+                <h2>You don't have a access of this page</h2>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">@Resource.Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@Scripts.Render("~/bundles/modernizr", "~/bundles/jquery", "~/bundles/jqueryval", "~/bundles/bootstrap", "~/bundles/Admin/Script")
+<script type="text/javascript" src="/Scripts/custom/myApp.js"></script>
+<script type="text/javascript" src="/Scripts/custom/uiApp.js"></script>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $('#Modal-AccessDenied').modal('show');
+        setTimeout(function () {
+            
+            location.href = '/Home/LogOut';
+            //location.href = '/Home/Index';
+        }, 1000);
+    });
+
+</script>

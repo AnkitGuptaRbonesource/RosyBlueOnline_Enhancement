@@ -31,6 +31,7 @@ namespace Rosyblueonline.Web.Controllers
             this.objUDSvc = objUDSvc as UserDetailService;
         }
         // GET: MenuPermissionMaster
+        [CustomAuthorize("AddCustomer")]
         public ActionResult Index()
         {
 

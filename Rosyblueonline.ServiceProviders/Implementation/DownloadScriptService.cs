@@ -40,7 +40,7 @@ namespace Rosyblueonline.ServiceProviders.Implementation
             if (RoleID != 1 && RoleID != 2)
                 return (from dl in uow.DownloadList.Queryable()
                         join dr in uow.DownloadRights.Queryable() on dl.RowID equals dr.DownloadID
-                        where dr.LoginID == LoginID  && dl.IsActive == true
+                        where dr.LoginID == LoginID && dl.IsActive == true
                         select dl).OrderBy(n => n.DisplayOrder).ToList();
             else
                 return uow.DownloadList.Queryable().Where(x => x.IsActive == true).OrderBy(x => x.DisplayOrder).ToList();
@@ -88,5 +88,40 @@ namespace Rosyblueonline.ServiceProviders.Implementation
             }
             return ds;
         }
+
+
+
+        public List<DownloadList> GetMarketDownloadForMenu(int LoginID)
+        {
+            List<DownloadList> objInvVM = new List<DownloadList>();
+
+            return objInvVM = MarketInvDownload<DownloadList>(LoginID.ToString(), "MarketList");
+
+
+        }
+
+
+        public DataTable MarketInventoryDownloadExcelExport(string LoginID, string QFlag)
+        {
+            // List<InventoryDownloadViewModel> objInvVM = new List<InventoryDownloadViewModel>();
+
+            //   objInvVM = MarketInvDownload<InventoryDownloadViewModel>(LoginID, QFlag);
+            //  DataTable dt = Rosyblueonline.Framework.ListtoDataTable.ToDataTable<InventoryDownloadViewModel>(objInvVM);
+
+
+            DataSet dsResult = this.db.ExecuteCommand("exec proc_MarketInventoryDownload " + LoginID + "," + QFlag, CommandType.Text);
+
+
+            return dsResult.Tables[0];
+        }
+
+        public List<T> MarketInvDownload<T>(params string[] Parameters) where T : class
+        {
+
+            return this.uow.ExecuteQuery<T>("Exec proc_MarketInventoryDownload '{0}','{1}'", Parameters);
+
+
+        }
+
     }
 }

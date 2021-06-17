@@ -56,6 +56,7 @@ namespace Rosyblueonline.Web.Controllers
         }
         // GET: Inventory
         #region StockSearch
+        [CustomAuthorize("Search")]
         public ActionResult SpecificSearch()
         {
             int LoginID = GetLogin();
@@ -542,7 +543,7 @@ namespace Rosyblueonline.Web.Controllers
         //    }
         //}
 
-        [HttpPost]
+        [HttpPost] 
         public ActionResult InventoryUpload(int uploadFormatId)
         {
             string path = "";
@@ -1090,7 +1091,7 @@ namespace Rosyblueonline.Web.Controllers
             //Added New Comment
             return File(fullPath, "application/vnd.ms-excel", file);
         }
-
+        [CustomAuthorize("InventoryUpload")]
         public ActionResult Upload()
         {
             List<mstUploadFormatViewModel> objVM = new List<mstUploadFormatViewModel>();
@@ -1104,7 +1105,7 @@ namespace Rosyblueonline.Web.Controllers
             objVM = objStockDetailsService.InventoryUploadTypes("Upload_Types");
             return View(objVM);
         }
-
+        [CustomAuthorize("UploadHistory")]
         public ActionResult UploadHistory()
         {
             return View();
@@ -1184,6 +1185,7 @@ namespace Rosyblueonline.Web.Controllers
             }
         }
 
+        [CustomAuthorize("StoneStatus")]
         public ActionResult StoneStatus()
         {
             return View();
@@ -1295,7 +1297,7 @@ namespace Rosyblueonline.Web.Controllers
                 return Json(new Response { IsSuccess = false, Message = ex.Message });
             }
         }
-
+        [CustomAuthorize("GIAReports")]
         public ActionResult GIA()
         {
             return View();
@@ -1553,7 +1555,7 @@ namespace Rosyblueonline.Web.Controllers
             }
 
         }
-
+        [CustomAuthorize("InventoryDownload")]
         public ActionResult Downloads()
         {
             int LoginID = GetLogin();
@@ -1681,7 +1683,7 @@ namespace Rosyblueonline.Web.Controllers
         }
 
         [HttpPost]
-        public JsonResult InventorydownloadForExcel(string id, string FileName,string SheetName)
+        public JsonResult InventorydownloadForExcel(string id, string FileName, string SheetName)
         {
             try
             {
@@ -1776,7 +1778,7 @@ namespace Rosyblueonline.Web.Controllers
             catch (Exception ex) { }
             finally { }
         }
-
+        [CustomAuthorize("StoneHistory")]
         public ActionResult StoneHistory()
         {
             return View();

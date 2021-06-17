@@ -191,6 +191,10 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="TripleDESAtlNet, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\TripleDESAtlNet.dll</HintPath>
+    </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
@@ -211,6 +215,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Attribute\CustomAuthorizeAttribute.cs" />
     <Compile Include="Attribute\CheckSession.cs" />
     <Compile Include="Controllers\ChargesController.cs" />
     <Compile Include="Controllers\CustomerFeedbackFAQController.cs" />
@@ -762,6 +767,7 @@
     <Content Include="Content\INV\Temp\AddRemoveLab.xlsx" />
     <Content Include="Content\INV\Temp\V360ViaCert.xlsx" />
     <Content Include="Content\INV\Temp\UploadFormatFile.xlsx" />
+    <Content Include="Content\INV\Temp\MarketUploadFormatFile.xlsx" />
     <None Include="Properties\PublishProfiles\Rosyblueonline_Enh_Html.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\BrowserVisibility.js" />
@@ -779,6 +785,7 @@
     <Content Include="Scripts\custom\Controller\CtrlCharges.js" />
     <Content Include="Scripts\custom\Controller\CtrlMarketingJamesAllenHK.js" />
     <Content Include="Scripts\custom\Controller\CtrlMarketingJamesAllen.js" />
+    <Content Include="Scripts\custom\Controller\CtrlMarketInventoryUpload.js" />
     <Content Include="Scripts\custom\Controller\CtrlMasterLayout.js" />
     <Content Include="Scripts\custom\Controller\CtrlMemo.js" />
     <Content Include="Scripts\custom\Controller\CtrlMemoDetails.js" />
@@ -1138,6 +1145,9 @@
     <Content Include="Views\Home\TermsOfUse.cshtml" />
     <Content Include="Views\Home\PricingDiscountPolicy.cshtml" />
     <Content Include="Views\Marketing\MarketingStockSummary.cshtml" />
+    <Content Include="Views\Home\UnAuthorized.cshtml" />
+    <Content Include="Views\Marketing\MarketInventoryUpload.cshtml" />
+    <Content Include="Views\Marketing\MarketInventoryDownload.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

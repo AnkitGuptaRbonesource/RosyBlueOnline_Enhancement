@@ -17,5 +17,10 @@ namespace Rosyblueonline.ServiceProviders.Abstraction
         int UpdateRights(List<DownloadRightModel> objLst);
         List<DownloadList> GetDownloadForMenu(int LoginID, int RoleID);
         DataSet ExecuteDownload(string Ids);
+
+        List<DownloadList> GetMarketDownloadForMenu(int LoginID);
+
+        DataTable MarketInventoryDownloadExcelExport(string LoginID, string QFlag);
+
     }
 }

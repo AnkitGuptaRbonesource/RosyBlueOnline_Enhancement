@@ -37,7 +37,7 @@ namespace Rosyblueonline.Web.Controllers
                 Thread.CurrentThread.CurrentUICulture = new CultureInfo(Request.Cookies["CurrentCulture"].Value);
             }
         }
-
+        [CustomAuthorize("AllMemo")]
         public ActionResult Index()
         {
             return View();

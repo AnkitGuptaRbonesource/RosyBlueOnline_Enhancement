@@ -29,6 +29,8 @@ namespace Rosyblueonline.Web.Controllers
         }
 
         // GET: RFID
+
+        [CustomAuthorize("RFID")]
         public ActionResult Index()
         {
             return View();
@@ -59,7 +61,7 @@ namespace Rosyblueonline.Web.Controllers
                 return Json(new Response { IsSuccess = false, Message = ex.Message });
             }
         }
-
+        [CustomAuthorize("RFIModify")]
         public ActionResult Update()
         {
             return View();
@@ -131,7 +133,7 @@ namespace Rosyblueonline.Web.Controllers
                 return Json(new Response { IsSuccess = false, Message = ex.Message });
             }
         }
-
+        [CustomAuthorize("RFIDStockTally")]
         public ActionResult StockTally()
         {
             return View();
@@ -181,7 +183,7 @@ namespace Rosyblueonline.Web.Controllers
                 return Json(new Response { IsSuccess = false, Message = ex.Message });
             }
         }
-
+        [CustomAuthorize("RFIDMaster")]
         public ActionResult RFIDMaster()
         {
             List<mstRFIDModel> objLst = new List<mstRFIDModel>();
@@ -234,7 +236,7 @@ namespace Rosyblueonline.Web.Controllers
             }
 
         }
-
+        [CustomAuthorize("RFIDHistory")]
         public ActionResult History()
         {
             return View();
@@ -347,7 +349,7 @@ namespace Rosyblueonline.Web.Controllers
                 return Json(new Response { IsSuccess = false, Message = ex.Message });
             }
         }
-
+        [CustomAuthorize("UploadHistory")]
         public ActionResult UploadHistory()
         {
             return View();

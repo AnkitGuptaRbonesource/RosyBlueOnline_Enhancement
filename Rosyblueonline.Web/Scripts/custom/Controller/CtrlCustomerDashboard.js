@@ -17,8 +17,7 @@
         BindPendingOrders();
         BindCompletedOrders();
         //BindPendingOrderList("Pending");
-        //BindPendingOrderList("Complete");
-        
+        //BindPendingOrderList("Complete"); 
     };
 
     var RegisterEvent = function () {
@@ -585,6 +584,7 @@
             dtCompletedOrders.getDataTable().draw();
         }
     }
+    
 
     //var BindCustomerDemandDetail = function (data) {
     //    if (dtCustomerDemandDetail.getDataTable() == null || dtCustomerDemandDetail.getDataTable() == undefined) {

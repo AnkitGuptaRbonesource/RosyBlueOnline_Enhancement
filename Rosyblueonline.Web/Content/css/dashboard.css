@@ -2391,8 +2391,7 @@ a.sele-all {
     color: #3A4276 !important;
     border: none;
     font-weight: 600;
-    letter-spacing: 0.3px;
-    text-transform: capitalize;
+    letter-spacing: 0.3px; 
     border-bottom: 1px solid #D3D8DD;
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 }

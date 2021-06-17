@@ -53,7 +53,7 @@
                                             <tr role="row" class="table-head">
 
                                                 <th class="tbnew">
-                                                
+
                                                 </th>
                                                 <th class="tbnew">
                                                     <label> @Resource.Sizes</label>
@@ -72,20 +72,20 @@
                                                 </th>
 
                                                 @*<th class="tbnew">
-                <label>TotInvValue</label>
-            </th>
+                                                        <label>TotInvValue</label>
+                                                    </th>
 
-            <th class="tbnew">
-                <label>TotOnMemoValue</label>
-            </th>
+                                                    <th class="tbnew">
+                                                        <label>TotOnMemoValue</label>
+                                                    </th>
 
-            <th class="tbnew">
-                <label>TotOrdPendingValue</label>
-            </th>
+                                                    <th class="tbnew">
+                                                        <label>TotOrdPendingValue</label>
+                                                    </th>
 
-            <th class="tbnew">
-                <label>TotAvailbaleValue</label>
-            </th>*@
+                                                    <th class="tbnew">
+                                                        <label>TotAvailbaleValue</label>
+                                                    </th>*@
                                             </tr>
                                         </thead>
                                         <tfoot>
@@ -109,16 +109,16 @@
                                                 </th>
                                                 @*<th class="tbnew">
 
-            </th>
-            <th class="tbnew">
+                                                    </th>
+                                                    <th class="tbnew">
 
-            </th>
-            <th class="tbnew">
+                                                    </th>
+                                                    <th class="tbnew">
 
-            </th>
-            <th class="tbnew">
+                                                    </th>
+                                                    <th class="tbnew">
 
-            </th>*@
+                                                    </th>*@
                                             </tr>
                                         </tfoot>
                                     </table>
@@ -131,3 +131,48 @@
         </div>
     </div>
 </div>
+@section script{
+    <script type="text/javascript" language="javascript">
+
+        var appSetting = '@(System.Configuration.ConfigurationManager.AppSettings["WebsiteInspectAccess"].ToString())';
+    //    alert(appSetting);
+        var InspectBlock = true;
+        var array = appSetting.split(",");
+        $.each(array, function (i) {
+            if (array[i] == $("#hfUserIds").val()) {
+                InspectBlock = false;
+            }
+
+        });
+
+        //alert($("#hfUserIds").val());
+        if (InspectBlock == true) {
+            document.addEventListener('contextmenu', event => event.preventDefault());
+            document.onkeydown = function (e) {
+                if (event.keyCode == 123) {
+                    return false;
+                }
+
+                if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+                    return false;
+                }
+                if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+                    return false;
+                }
+                if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+                    return false;
+                }
+                if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+                    return false;
+                }
+                if (e.ctrlKey && e.keyCode == 'S'.charCodeAt(0)) {
+                    return false;
+                }
+
+            }
+        }
+
+
+    </script>
+
+}

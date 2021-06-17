@@ -50,6 +50,7 @@ namespace Rosyblueonline.Web.Controllers
                 Thread.CurrentThread.CurrentUICulture = new CultureInfo(Request.Cookies["CurrentCulture"].Value);
             }
         }
+        [CustomAuthorize("AllOrder")]
         public ActionResult List()
         {
             return View();

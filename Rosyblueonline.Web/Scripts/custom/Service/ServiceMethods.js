@@ -579,7 +579,53 @@ var SearchFilter = function () {
             }
         });
     };
+
+    obj.PageAccessCheck = function (MenuName) {
+        return myApp.http({
+            method: 'post',
+            url: '/Home/PageAccessCheck',
+            data: {
+                MenuName: MenuName
+            }
+        });
+    }
+
+
+
+    obj.UploadMarketUploadInventory = function (pData) {
+        return myApp.http({
+            method: 'post',
+            url: '/Marketing/MarketUploadInventory',
+            data: pData,
+            processData: false,
+            contentType: false
+        });
+    } 
+
+
+    obj.MarketdownloadForExcel = function (id, FileName) {
+        return myApp.http({
+            method: 'post',
+            url: '/Marketing/MarketdownloadForExcel',
+            data: {
+                id: id,
+                FileName: FileName
+            }
+        });
+    };
+
+    obj.DeleteMarketInventory = function (id) {
+        return myApp.http({
+            method: 'post',
+            url: '/Marketing/DeleteMarketInventory',
+            data: {
+                id: id 
+            }
+        });
+    };
+
     
+
 
 
     return obj;
@@ -791,6 +837,17 @@ var OrderService = function () {
             }
         });
 
+    }
+
+
+    obj.PageAccessCheck = function (MenuName) {
+        return myApp.http({
+            method: 'post',
+            url: '/Home/PageAccessCheck',
+            data: {
+                MenuName: MenuName
+            }
+        });
     }
 
     return obj;
@@ -1341,6 +1398,18 @@ var DashboardService = function () {
             }
         });
     }
+
+
+    obj.PageAccessCheck = function (MenuName) {
+        return myApp.http({
+            method: 'post',
+            url: '/Home/PageAccessCheck',
+            data: {
+                MenuName: MenuName
+            }
+        });
+    }
+
 
    
       

@@ -28,6 +28,7 @@ namespace Rosyblueonline.Web.Controllers
         }
 
         // GET: User
+        [CustomAuthorize("AddCustomer")]
         public ActionResult Index(bool OnlyAddCustomer = false)
         {
             UserRegistrationViewModel objVm = new UserRegistrationViewModel();
@@ -142,8 +143,7 @@ namespace Rosyblueonline.Web.Controllers
                     bool status = this.objUDSvc.UpdateRegisterUser(obj, LoginID);
                     if (status == true)
                     {
-                        bool log = this.objUDSvc.UserActivitylogs(LoginID, "Update Profile", "Update Successfully.");
-
+                        
                         return Json(new Response { IsSuccess = true, Code = 200, Result = status });
                     }
                 }
@@ -253,6 +253,7 @@ namespace Rosyblueonline.Web.Controllers
         }
 
         [CheckSession]
+        [CustomAuthorize("ChangePassword")]
         public ActionResult ChangePassword()
         {
             return View();
@@ -331,6 +332,7 @@ namespace Rosyblueonline.Web.Controllers
         //    return Json(new Response { IsSuccess = false, Message = string.Format(StringResource.Invalid, "Session") }, JsonRequestBehavior.AllowGet);
         //}
 
+        [CustomAuthorize("BlockSite")]
         public ActionResult BlockSite()
         {
             BlockSiteHistoryModel objBS = this.objUDSvc.GetLastBlockSiteHistory();
@@ -367,7 +369,7 @@ namespace Rosyblueonline.Web.Controllers
                 return Json(new Response { IsSuccess = false, Message = ex.Message });
             }
         }
-
+        [CustomAuthorize("AddRoleRights")]
         public ActionResult ManageRights()
         {
             ManageRightsViewModel objMR = new ManageRightsViewModel();

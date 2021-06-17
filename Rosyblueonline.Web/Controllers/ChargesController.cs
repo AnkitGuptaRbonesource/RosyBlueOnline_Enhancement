@@ -3,6 +3,7 @@ using Rosyblueonline.Models;
 using Rosyblueonline.Models.ViewModel;
 using Rosyblueonline.ServiceProviders.Abstraction;
 using Rosyblueonline.ServiceProviders.Implementation;
+using Rosyblueonline.Web.Attribute;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -21,6 +22,7 @@ namespace Rosyblueonline.Web.Controllers
             this.objSvc = objSvc as ChargeService;
         }
         // GET: Charges
+        [CustomAuthorize("SummaryDiscount")]
         public ActionResult Index()
         {
             List<mstChargesModel> objLst = this.objSvc.GetAllCharges();

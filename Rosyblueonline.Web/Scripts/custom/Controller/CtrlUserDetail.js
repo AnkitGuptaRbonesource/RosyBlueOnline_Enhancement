@@ -119,7 +119,8 @@
                         bankName: $('#txtBankName').val().trim(),
                         branchName: $('#txtBranchName').val().trim(),
                         branchAddress: $('#txtBranchAddress').val().trim(),
-                        Role: $('#ddlRoles').val()
+                        Role: $('#ddlRoles').val(),
+                        userStatus: $('input[type="radio"][name="userStatus"]:checked').val()
                     },
                     //roles: $('input[type="radio"][name="optradio"]:checked').val()
                     
@@ -564,7 +565,9 @@
         $('#txtBranchAddress').val(data.UserDetail.branchAddress);
         $('#rbtnSupportAdmin').prop('checked', data.Login.roleID == 8 ? true : false);
         $('#rbtnCustomer').prop('checked', data.Login.roleID == 3 ? true : false);
-        $('#hfLoginID').val(data.Login.loginID);
+        $('#hfLoginID').val(data.Login.loginID); 
+        $('input[name=userStatus][value=' + data.Login.userStatus + ']').prop('checked', true);
+
     }
 
     function clearForm() {
