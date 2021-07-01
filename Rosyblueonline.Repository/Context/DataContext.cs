@@ -75,8 +75,10 @@ namespace Rosyblueonline.Repository.Context
             modelBuilder.Entity<CustomerFAQAnswersModel>().ToTable("CustomerFAQAnswers");
             modelBuilder.Entity<MstRolesModel>().ToTable("mstrole");
 
+            modelBuilder.Entity<MarketFileUploadLogModel>().ToTable("MarketFileUploadLog");
 
-            
+            modelBuilder.Entity<QCFileUploadLogModel>().ToTable("QCFileUploadLog");
+
 
             base.OnModelCreating(modelBuilder);
         }
@@ -139,7 +141,14 @@ namespace Rosyblueonline.Repository.Context
         public DbSet<CustomerFAQAnswersModel> CustomerFAQAnswers { get; set; }
 
         public DbSet<MstRolesModel> mstrole { get; set; }
-         
+
+
+
+        public DbSet<MarketFileUploadLogModel> MarketFileUploadLog { get; set; }
+
+
+        public DbSet<QCFileUploadLogModel> QCFileUploadLog { get; set; }
+
 
         // need to exclude the below
         public DbSet<mstColorModel> Color { get; set; }

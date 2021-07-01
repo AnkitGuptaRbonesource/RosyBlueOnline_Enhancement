@@ -20,7 +20,11 @@ namespace Rosyblueonline.ServiceProviders.Abstraction
 
         List<DownloadList> GetMarketDownloadForMenu(int LoginID);
 
-        DataTable MarketInventoryDownloadExcelExport(string LoginID, string QFlag);
+        DataTable MarketInventoryDownloadExcelExport(string LoginID, string FileId, string QFlag, string UploadDate, string VendorName, string CertNos);
+
+        IQueryable<MarketFileUploadLogModel> QueryableFilesDetail();
+
+        IQueryable<QCFileUploadLogModel> QueryableQCFilesDetail();
 
     }
 }

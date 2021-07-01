@@ -603,13 +603,26 @@ var SearchFilter = function () {
     } 
 
 
-    obj.MarketdownloadForExcel = function (id, FileName) {
+    obj.QCUploadInventory = function (pData) {
+        return myApp.http({
+            method: 'post',
+            url: '/Marketing/QCUploadInventory',
+            data: pData,
+            processData: false,
+            contentType: false
+        });
+    } 
+
+    obj.MarketdownloadForExcel = function (FileId, FileName, UploadDate, VendorName, CertNos) {
         return myApp.http({
             method: 'post',
             url: '/Marketing/MarketdownloadForExcel',
             data: {
-                id: id,
-                FileName: FileName
+                FileId: FileId,
+                FileName: FileName,
+                UploadDate: UploadDate,
+                VendorName: VendorName,
+                CertNos: CertNos
             }
         });
     };
@@ -620,6 +633,34 @@ var SearchFilter = function () {
             url: '/Marketing/DeleteMarketInventory',
             data: {
                 id: id 
+            }
+        });
+    };
+
+    obj.QCDetailsUpdate = function (QCID, TableBlack, SideBlack, OpensName, Milky, Shade, Remark) {
+        return myApp.http({
+            method: 'post',
+            url: '/Marketing/QCDetailsUpdate',
+            data: {
+                QCID: QCID,
+                TableBlack: TableBlack,
+                SideBlack: SideBlack,
+                OpensName: OpensName,
+                Milky: Milky,
+                Shade: Shade,
+                Remark: Remark
+            }
+        });
+    };
+
+
+
+    obj.QCDetailsEdit = function (QCID) {
+        return myApp.http({
+            method: 'post',
+            url: '/Marketing/QCDetailsEdit',
+            data: {
+                QCID: QCID 
             }
         });
     };
@@ -661,9 +702,9 @@ var CartService = function () {
         });
     };
 
+   
 
-
-
+     
   
 
     return obj;

@@ -101,15 +101,20 @@ namespace Rosyblueonline.ServiceProviders.Implementation
         }
 
 
-        public DataTable MarketInventoryDownloadExcelExport(string LoginID, string QFlag)
+        public DataTable MarketInventoryDownloadExcelExport(string LoginID, string FileId,string QFlag, string UploadDate,string VendorName,string CertNos)
         {
             // List<InventoryDownloadViewModel> objInvVM = new List<InventoryDownloadViewModel>();
 
             //   objInvVM = MarketInvDownload<InventoryDownloadViewModel>(LoginID, QFlag);
             //  DataTable dt = Rosyblueonline.Framework.ListtoDataTable.ToDataTable<InventoryDownloadViewModel>(objInvVM);
-
-
-            DataSet dsResult = this.db.ExecuteCommand("exec proc_MarketInventoryDownload " + LoginID + "," + QFlag, CommandType.Text);
+            LoginID = LoginID == "" ? "null" : LoginID;
+            FileId = FileId == "" ? "null" : FileId;
+            QFlag = QFlag == "" ? "null" : QFlag;
+            UploadDate = UploadDate == "" ? "null" : UploadDate;
+            VendorName = VendorName == "" ? "null" : VendorName;
+            CertNos = CertNos == "" ? "null" : CertNos;
+            
+            DataSet dsResult = this.db.ExecuteCommand("exec proc_MarketInventoryDownload " + LoginID + "," + FileId + "," + QFlag+",'"+ UploadDate+"',"+ VendorName+","+ CertNos, CommandType.Text);
 
 
             return dsResult.Tables[0];
@@ -123,5 +128,16 @@ namespace Rosyblueonline.ServiceProviders.Implementation
 
         }
 
+        public IQueryable<MarketFileUploadLogModel> QueryableFilesDetail()
+        {
+            return this.uow.MarketFileUploadLog.Queryable();
+        }
+
+        public IQueryable<QCFileUploadLogModel> QueryableQCFilesDetail()
+        {
+            return this.uow.QCFileUploadLog.Queryable();
+        }
+
+      
     }
 }

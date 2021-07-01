@@ -39,12 +39,17 @@ namespace Rosyblueonline.Web.Attribute
                 using (var context = new DataContext())
                 {
 
-
+                    if (objToken.RoleID == 10)
+                    {
+                        authorize = false;
+                        return authorize;
+                    }
+                     
 
                     var MenuIds = (from u in context.MenuMaster
-                                  where u.MenuName == AllowPage
-                                  select new
-                                  { u.MenuId }).FirstOrDefault();
+                                   where u.MenuName == AllowPage
+                                   select new
+                                   { u.MenuId }).FirstOrDefault();
 
                     int MenuId = Convert.ToInt32(MenuIds.MenuId);
                     int LoginIds = Convert.ToInt32(LoginId);
@@ -54,7 +59,7 @@ namespace Rosyblueonline.Web.Attribute
                                        {
                                            u.MenuId
                                        }).FirstOrDefault();
-                    authorize= MenuDetails == null ? false : true;
+                    authorize = MenuDetails == null ? false : true;
 
                 }
 
@@ -62,7 +67,7 @@ namespace Rosyblueonline.Web.Attribute
         }
 
         protected override void HandleUnauthorizedRequest(AuthorizationContext filterContext)
-        { 
+        {
             filterContext.Result = new RedirectToRouteResult(
                new RouteValueDictionary
                {

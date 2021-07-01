@@ -1,0 +1,394 @@
+﻿
+@model Rosyblueonline.Models.QCFinalDDLListModel
+@{
+    ViewBag.Title = "QC Details";
+    Layout = "~/Views/Shared/_LayoutMarketInventory.cshtml";
+}
+@section header{
+    @Styles.Render("~/bundles/DataTable/Style")
+}
+<html>
+<head>
+</head>
+<body class="sidebar-mini skin-black-light sidebar-collapse">
+    <div class="content-wrapper">
+        <section class="content">
+            <div id="uiPanel1"></div>
+            <div style="display:none;">
+                <a id="ancMktInventoryDownload1" href="/Marketing/MarketExportToExcelInventoryDownload"></a>
+            </div>
+            <section class="content" id="MktsecGrid" style="margin-left: -100px;">
+                <div class="customers-list-table">
+                    <div class="customers-list-table">
+                        <div class="col-md-12">
+                            <div class="inventory-box">
+                                <div class="memo-title">
+                                    <h2>QC Details</h2>
+                                </div>
+                                <form id="frmMktQCDetails" class="panel-body paneltable">
+                                    <div class="form-horizontal">
+                                        <div class="form-group">
+                                            <div class="row">
+
+
+                                                <div class="col-lg-8 col-sm-6 col-xs-12">
+                                                    <div class="inventory-form">
+
+
+                                                        <div class="col-lg-3 col-md-3 col-sm-6">
+                                                            <div id="UploadDate" class="form-group">
+                                                                <div>
+                                                                    <label class="control-label">Upload Date</label>
+                                                                    <div>
+
+                                                                        <input type="text" name="UploadDate" value="" class="form-control datepicker" id="txtUploadDate" placeholder="Select Date" />
+
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-3 col-md-3 col-sm-6">
+                                                            <div id="Fileids" class="form-group">
+                                                                <div>
+                                                                    <label class="control-label">Fileid</label>
+                                                                    <div>
+                                                                        <select class="form-control" id="ddlFileids" name="Fileids">
+                                                                            <option value="">--Select Fileid-- </option>
+
+                                                                            @if (Model.Fileids != null)
+                                                                            {
+
+                                                                                foreach (var VendorId in Model.Fileids)
+                                                                                {
+                                                                                    <option value="@VendorId.id">@VendorId.Name </option>
+                                                                                }
+
+                                                                            }
+                                                                        </select>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-5 col-md-3 col-sm-6">
+                                                            <div id="QCStatus" class="form-group">
+                                                                <div>
+                                                                    <label class="control-label">Status </label>
+                                                                    <div>
+                                                                        <label class="radio-inline controll-radio">
+                                                                            <input type="radio" name="QCStatus" id="rbtnActive" value="0" checked><label for="rbtnActive" class="controll-label">@Resource.Pending</label>
+                                                                        </label>
+                                                                        <label class="radio-inline controll-radio">
+                                                                            <input type="radio" name="QCStatus" id="rbtnInActive" value="1"><label for="rbtnInActive" class="controll-label">Done</label>
+                                                                        </label>
+
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+
+
+                                                        <div class="col-lg-5 col-md-3 col-sm-6">
+                                                            <div id="FilterDetails" class="form-group">
+                                                                <div>
+                                                                    <label class="control-label">  </label>
+                                                                    <div>
+                                                                        <button id="btnFilter" class="btn btn-primary Submit-btn">@Resource.Submit</button>
+
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </form>
+                            </div>
+
+
+
+                            <div class="row">
+                                <div class="customers-list-table">
+                                    <div class="customers-list-table">
+                                        <div class="col-md-12">
+                                            <div class="table-panel">
+                                                <div class="panel-body paneltable">
+                                                    <div class="list-view">
+                                                        <div class="paneltable">
+                                                            <table id="tblQCDetails" class="table table-fixed dataTable no-footer">
+                                                                <thead class="bordertp">
+                                                                    <tr role="row" class="table-head">
+                                                                        <th class="tbnew">
+                                                                            ID
+                                                                        </th>
+                                                                        <th class="tbnew">
+                                                                            Cert No
+                                                                        </th>
+                                                                        <th class="tbnew">
+                                                                            lotNumber
+                                                                        </th>
+                                                                        <th class="tbnew">
+                                                                            TB
+                                                                        </th>
+                                                                        <th class="tbnew">
+                                                                            SB
+                                                                        </th>
+                                                                        <th class="tbnew">
+                                                                            Opens
+                                                                        </th>
+                                                                        <th class="tbnew">
+                                                                            Milky
+                                                                        </th>
+                                                                        <th class="tbnew">
+                                                                            Shape
+                                                                        </th>
+                                                                        <th class="tbnew">
+                                                                            Remark
+                                                                        </th>
+
+                                                                        <th class="tbnew">
+                                                                            Status
+                                                                        </th>
+                                                                        <th class="tbnew">
+                                                                            Created On
+                                                                        </th>
+                                                                        <th class="tbnew">
+                                                                            Edit
+                                                                        </th>
+                                                                    </tr>
+                                                                </thead>
+
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </section>
+    </div>
+
+
+    <div id="Modal-SearchPermission" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-md">
+            <!-- Modal content-->
+            <form class="modal-content" id="frmQCDetails">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">QC Update</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form">
+
+                                <div class="form-group" id="pnlSearchPermission">
+                                    <div class="row">
+                                        <div class="col-md-12" style="font-size: larger;padding: 10px;">
+                                            <label> Certificate No :  </label>  <label id="lblCertNo">   </label>
+
+                                            <input type="hidden" name="QCID" id="hfQCID" value="" />
+                                        </div>
+                                        <div class="col-md-5">
+                                            <label for="TableBlack">
+                                                Table Black
+                                            </label>
+
+                                            <select class="form-control" id="ddlTableBlack" name="TableBlack">
+                                                <option value="">--Select TableBlack--</option>
+
+                                                @if (Model.TableBlack != null)
+                                                {
+
+                                                    foreach (var TB in Model.TableBlack)
+                                                    {
+                                                        <option value="@TB.id">@TB.Name</option>
+                                                    }
+
+                                                }
+                                            </select>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <label for="SideBlack">
+                                                SideBlack
+                                            </label>
+
+                                            <select class="form-control" id="ddlSideBlack" name="SideBlack">
+                                                <option value="">--Select SideBlack--</option>
+
+                                                @if (Model.SideBlack != null)
+                                                {
+
+                                                    foreach (var SB in Model.SideBlack)
+                                                    {
+                                                        <option value="@SB.id">@SB.Name</option>
+                                                    }
+
+                                                }
+                                            </select>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <label for="OpensName">
+                                                OpensName
+                                            </label>
+
+
+                                            <select class="form-control" id="ddlOpensName" name="OpensName">
+                                                <option value="">--Select OpensName--</option>
+
+                                                @if (Model.OpensName != null)
+                                                {
+
+                                                    foreach (var OP in Model.OpensName)
+                                                    {
+                                                        <option value="@OP.id">@OP.Name</option>
+                                                    }
+
+                                                }
+                                            </select>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <label for="Milky">
+                                                Milky
+                                            </label>
+
+                                            <select class="form-control" id="ddlMilky" name="Milky">
+                                                <option value="">--Select Milky--</option>
+
+                                                @if (Model.Milky != null)
+                                                {
+
+                                                    foreach (var M in Model.Milky)
+                                                    {
+                                                        <option value="@M.id">@M.Name</option>
+                                                    }
+
+                                                }
+                                            </select>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <label for="Shape">
+                                                Shape
+                                            </label>
+
+                                            <select class="form-control" id="ddlShade" name="Shade">
+                                                <option value="">--Select Shape--</option>
+
+                                                @if (Model.Shade != null)
+                                                {
+
+                                                    foreach (var S in Model.Shade)
+                                                    {
+                                                        <option value="@S.id">@S.Name</option>
+                                                    }
+
+                                                }
+                                            </select>
+                                        </div>
+
+
+                                        <div class="col-md-5">
+                                            <label for="Remark">
+                                                Remark
+                                            </label>
+                                            <input type="text" name="Remark" value="" class="form-control" id="txtRemark" placeholder="" />
+
+
+                                        </div>
+
+
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" id="btnQCUpdate">@Resource.Save</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">@Resource.Close</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+    @section script{
+
+        @Scripts.Render("~/bundles/DataTable/Script")
+        <script type="text/javascript" src="~/Scripts/custom/rbDataTable.js"></script>
+
+
+        <script src="~/Scripts/custom/uiApp.js"></script>
+        <script src="~/Scripts/custom/myApp.js"></script>
+
+        <script type="text/javascript" language="javascript">
+            var versionUpdate = (new Date()).getDate();
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.src = "/Scripts/custom/Controller/CtrlQCDetails.js?v=" + versionUpdate;
+            document.body.appendChild(script);
+        </script>
+        <script>
+
+        var appSetting = '@(System.Configuration.ConfigurationManager.AppSettings["WebsiteInspectAccess"].ToString())';
+    //    alert(appSetting);
+        var InspectBlock = true;
+        var array = appSetting.split(",");
+        $.each(array, function (i) {
+            if (array[i] == $("#hfUserIds").val()) {
+                InspectBlock = false;
+            }
+
+        });
+
+        //alert($("#hfUserIds").val());
+        if (InspectBlock == true) {
+            document.addEventListener('contextmenu', event => event.preventDefault());
+            document.onkeydown = function (e) {
+                if (event.keyCode == 123) {
+                    return true;
+                }
+
+                if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+                    return false;
+                }
+                if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+                    return false;
+                }
+                if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+                    return false;
+                }
+                if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+                    return false;
+                }
+                if (e.ctrlKey && e.keyCode == 'S'.charCodeAt(0)) {
+                    return false;
+                }
+
+            }
+        }
+
+
+        </script>
+    }
+</body>
+</html>

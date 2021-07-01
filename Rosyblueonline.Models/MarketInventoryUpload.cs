@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Rosyblueonline.Models
 {
+
     public class MarketInventoryUpload
     {
         public string Stock { get; set; }
@@ -54,7 +55,6 @@ namespace Rosyblueonline.Models
         public string CuletSize { get; set; }
         public string UserComment { get; set; }
         public string EyeClean { get; set; }
-        public string Customer { get; set; }
         public string HeartsandArrows { get; set; }
         public string Opens { get; set; }
         public string SalesLocation { get; set; }
@@ -65,8 +65,11 @@ namespace Rosyblueonline.Models
         public string JaUrl { get; set; }
         public string LotStatus { get; set; }
         public int? OrderID { get; set; }
-        public string origin { get; set; } 
-        public string CustomerName { get; set; }
+        public string origin { get; set; }
+        public string Customer { get; set; }
+
+
+
     }
 
 }

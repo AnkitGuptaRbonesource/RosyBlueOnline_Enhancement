@@ -793,6 +793,7 @@
     <Content Include="Scripts\custom\Controller\CtrlOrderInfo.js" />
     <Content Include="Scripts\custom\Controller\CtrlOrderListing.js" />
     <Content Include="Scripts\custom\Controller\CtrlForgetResetPassword.js" />
+    <Content Include="Scripts\custom\Controller\CtrlQCDetails.js" />
     <Content Include="Scripts\custom\Controller\CtrlResetPassword.js" />
     <Content Include="Scripts\custom\Controller\CtrlDownloadRightManage.js" />
     <Content Include="Scripts\custom\Controller\CtrlRFIDHistory.js" />
@@ -1148,6 +1149,9 @@
     <Content Include="Views\Home\UnAuthorized.cshtml" />
     <Content Include="Views\Marketing\MarketInventoryUpload.cshtml" />
     <Content Include="Views\Marketing\MarketInventoryDownload.cshtml" />
+    <Content Include="Views\Shared\_LayoutMarketInventory.cshtml" />
+    <Content Include="Views\Marketing\UploadQC.cshtml" />
+    <Content Include="Views\Marketing\QCDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

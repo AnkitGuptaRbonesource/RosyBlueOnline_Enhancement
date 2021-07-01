@@ -82,5 +82,13 @@ namespace Rosyblueonline.ServiceProviders.Abstraction
 
         DataTable RapnetDownloadExcelExport(string id);
 
+
+        int InsertMarketFileUploadLog(params string[] parameters);
+        int InsertQCFileUploadLog(params string[] parameters);
+        List<MarketInventoryUpload> MarketInventoryUpload(DataTable dt, params string[] Parameters);
+        List<QCFinalDetailsModel> QCFinalDetails(params string[] Parameters);
+        QCFinalDDLListModel  QCFinalDDLList(params string[] Parameters);
+        
+
     }
 }

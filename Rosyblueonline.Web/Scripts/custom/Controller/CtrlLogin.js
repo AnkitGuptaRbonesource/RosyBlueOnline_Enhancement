@@ -45,7 +45,10 @@
                         }
                         if (data.Result.RoleID == 9) {
                             location.href = '/Dashboard';
-                            } 
+                        } 
+                        if (data.Result.RoleID == 10) {
+                            location.href = '/Marketing/MarketInventoryUpload';
+                        } 
                         
                     } else {
                         uiApp.Alert({ container: '#uiPanel', message: data.Message, type: "danger" });

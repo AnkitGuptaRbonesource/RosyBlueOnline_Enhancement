@@ -188,6 +188,75 @@ namespace Rosyblueonline.ServiceProviders.Implementation
             return fileId;
         }
 
+
+        public int InsertMarketFileUploadLog(params string[] parameters)
+        {
+            int fileId = 0;
+            MarketFileUploadLogModel objFU = new MarketFileUploadLogModel();
+            this.uow.BeginTransaction();
+            try
+            {
+                objFU.fileName = parameters[0].ToString();
+                objFU.filePath = parameters[1].ToString();
+                objFU.createdBy = Convert.ToInt32(parameters[2]);
+                objFU.createdOn = DateTime.Now;
+                objFU.completedOn = DateTime.Now;
+                objFU.ipAddress = parameters[3].ToString();  
+                objFU.uploadStatus = "Pending";
+                objFU.TotalInv = 0;
+                objFU.validInv = 0;
+                objFU.InvalidInv = 0;
+                objFU.QCDone = 0;
+                objFU.QCPending = 0;
+                objFU.IsActive = true;
+                this.uow.MarketFileUploadLog.Add(objFU);
+                if (this.uow.Save() > 0)
+                {
+                    fileId = objFU.fileId;
+                }
+                this.uow.CommitTransaction();
+            }
+            catch (Exception ex)
+            {
+                this.uow.RollbackTransaction();
+                throw ex;
+            }
+
+            return fileId;
+        }
+
+        public int InsertQCFileUploadLog(params string[] parameters)
+        {
+            int fileId = 0;
+            QCFileUploadLogModel objFU = new QCFileUploadLogModel();
+            this.uow.BeginTransaction();
+            try
+            {
+                objFU.fileName = parameters[0].ToString();
+                objFU.filePath = parameters[1].ToString();
+                objFU.createdBy = Convert.ToInt32(parameters[2]);
+                objFU.createdOn = DateTime.Now;
+                objFU.completedOn = DateTime.Now;
+                objFU.ipAddress = parameters[3].ToString();
+                objFU.uploadStatus = "Pending";
+                objFU.validInv = 0; 
+                objFU.IsActive = true;
+                this.uow.QCFileUploadLog.Add(objFU);
+                if (this.uow.Save() > 0)
+                {
+                    fileId = objFU.fileId;
+                }
+                this.uow.CommitTransaction();
+            }
+            catch (Exception ex)
+            {
+                this.uow.RollbackTransaction();
+                throw ex;
+            }
+
+            return fileId;
+        }
+
         public List<InventoryUpload> InventoryUpload(DataTable dt, params string[] parameters)
         {
             return this.uow.Inventory.InventoryUpload(dt, parameters);
@@ -797,6 +866,28 @@ namespace Rosyblueonline.ServiceProviders.Implementation
             return this.uow.Inventory.CartItemReminderEmails(parameters);
         }
 
+
+        public List<MarketInventoryUpload> MarketInventoryUpload(DataTable dt, params string[] parameters)
+        {
+            return this.uow.Inventory.MarketInventoryUpload(dt, parameters);
+        }
+
+        public List<QCFinalDetailsModel> QCFinalDetails(params string[] Parameters)
+        {
+            
+                return this.uow.ExecuteQuery<QCFinalDetailsModel>("Exec proc_QCUpdateInventoryDetails '{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}'", Parameters);
+            
+        }
+
+        public QCFinalDDLListModel  QCFinalDDLList(params string[] Parameters)
+        {
+
+            //return this.uow.ExecuteQuery<QCFinalDDLListModel>("Exec proc_QCUpdateInventoryDetails '{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}'", Parameters).FirstOrDefault();
+
+            QCFinalDDLListModel objFDDl = new QCFinalDDLListModel();
+            return this.uow.Inventory.QCFinalDDLList(Parameters);
+
+        }
 
 
     }

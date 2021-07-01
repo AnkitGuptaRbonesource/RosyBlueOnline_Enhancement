@@ -82,6 +82,7 @@
     <Compile Include="JamesAllenDiscountModel.cs" />
     <Compile Include="JamesAllenDiscountModelHK.cs" />
     <Compile Include="LoginDeviceModel.cs" />
+    <Compile Include="MarketFileUploadLogModel.cs" />
     <Compile Include="MarketingStockSummaryModel.cs" />
     <Compile Include="MarketInventoryUpload.cs" />
     <Compile Include="MemoDetailModel.cs" />

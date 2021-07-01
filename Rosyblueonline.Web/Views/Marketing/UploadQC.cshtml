@@ -1,6 +1,6 @@
-﻿@model IEnumerable<VendorListModel>
+﻿ 
 @{
-    ViewBag.Title = "Market Inventory Upload";
+    ViewBag.Title = "Upload QC";
     Layout = "~/Views/Shared/_LayoutMarketInventory.cshtml";
 }
 @section header{
@@ -16,13 +16,13 @@
             <div style="display:none;">
                 <a id="ancMktInventoryDownload1" href="/Marketing/MarketExportToExcelInventoryDownload"></a>
             </div>
-            <section class="content" id="MktsecGrid" style="margin-left: -100px;">
+            <section class="content" id="MktsecGrid2" style="margin-left: -100px;">
                 <div class="customers-list-table">
                     <div class="customers-list-table">
                         <div class="col-md-12">
                             <div class="inventory-box">
                                 <div class="memo-title">
-                                    <h2>Market @Resource.Inventory_Upload</h2>
+                                    <h2>QC Upload</h2>
                                 </div>
                                 <form id="frmMktInventorUpload" class="panel-body paneltable">
                                     <div class="form-horizontal">
@@ -34,78 +34,14 @@
                                                         <label class="control-label">
                                                             @Resource.Select_file_to_upload
                                                         </label>
-                                                        <input type="file" name="fileUpload" id="fuUpload" class="form-control" value="fileUpload" />
-                                                        <button type="submit" id="btnUpload" class="btn btn-primary upload-btn">@Resource.Upload</button>
+                                                        <input type="file" name="fileUpload" id="QCfuUpload" class="form-control" value="fileUpload" />
+                                                        <button type="submit" id="btnQCUpload" class="btn btn-primary upload-btn">@Resource.Upload</button>
 
 
                                                         <a style="text-decoration: underline; color: blue;font-size: 15px;" href="~/Content/INV/Temp/MarketUploadFormatFile.xlsx" id="btnFileDownload"> @Resource.Download (Excel Format)</a>
                                                     </div>
                                                 </div>
-
-                                                <div class="col-lg-8 col-sm-6 col-xs-12">
-                                                    <div class="inventory-form">
-                                                         
-
-                                                        <div class="col-lg-3 col-md-3 col-sm-6">
-                                                            <div id="UploadDate" class="form-group">
-                                                                <div>
-                                                                    <label class="control-label">Upload Date</label>
-                                                                    <div>
-
-                                                                        <input type="text" name="UploadDate" value="" class="form-control datepicker" id="txtUploadDate" placeholder="Select Date" />
-
-
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-3 col-md-3 col-sm-6">
-                                                            <div id="VenderName" class="form-group">
-                                                                <div>
-                                                                    <label class="control-label">Vender Name</label>
-                                                                    <div>
-                                                                        <select class="form-control" id="ddlVenderName" name="VenderName">
-                                                                            <option value="0">--Select Vendor-- </option>
-
-                                                                            @if (Model != null)
-                                                                            {
-
-                                                                                foreach (var VendorId in Model)
-                                                                                {
-                                                                                    <option value="@VendorId.customerId">@VendorId.customerName </option>
-                                                                                }
-
-                                                                            }
-                                                                        </select>
-
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-
-                                                        <div class="col-lg-5 col-md-3 col-sm-6">
-                                                            <div id="CertificateNos" class="form-group">
-                                                                <div>
-                                                                    <label class="control-label">Certificate Nos</label>
-                                                                    <div>
-                                                                        <input type="text" class="form-control" id="txtCertificateNos" name="CertificateNos" placeholder="Enter Certificate Nos">
-
-
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div id="Download" class="form-group">
-                                                            <div>
-
-                                                                <button id="btnDownload" class="btn btn-primary Download-btn">@Resource.Download</button>
-
-                                                            </div>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                 
 
                                             </div>
                                         </div>
@@ -113,7 +49,7 @@
                                     </div>
                                 </form>
                             </div>
-                             
+
 
 
                             <div class="row">
@@ -124,7 +60,7 @@
                                                 <div class="panel-body paneltable">
                                                     <div class="list-view">
                                                         <div class="paneltable">
-                                                            <table id="tblMarketingInvUpload" class="table table-fixed dataTable no-footer">
+                                                            <table id="tblQCInvUpload" class="table table-fixed dataTable no-footer">
                                                                 <thead class="bordertp">
                                                                     <tr role="row" class="table-head">
                                                                         <th class="tbnew">
@@ -139,22 +75,10 @@
                                                                         <th class="tbnew">
                                                                             Upload Date
                                                                         </th>
-                                                                          <th class="tbnew">
-                                                                           Total
-                                                                        </th>
-                                                                          <th class="tbnew">
-                                                                            In Valid
-                                                                        </th>
                                                                         <th class="tbnew">
                                                                             Valid
                                                                         </th>
-                                                                        <th class="tbnew">
-                                                                            QC Done
-                                                                        </th>
-                                                                        <th class="tbnew">
-                                                                            QC Pending
-                                                                        </th>
-
+                                                                         
 
                                                                     </tr>
                                                                 </thead>

@@ -81,7 +81,11 @@ namespace Rosyblueonline.Repository.UnitOfWork
 
         private Repository<MstRolesModel> _MstRoles = null;
 
-        
+
+        private Repository<MarketFileUploadLogModel> _MarketFileUploadLog = null;
+
+
+        private Repository<QCFileUploadLogModel> _QCFileUploadLog = null;
 
         public Repository<LoginDeviceModel> LoginDevices {
             get => _LoginDevices == null ? new Repository<LoginDeviceModel>(db) : _LoginDevices; }
@@ -122,6 +126,10 @@ namespace Rosyblueonline.Repository.UnitOfWork
         public Repository<MstSalesLocationModel> MstSalesLocation { get => _MstSalesLocation == null ? new Repository<MstSalesLocationModel>(db) : _MstSalesLocation; }
         public Repository<StockHistoryViewModel> StockHistoryViewModel { get => _StockHistoryViewModel == null ? new Repository<StockHistoryViewModel>(db) : _StockHistoryViewModel; }
         public Repository<WS_SchedulerModel> WS_SchedulerM  { get => _WS_Scheduler == null ? new Repository<WS_SchedulerModel>(db) : _WS_Scheduler; }
+
+        public Repository<MarketFileUploadLogModel> MarketFileUploadLog { get => _MarketFileUploadLog == null ? new Repository<MarketFileUploadLogModel>(db) : _MarketFileUploadLog; }
+        public Repository<QCFileUploadLogModel> QCFileUploadLog { get => _QCFileUploadLog == null ? new Repository<QCFileUploadLogModel>(db) : _QCFileUploadLog; }
+
 
 
         public Repository<UserGeoLocationModel> UserGeoLocationM
