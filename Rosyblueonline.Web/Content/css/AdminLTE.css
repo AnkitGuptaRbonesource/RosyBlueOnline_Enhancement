@@ -90,6 +90,28 @@ img, iframe {
     -o-transform: translate(230px, 0);
     transform: translate(230px, 0);
   }
+    .minv-pages div.dataTables_wrapper div.dataTables_filter {
+        width: 100% !important
+    }
+    .minv-head {
+        margin: 10px 0 !important
+    }
+    .minv-pages .main-header .navbar-toggle {
+        margin-top: 5px;
+    }
+    .minv-pages .navbar-default .navbar-collapse {
+        float: none !important;
+        width: 100%;
+        margin: 15px 15px 0;
+        border-bottom: 1px solid #e7e7e7;
+    }
+    .minv-pages .content-wrapper {
+        padding-top: 86px;
+    }
+    .minv-pages div.dataTables_wrapper div.dataTables_length label {
+        margin-left: 5px;
+        margin-right: 0
+    }
 }
 .content-wrapper,
 .right-side {

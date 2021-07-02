@@ -829,11 +829,11 @@
                 src: '#tblCustomerActivityDetails',
                 dataTable: {
                     //deferLoading: 0,
-                    paging: true,
-                    lengthChange: false,
-                    pageLength: 10,
-                    scrollY: "270px",
-                    scrollX: true,
+                    //paging: true,
+                    //lengthChange: false,
+                    //pageLength: 10,
+                    //scrollY: "270px",
+                    //scrollX: true,
                     order: [[1, "desc"]],
                     ajax: {
                         type: 'Post',

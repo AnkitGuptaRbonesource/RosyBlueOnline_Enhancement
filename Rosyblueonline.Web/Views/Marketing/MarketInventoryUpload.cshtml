@@ -16,13 +16,13 @@
             <div style="display:none;">
                 <a id="ancMktInventoryDownload1" href="/Marketing/MarketExportToExcelInventoryDownload"></a>
             </div>
-            <section class="content" id="MktsecGrid" style="margin-left: -100px;">
+            <section id="MktsecGrid">
                 <div class="customers-list-table">
                     <div class="customers-list-table">
-                        <div class="col-md-12">
+                        <div>
                             <div class="inventory-box">
                                 <div class="memo-title">
-                                    <h2>Market @Resource.Inventory_Upload</h2>
+                                    <h2>Market Inventory - @Resource.Inventory_Upload</h2>
                                 </div>
                                 <form id="frmMktInventorUpload" class="panel-body paneltable">
                                     <div class="form-horizontal">
@@ -43,67 +43,68 @@
                                                 </div>
 
                                                 <div class="col-lg-8 col-sm-6 col-xs-12">
-                                                    <div class="inventory-form">
-                                                         
-
-                                                        <div class="col-lg-3 col-md-3 col-sm-6">
-                                                            <div id="UploadDate" class="form-group">
-                                                                <div>
-                                                                    <label class="control-label">Upload Date</label>
+                                                    <div class=" inventory-form">
+                                                        <div class="row">
+                                                            <div class="col-lg-3 col-sm-4">
+                                                                <div id="UploadDate" class="form-group">
                                                                     <div>
+                                                                        <label class="control-label">Upload Date</label>
+                                                                        <div>
 
-                                                                        <input type="text" name="UploadDate" value="" class="form-control datepicker" id="txtUploadDate" placeholder="Select Date" />
+                                                                            <input type="text" name="UploadDate" value="" class="form-control datepicker" id="txtUploadDate" placeholder="Select Date" />
 
 
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="col-lg-3 col-md-3 col-sm-6">
-                                                            <div id="VenderName" class="form-group">
-                                                                <div>
-                                                                    <label class="control-label">Vender Name</label>
+                                                            <div class="col-lg-4 col-sm-4">
+                                                                <div id="VenderName" class="form-group">
                                                                     <div>
-                                                                        <select class="form-control" id="ddlVenderName" name="VenderName">
-                                                                            <option value="0">--Select Vendor-- </option>
+                                                                        <label class="control-label">Vender Name</label>
+                                                                        <div>
+                                                                            <select class="form-control" id="ddlVenderName" name="VenderName">
+                                                                                <option value="0">--Select Vendor-- </option>
 
-                                                                            @if (Model != null)
-                                                                            {
-
-                                                                                foreach (var VendorId in Model)
+                                                                                @if (Model != null)
                                                                                 {
-                                                                                    <option value="@VendorId.customerId">@VendorId.customerName </option>
+
+                                                                                    foreach (var VendorId in Model)
+                                                                                    {
+                                                                                        <option value="@VendorId.customerId">@VendorId.customerName </option>
+                                                                                    }
+
                                                                                 }
+                                                                            </select>
 
-                                                                            }
-                                                                        </select>
-
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
 
 
-                                                        <div class="col-lg-5 col-md-3 col-sm-6">
-                                                            <div id="CertificateNos" class="form-group">
-                                                                <div>
-                                                                    <label class="control-label">Certificate Nos</label>
+                                                            <div class="col-lg-5 col-sm-4">
+                                                                <div id="CertificateNos" class="form-group">
                                                                     <div>
-                                                                        <input type="text" class="form-control" id="txtCertificateNos" name="CertificateNos" placeholder="Enter Certificate Nos">
+                                                                        <label class="control-label">Certificate Nos</label>
+                                                                        <div>
+                                                                            <input type="text" class="form-control" id="txtCertificateNos" name="CertificateNos" placeholder="Enter Certificate Nos">
 
 
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                        <div id="Download" class="form-group">
-                                                            <div>
 
-                                                                <button id="btnDownload" class="btn btn-primary Download-btn">@Resource.Download</button>
+                                                        </div>
+                                                            <div id="Download">
+                                                                <div>
+
+                                                                    <button id="btnDownload" class="btn btn-primary Download-btn">@Resource.Download</button>
+
+                                                                </div>
 
                                                             </div>
-
-                                                        </div>
                                                     </div>
                                                 </div>
 

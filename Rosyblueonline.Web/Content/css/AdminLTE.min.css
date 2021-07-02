@@ -1328,13 +1328,7 @@ input[type='checkbox']:after {
 		color: #fff;
 	}
 	#btnUpload {
-		font-weight: 500;
-		font-size: 12px;
-		line-height: 24px;
-		border-radius: 6px;
-		padding: 8px 30px;
 		margin-top: 10px;
-		letter-spacing: 0.5px;
 		transition: 0.5s all ease;
 	}
 	.inventory-box .memo-title {
