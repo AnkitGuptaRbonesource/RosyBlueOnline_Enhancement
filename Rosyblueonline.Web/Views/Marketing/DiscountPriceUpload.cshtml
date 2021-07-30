@@ -1,0 +1,190 @@
+﻿
+@{
+    ViewBag.Title = "Discount Price Upload";
+    Layout = "~/Views/Shared/_LayoutMarketInventory.cshtml";
+}
+@section header{
+    @Styles.Render("~/bundles/DataTable/Style")
+}
+<html>
+<head>
+</head>
+<body class="sidebar-mini skin-black-light sidebar-collapse">
+    <div class="content-wrapper">
+        <section class="content">
+            <div id="uiPanel1"></div>
+            <div style="display:none;">
+                <a id="ancMktInventoryDownload1" href="/Marketing/MarketExportToExcelInventoryDownload"></a>
+            </div>
+            <section id="MktsecGrid2">
+                <div class="customers-list-table">
+                    <div class="customers-list-table">
+                        <div>
+                            <div class="inventory-box">
+                                <div class="memo-title">
+                                    <h2>Market Inventory - Discount Upload</h2>
+                                </div>
+                                <form id="frmMktInventorUpload" class="paneltable">
+                                    <div class="inventory-form">
+
+                                        <div class="row">
+
+                                            <div class="col-lg-3 col-sm-2">
+                                                <div id="Files" class="form-group">
+                                                    <div>
+                                                        <label class="control-label"> @Resource.Select_file_to_upload</label>
+                                                        <div>
+
+                                                            <input type="file" name="fileUpload" id="DCfuUpload" class="form-control" value="fileUpload" style="max-width:300px" />
+
+                                                            <a style="text-decoration: underline; color: blue;font-size: 15px;" href="~/Content/INV/Temp/RBDiscountUploadFileFormat.xlsx" id="RBFile" > @Resource.Download (RB Discount Excel Format)</a>
+                                                            <a style="display:none; text-decoration: underline; color: blue;font-size: 15px;" href="~/Content/INV/Temp/CustomerDiscountUploadFileFormat.xlsx"  id="CustomerFile" > @Resource.Download (Customer Discount Excel Format)</a>
+                                                            <a style="display: none; text-decoration: underline; color: blue; font-size: 15px;" href="~/Content/INV/Temp/FloraDiscountUploadFileFormat.xlsx"  id="FloraFile" > @Resource.Download (Flora Discount Excel Format)</a>
+
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="col-md-8 col-sm-8">
+                                                <div>
+                                                    <label class="control-label">File Type </label>
+                                                    <div>
+                                                        <span id="UploadType">
+                                                            <label class="radio-inline controll-radio">
+                                                                <input type="radio" name="UploadType" id="rbUploadType1" value="1" checked><label for="rbUploadType1" class="controll-label">RB Discount</label>
+                                                            </label>
+                                                            <label class="radio-inline controll-radio">
+                                                                <input type="radio" name="UploadType" id="rbUploadType2" value="2"><label for="rbUploadType2" class="controll-label">Customer Discount</label>
+                                                            </label>
+                                                            <label class="radio-inline controll-radio">
+                                                                <input type="radio" name="UploadType" id="rbUploadType3" value="3"><label for="rbUploadType3" class="controll-label">Flora Discount</label>
+                                                            </label>
+                                                        </span>
+                                                        <span> 
+                                                             <button type="submit" style="margin-top:10px" id="btnDiscountUpload" class="btn btn-primary upload-btn">@Resource.Upload</button>
+
+
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div>
+
+
+
+                            <div class="row">
+                                <div class="customers-list-table">
+                                    <div class="customers-list-table">
+                                        <div class="col-md-12">
+                                            <div class="table-panel">
+                                                <div class="panel-body paneltable">
+                                                    <div class="list-view">
+                                                        <div class="paneltable">
+                                                            <table id="tblDPInvUpload" class="table table-fixed dataTable no-footer">
+                                                                <thead class="bordertp">
+                                                                    <tr role="row" class="table-head">
+                                                                        <th class="tbnew">
+                                                                            File ID
+                                                                        </th>
+                                                                        <th class="tbnew">
+                                                                            File Name
+                                                                        </th>
+                                                                        <th class="tbnew">
+                                                                            Upload Status
+                                                                        </th>
+                                                                        <th class="tbnew">
+                                                                            Upload Date
+                                                                        </th>
+                                                                        <th class="tbnew">
+                                                                            Valid
+                                                                        </th>
+
+
+                                                                    </tr>
+                                                                </thead>
+
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </section>
+    </div>
+
+    @section script{
+
+        @Scripts.Render("~/bundles/DataTable/Script")
+        <script type="text/javascript" src="~/Scripts/custom/rbDataTable.js"></script>
+
+
+        <script src="~/Scripts/custom/uiApp.js"></script>
+        <script src="~/Scripts/custom/myApp.js"></script>
+
+        <script type="text/javascript" language="javascript">
+            var versionUpdate = (new Date()).getDate();
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.src = "/Scripts/custom/Controller/CtrlMarketInventoryUpload.js?v=" + versionUpdate;
+            document.body.appendChild(script);
+        </script>
+        <script>
+
+        var appSetting = '@(System.Configuration.ConfigurationManager.AppSettings["WebsiteInspectAccess"].ToString())';
+    //    alert(appSetting);
+        var InspectBlock = true;
+        var array = appSetting.split(",");
+        $.each(array, function (i) {
+            if (array[i] == $("#hfUserIds").val()) {
+                InspectBlock = false;
+            }
+
+        });
+
+        //alert($("#hfUserIds").val());
+        if (InspectBlock == true) {
+            document.addEventListener('contextmenu', event => event.preventDefault());
+            document.onkeydown = function (e) {
+                if (event.keyCode == 123) {
+                    return true;
+                }
+
+                if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+                    return false;
+                }
+                if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+                    return false;
+                }
+                if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+                    return false;
+                }
+                if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+                    return false;
+                }
+                if (e.ctrlKey && e.keyCode == 'S'.charCodeAt(0)) {
+                    return false;
+                }
+
+            }
+        }
+
+
+        </script>
+    }
+</body>
+</html>

@@ -652,6 +652,7 @@
     <Content Include="Content\img\watch-list2.png" />
     <Content Include="Content\img\Watchlist.png" />
     <Content Include="Content\img\whline.png" />
+    <Content Include="Content\INV\Temp\MarketUploadFileFormat.xlsx" />
     <Content Include="Content\INV\Temp\report_results.txt" />
     <Content Include="Content\INV\Temp\UploadFormat.xlsx" />
     <Content Include="Content\slider\css\arrows.png" />
@@ -767,7 +768,9 @@
     <Content Include="Content\INV\Temp\AddRemoveLab.xlsx" />
     <Content Include="Content\INV\Temp\V360ViaCert.xlsx" />
     <Content Include="Content\INV\Temp\UploadFormatFile.xlsx" />
-    <Content Include="Content\INV\Temp\MarketUploadFormatFile.xlsx" />
+    <Content Include="Content\INV\Temp\CustomerDiscountUploadFileFormat.xlsx" />
+    <Content Include="Content\INV\Temp\FloraDiscountUploadFileFormat.xlsx" />
+    <Content Include="Content\INV\Temp\RBDiscountUploadFileFormat.xlsx" />
     <None Include="Properties\PublishProfiles\Rosyblueonline_Enh_Html.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\BrowserVisibility.js" />
@@ -794,6 +797,7 @@
     <Content Include="Scripts\custom\Controller\CtrlOrderListing.js" />
     <Content Include="Scripts\custom\Controller\CtrlForgetResetPassword.js" />
     <Content Include="Scripts\custom\Controller\CtrlQCDetails.js" />
+    <Content Include="Scripts\custom\Controller\CtrlQCFinalDownload.js" />
     <Content Include="Scripts\custom\Controller\CtrlResetPassword.js" />
     <Content Include="Scripts\custom\Controller\CtrlDownloadRightManage.js" />
     <Content Include="Scripts\custom\Controller\CtrlRFIDHistory.js" />
@@ -1152,6 +1156,8 @@
     <Content Include="Views\Shared\_LayoutMarketInventory.cshtml" />
     <Content Include="Views\Marketing\UploadQC.cshtml" />
     <Content Include="Views\Marketing\QCDetails.cshtml" />
+    <Content Include="Views\Marketing\DiscountPriceUpload.cshtml" />
+    <Content Include="Views\Marketing\QCFinalDownload.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1240,7 +1246,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>49719</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:49710/</IISUrl>
+          <IISUrl>http://localhost:49711/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

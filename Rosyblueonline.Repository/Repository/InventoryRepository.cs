@@ -997,7 +997,7 @@ namespace Rosyblueonline.Repository
                 cmd.CommandText = parameters[0].ToString();
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandTimeout = 900;
-                cmd.Parameters.Add(new SqlParameter("@MarketinventoryUpload", dt));
+                cmd.Parameters.Add(new SqlParameter("@MarketinventoryUploads", dt));
                 cmd.Parameters.Add(new SqlParameter("@createdby", Convert.ToInt32(parameters[1])));
                 cmd.Parameters.Add(new SqlParameter("@FileID", Convert.ToInt32(parameters[2])));
                 cmd.Parameters.Add(new SqlParameter("@LastUpdateIP", parameters[3]));
@@ -1025,7 +1025,7 @@ namespace Rosyblueonline.Repository
             cmd.Parameters.Add(new SqlParameter("@SB", ""));
             cmd.Parameters.Add(new SqlParameter("@Open", ""));
             cmd.Parameters.Add(new SqlParameter("@Milky", ""));
-            cmd.Parameters.Add(new SqlParameter("@Shape", ""));
+            cmd.Parameters.Add(new SqlParameter("@shade", ""));
             cmd.Parameters.Add(new SqlParameter("@Remark", ""));
             cmd.Parameters.Add(new SqlParameter("@createdby", ""));
             cmd.Parameters.Add(new SqlParameter("@createddate", ""));
@@ -1100,6 +1100,94 @@ namespace Rosyblueonline.Repository
 
             return objSFQ;
         }
+
+
+        public List<DiscountMasterFileUploadLogModel> DiscountMasterListUpload(DataTable dt, params string[] parameters)
+        {
+            try
+            {
+                if (context.Database.Connection.State != ConnectionState.Open)
+                {
+                    context.Database.Connection.Open();
+                }
+                var cmd = context.Database.Connection.CreateCommand();
+                cmd.CommandText = parameters[0].ToString();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandTimeout = 900;
+                cmd.Parameters.Add(new SqlParameter("@DiscountMasterUpload", dt));
+                cmd.Parameters.Add(new SqlParameter("@createdby", Convert.ToInt32(parameters[1])));
+                cmd.Parameters.Add(new SqlParameter("@FileID", Convert.ToInt32(parameters[2])));
+                cmd.Parameters.Add(new SqlParameter("@LastUpdateIP", parameters[3]));
+                cmd.Parameters.Add(new SqlParameter("@raiseEvent", parameters[4]));
+                cmd.Parameters.Add(new SqlParameter("@UploadId", parameters[5]));
+
+                var reader = cmd.ExecuteReader();
+                return ((IObjectContextAdapter)context)
+                    .ObjectContext
+                    .Translate<DiscountMasterFileUploadLogModel>(reader).ToList();
+
+
+            }
+            finally
+            {
+                context.Database.Connection.Close();
+            }
+        }
+
+        public QCFinalFileIdsListModel GetFinalListOfFileids(params string[] parameters)
+        {
+            QCFinalFileIdsListModel objSFQ = new QCFinalFileIdsListModel();
+            var cmd = context.Database.Connection.CreateCommand();
+            cmd.CommandText = "proc_QCUpdateInventoryDetails ";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add(new SqlParameter("@TB", parameters[0]));
+            cmd.Parameters.Add(new SqlParameter("@SB",  parameters[1]));
+            cmd.Parameters.Add(new SqlParameter("@Open", ""));
+            cmd.Parameters.Add(new SqlParameter("@Milky", ""));
+            cmd.Parameters.Add(new SqlParameter("@shade", ""));
+            cmd.Parameters.Add(new SqlParameter("@Remark", ""));
+            cmd.Parameters.Add(new SqlParameter("@createdby", ""));
+            cmd.Parameters.Add(new SqlParameter("@createddate", ""));
+            cmd.Parameters.Add(new SqlParameter("@Status", ""));
+            cmd.Parameters.Add(new SqlParameter("@FileID", ""));
+            cmd.Parameters.Add(new SqlParameter("@raiseEvent",  parameters[2]));
+            cmd.Parameters.Add(new SqlParameter("@venderName", ""));
+            cmd.Parameters.Add(new SqlParameter("@id", ""));
+
+            try
+            {
+
+                context.Database.Connection.Open();
+                // Run the sproc
+                var reader = cmd.ExecuteReader();
+
+                objSFQ.Fileids = ((IObjectContextAdapter)context)
+                   .ObjectContext
+                   .Translate<DDLFileids>(reader, "Clarity", MergeOption.AppendOnly).ToList();
+
+
+                // Move to second result set and read Posts
+                reader.NextResult();
+                // Read Color from the first result set
+                objSFQ.Fileids2 = ((IObjectContextAdapter)context)
+                    .ObjectContext
+                    .Translate<DDLFileids>(reader, "Clarity", MergeOption.AppendOnly).ToList();
+
+
+                // Move to second result set and read Posts
+                reader.NextResult();
+                 
+
+
+            }
+            finally
+            {
+                context.Database.Connection.Close();
+            }
+
+            return objSFQ;
+        }
+
 
 
     }

@@ -8,7 +8,84 @@
     @Styles.Render("~/bundles/DataTable/Style")
 }
 <html>
-<head>
+<head> 
+
+    <style type="text/css">
+        /* Styles for the drop-down. Feel free to change the styles to suit your website. :-) */
+
+        .cb-dropdown-wrap {
+            max-height: 80px; /* At most, around 3/4 visible items. */
+            position: relative;
+            height: 19px;
+        }
+
+        .cb-dropdown,
+        .cb-dropdown li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .cb-dropdown {
+            position: absolute;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: #fff;
+            border: 1px solid #888;
+        }
+
+        /* For selected filter. */
+        .active .cb-dropdown {
+            background: pink;
+        }
+
+        .cb-dropdown-wrap:hover .cb-dropdown {
+            height: 80px;
+            overflow: auto;
+            transition: 0.2s height ease-in-out;
+        }
+
+        /* For selected items. */
+        .cb-dropdown li.active {
+            background: #ff0;
+        }
+
+        .cb-dropdown li label {
+            display: block;
+            position: relative;
+            cursor: pointer;
+            line-height: 19px; /* Match height of .cb-dropdown-wrap */
+        }
+
+            .cb-dropdown li label > input {
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: 16px;
+            }
+
+            .cb-dropdown li label > span {
+                display: block;
+                margin-left: 3px;
+                margin-right: 20px; /* At least, width of the checkbox. */
+                font-family: sans-serif;
+                font-size: 0.8em;
+                font-weight: normal;
+                text-align: left;
+            }
+
+        /* This fixes the vertical aligning of the sorting icon. */
+        table.dataTable thead .sorting,
+        table.dataTable thead .sorting_asc,
+        table.dataTable thead .sorting_desc,
+        table.dataTable thead .sorting_asc_disabled,
+        table.dataTable thead .sorting_desc_disabled {
+            background-position: 100% 10px;
+        }
+    </style>
+
 </head>
 <body class="sidebar-mini skin-black-light sidebar-collapse">
     <div class="content-wrapper">
@@ -105,7 +182,7 @@
                                                                 <thead class="bordertp">
                                                                     <tr role="row" class="table-head">
                                                                         <th class="tbnew">
-                                                                            ID
+                                                                            Edit
                                                                         </th>
                                                                         <th class="tbnew">
                                                                             Cert No
@@ -126,7 +203,7 @@
                                                                             Milky
                                                                         </th>
                                                                         <th class="tbnew">
-                                                                            Shape
+                                                                            Shade
                                                                         </th>
                                                                         <th class="tbnew">
                                                                             Remark
@@ -139,12 +216,77 @@
                                                                             Created On
                                                                         </th>
                                                                         <th class="tbnew">
-                                                                            Edit
+                                                                            File Id
+                                                                        </th>
+
+                                                                        <th class="tbnew">
+                                                                            size
+                                                                        </th>
+                                                                        <th class="tbnew">
+                                                                            color
+                                                                        </th>
+                                                                        <th class="tbnew">
+                                                                            clarity
+                                                                        </th>
+                                                                        <th class="tbnew">
+                                                                            Criteria
                                                                         </th>
                                                                     </tr>
                                                                 </thead>
+                                                                <tfoot style="display:none;">
+                                                                    <tr>
+                                                                        <th>
+                                                                            Edit
+                                                                        </th>
+                                                                        <th>
+                                                                            Cert No
+                                                                        </th>
+                                                                        <th>
+                                                                            lotNumber
+                                                                        </th>
+                                                                        <th>
+                                                                            TB
+                                                                        </th>
+                                                                        <th>
+                                                                            SB
+                                                                        </th>
+                                                                        <th>
+                                                                            Opens
+                                                                        </th>
+                                                                        <th>
+                                                                            Milky
+                                                                        </th>
+                                                                        <th>
+                                                                            Shade
+                                                                        </th>
+                                                                        <th>
+                                                                            Remark
+                                                                        </th>
 
-                                                            </table>
+                                                                        <th>
+                                                                            Status
+                                                                        </th>
+                                                                        <th>
+                                                                            Created On
+                                                                        </th>
+                                                                        <th>
+                                                                            File Id
+                                                                        </th>
+                                                                        <th>
+                                                                            size
+                                                                        </th>
+                                                                        <th>
+                                                                            color
+                                                                        </th>
+                                                                        <th>
+                                                                            clarity
+                                                                        </th>
+                                                                        <th>
+                                                                            Criteria
+                                                                        </th>
+                                                                    </tr>
+                                                                </tfoot>
+                                                            </table> 
                                                         </div>
                                                     </div>
                                                 </div>
@@ -178,6 +320,13 @@
                                 <div class="row">
                                     <div class="col-md-12" style="font-size: larger;padding: 10px;">
                                         <label> Certificate No :  </label>  <label id="lblCertNo">   </label>
+                                        <label>, Size :  </label>  <label id="lblQsize">   </label>
+                                        <br />
+                                        <label> Color :  </label>  <label id="lblQcolor">   </label>
+
+                                        <label>, Clarity :  </label>  <label id="lblQclarity">   </label>
+                                        <br />
+                                        <label> Criteria :  </label>  <label id="lblQcriteria">   </label>
 
                                         <input type="hidden" name="QCID" id="hfQCID" value="" />
                                     </div>
@@ -259,12 +408,12 @@
                                         </select>
                                     </div>
                                     <div class="col-md-5">
-                                        <label for="Shape">
-                                            Shape
+                                        <label for="Shade">
+                                            Shade
                                         </label>
 
                                         <select class="form-control" id="ddlShade" name="Shade">
-                                            <option value="">--Select Shape--</option>
+                                            <option value="">--Select Shade--</option>
 
                                             @if (Model.Shade != null)
                                             {
@@ -321,48 +470,7 @@
             script.src = "/Scripts/custom/Controller/CtrlQCDetails.js?v=" + versionUpdate;
             document.body.appendChild(script);
         </script>
-        <script>
-
-        var appSetting = '@(System.Configuration.ConfigurationManager.AppSettings["WebsiteInspectAccess"].ToString())';
-    //    alert(appSetting);
-        var InspectBlock = true;
-        var array = appSetting.split(",");
-        $.each(array, function (i) {
-            if (array[i] == $("#hfUserIds").val()) {
-                InspectBlock = false;
-            }
-
-        });
-
-        //alert($("#hfUserIds").val());
-        if (InspectBlock == true) {
-            document.addEventListener('contextmenu', event => event.preventDefault());
-            document.onkeydown = function (e) {
-                if (event.keyCode == 123) {
-                    return true;
-                }
-
-                if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
-                    return false;
-                }
-                if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
-                    return false;
-                }
-                if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
-                    return false;
-                }
-                if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
-                    return false;
-                }
-                if (e.ctrlKey && e.keyCode == 'S'.charCodeAt(0)) {
-                    return false;
-                }
-
-            }
-        }
-
-
-        </script>
+       
     }
 </body>
 </html>

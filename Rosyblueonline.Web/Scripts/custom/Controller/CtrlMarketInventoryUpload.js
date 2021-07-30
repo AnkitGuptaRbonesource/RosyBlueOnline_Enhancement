@@ -3,19 +3,23 @@
     var $frmMktInventorUpload = null;
     var dtMrkupload = null;
     var dtQCMrkupload = null;
+    var dtDiscountMrkupload = null;
+    
     var OnLoad = function () {
         dtMrkupload = new Datatable();
         dtQCMrkupload = new Datatable();
+        dtDiscountMrkupload = new Datatable();
         objSF = new SearchFilter();
         RegisterEvents();
         SetValidation();
         FileUploadGrid();
         QCFileUploadGrid();
+        DiscountFileUploadGrid();
         $(".datepicker").datepicker({
             changeMonth: true,
             changeYear: true,
-            dateFormat: 'dd-mm-yy' 
-              
+            dateFormat: 'dd-mm-yy'
+
         });
         $('#txtUploadDate').datepicker('setDate', 'today');
     }
@@ -52,7 +56,7 @@
         });
 
         $('#btnQCUpload').click(function (e) {
-            e.preventDefault(); 
+            e.preventDefault();
             if ($frmMktInventorUpload.valid() == false) {
                 return;
             }
@@ -81,7 +85,37 @@
             });
         });
 
+        $('#btnDiscountUpload').click(function (e) {
+            e.preventDefault();
+            if ($frmMktInventorUpload.valid() == false) {
+                return;
+            }
+            var fData = new FormData();
 
+            if ($('#DCfuUpload').get(0).files.length === 0) {
+                console.log("File Not Attached");
+                return;
+            }
+
+            fData.append("File", $('#DCfuUpload').get(0).files[0]);
+
+            fData.append("UploadId", $('input[type="radio"][name="UploadType"]:checked').val());
+
+            uiApp.BlockUI();
+            objSF.DiscountPriceListUpload(fData).then(function (data) {
+                uiApp.UnBlockUI();
+                if (data.IsSuccess) {
+                    uiApp.Alert({ container: '#uiPanel1', message: "Excel uploaded", type: "success" });
+                    location.href = '/Marketing/DiscountPriceUpload';
+
+                } else {
+                    uiApp.Alert({ container: '#uiPanel1', message: data.Message, type: "danger" });
+                }
+                console.log(data);
+            }, function (error) {
+                uiApp.UnBlockUI();
+            });
+        });
 
         $(document).on('click', '.MarketDownload', function (e) {
             e.preventDefault();
@@ -112,7 +146,7 @@
 
         $(document).on('click', '#btnDownload', function (e) {
             e.preventDefault();
-            uiApp.BlockUI(); 
+            uiApp.BlockUI();
             var FileId = "";
             var FileName = "FilterDownload";
             var UploadDate = $('#txtUploadDate').val().trim();
@@ -138,7 +172,7 @@
 
         $('#btnDelete').click(function (e) {
             e.preventDefault();
-          
+
             var id = 100;
             uiApp.Confirm('Confirm to delete entire data ?', function (resp) {
                 if (resp) {
@@ -158,10 +192,35 @@
                     });
                 }
 
-                 
+
             });
 
         });
+
+
+        $("input[type='radio'][name='UploadType']").change(function () {
+
+            var FileType = $('input[type="radio"][name="UploadType"]:checked').val();
+            if (FileType == 1) {
+                $("#RBFile").show();
+                $("#CustomerFile").hide();
+                $("#FloraFile").hide();
+            } else if (FileType == 2) {
+                $("#RBFile").hide();
+                $("#CustomerFile").show();
+                $("#FloraFile").hide();
+
+            } else {
+                $("#RBFile").hide();
+                $("#CustomerFile").hide();
+                $("#FloraFile").show();
+
+            }
+
+
+
+        });
+
 
     }
 
@@ -187,7 +246,7 @@
 
 
     var FileUploadGrid = function () {
-        uiApp.BlockUI(); 
+        uiApp.BlockUI();
 
         if (dtMrkupload.getDataTable() == null || dtMrkupload.getDataTable() == undefined) {
             dtMrkupload.init({
@@ -198,7 +257,7 @@
                     scrollY: "400px",
                     scrollX: true,
                     paging: true,
-                    order: [[0, "desc"]], 
+                    order: [[0, "desc"]],
                     language: {
                         "search": "All Filters :"
                     },
@@ -213,15 +272,15 @@
                         }
                     },
                     columns: [
-                        { data: "fileId" }, 
+                        { data: "fileId" },
                         { data: "fileName" },
                         { data: "uploadStatus" },
                         { data: "createdOn" },
-                        { data: "TotalInv" }, 
+                        { data: "TotalInv" },
                         { data: "InvalidInv" },
                         { data: "validInv" },
                         { data: "QCDone" },
-                        { data: "QCPending" } 
+                        { data: "QCPending" }
                     ],
                     columnDefs: [
                         {
@@ -229,7 +288,7 @@
                             render: function (data, type, row) {
                                 return '<a href="/Content/INV/' + row.fileName + '">' + row.fileName + '</a>';
 
-                            } 
+                            }
                         },
                         {
                             targets: [3],
@@ -238,11 +297,11 @@
                             },
                             orderable: true
                         },
-                         
+
                         {
                             targets: [6],
                             render: function (data, type, row) {
-                               
+
                                 return ' <a class="MarketDownload" data-id="' + row.fileId + '" data-name="Valid" href="#">' + row.validInv + '</a>';
 
                             }
@@ -309,7 +368,7 @@
                         { data: "fileName" },
                         { data: "uploadStatus" },
                         { data: "createdOn" },
-                        { data: "validInv" }  
+                        { data: "validInv" }
                     ],
                     columnDefs: [
                         {
@@ -325,7 +384,7 @@
                                 return moment(row.createdOn).format(myApp.dateFormat.Client);
                             },
                             orderable: true
-                        }  
+                        }
                     ]
                 },
                 onCheckboxChange: function (obj) {
@@ -341,6 +400,69 @@
     };
 
 
+
+
+    var DiscountFileUploadGrid = function () {
+        uiApp.BlockUI();
+
+        if (dtDiscountMrkupload.getDataTable() == null || dtDiscountMrkupload.getDataTable() == undefined) {
+            dtDiscountMrkupload.init({
+                src: '#tblDPInvUpload',
+                searching: true,
+                dataTable: {
+                    //deferLoading: 0,
+                    scrollY: "400px",
+                    scrollX: true,
+                    paging: true,
+                    order: [[0, "desc"]],
+                    language: {
+                        "search": "All Filters :"
+                    },
+
+                    ajax: {
+                        type: 'Post',
+                        url: '/Marketing/DiscountFileDetailForGrid',
+                        beforeSend: function (request) {
+                            var TokenID = myApp.token().get();
+                            request.setRequestHeader("TokenID", TokenID);
+                            return request;
+                        }
+                    },
+                    columns: [
+                        { data: "fileId" },
+                        { data: "fileName" },
+                        { data: "uploadStatus" },
+                        { data: "createdOn" },
+                        { data: "validInv" }
+                    ],
+                    columnDefs: [
+                        {
+                            targets: [1],
+                            render: function (data, type, row) {
+                                return '<a href="/Content/INV/' + row.fileName + '">' + row.fileName + '</a>';
+
+                            }
+                        },
+                        {
+                            targets: [3],
+                            render: function (data, type, row) {
+                                return moment(row.createdOn).format(myApp.dateFormat.Client);
+                            },
+                            orderable: true
+                        }
+                    ]
+                },
+                onCheckboxChange: function (obj) {
+                    CheckOrder(obj)
+                }
+            });
+            uiApp.UnBlockUI();
+        } else {
+            dtDiscountMrkupload.getDataTable().draw();
+            uiApp.UnBlockUI();
+        }
+        uiApp.UnBlockUI();
+    };
 
 
     return {

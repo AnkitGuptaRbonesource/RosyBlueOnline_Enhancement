@@ -15,7 +15,7 @@
 
         });
         $('#txtUploadDate').datepicker('setDate', 'today');
-    }
+    } 
 
     var RegisterEvents = function () {
 
@@ -23,6 +23,63 @@
             e.preventDefault();
 
             QCDetailsGrid();
+             
+              
+              
+
+            //$('#tblQCDetails').DataTable({
+            //        initComplete: function () {
+            //            this.api().columns().every(function () {
+            //                var column = this;
+            //                var ddmenu = cbDropdown($(column.header()))
+            //                    .on('change', ':checkbox', function () {
+            //                        var active;
+            //                        var vals = $(':checked', ddmenu).map(function (index, element) {
+            //                            active = true;
+            //                            return $.fn.dataTable.util.escapeRegex($(element).val());
+            //                        }).toArray().join('|');
+
+            //                        column
+            //                            .search(vals.length > 0 ? '^(' + vals + ')$' : '', true, false)
+            //                            .draw();
+
+            //                        // Highlight the current item if selected.
+            //                        if (this.checked) {
+            //                            $(this).closest('li').addClass('active');
+            //                        } else {
+            //                            $(this).closest('li').removeClass('active');
+            //                        }
+
+            //                        // Highlight the current filter if selected.
+            //                        var active2 = ddmenu.parent().is('.active');
+            //                        if (active && !active2) {
+            //                            ddmenu.parent().addClass('active');
+            //                        } else if (!active && active2) {
+            //                            ddmenu.parent().removeClass('active');
+            //                        }
+            //                    });
+
+            //                column.data().unique().sort().each(function (d, j) {
+            //                    var // wrapped
+            //                        $label = $('<label>'),
+            //                        $text = $('<span>', {
+            //                            text: d
+            //                        }),
+            //                        $cb = $('<input>', {
+            //                            type: 'checkbox',
+            //                            value: d
+            //                        });
+
+            //                    $text.appendTo($label);
+            //                    $cb.appendTo($label);
+
+            //                    ddmenu.append($('<li>').append($label));
+            //                });
+            //            });
+            //        }
+            //    });
+            
+
 
         });
 
@@ -35,6 +92,11 @@
 
 
             $('#lblCertNo').html(CertNo);
+
+            $('#lblQsize').html($(this).data('size'));
+            $('#lblQcolor').html($(this).data('color'));
+            $('#lblQclarity').html($(this).data('clarity'));
+            $('#lblQcriteria').html($(this).data('criteria'));
 
             $('#hfQCID').val(id);
 
@@ -74,10 +136,10 @@
 
                        // $("#ddlMilky option:selected").text(data.Result.milkyInclusion);
                     }
-                    if (data.Result.shapeID != "") {
-                        $('#ddlShade').val(data.Result.shapeID);
+                    if (data.Result.shadeId != "") {
+                        $('#ddlShade').val(data.Result.shadeId);
 
-                        //$("#ddlShade option:selected").text(data.Result.shapeID);
+                        //$("#ddlShade option:selected").text(data.Result.shadeId);
                     }
                     if (data.Result.Remark != "") {
 
@@ -128,7 +190,7 @@
                     uiApp.Alert({ container: '#uiPanel1', message: "Done successfully !", type: "success" });
 
                     $('#Modal-SearchPermission').modal('hide');
-
+                    QCDetailsGrid();
                 } else {
 
                     uiApp.Alert({ container: '#uiPanel1', message: "Please try agaiin later !", type: "danger" });
@@ -139,6 +201,10 @@
             });
 
         });
+
+
+      
+
 
     }
 
@@ -184,12 +250,13 @@
         if (dtQCDetailsload.getDataTable() == null || dtQCDetailsload.getDataTable() == undefined) {
             dtQCDetailsload.init({
                 src: '#tblQCDetails',
-                searching: true,
+                searching: true, 
                 dataTable: {
                     //deferLoading: 0,
                     scrollY: "400px",
                     scrollX: true,
-                    paging: true,
+                    paging: true, 
+                    serverSide: true,
                     order: [[0, "desc"]],
                     language: {
                         "search": "All Filters :"
@@ -212,11 +279,15 @@
                         { data: "sideBlackInclusion" },
                         { data: "opensId" },
                         { data: "milkyInclusion" },
-                        { data: "shapeID" },
+                        { data: "shadeId" },
                         { data: "Remark" },
                         { data: "Status" },
                         { data: "createdOn" },
-                        { data: "fileId" }
+                        { data: "fileId" }, 
+                        { data: "size" },
+                        { data: "color" },
+                        { data: "clarity" },
+                        { data: "Criteria" }
                     ],
                     columnDefs: [
 
@@ -225,32 +296,44 @@
                             render: function (data, type, row) {
                                 return moment(row.createdOn).format(myApp.dateFormat.Client);
                             },
-                            orderable: true
+                            orderable: true 
                         },
                         {
-                            targets: [11],
+                            targets: [0],
                             render: function (data, type, row) {
-                                return "<button id='EditDetails'   class='btn btn-success' data-id='" + row.inventoryID + "' data-CertNo='" + row.certificateNo + "'><span>  <i class='fa fa-edit'></i></span> </button>";
+                                return "<button id='EditDetails'   class='btn btn-success' data-id='" + row.inventoryID + "' data-CertNo='" + row.certificateNo + "' data-size='" + row.size + "' data-color='" + row.color + "' data-clarity='" + row.clarity + "' data-Criteria='" + row.Criteria + "'><span>  <i class='fa fa-edit'></i></span> </button>";
 
                             },
-                            orderable: true
+                            orderable: true 
                         }
 
 
                     ]
+
                 },
                 onCheckboxChange: function (obj) {
 
-                }
+                } 
+
             });
             uiApp.UnBlockUI();
         } else {
             dtQCDetailsload.getDataTable().draw();
             uiApp.UnBlockUI();
         }
-        uiApp.UnBlockUI();
-    };
+         
+         
 
+
+        function cbDropdown(column) {
+            return $('<ul>', {
+                'class': 'cb-dropdown'
+            }).appendTo($('<div>', {
+                'class': 'cb-dropdown-wrap'
+            }).appendTo(column));
+        }
+
+    };
 
 
 

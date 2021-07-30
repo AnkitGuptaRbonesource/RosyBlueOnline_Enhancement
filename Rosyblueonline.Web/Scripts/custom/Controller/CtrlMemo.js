@@ -684,7 +684,7 @@
                                             <li><a href="#" data-index="'+ meta.row + '" data-id="' + row.orderDetailsId + '" class="btnExportMemo"><i class="fa fa-file-excel-o" aria-hidden="true"></i>Export to Excel</a></li>\
                                             <li><a href="#" data-index="'+ meta.row + '" data-id="' + row.orderDetailsId + '" class="btnSendMailMemo"><i class="fa fa-envelope-o"></i>Send a Mail</a></li>\
                                             <li><a href="#" data-index="'+ meta.row + '" data-id="' + row.orderDetailsId + '" class="btnPrintMemoItems"><i class="fa fa-print"></i>Print</a></li>\
-                                            <li><a href="http://213.42.17.149:91" target="_blank" class="btnRFIDMatching"><i class="fa fa-file-excel-o"></i>RFID Matching</a></li>\
+                                            <li><a href="http://86.96.199.117:91" target="_blank" class="btnRFIDMatching"><i class="fa fa-file-excel-o"></i>RFID Matching</a></li>\
                                         </ul>';
                             } else {
                                 return '<button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown"><i class="fa fa-plus fa-lg"></i></button>\

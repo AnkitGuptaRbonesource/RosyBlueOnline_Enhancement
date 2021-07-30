@@ -114,7 +114,7 @@ namespace Rosyblueonline.ServiceProviders.Implementation
             VendorName = VendorName == "" ? "null" : VendorName;
             CertNos = CertNos == "" ? "null" : CertNos;
             
-            DataSet dsResult = this.db.ExecuteCommand("exec proc_MarketInventoryDownload " + LoginID + "," + FileId + "," + QFlag+",'"+ UploadDate+"',"+ VendorName+","+ CertNos, CommandType.Text);
+            DataSet dsResult = this.db.ExecuteCommand("exec proc_MarketInventoryDownload "+ LoginID + ",'" + FileId + "'," + QFlag+",'"+ UploadDate+"','"+ VendorName+"','"+ CertNos+"'", CommandType.Text);
 
 
             return dsResult.Tables[0];
@@ -138,6 +138,29 @@ namespace Rosyblueonline.ServiceProviders.Implementation
             return this.uow.QCFileUploadLog.Queryable();
         }
 
-      
+
+        public IQueryable<DiscountMasterFileUploadLogModel> QueryableDiscountFilesDetail()
+        {
+            return this.uow.DiscountMasterFileUploadLog.Queryable();
+        }
+
+
+
+        
+        public DataTable MInventory_QCPriceUpdate(string FileId , string LoginID)
+        {
+            // List<InventoryDownloadViewModel> objInvVM = new List<InventoryDownloadViewModel>();
+
+            //   objInvVM = MarketInvDownload<InventoryDownloadViewModel>(LoginID, QFlag);
+            //  DataTable dt = Rosyblueonline.Framework.ListtoDataTable.ToDataTable<InventoryDownloadViewModel>(objInvVM);
+            LoginID = LoginID == "" ? "null" : LoginID;
+            FileId = FileId == "" ? "null" : FileId; 
+
+            DataSet dsResult1 = this.db.ExecuteCommand("exec proc_MInventory_QCPriceUpdate '" + FileId + "'," + LoginID , CommandType.Text);
+            
+
+            return dsResult1.Tables[0];
+        }
+
     }
 }

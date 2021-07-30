@@ -26,5 +26,9 @@ namespace Rosyblueonline.ServiceProviders.Abstraction
 
         IQueryable<QCFileUploadLogModel> QueryableQCFilesDetail();
 
+        IQueryable<DiscountMasterFileUploadLogModel> QueryableDiscountFilesDetail();
+
+        DataTable MInventory_QCPriceUpdate(string FileId, string LoginID);
+
     }
 }

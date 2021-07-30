@@ -12,6 +12,7 @@ using Rosyblueonline.Models.ViewModel;
 using Rosyblueonline.Repository.UnitOfWork;
 using System.Data;
 using Rosyblueonline.Repository.Context;
+using  System.Globalization;
 
 namespace Rosyblueonline.ServiceProviders.Implementation
 {
@@ -256,6 +257,41 @@ namespace Rosyblueonline.ServiceProviders.Implementation
 
             return fileId;
         }
+
+
+        public int InsertDiscountMasterFileUploadLog(params string[] parameters)
+        {
+            int fileId = 0;
+            DiscountMasterFileUploadLogModel objFU = new DiscountMasterFileUploadLogModel();
+            this.uow.BeginTransaction();
+            try
+            {
+                objFU.fileName = parameters[0].ToString();
+                objFU.filePath = parameters[1].ToString();
+                objFU.createdBy = Convert.ToInt32(parameters[2]);
+                objFU.createdOn = DateTime.Now;
+                objFU.completedOn = DateTime.Now;
+                objFU.ipAddress = parameters[3].ToString();
+                objFU.uploadStatus = "Pending";
+                objFU.validInv = 0;
+                objFU.IsActive = true;
+                objFU.UploadId = parameters[4].ToString(); 
+                this.uow.DiscountMasterFileUploadLog.Add(objFU);
+                if (this.uow.Save() > 0)
+                {
+                    fileId = objFU.fileId;
+                }
+                this.uow.CommitTransaction();
+            }
+            catch (Exception ex)
+            {
+                this.uow.RollbackTransaction();
+                throw ex;
+            }
+
+            return fileId;
+        }
+
 
         public List<InventoryUpload> InventoryUpload(DataTable dt, params string[] parameters)
         {
@@ -889,6 +925,23 @@ namespace Rosyblueonline.ServiceProviders.Implementation
 
         }
 
+
+        public List<DiscountMasterFileUploadLogModel> DiscountMasterListUpload(DataTable dt, params string[] parameters)
+        {
+            return this.uow.Inventory.DiscountMasterListUpload(dt, parameters);
+        }
+
+
+
+        public QCFinalFileIdsListModel GetFinalListOfFileids(params string[] Parameters)
+        {
+             
+            return this.uow.Inventory.GetFinalListOfFileids(Parameters);
+
+        }
+
+
+      
 
     }
 }

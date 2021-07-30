@@ -665,7 +665,50 @@ var SearchFilter = function () {
         });
     };
 
-    
+
+
+
+    obj.DiscountPriceListUpload = function (pData) {
+        return myApp.http({
+            method: 'post',
+            url: '/Marketing/DiscountPriceListUpload',
+            data: pData,
+            processData: false,
+            contentType: false
+        });
+    } 
+
+    obj.DownloadQCFinalDetails = function (FileId) {
+        return myApp.http({
+            method: 'post',
+            url: '/Marketing/DownloadQCFinalDetails',
+            data: {
+                FileId: FileId 
+            }
+        });
+    };
+
+    obj.MInventory_QCPriceUpdate = function (FileId) {
+        return myApp.http({
+            method: 'post',
+            url: '/Marketing/MInventory_QCPriceUpdate',
+            data: {
+                FileId: FileId
+            }
+        });
+    };
+
+    obj.GetFinalListOfFileids = function (Fromdate, Todate) {
+        return myApp.http({
+            method: 'post',
+            url: '/Marketing/GetFinalListOfFileids',
+            data: {
+                Fromdate: Fromdate,
+                Todate: Todate
+            }
+        });
+    };
+
 
 
 

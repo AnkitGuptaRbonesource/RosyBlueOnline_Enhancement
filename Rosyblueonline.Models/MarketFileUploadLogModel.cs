@@ -50,6 +50,8 @@ namespace Rosyblueonline.Models
         public string uploadStatus { get; set; }
         public int validInv { get; set; }
         public bool IsActive { get; set; }
+        public string DisUpdateStatus { get; set; }
+
 
     }
 
@@ -64,11 +66,19 @@ namespace Rosyblueonline.Models
         public string sideBlackInclusion { get; set; }
         public string opensId { get; set; }
         public string milkyInclusion { get; set; }
-        public string shapeID { get; set; }
+        public string shadeId { get; set; }
         public string Remark { get; set; }
+
         public string Status { get; set; }
         public DateTime createdOn { get; set; }
         public string fileId { get; set; }
+
+
+        public string size { get; set; }
+        public string color { get; set; }
+        public string clarity { get; set; }
+        public string Criteria { get; set; }
+
 
 
 
@@ -98,4 +108,41 @@ namespace Rosyblueonline.Models
     }
 
 
+
+
+    public class DiscountMasterFileUploadLogModel
+    {
+        [Key]
+        public int fileId { get; set; }
+        public string fileName { get; set; }
+        public string filePath { get; set; }
+        public int createdBy { get; set; }
+        public DateTime createdOn { get; set; }
+        public DateTime completedOn { get; set; }
+        public string ipAddress { get; set; }
+        public string uploadStatus { get; set; }
+        public int validInv { get; set; }
+        public bool IsActive { get; set; }
+        public string UploadId { get; set; }
+
+
+    }
+
+
+
+    public class QCFinalFileIdsListModel
+    {
+        public List<DDLFileids> Fileids { get; set; }
+
+        public List<DDLFileids> Fileids2 { get; set; } 
+
+
+
+    }
+
+    public class DDLFileids
+    {
+        public int ID { get; set; }
+        public string Name { get; set; }
+    }
 }

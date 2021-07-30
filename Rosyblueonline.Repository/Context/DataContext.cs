@@ -79,7 +79,9 @@ namespace Rosyblueonline.Repository.Context
 
             modelBuilder.Entity<QCFileUploadLogModel>().ToTable("QCFileUploadLog");
 
+            modelBuilder.Entity<DiscountMasterFileUploadLogModel>().ToTable("DiscountMasterFileUploadLog");
 
+            
             base.OnModelCreating(modelBuilder);
         }
 
@@ -149,6 +151,9 @@ namespace Rosyblueonline.Repository.Context
 
         public DbSet<QCFileUploadLogModel> QCFileUploadLog { get; set; }
 
+
+
+        public DbSet<DiscountMasterFileUploadLogModel> DiscountMasterFileUploadLog { get; set; }
 
         // need to exclude the below
         public DbSet<mstColorModel> Color { get; set; }

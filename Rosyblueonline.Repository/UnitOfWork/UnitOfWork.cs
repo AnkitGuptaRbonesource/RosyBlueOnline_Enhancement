@@ -87,6 +87,9 @@ namespace Rosyblueonline.Repository.UnitOfWork
 
         private Repository<QCFileUploadLogModel> _QCFileUploadLog = null;
 
+        private Repository<DiscountMasterFileUploadLogModel> _DiscountMasterFileUploadLog = null;
+
+
         public Repository<LoginDeviceModel> LoginDevices {
             get => _LoginDevices == null ? new Repository<LoginDeviceModel>(db) : _LoginDevices; }
         public Repository<LoginDetailModel> LoginDetails { 
@@ -130,7 +133,10 @@ namespace Rosyblueonline.Repository.UnitOfWork
         public Repository<MarketFileUploadLogModel> MarketFileUploadLog { get => _MarketFileUploadLog == null ? new Repository<MarketFileUploadLogModel>(db) : _MarketFileUploadLog; }
         public Repository<QCFileUploadLogModel> QCFileUploadLog { get => _QCFileUploadLog == null ? new Repository<QCFileUploadLogModel>(db) : _QCFileUploadLog; }
 
+        public Repository<DiscountMasterFileUploadLogModel> DiscountMasterFileUploadLog { get => _DiscountMasterFileUploadLog == null ? new Repository<DiscountMasterFileUploadLogModel>(db) : _DiscountMasterFileUploadLog; }
 
+
+        
 
         public Repository<UserGeoLocationModel> UserGeoLocationM
         {

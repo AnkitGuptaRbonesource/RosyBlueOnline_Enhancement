@@ -88,7 +88,15 @@ namespace Rosyblueonline.ServiceProviders.Abstraction
         List<MarketInventoryUpload> MarketInventoryUpload(DataTable dt, params string[] Parameters);
         List<QCFinalDetailsModel> QCFinalDetails(params string[] Parameters);
         QCFinalDDLListModel  QCFinalDDLList(params string[] Parameters);
-        
 
+        List<DiscountMasterFileUploadLogModel> DiscountMasterListUpload(DataTable dt, params string[] Parameters);
+
+
+        int InsertDiscountMasterFileUploadLog(params string[] parameters);
+
+
+         
+
+        QCFinalFileIdsListModel GetFinalListOfFileids(params string[] Parameters);
     }
 }

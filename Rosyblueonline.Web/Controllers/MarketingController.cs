@@ -1114,8 +1114,8 @@ namespace Rosyblueonline.Web.Controllers
                             fileId = this.objStockDetailsService.InsertMarketFileUploadLog(Request.Files[0].FileName.ToString(), path.ToString(), LoginID.ToString(), Request.UserHostAddress);
 
                             NewFileName = "MarketInventoryUpload_File_" + fileId.ToString() + "_" + DateTime.Now.ToString("MMddyyyyHHmm") + fileExtn;
-                            Request.Files[0].SaveAs(path + NewFileName.ToString() + fileExtn);
-                            DataTable ds = commonFunction.GetDataFromExcel2(path + NewFileName.ToString() + fileExtn);
+                            Request.Files[0].SaveAs(path + NewFileName.ToString());
+                            DataTable ds = commonFunction.GetDataFromExcel2(path + NewFileName.ToString());
 
 
                             procName = "proc_MarketInventoryUpload";
@@ -1395,8 +1395,8 @@ namespace Rosyblueonline.Web.Controllers
                             fileId = this.objStockDetailsService.InsertQCFileUploadLog(Request.Files[0].FileName.ToString(), path.ToString(), LoginID.ToString(), Request.UserHostAddress);
 
                             NewFileName = "QCInventoryUpload_File_" + fileId.ToString() + "_" + DateTime.Now.ToString("MMddyyyyHHmm") + fileExtn;
-                            Request.Files[0].SaveAs(path + NewFileName.ToString() + fileExtn);
-                            DataTable ds = commonFunction.GetDataFromExcel2(path + NewFileName.ToString() + fileExtn);
+                            Request.Files[0].SaveAs(path + NewFileName.ToString());
+                            DataTable ds = commonFunction.GetDataFromExcel2(path + NewFileName.ToString());
 
 
                             procName = "proc_QCInventoryUpload";
@@ -1557,7 +1557,7 @@ namespace Rosyblueonline.Web.Controllers
                 {
                     DataTableResponse<QCFinalDetailsModel> objResp = new DataTableResponse<QCFinalDetailsModel>();
 
-                    IQueryable<QCFinalDetailsModel> query = this.objStockDetailsService.QCFinalDetails("", "", "", "", "", "", "", CreatedDate, QCStatus, "", "QCDetails", VenderName,"").AsQueryable();
+                    IQueryable<QCFinalDetailsModel> query = this.objStockDetailsService.QCFinalDetails("", "", "", "", "", "", "", CreatedDate, QCStatus, "", "QCDetails", VenderName, "").AsQueryable();
 
                     //IQueryable<QCFinalDetailsModel> query = this.objDownloadService.QueryableQCFilesDetail().Where(x => x.IsActive == true);
 
@@ -1636,13 +1636,13 @@ namespace Rosyblueonline.Web.Controllers
         {
             try
             {
-                int LoginID = GetLogin(); 
+                int LoginID = GetLogin();
                 if (LoginID > 0)
                 {
                     QCFinalDetailsModel objlistQ = new QCFinalDetailsModel();
-                    objlistQ = this.objStockDetailsService.QCFinalDetails(TableBlack, SideBlack, OpensName, Milky, Shade, Remark, LoginID.ToString(), "", "", "", "QCUpdate","",QCID).FirstOrDefault();
-                      
-                     
+                    objlistQ = this.objStockDetailsService.QCFinalDetails(TableBlack, SideBlack, OpensName, Milky, Shade, Remark, LoginID.ToString(), "", "", "", "QCUpdate", "", QCID).FirstOrDefault();
+
+
                     return Json(new Response { Code = 200, IsSuccess = true, Message = "", Result = objlistQ });
 
                 }
@@ -1687,6 +1687,295 @@ namespace Rosyblueonline.Web.Controllers
         }
 
 
+
+
+
+
+
+        public ActionResult DiscountPriceUpload()
+        {
+            return View();
+        }
+
+
+
+
+
+        [HttpPost]
+        public ActionResult DiscountPriceListUpload(string UploadId)
+        {
+
+            string path = "";
+            string fileExtn = "";
+            int fileId = 0;
+            string NewFileName = "";
+            string procName = "";
+            int RowCount = 0;
+            CommonFunction commonFunction = new CommonFunction();
+            try
+            {
+                int LoginID = GetLogin();
+                if (LoginID > 0)
+
+                {
+                    if (Request.Files.Count > 0)
+                    {
+                        fileExtn = Path.GetExtension(Request.Files[0].FileName);
+                        string ip = Request.UserHostAddress;
+                        path = Server.MapPath(ConfigurationManager.AppSettings["INVUpload"].ToString());
+                        if (fileExtn == ".xls" || fileExtn == ".xlsx")
+                        {
+                            fileId = this.objStockDetailsService.InsertDiscountMasterFileUploadLog(Request.Files[0].FileName.ToString(), path.ToString(), LoginID.ToString(), Request.UserHostAddress, UploadId.ToString());
+                            if (UploadId == "1")
+                            {
+                                NewFileName = "RBDiscountUpload_File_" + fileId.ToString() + "_" + DateTime.Now.ToString("MMddyyyyHHmm") + fileExtn;
+                                procName = "proc_RBDiscountMasterUpload";
+
+
+                            }
+                            else if (UploadId == "2")
+                            {
+                                NewFileName = "CustomerDiscountUpload_File_" + fileId.ToString() + "_" + DateTime.Now.ToString("MMddyyyyHHmm") + fileExtn;
+                                procName = "proc_CustomerDiscountMasterUpload";
+
+                            }
+                            else if (UploadId == "3")
+                            {
+                                NewFileName = "FloraDiscountUpload_File_" + fileId.ToString() + "_" + DateTime.Now.ToString("MMddyyyyHHmm") + fileExtn;
+                                procName = "proc_FloraDiscountMasterUpload";
+
+                            }
+                            else
+                            {
+                                return RedirectToAction("Marketing", "DiscountPriceListUpload");
+
+                            }
+                            Request.Files[0].SaveAs(path + NewFileName.ToString());
+                            DataTable ds = commonFunction.GetDataFromExcel2(path + NewFileName.ToString());
+
+                            DataTable pds = ParseToString(ds);
+
+                            List<DiscountMasterFileUploadLogModel> objLst = objStockDetailsService.DiscountMasterListUpload(pds, procName, Convert.ToString(LoginID), Convert.ToString(fileId), Request.UserHostAddress, Convert.ToString(NewFileName), UploadId.ToString());
+
+
+                            string json = JsonConvert.SerializeObject(new Response
+                            {
+                                Code = 200,
+                                IsSuccess = true,
+                                Message = "Discount PriceList Upload",
+                                Result = new
+                                {
+                                    List = objLst,
+                                    FileID = fileId
+                                }
+                            }, Formatting.Indented);
+                            return Content(json, "application/json");
+
+                        }
+                        else
+                        {
+                            return RedirectToAction("Marketing", "DiscountPriceListUpload");
+                        }
+                    }
+                    else
+                    {
+                        return Json(new Response { Code = 500, IsSuccess = false, Message = "File not attached", Result = null });
+                    }
+
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+
+
+
+            }
+            catch (Exception ex)
+            {
+                return Json(new Response
+                {
+                    Code = 500,
+                    IsSuccess = false,
+                    Message = ex.Message,
+                    Result = null
+                });
+            }
+        }
+
+
+
+
+        [HttpPost]
+        public JsonResult DiscountFileDetailForGrid(DataTableViewModel objReq)
+        {
+            try
+            {
+                if (objReq != null)
+                {
+                    DataTableResponse<DiscountMasterFileUploadLogModel> objResp = new DataTableResponse<DiscountMasterFileUploadLogModel>();
+
+                    IQueryable<DiscountMasterFileUploadLogModel> query = this.objDownloadService.QueryableDiscountFilesDetail().Where(x => x.IsActive == true);
+
+                    if (!string.IsNullOrEmpty(objReq.search.value))
+                    {
+                        query = query.Where(x => (x.fileId.ToString()).Contains(objReq.search.value) ||
+                                                 x.fileName.Contains(objReq.search.value) ||
+                                                 x.uploadStatus.Contains(objReq.search.value) ||
+                                                 x.validInv.ToString().Contains(objReq.search.value));
+                    }
+
+
+                    objResp.recordsTotal = query.Count();
+                    for (int i = 0; i < objReq.order.Count; i++)
+                    {
+                        int idx = Convert.ToInt32(objReq.order[i].column);
+                        switch (objReq.columns[idx].data)
+                        {
+                            case "fileId":
+                                if (objReq.order[i].dir == "asc")
+                                    query = query.OrderBy(x => x.fileId);
+                                else
+                                    query = query.OrderByDescending(x => x.fileId);
+                                break;
+                            case "fileName":
+                                if (objReq.order[i].dir == "asc")
+                                    query = query.OrderBy(x => x.fileName);
+                                else
+                                    query = query.OrderByDescending(x => x.fileName);
+                                break;
+                            case "uploadStatus":
+                                if (objReq.order[i].dir == "asc")
+                                    query = query.OrderBy(x => x.uploadStatus);
+                                else
+                                    query = query.OrderByDescending(x => x.uploadStatus);
+                                break;
+
+                            default:
+                            case "completedOn":
+                                if (objReq.order[i].dir == "asc")
+                                    query = query.OrderBy(x => x.completedOn);
+                                else
+                                    query = query.OrderByDescending(x => x.completedOn);
+                                break;
+                        }
+                    }
+                    objResp.draw = objReq.draw;
+                    objResp.recordsFiltered = query.Count();
+                    objResp.data = query.Skip(objReq.start).Take(objReq.length).ToList();
+                    return Json(objResp);
+                }
+                return null;
+            }
+            catch (Exception ex)
+            {
+                if (typeof(UserDefinedException) == ex.GetType())
+                {
+                    return Json(new Response { IsSuccess = false, Code = 500, Result = "", Message = ex.Message });
+                }
+                ErrorLog.Log("MaekrtController", "DiscountFileDetailForGrid", ex);
+                throw ex;
+            }
+        }
+
+
+
+        public ActionResult QCFinalDownload()
+        {
+
+            //int LoginId = GetLogin();
+            //var objLst = objStockDetailsService.GetListOfFileids();
+            return View();
+
+        }
+
+
+
+
+        [HttpPost]
+        public JsonResult GetFinalListOfFileids(string Fromdate, string Todate)
+        { 
+
+            QCFinalFileIdsListModel objlistQ = this.objStockDetailsService.GetFinalListOfFileids(Fromdate, Todate, "QCFinalFileidList");
+
+            return Json(new Response { IsSuccess = true, Result = objlistQ });
+
+        }
+
+        //[HttpPost]
+        //public JsonResult GetListOfFileids2(string Fromdate,string Todate)
+        //{
+        //    var objLst = objStockDetailsService.GetListOfFileids2(Fromdate, Todate); 
+        //    return Json(new Response { IsSuccess = true, Result = objLst });
+
+        //}
+
+
+        [HttpPost]
+        public JsonResult MInventory_QCPriceUpdate(string FileId)
+        {
+            try
+            {
+                int LoginID = GetLogin(); 
+                if (LoginID > 0)
+                {
+
+                    DataTable dt = this.objDownloadService.MInventory_QCPriceUpdate(FileId, LoginID.ToString());
+                     
+                    if (dt.Rows.Count > 0)
+                    {
+                         
+                        return Json(new Response { IsSuccess = true, Result = dt.Rows.Count });
+                    }
+                    else
+                    {
+                        return Json(new Response { IsSuccess = false, Message = "No rows found" });
+                    }
+                }
+                return Json(new Response { IsSuccess = false, Message = string.Format(StringResource.Invalid, "Session") }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                ErrorLog.Log("MarketingController", "MInventory_QCPriceUpdate", ex);
+                return Json(new Response { IsSuccess = false, Message = ex.Message }, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+
+        [HttpPost]
+        public JsonResult DownloadQCFinalDetails(string FileId)
+        {
+            try
+            {
+                int LoginID = GetLogin();
+                int Role = GetRole();
+                string FileName = "QCFinalDetails";
+                if (LoginID > 0)
+                {
+
+                    DataTable dt = this.objDownloadService.MarketInventoryDownloadExcelExport(LoginID.ToString(), FileId, "QCFinalDetails", "", "", "");
+                    if (dt.Rows.Count > 0)
+                    {
+                        TempData["MarketFileName"] = FileName;
+                        string imgPath = Server.MapPath(System.Configuration.ConfigurationManager.AppSettings["ExcelMailImage"]);
+                        byte[] st = ExportToExcel.DownloadExcel(FileName, dt);
+
+                        TempData["MarketDataExport"] = st;
+                        return Json(new Response { IsSuccess = true, Result = "" });
+                    }
+                    else
+                    {
+                        return Json(new Response { IsSuccess = false, Message = "No rows found" });
+                    }
+                }
+                return Json(new Response { IsSuccess = false, Message = string.Format(StringResource.Invalid, "Session") }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                ErrorLog.Log("MarketingController", "DownloadQCFinalDetails", ex);
+                return Json(new Response { IsSuccess = false, Message = ex.Message }, JsonRequestBehavior.AllowGet);
+            }
+        }
 
 
         #endregion
